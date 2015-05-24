@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Tips系列:在没有分支miss条件下，实现取最小值
-categories:
+categories:Linux
 - 
 tags:
 - 
