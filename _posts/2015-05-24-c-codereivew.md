@@ -1,10 +1,9 @@
 ---
 layout: post
-title: "c code review"
+title: "C语言代码review一些总结"
 categories:C/C++
 tags: C/C++
 ---
-
 ## C语言代码review一些总结 ##
 ### 代码中的资源 ###
 
