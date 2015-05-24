@@ -1,9 +1,10 @@
-###[飘过的小牛](http://github.thinkingbar.com)
+###[创智玩家](http://myself659.github.io/)
 
 ---
 
-本博客运行于 [Jekyll](http://jekyllrb.com) @ [GitHub](http://github.com/niushuai/reading)，博客模板修改自 [WebFrog](http://webfrogs.me/) 的博客。
+本博客运行于 [Jekyll](http://jekyllrb.com) @ [GitHub](http://github.com/，博客模板修改自漂过的小牛的博客。
 
-飘过的小牛
+
+创智玩家
 
 2014-03-20
