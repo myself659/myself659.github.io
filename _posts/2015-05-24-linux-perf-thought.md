@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Linux性能优化 思想篇"
+title: Linux性能优化 思想篇
 categories:Linux
 tags:性能优化
 ---

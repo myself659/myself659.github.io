@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "C语言代码review一些总结"
+title: C语言代码review一些总结
 categories:C/C++
 tags: C/C++
 ---
