@@ -1,0 +1,14 @@
+﻿markdown: rdiscount
+permalink: /:title/
+url: http://myself659.github.io
+highlighter: pygments
+name: 飘过的小牛
+description: 飘过的小牛 | Stop talking, start doing.
+author: myself659
+email: myself659@163.com
+duoshuo: niushuai
+weibo: 1891858481
+hub: niushuai
+safe: true
+paginate: 100
+about: "弱菜一枚。"
