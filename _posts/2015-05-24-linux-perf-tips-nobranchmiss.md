@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 在没有分支miss条件下，实现取最小值
-categories:Linux
+categories:
 - 
 tags:
 - 
@@ -34,4 +34,4 @@ min = b ^ ((a^b) &-(a<b));
 
 故可以宏定义如下：
 #define min(a,b) = (b) ^ ( ((a) ^ (b)) & (-((a)<(b))) )
-#define max(a,b) = (b) ^ ( ((a) ^ (b)) & (((a)<(b))) )
+
