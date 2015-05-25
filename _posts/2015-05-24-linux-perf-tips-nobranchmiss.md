@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Tips系列:在没有分支miss条件下，实现取最小值
+title: 在没有分支miss条件下，实现取最小值
 categories:Linux
 - 
 tags:
@@ -8,6 +8,7 @@ tags:
 
 
 ---
+
 ## Tips系列:在没有分支miss条件下，实现取最小值 ##
 ### 一般实现 ###
 取两个数最小值，一般代码常见两种写法如下：
@@ -32,5 +33,5 @@ min = b ^ ((a^b) &-(a<b));
 当a>=b时，-（a < b）为False，表达式等价于min= b ^ 0 = b
 
 故可以宏定义如下：
-#define min(a,b) = (b)^( ((a) ^ (b)) & (-((a)<(b))) )
-#define max(a,b) = (b)^( ((a) ^ (b)) & (((a)<(b))) )
+#define min(a,b) = (b) ^ ( ((a) ^ (b)) & (-((a)<(b))) )
+#define max(a,b) = (b) ^ ( ((a) ^ (b)) & (((a)<(b))) )
