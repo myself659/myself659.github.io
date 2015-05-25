@@ -1,7 +1,7 @@
 ---
 layout: post
 title: linux网络丢包分析
-categories:Linux
+categories:
 - 
 tags:
 - 

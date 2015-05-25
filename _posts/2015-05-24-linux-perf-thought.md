@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Linux性能优化 思想篇
-categories:Linux
+categories:
 - 
 tags:
 - 
