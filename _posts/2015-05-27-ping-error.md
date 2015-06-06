@@ -1,14 +1,14 @@
 ---
 layout: post
 title: ping不通常见原因总结
-categories:
+categories:Linux
 - 
-tags:
+tags:Network
 - 
 
 
 ---
-## ping不通常见原因总结 ##
+
 ping不通从ping的流程分为两大类：请求报文没有到达对端与应答报文未收到
 
 ### 请求报文没有到达对端的可能原因 ###

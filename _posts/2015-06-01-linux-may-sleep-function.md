@@ -1,14 +1,14 @@
 ---
 layout: post
 title: 那些可进入睡眠状态的Linux内核函数
-categories:
+categories:Linux
 - 
-tags:
+tags:Kernel
 - 
 
 
 ---
-## 那些可进入睡眠状态的Linux内核函数 ##
+
 
 在linux内核开发中断处理函数不能调用可能导致睡眠的函数，下面总结linux内核可能引起睡眠的函数如下：
 

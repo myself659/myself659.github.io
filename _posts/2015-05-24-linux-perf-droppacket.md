@@ -1,14 +1,14 @@
 ---
 layout: post
 title: 一个linux网络丢包问题分析
-categories:
+categories:Linux
 - 
-tags:
+tags:Network
 - 
 
 
 ---
-## 一个linux网络丢包问题分析##
+丢包问题是十分常见一类问题，下面总结的一个网络丢包问题的分析过程。
 ### 问题描述 ###
 组网：
 
