@@ -1,9 +1,9 @@
 ---
 layout: post
 title: ping不通常见原因总结
-categories:Linux
+categories:
 - 
-tags:Network
+tags:
 - 
 
 

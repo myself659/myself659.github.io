@@ -1,8 +1,8 @@
 ---
 layout: post
 title: 在没有分支miss条件下，实现取最小值
-categories:Linux
-tags:性能优化
+categories:
+tags:
 ---
 在实际性能优化过程，加了一个if判断整个系统转发性能就有大约5%的下降，下面简单分享一种在没有分支miss条件下，实现取最小值的方法。
 ### 一般实现

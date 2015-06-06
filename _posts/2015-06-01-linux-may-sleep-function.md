@@ -1,9 +1,9 @@
 ---
 layout: post
 title: 那些可进入睡眠状态的Linux内核函数
-categories:Linux
+categories:
 - 
-tags:Kernel
+tags:
 - 
 
 
