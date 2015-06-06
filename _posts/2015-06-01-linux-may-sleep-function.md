@@ -12,7 +12,7 @@ tags:Kernel
 
 在linux内核开发中断处理函数不能调用可能导致睡眠的函数，下面总结linux内核可能引起睡眠的函数如下：
 
-### schedule函数 ###
+### schedule函数
 >
 1. schedule\_timeout
 2. schedule\_timeout\_uninterruptible
@@ -20,7 +20,7 @@ tags:Kernel
 4. cond\_resched
 5. might\_resched
 >
-### sleep函数 ###
+### sleep函数
 >
 1. msleep
 2. msleep_interruputible
@@ -28,7 +28,7 @@ tags:Kernel
 4. osal_usleep
 5. might_sleep
 >
-### 取信号量函数 ###
+### 取信号量函数
 >
 1. down
 2. down_timeout
@@ -40,7 +40,7 @@ tags:Kernel
 8. wait\_for\_completion\_timeout
 9. wait\_for\_completion\_interruptible\_timeout
 >
-### kmallo相关函数含有标志GFP_KERNEL ###
+### kmallo相关函数含有标志GFP_KERNEL
 >
 1. kmalloc
 2. kzalloc
@@ -50,7 +50,7 @@ tags:Kernel
 6. kmem\_cache\_zalloc
 >
 
-### 取睡眠锁函数 ###
+### 取睡眠锁函数
 >
 1. mutex_lock
 2. mutex\_lock\_timeout
@@ -59,7 +59,7 @@ tags:Kernel
 5. mutex\_lock\_interruptible\_nested
 >
 
-### 在中断处理函数不能使用睡眠函数原因 ###
+### 在中断处理函数不能使用睡眠函数原因
 主要原因如下：
 
 1. 中断是一种紧急事务，中断处理函数要求快
