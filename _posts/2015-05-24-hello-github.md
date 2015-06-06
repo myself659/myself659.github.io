@@ -1,9 +1,9 @@
 ---
 layout: post
-title: "hello github"
-categories:旅程
+title: hello github
+categories:
 - 
-tags:开始
+tags:blog
 - 
 
 
