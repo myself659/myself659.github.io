@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 从0到1的读后感
-categories:
+categories:说说写写
 tags:交流分享
 
 ---
