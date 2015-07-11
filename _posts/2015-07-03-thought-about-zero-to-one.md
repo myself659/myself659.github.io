@@ -1,8 +1,8 @@
 ---
 layout: post
 title: 从0到1的读后感
-categories:说说写写
-tags:交流分享
+categories:
+tags:
 
 ---
 ###  启发思考
