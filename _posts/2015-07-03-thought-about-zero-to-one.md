@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 从0到1的读后感
+title: 读书笔记：《从0到1---开启商业与未来的秘密》
 categories:
 tags:
 
