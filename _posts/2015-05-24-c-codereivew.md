@@ -1,8 +1,8 @@
 ---
 layout: post
 title: C语言代码 review的总结
-categories:
-tags:
+categories: C/C++
+tags: 代码review
 ---
 
 代码review是保证代码质量在项目开发及代码修改中一项重要的环节，下面就代码reiew的一些总结，总结一些代码的review的关注点，提高代码review的效率与效果，提前发现问题，降低后期的测试成本，以及避免软件上线或交付出问题导致的经济损失和恶劣影响（ps:对每一行代码保持敬畏之心）。

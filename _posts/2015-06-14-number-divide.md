@@ -1,10 +1,8 @@
 ---
 layout: post
 title: "实现无符号整型数的分解"
-categories:
-- 
-tags:
-- 
+categories: C/C++
+tags: C/C++
 
 
 ---
