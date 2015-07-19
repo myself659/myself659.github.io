@@ -1,8 +1,8 @@
 ---
 layout: post
 title: ping不通常见原因总结
-categories:
-tags:
+categories: Network
+tags: Ping 
 
 ---
 
