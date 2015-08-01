@@ -121,5 +121,14 @@ netstat -anp |grep 'tcp\|udp' | awk '{print $5}' | sed s/::ffff:// | cut -d: -f1
 8 0.0.0.0
 
 
+#### 6.查看80端口的连接，并排序 ####
+命令：netstat -ant | grep “:80″ | grep ESTABLISHED | awk ‘{printf “%s %s\n”,$5,$6}’ | sort
+
+说明：
+不解释了，你懂的
+
+示例：
+
+
 
 未完，待续
