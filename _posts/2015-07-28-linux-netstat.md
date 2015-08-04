@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Linux netstat命令基础与使用
+title: Linux netstat 应用示例
 categories: Linux 
 tags: shell, network
  

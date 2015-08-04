@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Hello Github
-categories: 说说写写
+categories: 闲谈乱扯
 tags: 交流分享
 
 ---

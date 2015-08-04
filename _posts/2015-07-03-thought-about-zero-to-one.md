@@ -1,8 +1,8 @@
 ---
 layout: post
 title: 读书笔记：《从0到1---开启商业与未来的秘密》
-categories: 说说写写
-tags: 交流分享
+categories: 闲谈乱扯
+tags: 读书笔记
 
 ---
 ###  启发思考
