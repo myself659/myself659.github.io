@@ -26,7 +26,7 @@ min = b \^ ((a \^ b) &-(a<b));
 
 分两种情况分析如下：
 
-当a<b时,-(a<b)为True，表达式等价于min= b ^(a ^ b) = a
+当a<b时,-(a<b)为True，表达式等价于min= b ^(a ^ b) = a;
 当a>=b时，-（a < b）为False，表达式等价于min= b ^ 0 = b
 
 故可以宏定义如下：
