@@ -93,7 +93,7 @@ http {
         fastcgi_busy_buffers_size 128k;
         fastcgi_temp_file_write_size 128k;
 
-\#Gzip Compression
+
         gzip on;
         gzip_buffers 16 8k;
         gzip_comp_level 6;
@@ -110,7 +110,7 @@ http {
             image/x-icon;
         gzip_disable  "msie6";
 
-\#If you have a lot of static files to serve through Nginx then caching of the files' metadata (not the actual files' contents) can save some latency.
+
         open_file_cache max=1000 inactive=20s;
         open_file_cache_valid 30s;
         open_file_cache_min_uses 2;
