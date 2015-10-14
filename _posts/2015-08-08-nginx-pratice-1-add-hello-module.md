@@ -1,8 +1,8 @@
 ---
 layout: post
 title: nginx实践：添加自定义模块hello
-categories:nginx
-tags:nginx
+categories: nginx
+tags: nginx
 
 ---
 nginx是一个值得学习与研究的开源代码，写这篇文章主要目的是让自己能够能够从最简单的任务开始，通过写作促进自己一步一步地深入学习与分析nginx。本文是这个系列的第一篇，主要是记录自己实现一个自定义的模块hello的过程。
@@ -15,6 +15,7 @@ root@localhost github]# tar zxf
 
 ### 2. 准备文件与代码 ###
 在nginx解压目录下，添加如下文件：
+```
 >[root@localhost nginx-1.8.0]# tree | more
 .
 |-- **addon**
@@ -25,9 +26,9 @@ root@localhost github]# tar zxf
 |   |-- cc
 |   |   |-- acc
 |   |   |-- bcc
-
+```
 新增文件分析参考nginx-hello
-
+```
 [root@localhost nginx-1.8.0]# grep -r  ngx_addon_name  /share/github/nginx-1.8.0
 /share/github/nginx-1.8.0/auto/modules:            echo " + $ngx_addon_name was configured"
 /share/github/nginx-1.8.0/addon/hello/config:ngx_addon_name=ngx_http_hello_module
@@ -36,7 +37,7 @@ root@localhost github]# tar zxf
 [root@localhost nginx-1.8.0]# grep -r  add-module   /share/github/nginx-1.8.0
 /share/github/nginx-1.8.0/auto/options:        --add-module=*)                  NGX_ADDONS="$NGX_ADDONS $value" ;;
 /share/github/nginx-1.8.0/auto/options:  --add-module=PATH                  enable an external module
-
+```
 
 ### 3. 编译与安装 ###
 编译三步走 
@@ -49,6 +50,7 @@ root@localhost github]# tar zxf
 
 ### 4.测试 ###
 修改配置：
+```
 [root@localhost ~]# cat   /usr/local/nginx/conf/nginx.conf
 user www www;
 worker_processes 1;
@@ -139,9 +141,9 @@ http {
 ##########################vhost#####################################
         include vhost/*.conf;
 }
-
+```
 过程如下：
->
+```
 [root@localhost ~]# nginx -t
 nginx: the configuration file /usr/local/nginx/conf/nginx.conf syntax is ok
 nginx: configuration file /usr/local/nginx/conf/nginx.conf test is successful
@@ -149,6 +151,7 @@ nginx: configuration file /usr/local/nginx/conf/nginx.conf test is successful
 Restarting nginx (via systemctl):  [  OK  ]
 [root@localhost nginx-1.8.0]# curl http://localhost/hello/
 hello nginx!
+```
 另外也可以通过浏览器访问：http://serverip/hello
 
 如果出现不能打开，检查一下iptable 设置，在/etc/sysconfig/iptables增加下面一条配置，允许80端口通过：
