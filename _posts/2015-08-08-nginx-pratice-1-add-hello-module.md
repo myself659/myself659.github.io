@@ -56,99 +56,14 @@ root@localhost github]# tar zxf
 ```
 
 ### 4.测试
-修改配置：
+在/usr/local/nginx/conf/nginx.conf文件的http配置项下，添加如下内容：
+
 ```
-[root@localhost ~]# cat   /usr/local/nginx/conf/nginx.conf
-user www www;
-worker_processes 1;
-worker_cpu_affinity 10 ;
-
-error_log /home/wwwlogs/error_nginx.log crit;
-pid /var/run/nginx.pid;
-worker_rlimit_nofile 51200;
-
-events {
-        use epoll;
-        worker_connections 51200;
-        }
-
-http {
-        include mime.types;
-        default_type application/octet-stream;
-        server_names_hash_bucket_size 128;
-        client_header_buffer_size 32k;
-        large_client_header_buffers 4 32k;
-        client_max_body_size 50m;
-        sendfile on;
-        tcp_nopush on;
-        keepalive_timeout 120;
-        server_tokens off;
-        tcp_nodelay on;
-
-        fastcgi_connect_timeout 300;
-        fastcgi_send_timeout 300;
-        fastcgi_read_timeout 300;
-        fastcgi_buffer_size 64k;
-        fastcgi_buffers 4 64k;
-        fastcgi_busy_buffers_size 128k;
-        fastcgi_temp_file_write_size 128k;
-
-
-        gzip on;
-        gzip_buffers 16 8k;
-        gzip_comp_level 6;
-        gzip_http_version 1.1;
-        gzip_min_length 256;
-        gzip_proxied any;
-        gzip_vary on;
-        gzip_types
-            text/xml application/xml application/atom+xml application/rss+xml application/xhtml+xml image/svg+xml
-            text/javascript application/javascript application/x-javascript
-            text/x-json application/json application/x-web-app-manifest+json
-            text/css text/plain text/x-component
-            font/opentype application/x-font-ttf application/vnd.ms-fontobject
-            image/x-icon;
-        gzip_disable  "msie6";
-
-
-        open_file_cache max=1000 inactive=20s;
-        open_file_cache_valid 30s;
-        open_file_cache_min_uses 2;
-        open_file_cache_errors on;
-
-
-        server {
-        listen 80;
-        server_name _;
-        access_log /home/wwwlogs/access_nginx.log combined;
-        root /home/wwwroot/default;
-        index index.html index.php;
-        if ( $query_string ~* ".*[\;'\<\>].*" ){
-                return 404;
-                }
-
-        location ~ .*\.(php|php5)?$ {
-                #fastcgi_pass remote_php_ip:9000;
-                fastcgi_pass unix:/dev/shm/php-cgi.sock;
-                fastcgi_index index.php;
-                include fastcgi.conf;
-                }
-
-        location ~ .*\.(gif|jpg|jpeg|png|bmp|swf|flv|ico)$ {
-                expires 30d;
-                }
-                location =/hello{
-                        hello;
-                }
-        location ~ .*\.(js|css)?$ {
-                expires 7d;
-                }
-        }
-
-
-        include vhost/*.conf;
-}
+location =/hello{
+                    hello;
+            }
 ```
+
 
 过程如下：
 
