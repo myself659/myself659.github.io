@@ -16,7 +16,7 @@ root@localhost github]# tar zxf
 ### 2. 准备文件与代码 ###
 在nginx解压目录下，添加如下文件：
 ```
->[root@localhost nginx-1.8.0]# tree | more
+[root@localhost nginx-1.8.0]# tree | more
 .
 |-- **addon**
 |   `-- **hello**
