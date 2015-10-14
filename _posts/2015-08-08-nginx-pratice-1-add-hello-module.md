@@ -9,9 +9,10 @@ nginx是一个值得学习与研究的开源代码，写这篇文章主要目的
 
 ### 1. 下载源码 ###
 下载nginx 1.8.0 源代码
->root@localhost github]# wget  http://nginx.org/download/nginx-1.8.0.tar.gz
+```
+root@localhost github]# wget  http://nginx.org/download/nginx-1.8.0.tar.gz
 root@localhost github]# tar zxf  
->
+```
 
 ### 2. 准备文件与代码 ###
 在nginx解压目录下，添加如下文件：
@@ -27,7 +28,9 @@ root@localhost github]# tar zxf
 |   |   |-- acc
 |   |   |-- bcc
 ```
+
 新增文件分析参考nginx-hello
+
 ```
 [root@localhost nginx-1.8.0]# grep -r  ngx_addon_name  /share/github/nginx-1.8.0
 /share/github/nginx-1.8.0/auto/modules:            echo " + $ngx_addon_name was configured"
