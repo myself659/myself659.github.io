@@ -26,7 +26,7 @@ End with a line saying just "end".
 (gdb) 
 ```
 
-### 3. 设备gdb log信息输出到指定文件
+### 3. 设置gdb log信息输出到指定文件
 ```
 (gdb) set logging file genindex.txt 
 (gdb) set logging on
