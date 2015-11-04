@@ -39,7 +39,9 @@ Copying output to genindex.txt.
 ```
 (gdb) run
 ```
+
 有输出信息如下：
+
 ```
 ...
 Breakpoint 1, GenVedioSeekPoint (pstPktHead=0x7fffffdfdcff, offset=71678) at GenIndex.cpp:140
