@@ -1,6 +1,6 @@
 ---
 layout: post
-title: gdb断点命令示例
+title: gdb自定义断点操作
 categories: tool
 tags: gdb
 
@@ -15,7 +15,7 @@ Breakpoint 1 at 0x402e58: file GenIndex.cpp, line 140.
 (gdb) 
 ```
 
-### 2. 利用commad自定断点操作
+### 2. 利用commad自定义断点操作
 ```
 (gdb) command  1
 Type commands for breakpoint(s) 1, one per line.
