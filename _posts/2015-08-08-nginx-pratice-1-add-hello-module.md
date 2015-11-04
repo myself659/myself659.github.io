@@ -80,6 +80,7 @@ hello nginx!
 另外也可以通过浏览器访问：http://serverip/hello
 
 如果出现不能打开，检查一下iptable 设置，在/etc/sysconfig/iptables增加下面一条配置，允许80端口通过：
+
 ```
 -A INPUT -p tcp -m state --state NEW -m tcp --dport 80 -j ACCEPT 
 ```
