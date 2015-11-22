@@ -39,7 +39,7 @@ netstat 命令用于显示各种网络相关信息，如网络连接，路由表
 说明：显示处于listen状态的tcp连接，并显示对应进程pid
 
 示例：
-
+```
  [root@localhost default]# netstat  -tlnp 
 
 Active Internet connections (only servers)
@@ -63,17 +63,18 @@ tcp        0      0 0.0.0.0:80                  0.0.0.0:*                   LIST
 tcp        0      0 :::21                       :::*                        LISTEN      1284/pure-ftpd 
 
 tcp        0      0 :::22                       :::*                        LISTEN      1022/sshd    
-
+```
 #### 2. 显示网关地址 ####
 命令： netstat  -rn  | grep  UG  | tr  -s " "  | cut  -d  " "  -f2
 
 说明：先显示路由信息，找出网关所对应表项，删除多余的空格并显示第二个表项field 
 
 示例：
-
+```
 [root@localhost default]# netstat  -rn   | grep  UG  | tr -s  " " | cut -d  " " -f2
 
 192.168.20.1
+```
 
 #### 3.统计tcp各种连接状态的个数 ####
 命令：
@@ -81,12 +82,12 @@ netstat -n | awk '/^tcp/ {++S[$NF]} END {for(a in S) print a, S[a]}
 说明：显示连接信息，通过awk统计各tcp状态连接个数
 
 示例：
-
+```
 [root@localhost default]#netstat -n | awk '/^tcp/ {++S[$NF]} END {for(a in S) print a, S[a]}
 
 ESTABLISHED 516
 TIME_WAIT 14
-
+```
 
 #### 4.显示所有tcp监听端口 ####
 命令：
@@ -94,7 +95,7 @@ netstat -lnt | awk '{print $4}' | cut -f2 -d: | grep -o '[0-9]*'
 说明：
 
 示例：显示处于listen状态的tcp连接，打印每行第4个域元素，并以:作为该域的内部分隔符，同时显示其中第二个域元素，对结果进行过滤，只显示数字部分
-
+```
 [root@localhost default]# netstat -lnt  | awk '{print $4}' | cut -f2 -d: | grep -o '[0-9]*'
 
 21
@@ -105,6 +106,7 @@ netstat -lnt | awk '{print $4}' | cut -f2 -d: | grep -o '[0-9]*'
 11211
 80
 
+```
 
 #### 5.统计每个IP连接数 ####
 命令：
@@ -113,13 +115,13 @@ netstat -anp |grep 'tcp\|udp' | awk '{print $5}' | sed s/::ffff:// | cut -d: -f1
 
 
 示例：
-
+```
 [root@localhost default]# netstat -anp |grep 'tcp\|udp' | awk '{print $5}' | sed s/::ffff:// | cut -d: -f1 | sort | uniq -c | sort -n
 
 3 192.168.70.36
 
 8 0.0.0.0
-
+```
 
 #### 6.查看80端口的连接，并排序 ####
 命令：netstat -ant | grep “:80″ | grep ESTABLISHED | awk ‘{printf “%s %s\n”,$5,$6}’ | sort
