@@ -35,7 +35,11 @@ netstat 命令用于显示各种网络相关信息，如网络连接，路由表
 ### 应用实例 
 
 #### 1. 选项组合应用 
-命令： netstat  -tlnp
+命令：
+
+```
+netstat  -tlnp
+```
 
 说明：显示处于listen状态的tcp连接，并显示对应进程pid
 
@@ -69,6 +73,7 @@ tcp        0      0 :::22                       :::*                        LIST
 
 #### 2. 显示网关地址 
 命令：
+
 ``` 
 netstat  -rn  | grep  UG  | tr  -s " "  | cut  -d  " "  -f2
 ```
@@ -85,7 +90,11 @@ netstat  -rn  | grep  UG  | tr  -s " "  | cut  -d  " "  -f2
 
 #### 3.统计tcp各种连接状态的个数 
 命令：
+
+```
 netstat -n | awk '/^tcp/ {++S[$NF]} END {for(a in S) print a, S[a]}
+```
+
 说明：显示连接信息，通过awk统计各tcp状态连接个数
 
 示例：
@@ -99,6 +108,7 @@ TIME_WAIT 14
 
 #### 4.显示所有tcp监听端口 
 命令：
+
 ```
 netstat -lnt | awk '{print $4}' | cut -f2 -d: | grep -o '[0-9]*'
 ```
