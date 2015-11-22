@@ -17,6 +17,7 @@ tags: Kernel
 4. cond\_resched
 5. might\_resched
 >
+
 ### sleep函数
 >
 1. msleep
@@ -25,6 +26,7 @@ tags: Kernel
 4. osal_usleep
 5. might_sleep
 >
+
 ### 取信号量函数
 >
 1. down
@@ -37,7 +39,8 @@ tags: Kernel
 8. wait\_for\_completion\_timeout
 9. wait\_for\_completion\_interruptible\_timeout
 >
-### kmallo相关函数含有标志GFP_KERNEL
+
+### kmalloc相关函数含有标志GFP_KERNEL
 >
 1. kmalloc
 2. kzalloc
