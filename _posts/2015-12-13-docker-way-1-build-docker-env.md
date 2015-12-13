@@ -14,6 +14,7 @@ docker要求linux内核版本3.12以上，作为常用linux2.26.32版本，虽�
 在未正确配置linux内核会出现以下一些错误：
 
 1. docker启动过程中iptables命令执行失败，原因是 iptables模块没有配置
+
 ```
 [root@localhost ~]# docker -d
 INFO[0000] Listening for HTTP on unix (/var/run/docker.sock) 
@@ -26,6 +27,7 @@ You have new mail in /var/spool/mail/root
 ```
 
 2. cgroup创建失败，具体参考[stackoverflow](http://stackoverflow.com/questions/25183063/docker-on-rhel-6-cgroup-mounting-failing)
+
 ```
 [root@localhost ~]# service docker start 
 Starting cgconfig service: Error: cannot mount memory to /cgroup/memory: No such file or directory
@@ -34,6 +36,7 @@ Failed to parse /etc/cgconfig.conf or /etc/cgconfig.d[FAILED]
 ```
 
 具体内核升级过程参考如下：
+
 ```
 [root@localhost linux-4.1.13]# cp /share/github/docker-way/env/linux-4.1.3-configfordocker   .config 
 [root@localhost linux-4.1.13]# sh  -c   'yes  "" | make oldconfig'
@@ -64,6 +67,7 @@ Linux localhost.localdomain 4.1.13 #1 SMP Sat Dec 5 11:17:50 CST 2015 x86_64 x86
 ```
 [root@localhost ~]# yum   -y   install docker-io  
 ```
+
 安装完成后，检查docker是否能够正确启动
 
 ```
