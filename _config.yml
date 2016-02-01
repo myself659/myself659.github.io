@@ -2,13 +2,13 @@
 permalink: /:title/
 url: http://myself659.github.io
 highlighter: pygments
-name: 创智玩家的网络黑板报
-description: 创智玩家 | 与爱相伴，与智慧共舞，创造自己的精彩！
-author: 创智玩家 
+name: 米罗的网络黑板报
+description: 米罗 | 与爱相伴，与智慧共舞，创造自己的精彩！
+author: 米罗 
 email: myself659@163.com
 duoshuo: myself659
 weibo: myself659
 hub: myself659
 safe: true
-paginate: 100
+paginate: 50
 about: "拖延症患者。"
