@@ -6,7 +6,7 @@ tags: docker
 
 ---
 
-docker可以说是去年最热的技术，也是业界大谈特谈的技术，到了今年有很多公司已经将docker应用于自己的生产环境。作为一名程序员应该与时俱进，学习新技术，不断地提高自己。
+docker可以说是去年最热的技术，也是业界大谈特谈的技术，到了今年有很多公司已经将docker应用于自己的生产环境。Docker已经从一个工具转化成平台，小生态圈。作为一名程序员应该与时俱进，学习新技术，不断地提高自己。
 
 ### 升级内核
 docker要求linux内核版本3.12以上，作为常用linux2.26.32版本，虽然也可以安装docker，但是有一些特性不支持，所以第一步就是升级内核。个人选择最新的长期维护版本升级linux4.13,内核升级最关键的一件事情就是配置内核，关于内核支持docker的内核配置文件，如果不想自己动手配置内核，可以参考[Linux-4.13-configfordocker](https://github.com/myself659/docker-way/blob/master/env/linux-4.1.3-configfordocker);
