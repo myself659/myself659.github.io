@@ -71,6 +71,7 @@ From                To                  Syms Read   Shared Object Library
 3. 考虑部署需求
 4. 考虑监控需求
 5. 考虑升级问题
+6. 考虑团队合作
 
 
 
