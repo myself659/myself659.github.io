@@ -11,7 +11,7 @@ comments: no
 * 伪Geek，程序猿一枚，入道不短，专业不精，在猿类进化的道路上，还有很长的路要走 
 * 玩过嵌入式，通信行业搬过砖，现专注于后端打杂
 * 爱学习新技术更注重夯实基础
-* 看过以下但不仅限于以下列出项目的源码：Linux Kernel，redis，nginx， nginx-rtmp等
+* 看过以下但不仅限于以下列出项目的源码：Linux Kernel，redis，nginx， nginx-rtmp，ffmpeg等
 
 
 ### 博客说明
