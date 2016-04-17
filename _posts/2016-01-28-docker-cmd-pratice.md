@@ -1,6 +1,6 @@
 ---
 layout: post
-title: docker学习：docker命令实践
+title: docker学习：docker image命令实践
 categories: docker
 tags: docker
 
