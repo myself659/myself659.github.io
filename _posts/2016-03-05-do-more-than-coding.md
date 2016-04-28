@@ -16,13 +16,13 @@ tags: 职业生涯
 接着就自己开始干，了解librtmp实现，动手写一个利用librtmp支持epoll的rtmpserver。
 在调试过程出现rtmp握手失败的问题，初看定位无果的情况下，我修改了makefile，生成调试的符号表，同时打开调试开关。这些弄好之后，试了一下，没有我期待的符号表与调试信息。
 
-于是我怀疑自己对makefile是否正确。重新学习makefile与编译的一些知识还是无果，觉得makefile修改是正确的。这时候灵光一现，看看进程加载的是什么库
+于是我怀疑自己对makefile是否正确。重新学习makefile与编译的一些知识还是无果，觉得makefile修改是正确的。这时候灵光一现，看看进程加载的是哪些lib
 
 ```
 (gdb) info sharedlibrary 
 From                To                  Syms Read   Shared Object Library
 0x0000003a74600b00  0x0000003a746198db  Yes (*)     /lib64/ld-linux-x86-64.so.2
-0x00007ffff7dd57e0  0x00007ffff7de4358  Yes (*)     /usr/local/lib/librtmp.so.1  #引用的是lib
+0x00007ffff7dd57e0  0x00007ffff7de4358  Yes (*)     /usr/local/lib/librtmp.so.1  #加载的librtmp库
 0x0000003c39a18340  0x0000003c39a53558  Yes (*)     /usr/lib64/libssl.so.10
 0x0000003c39669cc0  0x0000003c3975dbe8  Yes (*)     /usr/lib64/libcrypto.so.10
 0x0000003a76602120  0x0000003a7660d3a8  Yes (*)     /lib64/libz.so.1
