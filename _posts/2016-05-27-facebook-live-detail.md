@@ -13,9 +13,10 @@ tags: 直播
 
 
 ### 解决并发问题 
+
 1. 分发架构  
 采用Live stream server， origin server， edge server 三层架构；如下图如示：
-![分发架构图](image/facebook live arch.png)
+![分发架构图](../image/facebook live arch.png)
 
 
 
@@ -24,9 +25,11 @@ tags: 直播
 2. 请求合并应对高并发 
 采用的CDN方案，应对一般数量级的播放是没有问题，但是facebook上有很多名人与网红，他们每个人都有几百万个粉丝，这就要求facebook  live 直播系统能够处理超过一亿人同时播放的能力。假如一个名人的直播有100万粉丝同时观看，edge server缓存命中率为98%，那么未命中用户为2万，这2万用户回源到origin server甚至回源到Live stream server，服务器压力可想而知，这不是仅仅是2W连接，而是2W视频播放，带宽，cpu都是一个很大的考验。以带宽为例，用数字说话；
 假设一个HLS切片为3S，高清视频码率为1800K bps，那么一秒带宽需求为：
+
 ```
 20K /3 *1800K b/s * 1s =  20*600 Mb = 12 Gb
 ```
+
 
 每秒的带宽超过10Gb，服务器网卡高配也才10Gb。
 
