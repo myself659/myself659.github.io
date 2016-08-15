@@ -1,7 +1,8 @@
-﻿markdown: rdiscount
+﻿#markdown: rdiscount
 permalink: /:title/
 url: http://myself659.github.io
-highlighter: pygments
+#highlighter: pygments
+highlighter: rouge
 name: 创智玩家的网络黑板报
 description: 创智玩家 | 与爱相伴，与智慧共舞，创造自己的精彩！
 author: 创智玩家 
