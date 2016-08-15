@@ -54,6 +54,7 @@ tags: 直播
 
 ### 实现RTMP
 选择基于nginx rtmp改造，并开发rtmp proxy，采用nginx rtmp有如下好处：
+
 1. nginx拥有一个良好的技术生态 
 2. nginx的多进程模型能够充分分挥多核cpu的能力 
 3. nginx rtmp已经有大量的应用，基本功能可靠
