@@ -112,6 +112,7 @@ tags: 架构设计
 ![用户状态系统设计-3](../image/user-state-flow-3.png)
 
 从上图可知主要方案：
+
 1. 将异步消息转发业务拆分出来由Forward服务器来完成 
 2. 将RouterProxy跨IDC消息转发业务拆分出来，由ForwardProxy服务器来完成
 
