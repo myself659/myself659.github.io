@@ -53,7 +53,7 @@ tags: 架构设计
 
 用户状态数据存储设计，如下图所示：
 
-![用户状态数据存储设计](./image/user-state-router-data.png)
+![用户状态数据存储设计](../image/user-state-router-data.png)
 
 
 1. 内存消耗 
