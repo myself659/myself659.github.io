@@ -10,17 +10,17 @@ tags:  Go
 
 根据同步方式不同，channel有两种模式：
 
-1. 同步模式,形式如下：
+1、同步模式,形式如下：
 
-```
+{% highlight c linenos %}
 ch := make(chan int)
-```
+{%endhighlight c %}
 
-2. 队列模式，形式如下：  
+2、队列模式，形式如下：  
 
-```
+{% highlight c linenos %}
 ch := make(chan int, 10)
-```
+{%endhighlight c %}
 
 根据数据方向流不同，channel类型可以有以下三种模式：
 
