@@ -97,9 +97,11 @@ func (self *ChanBroker) PubContent(c Content) {
 #### 问题1：不支持扩展 
 
 **问题描述**：
+
 在一个Broker goroutine内完成注册与去注册以及内容发布推送给Subscriber，无法控制Subscriber数量，且不支持扩展
 
 **解决思路**：
+
 主要修改如下：
 
 1. 增加Pusher goroutine，Pusher goroutine支持动态创建，由Pusher goroutine完成具体内容的推送
@@ -108,6 +110,7 @@ func (self *ChanBroker) PubContent(c Content) {
 #### 问题2： 推送内容到Subscriber存在Deadlock风险
 
 **问题描述**：
+
 例如一个Subscriber不能正确从通道接收订阅内容，那么Broker会阻塞在上述代码的34行，与此同时其他Subscriber都会阻塞，极有可能引起级联阻塞，影响恶劣
 
 **解决思路**：
@@ -286,6 +289,7 @@ case sub := <-self.UnRegSub:
 #### 问题2：不靠谱的exit标记
 
 **问题描述**：
+
 exit标记不能同步goroutines对Stop通道的写操作与关闭操作，具体分析如下：
 
 写操作代码如下：
@@ -338,6 +342,7 @@ func (self *ChanBroker) RegSubscriber(size uint) Subscriber {
 #### 问题3：不能保证Subscribers有序的接收消息
 
 **问题描述**：  
+
 版本2中每接收一个Content都会启动一个Push goroutine,这些Push goroutine执行是无序执行的，有序的内容推送需求遇上了无序的goroutine，自然有问题了
 
 **解决思路**： 
@@ -685,6 +690,7 @@ func (self *ChanBroker) PubContent(c Content) error {
 #### 问题2：锁问题 
 
 **问题描述：** 
+
 1. 每个Pusher goroutine持有读锁，一定情况下会成为性能的瓶颈
 
 **解决方案：**
