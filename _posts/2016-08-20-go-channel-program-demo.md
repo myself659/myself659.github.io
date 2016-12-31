@@ -5,6 +5,7 @@ categories:  Go
 tags:  Go， channel
 ---
 
+本篇以[ChanBroker](https://github.com/myself659/ChanBroker)版本迭代过程，总结常见Channel编程问题
 
 ### 简介 
 
@@ -707,7 +708,6 @@ package ChanBroker
 import (
     "container/list"
     "errors"
-    "fmt"
     "time"
 )
 
@@ -716,48 +716,51 @@ type Content interface{}
 type Subscriber chan Content
 
 type ChanBroker struct {
-    RegSub      chan Subscriber
-    UnRegSub    chan Subscriber
-    Contents    chan Content
-    Stop        chan bool
-    Subscribers map[Subscriber]*list.List
+    regSub      chan Subscriber
+    unRegSub    chan Subscriber
+    contents    chan Content
+    stop        chan bool
+    subscribers map[Subscriber]*list.List
     timeout     time.Duration
     cachenum    uint
-    timerchan   chan time.Time
+    timerChan   <-chan time.Time
 }
 
 var ErrBrokerExit error = errors.New("ChanBroker exit")
 var ErrPublishTimeOut error = errors.New("ChanBroker Pulish Time out")
 var ErrRegTimeOut error = errors.New("ChanBroker Reg Time out")
-var ErrStopTimeOut error = errors.New("ChanBroker Stop Publish Time out")
+var ErrStopPublishTimeOut error = errors.New("ChanBroker Stop Publish Time out")
 
 func NewChanBroker(timeout time.Duration) *ChanBroker {
-    ChanBroker := new(ChanBroker)
-    ChanBroker.RegSub = make(chan Subscriber)
-    ChanBroker.UnRegSub = make(chan Subscriber)
-    ChanBroker.Contents = make(chan Content)
-    ChanBroker.Stop = make(chan bool)
+    Broker := new(ChanBroker)
+    Broker.regSub = make(chan Subscriber)
+    Broker.unRegSub = make(chan Subscriber)
+    Broker.contents = make(chan Content)
+    Broker.stop = make(chan bool, 1)
 
-    ChanBroker.Subscribers = make(map[Subscriber]*list.List)
-    ChanBroker.timeout = timeout
-    ChanBroker.cachenum = 0
-    ChanBroker.timerchan = nil
-    ChanBroker.run()
+    Broker.subscribers = make(map[Subscriber]*list.List)
+    Broker.timeout = timeout
+    Broker.cachenum = 0
+    Broker.timerChan = nil
+    Broker.run()
 
-    return ChanBroker
+    return Broker
 }
 
 func (self *ChanBroker) onContentPush(content Content) {
-    for sub, clist := range self.Subscribers {
-
-        for elem := clist.Front(); elem != nil; elem = elem.Next() {
+    for sub, clist := range self.subscribers {
+        loop := true
+        for next := clist.Front(); next != nil && loop == true; {
+            cur := next
+            next = cur.Next()
             select {
-            case sub <- elem.Value:
+            case sub <- cur.Value:
                 if self.cachenum > 0 {
                     self.cachenum--
                 }
+                clist.Remove(cur)
             default:
-                break // block
+                loop = false
             }
         }
 
@@ -766,42 +769,45 @@ func (self *ChanBroker) onContentPush(content Content) {
             select {
             case sub <- content:
             default:
-                contentList.PushBack(content)
-                cachenum++
+                clist.PushBack(content)
+                self.cachenum++
             }
         } else {
-            contentList.PushBack(content)
-            cachenum++
+            clist.PushBack(content)
+            self.cachenum++
         }
     }
 
-    if cachenum > 0 && self.timerchan == nil {
+    if self.cachenum > 0 && self.timerChan == nil {
         timer := time.NewTimer(self.timeout)
-        self.timerchan = timer.C
+        self.timerChan = timer.C
     }
 
 }
 
 func (self *ChanBroker) onTimerPush() {
-    for sub, clist := range self.Subscribers {
-
-        for elem := clist.Front(); elem != nil; elem = elem.Next() {
+    for sub, clist := range self.subscribers {
+        loop := true
+        for next := clist.Front(); next != nil && loop == true; {
+            cur := next
+            next = cur.Next()
             select {
-            case sub <- elem.Value:
+            case sub <- cur.Value:
                 if self.cachenum > 0 {
                     self.cachenum--
                 }
+                clist.Remove(cur)
             default:
-                break // block
+                loop = false
             }
         }
     }
 
     if self.cachenum > 0 {
         timer := time.NewTimer(self.timeout)
-        self.timerchan = timer.C
+        self.timerChan = timer.C
     } else {
-        self.timerchan = nil
+        self.timerChan = nil
     }
 }
 
@@ -810,28 +816,38 @@ func (self *ChanBroker) run() {
     go func() { // Broker Goroutine
         for {
             select {
-            case content := <-self.Contents:
-                onContentPush(content)
-            case <-self.timerchan:
-                onTimerPush()
-            case sub := <-self.RegSub:
+            case content := <-self.contents:
+                self.onContentPush(content)
+
+            case <-self.timerChan:
+                self.onTimerPush()
+
+            case sub := <-self.regSub:
                 clist := list.New()
-                self.Subscribers[sub] = clist
+                self.subscribers[sub] = clist
 
-            case sub := <-self.UnRegSub:
-                _, ok := self.Subscribers[sub]
+            case sub := <-self.unRegSub:
+                _, ok := self.subscribers[sub]
                 if ok {
-                    delete(self.Subscribers, sub)
+                    delete(self.subscribers, sub)
                     close(sub)
                 }
 
-            case <-self.Stop:
-                for sub := range self.Subscribers {
-                    delete(self.Subscribers, sub)
-                    close(sub)
+            case _, ok := <-self.stop:
+                if ok == true {
+                    close(self.stop)
+                } else {
+                    if self.cachenum == 0 {
+                        return
+                    }
                 }
-
-                return // exit goroutine
+                self.onTimerPush()
+                for sub, clist := range self.subscribers {
+                    if clist.Len() == 0 {
+                        delete(self.subscribers, sub)
+                        close(sub)
+                    }
+                }
             }
         }
     }()
@@ -839,10 +855,13 @@ func (self *ChanBroker) run() {
 
 func (self *ChanBroker) RegSubscriber(size uint) (Subscriber, error) {
     sub := make(Subscriber, size)
+
     select {
+
     case <-time.After(self.timeout):
         return nil, ErrRegTimeOut
-    case self.RegSub <- sub:
+
+    case self.regSub <- sub:
         return sub, nil
     }
 
@@ -852,7 +871,8 @@ func (self *ChanBroker) UnRegSubscriber(sub Subscriber) {
     select {
     case <-time.After(self.timeout):
         return
-    case self.UnRegSub <- sub:
+
+    case self.unRegSub <- sub:
         return
     }
 
@@ -860,10 +880,10 @@ func (self *ChanBroker) UnRegSubscriber(sub Subscriber) {
 
 func (self *ChanBroker) StopPublish() error {
     select {
-    case self.Stop <- true:
+    case self.stop <- true:
         return nil
     case <-time.After(self.timeout):
-        return ErrStopTimeOut
+        return ErrStopPublishTimeOut
     }
 }
 
@@ -871,7 +891,8 @@ func (self *ChanBroker) PubContent(c Content) error {
     select {
     case <-time.After(self.timeout):
         return ErrPublishTimeOut
-    case self.Contents <- c:
+
+    case self.contents <- c:
         return nil
     }
 
