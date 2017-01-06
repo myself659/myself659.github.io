@@ -2,7 +2,7 @@
 layout: post
 title: 爬虫Tip系列：利用PPPoE突破单个IP的限制 
 categories: Python
-tags: Python, Scrapy
+tags: Python  Scrapy
 ---
 
 最近从一个网站上爬取大量数据，调试好基本代码准备大干一场，爬虫运行一个小时左右就失败: 被网站检查出来单个IP访问此数过多，被限制访问。 

@@ -2,7 +2,7 @@
 layout: post
 title: gdb自定义断点操作
 categories: tool
-tags: gdb
+tags: GDB
 
 ---
 

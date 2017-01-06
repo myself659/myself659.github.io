@@ -2,7 +2,7 @@
 layout: post
 title: Guru：Golang的source insight 
 categories:  Go
-tags:  Go， tools
+tags:  Go tools
 --- 
 
 工欲善其事，必先利其器; 强烈推荐一下Guru这款工具，废话不多说，一图胜千言：

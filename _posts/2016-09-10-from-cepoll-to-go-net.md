@@ -2,7 +2,7 @@
 layout: post
 title: 从C语言epoll编程到go net实现分析
 categories:  Go
-tags:  Go， network， epoll
+tags:  Go network epoll
 ---  
 
 ## 说明 
@@ -280,7 +280,7 @@ func handleRequest(conn net.Conn) {
     // Close the connection when you're done with it.
     conn.Close()
 }
-{%endhighlight Go %}
+{%endhighlight c %}
 
 
 ## 对比 

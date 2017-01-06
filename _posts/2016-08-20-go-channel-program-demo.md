@@ -2,7 +2,7 @@
 layout: post
 title: Go channel 编程篇
 categories:  Go
-tags:  Go， channel
+tags:  Go  channel
 ---
 
 本篇以[ChanBroker](https://github.com/myself659/ChanBroker)版本迭代过程，总结常见Channel编程问题
