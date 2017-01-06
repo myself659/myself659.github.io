@@ -296,16 +296,14 @@ func handleRequest(conn net.Conn) {
 
 ### goroutine调度时机 
 
-一般情况有以下四种情况进行调度：
+一般在以下四种情况下进行goroutine调度：
+
 1. channel收发
 2. 显示调用go函数 
 3. 阻塞的系统调用，如read,write
 4. GC 
 
-5. network input
-sleeping
-channel operations or
-blocking on primitives in the sync package.
+
 
 
 
@@ -476,7 +474,8 @@ func (fd *netFD) accept() (netfd *netFD, err error) {
 
 #### 读处理
 
-先从为读入口代码开始
+先从为Read代码开始
+
 ```
 
 func (fd *netFD) Read(p []byte) (n int, err error) {
