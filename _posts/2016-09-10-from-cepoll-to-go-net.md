@@ -335,6 +335,7 @@ func netpollinit() {
 #### 将fd加入epoll 
  
 对应c语言版本的epoll_op，go语言版本在初始化在下面的代码中完成:
+
 ```
 func netpollopen(fd uintptr, pd *pollDesc) int32 {
     var ev epollevent
