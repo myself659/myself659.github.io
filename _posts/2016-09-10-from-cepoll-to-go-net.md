@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Guru：从C语言epoll编程到go net实现分析
+title: 从C语言epoll编程到go net实现分析
 categories:  Go
 tags:  Go， network， epoll
 ---  
@@ -226,7 +226,7 @@ typedef struct
 
 ## go 编程示例
  
-{% highlight Go linenos %} 
+{% highlight c linenos %} 
 package main
 
 import (
