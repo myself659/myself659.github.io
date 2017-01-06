@@ -7,7 +7,7 @@ tags: C/C++
 
 ---
 
-###题目
+### 题目
 将一个无符号数N拆分为不多于M个数，使拆分的数之和等于N,条件：
 
 
@@ -17,12 +17,13 @@ tags: C/C++
 求：一共有多少中拆分方法？
 
 ### 分析
+
 参考代码
 
 ### 代码
 代码实现计算拆分方法及打印拆分组合信息
 
-```c++
+{% highlight c linenos %} 
 
 #include <iostream>
 #include <stdint.h>
@@ -172,12 +173,14 @@ int main(void)
 
 	return 0;
 }
+{%endhighlight c %}
 
 
 
-```
+
 ### 运行结果
-```C++
+
+{% highlight c linenos %} 
 [root@localhost cpp]# ./numdecom
 print combinations as follow:
 11
@@ -230,4 +233,4 @@ print combinations as follow:
 1 1 1 1 2 2 3 
 1 1 1 2 2 2 2 
 The Total num is 49
-```
+{%endhighlight c %}
