@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 2017年学习什么呢？
+title: 2017年学习什么技术呢？
 categories: AI
 tags: AI
 ---
