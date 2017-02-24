@@ -190,7 +190,7 @@ func fetch(url string) {
 
 本来我是抗拒写这篇文章的，想想自己在这个问题老是不长记性，还是读一下相关源码，简单记录下来，加深印象。
 
-读源码是解决问题的最有收益的解决方式。
+*读源码是最有收益的解决问题方式*。
 
 最后推荐一下这篇文章：[50 Shades of Go: Traps, Gotchas, and Common Mistakes for New Golang Devs](http://devs.cloudimmunity.com/gotchas-and-common-mistakes-in-go-golang/)
 
