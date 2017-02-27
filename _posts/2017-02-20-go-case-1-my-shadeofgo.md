@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  Go的50度灰补充：http response只有第一次才是从0开始读
+title:  Go的50度灰补充：http response只能读一次
 categories:  Go
 tags:  Go  
 --- 
@@ -71,7 +71,7 @@ func fetch(url string) {
 3. goquery使用错误导致未找到对应内容
 
 自己排查一下，发现原因不是上面三个选项上，那又是什么原因呢？
-原因是对于http response实例只有第一次才是从0开始读，下一次是上一次读到位置开始的
+原因是对于http response实例只能读一次，只有第一次才是从0开始读，下一次是上一次读到位置开始的
 
 ### 代码分析  
 
