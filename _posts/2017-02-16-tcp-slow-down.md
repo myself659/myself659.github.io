@@ -5,13 +5,13 @@ categories:  TCP/IP
 tags:  TCP/IP  
 ---  
 
-体现一下标题党，现在自媒体横行，容我也放肆一回（多了我也不行，替自己码字能力捉急）！
+体验一下标题党，现在自媒体横行，容我也放肆一回（多了我也不行，替自己码字能力捉急）！
 
 另起一行，到此为止，进入正题
 
 ### 缘起  
 
-最近通过uc浏览器下载apk的时候，偶尔出现下载apk，下载了60%左右卡住，心想还有这种问题,[The curious case of slow downloads](https://blog.cloudflare.com/the-curious-case-of-slow-downloads/)这篇文章一定没有引起广大程序员们注意，特别是研发CDN同学的注意。（PS：毕竟这个问题不是常出现，就算一次下载失败，反正可以重新下载，总能下载成功的）
+最近通过uc浏览器下载apk的时候，偶尔出现下载apk，下载了60%左右卡住，想到以前看到这篇文章：[The curious case of slow downloads](https://blog.cloudflare.com/the-curious-case-of-slow-downloads/)（PS：毕竟这个问题不是常出现，就算一次下载失败，反正可以重新下载，总能下载成功的）
 
 
 ### 说明 
