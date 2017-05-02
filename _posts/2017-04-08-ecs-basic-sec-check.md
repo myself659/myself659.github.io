@@ -7,7 +7,7 @@ tags:  云计算  安全
 
 ### 背景 
 
-查看阿里云ECS服务器
+查看阿里云ECS服务器日志发现如下：
 ```
 type=USER_AUTH msg=audit(1491669519.156:15631): pid=22938 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:authentication acct="deploy" exe="/usr/sbin/sshd" hostname=123.57.245.163 addr=123.57.245.163 terminal=ssh res=failed'
 type=USER_LOGIN msg=audit(1491669519.156:15632): pid=22938 uid=0 auid=4294967295 ses=4294967295 msg='op=login acct=28696E76616C6964207573657229 exe="/usr/sbin/sshd" hostname=? addr=123.57.245.163 terminal=sshd res=failed'
