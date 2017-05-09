@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  使用golang present制作slide 
+title:  使用golang present工具写presentation 
 categories:  tools
 tags:  tools 
 --- 
@@ -45,6 +45,8 @@ root@ia-VirtualBox:/share/gocode/src/github.com/pcrawfor# present  golanguk/talk
 
 
 ### 共享slide 
+
+通过http选项指定外部访问地址
 
 ```
 root@ia-VirtualBox:/share/gocode/src/github.com/pcrawfor# present -http="192.168.56.5:3999"  golanguk/talk.slide    
