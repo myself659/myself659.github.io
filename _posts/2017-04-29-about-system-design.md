@@ -99,7 +99,9 @@ tags:  架构
 7. Sharding vs Partitioning
 8. Scale Up vs Scale Out  
 9. Performance vs Scalability
-10. ... 
+10. 集中式 vs 分布式
+11. 同步 vs 异步
+12. ... 
 
 **如果系统设计过程不知道系统优缺点，那表示你无法掌握这个系统设计**；相反如果深入理解每一个具体方案的优缺点，就可以SWOT原则作出判断与选择，而不是面对选择总是有那么多犹豫不决，而是一种感觉：在这种需求和条件，这样的选择是最合适的。 
 
