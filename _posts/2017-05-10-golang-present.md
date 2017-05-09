@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  使用golang present工具写presentation 
+title:  使用golang present工具制作presentation 
 categories:  tools
 tags:  tools 
 --- 
