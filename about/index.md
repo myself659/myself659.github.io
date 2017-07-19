@@ -13,7 +13,11 @@ comments: no
 * 爱学习新技术更注重夯实基础
 * 看过以下但不仅限于以下列出项目的源码：[Linux Kernel](https://github.com/myself659/linux-2.26.32)，[redis](https://github.com/myself659/redis-3.0.7)，[nginx](https://github.com/myself659/nginx-1.8.0)， [nginx-rtmp](https://github.com/myself659/nginx-rtmp-module)， [Libevent](https://github.com/myself659/Libevent), [libco](https://github.com/myself659/libco)等
 * 主要编程语言：C, C++, Golang，Python，Shell
-* 正在学习：TensorFlow，JavaScript 
+* 正在学习：TensorFlow，JavaScript
+* 业余爬虫与数据分析爱好者 
+* 业余股民
+* 历史爱好者
+* 重度拖延症患者(治疗中) 
 
 
 ### 博客说明
