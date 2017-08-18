@@ -60,7 +60,7 @@ $255 = {cFlag = 170 '\252', uiPktLen = 1959, uiPktSeq = 3774212197, sCheckNum = 
 
 同时在gdb的运行程序的目录下生成genindex.txt文件，这样可以通过分析genindex.txt找问题的原因；同时整个执行的过程中不需要个人操作，在断点不断命中的情况下极大提高效率，如果是生产的环境，避免长时间占用进程，进而影响业务，
 
-###5. 分析log文件 
+### 5. 分析log文件 
 这一步你可以用shell，awk， sed，python等来分析genindex.txt文件内容 
 
 
