@@ -49,6 +49,10 @@ https://myself659.github.io
 Permanent 
 Smarter
 Offline  
+Serve data from everywhere 
+Serve data to everywhere
+减少网络带宽开销（减少网络传输的跳数 ）
+
 
 
 * IPFS与Blockchain  
@@ -171,6 +175,8 @@ Self-Certified Filesystems - SFS
 
 * 查找内容的流程 
 
+peer routing 
+
 地址路由 + 内容路由
 路由开销加大 
 
@@ -214,6 +220,10 @@ Defaults to a DHT, but is swappable
 
 * 思考更多的技术细节  
 
+1. 版本兼容 
+2. ipfs-cli 与ipfs-daemon之间的版本需要一致 
+
+
 
 
 * 展望 
@@ -232,7 +242,8 @@ Defaults to a DHT, but is swappable
 1. https://github.com/ipfs/specs/tree/master/architecture 
 2. https://github.com/multiformats/multihash
 3. https://github.com/libp2p/specs 
-4. https://www.icoage.com/?p=D&id=38 
+4. https://www.icoage.com/?p=D&id=38
+5. https://ipfs.io/ipfs/QmNhFJjGcMPqpuYfxL62VVB9528NXqDNMFXiqN5bgFYiZ1/its-time-for-the-permanent-web.html 
 
 
 
@@ -244,6 +255,7 @@ Defaults to a DHT, but is swappable
 - 实践篇   ipfs 各种命令实践 
 - 应用篇  案例case github 
 - 未来篇  前景分析 
+- 代码篇  ipns流程 
 
 * 未来篇 
 

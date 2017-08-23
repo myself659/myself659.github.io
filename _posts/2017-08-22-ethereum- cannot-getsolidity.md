@@ -1,6 +1,6 @@
 ---
 layout: post
-title:   以太坊开发环境
+title:   以太坊开发环境问题记录
 categories:  ethereum
 tags:  区块链  ethereum
 --- 
