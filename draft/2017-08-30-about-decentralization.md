@@ -19,6 +19,14 @@ tags:  blockchain
 
 这些大平台像黑洞一样，这没有错，但是这个关系着大家日常生活的平台控制一个公司的手上。就不是什么好事，这些数据是不会对外开放，微信不会开放的，淘宝天猫也不会开放。
 
+### 去中心化数据库 
+
+区块链  
+帐本   
+
+### 去中心化存储 
+
+主推IPFS 
 
 
 ### 去中心化在未来有一席之地   
@@ -83,3 +91,5 @@ bittorrent
 ### 参考 
 
 1. [The Meaning of Decentralization](https://medium.com/@VitalikButerin/the-meaning-of-decentralization-a0c92b76a274) 
+2. [弹性安全网络 -- 构建下一代安全的互联网](https://mp.weixin.qq.com/s?__biz=MjM5NzA4ODc0MQ==&mid=2648628796&idx=1&sn=00a9a13e931024d5ebe62ba81e234a58&chksm=bef522b68982aba0cbe24817f9ee72d71dd4c75a5f4dcad0c77050755aa08468f82ee1e3346f&mpshare=1&scene=24&srcid=0817ROnECK1A3yQ8cA5AqAtd&key=af007c0799bb0c8368aecf6c5dcd684de3542dac9c040fd24774e28d6f1991b28d405ed21a135971bbe59451de4fc6709bacd90da5046f5199871795072ed8219ec096cf38abce54c89b306c49c1defb&ascene=0&uin=MTY2NDI3MzIwMA%3D%3D&devicetype=iMac17%2C1+OSX+OSX+10.12.1+build(16B2657)&version=12020810&nettype=WIFI&fontScale=100&pass_ticket=wwkJmM59Jj%2F15Xlk0nO8DR%2F%2BCmvTK7C%2BbgpPXJ1%2FXd%2BQYcH8zkQTyIJ%2Fkzi3NoQx)  
+

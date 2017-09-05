@@ -250,7 +250,49 @@ Defaults to a DHT, but is swappable
 4. https://www.icoage.com/?p=D&id=38
 5. https://ipfs.io/ipfs/QmNhFJjGcMPqpuYfxL62VVB9528NXqDNMFXiqN5bgFYiZ1/its-time-for-the-permanent-web.html 
 
+* 相关项目 
 
+- Storj <https://storj.io/> 
+- Gitchain <http://gitchain.org/>
+- ZeroTier One <https://www.zerotier.com/> 
+- MaidSafe <https://maidsafe.net>  
+- SIA < http://sia.tech/> 
+- Upspin <https://upspin.io> 
+- ZeroNet <https://zeronet.io/> 
+- BigchainDB  https://www.bigchaindb.com/
+- Ethereum Swarm  https://www.ethereum.org/
+
+* Storj  
+
+Blockchain-based, 
+end-to-end encrypted, 
+distributed object storage, where only you have access to your data.
+
+with a blockchain added to create a marketplace 
+for buying or renting out disk space on the network
+
+*  SIA 
+
+与storej类似 
+
+* MaidSafe  
+
+主打安全
+A secure home for all your data 
+
+* ZeroNet  
+
+Open, free and uncensorable websites, 
+using Bitcoin cryptography and BitTorrent network
+
+* Ethereum Swarm 
+
+Swarm is a distributed storage platform and content distribution service, 
+a native base layer service of the ethereum web 3 stack.
+The primary objective of Swarm is to provide a sufficiently decentralized 
+and redundant store of Ethereum’s public record,
+in particular to store and distribute dapp code and data 
+as well as block chain data.
 
 * Tips 
 
@@ -269,6 +311,15 @@ IPFS+Filecoin = ？
 技术+商业经济= ？
 
 区块链让商业流动更快
+
+密码学与P2P 作为点对点通信的协议 
+
+* 可以为IPFS作些事情  
+
+- ipfs add 需要点击确认 
+- ipfs add 需要commit确认 类似git 
+- ipfs 增加命令 方便查看当前目录下的内容  
+
 
 
 
