@@ -48,3 +48,11 @@ string, bytes32, byte[], bytes之间有什么不同？
 
 ## 一个简单的例子  
 
+
+## 不足 
+
+http://api.btckan.com/news/topic/35732  
+
+## 为什么需要EVM 
+
+通过虚拟机保证安全吗？

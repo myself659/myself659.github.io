@@ -10,6 +10,7 @@ https://github.com/kovan-testnet/config
 
 block的编码方式  
 
+
 https://github.com/paritytech/parity/issues/3225  
 
 
@@ -55,5 +56,15 @@ parity --chain=kovan --jsonrpc-hosts=all   --rpcaddr=47.93.49.72  --rpcport=8545
 
 --rpcaddr IP                     Equivalent to --jsonrpc-interface IP.
 --rpcport PORT                   Equivalent to --jsonrpc-port PORT.
+
+
+parity --chain=kovan   --jsonrpc-interface=0.0.0.0  --jsonrpc-hosts=all
+
+
+## 全节点内容  
+
+https://etherchain.org/block/4240137 
+
+一个块的内容  
 
 

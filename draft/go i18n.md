@@ -33,3 +33,7 @@ https://github.com/search?q=github.com%2Fqor%2Fi18n&type=Code&utf8=%E2%9C%93
 # https://github.com/qor/i18n/blob/master/i18n_test.go  
 
 使用参考  
+
+# https://github.com/go-playground/locales  
+
+省了写格式的时间成本  

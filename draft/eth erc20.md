@@ -15,8 +15,13 @@ Similar to how the HTTP protocol defined the internet, ERC20 is a protocol that 
 如同http让币圈生态   
 
 
+https://theethereum.wiki/w/index.php/ERC20_Token_Standard 
+
+看一下接口就明白了   这个一定要看完了 重要的选项
+
 get the total token supply
 get the account balance
 transfer the token
 approve spending the token
+
 
