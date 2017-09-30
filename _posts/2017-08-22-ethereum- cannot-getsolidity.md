@@ -105,10 +105,19 @@ parity --chain=kovan   --jsonrpc-interface=0.0.0.0  --jsonrpc-hosts=all
 
 
 
+# 没有eth无法在kovan上部署智能合约
 
+## 问题描述  
 
+没有eth无法部署成功部署智能合约 
 
+## 问题原因 
 
+天下没有免费的午餐 
+
+## 解决方法
+
+参考[Kovan Faucet](https://github.com/kovan-testnet/faucet),四种方式选择其中一个即可，Github Gist Faucet方式参考[这里](https://gist.github.com/myself659/5c803a89aa725a64206fb775e00a0815)  
 
 
 
