@@ -142,3 +142,11 @@ https://www.tutorialspoint.com/koajs/koajs_authentication.htm
 Error: Cannot find module 
 
 
+# EJS  
+
+ejs template  for loop 
+
+通过这个直接搞定 
+
+解决前端问题全靠搜索引擎 
+
