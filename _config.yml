@@ -12,4 +12,6 @@ weibo: myself659
 hub: myself659
 safe: true
 paginate: 50
-about: "拖延症患者。"
+about: "拖延症患者"
+disqus:
+  shortname:http-myself659-github-io

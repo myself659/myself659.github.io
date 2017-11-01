@@ -19,6 +19,9 @@ tags:  blockchain
 
 这些大平台像黑洞一样，这没有错，但是这个关系着大家日常生活的平台控制一个公司的手上。就不是什么好事，这些数据是不会对外开放，微信不会开放的，淘宝天猫也不会开放。
 
+没有隐私的表现：
+1. 通过银行转大额的，不到半个小时一定有不少于三个电话打过来，卖蓬莱海景房的
+
 ### 去中心化数据库 
 
 区块链  
@@ -70,7 +73,10 @@ bittorrent
 
 ### 去中心化商业模型 
 
+数据属于个人  
+用户的行力不受机器推荐的算法影响
 
+如果是集中式的情况下，由背后的机器算法来控制，算法被后程序员控制，程序员由他们背后的boss的意志控制。
 
 ###  去中心化浪潮影响  
 
@@ -83,6 +89,11 @@ bittorrent
 1. 监管更难  
 2. 政府管理带来挑战  
 
+### 去中心化团队 
+
+小型团队越来越有  
+高效的技术团队越来越有利 
+高效的团队 
 
 ### 去中心化在路上 
 
@@ -90,11 +101,33 @@ bittorrent
 不必要为了去中心化而去中心化。
 去中心化是一种共治。
 去中心化是一种民主。
+去中心化技术即基础设施 
 
+不相信通信信息  
+相信计算 
+相信共识 
+
+从去年开始出现一堆类似项目，我们看看谁能胜出。之前有过一些更原始的，直到比特币出现，区块链技术一下子解决了p2p的身份验证和各种确认操作，ipfs这种底层协议平台解决了传输和存储的问题，于是各种应用就开始发展了，这是很正常的，未来必然是去中心化的时代
+
+HBO电视剧《硅谷》Richard  在第四季转向去中心化存储，也代表是下一代互联网 
+
+小企业自建节点提供服务也可以作为IPFS节点或者矿工服务，充分提高数据中心的能力 
+
+
+### 去中心化 
+
+未来是光明的 
+道路是光明的 
+
+### 数字身份 
+
+数字身份重要性 
+数字身份由国家发送 
 
 
 ### 参考 
 
 1. [The Meaning of Decentralization](https://medium.com/@VitalikButerin/the-meaning-of-decentralization-a0c92b76a274) 
-2. [弹性安全网络 -- 构建下一代安全的互联网](https://mp.weixin.qq.com/s?__biz=MjM5NzA4ODc0MQ==&mid=2648628796&idx=1&sn=00a9a13e931024d5ebe62ba81e234a58&chksm=bef522b68982aba0cbe24817f9ee72d71dd4c75a5f4dcad0c77050755aa08468f82ee1e3346f&mpshare=1&scene=24&srcid=0817ROnECK1A3yQ8cA5AqAtd&key=af007c0799bb0c8368aecf6c5dcd684de3542dac9c040fd24774e28d6f1991b28d405ed21a135971bbe59451de4fc6709bacd90da5046f5199871795072ed8219ec096cf38abce54c89b306c49c1defb&ascene=0&uin=MTY2NDI3MzIwMA%3D%3D&devicetype=iMac17%2C1+OSX+OSX+10.12.1+build(16B2657)&version=12020810&nettype=WIFI&fontScale=100&pass_ticket=wwkJmM59Jj%2F15Xlk0nO8DR%2F%2BCmvTK7C%2BbgpPXJ1%2FXd%2BQYcH8zkQTyIJ%2Fkzi3NoQx)  
+2. [弹性安全网络 -- 构建下一代安全的互联网](https://mp.weixin.qq.com/s?__biz=MjM5NzA4ODc0MQ==&mid=2648628796&idx=1&sn=00a9a13e931024d5ebe62ba81e234a58&chksm=bef522b68982aba0cbe24817f9ee72d71dd4c75a5f4dcad0c77050755aa08468f82ee1e3346f&mpshare=1&scene=24&srcid=0817ROnECK1A3yQ8cA5AqAtd&key=af007c0799bb0c8368aecf6c5dcd684de3542dac9c040fd24774e28d6f1991b28d405ed21a135971bbe59451de4fc6709bacd90da5046f5199871795072ed8219ec096cf38abce54c89b306c49c1defb&ascene=0&uin=MTY2NDI3MzIwMA%3D%3D&devicetype=iMac17%2C1+OSX+OSX+10.12.1+build(16B2657)&version=12020810&nettype=WIFI&fontScale=100&pass_ticket=wwkJmM59Jj%2F15Xlk0nO8DR%2F%2BCmvTK7C%2BbgpPXJ1%2FXd%2BQYcH8zkQTyIJ%2Fkzi3NoQx) 
+3. [区块链新玩法：Ashare想要激活全球闲置硬盘存储空间，打造共享经济2.0](http://www.sohu.com/a/168563976_118792) 
 
