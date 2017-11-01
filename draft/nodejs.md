@@ -69,3 +69,10 @@ http://www.ruanyifeng.com/blog/2016/01/npm-install.html
 
 ## npm clean  
 
+## 自定义包
+
+https://github.com/fiznool/poirot
+
+http://fiznool.com/blog/2015/05/20/an-alternative-to-npm-private-modules/
+
+https://stackoverflow.com/questions/10386310/how-to-install-a-private-npm-module-without-my-own-registry
