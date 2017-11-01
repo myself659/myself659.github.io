@@ -12,6 +12,9 @@
 [Sequelize Model](http://docs.sequelizejs.com/manual/tutorial/models-definition.html)
 
 
+http://docs.sequelizejs.com/manual/tutorial/transactions.html
+
+
 # 自动增长 
 
 ```
@@ -115,6 +118,14 @@ insert  into  `Feedbacks`  (`email`, `desc`,  `createdAt`, `updatedAt`)  VALUES 
 ```
 
 https://ops.58wallet.io/admin/feedbacks  
+
+##  唯一key
+http://blog.csdn.net/wangpeng2011314/article/details/64919215
+
+## mysql对比 
+
+https://segmentfault.com/a/1190000003987871 
+
 
 # 重定向功能  
 
