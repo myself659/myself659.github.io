@@ -19,22 +19,28 @@ tags:  Network
 
 代理客户端使用Shadowsocks-NG-R8,它解决了一个长久以来的痛点，Shadowsocks没有HTTP代理，导致需要使用polipo等软件进行协议转换。
 
+## 第一步：选择HTTP代理设置
+
 ![第一步：选择HTTP代理设置](../image/ssr-ng-1.png)
+
+
+## 第二步：点击查看
 
 ![第二步：点击查看](../image/ssr-ng-2.png)
 
 
 ## 设置代理命令
 
-1. vim打开`vim ~/.bash_profile`
+### vim打开`vim ~/.bash_profile`
 
-2. 在尾部添加如下内容：
+### 在尾部添加如下内容： 
 
 ```
 alias proxy-on='export http_proxy=127.0.0.1:1087;export https_proxy=$http_proxy'
 alias proxy-off='unset http_proxy;unset https_proxy'
 ```
-3. 修改立即生效: `source ~/.bash_profile`
+
+### 修改立即生效: `source ~/.bash_profile`
 
 
 ## 测试 
