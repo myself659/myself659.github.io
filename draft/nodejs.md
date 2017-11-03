@@ -1,3 +1,4 @@
+
 # promise 
 
 promise如何理解？
@@ -76,3 +77,23 @@ https://github.com/fiznool/poirot
 http://fiznool.com/blog/2015/05/20/an-alternative-to-npm-private-modules/
 
 https://stackoverflow.com/questions/10386310/how-to-install-a-private-npm-module-without-my-own-registry
+
+
+	
+
+
+npm install -S "git+https://myself659@github.com/litecoin-project/litecore-wallet-client.git" 
+
+# nvm  
+
+## nvm ls-remote 
+
+包管理  
+
+版本管理  
+
+
+# debug
+
+
+https://blog.risingstack.com/how-to-debug-nodej-js-with-the-best-tools-available/ 
