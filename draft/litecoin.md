@@ -171,6 +171,16 @@ npm ERR! missing: litecore-node@^3.1.11, required by testnet
 
 # Can't connect to bitcoind to get live updates from the p2p network. (Tried connecting to bitcoind at : and failed.)
 
+与内网有关  
+不能够在连接p2p节点 
+需要公网ip地址
+
+导致的问题是获取block失败 
+```
+curl  http://192.168.15.139:3001/insight-api/blocks?limit=5 
+curl: (52) Empty reply from server
+```
+
 
 # 环境搭建  
 
@@ -187,3 +197,36 @@ npm install -g litecore-node
 # litecoind  
 
 19335 用于侦听P2P端口  
+
+# 存储空间 
+
+## 容量
+
+```
+jbi@192-168-15-139:~/_litenode-data$ df   -h   /home/jbi/.litecoin/
+Filesystem                      Size  Used Avail Use% Mounted on
+/dev/mapper/localhost--vg-root   45G   25G   18G  59% /
+```
+
+## 升级空间
+
+如何操作？
+
+更换节点 
+
+影响服务 没有影响  
+
+内存  
+
+level db 存储的哪里 
+
+monodb 是用本地 ？还是用阿里云  
+
+
+# bcmonitor
+
+bcmonitor功能 获取新的交易与区块 
+这个服务必须要启动成功 
+
+
+

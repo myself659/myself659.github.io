@@ -97,3 +97,18 @@ npm install -S "git+https://myself659@github.com/litecoin-project/litecore-walle
 
 
 https://blog.risingstack.com/how-to-debug-nodej-js-with-the-best-tools-available/ 
+
+
+# forever 
+
+保证应用工作 
+
+
+https://www.jeffgeerling.com/blog/start-nodejs-app-with-forever-and-ansible 
+
+
+# nrm 
+
+源管理 
+
+http://www.imooc.com/article/4345  如何进行代理安装 
