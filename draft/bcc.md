@@ -4,6 +4,8 @@ https://you-can-start-today.com/
 
 https://testnet.coinfaucet.eu/en/ 
 
+https://testnet.manu.backend.hamburg/bitcoin-cash-faucet 
+
 
 # bcc浏览器 
 
@@ -16,6 +18,9 @@ https://github.com/bitprim/bitcoin-abc/
 http://blockdozer.com/insight/ 
 
 https://www.blocktrail.com/BCC/ 
+
+https://cashexplorer.bitcoin.com/
+
 
 浏览器
 
@@ -69,3 +74,22 @@ https://github.com/bitpay/bitcoin-abc/blob/master/src/rpc/client.cpp
 https://github.com/satoshilabs/bitcoin-abc/commit/53fc46b64cc06ab44da1a51c1c586f5b91a55f20#diff-9b11c288f296791b67fa817eaced5ed7 
 
 修改记录 
+
+# 测试 
+
+
+## 地址 
+
+mzVV3KuygsoyV1EC6BeNhciA7xY7d2MFba
+
+https://www.blocktrail.com/tBCC/tx/72f6187712b4b2ca064d0aca701c5dac9d04f01e39f31eb8a94f7d13225a7f4e
+
+## 版本出错的代码  
+
+insight-api@0.4.3
+│ ├── async@1.5.2
+│ ├─┬ bitcore-lib@0.13.19 
+
+https://github.com/bitpay/bitcore/issues/1467 
+
+

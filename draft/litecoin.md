@@ -229,4 +229,33 @@ bcmonitor功能 获取新的交易与区块
 这个服务必须要启动成功 
 
 
+# livenet 测试 
+
+```
+ curl http://127.0.0.1:3001/insight-api/tx/6d911185209372575f6db3d2c63ee62fed35053d9eae0cb489a9422502ef3d8c
+```
+
+# Invalid or missing peers.dat; recreating  
+
+
+https://bitcointalk.org/index.php?topic=2169215.0
+
+https://github.com/bitcoin/bitcoin/commit/b86a42077a134888c53bfd406b87bf0a39c78264 
+
+
+# 线上环境  
+
+https://ltc-insight.58wallet.io/insight  
+
+http://47.52.232.123:3001/insight
+
+http://localhost:3001/insight
+
+https://ltc.58wallet.io/bws/api/v2/feelevels/ 
+
+
+http://47.52.232.123:3232/bws/api/v2/feelevels/ 
+
+
+https://ltc-insight.58wallet.io/insight/
 
