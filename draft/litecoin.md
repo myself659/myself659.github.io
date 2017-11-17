@@ -76,8 +76,8 @@ http://192.168.15.139:3001/insight/
 npm install -g litecore-node
 litecore-node create mynode
 cd mynode
-litecore-node install insight-api
-litecore-node install insight-ui
+litecore-node install insight-lite-api
+litecore-node install insight-lite-ui
 litecore-node start
 
 litecore-node create -d <bitcoin-data-dir> mynode
@@ -259,3 +259,6 @@ http://47.52.232.123:3232/bws/api/v2/feelevels/
 
 https://ltc-insight.58wallet.io/insight/
 
+https://ltc-test.58wallet.io/bws/api/v2/feelevels/ 
+
+https://ltc-insight-test.58wallet.io/insight/

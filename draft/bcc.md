@@ -92,4 +92,21 @@ insight-api@0.4.3
 
 https://github.com/bitpay/bitcore/issues/1467 
 
+https://github.com/satoshilabs 
+这里有一个参数实现bch 
+
+
+# 问题 
+
+WARN Insight http://localhost:3001/insight-api/addrs/utxo Returned Status: 404
+
+ERR! /v1/balance/??twoStep=1&r=53952 :500:Error querying the blockchain  
+
+
+类型仍然是btc，这一部分代码需要修改  
+
+http://192.168.15.150:3001/insight 
+
+_getBlockchainExplorer  由对应钱包来指定 coin 与 nettype 
+
 

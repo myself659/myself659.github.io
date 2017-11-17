@@ -8,6 +8,13 @@ server.js  bws
 
 ```
 
+## key-store形式：
+
+与以太坊钱包的key-store类似，是创建钱包后生成的一段json格式纯文本，里面保存了加密后私钥以及其他钱包信息，用户可以通过key-store和对应密码导入钱包。 
+
+同以太坊类似，
+
+
 ## getBalance 
 
 开源客户端代码  
