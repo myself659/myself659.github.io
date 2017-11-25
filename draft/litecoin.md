@@ -262,3 +262,67 @@ https://ltc-insight.58wallet.io/insight/
 https://ltc-test.58wallet.io/bws/api/v2/feelevels/ 
 
 https://ltc-insight-test.58wallet.io/insight/
+
+# 挖矿  
+
+地址与私钥  
+
+一定要记住了 
+
+https://ubuntuhak.blogspot.jp/2013/04/litecoin-basics-and-ubuntu.html 
+
+加入矿池一起挖
+
+https://steemit.com/litecoin/@virtualcoin/how-to-mine-litecoin-using-the-cpu-for-linux  
+
+
+minerd -o stratum+tcp://ltc.pool.minergate.com:3336 -u myself659@qq.com -p x
+
+
+https://www.litecoinpool.org/ 
+
+
+
+minerd -o stratum+tcp://btc.pool.minergate.com:3335 -u virtualcoin.videos@gmail.com -p x
+
+
+# 服务  
+
+root@ltc:~/litecore-wallet-service# pstree   24494
+litecore─┬─litecoind─┬─{litecoin-addcon}
+         │           ├─4*[{litecoin-httpwo}]
+         │           ├─{litecoin-http}
+         │           ├─{litecoin-msghan}
+         │           ├─{litecoin-net}
+         │           ├─{litecoin-openco}
+         │           ├─{litecoin-schedu}
+         │           ├─{litecoin-script}
+         │           ├─{litecoin-torcon}
+         │           ├─{litecoin-wallet}
+         │           └─3*[{litecoind}]
+         ├─6*[{litecore}]
+         └─5*[{node}]  
+
+
+systemdctl  
+
+litecore-node start  
+
+https://www.digitalocean.com/community/tutorials/how-to-use-systemctl-to-manage-systemd-services-and-units 
+
+
+# WARN Could not compute fee estimation in livenet: 2, 3, 4, 5, 6, 7, 8, 24, 25, 26 blocks 
+
+
+# err 
+
+```
+ERR! /v1/txhistory/?limit=10&includeExtendedInfo=1&r=63251 :undefined:assertion src/mongo/db/query/index_bounds_builder.cpp:862
+58.213.106.82 2017-11-24T01:17:40.473Z "GET /bws/api/v1/txhistory/?limit=10&includeExtendedInfo=1&r=63251" 500 69 12.745 "okhttp/3.6.0" 064d690b-77cc-434b-93c0-639739da467a 38baebefe4e39b6afc8b91e6733a3527c0de2f1cc6b6bcc6d3d9f3cf9741948d
+```
+
+https://github.com/bitpay/bitcore-wallet-service/issues/653 
+
+
+ /root/.nvm/versions/node/v8.5.0/bin/node
+ 
