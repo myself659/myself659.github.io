@@ -325,4 +325,42 @@ https://github.com/bitpay/bitcore-wallet-service/issues/653
 
 
  /root/.nvm/versions/node/v8.5.0/bin/node
- 
+
+ # fee  
+
+ /** Default for -minrelaytxfee, minimum relay fee for transactions */
+static const unsigned int DEFAULT_MIN_RELAY_TX_FEE = 100000;
+
+https://github.com/bwrega/ltclectrum/wiki/Litecoin-algorithm-for-transaction-fees 
+
+是比特币的100倍 
+
+```
+121.225.18.180 2017-11-29T07:08:06.505Z 
+"POST /bws/api/v1/txproposals/eb429fb0-a6d3-4a97-96ad-9ed38c1cee14/broadcast/"
+ 500 41 65.529 "mywallet/1 CFNetwork/811.4.18 Darwin/16.7.0" 
+ 790668fd-0d17-4043-b289-ae59c8ca2939 
+ 6b8f9d87f1ba152ee73e6db58d3726f5beea8988cc7bb217dcdaf660bbd12a44 
+```
+
+WARN Insight http://localhost:3001/insight-lite-api/tx/send Returned Status: 400 
+
+3001 返回失败 
+
+400错误 客户端错误 
+
+A 400 means that the request was malformed 
+
+# 解析  
+
+```
+010000000134adc2191804ceccf9859f19eaedede686dc9f68271891de8a48ae06ee273ba6010000006b48304502210089609a73a8449bab4f13218983580423d69badd2a5ec7405a4e02afa901fbc2c0220128fe8e895da1cb3df70a87ec2b91495dbee144155ba0014a63ed4b7c587ab91012102df3a6e42d3ea8b91219fa719f8426650aca9790dea4feeb4592eb2be086b608cffffffff0260ea0000000000001976a91489575b249383ec6cc4ab844ca85eabb88cc4855f88acd6c60000000000001976a9140189d56ccfc5d2ac7a6dde239e733a0fd244b26988ac00000000
+```
+
+```
+https://blockchain.info/decode-tx
+```
+
+```
+010000000134adc2191804ceccf9859f19eaedede686dc9f68271891de8a48ae06ee273ba6010000006a47304402206703b7d3911dba1d5b45bc356a5458564315532298ae1d15124f28a85f74e1020220037f102284a84b2efc2d0d13e0028f83fb9f17e85bd3d9e18a7fe406f71a7cf0012102df3a6e42d3ea8b91219fa719f8426650aca9790dea4feeb4592eb2be086b608cffffffff0160ea0000000000001976a91489575b249383ec6cc4ab844ca85eabb88cc4855f88ac00000000
+```
