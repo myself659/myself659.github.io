@@ -331,6 +331,14 @@ https://github.com/bitpay/bitcore-wallet-service/issues/653
  /** Default for -minrelaytxfee, minimum relay fee for transactions */
 static const unsigned int DEFAULT_MIN_RELAY_TX_FEE = 100000;
 
+//! -maxtxfee default
+static const CAmount DEFAULT_TRANSACTION_MAXFEE = 0.1 * COIN;
+
+COIN = 100000000 # 1 btc in satoshis 
+
+static const CAmount COIN = 100000000;
+static const CAmount CENT = 1000000; 
+
 https://github.com/bwrega/ltclectrum/wiki/Litecoin-algorithm-for-transaction-fees 
 
 是比特币的100倍 
@@ -346,6 +354,9 @@ https://github.com/bwrega/ltclectrum/wiki/Litecoin-algorithm-for-transaction-fee
 WARN Insight http://localhost:3001/insight-lite-api/tx/send Returned Status: 400 
 
 3001 返回失败 
+
+
+
 
 400错误 客户端错误 
 
@@ -364,3 +375,99 @@ https://blockchain.info/decode-tx
 ```
 010000000134adc2191804ceccf9859f19eaedede686dc9f68271891de8a48ae06ee273ba6010000006a47304402206703b7d3911dba1d5b45bc356a5458564315532298ae1d15124f28a85f74e1020220037f102284a84b2efc2d0d13e0028f83fb9f17e85bd3d9e18a7fe406f71a7cf0012102df3a6e42d3ea8b91219fa719f8426650aca9790dea4feeb4592eb2be086b608cffffffff0160ea0000000000001976a91489575b249383ec6cc4ab844ca85eabb88cc4855f88ac00000000
 ```
+
+
+### monero miner 
+
+minerd -o stratum+tcp://ltc.pool.minergate.com:3336 -u myself659@qq.com -p x
+
+https://github.com/xmrig/xmrig  
+
+https://www.reddit.com/r/Monero/comments/6ljhex/question_what_is_the_best_mining_pool/
+
+monerod  start-mining 
+monerod --rpc-bind-ip $current_ip start_mining $mine_add $n 
+
+```
+sudo apt-get install git build-essential cmake libuv1-dev libmicrohttpd-dev
+git clone https://github.com/xmrig/xmrig.git
+cd xmrig
+mkdir build
+cd build
+cmake ..
+make
+sudo add-apt-repository ppa:jonathonf/gcc-7.1
+sudo apt-get update
+sudo apt-get install gcc-7 g++-7
+cmake .. -DCMAKE_C_COMPILER=gcc-7 -DCMAKE_CXX_COMPILER=g++-7
+
+```
+
+https://supportxmr.com/ 
+
+地址是需要的 
+
+https://supportxmr.com/#/help/getting_started 
+
+ ./xmrig   -u  44MdpouSNWBPQD1QBd49wt1m6cAQs85koCa7c1m9nUsv7GBTDRtT1ERAP2CmjRy8bYj5MBNeNPFbgWaS1eVsJZ9aVSsiBBG  -o  pool.supportxmr.com
+
+
+```
+addNetwork({
+  name: 'livenet',
+  alias: 'mainnet',
+  pubkeyhash: 0x30,
+  privatekey: 0xb0,
+  scripthash: 0x32,
+  xpubkey: 0x019da462,
+  xprivkey: 0x019d9cfe,
+  networkMagic: 0xfbc0b6db,
+  port: 9333,
+  dnsSeeds: [
+    'dnsseed.litecointools.com',
+    'dnsseed.litecoinpool.org',
+    'dnsseed.ltc.xurious.com',
+    'dnsseed.koin-project.com',
+    'seed-a.litecoin.loshan.co.uk',
+    'dnsseed.thrasher.io'
+  ]
+});
+```
+
+```
+addNetwork({
+  name: 'livenet',
+  alias: 'mainnet',
+  pubkeyhash: 0x00,
+  privatekey: 0x80,
+  scripthash: 0x05,
+  xpubkey: 0x0488b21e,
+  xprivkey: 0x0488ade4,
+  networkMagic: 0xf9beb4d9,
+  port: 8333,
+  dnsSeeds: [
+    'seed.bitcoin.sipa.be',
+    'dnsseed.bluematt.me',
+    'dnsseed.bitcoin.dashjr.org',
+    'seed.bitcoinstats.com',
+    'seed.bitnodes.io',
+    'bitseed.xf2.org'
+  ]
+});
+```
+
+作有良心的山寨  
+
+从c++代码应该也可以找出来了
+
+# 为什么你的钱就是花不掉 
+
+verb Candidate utxos: 0.00186064ltc/51c
+verb Value after fees in all utxos (-0.00090958ltc) is insufficient to cover for txp amount (0.00060000ltc)
+
+费用： 0.00186064-0.00060000+0.00090958 = 0.00217022
+
+
+# 未来 
+
+https://blockchaingroup.io/corporate/parsing-the-unparsable-the-case-of-missing-p2sh-addresses/ 

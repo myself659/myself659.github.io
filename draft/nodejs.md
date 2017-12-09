@@ -118,3 +118,31 @@ http://www.imooc.com/article/4345  如何进行代理安装
 https://github.com/expressjs/morgan 
 
 nodejs 也有好处 
+
+# npmlog  
+
+# 异步执行 
+
+http://info-i.net/async-auto
+
+这个函数的第一个参数是一个存储异步处理所依赖的异步处理结果的对象，第二个参数是一个回调函数。 
+
+http://info-i.net/async-cargo 
+
+
+http://info-i.net/async-priority-queue 
+
+http://info-i.net/async-queue 
+
+
+http://info-i.net/async-apply-each 
+
+理解完成了这些才真正学会了nodejs 
+才算学会了 
+
+
+# promise 
+
+http://info-i.net/category/nodejs/page/18 
+
+http://info-i.net/promise-resolve 

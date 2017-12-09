@@ -20,3 +20,11 @@ A Channel is basically an individual consumer of that stream that gets it's own 
 If you want multiple consumers to get the same message, use a different channel name. If you want to "load balance" among multiple consumers, use the same channel name. 
 
 
+需要手动创建topic 
+这一点不友好。
+
+http://116.62.148.208:4161/lookup?topic=topic-wallet 
+
+管理权限 
+tradeoff
+
