@@ -471,3 +471,124 @@ verb Value after fees in all utxos (-0.00090958ltc) is insufficient to cover for
 # 未来 
 
 https://blockchaingroup.io/corporate/parsing-the-unparsable-the-case-of-missing-p2sh-addresses/ 
+
+
+# 连接情况  
+
+```
+/Users/eric/go/src/litecoin-project/litecore-node/lib/services/bitcoind.js
+
+root@ltc:~/james/litecore-wallet-service# netstat  -ntap   | grep  29332
+tcp        0      0 127.0.0.1:29332         0.0.0.0:*               LISTEN      4991/litecoind
+tcp        0      0 127.0.0.1:29332         127.0.0.1:48146         ESTABLISHED 4991/litecoind
+tcp        0      0 127.0.0.1:48146         127.0.0.1:29332         ESTABLISHED 4979/litecore
+```
+
+# bitcoind是如何启动的 
+
+```
+Bitcoin.prototype.start = function(callback) {
+  var self = this;
+
+  async.series([
+    function(next) {
+      if (self.options.spawn) {
+        self._spawnChildProcess(function(err, node) {
+          if (err) {
+            return next(err);
+          }
+          self.nodes.push(node);
+          next();
+        });
+      } else {
+        next();
+      }
+    },
+    function(next) {
+      if (self.options.connect) {
+        async.map(self.options.connect, self._connectProcess.bind(self), function(err, nodes) {
+          if (err) {
+            return callback(err);
+          }
+          for(var i = 0; i < nodes.length; i++) {
+            self.nodes.push(nodes[i]);
+          }
+          next();
+        });
+      } else {
+        next();
+      }
+    }
+  ], function(err) {
+    if (err) {
+      return callback(err);
+    }
+    if (self.nodes.length === 0) {
+      return callback(new Error('Bitcoin configuration options "spawn" or "connect" are expected'));
+    }
+    self._initChain(callback);
+  });
+
+};
+```
+
+# port 3001 启动 
+
+```
+WebService.prototype.start = function(callback) {
+  this.app = express();
+  this.app.use(bodyParser.json({limit: this.jsonRequestLimit}));
+
+  if(this.https) {
+    this.transformHttpsOptions();
+    this.server = https.createServer(this.httpsOptions, this.app);
+  } else {
+    this.server = http.createServer(this.app);
+  }
+
+  this.io = socketio.listen(this.server);
+  this.io.on('connection', this.socketHandler.bind(this));
+
+  setImmediate(callback);
+};
+```
+
+```
+ data: { version: '1.0.0',
+   207    createdOn: 1512985496,
+   208    id: '015129854963840000',
+   209    type: 'NewOutgoingTx',
+   210    data:
+   211     { txProposalId: 'eadb4a40-b4d5-432f-8136-7952e7a638fa',
+   212       creatorId: 'ca71270bc7883372a552e794e453124a3cc0a57d95ae88f684147b23925f6a66',
+   213       amount: 100000000,
+   214       message: '{"iv":"NSOdJAebZtot7ahNPP5hgg==","v":1,"iter":1,"ks":128,"ts":64,"mode":"ccm","adata":"","cipher":"aes","ct":"w6YTDPIoUsZgLe7gNTyn89IWhGLpH78qjA=="}',
+   215       txid: '89c730b43dda4a7b0ba127c5212d0dd7f393020469dd833046af642a250886c7' },
+   216    walletId: 'ca0dd066-1587-499d-88e5-faca58408a28',
+   217    creatorId: 'ca71270bc7883372a552e794e453124a3cc0a57d95ae88f684147b23925f6a66',
+   218    _id: '5a2e5398f2d5275bf35e3a11' }
+   }
+
+   data: { version: '1.0.0',
+  createdOn: 1512985496,
+  id: '015129854964730000',
+  type: 'NewIncomingTx',
+  data:
+   { txid: '89c730b43dda4a7b0ba127c5212d0dd7f393020469dd833046af642a250886c7',
+     address: 'mjoSve4gdkvwnZA882DErhpGN5NTwvf2jC',
+     amount: 100000000 },
+  walletId: 'ca0dd066-1587-499d-88e5-faca58408a28',
+  _id: '5a2e53981036fc5befd2066c' }
+
+```
+
+# 节点是如何启动  
+
+框架代码   
+
+下载节点代码  在nodejs中调用shell脚本 
+
+启动子进程 连接子进程   
+
+通过RPC连接  
+
