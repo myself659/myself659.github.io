@@ -15,3 +15,5 @@ paginate: 50
 about: "拖延症患者"
 disqus:
   shortname:http-myself659-github-io
+
+theme: jekyll-theme-architect
