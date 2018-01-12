@@ -14,6 +14,8 @@
 
 http://docs.sequelizejs.com/manual/tutorial/transactions.html
 
+https://lorenstewart.me/2016/10/03/sequelize-crud-101/
+
 
 # 自动增长 
 

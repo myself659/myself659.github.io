@@ -123,6 +123,8 @@ nodejs 也有好处
 
 # 异步执行 
 
+https://caolan.github.io/async/docs.html 
+
 http://info-i.net/async-auto
 
 这个函数的第一个参数是一个存储异步处理所依赖的异步处理结果的对象，第二个参数是一个回调函数。 
