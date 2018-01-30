@@ -343,7 +343,9 @@ func (srv *Server) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 	srv.ServeSingleRequest(codec, OptionMethodInvocation)
 }
 ```
+
 rpc请求的处理
+
 ```
 func (s *Server) serveRequest(codec ServerCodec, singleShot bool, options CodecOption) error {
 	var pend sync.WaitGroup
@@ -431,6 +433,85 @@ func (s *Server) serveRequest(codec ServerCodec, singleShot bool, options CodecO
 }
 ```
 
+```
+// handle executes a request and returns the response from the callback.
+func (s *Server) handle(ctx context.Context, codec ServerCodec, req *serverRequest) (interface{}, func()) {
+	if req.err != nil {
+		return codec.CreateErrorResponse(&req.id, req.err), nil
+	}
+
+	if req.isUnsubscribe { // cancel subscription, first param must be the subscription id
+		if len(req.args) >= 1 && req.args[0].Kind() == reflect.String {
+			notifier, supported := NotifierFromContext(ctx)
+			if !supported { // interface doesn't support subscriptions (e.g. http)
+				return codec.CreateErrorResponse(&req.id, &callbackError{ErrNotificationsUnsupported.Error()}), nil
+			}
+
+			subid := ID(req.args[0].String())
+			if err := notifier.unsubscribe(subid); err != nil {
+				return codec.CreateErrorResponse(&req.id, &callbackError{err.Error()}), nil
+			}
+
+			return codec.CreateResponse(req.id, true), nil
+		}
+		return codec.CreateErrorResponse(&req.id, &invalidParamsError{"Expected subscription id as first argument"}), nil
+	}
+
+	if req.callb.isSubscribe {
+		subid, err := s.createSubscription(ctx, codec, req)
+		if err != nil {
+			return codec.CreateErrorResponse(&req.id, &callbackError{err.Error()}), nil
+		}
+
+		// active the subscription after the sub id was successfully sent to the client
+		activateSub := func() {
+			notifier, _ := NotifierFromContext(ctx)
+			notifier.activate(subid, req.svcname)
+		}
+
+		return codec.CreateResponse(req.id, subid), activateSub
+	}
+
+	// regular RPC call, prepare arguments
+	if len(req.args) != len(req.callb.argTypes) {
+		rpcErr := &invalidParamsError{fmt.Sprintf("%s%s%s expects %d parameters, got %d",
+			req.svcname, serviceMethodSeparator, req.callb.method.Name,
+			len(req.callb.argTypes), len(req.args))}
+		return codec.CreateErrorResponse(&req.id, rpcErr), nil
+	}
+
+	arguments := []reflect.Value{req.callb.rcvr}
+	if req.callb.hasCtx {
+		arguments = append(arguments, reflect.ValueOf(ctx))
+	}
+	if len(req.args) > 0 {
+		arguments = append(arguments, req.args...)
+	}
+
+	// execute RPC method and return result  执行对象的方法
+	reply := req.callb.method.Func.Call(arguments)
+	if len(reply) == 0 {
+		return codec.CreateResponse(req.id, nil), nil
+	}
+
+	if req.callb.errPos >= 0 { // test if method returned an error
+		if !reply[req.callb.errPos].IsNil() {
+			e := reply[req.callb.errPos].Interface().(error)
+			res := codec.CreateErrorResponse(&req.id, &callbackError{e.Error()})
+			return res, nil
+		}
+	}
+	return codec.CreateResponse(req.id, reply[0].Interface()), nil
+}
+```
+
+http://www.nljb.net/default/Golang%E4%B9%8BReflect%E4%BD%BF%E7%94%A8%E4%BB%8B%E7%BB%8D/  
+
+实现代码分析参考这个 
+
+值得学习的反射代码与抽象代码  
+
+
 具体执行处理handle处理函数
 /Users/eric/go/src/github.com/myself659/go-ethereum/rpc/server.go
 ```
@@ -456,9 +537,37 @@ func (s *Server) exec(ctx context.Context, codec ServerCodec, req *serverRequest
 }
 ```
 
+```
+// createSubscription will call the subscription callback and returns the subscription id or error.
+func (s *Server) createSubscription(ctx context.Context, c ServerCodec, req *serverRequest) (ID, error) {
+	// subscription have as first argument the context following optional arguments
+	args := []reflect.Value{req.callb.rcvr, reflect.ValueOf(ctx)}
+	args = append(args, req.args...)
+	reply := req.callb.method.Func.Call(args) // 这段代码如何解释
+
+	if !reply[1].IsNil() { // subscription creation failed
+		return "", reply[1].Interface().(error)
+	}
+
+	return reply[0].Interface().(*Subscription).ID, nil
+}
+```
 /Users/eric/go/src/github.com/myself659/go-ethereum/rpc/types.go 
 如何保证执行 
 在req过程通过反射找到对应函数进行执行
+
+```
+// callback is a method callback which was registered in the server
+type callback struct {
+	rcvr        reflect.Value  // receiver of method
+	method      reflect.Method // callback
+	argTypes    []reflect.Type // input argument types
+	hasCtx      bool           // method's first argument is a context (not included in argTypes)
+	errPos      int            // err return idx, of -1 when method cannot return error
+	isSubscribe bool           // indication if the callback is a subscription
+}
+```
+这个主要是优化golang的性能，避免每次都需要反射处理
 
 
 ```
@@ -475,6 +584,13 @@ type BlockValidator struct {
 记录交易所在的区块的高度，通过高度计算确认数 
 
 api是如何定义 
+
+### 反射代码相关应用 
+
+反射是一种抽象  
+
+使用反射的好处有哪些？
+
 
 ### 函数指针定义也可以作为对象   
 

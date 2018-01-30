@@ -17,7 +17,7 @@ Shared directory and store servers used by multiple users.
 A single-user system with a combined directory and store server.
 A camera served by a special-purpose combined directory and store server.
 
-从上到下，他们各自表示如下：
+自顶向下，他们各自表示如下：
 多用户之间共享目录和存储服务器
 单个用户系统结合目录和存储服务器
 一个摄像连接指定的目录和存储服务器 
