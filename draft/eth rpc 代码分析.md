@@ -585,6 +585,26 @@ type BlockValidator struct {
 
 api是如何定义 
 
+
+### 注册服务接口 
+
+```
+// startInProc initializes an in-process RPC endpoint.
+func (n *Node) startInProc(apis []rpc.API) error {
+	// Register all the APIs exposed by the services
+	handler := rpc.NewServer()
+	for _, api := range apis {
+		if err := handler.RegisterName(api.Namespace, api.Service); err != nil {
+			return err
+		}
+		log.Debug(fmt.Sprintf("InProc registered %T under '%s'", api.Service, api.Namespace))
+	}
+	n.inprocHandler = handler
+	return nil
+}
+```
+
+
 ### 反射代码相关应用 
 
 反射是一种抽象  
@@ -761,4 +781,127 @@ curl -i -X POST \
  'http://47.52.31.232:8545'  
 
 
+# 注册服务 
 
+```
+func makeFullNode(ctx *cli.Context) *node.Node {
+	stack, cfg := makeConfigNode(ctx)
+
+	utils.RegisterEthService(stack, &cfg.Eth)
+
+	// Whisper must be explicitly enabled by specifying at least 1 whisper flag or in dev mode
+	shhEnabled := enableWhisper(ctx)
+	shhAutoEnabled := !ctx.GlobalIsSet(utils.WhisperEnabledFlag.Name) && ctx.GlobalIsSet(utils.DevModeFlag.Name)
+	if shhEnabled || shhAutoEnabled {
+		if ctx.GlobalIsSet(utils.WhisperMaxMessageSizeFlag.Name) {
+			cfg.Shh.MaxMessageSize = uint32(ctx.Int(utils.WhisperMaxMessageSizeFlag.Name))
+		}
+		if ctx.GlobalIsSet(utils.WhisperMinPOWFlag.Name) {
+			cfg.Shh.MinimumAcceptedPOW = ctx.Float64(utils.WhisperMinPOWFlag.Name)
+		}
+		utils.RegisterShhService(stack, &cfg.Shh)
+	}
+
+	// Add the Ethereum Stats daemon if requested.
+	if cfg.Ethstats.URL != "" {
+		utils.RegisterEthStatsService(stack, cfg.Ethstats.URL)
+	}
+
+	// Add the release oracle service so it boots along with node.
+	if err := stack.Register(func(ctx *node.ServiceContext) (node.Service, error) {
+		config := release.Config{
+			Oracle: relOracle,
+			Major:  uint32(params.VersionMajor),
+			Minor:  uint32(params.VersionMinor),
+			Patch:  uint32(params.VersionPatch),
+		}
+		commit, _ := hex.DecodeString(gitCommit)
+		copy(config.Commit[:], commit)
+		return release.NewReleaseService(ctx, config)
+	}); err != nil {
+		utils.Fatalf("Failed to register the Geth release oracle service: %v", err)
+	}
+	return stack
+}
+```
+
+# api代码是如何处理的  
+
+解析到method是如何处理的 
+
+```
+// A value of this type can a JSON-RPC request, notification, successful response or
+// error response. Which one it is depends on the fields.
+type jsonrpcMessage struct {
+	Version string          `json:"jsonrpc"`
+	ID      json.RawMessage `json:"id,omitempty"`
+	Method  string          `json:"method,omitempty"`
+	Params  json.RawMessage `json:"params,omitempty"`
+	Error   *jsonError      `json:"error,omitempty"`
+	Result  json.RawMessage `json:"result,omitempty"`
+}
+```
+这里描述rpc通信消息 
+
+```
+// GetBalance returns the amount of wei for the given address in the state of the
+// given block number. The rpc.LatestBlockNumber and rpc.PendingBlockNumber meta
+// block numbers are also allowed.
+func (s *PublicBlockChainAPI) GetBalance(ctx context.Context, address common.Address, blockNr rpc.BlockNumber) (*big.Int, error) {
+	state, _, err := s.b.StateAndHeaderByNumber(ctx, blockNr)
+	if state == nil || err != nil {
+		return nil, err
+	}
+	b := state.GetBalance(address)
+	return b, state.Error()
+}
+```
+
+注册哪些api，看下面的代码：
+```
+func GetAPIs(apiBackend Backend) []rpc.API {
+	nonceLock := new(AddrLocker)
+	return []rpc.API{
+		{
+			Namespace: "eth",
+			Version:   "1.0",
+			Service:   NewPublicEthereumAPI(apiBackend),
+			Public:    true,
+		}, {
+			Namespace: "eth",
+			Version:   "1.0",
+			Service:   NewPublicBlockChainAPI(apiBackend),
+			Public:    true,
+		}, {
+			Namespace: "eth",
+			Version:   "1.0",
+			Service:   NewPublicTransactionPoolAPI(apiBackend, nonceLock),
+			Public:    true,
+		}, {
+			Namespace: "txpool",
+			Version:   "1.0",
+			Service:   NewPublicTxPoolAPI(apiBackend),
+			Public:    true,
+		}, {
+			Namespace: "debug",
+			Version:   "1.0",
+			Service:   NewPublicDebugAPI(apiBackend),
+			Public:    true,
+		}, {
+			Namespace: "debug",
+			Version:   "1.0",
+			Service:   NewPrivateDebugAPI(apiBackend),
+		}, {
+			Namespace: "eth",
+			Version:   "1.0",
+			Service:   NewPublicAccountAPI(apiBackend.AccountManager()),
+			Public:    true,
+		}, {
+			Namespace: "personal",
+			Version:   "1.0",
+			Service:   NewPrivateAccountAPI(apiBackend, nonceLock),
+			Public:    false,
+		},
+	}
+}
+```
