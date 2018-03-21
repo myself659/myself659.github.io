@@ -21,13 +21,25 @@ var (
 
 具体代码参考：https://gitlab.chainresearch.org/wallet/stone/blob/develop/cmd/umengpusher/main.go
 
+## 参考  
+
+1. http://bbs.umeng.com/thread-20339-1-1.html 
+2. http://bbs.umeng.com/thread-13706-1-1.html 
+3. http://dev.umeng.com/push/android/api-doc 
+
+
 
 # bitfinexrecorder  
 
 主要功能抓取bitfinex交易历史信息，历史信息保存到mysql数据库。
 数据库信息参考代码：https://gitlab.chainresearch.org/wallet/stone/blob/develop/service/web/bitfinextrade.go
 
-
+```
+//TableName TableName
+func (t *TradeHist) TableName() string {
+	return t.MktCode + "_" + t.MktPair + "_" + t.KType
+}
+```
 
 # coincapworker  
 
@@ -193,7 +205,7 @@ module.exports = config;
 ### 节点状态  
 
 通过阿里云监控，重点关注硬盘，参考[文档](https://help.aliyun.com/document_detail/25453.html?spm=5176.11065259.1996646101.searchclickresult.6e7a1bcblzQZ1w)
-
+[云服务器 ECS Linux 磁盘空间常见问题处理方法](https://help.aliyun.com/knowledge_detail/52870.html)
 
 ##  nginx反向代理配置 
 
@@ -217,7 +229,9 @@ https://ltc.58wallet.io/bws/api/v2/feelevels
 
 ## 参考  
 
-1. [bitpay](https://github.com/bitpay)  
+1. [bitpay](https://github.com/bitpay) 
+2. [litecoin-project](https://github.com/litecoin-project/) 
+
 
 
 
