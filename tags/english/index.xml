@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>English on 沉风网事</title>
+    <link>https://blog.ipds.top/tags/english/</link>
+    <description>Recent content in English on 沉风网事</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Thu, 25 Jan 2018 11:58:06 +0200</lastBuildDate>
+    
+	<atom:link href="https://blog.ipds.top/tags/english/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>英文学习材料</title>
+      <link>https://blog.ipds.top/2018/01/25/%E8%8B%B1%E6%96%87%E5%AD%A6%E4%B9%A0%E6%9D%90%E6%96%99/</link>
+      <pubDate>Thu, 25 Jan 2018 11:58:06 +0200</pubDate>
+      
+      <guid>https://blog.ipds.top/2018/01/25/%E8%8B%B1%E6%96%87%E5%AD%A6%E4%B9%A0%E6%9D%90%E6%96%99/</guid>
+      <description> Golang  Let&amp;rsquo;s Talk Locks! Maintaining the Go Crypto Libraries  Blockchain  CoinTalk  Arch  Life of a Packet through Istio Algorithms behind Modern Storage Systems Aurora Serverless: The Good, the Bad and the Scalable  rust  How Rust Views Tradeoffs Rust&amp;rsquo;s Journey to Async/await  More  infoq Presentations  </description>
+    </item>
+    
+  </channel>
+</rss>

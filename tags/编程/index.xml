@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>编程 on 沉风网事</title>
+    <link>https://blog.ipds.top/tags/%E7%BC%96%E7%A8%8B/</link>
+    <description>Recent content in 编程 on 沉风网事</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sun, 29 Mar 2020 11:58:06 +0200</lastBuildDate>
+    
+	<atom:link href="https://blog.ipds.top/tags/%E7%BC%96%E7%A8%8B/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>github被攻击，程序员该怎么办</title>
+      <link>https://blog.ipds.top/2020/03/29/github%E8%A2%AB%E6%94%BB%E5%87%BB%E7%A8%8B%E5%BA%8F%E5%91%98%E8%AF%A5%E6%80%8E%E4%B9%88%E5%8A%9E/</link>
+      <pubDate>Sun, 29 Mar 2020 11:58:06 +0200</pubDate>
+      
+      <guid>https://blog.ipds.top/2020/03/29/github%E8%A2%AB%E6%94%BB%E5%87%BB%E7%A8%8B%E5%BA%8F%E5%91%98%E8%AF%A5%E6%80%8E%E4%B9%88%E5%8A%9E/</guid>
+      <description>2020年3月27日，全世界最大的同性交友网站github被攻击了，连正常的首页都打不开。
+Https并不是100%安全 github被攻击说明Https并不是100%安全，Https也有自己的阿喀琉斯之踵-Https证书。Https不能解决以下五种情况的攻击：
+ 证书颁发机构被入侵 攻击任何证书颁发机构附近的路由器 攻击证书颁发机构的递归DNS服务器 攻击网络协议如TCP或者BGP 证书颁发机构作恶，恶意修改与替换证书  这五种攻击方式不是攻击证书就是攻击证书的分发网络路径与协议。
+即然https并不是100%安全，那么怎么应对https证书攻击呢？
+发现网站Https证书被攻击 首先第一步发现网站Https证书被攻击。拿这次github被网站Https证书被攻击为例，github证书被攻击时，在chrome浏览品上访问github，会提示如下错误：
+从上图可以看出，不是通常HTTP的错误码，也不是超时错误，而是直接提示了证书错误。
+正常的Https证书是这样的：
+Https证书被攻击如何正常的访问github 由于github证书出现了问题，用户是无法解决的。那么怎么正常访问github呢？
+由于这类攻击往往具有地域性特点，如这次攻击大部分发生在国内，可以将本地的github访问流量通过代理导到其他没有受到攻击的地方，再由代理返回访问结果。科学上网就是属于这类方式。由于各种原因，这里不展开说明。
+如何解决go get不能正常工作 作为一名golang程序员，发现go get出现错误：
+出现上面的问题的原因同样是因为github网站的证书被攻击导致。解决方法是不走Https，走ssh下载github的代码库。在终端上进行如下配置即可：
+git config --global url.&amp;quot;git@github.com:&amp;quot;.insteadOf &amp;quot;https://github.com/&amp;quot;  查看配置结果如下：
+$ cat ~/.gitconfig [user] email = myself659@163.com name = myself659 [url &amp;quot;git@github.com:&amp;quot;] insteadOf = https://github.com/  小结 Https证书虽然被攻击，但是互联网有去中心化特点，可以改变网络访问路径来避免问题。 Https证书被攻击，影响是http协议，可以换成ssh协议来解决git下载的问题。 总之，遇到问题对症下药，也要跳出框架，think out the box，从另一个角度或层次来解决问题。
+欢迎关注 欢迎关注微信公众帐号：沉风网事(savewind)</description>
+    </item>
+    
+    <item>
+      <title>程序员进阶精读书籍清单</title>
+      <link>https://blog.ipds.top/2020/01/02/%E7%A8%8B%E5%BA%8F%E5%91%98%E8%BF%9B%E9%98%B6%E7%B2%BE%E8%AF%BB%E4%B9%A6%E7%B1%8D%E6%B8%85%E5%8D%95/</link>
+      <pubDate>Thu, 02 Jan 2020 11:58:06 +0200</pubDate>
+      
+      <guid>https://blog.ipds.top/2020/01/02/%E7%A8%8B%E5%BA%8F%E5%91%98%E8%BF%9B%E9%98%B6%E7%B2%BE%E8%AF%BB%E4%B9%A6%E7%B1%8D%E6%B8%85%E5%8D%95/</guid>
+      <description>2020年加大搬砖的力度，还是一名程序员，继续成长与进步。
+优秀程序员应该具备以下三方面能力：
+ 扎实的计算机基础知识（计算机结构，操作系统，数据结构与算法 ）
+ 良好的软件工程素质
+ 一定的系统设计与架构能力
+  多年的程序员经历与读书经历告诉我：
+ 读书不在多，贵在精。
+ 精典书籍需要多读几遍，常读常新，每一次重读都会有新的收获
+  下面推荐软件工程师应该精读的十本书。
+1 编码：隐匿在计算机软硬件背后的语言 本书作者Charles Petzold创造性地以编码为主题，从电报机和手电筒讲到数字电路，然后利用数字电路中的逻辑门构造出加法器和触发器，最后构造出一个完整的存储程序计算机 。作者在书中使用大量形象贴切的类比简化了这些概念，使其成为通俗易懂的计算机入门读物。
+2 深入理解计算机系统 作为一名非科班出身的程序员，深入理解计算机系统是对我帮助最大。这本书里面将操作系统，计算机硬件与结构，编译原理这些计算机学科的基础内容结合在一起。具体内容涵盖：指令集体系架构，汇编语言，代码优化，计算机存储体系架构，链接，装载，进程，系统调用，虚拟内存，网络编程，并发编程等程序员在日常工作中所需要的必备知识。
+如果想打下扎实的计算机基础又不想把操作系统计算机结构编译原理这些书统统读一遍，阅读深入理解计算机系统是最有效率的方式。
+3 计算机编程艺术 本书的作者高德纳是算法和程序设计技术的先驱者，同时也是计算机排版系统TEX和METAFONT的发明者，除此之外还是1971年图灵奖获得者。这个系列图收可以说是包含一切基础算法的宝典。比尔·盖茨曾表示：如果你自以为是一个很好的程序员，请去读读高德纳的《计算机程序设计艺术》吧&amp;hellip;要是你真把它读下来了，就毫无疑问可以给我递简历了。精读这个系列的图书毫无疑问是真正地站在巨人的肩膀上。
+4 算法导论 AI时代，也就是算法时代。可以说算法水平决定一个程序员技术的上限。学习基础算法与应用算法解决具体的工作问题，本书不容错过。
+5 程序员面试金典 面试驱动学习。
+《程序员面试金典》是程序员面试跳槽找工作必备书。
+6 程序员修炼之道：从小工到专家 对于软件工程来说算法，数据结构，编程语言只是软件工程的工具与思想，在具体软件工程中每一个软件工程师都要考虑如何提高工作的产出。这本《程序员修炼之道：从小工到专家》通过具体有效的经验与技巧让你成长为一名高效的程序员。书中内容涉及如何避免代码腐烂，如何编写灵活、高可用的正确代码，如何真正的理解需求等一系列具体问题。
+7 人月神话 软件的开发与维护离不开软件工程。《人月神话》是软件工程领域集大成者。《人月神话》的作者Fred Brooks领导并完成 System/360 和 OS/360 这两个即是放到现在也是巨型软件项目的里程碑项目的经验总结。这本书覆盖了软件项目各个方面的关键概念：从工期管理到团队建设，从程序设计到架构设计，从原型设计到团队交流。
+8 算法之美 《算法之美》这本书扩展算法的应用范围，将算法应用到具体生活当中。本书通过讨论人类事务算法设计的概念，以帮助人们更好地处理日常生活中遇到的难题。内容涉及贝叶斯法则、最优停止理论、时间调度理论、博弈论等。
+9 设计数据密集型应用 从IT时代进入DT时代，数据成为重要的生产要素。《设计数据密集型应用》以数据为核心，描述大规模分布式数据系统的理论与实践。
+10 计算机程序的构造和解释 在《计算机程序的构造与解释》书中深入探讨了程序设计的本质（过程抽象、数据抽象、元语言抽象）。这些本质思想在未来量子计算机时代仍然不会过时。书中构建了很多小系统。比如第一章的计算素数、最大公因数、平方根、积分、黄金比例等，讨论了递归、迭代过程；第二章的图形语言、赫夫曼编码解码、泛型运算、多项式计算等，讨论了数据结构和数据类型系统；第三章实现了一个面向对象系统等；第四章实现Scheme的解释器；第五章通过设计机制和语言实现寄存器机器的各种计算。
+结语 再说一遍：读书在精，不在多。上面推荐的这些书，你可能多多少少见过，但是能静下心来读完一本的人可能寥寥无几。本人静下心来读也只有两本书《深入理解计算机系统》与《设计数据密集型应用》，但是《深入理解计算机系统》这本偏硬件那几章几乎没有读。当然上面大部分书都有通读。
+一年精读一本，保证吸收与转化，每年都是一个台阶的大进步。只可惜自己当年没有做到，也没有这种强烈的意愿。</description>
+    </item>
+    
+    <item>
+      <title>说说在不同行业的编程体验</title>
+      <link>https://blog.ipds.top/2018/12/02/%E8%AF%B4%E8%AF%B4%E5%9C%A8%E4%B8%8D%E5%90%8C%E8%A1%8C%E4%B8%9A%E7%9A%84%E7%BC%96%E7%A8%8B%E4%BD%93%E9%AA%8C/</link>
+      <pubDate>Sun, 02 Dec 2018 11:58:06 +0200</pubDate>
+      
+      <guid>https://blog.ipds.top/2018/12/02/%E8%AF%B4%E8%AF%B4%E5%9C%A8%E4%B8%8D%E5%90%8C%E8%A1%8C%E4%B8%9A%E7%9A%84%E7%BC%96%E7%A8%8B%E4%BD%93%E9%AA%8C/</guid>
+      <description>回想起来，2010年毕业以来，在五家公司呆过，经历四个行业，在这引起行业编程体验各有不同，总结起来就下面四句话：
+嵌入式行业：面向DataSheet编程
+通信行业：面向标准编程
+互联网行业：面向变化编程
+区块链行业：面向资金编程
+欢迎关注 欢迎关注微信公众帐号：沉风网事(savewind)</description>
+    </item>
+    
+    <item>
+      <title>实现无符号整型数的分解</title>
+      <link>https://blog.ipds.top/2015/06/14/%E5%AE%9E%E7%8E%B0%E6%97%A0%E7%AC%A6%E5%8F%B7%E6%95%B4%E5%9E%8B%E6%95%B0%E7%9A%84%E5%88%86%E8%A7%A3/</link>
+      <pubDate>Sun, 14 Jun 2015 11:58:06 +0200</pubDate>
+      
+      <guid>https://blog.ipds.top/2015/06/14/%E5%AE%9E%E7%8E%B0%E6%97%A0%E7%AC%A6%E5%8F%B7%E6%95%B4%E5%9E%8B%E6%95%B0%E7%9A%84%E5%88%86%E8%A7%A3/</guid>
+      <description>题目 将一个无符号数N拆分为不多于M个数，使拆分的数之和等于N,条件：
+ N &amp;gt;= M； N与M都是无符号整型数  求：一共有多少中拆分方法？
+分析 参考代码
+代码 代码实现计算拆分方法及打印拆分组合信息
+ #include &amp;lt;iostream&amp;gt; #include &amp;lt;stdint.h&amp;gt; using namespace std; class CSolution { private: uint32_t uiM; uint32_t uiN; uint32_t uiCount; uint32_t *puiRecord; public: CSolution(); CSolution(uint32_t uiM, uint32_t uiN); ~CSolution(); uint32_t GetCount() {return uiCount;} void PrintCombinations(); uint32_t CountNum(uint32_t uiM, uint32_t uiN); void GetCombination(uint32_t uiMin, uint32_t uiLeft, uint32_t uiGetNum, uint32_t uiTargetNum, uint32_t *puiRecord); }; CSolution::CSolution(uint32_t uiM,uint32_t uiN){ this-&amp;gt;uiM = uiM; this-&amp;gt;uiN = uiN; this-&amp;gt;puiRecord = new unsigned int [uiM]; this-&amp;gt;uiCount = CountNum(uiM, uiN); return ; } CSolution::CSolution() { uiM = 1; uiN = 1; puiRecord = new unsigned int [uiM]; uiCount = CountNum(uiM, uiN); return ; } CSolution::~CSolution() { delete [] puiRecord; return ; } uint32_t CSolution::CountNum(uint32_t uiM, uint32_t uiN) { if((0 == uiM) || (0 == uiN) || ( 1 == uiM) || ( 1 == uiN)) { return 1; } if(uiN &amp;lt; uiM) { return CountNum(uiN,uiN); } return CountNum(uiM - 1, uiN) + CountNum(uiM, uiN - uiM); } /* UINT uiMin 最小值 UINT uiLeft 剩下值 UINT uiGetNum 已拆分元素个数 UINT uiTargetNum 需要拆分的个数 UINT *puiCombination 拆分组合首地址 */ void CSolution::GetCombination(uint32_t uiMin, uint32_t uiLeft, uint32_t uiGetNum, uint32_t uiTargetNum, uint32_t *puiRecord) { uint32_t i; uint32_t j; /*递归结束条件 */ if(1 == uiTargetNum) { cout &amp;lt;&amp;lt; uiLeft&amp;lt;&amp;lt;endl; return ; } /* 将剩下值拆分为多个数,除了最后一个拆分值，其他的拆分数都应小于等于uiLeft/2 */ for(i = uiMin; i &amp;lt;= uiLeft / 2; i++) { puiRecord[uiGetNum] = i; uiGetNum++; if(uiGetNum + 1 == uiTargetNum) { puiRecord[uiGetNum] = uiLeft - i; for(j = 0; j &amp;lt; uiTargetNum; j++) { cout &amp;lt;&amp;lt;puiRecord[j]&amp;lt;&amp;lt; &amp;quot; &amp;quot;; } cout &amp;lt;&amp;lt; endl; } else { GetCombination(i, uiLeft - i, uiGetNum, uiTargetNum, puiRecord); } uiGetNum--; } return ; } void CSolution::PrintCombinations() { uint32_t i; cout&amp;lt;&amp;lt;&amp;quot;print combinations as follow:&amp;quot;&amp;lt;&amp;lt;endl; for(i = 1; i &amp;lt;= uiM; i++) { GetCombination(1, uiN, 0, i, puiRecord); } cout&amp;lt;&amp;lt;&amp;quot;The Total num is &amp;quot;&amp;lt;&amp;lt; GetCount()&amp;lt;&amp;lt;endl; return ; } int main(void) { CSolution test(7, 11); test.</description>
+    </item>
+    
+    <item>
+      <title>C语言代码 review的总结</title>
+      <link>https://blog.ipds.top/2015/05/24/c%E8%AF%AD%E8%A8%80%E4%BB%A3%E7%A0%81-review%E7%9A%84%E6%80%BB%E7%BB%93/</link>
+      <pubDate>Sun, 24 May 2015 11:58:06 +0200</pubDate>
+      
+      <guid>https://blog.ipds.top/2015/05/24/c%E8%AF%AD%E8%A8%80%E4%BB%A3%E7%A0%81-review%E7%9A%84%E6%80%BB%E7%BB%93/</guid>
+      <description> 代码review是保证代码质量在项目开发及代码修改中一项重要的环节，下面就代码reiew的一些总结，总结一些代码的review的关注点，提高代码review的效率与效果，提前发现问题，降低后期的测试成本，以及避免软件上线或交付出问题导致的经济损失和恶劣影响（ps:对每一行代码保持敬畏之心）。
+代码中的资源  以内存为例，C语言内存操作都是由程序员来定义与控制，内存的一些错误总是不断地出现，例如内存泄漏，踩内存，写越界等，如果这种问题在线上系统中出现，定位与修复的成本都是很高的。
+ 动态内存 信号量 文件描述符 锁 句柄 中断 资源的引用 资源的引用计数   代码的错误高发特征   冗余实现 异常处理 结构复杂 层次嵌套多 不合理实现 字符串处理 代码临界区 移植代码   代码的追求   正确性 可靠性 可读性 可维护性 可测试性 可扩展性 可移植性 可伸缩性 易用性 可用性 可重用性 互操作性 可管理性 一致性 安全性 性能 稳定性 精确性 可差异化性 魯棒性   </description>
+    </item>
+    
+    <item>
+      <title>一个linux网络丢包问题分析</title>
+      <link>https://blog.ipds.top/2015/05/24/%E4%B8%80%E4%B8%AAlinux%E7%BD%91%E7%BB%9C%E4%B8%A2%E5%8C%85%E9%97%AE%E9%A2%98%E5%88%86%E6%9E%90/</link>
+      <pubDate>Sun, 24 May 2015 11:58:06 +0200</pubDate>
+      
+      <guid>https://blog.ipds.top/2015/05/24/%E4%B8%80%E4%B8%AAlinux%E7%BD%91%E7%BB%9C%E4%B8%A2%E5%8C%85%E9%97%AE%E9%A2%98%E5%88%86%E6%9E%90/</guid>
+      <description> 丢包问题是十分常见一类问题，下面总结的一个网络丢包问题的分析过程。
+问题描述 组网：
+TC-PORT1&amp;mdash;&amp;mdash;-VSR-eth1
+TC-PORT2&amp;mdash;&amp;mdash;-VSR-eth2
+打流：
+报文从TC-Port1打入VSR-eth1，再从VSR-eth2出，到TC-Port2，打流的时候变换了源ip与源端口
+问题：
+测试同学在根据RFC2544打流测试转发性能中，发现报文有效转发性能总是小于40W pps，总是会出现丢包，而实际cpu利用率才20%左右
+问题分析 丢包的原因很多，需要根据现场进行具体问题分析，下面就一个一个排查怀疑点，没有怀疑点再分析的过程：
+ 昨天测试都ok的，检查一下测试打流报文，报文正确 查看报文处理过程中丢包计数，以确认丢包阶段，不幸地发现处理过程中无丢包统计 与打多条流有关？实测打一流问题同样存在，与多条流无关 再次回头检查报文是否有多种code path，导致第2步遗漏检查到丢包点，确认报文走一条code path 上面又被否认，继续分析怀疑点，没有分析出怀疑点，自已动手打流，观察TC收发包统计发现丢包有周斯性，大概周期是30s，这是一个重要信息 又回过头去确认一下丢包统计是否有漏统计，很欣慰又很失望的结果：丢包，错包统计没有遗漏统计 这时候收包处理过程丢包可能性已经排除 从上到下的报文流排查，报文丢在网卡上送cpu过程中？ 内核采用epoll收包存在问题？ 进程如果得到调度就没有问题 top 查看进程调度，这时候有重大发现了： 看tc丢包统计与top的里面的进程natlog运行就同步了，但是看到natlog的线程状态为D状态，同时检查配置，开启nat log功能   natlog进程设置为D状态，导致不响应异步信号，在natlog释放cpu前，在转发线程与natlog运行在同一个cpu的情况下，转发线程得不到调度，导致报文接收缓冲区溢出，导致部分报文丢弃；
+与natlog线程开发同学交流，natlog早期是基于多核开发，natlog根据运营商需求，每30s定时运行，natlog线程运行在控制核，转发线程运行在数据核，导致问题没有暴露出来
+ 问题总结  定位问题，特别是未知的问题是一步步有依据推断与确认的过程 获取现场的全方位消息，同时要对信息进行去噪，避免关键信息遗漏与无关干扰  </description>
+    </item>
+    
+  </channel>
+</rss>

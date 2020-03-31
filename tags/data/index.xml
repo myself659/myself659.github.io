@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Data on 沉风网事</title>
+    <link>https://blog.ipds.top/tags/data/</link>
+    <description>Recent content in Data on 沉风网事</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Mon, 17 Feb 2020 11:58:06 +0200</lastBuildDate>
+    
+	<atom:link href="https://blog.ipds.top/tags/data/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>通过数据分析预测股票价格变化靠谱吗？</title>
+      <link>https://blog.ipds.top/2020/02/17/%E9%80%9A%E8%BF%87%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E9%A2%84%E6%B5%8B%E8%82%A1%E7%A5%A8%E4%BB%B7%E6%A0%BC%E5%8F%98%E5%8C%96%E9%9D%A0%E8%B0%B1%E5%90%97/</link>
+      <pubDate>Mon, 17 Feb 2020 11:58:06 +0200</pubDate>
+      
+      <guid>https://blog.ipds.top/2020/02/17/%E9%80%9A%E8%BF%87%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E9%A2%84%E6%B5%8B%E8%82%A1%E7%A5%A8%E4%BB%B7%E6%A0%BC%E5%8F%98%E5%8C%96%E9%9D%A0%E8%B0%B1%E5%90%97/</guid>
+      <description>前言 在投资美股，先从数据分析开始这篇文章解决两个问题：
+ 从哪里找数据？ 如何得到这些数据？  在此基础这篇主要解决一个问题：以特斯拉为例说明如何利用这些数据预测股票价格的变化。同时关注一个问题：投入成本进行预测股票价格是否靠谱与必要？
+步骤 获取数据 直接调用api如下：
+import yfinance as yf tlsa_df = yf.download(&#39;TSLA&#39;, start=&#39;2015-01-01&#39;, end=&#39;2020-02-16&#39;, progress=False) tlsa_df.head()  绘制价格变化图 #plot %matplotlib notebook from IPython.core.interactiveshell import InteractiveShell InteractiveShell.ast_node_interactivity = &amp;quot;all&amp;quot; plt.figure(figsize=(10,6)) plt.grid(True) plt.xlabel(&#39;Dates&#39;) plt.ylabel(&#39;Close Prices&#39;) plt.plot(tlsa_df[&#39;Close&#39;]) plt.title(&#39;Tesla Close Price&#39;) plt.show()  得到从2015年起telsa收盘价格变化图：
+分析数据的统计特征信息 tsla_df_close = tlsa_df[&#39;Close&#39;] df_log = np.log(tsla_df_close) moving_avg = df_log.rolling(12).mean() std_dev = df_log.rolling(12).std() plt.title(&#39;Moving Average&#39;) plt.plot(std_dev, color =&amp;quot;black&amp;quot;, label = &amp;quot;Standard Deviation&amp;quot;) plt.plot(moving_avg, color=&amp;quot;red&amp;quot;, label = &amp;quot;Mean&amp;quot;) plt.</description>
+    </item>
+    
+    <item>
+      <title>投资美股，先从数据分析开始</title>
+      <link>https://blog.ipds.top/2020/02/06/%E6%8A%95%E8%B5%84%E7%BE%8E%E8%82%A1%E5%85%88%E4%BB%8E%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%BC%80%E5%A7%8B/</link>
+      <pubDate>Thu, 06 Feb 2020 11:58:06 +0200</pubDate>
+      
+      <guid>https://blog.ipds.top/2020/02/06/%E6%8A%95%E8%B5%84%E7%BE%8E%E8%82%A1%E5%85%88%E4%BB%8E%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%BC%80%E5%A7%8B/</guid>
+      <description>背景 川大爷，常在twitter上吆喝美股多次创造历史高点。美股确实是一个资产配置的重要选项。
+在进入市场之前，研究先行，作好功课。
+获取数据 对于一个公司的股票的研究与分析有多个方面。这里只看股票的数据情况。 既然是分析数据，那么如何获取获取呢？
+这个问题可以拆为以下问题：
+ 从哪里找数据？ 如何得到这些数据？  先从第一个问题开始：从哪里找数据？美股的数据来源来很多，这里我直接选择了yahoo财经数据。 主要原因如下：
+ yahoo财经数据详细 yahoo财经可以直接通过api获取，使用方便 最重要地一点，yahoo财经的api没有被墙，如果被墙了，也支持代理 yahoo财经数据实时性也不错，除了交易日当天的数据无法获取，其他的都可以获取  下面我们就看如何调用api获取数据。不多说了，直接上代码。
+import pandas as pd import yfinance as yf tsla_df = yf.download(&#39;TSLA&#39;, start=&#39;2020-01-01&#39;, end=&#39;2020-02-06&#39;, progress=False) tsla_df.tail()  具体结果如下：
+获取ticker数据：
+%matplotlib notebook ticker = yf.Ticker(&#39;TSLA&#39;) tsla_df = ticker.history(period=&amp;quot;max&amp;quot;) tsla_df.head() tsla_df[&#39;Close&#39;].plot(title=&amp;quot;Telsa&#39;s stock price&amp;quot;)  具体结果如下：
+这些数据都可以股票软件都可以看到。 对的，下面说一下通过api获取原始数据的好处。
+灵活地获取ticker数据：
+%matplotlib notebook tsla_df = yf.download(&amp;quot;TSLA&amp;quot;, start=&amp;quot;2020-02-01&amp;quot;, end=&amp;quot;2020-02-06&amp;quot;, interval = &amp;quot;15m&amp;quot;) tsla_df[&#39;Close&#39;].plot(title=&amp;quot;TSLA FROM 2020-02-01 TO 2020-02-06 &amp;quot;)  具体结果如下： 股票对比分析：</description>
+    </item>
+    
+  </channel>
+</rss>

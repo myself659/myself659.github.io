@@ -1,0 +1,19 @@
+version: 2
+jobs:
+  build:
+    branches:
+      only:
+        - master
+
+    docker:
+      # specify the version you desire here
+      - image: circleci/node:10.12.0
+
+    #working_directory: ~/repo
+
+    steps:
+
+      - checkout
+      - run: echo ${BCHOST}
+      - run: echo -e "Host $BCHOST\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
+      - run:  sh deploy.sh

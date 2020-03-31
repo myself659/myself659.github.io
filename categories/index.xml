@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Categories on 沉风网事</title>
+    <link>https://blog.ipds.top/categories/</link>
+    <description>Recent content in Categories on 沉风网事</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sat, 08 Apr 2017 11:58:06 +0200</lastBuildDate>
+    
+	<atom:link href="https://blog.ipds.top/categories/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Arch</title>
+      <link>https://blog.ipds.top/categories/arch/</link>
+      <pubDate>Sat, 08 Apr 2017 11:58:06 +0200</pubDate>
+      
+      <guid>https://blog.ipds.top/categories/arch/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Blockchain</title>
+      <link>https://blog.ipds.top/categories/blockchain/</link>
+      <pubDate>Wed, 22 Jan 2020 11:58:06 +0200</pubDate>
+      
+      <guid>https://blog.ipds.top/categories/blockchain/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Cryptography</title>
+      <link>https://blog.ipds.top/categories/cryptography/</link>
+      <pubDate>Sun, 21 Oct 2018 11:58:06 +0200</pubDate>
+      
+      <guid>https://blog.ipds.top/categories/cryptography/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Data</title>
+      <link>https://blog.ipds.top/categories/data/</link>
+      <pubDate>Mon, 17 Feb 2020 11:58:06 +0200</pubDate>
+      
+      <guid>https://blog.ipds.top/categories/data/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Data Struct</title>
+      <link>https://blog.ipds.top/categories/data-struct/</link>
+      <pubDate>Wed, 21 Feb 2018 11:58:06 +0200</pubDate>
+      
+      <guid>https://blog.ipds.top/categories/data-struct/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Distributed</title>
+      <link>https://blog.ipds.top/categories/distributed/</link>
+      <pubDate>Tue, 11 Dec 2018 11:58:06 +0200</pubDate>
+      
+      <guid>https://blog.ipds.top/categories/distributed/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Economics</title>
+      <link>https://blog.ipds.top/categories/economics/</link>
+      <pubDate>Sun, 15 Mar 2020 11:58:06 +0200</pubDate>
+      
+      <guid>https://blog.ipds.top/categories/economics/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>English</title>
+      <link>https://blog.ipds.top/categories/english/</link>
+      <pubDate>Thu, 25 Jan 2018 11:58:06 +0200</pubDate>
+      
+      <guid>https://blog.ipds.top/categories/english/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Ethereum</title>
+      <link>https://blog.ipds.top/categories/ethereum/</link>
+      <pubDate>Tue, 15 May 2018 11:58:06 +0200</pubDate>
+      
+      <guid>https://blog.ipds.top/categories/ethereum/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Golang</title>
+      <link>https://blog.ipds.top/categories/golang/</link>
+      <pubDate>Fri, 06 Sep 2019 11:58:06 +0200</pubDate>
+      
+      <guid>https://blog.ipds.top/categories/golang/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Internet</title>
+      <link>https://blog.ipds.top/categories/internet/</link>
+      <pubDate>Sun, 22 Mar 2020 11:58:06 +0200</pubDate>
+      
+      <guid>https://blog.ipds.top/categories/internet/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Ipfs</title>
+      <link>https://blog.ipds.top/categories/ipfs/</link>
+      <pubDate>Thu, 21 Jun 2018 11:58:06 +0200</pubDate>
+      
+      <guid>https://blog.ipds.top/categories/ipfs/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Kubernetes</title>
+      <link>https://blog.ipds.top/categories/kubernetes/</link>
+      <pubDate>Sat, 09 Mar 2019 11:58:06 +0200</pubDate>
+      
+      <guid>https://blog.ipds.top/categories/kubernetes/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Linux</title>
+      <link>https://blog.ipds.top/categories/linux/</link>
+      <pubDate>Wed, 10 May 2017 11:58:06 +0200</pubDate>
+      
+      <guid>https://blog.ipds.top/categories/linux/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Network</title>
+      <link>https://blog.ipds.top/categories/network/</link>
+      <pubDate>Fri, 03 Nov 2017 11:58:06 +0200</pubDate>
+      
+      <guid>https://blog.ipds.top/categories/network/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Nginx</title>
+      <link>https://blog.ipds.top/categories/nginx/</link>
+      <pubDate>Sat, 08 Aug 2015 11:58:06 +0200</pubDate>
+      
+      <guid>https://blog.ipds.top/categories/nginx/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Python</title>
+      <link>https://blog.ipds.top/categories/python/</link>
+      <pubDate>Thu, 08 Aug 2019 11:58:06 +0200</pubDate>
+      
+      <guid>https://blog.ipds.top/categories/python/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Rust</title>
+      <link>https://blog.ipds.top/categories/rust/</link>
+      <pubDate>Sun, 11 Aug 2019 11:58:06 +0200</pubDate>
+      
+      <guid>https://blog.ipds.top/categories/rust/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Sec</title>
+      <link>https://blog.ipds.top/categories/sec/</link>
+      <pubDate>Fri, 08 Nov 2019 11:58:06 +0200</pubDate>
+      
+      <guid>https://blog.ipds.top/categories/sec/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Substrate</title>
+      <link>https://blog.ipds.top/categories/substrate/</link>
+      <pubDate>Wed, 18 Sep 2019 11:58:06 +0200</pubDate>
+      
+      <guid>https://blog.ipds.top/categories/substrate/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Web</title>
+      <link>https://blog.ipds.top/categories/web/</link>
+      <pubDate>Fri, 27 Oct 2017 11:58:06 +0200</pubDate>
+      
+      <guid>https://blog.ipds.top/categories/web/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>商业</title>
+      <link>https://blog.ipds.top/categories/%E5%95%86%E4%B8%9A/</link>
+      <pubDate>Thu, 16 Jan 2020 11:58:06 +0200</pubDate>
+      
+      <guid>https://blog.ipds.top/categories/%E5%95%86%E4%B8%9A/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>成长</title>
+      <link>https://blog.ipds.top/categories/%E6%88%90%E9%95%BF/</link>
+      <pubDate>Sun, 08 Mar 2020 11:58:06 +0200</pubDate>
+      
+      <guid>https://blog.ipds.top/categories/%E6%88%90%E9%95%BF/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>技术管理</title>
+      <link>https://blog.ipds.top/categories/%E6%8A%80%E6%9C%AF%E7%AE%A1%E7%90%86/</link>
+      <pubDate>Sun, 08 Mar 2020 11:58:06 +0200</pubDate>
+      
+      <guid>https://blog.ipds.top/categories/%E6%8A%80%E6%9C%AF%E7%AE%A1%E7%90%86/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>研发管理</title>
+      <link>https://blog.ipds.top/categories/%E7%A0%94%E5%8F%91%E7%AE%A1%E7%90%86/</link>
+      <pubDate>Wed, 05 Sep 2018 11:58:06 +0200</pubDate>
+      
+      <guid>https://blog.ipds.top/categories/%E7%A0%94%E5%8F%91%E7%AE%A1%E7%90%86/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>编程</title>
+      <link>https://blog.ipds.top/categories/%E7%BC%96%E7%A8%8B/</link>
+      <pubDate>Sun, 29 Mar 2020 11:58:06 +0200</pubDate>
+      
+      <guid>https://blog.ipds.top/categories/%E7%BC%96%E7%A8%8B/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>闲谈乱扯</title>
+      <link>https://blog.ipds.top/categories/%E9%97%B2%E8%B0%88%E4%B9%B1%E6%89%AF/</link>
+      <pubDate>Thu, 30 Jan 2020 11:58:06 +0200</pubDate>
+      
+      <guid>https://blog.ipds.top/categories/%E9%97%B2%E8%B0%88%E4%B9%B1%E6%89%AF/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

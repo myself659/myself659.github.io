@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Data Struct on 沉风网事</title>
+    <link>https://blog.ipds.top/categories/data-struct/</link>
+    <description>Recent content in Data Struct on 沉风网事</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Wed, 21 Feb 2018 11:58:06 +0200</lastBuildDate>
+    
+	<atom:link href="https://blog.ipds.top/categories/data-struct/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>array vs list</title>
+      <link>https://blog.ipds.top/2018/02/21/array-vs-list/</link>
+      <pubDate>Wed, 21 Feb 2018 11:58:06 +0200</pubDate>
+      
+      <guid>https://blog.ipds.top/2018/02/21/array-vs-list/</guid>
+      <description>array define An array is collection of items stored at contiguous memory locations. The idea is to store multiple items of same type together. This makes it easier to calculate the position of each element by simply adding an offset to a base value, i.e., the memory location of the first element of the array (generally denoted by the name of the array).
+complexity space O(n)
+time write by index write by index: O(1)</description>
+    </item>
+    
+  </channel>
+</rss>

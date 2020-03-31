@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Linux on 沉风网事</title>
+    <link>https://blog.ipds.top/categories/linux/</link>
+    <description>Recent content in Linux on 沉风网事</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Wed, 10 May 2017 11:58:06 +0200</lastBuildDate>
+    
+	<atom:link href="https://blog.ipds.top/categories/linux/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Linux进程诊断小结</title>
+      <link>https://blog.ipds.top/2017/05/10/linux%E8%BF%9B%E7%A8%8B%E8%AF%8A%E6%96%AD%E5%B0%8F%E7%BB%93/</link>
+      <pubDate>Wed, 10 May 2017 11:58:06 +0200</pubDate>
+      
+      <guid>https://blog.ipds.top/2017/05/10/linux%E8%BF%9B%E7%A8%8B%E8%AF%8A%E6%96%AD%E5%B0%8F%E7%BB%93/</guid>
+      <description>日常工作中最常见问题是如何诊断一个进程运行过程中出现的问题，下面的总结从进程诊断的角度来展示，而是不从工具与命令角度来展示，进程诊断是工作的主体，工具与命令只是工具。
+进程信息 获得进程PID 方式一：
+root@iZ2ze9qnmldt4l3l82gtviZ:~# pidof tmsf-zc 2064  方式2：
+root@iZ2ze9qnmldt4l3l82gtviZ:~# ps -ef | grep tmsf-zc root 2064 1 0 Mar17 ? 02:24:25 ./tmsf-zc root 7596 7288 0 15:07 pts/4 00:00:00 grep --color=auto tmsf-zc root@iZ2ze9qnmldt4l3l82gtviZ:~#  查看进程线程个数 及对应PID root@iZ2ze9qnmldt4l3l82gtviZ:~# ps -efL | grep tmsf-zc root 2064 1 2064 0 5 Mar17 ? 00:00:00 ./tmsf-zc root 2064 1 2066 0 5 Mar17 ? 01:04:46 ./tmsf-zc root 2064 1 2067 0 5 Mar17 ?</description>
+    </item>
+    
+    <item>
+      <title>git常用命令总结</title>
+      <link>https://blog.ipds.top/2016/05/21/git%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E6%80%BB%E7%BB%93/</link>
+      <pubDate>Sat, 21 May 2016 11:58:06 +0200</pubDate>
+      
+      <guid>https://blog.ipds.top/2016/05/21/git%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E6%80%BB%E7%BB%93/</guid>
+      <description>git仓库  初始化一个版本仓库
+git init  clone远程版本库
+git clone git@github.com:myself659/FFmpeg.git  添加远程版本库origin
+git remote add origin git@github.com:myself659/rtmpserver_demo.git  查看远程仓库信息
+git remote -v  删除远程仓库
+git remote rm &amp;lt;repository&amp;gt;   git修改  添加当前修改的文件到暂存区
+git add .  提交修改到本地
+git commit -m &amp;quot;fix bug 0001&amp;quot;  提交修改到远程
+git push -u origin master  查看修改状态
+git status  重命名文件
+git mv README readme  从版本库中删除文件
+git rm readme  取消对文件修改
+git checkout -- readme  修改最新一次修改注释</description>
+    </item>
+    
+    <item>
+      <title>Linux内核常见crash原因</title>
+      <link>https://blog.ipds.top/2016/04/17/linux%E5%86%85%E6%A0%B8%E5%B8%B8%E8%A7%81crash%E5%8E%9F%E5%9B%A0/</link>
+      <pubDate>Sun, 17 Apr 2016 11:58:06 +0200</pubDate>
+      
+      <guid>https://blog.ipds.top/2016/04/17/linux%E5%86%85%E6%A0%B8%E5%B8%B8%E8%A7%81crash%E5%8E%9F%E5%9B%A0/</guid>
+      <description>前言 与前同事交流，发现以前的技术经历与解决的问题，现在接触不多，但是想想还是很有意思，虽然很多细节现在已经不能表达出来或展示出来，但是还得写出来。下面写的得主要个人经历的linux内核crash原因。
+内存类 这一类同用户态类似，主要有以下几种情况，
+ 访问NULL 访问释放后的内存 非法访问内存 内存被踩 内存耗尽 野指针操作  堆栈类  内核调用栈溢出
+ 写坏调用栈  锁  死锁 rcu使用错误 锁内存被写坏 长期获取不到锁，导致看门狗饿死，狗叫重启  调度  线程陷入死循环或者长时间占用cpu，在非抢占模式下其他线程得不到调度  中断上下文  在中断上下文调用错误的函数，例如在中断上下文使用信号量，更多参考那些可进入睡眠状态的Linux内核函数  硬件故障 在系统运行过程出现硬件故障也会导致内核crash。接触较少，不作说明。
+后记 能力有限，条件有限，写的很虚，也不全面，以后有机会再来点实际的，这个目的主要是回忆总结自己的知识体系。</description>
+    </item>
+    
+    <item>
+      <title>Linux x86-64 函数调用栈实例分析</title>
+      <link>https://blog.ipds.top/2016/03/09/linux-x86-64-%E5%87%BD%E6%95%B0%E8%B0%83%E7%94%A8%E6%A0%88%E5%AE%9E%E4%BE%8B%E5%88%86%E6%9E%90/</link>
+      <pubDate>Wed, 09 Mar 2016 11:58:06 +0200</pubDate>
+      
+      <guid>https://blog.ipds.top/2016/03/09/linux-x86-64-%E5%87%BD%E6%95%B0%E8%B0%83%E7%94%A8%E6%A0%88%E5%AE%9E%E4%BE%8B%E5%88%86%E6%9E%90/</guid>
+      <description>前言 动手实践并写文章花5倍的时间一次性把事情做到90分，好过读别人文章只能做到60分，后面还需要花时间继续深入学习。本文目的希望通过分析一个简单的函数调用加深对x86-64寄存器及栈帧的结构的认识，以便在定位问题需要的时候能够熟练运用。
+环境 1.操作系统和内核
+[root@localhost ~]# cat /proc/version Linux version 3.10.0-229.4.2.el7.x86_64 (builder@kbuilder.dev.centos.org) (gcc version 4.8.2 20140120 (Red Hat 4.8.2-16) (GCC) ) #1 SMP Wed May 13 10:06:09 UTC 2015  2.GCC版本
+[root@localhost ~]# gcc -v Using built-in specs. COLLECT_GCC=gcc COLLECT_LTO_WRAPPER=/usr/libexec/gcc/x86_64-redhat-linux/4.8.3/lto-wrapper Target: x86_64-redhat-linux Configured with: ../configure --prefix=/usr --mandir=/usr/share/man --infodir=/usr/share/info --with-bugurl=http://bugzilla.redhat.com/bugzilla --enable-bootstrap --enable-shared --enable-threads=posix --enable-checking=release --with-system-zlib --enable-__cxa_atexit --disable-libunwind-exceptions --enable-gnu-unique-object --enable-linker-build-id --with-linker-hash-style=gnu --enable-languages=c,c++,objc,obj-c++,java,fortran,ada,go,lto --enable-plugin --enable-initfini-array --disable-libgcj --with-isl=/builddir/build/BUILD/gcc-4.8.3-20140911/obj-x86_64-redhat-linux/isl-install --with-cloog=/builddir/build/BUILD/gcc-4.8.3-20140911/obj-x86_64-redhat-linux/cloog-install --enable-gnu-indirect-function --with-tune=generic --with-arch_32=x86-64 --build=x86_64-redhat-linux Thread model: posix gcc version 4.</description>
+    </item>
+    
+    <item>
+      <title>docker image命令实践</title>
+      <link>https://blog.ipds.top/2016/01/28/docker-image%E5%91%BD%E4%BB%A4%E5%AE%9E%E8%B7%B5/</link>
+      <pubDate>Thu, 28 Jan 2016 11:58:06 +0200</pubDate>
+      
+      <guid>https://blog.ipds.top/2016/01/28/docker-image%E5%91%BD%E4%BB%A4%E5%AE%9E%E8%B7%B5/</guid>
+      <description>搭建了docker环境，就来体验一下Docker，常用docker image命令如下：
+1. 搜索docker image root@localhost ~]# docker search ubuntu NAME DESCRIPTION STARS OFFICIAL AUTOMATED ubuntu Ubuntu is a Debian-based Linux operating s... 2954 [OK] ubuntu-upstart Upstart is an event-based replacement for ... 58 [OK] dorowu/ubuntu-desktop-lxde-vnc Ubuntu with openssh-server and NoVNC on po... 32 [OK] torusware/speedus-ubuntu Always updated official Ubuntu docker imag... 25 [OK] ubuntu-debootstrap debootstrap --variant=minbase --components... 22 [OK] tleyden5iwx/ubuntu-cuda Ubuntu 14.04 with CUDA drivers pre-installed 18 [OK] rastasheep/ubuntu-sshd Dockerized SSH service, built on top of of.</description>
+    </item>
+    
+    <item>
+      <title>升级Linux内核，搭建docker环境</title>
+      <link>https://blog.ipds.top/2015/12/13/%E5%8D%87%E7%BA%A7linux%E5%86%85%E6%A0%B8%E6%90%AD%E5%BB%BAdocker%E7%8E%AF%E5%A2%83/</link>
+      <pubDate>Sun, 13 Dec 2015 11:58:06 +0200</pubDate>
+      
+      <guid>https://blog.ipds.top/2015/12/13/%E5%8D%87%E7%BA%A7linux%E5%86%85%E6%A0%B8%E6%90%AD%E5%BB%BAdocker%E7%8E%AF%E5%A2%83/</guid>
+      <description>docker可以说是去年最热的技术，也是业界大谈特谈的技术，到了今年有很多公司已经将docker应用于自己的生产环境。Docker已经从一个工具转化成平台，小生态圈。作为一名程序员应该与时俱进，学习新技术，不断地提高自己。
+升级内核 docker要求linux内核版本3.12以上，作为常用linux2.26.32版本，虽然也可以安装docker，但是有一些特性不支持，所以第一步就是升级内核。个人选择最新的长期维护版本升级linux4.13,内核升级最关键的一件事情就是配置内核，关于内核支持docker的内核配置文件，如果不想自己动手配置内核，可以参考Linux-4.13-configfordocker;
+在未正确配置linux内核会出现以下一些错误：
+ docker启动过程中iptables命令执行失败，原因是 iptables模块没有配置  [root@localhost ~]# docker -d INFO[0000] Listening for HTTP on unix (/var/run/docker.sock) INFO[0000] [graphdriver] using prior storage driver &amp;quot;devicemapper&amp;quot; FATA[0000] Error starting daemon: Error initializing network controller: Error creating default &amp;quot;bridge&amp;quot; network: Failed to Setup IP tables: Unable to enable NAT rule: iptables failed: iptables -t nat -I POSTROUTING -s 172.17.42.1/16 ! -o docker0 -j MASQUERADE: iptables v1.4.7: can&#39;t initialize iptables table `nat&#39;: Table does not exist (do you need to insmod?</description>
+    </item>
+    
+    <item>
+      <title>gdb自定义断点操作</title>
+      <link>https://blog.ipds.top/2015/08/28/gdb%E8%87%AA%E5%AE%9A%E4%B9%89%E6%96%AD%E7%82%B9%E6%93%8D%E4%BD%9C/</link>
+      <pubDate>Fri, 28 Aug 2015 11:58:06 +0200</pubDate>
+      
+      <guid>https://blog.ipds.top/2015/08/28/gdb%E8%87%AA%E5%AE%9A%E4%B9%89%E6%96%AD%E7%82%B9%E6%93%8D%E4%BD%9C/</guid>
+      <description>gdb是c/c++上调试利器，有很多技巧能让调试程序与解决问题更加方便与高效，下面关于command 命令的使用一个实例，具体如下：
+1. 设置断点 (gdb) b GenVedioSeekPoint Breakpoint 1 at 0x402e58: file GenIndex.cpp, line 140. (gdb)  2. 利用commad自定义断点操作 (gdb) command 1 Type commands for breakpoint(s) 1, one per line. End with a line saying just &amp;quot;end&amp;quot;. &amp;gt;p *pstPktHead &amp;gt;continue &amp;gt;end (gdb)  3. 设置gdb log信息输出到指定文件 (gdb) set logging file genindex.txt (gdb) set logging on Copying output to genindex.txt. (gdb) set pagination off (gdb)  4. 开始或继续执行程序 (gdb) run  有输出信息如下：</description>
+    </item>
+    
+    <item>
+      <title>Linux netstat 应用示例</title>
+      <link>https://blog.ipds.top/2015/07/28/linux-netstat-%E5%BA%94%E7%94%A8%E7%A4%BA%E4%BE%8B/</link>
+      <pubDate>Tue, 28 Jul 2015 11:58:06 +0200</pubDate>
+      
+      <guid>https://blog.ipds.top/2015/07/28/linux-netstat-%E5%BA%94%E7%94%A8%E7%A4%BA%E4%BE%8B/</guid>
+      <description>关于netstat netstat 命令用于显示各种网络相关信息，如网络连接，路由表，接口状态 (Interface Statistics)，masquerade 连接，多播成员 (Multicast Memberships) 等等。
+常用参数 -a (all)显示所有选项，默认不显示LISTEN相关
+-t (tcp)仅显示tcp相关选项
+-u (udp)仅显示udp相关选项
+-n 拒绝显示别名，能显示数字的全部转化成数字
+-l 仅列出有在 Listen (监听) 的服務状态
+-p 显示建立相关链接的程序名
+-r 显示路由信息，路由表
+-e 显示扩展信息，例如uid等
+-s 按各个协议进行统计
+-c 每隔一个固定时间，执行该netstat命令
+注意：LISTEN和LISTENING的状态只有用-a或者-l才能看到
+应用实例 1. 选项组合应用 命令：
+netstat -tlnp  说明：显示处于listen状态的tcp连接，并显示对应进程pid
+示例：
+ [root@localhost default]# netstat -tlnp Active Internet connections (only servers) Proto Recv-Q Send-Q Local Address Foreign Address State PID/Program name tcp 0 0 0.0.0.0:21 0.0.0.0:* LISTEN 1284/pure-ftpd tcp 0 0 0.</description>
+    </item>
+    
+    <item>
+      <title>那些可进入睡眠状态的Linux内核函数</title>
+      <link>https://blog.ipds.top/2015/05/27/%E9%82%A3%E4%BA%9B%E5%8F%AF%E8%BF%9B%E5%85%A5%E7%9D%A1%E7%9C%A0%E7%8A%B6%E6%80%81%E7%9A%84linux%E5%86%85%E6%A0%B8%E5%87%BD%E6%95%B0/</link>
+      <pubDate>Wed, 27 May 2015 11:58:06 +0200</pubDate>
+      
+      <guid>https://blog.ipds.top/2015/05/27/%E9%82%A3%E4%BA%9B%E5%8F%AF%E8%BF%9B%E5%85%A5%E7%9D%A1%E7%9C%A0%E7%8A%B6%E6%80%81%E7%9A%84linux%E5%86%85%E6%A0%B8%E5%87%BD%E6%95%B0/</guid>
+      <description> 在linux内核开发中断处理函数不能调用可能导致睡眠的函数，下面总结linux内核可能引起睡眠的函数如下：
+schedule函数   schedule_timeout schedule_timeout_uninterruptible schedule_timeout_interruptible cond_resched might_resched   sleep函数   msleep msleep_interruputible ssleep osal_usleep might_sleep   取信号量函数   down down_timeout down_read down_write down_interruptible wait_for_completion wait_for_completion_interruptible wait_for_completion_timeout wait_for_completion_interruptible_timeout   kmalloc相关函数含有标志GFP_KERNEL   kmalloc kzalloc krealloc kmem_cache_create kmem_cache_alloc kmem_cache_zalloc   取睡眠锁函数   mutex_lock mutex_lock_timeout mutex_lock_nested mutex_lock_interruptible mutex_lock_interruptible_nested   在中断处理函数不能使用睡眠函数原因 主要原因如下：
+ 中断是一种紧急事务，中断处理函数要求快 linux是以进程为调度单位的，调度器只看到进程内核栈，而看不到中断栈，在独立中断栈的模式下，如果linux内核在中断处理函数内发生了调度或者睡眠，导致无法找到回家的路，未执行的中断处理代码再也无法获得执行机会（贪睡开小差是有代价哦）  </description>
+    </item>
+    
+    <item>
+      <title>Linux性能优化杂谈</title>
+      <link>https://blog.ipds.top/2015/05/24/linux%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%E6%9D%82%E8%B0%88/</link>
+      <pubDate>Sun, 24 May 2015 11:58:06 +0200</pubDate>
+      
+      <guid>https://blog.ipds.top/2015/05/24/linux%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%E6%9D%82%E8%B0%88/</guid>
+      <description>性能不仅仅是一串串数字，性能体现更大的吞吐量及更低的延迟；如果网络延迟增加0.1秒，google每秒损失100W,不是人民币是美元；网页响应慢0.1秒，运营成本每天增加100万美金。亚马逊的数据也显示，网页延迟1秒可能导致全年损失16亿美金；移动页面加载时间时长超过5秒，74%的用户会选择离开，高性能主要体现下面三个方面：
+ 少资源 高吞吐 低延迟  在具体网络转发性能优化过程中对性能优化有以下几点体会与总结：
+软硬结合 软件灵活，硬件高效，软硬结合就像双剑合壁，威力巨大；具体在网络设备中交换机就是一个很好的例子：通常由CPU完成协议的处理，下发转发表项到芯片，由芯片完成报文的转发，在这种思路下才会cisco，H3C，Huawei的大容量的交换机；如果完全交给CPU来处理成本很高，而且在现有技术下很难完成那么大的交换容量（1T以上）。在这种情况对于软件上来说基本不需要优化，本文后面的优化是针对软转的优化；
+分离与分解 控制与转发分离 由控制平面维护转发表项，转发平面根据表项完成转发
+针对性优化 性能优化一定要指定优化场景，例如对于收包优化针对不同的接入方式，不同报文类型；
+快慢结合，先慢后快 对于交换机与路由机这种网络转发设备，通过首包建流，后续报文匹配流实现快慢结合提高报文转发效率；
+缓存 缓存大法好，在现在各种系统与应用中缓存无处不在，硬件上看，有硬盘缓存，RAID卡缓存，存储缓存，主存，NUMA特性，CPU cache；软件架构上看，有全局数据缓存，私有数据缓存，连接池，应用服务器缓存，WEB服务器缓存，CDN缓存，客户端文件缓存，客户端内存缓存等等。
+do more with less 性能优化大体就是开源与节流，do more with less需要考虑如何提高cpu，存储，网络的利用效率
+预处理 兵马未动粮草先行 例如在报文发送针对不同流准备相应的链路层头，避免发送报文再逐字段填充，作到一次性完成报文贴头处理；其实很多应用系统的线程池，内存池，连接池等也是类似思想
+二八原则 主要体现如下:
+ 对于优化的代码，集中精力优化是关键20%的代码 在具体的系统性能优化过程刚开始投入20%可以使取得整个优化成果的80%，而最后的20%需要花费80%的时间来完成，而且涉及的挑战会更多，更有难度，所以优化过程越到后面越难，需要良好的心态与意志  无profile，不优化 If you can&amp;rsquo;t measure it, you can&amp;rsquo;t improve it。若无度量，则无提高。优化一定要有一套profile方法，profile以下几个方面的作用：
+ profile建立一个性能基线，有利于优化过程中比较与参考 profile查找系统的瓶颈，在一个大型的系统查找到性能瓶颈是一件很有挑战的事情,通过profile有利于快速定位瓶颈 profile评估优化结果，对每一个优化点有一个数字化清晰的记录 profile指导优化的方向  避免过度优化 在性能优化过程中切忌一味追求性能，忽略了业务，没有关注优化对系统带来的哪些不好影响，例如：
+ 优化使系统变得更复杂，不利于维护 优化影响了其他业务 优化忽略了业务功能（功能正确性，功能可扩展性等等） 优化只是特定环境下数据提升并不适用具体应用  减少状态的改变 在报文处理与协议处理过程中设计更精简的状态机，避免过多的状态变化处理的开销。
+避免代码的黑盒 避免代码的黑盒，主要有下面几点：
+1.优化过程忽略部分代码，导致这一部分代码未能出现优化对象中
+2.虽然考虑了所有该关注的代码，但是没有理解代码，特别这一部分代码涉及跨团队，个人经验：这一部分代码需要重点关注，往往有意想不到的收获
+总之，性能优化需要充分理解业务，根据数据，实现硬件，系统，业务三者最佳协同。</description>
+    </item>
+    
+    <item>
+      <title>在没有分支miss条件下，实现取最小值</title>
+      <link>https://blog.ipds.top/2015/05/24/%E5%9C%A8%E6%B2%A1%E6%9C%89%E5%88%86%E6%94%AFmiss%E6%9D%A1%E4%BB%B6%E4%B8%8B%E5%AE%9E%E7%8E%B0%E5%8F%96%E6%9C%80%E5%B0%8F%E5%80%BC/</link>
+      <pubDate>Sun, 24 May 2015 11:58:06 +0200</pubDate>
+      
+      <guid>https://blog.ipds.top/2015/05/24/%E5%9C%A8%E6%B2%A1%E6%9C%89%E5%88%86%E6%94%AFmiss%E6%9D%A1%E4%BB%B6%E4%B8%8B%E5%AE%9E%E7%8E%B0%E5%8F%96%E6%9C%80%E5%B0%8F%E5%80%BC/</guid>
+      <description> 在实际性能优化过程，加了一个if判断整个系统转发性能就有大约5%的下降，下面简单分享一种在没有分支miss条件下，实现取最小值的方法。
+一般实现 取两个数最小值，一般代码常见两种写法如下：
+ 写法一：
+if(a &amp;lt; b ) { min = a } else { min = b}  写法二：
+min = a &amp;lt; b ? a:b;   这两种写法只是代码写法不一致，实际都是通过一个if的语句的比较，存在if语句就代码运行过程就存在分支miss，而一个分支的miss的开销范围40到60 cycles；在追求高性能代码，且没有太多的优化点的过程中这是极其宝贵，且这两个分支出现概率都相当，也就不能简单通过likely与unlikely来实现分支预测
+无分支miss实现 无分支实现代码如下：
+min = b ^ ((a ^ b) &amp;amp;-(a&amp;lt;b));  分两种情况分析如下：
+当a&amp;lt;b时,-(a&amp;lt;b)为True，表达式等价于min= b ^(a ^ b) = a;
+当a&amp;gt;=b时，-（a &amp;lt; b）为False，表达式等价于min= b ^ 0 = b
+故可以宏定义如下：
+#define min(a,b) = (b) ^ ( ((a) ^ (b)) &amp;amp; (-((a)&amp;lt;(b))) )  </description>
+    </item>
+    
+  </channel>
+</rss>

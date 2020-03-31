@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Python on 沉风网事</title>
+    <link>https://blog.ipds.top/tags/python/</link>
+    <description>Recent content in Python on 沉风网事</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Thu, 08 Aug 2019 11:58:06 +0200</lastBuildDate>
+    
+	<atom:link href="https://blog.ipds.top/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>安装python3.7</title>
+      <link>https://blog.ipds.top/2019/08/08/%E5%AE%89%E8%A3%85python3.7/</link>
+      <pubDate>Thu, 08 Aug 2019 11:58:06 +0200</pubDate>
+      
+      <guid>https://blog.ipds.top/2019/08/08/%E5%AE%89%E8%A3%85python3.7/</guid>
+      <description>说明 完全是为了记录自己的操作记录，换一台新机器真是免不了要装python。记录下来，便于以后操作。
+apt-get安装 apt update apt install software-properties-common add-apt-repository ppa:deadsnakes/ppa apt install python3.7  源码安装 sudo apt update sudo apt install build-essential zlib1g-dev libncurses5-dev libgdbm-dev libnss3-dev libssl-dev libreadline-dev libffi-dev wget wget https://www.python.org/ftp/python/3.7.3/Python-3.7.3.tar.xz tar -xf Python-3.7.3.tar.xz cd Python-3.7.3 ./configure --enable-optimizations make make altinstall  install pip apt-get install python3-pip  install virutalenv pip3 install virtualenv  install jupyter python3 -m pip install --upgrade pip python3 -m pip install jupyter  参考  Managing Multiple Versions of Python on Ubuntu  欢迎关注 欢迎关注微信公众帐号：沉风网事(savewind)</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,1467 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <title>Go channel 特点篇 &middot; 沉风网事</title>
+    <meta name="generator" content="Hugo 0.54.0" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="author" content="沉风">
+    
+      <meta name="description" content="与爱相伴，与智慧共舞，创造属于自己的精彩！">
+    
+    
+    <link rel="canonical" href="https://blog.ipds.top/2016/07/26/go-channel-%E7%89%B9%E7%82%B9%E7%AF%87/"/>
+    <link rel="icon" href="https://blog.ipds.top/favicon.ico">
+    <link rel="apple-touch-icon" href="https://blog.ipds.top/apple-touch-icon.png"/>
+    <link rel="stylesheet" href="https://blog.ipds.top/css/style.css">
+    <link rel="stylesheet" href="https://blog.ipds.top/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://blog.ipds.top/css/monokai.css">
+    <link rel="stylesheet" href="https://blog.ipds.top/fancybox/jquery.fancybox.css">
+    
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400italic,400,600' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Source+Code+Pro' rel='stylesheet' type='text/css'>
+    <meta property="og:title" content="Go channel 特点篇" />
+<meta property="og:description" content="channel模式 根据同步方式不同，channel有两种模式：
+1、同步模式,形式如下：
+ch := make(chan int)  2、队列模式，形式如下：
+ch := make(chan int, 10)  根据数据方向流不同，channel类型可以有以下三种模式：
+ 写操作模式（只发送） 读操作模式（只接收） 读写操作模式（不限发送与接收）  channel操作 channel有以下操作：
+ 创建 关闭 写(发送)操作 读(接收)操作
+  这些操作都是原子操作
+channel状态 根据模式与操作，channel有以下状态：
+ 同步写阻塞 同步读阻塞 关闭状态
+ 队列写阻塞 队列读阻塞 队列可读写 nil状态  channel状态与操作之间关系    状态/操作 写操作 读操作 关闭 创建     nil状态 写阻塞 写阻塞 产生panic(close of nil channel) -   同步写阻塞 写阻塞 成功读取数据 进入关闭状态，产生panic -   同步读阻塞 成功写入数据 读阻塞 进入关闭状态 -   关闭状态 产生panic 立即返回(nil，false) 产生panic -   队列写阻塞 写阻塞 成功读取队列中数据 进入关闭状态，成功写入队列的数据可读 -   队列读阻塞 成功写入数据 读阻塞 进入关闭状态 -   队列可读写 成功写入数据 成功读取数据 进入关闭状态，成功写入队列的数据可读 -    由于个人水平有限，有什么不足与错误，敬请指正！" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blog.ipds.top/2016/07/26/go-channel-%E7%89%B9%E7%82%B9%E7%AF%87/" />
+<meta property="article:published_time" content="2016-07-26T11:58:06&#43;02:00"/>
+<meta property="article:modified_time" content="2016-07-26T11:58:06&#43;02:00"/>
+
+    
+    
+<meta itemprop="name" content="Go channel 特点篇">
+<meta itemprop="description" content="channel模式 根据同步方式不同，channel有两种模式：
+1、同步模式,形式如下：
+ch := make(chan int)  2、队列模式，形式如下：
+ch := make(chan int, 10)  根据数据方向流不同，channel类型可以有以下三种模式：
+ 写操作模式（只发送） 读操作模式（只接收） 读写操作模式（不限发送与接收）  channel操作 channel有以下操作：
+ 创建 关闭 写(发送)操作 读(接收)操作
+  这些操作都是原子操作
+channel状态 根据模式与操作，channel有以下状态：
+ 同步写阻塞 同步读阻塞 关闭状态
+ 队列写阻塞 队列读阻塞 队列可读写 nil状态  channel状态与操作之间关系    状态/操作 写操作 读操作 关闭 创建     nil状态 写阻塞 写阻塞 产生panic(close of nil channel) -   同步写阻塞 写阻塞 成功读取数据 进入关闭状态，产生panic -   同步读阻塞 成功写入数据 读阻塞 进入关闭状态 -   关闭状态 产生panic 立即返回(nil，false) 产生panic -   队列写阻塞 写阻塞 成功读取队列中数据 进入关闭状态，成功写入队列的数据可读 -   队列读阻塞 成功写入数据 读阻塞 进入关闭状态 -   队列可读写 成功写入数据 成功读取数据 进入关闭状态，成功写入队列的数据可读 -    由于个人水平有限，有什么不足与错误，敬请指正！">
+
+
+<meta itemprop="datePublished" content="2016-07-26T11:58:06&#43;02:00" />
+<meta itemprop="dateModified" content="2016-07-26T11:58:06&#43;02:00" />
+<meta itemprop="wordCount" content="78">
+
+
+
+<meta itemprop="keywords" content="golang," />
+
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Go channel 特点篇"/>
+<meta name="twitter:description" content="channel模式 根据同步方式不同，channel有两种模式：
+1、同步模式,形式如下：
+ch := make(chan int)  2、队列模式，形式如下：
+ch := make(chan int, 10)  根据数据方向流不同，channel类型可以有以下三种模式：
+ 写操作模式（只发送） 读操作模式（只接收） 读写操作模式（不限发送与接收）  channel操作 channel有以下操作：
+ 创建 关闭 写(发送)操作 读(接收)操作
+  这些操作都是原子操作
+channel状态 根据模式与操作，channel有以下状态：
+ 同步写阻塞 同步读阻塞 关闭状态
+ 队列写阻塞 队列读阻塞 队列可读写 nil状态  channel状态与操作之间关系    状态/操作 写操作 读操作 关闭 创建     nil状态 写阻塞 写阻塞 产生panic(close of nil channel) -   同步写阻塞 写阻塞 成功读取数据 进入关闭状态，产生panic -   同步读阻塞 成功写入数据 读阻塞 进入关闭状态 -   关闭状态 产生panic 立即返回(nil，false) 产生panic -   队列写阻塞 写阻塞 成功读取队列中数据 进入关闭状态，成功写入队列的数据可读 -   队列读阻塞 成功写入数据 读阻塞 进入关闭状态 -   队列可读写 成功写入数据 成功读取数据 进入关闭状态，成功写入队列的数据可读 -    由于个人水平有限，有什么不足与错误，敬请指正！"/>
+
+    
+
+    
+
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+
+     
+ <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+ <script type="text/x-mathjax-config">
+   MathJax.Hub.Config({
+     tex2jax: {
+       skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+       inlineMath: [['$','$']]
+     }
+   });
+ </script>
+</head>
+<body>
+<div class="container">
+
+
+<div id="container">
+	<header id="header">
+  <div id="header-main" class="header-inner">
+    <div class="outer">
+      <a href="https://blog.ipds.top/" id="logo">
+          
+          <i class="logo" style="background-image: url('https://blog.ipds.top/css/images/logo.png')"></i>
+          
+          <span class="site-title">沉风网事</span>
+      </a>
+      <nav id="main-nav">
+          
+          
+          <a class="main-nav-link" href="https://blog.ipds.top/">Home</a>
+          
+          
+          
+          
+          
+          
+
+          
+          <a class="main-nav-link" href="/about/">About</a>
+          
+          <a class="main-nav-link" href="/2017/03/18/leetcode/">LeetCode</a>
+          
+          <a class="main-nav-link" href="/2017/10/02/read/">Read</a>
+          
+          <a class="main-nav-link" href="/2017/10/02/share/">Share</a>
+          
+          <a class="main-nav-link" href="/2017/10/02/slide/">Slide</a>
+          
+
+          
+          
+          
+          
+          <a class="main-nav-link" href="https://blog.ipds.top/tags/">Tags</a>
+          
+          
+          
+          <a class="main-nav-link" href="https://blog.ipds.top/categories/">Categories</a>
+          
+          
+      </nav>
+        <nav id="sub-nav">
+          <div class="profile" id="profile-nav">
+            <a id="profile-anchor" href="javascript:;"><img class="avatar" src="https://blog.ipds.top/css/images/avatar.png"><i class="fa fa-caret-down"></i></a>
+          </div>
+        </nav>
+        <div id="search-form-wrap">
+          <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form">
+              <input type="search" name="q" class="search-form-input" placeholder="Search">
+              <button type="submit" class="search-form-submit">
+              </button>
+              <input type="hidden" name="sitesearch" value="https://blog.ipds.top/" />
+         </form>
+        </div>
+    </div>
+  </div>
+  <div id="main-nav-mobile" class="header-sub header-inner">
+    <table class="menu outer">
+      <tbody>
+          <tr>
+          
+          
+          <td><a class="main-nav-link" href="https://blog.ipds.top/">Home</a></td>
+          
+          
+          
+          
+          
+          
+
+          
+          <td><a class="main-nav-link" href="/about/">About</a></td>
+          
+          <td><a class="main-nav-link" href="/2017/03/18/leetcode/">LeetCode</a></td>
+          
+          <td><a class="main-nav-link" href="/2017/10/02/read/">Read</a></td>
+          
+          <td><a class="main-nav-link" href="/2017/10/02/share/">Share</a></td>
+          
+          <td><a class="main-nav-link" href="/2017/10/02/slide/">Slide</a></td>
+          
+
+          
+          
+          
+          
+          <td><a class="main-nav-link" href="https://blog.ipds.top/tags/">Tags</a></td>
+          
+          
+          
+          <td><a class="main-nav-link" href="https://blog.ipds.top/categories/">Categories</a></td>
+          
+          
+          <td>
+          <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form">
+          <input type="search" name="q" class="search-form-input" placeholder="Search">
+          <input type="hidden" name="sitesearch" value="https://blog.ipds.top/" />
+          </form>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</header>
+
+   	
+   	<div class="outer">
+   	
+    	<aside id="profile">
+  <div class="inner profile-inner">
+    <div class="base-info profile-block">
+      
+      <img id="avatar" src="https://www.gravatar.com/avatar/45ae86ea3c111a5537490c3b370c03ee?s=100&d=identicon"/>
+      
+      <h2 id="name">沉风</h2>
+      <h3 id="title">All is well, just do it</h3>
+      <span id="location"><i class="fa fa-map-marker"></i>hangzhou, china</span>
+      
+          <a id="follow" href="https://github.com/myself659">
+              Follow
+          </a>
+      
+    </div>
+    <div class="article-info profile-block">
+      <div class="article-info-block">
+        117
+        <span>Posts</span>
+      </div>
+      <div class="article-info-block">
+        
+          34
+        
+        <span>
+            Tags
+        </span>
+      </div>
+    </div>
+    <div class="profile-block social-links">
+      <table>
+        <tr>
+          
+<td><a href="//github.com/myself659" target="_blank" title="GitHub"><i class="fa fa-github"></i></a></td>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<td><a href="//medium.com/@myself659" target="_blank" title="Medium"><i class="fa fa-medium"></i></a></td>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          <td><a href="https://blog.ipds.top/index.xml" target="_blank" title="RSS"><i class="fa fa-rss"></i></a></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</aside>
+
+    
+
+    <section id="main">
+    
+    <article id="page-undefined" class="article article-type-page" itemscope="" itemprop="blogPost">
+    <div class="article-inner">
+        
+
+        <header class="article-header">
+    <a href="https://blog.ipds.top/2016/07/26/go-channel-%E7%89%B9%E7%82%B9%E7%AF%87/">
+    <h1 class="article-title" itemprop="name">
+        Go channel 特点篇
+    </h1>
+    </a>
+    <div class="article-meta">
+
+        
+        <div class="article-date">
+            <i class="fa fa-calendar"></i>
+            <time datetime="2016-07-26 11:58:06 &#43;0200 &#43;0200" itemprop="datePublished">2016-07-26</time>
+            &middot;
+            78
+            words
+            &middot;
+            1
+            minute read
+        </div>
+        
+        
+            
+            
+            <div class="article-category">
+                <i class="fa fa-folder"></i>
+                
+                
+                <a class="article-category-link" href="https://blog.ipds.top/categories/golang">golang</a>
+                
+                
+            </div>
+            
+        
+
+        
+            
+            
+            <div class="article-category">
+                <i class="fa fa-tags"></i>
+                
+                
+                <a class="article-category-link" href="https://blog.ipds.top/tags/golang">golang</a>
+                
+                
+            </div>
+            
+        
+    </div>
+</header>
+
+        <div class="article-entry" itemprop="articleBody">
+            
+
+<h3 id="channel模式">channel模式</h3>
+
+<p>根据同步方式不同，channel有两种模式：</p>
+
+<p>1、同步模式,形式如下：</p>
+
+<pre><code>ch := make(chan int)
+</code></pre>
+
+<p>2、队列模式，形式如下：</p>
+
+<pre><code>ch := make(chan int, 10)
+</code></pre>
+
+<p>根据数据方向流不同，channel类型可以有以下三种模式：</p>
+
+<ol>
+<li>写操作模式（只发送）</li>
+<li>读操作模式（只接收）</li>
+<li>读写操作模式（不限发送与接收）</li>
+</ol>
+
+<h3 id="channel操作">channel操作</h3>
+
+<p>channel有以下操作：</p>
+
+<ol>
+<li>创建</li>
+<li>关闭</li>
+<li>写(发送)操作</li>
+<li>读(接收)操作<br /></li>
+</ol>
+
+<p>这些操作都是原子操作</p>
+
+<h3 id="channel状态">channel状态</h3>
+
+<p>根据模式与操作，channel有以下状态：</p>
+
+<ol>
+<li>同步写阻塞</li>
+<li>同步读阻塞</li>
+<li>关闭状态<br /></li>
+<li>队列写阻塞</li>
+<li>队列读阻塞</li>
+<li>队列可读写</li>
+<li>nil状态</li>
+</ol>
+
+<h3 id="channel状态与操作之间关系">channel状态与操作之间关系</h3>
+
+<table>
+<thead>
+<tr>
+<th>状态/操作</th>
+<th align="center">写操作</th>
+<th align="right">读操作</th>
+<th align="center">关闭</th>
+<th align="right">创建</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>nil状态</td>
+<td align="center">写阻塞</td>
+<td align="right">写阻塞</td>
+<td align="center">产生panic(close of nil channel)</td>
+<td align="right">-</td>
+</tr>
+
+<tr>
+<td>同步写阻塞</td>
+<td align="center">写阻塞</td>
+<td align="right">成功读取数据</td>
+<td align="center">进入关闭状态，产生panic</td>
+<td align="right">-</td>
+</tr>
+
+<tr>
+<td>同步读阻塞</td>
+<td align="center">成功写入数据</td>
+<td align="right">读阻塞</td>
+<td align="center">进入关闭状态</td>
+<td align="right">-</td>
+</tr>
+
+<tr>
+<td>关闭状态</td>
+<td align="center">产生panic</td>
+<td align="right">立即返回(nil，false)</td>
+<td align="center">产生panic</td>
+<td align="right">-</td>
+</tr>
+
+<tr>
+<td>队列写阻塞</td>
+<td align="center">写阻塞</td>
+<td align="right">成功读取队列中数据</td>
+<td align="center">进入关闭状态，成功写入队列的数据可读</td>
+<td align="right">-</td>
+</tr>
+
+<tr>
+<td>队列读阻塞</td>
+<td align="center">成功写入数据</td>
+<td align="right">读阻塞</td>
+<td align="center">进入关闭状态</td>
+<td align="right">-</td>
+</tr>
+
+<tr>
+<td>队列可读写</td>
+<td align="center">成功写入数据</td>
+<td align="right">成功读取数据</td>
+<td align="center">进入关闭状态，成功写入队列的数据可读</td>
+<td align="right">-</td>
+</tr>
+</tbody>
+</table>
+
+<p>由于个人水平有限，有什么不足与错误，敬请指正！</p>
+
+        </div>
+        <footer class="article-footer">
+    <a data-url="https://blog.ipds.top/2016/07/26/go-channel-%E7%89%B9%E7%82%B9%E7%AF%87/" data-id="f59880a277ad0a67b4ffd04aa257a3f6" class="article-share-link">
+        <i class="fa fa-share"></i>
+        Share
+    </a>
+    
+    <a href="https://blog.ipds.top/2016/07/26/go-channel-%E7%89%B9%E7%82%B9%E7%AF%87/#disqus_thread" class="article-comment-link">
+        Comments
+    </a>
+    
+
+    <script>
+    (function ($) {
+        
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+    </script>
+</footer>
+
+    </div>
+
+    
+<nav id="article-nav">
+    
+    <a href="https://blog.ipds.top/2016/06/02/10-lessons-from-10-years-of-amazon-web-services%E8%AF%91%E6%96%87/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">
+          Older
+      </strong>
+      <div class="article-nav-title">10 Lessons from 10 Years of Amazon Web Services（译文）</div>
+    </a>
+    
+
+    
+    <a href="https://blog.ipds.top/2016/07/29/im%E5%90%8E%E7%AB%AF%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1%E6%80%BB%E7%BB%931/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">
+          Newer
+      </strong>
+      <div class="article-nav-title">IM后端系统设计总结(1)</div>
+    </a>
+    
+</nav>
+
+
+</article>
+
+
+<section id="comments">
+    <div id="disqus_thread">
+        <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "ipds-top" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    </div>
+</section>
+
+    <script src="https://utteranc.es/client.js"
+        repo="myself659/ipds-public"
+        issue-term="url"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+    </script>
+    
+
+    </section>
+
+
+
+   	
+    	<aside id="sidebar">
+    
+<div class="widget-wrap">
+    <h3 class="widget-title">
+        Recents
+    </h3>
+    <div class="widget">
+        <ul id="recent-post">
+            
+            <li>
+                <div class="item-thumbnail">
+                    <a href="https://blog.ipds.top/2020/03/29/github%E8%A2%AB%E6%94%BB%E5%87%BB%E7%A8%8B%E5%BA%8F%E5%91%98%E8%AF%A5%E6%80%8E%E4%B9%88%E5%8A%9E/" class="thumbnail">
+                    
+                        <span class="thumbnail-image thumbnail-none"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    <p class="item-category">
+                        
+                        <a class="article-category-link" href="https://blog.ipds.top/categories/%E7%BC%96%E7%A8%8B">
+                        编程
+                        </a>
+                    </p>
+                    
+                    
+                    <p class="item-title"><a href="https://blog.ipds.top/2020/03/29/github%E8%A2%AB%E6%94%BB%E5%87%BB%E7%A8%8B%E5%BA%8F%E5%91%98%E8%AF%A5%E6%80%8E%E4%B9%88%E5%8A%9E/" class="title">github被攻击，程序员该怎么办</a></p>
+                    <p class="item-date">
+                        <time datetime="2020-03-29 11:58:06 &#43;0200 &#43;0200" itemprop="datePublished">2020-03-29</time>
+                    </p>
+                </div>
+            </li>
+            
+            <li>
+                <div class="item-thumbnail">
+                    <a href="https://blog.ipds.top/2020/03/22/%E6%8F%90%E9%AB%98%E4%B8%AA%E4%BA%BA%E9%9A%90%E7%A7%81%E6%95%B0%E6%8D%AE%E5%AE%89%E5%85%A8%E7%9A%84%E5%87%A0%E7%82%B9%E5%BB%BA%E8%AE%AE/" class="thumbnail">
+                    
+                        <span class="thumbnail-image thumbnail-none"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    <p class="item-category">
+                        
+                        <a class="article-category-link" href="https://blog.ipds.top/categories/internet">
+                        Internet
+                        </a>
+                    </p>
+                    
+                    
+                    <p class="item-title"><a href="https://blog.ipds.top/2020/03/22/%E6%8F%90%E9%AB%98%E4%B8%AA%E4%BA%BA%E9%9A%90%E7%A7%81%E6%95%B0%E6%8D%AE%E5%AE%89%E5%85%A8%E7%9A%84%E5%87%A0%E7%82%B9%E5%BB%BA%E8%AE%AE/" class="title">提高个人隐私数据安全的几点建议</a></p>
+                    <p class="item-date">
+                        <time datetime="2020-03-22 11:58:06 &#43;0200 &#43;0200" itemprop="datePublished">2020-03-22</time>
+                    </p>
+                </div>
+            </li>
+            
+            <li>
+                <div class="item-thumbnail">
+                    <a href="https://blog.ipds.top/2020/03/15/%E4%B8%80%E5%91%A8%E7%BB%8F%E5%8E%86%E4%B8%A4%E6%AC%A1%E7%86%94%E6%96%AD%E7%BE%8E%E8%82%A1%E4%BC%9A%E8%B7%8C%E5%A4%9A%E5%B0%91/" class="thumbnail">
+                    
+                        <span class="thumbnail-image thumbnail-none"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    <p class="item-category">
+                        
+                        <a class="article-category-link" href="https://blog.ipds.top/categories/economics">
+                        Economics
+                        </a>
+                    </p>
+                    
+                    
+                    <p class="item-title"><a href="https://blog.ipds.top/2020/03/15/%E4%B8%80%E5%91%A8%E7%BB%8F%E5%8E%86%E4%B8%A4%E6%AC%A1%E7%86%94%E6%96%AD%E7%BE%8E%E8%82%A1%E4%BC%9A%E8%B7%8C%E5%A4%9A%E5%B0%91/" class="title">一周经历两次熔断，美股会跌多少?</a></p>
+                    <p class="item-date">
+                        <time datetime="2020-03-15 11:58:06 &#43;0200 &#43;0200" itemprop="datePublished">2020-03-15</time>
+                    </p>
+                </div>
+            </li>
+            
+            <li>
+                <div class="item-thumbnail">
+                    <a href="https://blog.ipds.top/2020/03/08/%E5%9C%A8%E9%80%89%E6%8B%A9%E5%81%9A%E4%BB%80%E4%B9%88%E4%B9%8B%E5%89%8D%E5%85%88%E9%97%AE%E9%97%AE%E8%87%AA%E5%B7%B1%E8%BF%99%E5%9B%9B%E4%B8%AA%E9%97%AE%E9%A2%98/" class="thumbnail">
+                    
+                        <span class="thumbnail-image thumbnail-none"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    <p class="item-category">
+                        
+                        <a class="article-category-link" href="https://blog.ipds.top/categories/%E6%88%90%E9%95%BF">
+                        成长
+                        </a>
+                    </p>
+                    
+                    
+                    <p class="item-title"><a href="https://blog.ipds.top/2020/03/08/%E5%9C%A8%E9%80%89%E6%8B%A9%E5%81%9A%E4%BB%80%E4%B9%88%E4%B9%8B%E5%89%8D%E5%85%88%E9%97%AE%E9%97%AE%E8%87%AA%E5%B7%B1%E8%BF%99%E5%9B%9B%E4%B8%AA%E9%97%AE%E9%A2%98/" class="title">在选择做什么之前，先问问自己这四个问题</a></p>
+                    <p class="item-date">
+                        <time datetime="2020-03-08 11:58:06 &#43;0200 &#43;0200" itemprop="datePublished">2020-03-08</time>
+                    </p>
+                </div>
+            </li>
+            
+            <li>
+                <div class="item-thumbnail">
+                    <a href="https://blog.ipds.top/2020/03/08/%E5%BE%AE%E7%9B%9F%E5%88%A0%E5%BA%93%E4%BA%8B%E4%BB%B6%E5%A4%8D%E7%9B%98%E4%B8%8E%E6%80%9D%E8%80%83/" class="thumbnail">
+                    
+                        <span class="thumbnail-image thumbnail-none"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    <p class="item-category">
+                        
+                        <a class="article-category-link" href="https://blog.ipds.top/categories/%E6%8A%80%E6%9C%AF%E7%AE%A1%E7%90%86">
+                        技术管理
+                        </a>
+                    </p>
+                    
+                    
+                    <p class="item-title"><a href="https://blog.ipds.top/2020/03/08/%E5%BE%AE%E7%9B%9F%E5%88%A0%E5%BA%93%E4%BA%8B%E4%BB%B6%E5%A4%8D%E7%9B%98%E4%B8%8E%E6%80%9D%E8%80%83/" class="title">微盟删库事件复盘与思考</a></p>
+                    <p class="item-date">
+                        <time datetime="2020-03-08 11:58:06 &#43;0200 &#43;0200" itemprop="datePublished">2020-03-08</time>
+                    </p>
+                </div>
+            </li>
+            
+        </ul>
+    </div>
+</div>
+
+
+    
+
+
+<div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+        <ul class="category-list">
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://blog.ipds.top/categories/arch">
+                    arch
+                </a>
+                <span class="category-list-count">5</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://blog.ipds.top/categories/blockchain">
+                    blockchain
+                </a>
+                <span class="category-list-count">25</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://blog.ipds.top/categories/cryptography">
+                    cryptography
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://blog.ipds.top/categories/data">
+                    data
+                </a>
+                <span class="category-list-count">2</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://blog.ipds.top/categories/data-struct">
+                    data-struct
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://blog.ipds.top/categories/distributed">
+                    distributed
+                </a>
+                <span class="category-list-count">2</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://blog.ipds.top/categories/economics">
+                    economics
+                </a>
+                <span class="category-list-count">3</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://blog.ipds.top/categories/english">
+                    english
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://blog.ipds.top/categories/ethereum">
+                    ethereum
+                </a>
+                <span class="category-list-count">2</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://blog.ipds.top/categories/golang">
+                    golang
+                </a>
+                <span class="category-list-count">10</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://blog.ipds.top/categories/internet">
+                    internet
+                </a>
+                <span class="category-list-count">4</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://blog.ipds.top/categories/ipfs">
+                    ipfs
+                </a>
+                <span class="category-list-count">3</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://blog.ipds.top/categories/kubernetes">
+                    kubernetes
+                </a>
+                <span class="category-list-count">3</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://blog.ipds.top/categories/linux">
+                    linux
+                </a>
+                <span class="category-list-count">11</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://blog.ipds.top/categories/network">
+                    network
+                </a>
+                <span class="category-list-count">3</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://blog.ipds.top/categories/nginx">
+                    nginx
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://blog.ipds.top/categories/python">
+                    python
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://blog.ipds.top/categories/rust">
+                    rust
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://blog.ipds.top/categories/sec">
+                    sec
+                </a>
+                <span class="category-list-count">2</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://blog.ipds.top/categories/substrate">
+                    substrate
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://blog.ipds.top/categories/web">
+                    web
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://blog.ipds.top/categories/%E5%95%86%E4%B8%9A">
+                    商业
+                </a>
+                <span class="category-list-count">5</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://blog.ipds.top/categories/%E6%88%90%E9%95%BF">
+                    成长
+                </a>
+                <span class="category-list-count">2</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://blog.ipds.top/categories/%E6%8A%80%E6%9C%AF%E7%AE%A1%E7%90%86">
+                    技术管理
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://blog.ipds.top/categories/%E7%A0%94%E5%8F%91%E7%AE%A1%E7%90%86">
+                    研发管理
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://blog.ipds.top/categories/%E7%BC%96%E7%A8%8B">
+                    编程
+                </a>
+                <span class="category-list-count">5</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://blog.ipds.top/categories/%E9%97%B2%E8%B0%88%E4%B9%B1%E6%89%AF">
+                    闲谈乱扯
+                </a>
+                <span class="category-list-count">11</span>
+            </li>
+            
+        </ul>
+    </div>
+</div>
+
+
+
+
+    
+
+
+<div class="widget-wrap">
+    <h3 class="widget-title">
+        Tags
+    </h3>
+    <div class="widget">
+        <ul class="category-list">
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://blog.ipds.top/tags/arch">
+                    arch
+                </a>
+                <span class="category-list-count">5</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://blog.ipds.top/tags/bitcoin">
+                    bitcoin
+                </a>
+                <span class="category-list-count">2</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://blog.ipds.top/tags/blockchain">
+                    blockchain
+                </a>
+                <span class="category-list-count">29</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://blog.ipds.top/tags/btc">
+                    btc
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://blog.ipds.top/tags/cryptography">
+                    cryptography
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://blog.ipds.top/tags/data">
+                    data
+                </a>
+                <span class="category-list-count">2</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://blog.ipds.top/tags/data-struct">
+                    data-struct
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://blog.ipds.top/tags/distributed">
+                    distributed
+                </a>
+                <span class="category-list-count">3</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://blog.ipds.top/tags/docker">
+                    docker
+                </a>
+                <span class="category-list-count">3</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://blog.ipds.top/tags/economics">
+                    economics
+                </a>
+                <span class="category-list-count">3</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://blog.ipds.top/tags/english">
+                    english
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://blog.ipds.top/tags/ethereum">
+                    ethereum
+                </a>
+                <span class="category-list-count">2</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://blog.ipds.top/tags/golang">
+                    golang
+                </a>
+                <span class="category-list-count">10</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://blog.ipds.top/tags/internet">
+                    internet
+                </a>
+                <span class="category-list-count">10</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://blog.ipds.top/tags/ipfs">
+                    ipfs
+                </a>
+                <span class="category-list-count">3</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://blog.ipds.top/tags/kubernetes">
+                    kubernetes
+                </a>
+                <span class="category-list-count">3</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://blog.ipds.top/tags/linux">
+                    linux
+                </a>
+                <span class="category-list-count">11</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://blog.ipds.top/tags/nba">
+                    nba
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://blog.ipds.top/tags/network">
+                    network
+                </a>
+                <span class="category-list-count">3</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://blog.ipds.top/tags/nginx">
+                    nginx
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://blog.ipds.top/tags/python">
+                    python
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://blog.ipds.top/tags/rust">
+                    rust
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://blog.ipds.top/tags/sec">
+                    sec
+                </a>
+                <span class="category-list-count">2</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://blog.ipds.top/tags/secure">
+                    secure
+                </a>
+                <span class="category-list-count">3</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://blog.ipds.top/tags/smart-contract">
+                    smart-contract
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://blog.ipds.top/tags/substrate">
+                    substrate
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://blog.ipds.top/tags/web">
+                    web
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://blog.ipds.top/tags/%E5%95%86%E4%B8%9A">
+                    商业
+                </a>
+                <span class="category-list-count">5</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://blog.ipds.top/tags/%E6%88%90%E9%95%BF">
+                    成长
+                </a>
+                <span class="category-list-count">2</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://blog.ipds.top/tags/%E6%8A%80%E6%9C%AF%E7%AE%A1%E7%90%86">
+                    技术管理
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://blog.ipds.top/tags/%E7%A0%94%E5%8F%91%E7%AE%A1%E7%90%86">
+                    研发管理
+                </a>
+                <span class="category-list-count">3</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://blog.ipds.top/tags/%E7%BC%96%E7%A8%8B">
+                    编程
+                </a>
+                <span class="category-list-count">6</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://blog.ipds.top/tags/%E8%81%8C%E5%9C%BA">
+                    职场
+                </a>
+                <span class="category-list-count">2</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://blog.ipds.top/tags/%E9%97%B2%E8%B0%88%E4%B9%B1%E6%89%AF">
+                    闲谈乱扯
+                </a>
+                <span class="category-list-count">10</span>
+            </li>
+            
+        </ul>
+    </div>
+</div>
+
+
+
+
+    
+
+
+<div class="widget-wrap">
+    <h3 class="widget-title">
+        Tag cloud
+    </h3>
+    <div class="widget tagcloud">
+        
+        
+        <a href="https://blog.ipds.top/tags/arch" style="font-size: 12px;">arch</a>
+        
+        
+        <a href="https://blog.ipds.top/tags/bitcoin" style="font-size: 12px;">bitcoin</a>
+        
+        
+        <a href="https://blog.ipds.top/tags/blockchain" style="font-size: 12px;">blockchain</a>
+        
+        
+        <a href="https://blog.ipds.top/tags/btc" style="font-size: 12px;">btc</a>
+        
+        
+        <a href="https://blog.ipds.top/tags/cryptography" style="font-size: 12px;">cryptography</a>
+        
+        
+        <a href="https://blog.ipds.top/tags/data" style="font-size: 12px;">data</a>
+        
+        
+        <a href="https://blog.ipds.top/tags/data-struct" style="font-size: 12px;">data-struct</a>
+        
+        
+        <a href="https://blog.ipds.top/tags/distributed" style="font-size: 12px;">distributed</a>
+        
+        
+        <a href="https://blog.ipds.top/tags/docker" style="font-size: 12px;">docker</a>
+        
+        
+        <a href="https://blog.ipds.top/tags/economics" style="font-size: 12px;">economics</a>
+        
+        
+        <a href="https://blog.ipds.top/tags/english" style="font-size: 12px;">english</a>
+        
+        
+        <a href="https://blog.ipds.top/tags/ethereum" style="font-size: 12px;">ethereum</a>
+        
+        
+        <a href="https://blog.ipds.top/tags/golang" style="font-size: 12px;">golang</a>
+        
+        
+        <a href="https://blog.ipds.top/tags/internet" style="font-size: 12px;">internet</a>
+        
+        
+        <a href="https://blog.ipds.top/tags/ipfs" style="font-size: 12px;">ipfs</a>
+        
+        
+        <a href="https://blog.ipds.top/tags/kubernetes" style="font-size: 12px;">kubernetes</a>
+        
+        
+        <a href="https://blog.ipds.top/tags/linux" style="font-size: 12px;">linux</a>
+        
+        
+        <a href="https://blog.ipds.top/tags/nba" style="font-size: 12px;">nba</a>
+        
+        
+        <a href="https://blog.ipds.top/tags/network" style="font-size: 12px;">network</a>
+        
+        
+        <a href="https://blog.ipds.top/tags/nginx" style="font-size: 12px;">nginx</a>
+        
+        
+        <a href="https://blog.ipds.top/tags/python" style="font-size: 12px;">python</a>
+        
+        
+        <a href="https://blog.ipds.top/tags/rust" style="font-size: 12px;">rust</a>
+        
+        
+        <a href="https://blog.ipds.top/tags/sec" style="font-size: 12px;">sec</a>
+        
+        
+        <a href="https://blog.ipds.top/tags/secure" style="font-size: 12px;">secure</a>
+        
+        
+        <a href="https://blog.ipds.top/tags/smart-contract" style="font-size: 12px;">smart-contract</a>
+        
+        
+        <a href="https://blog.ipds.top/tags/substrate" style="font-size: 12px;">substrate</a>
+        
+        
+        <a href="https://blog.ipds.top/tags/web" style="font-size: 12px;">web</a>
+        
+        
+        <a href="https://blog.ipds.top/tags/%E5%95%86%E4%B8%9A" style="font-size: 12px;">商业</a>
+        
+        
+        <a href="https://blog.ipds.top/tags/%E6%88%90%E9%95%BF" style="font-size: 12px;">成长</a>
+        
+        
+        <a href="https://blog.ipds.top/tags/%E6%8A%80%E6%9C%AF%E7%AE%A1%E7%90%86" style="font-size: 12px;">技术管理</a>
+        
+        
+        <a href="https://blog.ipds.top/tags/%E7%A0%94%E5%8F%91%E7%AE%A1%E7%90%86" style="font-size: 12px;">研发管理</a>
+        
+        
+        <a href="https://blog.ipds.top/tags/%E7%BC%96%E7%A8%8B" style="font-size: 12px;">编程</a>
+        
+        
+        <a href="https://blog.ipds.top/tags/%E8%81%8C%E5%9C%BA" style="font-size: 12px;">职场</a>
+        
+        
+        <a href="https://blog.ipds.top/tags/%E9%97%B2%E8%B0%88%E4%B9%B1%E6%89%AF" style="font-size: 12px;">闲谈乱扯</a>
+        
+    </div>
+</div>
+
+
+
+
+
+    <div id="toTop" class="fa fa-angle-up"></div>
+</aside>
+
+    
+	</div>
+</div>
+
+<footer id="footer">
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2020
+      copyright@沉风网事 <a href="http://www.beian.miit.gov.cn/">浙ICP备19035943号-2</a>
+    </div>
+  </div>
+</footer>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-144475213-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+<script src="https://blog.ipds.top/fancybox/jquery.fancybox.pack.js"></script>
+<script src="https://blog.ipds.top/js/script.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js"></script>
+
+
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']]}
+  });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+
+
+</body>
+</html>

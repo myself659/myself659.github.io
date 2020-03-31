@@ -1,0 +1,1738 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <title>深入分析Golang sync.pool &middot; 沉风网事</title>
+    <meta name="generator" content="Hugo 0.54.0" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="author" content="沉风">
+    
+      <meta name="description" content="与爱相伴，与智慧共舞，创造属于自己的精彩！">
+    
+    
+    <link rel="canonical" href="https://blog.ipds.top/2019/06/10/%E6%B7%B1%E5%85%A5%E5%88%86%E6%9E%90golang-sync.pool/"/>
+    <link rel="icon" href="https://blog.ipds.top/favicon.ico">
+    <link rel="apple-touch-icon" href="https://blog.ipds.top/apple-touch-icon.png"/>
+    <link rel="stylesheet" href="https://blog.ipds.top/css/style.css">
+    <link rel="stylesheet" href="https://blog.ipds.top/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://blog.ipds.top/css/monokai.css">
+    <link rel="stylesheet" href="https://blog.ipds.top/fancybox/jquery.fancybox.css">
+    
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400italic,400,600' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Source+Code+Pro' rel='stylesheet' type='text/css'>
+    <meta property="og:title" content="深入分析Golang sync.pool" />
+<meta property="og:description" content="定义 sync.Pool是一个可以存或取的临时对象池。对外提供New、Get、Put等API，利用mutex支持多线程并发。
+目标 sync.Pool解决以下问题：
+ 增加临时对象的用复用率，减少GC负担 通过对象的复用，减少内存申请开销，有利于提高一部分性能  实现 这一部分回答如何实现的问题。
+关于了解实现，最好的办法就是看代码。
+描述 type Pool struct { noCopy noCopy local unsafe.Pointer // local fixed-size per-P pool, actual type is [P]poolLocal localSize uintptr // size of the local array // New optionally specifies a function to generate // a value when Get would otherwise return nil. // It may not be changed concurrently with calls to Get. New func() interface{} }  各个成员含义如下：" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blog.ipds.top/2019/06/10/%E6%B7%B1%E5%85%A5%E5%88%86%E6%9E%90golang-sync.pool/" />
+<meta property="article:published_time" content="2019-06-10T11:58:06&#43;02:00"/>
+<meta property="article:modified_time" content="2019-06-10T11:58:06&#43;02:00"/>
+
+    
+    
+<meta itemprop="name" content="深入分析Golang sync.pool">
+<meta itemprop="description" content="定义 sync.Pool是一个可以存或取的临时对象池。对外提供New、Get、Put等API，利用mutex支持多线程并发。
+目标 sync.Pool解决以下问题：
+ 增加临时对象的用复用率，减少GC负担 通过对象的复用，减少内存申请开销，有利于提高一部分性能  实现 这一部分回答如何实现的问题。
+关于了解实现，最好的办法就是看代码。
+描述 type Pool struct { noCopy noCopy local unsafe.Pointer // local fixed-size per-P pool, actual type is [P]poolLocal localSize uintptr // size of the local array // New optionally specifies a function to generate // a value when Get would otherwise return nil. // It may not be changed concurrently with calls to Get. New func() interface{} }  各个成员含义如下：">
+
+
+<meta itemprop="datePublished" content="2019-06-10T11:58:06&#43;02:00" />
+<meta itemprop="dateModified" content="2019-06-10T11:58:06&#43;02:00" />
+<meta itemprop="wordCount" content="1087">
+
+
+
+<meta itemprop="keywords" content="Golang," />
+
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="深入分析Golang sync.pool"/>
+<meta name="twitter:description" content="定义 sync.Pool是一个可以存或取的临时对象池。对外提供New、Get、Put等API，利用mutex支持多线程并发。
+目标 sync.Pool解决以下问题：
+ 增加临时对象的用复用率，减少GC负担 通过对象的复用，减少内存申请开销，有利于提高一部分性能  实现 这一部分回答如何实现的问题。
+关于了解实现，最好的办法就是看代码。
+描述 type Pool struct { noCopy noCopy local unsafe.Pointer // local fixed-size per-P pool, actual type is [P]poolLocal localSize uintptr // size of the local array // New optionally specifies a function to generate // a value when Get would otherwise return nil. // It may not be changed concurrently with calls to Get. New func() interface{} }  各个成员含义如下："/>
+
+    
+
+    
+
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+
+     
+ <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+ <script type="text/x-mathjax-config">
+   MathJax.Hub.Config({
+     tex2jax: {
+       skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+       inlineMath: [['$','$']]
+     }
+   });
+ </script>
+</head>
+<body>
+<div class="container">
+
+
+<div id="container">
+	<header id="header">
+  <div id="header-main" class="header-inner">
+    <div class="outer">
+      <a href="https://blog.ipds.top/" id="logo">
+          
+          <i class="logo" style="background-image: url('https://blog.ipds.top/css/images/logo.png')"></i>
+          
+          <span class="site-title">沉风网事</span>
+      </a>
+      <nav id="main-nav">
+          
+          
+          <a class="main-nav-link" href="https://blog.ipds.top/">Home</a>
+          
+          
+          
+          
+          
+          
+
+          
+          <a class="main-nav-link" href="/about/">About</a>
+          
+          <a class="main-nav-link" href="/2017/03/18/leetcode/">LeetCode</a>
+          
+          <a class="main-nav-link" href="/2017/10/02/read/">Read</a>
+          
+          <a class="main-nav-link" href="/2017/10/02/share/">Share</a>
+          
+          <a class="main-nav-link" href="/2017/10/02/slide/">Slide</a>
+          
+
+          
+          
+          
+          
+          <a class="main-nav-link" href="https://blog.ipds.top/tags/">Tags</a>
+          
+          
+          
+          <a class="main-nav-link" href="https://blog.ipds.top/categories/">Categories</a>
+          
+          
+      </nav>
+        <nav id="sub-nav">
+          <div class="profile" id="profile-nav">
+            <a id="profile-anchor" href="javascript:;"><img class="avatar" src="https://blog.ipds.top/css/images/avatar.png"><i class="fa fa-caret-down"></i></a>
+          </div>
+        </nav>
+        <div id="search-form-wrap">
+          <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form">
+              <input type="search" name="q" class="search-form-input" placeholder="Search">
+              <button type="submit" class="search-form-submit">
+              </button>
+              <input type="hidden" name="sitesearch" value="https://blog.ipds.top/" />
+         </form>
+        </div>
+    </div>
+  </div>
+  <div id="main-nav-mobile" class="header-sub header-inner">
+    <table class="menu outer">
+      <tbody>
+          <tr>
+          
+          
+          <td><a class="main-nav-link" href="https://blog.ipds.top/">Home</a></td>
+          
+          
+          
+          
+          
+          
+
+          
+          <td><a class="main-nav-link" href="/about/">About</a></td>
+          
+          <td><a class="main-nav-link" href="/2017/03/18/leetcode/">LeetCode</a></td>
+          
+          <td><a class="main-nav-link" href="/2017/10/02/read/">Read</a></td>
+          
+          <td><a class="main-nav-link" href="/2017/10/02/share/">Share</a></td>
+          
+          <td><a class="main-nav-link" href="/2017/10/02/slide/">Slide</a></td>
+          
+
+          
+          
+          
+          
+          <td><a class="main-nav-link" href="https://blog.ipds.top/tags/">Tags</a></td>
+          
+          
+          
+          <td><a class="main-nav-link" href="https://blog.ipds.top/categories/">Categories</a></td>
+          
+          
+          <td>
+          <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form">
+          <input type="search" name="q" class="search-form-input" placeholder="Search">
+          <input type="hidden" name="sitesearch" value="https://blog.ipds.top/" />
+          </form>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</header>
+
+   	
+   	<div class="outer">
+   	
+    	<aside id="profile">
+  <div class="inner profile-inner">
+    <div class="base-info profile-block">
+      
+      <img id="avatar" src="https://www.gravatar.com/avatar/45ae86ea3c111a5537490c3b370c03ee?s=100&d=identicon"/>
+      
+      <h2 id="name">沉风</h2>
+      <h3 id="title">All is well, just do it</h3>
+      <span id="location"><i class="fa fa-map-marker"></i>hangzhou, china</span>
+      
+          <a id="follow" href="https://github.com/myself659">
+              Follow
+          </a>
+      
+    </div>
+    <div class="article-info profile-block">
+      <div class="article-info-block">
+        117
+        <span>Posts</span>
+      </div>
+      <div class="article-info-block">
+        
+          34
+        
+        <span>
+            Tags
+        </span>
+      </div>
+    </div>
+    <div class="profile-block social-links">
+      <table>
+        <tr>
+          
+<td><a href="//github.com/myself659" target="_blank" title="GitHub"><i class="fa fa-github"></i></a></td>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<td><a href="//medium.com/@myself659" target="_blank" title="Medium"><i class="fa fa-medium"></i></a></td>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          <td><a href="https://blog.ipds.top/index.xml" target="_blank" title="RSS"><i class="fa fa-rss"></i></a></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</aside>
+
+    
+
+    <section id="main">
+    
+    <article id="page-undefined" class="article article-type-page" itemscope="" itemprop="blogPost">
+    <div class="article-inner">
+        
+
+        <header class="article-header">
+    <a href="https://blog.ipds.top/2019/06/10/%E6%B7%B1%E5%85%A5%E5%88%86%E6%9E%90golang-sync.pool/">
+    <h1 class="article-title" itemprop="name">
+        深入分析Golang sync.pool
+    </h1>
+    </a>
+    <div class="article-meta">
+
+        
+        <div class="article-date">
+            <i class="fa fa-calendar"></i>
+            <time datetime="2019-06-10 11:58:06 &#43;0200 &#43;0200" itemprop="datePublished">2019-06-10</time>
+            &middot;
+            1087
+            words
+            &middot;
+            6
+            minute read
+        </div>
+        
+        
+            
+            
+            <div class="article-category">
+                <i class="fa fa-folder"></i>
+                
+                
+                <a class="article-category-link" href="https://blog.ipds.top/categories/golang">Golang</a>
+                
+                
+            </div>
+            
+        
+
+        
+            
+            
+            <div class="article-category">
+                <i class="fa fa-tags"></i>
+                
+                
+                <a class="article-category-link" href="https://blog.ipds.top/tags/golang">Golang</a>
+                
+                
+            </div>
+            
+        
+    </div>
+</header>
+
+        <div class="article-entry" itemprop="articleBody">
+            
+
+<h1 id="定义">定义</h1>
+
+<p>sync.Pool是一个可以存或取的临时对象池。对外提供New、Get、Put等API，利用mutex支持多线程并发。</p>
+
+<h1 id="目标">目标</h1>
+
+<p>sync.Pool解决以下问题：</p>
+
+<ol>
+<li>增加临时对象的用复用率，减少GC负担</li>
+<li>通过对象的复用，减少内存申请开销，有利于提高一部分性能</li>
+</ol>
+
+<h1 id="实现">实现</h1>
+
+<p>这一部分回答如何实现的问题。</p>
+
+<p>关于了解实现，最好的办法就是看代码。</p>
+
+<h2 id="描述">描述</h2>
+
+<pre><code>type Pool struct {
+    noCopy noCopy
+
+    local     unsafe.Pointer // local fixed-size per-P pool, actual type is [P]poolLocal
+    localSize uintptr        // size of the local array
+
+    // New optionally specifies a function to generate
+    // a value when Get would otherwise return nil.
+    // It may not be changed concurrently with calls to Get.
+    New func() interface{}
+}
+</code></pre>
+
+<p>各个成员含义如下：</p>
+
+<p>noCopy： 防止sync.Pool被复制</p>
+
+<p>local： poolLocal数组的指针</p>
+
+<p>localSize： poolLocal数组大小</p>
+
+<p>New： 函数指针申请具体的对象，便于用户定制各种类型的对象</p>
+
+<pre><code>// Local per-P Pool appendix.
+type poolLocalInternal struct {
+    private interface{}   // Can be used only by the respective P.
+    shared  []interface{} // Can be used by any P.
+    Mutex                 // Protects shared.
+}
+
+type poolLocal struct {
+    poolLocalInternal
+
+    // Prevents false sharing on widespread platforms with
+    // 128 mod (cache line size) = 0 .
+    pad [128 - unsafe.Sizeof(poolLocalInternal{})%128]byte
+}
+</code></pre>
+
+<p>private：private私有池，只能被对应P使用（说明：P是指goroutine执行所占用的处理器，下同）</p>
+
+<p>shared： shared共享池，能被任何P使用</p>
+
+<p>Mutex： 保护shared共享池</p>
+
+<p>pad：poolLocal结构体中特别增加了pad成员，这是为了防止false sharing。</p>
+
+<h2 id="操作">操作</h2>
+
+<p>操作分为四种类型：</p>
+
+<ol>
+<li>New</li>
+<li>Get</li>
+<li>Put</li>
+<li>CleanUp</li>
+</ol>
+
+<h3 id="new">New</h3>
+
+<p>这部分主要解决问题：如何创建一个具体对象池？</p>
+
+<p>具体参考代码如下：</p>
+
+<pre><code>// Object Object
+type Object struct {
+    a int
+    b int
+}
+
+var pool = sync.Pool{
+    New: func() interface{} { return new(Object) },
+}
+</code></pre>
+
+<h3 id="get">Get</h3>
+
+<p>Get解决了如何从具体sync.Pool中获取对象的问题。</p>
+
+<p>获取对象有三个来源：</p>
+
+<ol>
+<li>private池</li>
+<li>shared池</li>
+<li>系统的Heap内存</li>
+</ol>
+
+<p>获取对象顺序是先从private池获取，如果不成功则从shared池获取，如果继续不成功，则从Heap中申请一个对象。这是不是有熟悉的味道？在两级cache的情况下，CPU获取数据，先从L1 cache开始，再是L2 cache， 是内存。</p>
+
+<p>具体代码实现如下：</p>
+
+<pre><code>func (p *Pool) Get() interface{} {
+    if race.Enabled {
+        race.Disable()
+    }
+    l := p.pin() // 绑定private池和P
+    x := l.private
+    l.private = nil
+    runtime_procUnpin() // 去绑定private池和P
+    if x == nil { //  private池获取失败
+        l.Lock()
+        last := len(l.shared) - 1
+        if last &gt;= 0 {
+            x = l.shared[last] // 从shared池获取最后一个对象 
+            l.shared = l.shared[:last] // 从shared池删除最后一个对象
+        }
+        l.Unlock()
+        if x == nil { 
+            x = p.getSlow() // pid对应poolLocal没有获取成功，开始遍历整个poolLocal数组
+        }
+    }
+    if race.Enabled {
+        race.Enable()
+        if x != nil {
+            race.Acquire(poolRaceAddr(x))
+        }
+    }
+    if x == nil &amp;&amp; p.New != nil {
+        x = p.New() // 从heap申请对象
+    }
+    return x
+}
+
+func (p *Pool) getSlow() (x interface{}) {
+    // See the comment in pin regarding ordering of the loads.
+    size := atomic.LoadUintptr(&amp;p.localSize) // load-acquire
+    local := p.local                         // load-consume
+    // Try to steal one element from other procs.
+    pid := runtime_procPin()
+    runtime_procUnpin()
+    for i := 0; i &lt; int(size); i++ { // 遍历poolLocal数组
+        l := indexLocal(local, (pid+i+1)%int(size)) // 注意pid+i+1 这样可以从pid+1位置开始整个遍历
+        l.Lock()
+        last := len(l.shared) - 1
+        if last &gt;= 0 {
+            x = l.shared[last]
+            l.shared = l.shared[:last]
+            l.Unlock()
+            break
+        }
+        l.Unlock()
+    }
+    return x
+}
+
+// pin pins the current goroutine to P, disables preemption and returns poolLocal pool for the P.
+// Caller must call runtime_procUnpin() when done with the pool.
+func (p *Pool) pin() *poolLocal {
+    pid := runtime_procPin()
+    // In pinSlow we store to localSize and then to local, here we load in opposite order.
+    // Since we've disabled preemption, GC cannot happen in between.
+    // Thus here we must observe local at least as large localSize.
+    // We can observe a newer/larger local, it is fine (we must observe its zero-initialized-ness).
+    s := atomic.LoadUintptr(&amp;p.localSize) // load-acquire
+    l := p.local                          // load-consume
+    if uintptr(pid) &lt; s {
+        return indexLocal(l, pid)
+    }
+    return p.pinSlow() // 没有对应poolLocal，进入慢路径处理
+}
+
+func (p *Pool) pinSlow() *poolLocal {
+    // Retry under the mutex.
+    // Can not lock the mutex while pinned.
+    runtime_procUnpin()
+    allPoolsMu.Lock()
+    defer allPoolsMu.Unlock()
+    pid := runtime_procPin()
+    // poolCleanup won't be called while we are pinned.
+    s := p.localSize
+    l := p.local
+    if uintptr(pid) &lt; s { // 根据pid获取poolLocal
+        return indexLocal(l, pid) 
+    }
+    if p.local == nil {
+        allPools = append(allPools, p)
+    }
+    // If GOMAXPROCS changes between GCs, we re-allocate the array and lose the old one.
+    size := runtime.GOMAXPROCS(0)
+    local := make([]poolLocal, size) // 重新分配poolLocal
+    atomic.StorePointer(&amp;p.local, unsafe.Pointer(&amp;local[0])) // store-release
+    atomic.StoreUintptr(&amp;p.localSize, uintptr(size))         // store-release
+    return &amp;local[pid] // 返回新的poolLocal
+}
+
+</code></pre>
+
+<p>总结Get主要要点如下：</p>
+
+<ol>
+<li>先从本P绑定的poolLocal获取对象：先从本poolLocal的private池获取对象，再从本poolLocal的shared池获取对象</li>
+<li>上一步没有成功获取对象，再从其他P的shared池获取对象</li>
+<li>上一步没有成功获取对象，则从Heap申请对象</li>
+</ol>
+
+<h3 id="put">Put</h3>
+
+<p>Put完成将对象放回对象池。</p>
+
+<pre><code>// Put adds x to the pool.
+func (p *Pool) Put(x interface{}) {
+    if x == nil {
+        return
+    }
+    if race.Enabled {
+        if fastrand()%4 == 0 {
+            // Randomly drop x on floor.
+            return
+        }
+        race.ReleaseMerge(poolRaceAddr(x))
+        race.Disable()
+    }
+    l := p.pin() // 绑定private池和P
+    if l.private == nil {
+        l.private = x   // 放回private池中
+        x = nil
+    }
+    runtime_procUnpin() // 去绑定private池和P
+    if x != nil {
+        l.Lock()
+        l.shared = append(l.shared, x)  // 放回shared池
+        l.Unlock()
+    }
+    if race.Enabled {
+        race.Enable()
+    }
+}
+</code></pre>
+
+<p>上面的代码总结如下：</p>
+
+<ol>
+<li>如果poolLocalInternal的private为空，则将回收的对象放到private池中</li>
+<li>如果poolLocalInternal的private非空，则将回收的对象放到shared池中</li>
+</ol>
+
+<h3 id="cleanup">CleanUp</h3>
+
+<h4 id="cleanup实现">CleanUp实现</h4>
+
+<p>注册poolCleanup函数。</p>
+
+<pre><code>func init() {
+   runtime_registerPoolCleanup(poolCleanup)
+}
+
+</code></pre>
+
+<p>poolCleanup函数具体实现，</p>
+
+<pre><code>func poolCleanup() {
+    // This function is called with the world stopped, at the beginning of a garbage collection.
+    // It must not allocate and probably should not call any runtime functions.
+    // Defensively zero out everything, 2 reasons:
+    // 1. To prevent false retention of whole Pools.
+    // 2. If GC happens while a goroutine works with l.shared in Put/Get,
+    //    it will retain whole Pool. So next cycle memory consumption would be doubled.
+    for i, p := range allPools {
+        allPools[i] = nil
+        for i := 0; i &lt; int(p.localSize); i++ {
+            l := indexLocal(p.local, i)
+            l.private = nil
+            for j := range l.shared {
+                l.shared[j] = nil
+            }
+            l.shared = nil
+        }
+        p.local = nil
+        p.localSize = 0
+    }
+    allPools = []*Pool{}
+}
+</code></pre>
+
+<h4 id="cleanup时机">CleanUp时机</h4>
+
+<p>什么时候进行CleanUp回收对象池？在gc开始前。</p>
+
+<p>具体代码(代码文件为runtime/mgc.go)如下：</p>
+
+<pre><code>func gcStart(trigger gcTrigger) {
+    ... 
+    // clearpools before we start the GC. If we wait they memory will not be
+    // reclaimed until the next GC cycle.
+    clearpools() // 在这里清理sync.Pool
+
+    work.cycles++
+
+    gcController.startCycle()
+    work.heapGoal = memstats.next_gc
+
+    // In STW mode, disable scheduling of user Gs. This may also
+    // disable scheduling of this goroutine, so it may block as
+    // soon as we start the world again.
+    if mode != gcBackgroundMode {
+        schedEnableUser(false)
+    }
+    ...
+}
+</code></pre>
+
+<pre><code>func clearpools() {
+    // clear sync.Pools
+    if poolcleanup != nil {
+        poolcleanup() // 如果poolcleanup不为空，调用poolcleanup函数
+    }
+
+    // Clear central sudog cache.
+    // Leave per-P caches alone, they have strictly bounded size.
+    // Disconnect cached list before dropping it on the floor,
+    // so that a dangling ref to one entry does not pin all of them.
+    lock(&amp;sched.sudoglock)
+    var sg, sgnext *sudog
+    for sg = sched.sudogcache; sg != nil; sg = sgnext {
+        sgnext = sg.next
+        sg.next = nil
+    }
+    sched.sudogcache = nil
+    unlock(&amp;sched.sudoglock)
+
+    // Clear central defer pools.
+    // Leave per-P pools alone, they have strictly bounded size.
+    lock(&amp;sched.deferlock)
+    for i := range sched.deferpool {
+        // disconnect cached list before dropping it on the floor,
+        // so that a dangling ref to one entry does not pin all of them.
+        var d, dlink *_defer
+        for d = sched.deferpool[i]; d != nil; d = dlink {
+            dlink = d.link
+            d.link = nil
+        }
+        sched.deferpool[i] = nil
+    }
+    unlock(&amp;sched.deferlock)
+}
+</code></pre>
+
+<h2 id="总结">总结</h2>
+
+<p>总结一下sync.Pool的实现，要点如下：</p>
+
+<ol>
+<li>提供New定义实现用户自定义对象</li>
+<li>需要使用对象调用Get从对象池获取临时对象，Get优先级首先是本P绑定的poolLocal, 其次是其他P绑定的poolLocal，最后是Heap内存</li>
+<li>对象使用完毕调用Put将临时对象放回对象池</li>
+<li>未被使用的对象会定时GC回收</li>
+<li>对象没有类似于linux cache object对应的free函数</li>
+</ol>
+
+<h1 id="应用">应用</h1>
+
+<p>sync.Pool并不是万能药。要根据具体情境而定是否使用sync.Pool。</p>
+
+<p>总结不适合使用sync.Pool的情境，具体如下：</p>
+
+<ol>
+<li>对象中分配的系统资源如socket，buffer</li>
+<li>对象需要进行异步处理</li>
+<li>对象是组合对象，如存在指针指向其他的对象</li>
+<li>批量对象需要并发处理</li>
+<li>复用对象大小存在的波动，如对象结构成员存在slice</li>
+</ol>
+
+<p>在排除上面情境下，适合使用的sync.Pool应满足以下条件，具体如下：</p>
+
+<ol>
+<li>对象是buffer或非组合类型如buffer reader, json decode, bufio writer</li>
+<li>对象内存可以重复使用</li>
+</ol>
+
+<p>同时在使用应该注意问题：</p>
+
+<ol>
+<li>Put对象之前完成初始化，避免数据污染带来问题, 这可能带来各种各样的问题</li>
+<li>写代码时要满足one Get， one Put的要求</li>
+<li>注意获取对象后是否存在修改对象内存存局的代码</li>
+<li>关注应用场景是否容易出现Pool竞争的情况</li>
+<li>sync.Pool不是万能药，不要拿着锤子，看什么都是钉子</li>
+</ol>
+
+<p>(Ps: 个人能力不足，若有错误不足，欢迎指正！)</p>
+
+<h1 id="参考">参考</h1>
+
+<ol>
+<li><a href="https://github.com/golang/go/issues/23199">sync: Pool example suggests incorrect usage</a></li>
+</ol>
+
+        </div>
+        <footer class="article-footer">
+    <a data-url="https://blog.ipds.top/2019/06/10/%E6%B7%B1%E5%85%A5%E5%88%86%E6%9E%90golang-sync.pool/" data-id="c3474a74302fd7e3bfffc7843a761c5b" class="article-share-link">
+        <i class="fa fa-share"></i>
+        Share
+    </a>
+    
+    <a href="https://blog.ipds.top/2019/06/10/%E6%B7%B1%E5%85%A5%E5%88%86%E6%9E%90golang-sync.pool/#disqus_thread" class="article-comment-link">
+        Comments
+    </a>
+    
+
+    <script>
+    (function ($) {
+        
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+    </script>
+</footer>
+
+    </div>
+
+    
+<nav id="article-nav">
+    
+    <a href="https://blog.ipds.top/2019/05/30/%E4%BA%BA%E7%94%9F%E4%B8%AD%E6%9C%80%E6%98%82%E8%B4%B5%E7%9A%84%E6%95%99%E8%AE%ADsim%E5%8D%A1%E8%BD%AC%E7%A7%BB%E6%94%BB%E5%87%BB%E7%9A%84%E7%BB%86%E8%8A%82%E8%AF%91%E6%96%87/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">
+          Older
+      </strong>
+      <div class="article-nav-title">人生中最昂贵的教训：SIM卡转移攻击的细节(译文)</div>
+    </a>
+    
+
+    
+    <a href="https://blog.ipds.top/2019/06/26/facebook-libra%E6%98%AF%E6%98%99%E8%8A%B1%E4%B8%80%E7%8E%B0%E8%BF%98%E6%98%AF%E6%98%9F%E6%98%9F%E4%B9%8B%E7%81%AB/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">
+          Newer
+      </strong>
+      <div class="article-nav-title">Facebook libra是昙花一现还是星星之火</div>
+    </a>
+    
+</nav>
+
+
+</article>
+
+
+<section id="comments">
+    <div id="disqus_thread">
+        <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "ipds-top" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    </div>
+</section>
+
+    <script src="https://utteranc.es/client.js"
+        repo="myself659/ipds-public"
+        issue-term="url"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+    </script>
+    
+
+    </section>
+
+
+
+   	
+    	<aside id="sidebar">
+    
+<div class="widget-wrap">
+    <h3 class="widget-title">
+        Recents
+    </h3>
+    <div class="widget">
+        <ul id="recent-post">
+            
+            <li>
+                <div class="item-thumbnail">
+                    <a href="https://blog.ipds.top/2020/03/29/github%E8%A2%AB%E6%94%BB%E5%87%BB%E7%A8%8B%E5%BA%8F%E5%91%98%E8%AF%A5%E6%80%8E%E4%B9%88%E5%8A%9E/" class="thumbnail">
+                    
+                        <span class="thumbnail-image thumbnail-none"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    <p class="item-category">
+                        
+                        <a class="article-category-link" href="https://blog.ipds.top/categories/%E7%BC%96%E7%A8%8B">
+                        编程
+                        </a>
+                    </p>
+                    
+                    
+                    <p class="item-title"><a href="https://blog.ipds.top/2020/03/29/github%E8%A2%AB%E6%94%BB%E5%87%BB%E7%A8%8B%E5%BA%8F%E5%91%98%E8%AF%A5%E6%80%8E%E4%B9%88%E5%8A%9E/" class="title">github被攻击，程序员该怎么办</a></p>
+                    <p class="item-date">
+                        <time datetime="2020-03-29 11:58:06 &#43;0200 &#43;0200" itemprop="datePublished">2020-03-29</time>
+                    </p>
+                </div>
+            </li>
+            
+            <li>
+                <div class="item-thumbnail">
+                    <a href="https://blog.ipds.top/2020/03/22/%E6%8F%90%E9%AB%98%E4%B8%AA%E4%BA%BA%E9%9A%90%E7%A7%81%E6%95%B0%E6%8D%AE%E5%AE%89%E5%85%A8%E7%9A%84%E5%87%A0%E7%82%B9%E5%BB%BA%E8%AE%AE/" class="thumbnail">
+                    
+                        <span class="thumbnail-image thumbnail-none"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    <p class="item-category">
+                        
+                        <a class="article-category-link" href="https://blog.ipds.top/categories/internet">
+                        Internet
+                        </a>
+                    </p>
+                    
+                    
+                    <p class="item-title"><a href="https://blog.ipds.top/2020/03/22/%E6%8F%90%E9%AB%98%E4%B8%AA%E4%BA%BA%E9%9A%90%E7%A7%81%E6%95%B0%E6%8D%AE%E5%AE%89%E5%85%A8%E7%9A%84%E5%87%A0%E7%82%B9%E5%BB%BA%E8%AE%AE/" class="title">提高个人隐私数据安全的几点建议</a></p>
+                    <p class="item-date">
+                        <time datetime="2020-03-22 11:58:06 &#43;0200 &#43;0200" itemprop="datePublished">2020-03-22</time>
+                    </p>
+                </div>
+            </li>
+            
+            <li>
+                <div class="item-thumbnail">
+                    <a href="https://blog.ipds.top/2020/03/15/%E4%B8%80%E5%91%A8%E7%BB%8F%E5%8E%86%E4%B8%A4%E6%AC%A1%E7%86%94%E6%96%AD%E7%BE%8E%E8%82%A1%E4%BC%9A%E8%B7%8C%E5%A4%9A%E5%B0%91/" class="thumbnail">
+                    
+                        <span class="thumbnail-image thumbnail-none"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    <p class="item-category">
+                        
+                        <a class="article-category-link" href="https://blog.ipds.top/categories/economics">
+                        Economics
+                        </a>
+                    </p>
+                    
+                    
+                    <p class="item-title"><a href="https://blog.ipds.top/2020/03/15/%E4%B8%80%E5%91%A8%E7%BB%8F%E5%8E%86%E4%B8%A4%E6%AC%A1%E7%86%94%E6%96%AD%E7%BE%8E%E8%82%A1%E4%BC%9A%E8%B7%8C%E5%A4%9A%E5%B0%91/" class="title">一周经历两次熔断，美股会跌多少?</a></p>
+                    <p class="item-date">
+                        <time datetime="2020-03-15 11:58:06 &#43;0200 &#43;0200" itemprop="datePublished">2020-03-15</time>
+                    </p>
+                </div>
+            </li>
+            
+            <li>
+                <div class="item-thumbnail">
+                    <a href="https://blog.ipds.top/2020/03/08/%E5%9C%A8%E9%80%89%E6%8B%A9%E5%81%9A%E4%BB%80%E4%B9%88%E4%B9%8B%E5%89%8D%E5%85%88%E9%97%AE%E9%97%AE%E8%87%AA%E5%B7%B1%E8%BF%99%E5%9B%9B%E4%B8%AA%E9%97%AE%E9%A2%98/" class="thumbnail">
+                    
+                        <span class="thumbnail-image thumbnail-none"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    <p class="item-category">
+                        
+                        <a class="article-category-link" href="https://blog.ipds.top/categories/%E6%88%90%E9%95%BF">
+                        成长
+                        </a>
+                    </p>
+                    
+                    
+                    <p class="item-title"><a href="https://blog.ipds.top/2020/03/08/%E5%9C%A8%E9%80%89%E6%8B%A9%E5%81%9A%E4%BB%80%E4%B9%88%E4%B9%8B%E5%89%8D%E5%85%88%E9%97%AE%E9%97%AE%E8%87%AA%E5%B7%B1%E8%BF%99%E5%9B%9B%E4%B8%AA%E9%97%AE%E9%A2%98/" class="title">在选择做什么之前，先问问自己这四个问题</a></p>
+                    <p class="item-date">
+                        <time datetime="2020-03-08 11:58:06 &#43;0200 &#43;0200" itemprop="datePublished">2020-03-08</time>
+                    </p>
+                </div>
+            </li>
+            
+            <li>
+                <div class="item-thumbnail">
+                    <a href="https://blog.ipds.top/2020/03/08/%E5%BE%AE%E7%9B%9F%E5%88%A0%E5%BA%93%E4%BA%8B%E4%BB%B6%E5%A4%8D%E7%9B%98%E4%B8%8E%E6%80%9D%E8%80%83/" class="thumbnail">
+                    
+                        <span class="thumbnail-image thumbnail-none"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    <p class="item-category">
+                        
+                        <a class="article-category-link" href="https://blog.ipds.top/categories/%E6%8A%80%E6%9C%AF%E7%AE%A1%E7%90%86">
+                        技术管理
+                        </a>
+                    </p>
+                    
+                    
+                    <p class="item-title"><a href="https://blog.ipds.top/2020/03/08/%E5%BE%AE%E7%9B%9F%E5%88%A0%E5%BA%93%E4%BA%8B%E4%BB%B6%E5%A4%8D%E7%9B%98%E4%B8%8E%E6%80%9D%E8%80%83/" class="title">微盟删库事件复盘与思考</a></p>
+                    <p class="item-date">
+                        <time datetime="2020-03-08 11:58:06 &#43;0200 &#43;0200" itemprop="datePublished">2020-03-08</time>
+                    </p>
+                </div>
+            </li>
+            
+        </ul>
+    </div>
+</div>
+
+
+    
+
+
+<div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+        <ul class="category-list">
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://blog.ipds.top/categories/arch">
+                    arch
+                </a>
+                <span class="category-list-count">5</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://blog.ipds.top/categories/blockchain">
+                    blockchain
+                </a>
+                <span class="category-list-count">25</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://blog.ipds.top/categories/cryptography">
+                    cryptography
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://blog.ipds.top/categories/data">
+                    data
+                </a>
+                <span class="category-list-count">2</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://blog.ipds.top/categories/data-struct">
+                    data-struct
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://blog.ipds.top/categories/distributed">
+                    distributed
+                </a>
+                <span class="category-list-count">2</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://blog.ipds.top/categories/economics">
+                    economics
+                </a>
+                <span class="category-list-count">3</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://blog.ipds.top/categories/english">
+                    english
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://blog.ipds.top/categories/ethereum">
+                    ethereum
+                </a>
+                <span class="category-list-count">2</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://blog.ipds.top/categories/golang">
+                    golang
+                </a>
+                <span class="category-list-count">10</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://blog.ipds.top/categories/internet">
+                    internet
+                </a>
+                <span class="category-list-count">4</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://blog.ipds.top/categories/ipfs">
+                    ipfs
+                </a>
+                <span class="category-list-count">3</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://blog.ipds.top/categories/kubernetes">
+                    kubernetes
+                </a>
+                <span class="category-list-count">3</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://blog.ipds.top/categories/linux">
+                    linux
+                </a>
+                <span class="category-list-count">11</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://blog.ipds.top/categories/network">
+                    network
+                </a>
+                <span class="category-list-count">3</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://blog.ipds.top/categories/nginx">
+                    nginx
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://blog.ipds.top/categories/python">
+                    python
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://blog.ipds.top/categories/rust">
+                    rust
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://blog.ipds.top/categories/sec">
+                    sec
+                </a>
+                <span class="category-list-count">2</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://blog.ipds.top/categories/substrate">
+                    substrate
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://blog.ipds.top/categories/web">
+                    web
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://blog.ipds.top/categories/%E5%95%86%E4%B8%9A">
+                    商业
+                </a>
+                <span class="category-list-count">5</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://blog.ipds.top/categories/%E6%88%90%E9%95%BF">
+                    成长
+                </a>
+                <span class="category-list-count">2</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://blog.ipds.top/categories/%E6%8A%80%E6%9C%AF%E7%AE%A1%E7%90%86">
+                    技术管理
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://blog.ipds.top/categories/%E7%A0%94%E5%8F%91%E7%AE%A1%E7%90%86">
+                    研发管理
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://blog.ipds.top/categories/%E7%BC%96%E7%A8%8B">
+                    编程
+                </a>
+                <span class="category-list-count">5</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://blog.ipds.top/categories/%E9%97%B2%E8%B0%88%E4%B9%B1%E6%89%AF">
+                    闲谈乱扯
+                </a>
+                <span class="category-list-count">11</span>
+            </li>
+            
+        </ul>
+    </div>
+</div>
+
+
+
+
+    
+
+
+<div class="widget-wrap">
+    <h3 class="widget-title">
+        Tags
+    </h3>
+    <div class="widget">
+        <ul class="category-list">
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://blog.ipds.top/tags/arch">
+                    arch
+                </a>
+                <span class="category-list-count">5</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://blog.ipds.top/tags/bitcoin">
+                    bitcoin
+                </a>
+                <span class="category-list-count">2</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://blog.ipds.top/tags/blockchain">
+                    blockchain
+                </a>
+                <span class="category-list-count">29</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://blog.ipds.top/tags/btc">
+                    btc
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://blog.ipds.top/tags/cryptography">
+                    cryptography
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://blog.ipds.top/tags/data">
+                    data
+                </a>
+                <span class="category-list-count">2</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://blog.ipds.top/tags/data-struct">
+                    data-struct
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://blog.ipds.top/tags/distributed">
+                    distributed
+                </a>
+                <span class="category-list-count">3</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://blog.ipds.top/tags/docker">
+                    docker
+                </a>
+                <span class="category-list-count">3</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://blog.ipds.top/tags/economics">
+                    economics
+                </a>
+                <span class="category-list-count">3</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://blog.ipds.top/tags/english">
+                    english
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://blog.ipds.top/tags/ethereum">
+                    ethereum
+                </a>
+                <span class="category-list-count">2</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://blog.ipds.top/tags/golang">
+                    golang
+                </a>
+                <span class="category-list-count">10</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://blog.ipds.top/tags/internet">
+                    internet
+                </a>
+                <span class="category-list-count">10</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://blog.ipds.top/tags/ipfs">
+                    ipfs
+                </a>
+                <span class="category-list-count">3</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://blog.ipds.top/tags/kubernetes">
+                    kubernetes
+                </a>
+                <span class="category-list-count">3</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://blog.ipds.top/tags/linux">
+                    linux
+                </a>
+                <span class="category-list-count">11</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://blog.ipds.top/tags/nba">
+                    nba
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://blog.ipds.top/tags/network">
+                    network
+                </a>
+                <span class="category-list-count">3</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://blog.ipds.top/tags/nginx">
+                    nginx
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://blog.ipds.top/tags/python">
+                    python
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://blog.ipds.top/tags/rust">
+                    rust
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://blog.ipds.top/tags/sec">
+                    sec
+                </a>
+                <span class="category-list-count">2</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://blog.ipds.top/tags/secure">
+                    secure
+                </a>
+                <span class="category-list-count">3</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://blog.ipds.top/tags/smart-contract">
+                    smart-contract
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://blog.ipds.top/tags/substrate">
+                    substrate
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://blog.ipds.top/tags/web">
+                    web
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://blog.ipds.top/tags/%E5%95%86%E4%B8%9A">
+                    商业
+                </a>
+                <span class="category-list-count">5</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://blog.ipds.top/tags/%E6%88%90%E9%95%BF">
+                    成长
+                </a>
+                <span class="category-list-count">2</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://blog.ipds.top/tags/%E6%8A%80%E6%9C%AF%E7%AE%A1%E7%90%86">
+                    技术管理
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://blog.ipds.top/tags/%E7%A0%94%E5%8F%91%E7%AE%A1%E7%90%86">
+                    研发管理
+                </a>
+                <span class="category-list-count">3</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://blog.ipds.top/tags/%E7%BC%96%E7%A8%8B">
+                    编程
+                </a>
+                <span class="category-list-count">6</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://blog.ipds.top/tags/%E8%81%8C%E5%9C%BA">
+                    职场
+                </a>
+                <span class="category-list-count">2</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://blog.ipds.top/tags/%E9%97%B2%E8%B0%88%E4%B9%B1%E6%89%AF">
+                    闲谈乱扯
+                </a>
+                <span class="category-list-count">10</span>
+            </li>
+            
+        </ul>
+    </div>
+</div>
+
+
+
+
+    
+
+
+<div class="widget-wrap">
+    <h3 class="widget-title">
+        Tag cloud
+    </h3>
+    <div class="widget tagcloud">
+        
+        
+        <a href="https://blog.ipds.top/tags/arch" style="font-size: 12px;">arch</a>
+        
+        
+        <a href="https://blog.ipds.top/tags/bitcoin" style="font-size: 12px;">bitcoin</a>
+        
+        
+        <a href="https://blog.ipds.top/tags/blockchain" style="font-size: 12px;">blockchain</a>
+        
+        
+        <a href="https://blog.ipds.top/tags/btc" style="font-size: 12px;">btc</a>
+        
+        
+        <a href="https://blog.ipds.top/tags/cryptography" style="font-size: 12px;">cryptography</a>
+        
+        
+        <a href="https://blog.ipds.top/tags/data" style="font-size: 12px;">data</a>
+        
+        
+        <a href="https://blog.ipds.top/tags/data-struct" style="font-size: 12px;">data-struct</a>
+        
+        
+        <a href="https://blog.ipds.top/tags/distributed" style="font-size: 12px;">distributed</a>
+        
+        
+        <a href="https://blog.ipds.top/tags/docker" style="font-size: 12px;">docker</a>
+        
+        
+        <a href="https://blog.ipds.top/tags/economics" style="font-size: 12px;">economics</a>
+        
+        
+        <a href="https://blog.ipds.top/tags/english" style="font-size: 12px;">english</a>
+        
+        
+        <a href="https://blog.ipds.top/tags/ethereum" style="font-size: 12px;">ethereum</a>
+        
+        
+        <a href="https://blog.ipds.top/tags/golang" style="font-size: 12px;">golang</a>
+        
+        
+        <a href="https://blog.ipds.top/tags/internet" style="font-size: 12px;">internet</a>
+        
+        
+        <a href="https://blog.ipds.top/tags/ipfs" style="font-size: 12px;">ipfs</a>
+        
+        
+        <a href="https://blog.ipds.top/tags/kubernetes" style="font-size: 12px;">kubernetes</a>
+        
+        
+        <a href="https://blog.ipds.top/tags/linux" style="font-size: 12px;">linux</a>
+        
+        
+        <a href="https://blog.ipds.top/tags/nba" style="font-size: 12px;">nba</a>
+        
+        
+        <a href="https://blog.ipds.top/tags/network" style="font-size: 12px;">network</a>
+        
+        
+        <a href="https://blog.ipds.top/tags/nginx" style="font-size: 12px;">nginx</a>
+        
+        
+        <a href="https://blog.ipds.top/tags/python" style="font-size: 12px;">python</a>
+        
+        
+        <a href="https://blog.ipds.top/tags/rust" style="font-size: 12px;">rust</a>
+        
+        
+        <a href="https://blog.ipds.top/tags/sec" style="font-size: 12px;">sec</a>
+        
+        
+        <a href="https://blog.ipds.top/tags/secure" style="font-size: 12px;">secure</a>
+        
+        
+        <a href="https://blog.ipds.top/tags/smart-contract" style="font-size: 12px;">smart-contract</a>
+        
+        
+        <a href="https://blog.ipds.top/tags/substrate" style="font-size: 12px;">substrate</a>
+        
+        
+        <a href="https://blog.ipds.top/tags/web" style="font-size: 12px;">web</a>
+        
+        
+        <a href="https://blog.ipds.top/tags/%E5%95%86%E4%B8%9A" style="font-size: 12px;">商业</a>
+        
+        
+        <a href="https://blog.ipds.top/tags/%E6%88%90%E9%95%BF" style="font-size: 12px;">成长</a>
+        
+        
+        <a href="https://blog.ipds.top/tags/%E6%8A%80%E6%9C%AF%E7%AE%A1%E7%90%86" style="font-size: 12px;">技术管理</a>
+        
+        
+        <a href="https://blog.ipds.top/tags/%E7%A0%94%E5%8F%91%E7%AE%A1%E7%90%86" style="font-size: 12px;">研发管理</a>
+        
+        
+        <a href="https://blog.ipds.top/tags/%E7%BC%96%E7%A8%8B" style="font-size: 12px;">编程</a>
+        
+        
+        <a href="https://blog.ipds.top/tags/%E8%81%8C%E5%9C%BA" style="font-size: 12px;">职场</a>
+        
+        
+        <a href="https://blog.ipds.top/tags/%E9%97%B2%E8%B0%88%E4%B9%B1%E6%89%AF" style="font-size: 12px;">闲谈乱扯</a>
+        
+    </div>
+</div>
+
+
+
+
+
+    <div id="toTop" class="fa fa-angle-up"></div>
+</aside>
+
+    
+	</div>
+</div>
+
+<footer id="footer">
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2020
+      copyright@沉风网事 <a href="http://www.beian.miit.gov.cn/">浙ICP备19035943号-2</a>
+    </div>
+  </div>
+</footer>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-144475213-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+<script src="https://blog.ipds.top/fancybox/jquery.fancybox.pack.js"></script>
+<script src="https://blog.ipds.top/js/script.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js"></script>
+
+
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']]}
+  });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+
+
+</body>
+</html>

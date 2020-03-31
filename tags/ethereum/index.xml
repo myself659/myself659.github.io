@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Ethereum on 沉风网事</title>
+    <link>https://blog.ipds.top/tags/ethereum/</link>
+    <description>Recent content in Ethereum on 沉风网事</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Tue, 15 May 2018 11:58:06 +0200</lastBuildDate>
+    
+	<atom:link href="https://blog.ipds.top/tags/ethereum/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>以太坊交易池分析</title>
+      <link>https://blog.ipds.top/2018/05/15/%E4%BB%A5%E5%A4%AA%E5%9D%8A%E4%BA%A4%E6%98%93%E6%B1%A0%E5%88%86%E6%9E%90/</link>
+      <pubDate>Tue, 15 May 2018 11:58:06 +0200</pubDate>
+      
+      <guid>https://blog.ipds.top/2018/05/15/%E4%BB%A5%E5%A4%AA%E5%9D%8A%E4%BA%A4%E6%98%93%E6%B1%A0%E5%88%86%E6%9E%90/</guid>
+      <description>简介 以太坊交易池有以下功能：
+ 缓存交易 清理交易 实现交易gasPrice竞价功能 配合出块，提供打包交易 交易查询  配置 配置描述 geth中用数据结构TxPoolConfig描述交易池配置，具体如下：
+// TxPoolConfig are the configuration parameters of the transaction pool. type TxPoolConfig struct { NoLocals bool // Whether local transaction handling should be disabled Journal string // Journal of local transactions to survive node restarts Rejournal time.Duration // Time interval to regenerate the local transaction journal PriceLimit uint64 // Minimum gas price to enforce for acceptance into the pool PriceBump uint64 // Minimum price bump percentage to replace an already existing transaction (nonce) AccountSlots uint64 // Minimum number of executable transaction slots guaranteed per account GlobalSlots uint64 // Maximum number of executable transaction slots for all accounts AccountQueue uint64 // Maximum number of non-executable transaction slots permitted per account GlobalQueue uint64 // Maximum number of non-executable transaction slots for all accounts Lifetime time.</description>
+    </item>
+    
+    <item>
+      <title>以太坊提交交易流程分析</title>
+      <link>https://blog.ipds.top/2018/05/05/%E4%BB%A5%E5%A4%AA%E5%9D%8A%E6%8F%90%E4%BA%A4%E4%BA%A4%E6%98%93%E6%B5%81%E7%A8%8B%E5%88%86%E6%9E%90/</link>
+      <pubDate>Sat, 05 May 2018 11:58:06 +0200</pubDate>
+      
+      <guid>https://blog.ipds.top/2018/05/05/%E4%BB%A5%E5%A4%AA%E5%9D%8A%E6%8F%90%E4%BA%A4%E4%BA%A4%E6%98%93%E6%B5%81%E7%A8%8B%E5%88%86%E6%9E%90/</guid>
+      <description>说明 代码基于go-ethereum，版本v1.8.10。
+RPC代码入口 SendTransaction
+// SendTransaction will create a transaction from the given arguments and // tries to sign it with the key associated with args.To. If the given passwd isn&#39;t // able to decrypt the key it fails. func (s *PrivateAccountAPI) SendTransaction(ctx context.Context, args SendTxArgs, passwd string) (common.Hash, error) { if args.Nonce == nil { // Hold the addresse&#39;s mutex around signing to prevent concurrent assignment of // the same nonce to multiple accounts.</description>
+    </item>
+    
+  </channel>
+</rss>
