@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Smart Contract on 沉风网事</title>
-    <link>https://blog.ipds.top/tags/smart-contract/</link>
+    <link>https://myself659.github.io/tags/smart-contract/</link>
     <description>Recent content in Smart Contract on 沉风网事</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Wed, 01 Nov 2017 11:58:06 +0200</lastBuildDate>
     
-	<atom:link href="https://blog.ipds.top/tags/smart-contract/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://myself659.github.io/tags/smart-contract/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>说说智能合约</title>
-      <link>https://blog.ipds.top/2017/11/01/%E8%AF%B4%E8%AF%B4%E6%99%BA%E8%83%BD%E5%90%88%E7%BA%A6/</link>
+      <link>https://myself659.github.io/2017/11/01/%E8%AF%B4%E8%AF%B4%E6%99%BA%E8%83%BD%E5%90%88%E7%BA%A6/</link>
       <pubDate>Wed, 01 Nov 2017 11:58:06 +0200</pubDate>
       
-      <guid>https://blog.ipds.top/2017/11/01/%E8%AF%B4%E8%AF%B4%E6%99%BA%E8%83%BD%E5%90%88%E7%BA%A6/</guid>
+      <guid>https://myself659.github.io/2017/11/01/%E8%AF%B4%E8%AF%B4%E6%99%BA%E8%83%BD%E5%90%88%E7%BA%A6/</guid>
       <description>智能合约 智能合约伴随了以太坊出现的而诞生，是以太坊最大的亮点，以其在ICO的广泛地应用而被熟知。其定义是： 智能合约是存储在区块链网络中的一段代码。它界定了各方使用合约的条件，在满足合约条件下某些机器指令被执行。
 特征 智能合约具有自治、自足、去中心化三个特征： 自治是指一旦启动便不受任何干预，忠实按照既定程序执行； 自足是指程序可以自主控制其计算所涉及的资源，比如有权限调配参与者的资金和财产； 去中心化是指它不依赖某个单独的服务器，而是由分布式网络的节点共同支持运行
 意义  提供可信第三方，具有高可用、不可修改、去中心化等特点 区块链的商业范围从货币扩展到全部数字化的价值，如比特币应用局限在数字货币领域，有了智能合约，以太坊平台上诞生cryptokitties杀手级应用 未来AI进入很多应用领域，智能合约为机器经济提供法律，为机器经济协作提供合约工具 智能合约实现价值交易与处理，而不是比特币仅提供一个价值传输的网络 对于社会来说，智能合约的代码即法律(code as law)特性有利于减少欺诈，降低成本，提高效率  问题与未来 先谈问题，现在的智能合约，以以太坊为例，存在以下问题：

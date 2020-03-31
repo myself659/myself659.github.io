@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Rust on 沉风网事</title>
-    <link>https://blog.ipds.top/tags/rust/</link>
+    <link>https://myself659.github.io/tags/rust/</link>
     <description>Recent content in Rust on 沉风网事</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Sun, 11 Aug 2019 11:58:06 +0200</lastBuildDate>
     
-	<atom:link href="https://blog.ipds.top/tags/rust/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://myself659.github.io/tags/rust/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Rust crate加速</title>
-      <link>https://blog.ipds.top/2019/08/11/rust-crate%E5%8A%A0%E9%80%9F/</link>
+      <link>https://myself659.github.io/2019/08/11/rust-crate%E5%8A%A0%E9%80%9F/</link>
       <pubDate>Sun, 11 Aug 2019 11:58:06 +0200</pubDate>
       
-      <guid>https://blog.ipds.top/2019/08/11/rust-crate%E5%8A%A0%E9%80%9F/</guid>
+      <guid>https://myself659.github.io/2019/08/11/rust-crate%E5%8A%A0%E9%80%9F/</guid>
       <description>由于墙的原因，导致cargo build，cargo run都会出现概率性失败，并且整个过程十分缓慢。
 下面是解决方案：
 方案1 在 ~/.cargo/config文件（如果没有创建一个）下添加如下内容：

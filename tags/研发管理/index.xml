@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>研发管理 on 沉风网事</title>
-    <link>https://blog.ipds.top/tags/%E7%A0%94%E5%8F%91%E7%AE%A1%E7%90%86/</link>
+    <link>https://myself659.github.io/tags/%E7%A0%94%E5%8F%91%E7%AE%A1%E7%90%86/</link>
     <description>Recent content in 研发管理 on 沉风网事</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Wed, 05 Dec 2018 11:58:06 +0200</lastBuildDate>
     
-	<atom:link href="https://blog.ipds.top/tags/%E7%A0%94%E5%8F%91%E7%AE%A1%E7%90%86/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://myself659.github.io/tags/%E7%A0%94%E5%8F%91%E7%AE%A1%E7%90%86/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>大型系统软件Comware研发总结</title>
-      <link>https://blog.ipds.top/2018/12/05/%E5%A4%A7%E5%9E%8B%E7%B3%BB%E7%BB%9F%E8%BD%AF%E4%BB%B6comware%E7%A0%94%E5%8F%91%E6%80%BB%E7%BB%93/</link>
+      <link>https://myself659.github.io/2018/12/05/%E5%A4%A7%E5%9E%8B%E7%B3%BB%E7%BB%9F%E8%BD%AF%E4%BB%B6comware%E7%A0%94%E5%8F%91%E6%80%BB%E7%BB%93/</link>
       <pubDate>Wed, 05 Dec 2018 11:58:06 +0200</pubDate>
       
-      <guid>https://blog.ipds.top/2018/12/05/%E5%A4%A7%E5%9E%8B%E7%B3%BB%E7%BB%9F%E8%BD%AF%E4%BB%B6comware%E7%A0%94%E5%8F%91%E6%80%BB%E7%BB%93/</guid>
+      <guid>https://myself659.github.io/2018/12/05/%E5%A4%A7%E5%9E%8B%E7%B3%BB%E7%BB%9F%E8%BD%AF%E4%BB%B6comware%E7%A0%94%E5%8F%91%E6%80%BB%E7%BB%93/</guid>
       <description>前言 前几个月写一篇关于研发管理的文章。在那篇文章提出一个简单的思考框架，并没有实际案例的分享及深度分析。所以在这里以华三Comware研发为例，结合思考框架谈谈自己的一些理解与想法。
 Comware 开始之前，先介绍一下Comware。其主要要点如下：
  整个系统代码量超过了1000万行（开源代码除外） 巅峰时期开发人员1000左右 支持设备类型超过100多种，同时支持各种丰富的网络特性 性能与可用性要求高，需要满足欧美高端市场（金融，国防等）要求及互联网大流量的冲击 作为公司的中台，支撑公司绝大部分产业线（安全，路由，交换，云计算等）  下面我们就一一展开说明。
@@ -39,10 +39,10 @@ KISS原则 关于KISS原则，架构设计通用原则，有太多说明，这�
     
     <item>
       <title>关于技术选型的思考</title>
-      <link>https://blog.ipds.top/2018/09/05/%E5%85%B3%E4%BA%8E%E6%8A%80%E6%9C%AF%E9%80%89%E5%9E%8B%E7%9A%84%E6%80%9D%E8%80%83/</link>
+      <link>https://myself659.github.io/2018/09/05/%E5%85%B3%E4%BA%8E%E6%8A%80%E6%9C%AF%E9%80%89%E5%9E%8B%E7%9A%84%E6%80%9D%E8%80%83/</link>
       <pubDate>Wed, 05 Sep 2018 11:58:06 +0200</pubDate>
       
-      <guid>https://blog.ipds.top/2018/09/05/%E5%85%B3%E4%BA%8E%E6%8A%80%E6%9C%AF%E9%80%89%E5%9E%8B%E7%9A%84%E6%80%9D%E8%80%83/</guid>
+      <guid>https://myself659.github.io/2018/09/05/%E5%85%B3%E4%BA%8E%E6%8A%80%E6%9C%AF%E9%80%89%E5%9E%8B%E7%9A%84%E6%80%9D%E8%80%83/</guid>
       <description>技术选型内容 技术选型从组成要素的角度分为两大类：
  实现业务的代码 业务依赖的服务  本文围绕代码这一核心进行技术选型，对此分解以下五个问题：
  怎么管理代码？ 用什么语言写代码？ 怎么运行代码？ 在哪里运行代码？ 怎么大规模运维代码？  技术选型原则 先看一下技术选型应该考虑些什么呢？
@@ -59,10 +59,10 @@ Why Golang  个人及其团队主要成员都有Golang经验 Golang在区块链�
     
     <item>
       <title>乱扯研发管理与领导</title>
-      <link>https://blog.ipds.top/2018/05/05/%E4%B9%B1%E6%89%AF%E7%A0%94%E5%8F%91%E7%AE%A1%E7%90%86%E4%B8%8E%E9%A2%86%E5%AF%BC/</link>
+      <link>https://myself659.github.io/2018/05/05/%E4%B9%B1%E6%89%AF%E7%A0%94%E5%8F%91%E7%AE%A1%E7%90%86%E4%B8%8E%E9%A2%86%E5%AF%BC/</link>
       <pubDate>Sat, 05 May 2018 11:58:06 +0200</pubDate>
       
-      <guid>https://blog.ipds.top/2018/05/05/%E4%B9%B1%E6%89%AF%E7%A0%94%E5%8F%91%E7%AE%A1%E7%90%86%E4%B8%8E%E9%A2%86%E5%AF%BC/</guid>
+      <guid>https://myself659.github.io/2018/05/05/%E4%B9%B1%E6%89%AF%E7%A0%94%E5%8F%91%E7%AE%A1%E7%90%86%E4%B8%8E%E9%A2%86%E5%AF%BC/</guid>
       <description>前言 优秀的技术人员与技术管理人员会一直紧缺。一个好的技术管理人员应该有自己的管理及领导指导原则。（Ps：最近在读《原则》这本书，深受其影响，虽然已经有很多人在推荐，这里再推荐一下，这本书真的值得一读。） 结合个人的工作经历与思考，提出自己对研发管理与技术领导的一些原则性思考。
 基本原则 具体如下图所示：
 以业务为中心，从文化，团队，代码，架构四个方面进行出发思考。用一句简单总结一下就是：在先进的文化氛围下，精英团队在科学的架构指导以业务为中心开展各项代码工作（需求，设计，开发，测试，部署，升级）。

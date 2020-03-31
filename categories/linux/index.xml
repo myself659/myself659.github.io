@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Linux on 沉风网事</title>
-    <link>https://blog.ipds.top/categories/linux/</link>
+    <link>https://myself659.github.io/categories/linux/</link>
     <description>Recent content in Linux on 沉风网事</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Wed, 10 May 2017 11:58:06 +0200</lastBuildDate>
     
-	<atom:link href="https://blog.ipds.top/categories/linux/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://myself659.github.io/categories/linux/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Linux进程诊断小结</title>
-      <link>https://blog.ipds.top/2017/05/10/linux%E8%BF%9B%E7%A8%8B%E8%AF%8A%E6%96%AD%E5%B0%8F%E7%BB%93/</link>
+      <link>https://myself659.github.io/2017/05/10/linux%E8%BF%9B%E7%A8%8B%E8%AF%8A%E6%96%AD%E5%B0%8F%E7%BB%93/</link>
       <pubDate>Wed, 10 May 2017 11:58:06 +0200</pubDate>
       
-      <guid>https://blog.ipds.top/2017/05/10/linux%E8%BF%9B%E7%A8%8B%E8%AF%8A%E6%96%AD%E5%B0%8F%E7%BB%93/</guid>
+      <guid>https://myself659.github.io/2017/05/10/linux%E8%BF%9B%E7%A8%8B%E8%AF%8A%E6%96%AD%E5%B0%8F%E7%BB%93/</guid>
       <description>日常工作中最常见问题是如何诊断一个进程运行过程中出现的问题，下面的总结从进程诊断的角度来展示，而是不从工具与命令角度来展示，进程诊断是工作的主体，工具与命令只是工具。
 进程信息 获得进程PID 方式一：
 root@iZ2ze9qnmldt4l3l82gtviZ:~# pidof tmsf-zc 2064  方式2：
@@ -25,10 +25,10 @@ root@iZ2ze9qnmldt4l3l82gtviZ:~# ps -ef | grep tmsf-zc root 2064 1 0 Mar17 ? 02:2
     
     <item>
       <title>git常用命令总结</title>
-      <link>https://blog.ipds.top/2016/05/21/git%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E6%80%BB%E7%BB%93/</link>
+      <link>https://myself659.github.io/2016/05/21/git%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E6%80%BB%E7%BB%93/</link>
       <pubDate>Sat, 21 May 2016 11:58:06 +0200</pubDate>
       
-      <guid>https://blog.ipds.top/2016/05/21/git%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E6%80%BB%E7%BB%93/</guid>
+      <guid>https://myself659.github.io/2016/05/21/git%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E6%80%BB%E7%BB%93/</guid>
       <description>git仓库  初始化一个版本仓库
 git init  clone远程版本库
 git clone git@github.com:myself659/FFmpeg.git  添加远程版本库origin
@@ -46,10 +46,10 @@ git checkout -- readme  修改最新一次修改注释</description>
     
     <item>
       <title>Linux内核常见crash原因</title>
-      <link>https://blog.ipds.top/2016/04/17/linux%E5%86%85%E6%A0%B8%E5%B8%B8%E8%A7%81crash%E5%8E%9F%E5%9B%A0/</link>
+      <link>https://myself659.github.io/2016/04/17/linux%E5%86%85%E6%A0%B8%E5%B8%B8%E8%A7%81crash%E5%8E%9F%E5%9B%A0/</link>
       <pubDate>Sun, 17 Apr 2016 11:58:06 +0200</pubDate>
       
-      <guid>https://blog.ipds.top/2016/04/17/linux%E5%86%85%E6%A0%B8%E5%B8%B8%E8%A7%81crash%E5%8E%9F%E5%9B%A0/</guid>
+      <guid>https://myself659.github.io/2016/04/17/linux%E5%86%85%E6%A0%B8%E5%B8%B8%E8%A7%81crash%E5%8E%9F%E5%9B%A0/</guid>
       <description>前言 与前同事交流，发现以前的技术经历与解决的问题，现在接触不多，但是想想还是很有意思，虽然很多细节现在已经不能表达出来或展示出来，但是还得写出来。下面写的得主要个人经历的linux内核crash原因。
 内存类 这一类同用户态类似，主要有以下几种情况，
  访问NULL 访问释放后的内存 非法访问内存 内存被踩 内存耗尽 野指针操作  堆栈类  内核调用栈溢出
@@ -59,10 +59,10 @@ git checkout -- readme  修改最新一次修改注释</description>
     
     <item>
       <title>Linux x86-64 函数调用栈实例分析</title>
-      <link>https://blog.ipds.top/2016/03/09/linux-x86-64-%E5%87%BD%E6%95%B0%E8%B0%83%E7%94%A8%E6%A0%88%E5%AE%9E%E4%BE%8B%E5%88%86%E6%9E%90/</link>
+      <link>https://myself659.github.io/2016/03/09/linux-x86-64-%E5%87%BD%E6%95%B0%E8%B0%83%E7%94%A8%E6%A0%88%E5%AE%9E%E4%BE%8B%E5%88%86%E6%9E%90/</link>
       <pubDate>Wed, 09 Mar 2016 11:58:06 +0200</pubDate>
       
-      <guid>https://blog.ipds.top/2016/03/09/linux-x86-64-%E5%87%BD%E6%95%B0%E8%B0%83%E7%94%A8%E6%A0%88%E5%AE%9E%E4%BE%8B%E5%88%86%E6%9E%90/</guid>
+      <guid>https://myself659.github.io/2016/03/09/linux-x86-64-%E5%87%BD%E6%95%B0%E8%B0%83%E7%94%A8%E6%A0%88%E5%AE%9E%E4%BE%8B%E5%88%86%E6%9E%90/</guid>
       <description>前言 动手实践并写文章花5倍的时间一次性把事情做到90分，好过读别人文章只能做到60分，后面还需要花时间继续深入学习。本文目的希望通过分析一个简单的函数调用加深对x86-64寄存器及栈帧的结构的认识，以便在定位问题需要的时候能够熟练运用。
 环境 1.操作系统和内核
 [root@localhost ~]# cat /proc/version Linux version 3.10.0-229.4.2.el7.x86_64 (builder@kbuilder.dev.centos.org) (gcc version 4.8.2 20140120 (Red Hat 4.8.2-16) (GCC) ) #1 SMP Wed May 13 10:06:09 UTC 2015  2.GCC版本
@@ -71,20 +71,20 @@ git checkout -- readme  修改最新一次修改注释</description>
     
     <item>
       <title>docker image命令实践</title>
-      <link>https://blog.ipds.top/2016/01/28/docker-image%E5%91%BD%E4%BB%A4%E5%AE%9E%E8%B7%B5/</link>
+      <link>https://myself659.github.io/2016/01/28/docker-image%E5%91%BD%E4%BB%A4%E5%AE%9E%E8%B7%B5/</link>
       <pubDate>Thu, 28 Jan 2016 11:58:06 +0200</pubDate>
       
-      <guid>https://blog.ipds.top/2016/01/28/docker-image%E5%91%BD%E4%BB%A4%E5%AE%9E%E8%B7%B5/</guid>
+      <guid>https://myself659.github.io/2016/01/28/docker-image%E5%91%BD%E4%BB%A4%E5%AE%9E%E8%B7%B5/</guid>
       <description>搭建了docker环境，就来体验一下Docker，常用docker image命令如下：
 1. 搜索docker image root@localhost ~]# docker search ubuntu NAME DESCRIPTION STARS OFFICIAL AUTOMATED ubuntu Ubuntu is a Debian-based Linux operating s... 2954 [OK] ubuntu-upstart Upstart is an event-based replacement for ... 58 [OK] dorowu/ubuntu-desktop-lxde-vnc Ubuntu with openssh-server and NoVNC on po... 32 [OK] torusware/speedus-ubuntu Always updated official Ubuntu docker imag... 25 [OK] ubuntu-debootstrap debootstrap --variant=minbase --components... 22 [OK] tleyden5iwx/ubuntu-cuda Ubuntu 14.04 with CUDA drivers pre-installed 18 [OK] rastasheep/ubuntu-sshd Dockerized SSH service, built on top of of.</description>
     </item>
     
     <item>
       <title>升级Linux内核，搭建docker环境</title>
-      <link>https://blog.ipds.top/2015/12/13/%E5%8D%87%E7%BA%A7linux%E5%86%85%E6%A0%B8%E6%90%AD%E5%BB%BAdocker%E7%8E%AF%E5%A2%83/</link>
+      <link>https://myself659.github.io/2015/12/13/%E5%8D%87%E7%BA%A7linux%E5%86%85%E6%A0%B8%E6%90%AD%E5%BB%BAdocker%E7%8E%AF%E5%A2%83/</link>
       <pubDate>Sun, 13 Dec 2015 11:58:06 +0200</pubDate>
       
-      <guid>https://blog.ipds.top/2015/12/13/%E5%8D%87%E7%BA%A7linux%E5%86%85%E6%A0%B8%E6%90%AD%E5%BB%BAdocker%E7%8E%AF%E5%A2%83/</guid>
+      <guid>https://myself659.github.io/2015/12/13/%E5%8D%87%E7%BA%A7linux%E5%86%85%E6%A0%B8%E6%90%AD%E5%BB%BAdocker%E7%8E%AF%E5%A2%83/</guid>
       <description>docker可以说是去年最热的技术，也是业界大谈特谈的技术，到了今年有很多公司已经将docker应用于自己的生产环境。Docker已经从一个工具转化成平台，小生态圈。作为一名程序员应该与时俱进，学习新技术，不断地提高自己。
 升级内核 docker要求linux内核版本3.12以上，作为常用linux2.26.32版本，虽然也可以安装docker，但是有一些特性不支持，所以第一步就是升级内核。个人选择最新的长期维护版本升级linux4.13,内核升级最关键的一件事情就是配置内核，关于内核支持docker的内核配置文件，如果不想自己动手配置内核，可以参考Linux-4.13-configfordocker;
 在未正确配置linux内核会出现以下一些错误：
@@ -93,20 +93,20 @@ git checkout -- readme  修改最新一次修改注释</description>
     
     <item>
       <title>gdb自定义断点操作</title>
-      <link>https://blog.ipds.top/2015/08/28/gdb%E8%87%AA%E5%AE%9A%E4%B9%89%E6%96%AD%E7%82%B9%E6%93%8D%E4%BD%9C/</link>
+      <link>https://myself659.github.io/2015/08/28/gdb%E8%87%AA%E5%AE%9A%E4%B9%89%E6%96%AD%E7%82%B9%E6%93%8D%E4%BD%9C/</link>
       <pubDate>Fri, 28 Aug 2015 11:58:06 +0200</pubDate>
       
-      <guid>https://blog.ipds.top/2015/08/28/gdb%E8%87%AA%E5%AE%9A%E4%B9%89%E6%96%AD%E7%82%B9%E6%93%8D%E4%BD%9C/</guid>
+      <guid>https://myself659.github.io/2015/08/28/gdb%E8%87%AA%E5%AE%9A%E4%B9%89%E6%96%AD%E7%82%B9%E6%93%8D%E4%BD%9C/</guid>
       <description>gdb是c/c++上调试利器，有很多技巧能让调试程序与解决问题更加方便与高效，下面关于command 命令的使用一个实例，具体如下：
 1. 设置断点 (gdb) b GenVedioSeekPoint Breakpoint 1 at 0x402e58: file GenIndex.cpp, line 140. (gdb)  2. 利用commad自定义断点操作 (gdb) command 1 Type commands for breakpoint(s) 1, one per line. End with a line saying just &amp;quot;end&amp;quot;. &amp;gt;p *pstPktHead &amp;gt;continue &amp;gt;end (gdb)  3. 设置gdb log信息输出到指定文件 (gdb) set logging file genindex.txt (gdb) set logging on Copying output to genindex.txt. (gdb) set pagination off (gdb)  4. 开始或继续执行程序 (gdb) run  有输出信息如下：</description>
     </item>
     
     <item>
       <title>Linux netstat 应用示例</title>
-      <link>https://blog.ipds.top/2015/07/28/linux-netstat-%E5%BA%94%E7%94%A8%E7%A4%BA%E4%BE%8B/</link>
+      <link>https://myself659.github.io/2015/07/28/linux-netstat-%E5%BA%94%E7%94%A8%E7%A4%BA%E4%BE%8B/</link>
       <pubDate>Tue, 28 Jul 2015 11:58:06 +0200</pubDate>
       
-      <guid>https://blog.ipds.top/2015/07/28/linux-netstat-%E5%BA%94%E7%94%A8%E7%A4%BA%E4%BE%8B/</guid>
+      <guid>https://myself659.github.io/2015/07/28/linux-netstat-%E5%BA%94%E7%94%A8%E7%A4%BA%E4%BE%8B/</guid>
       <description>关于netstat netstat 命令用于显示各种网络相关信息，如网络连接，路由表，接口状态 (Interface Statistics)，masquerade 连接，多播成员 (Multicast Memberships) 等等。
 常用参数 -a (all)显示所有选项，默认不显示LISTEN相关
 -t (tcp)仅显示tcp相关选项
@@ -127,10 +127,10 @@ netstat -tlnp  说明：显示处于listen状态的tcp连接，并显示对应�
     
     <item>
       <title>那些可进入睡眠状态的Linux内核函数</title>
-      <link>https://blog.ipds.top/2015/05/27/%E9%82%A3%E4%BA%9B%E5%8F%AF%E8%BF%9B%E5%85%A5%E7%9D%A1%E7%9C%A0%E7%8A%B6%E6%80%81%E7%9A%84linux%E5%86%85%E6%A0%B8%E5%87%BD%E6%95%B0/</link>
+      <link>https://myself659.github.io/2015/05/27/%E9%82%A3%E4%BA%9B%E5%8F%AF%E8%BF%9B%E5%85%A5%E7%9D%A1%E7%9C%A0%E7%8A%B6%E6%80%81%E7%9A%84linux%E5%86%85%E6%A0%B8%E5%87%BD%E6%95%B0/</link>
       <pubDate>Wed, 27 May 2015 11:58:06 +0200</pubDate>
       
-      <guid>https://blog.ipds.top/2015/05/27/%E9%82%A3%E4%BA%9B%E5%8F%AF%E8%BF%9B%E5%85%A5%E7%9D%A1%E7%9C%A0%E7%8A%B6%E6%80%81%E7%9A%84linux%E5%86%85%E6%A0%B8%E5%87%BD%E6%95%B0/</guid>
+      <guid>https://myself659.github.io/2015/05/27/%E9%82%A3%E4%BA%9B%E5%8F%AF%E8%BF%9B%E5%85%A5%E7%9D%A1%E7%9C%A0%E7%8A%B6%E6%80%81%E7%9A%84linux%E5%86%85%E6%A0%B8%E5%87%BD%E6%95%B0/</guid>
       <description> 在linux内核开发中断处理函数不能调用可能导致睡眠的函数，下面总结linux内核可能引起睡眠的函数如下：
 schedule函数   schedule_timeout schedule_timeout_uninterruptible schedule_timeout_interruptible cond_resched might_resched   sleep函数   msleep msleep_interruputible ssleep osal_usleep might_sleep   取信号量函数   down down_timeout down_read down_write down_interruptible wait_for_completion wait_for_completion_interruptible wait_for_completion_timeout wait_for_completion_interruptible_timeout   kmalloc相关函数含有标志GFP_KERNEL   kmalloc kzalloc krealloc kmem_cache_create kmem_cache_alloc kmem_cache_zalloc   取睡眠锁函数   mutex_lock mutex_lock_timeout mutex_lock_nested mutex_lock_interruptible mutex_lock_interruptible_nested   在中断处理函数不能使用睡眠函数原因 主要原因如下：
  中断是一种紧急事务，中断处理函数要求快 linux是以进程为调度单位的，调度器只看到进程内核栈，而看不到中断栈，在独立中断栈的模式下，如果linux内核在中断处理函数内发生了调度或者睡眠，导致无法找到回家的路，未执行的中断处理代码再也无法获得执行机会（贪睡开小差是有代价哦）  </description>
@@ -138,10 +138,10 @@ schedule函数   schedule_timeout schedule_timeout_uninterruptible schedule_time
     
     <item>
       <title>Linux性能优化杂谈</title>
-      <link>https://blog.ipds.top/2015/05/24/linux%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%E6%9D%82%E8%B0%88/</link>
+      <link>https://myself659.github.io/2015/05/24/linux%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%E6%9D%82%E8%B0%88/</link>
       <pubDate>Sun, 24 May 2015 11:58:06 +0200</pubDate>
       
-      <guid>https://blog.ipds.top/2015/05/24/linux%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%E6%9D%82%E8%B0%88/</guid>
+      <guid>https://myself659.github.io/2015/05/24/linux%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%E6%9D%82%E8%B0%88/</guid>
       <description>性能不仅仅是一串串数字，性能体现更大的吞吐量及更低的延迟；如果网络延迟增加0.1秒，google每秒损失100W,不是人民币是美元；网页响应慢0.1秒，运营成本每天增加100万美金。亚马逊的数据也显示，网页延迟1秒可能导致全年损失16亿美金；移动页面加载时间时长超过5秒，74%的用户会选择离开，高性能主要体现下面三个方面：
  少资源 高吞吐 低延迟  在具体网络转发性能优化过程中对性能优化有以下几点体会与总结：
 软硬结合 软件灵活，硬件高效，软硬结合就像双剑合壁，威力巨大；具体在网络设备中交换机就是一个很好的例子：通常由CPU完成协议的处理，下发转发表项到芯片，由芯片完成报文的转发，在这种思路下才会cisco，H3C，Huawei的大容量的交换机；如果完全交给CPU来处理成本很高，而且在现有技术下很难完成那么大的交换容量（1T以上）。在这种情况对于软件上来说基本不需要优化，本文后面的优化是针对软转的优化；
@@ -163,10 +163,10 @@ do more with less 性能优化大体就是开源与节流，do more with less需
     
     <item>
       <title>在没有分支miss条件下，实现取最小值</title>
-      <link>https://blog.ipds.top/2015/05/24/%E5%9C%A8%E6%B2%A1%E6%9C%89%E5%88%86%E6%94%AFmiss%E6%9D%A1%E4%BB%B6%E4%B8%8B%E5%AE%9E%E7%8E%B0%E5%8F%96%E6%9C%80%E5%B0%8F%E5%80%BC/</link>
+      <link>https://myself659.github.io/2015/05/24/%E5%9C%A8%E6%B2%A1%E6%9C%89%E5%88%86%E6%94%AFmiss%E6%9D%A1%E4%BB%B6%E4%B8%8B%E5%AE%9E%E7%8E%B0%E5%8F%96%E6%9C%80%E5%B0%8F%E5%80%BC/</link>
       <pubDate>Sun, 24 May 2015 11:58:06 +0200</pubDate>
       
-      <guid>https://blog.ipds.top/2015/05/24/%E5%9C%A8%E6%B2%A1%E6%9C%89%E5%88%86%E6%94%AFmiss%E6%9D%A1%E4%BB%B6%E4%B8%8B%E5%AE%9E%E7%8E%B0%E5%8F%96%E6%9C%80%E5%B0%8F%E5%80%BC/</guid>
+      <guid>https://myself659.github.io/2015/05/24/%E5%9C%A8%E6%B2%A1%E6%9C%89%E5%88%86%E6%94%AFmiss%E6%9D%A1%E4%BB%B6%E4%B8%8B%E5%AE%9E%E7%8E%B0%E5%8F%96%E6%9C%80%E5%B0%8F%E5%80%BC/</guid>
       <description> 在实际性能优化过程，加了一个if判断整个系统转发性能就有大约5%的下降，下面简单分享一种在没有分支miss条件下，实现取最小值的方法。
 一般实现 取两个数最小值，一般代码常见两种写法如下：
  写法一：

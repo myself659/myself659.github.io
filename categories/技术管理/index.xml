@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>技术管理 on 沉风网事</title>
-    <link>https://blog.ipds.top/categories/%E6%8A%80%E6%9C%AF%E7%AE%A1%E7%90%86/</link>
+    <link>https://myself659.github.io/categories/%E6%8A%80%E6%9C%AF%E7%AE%A1%E7%90%86/</link>
     <description>Recent content in 技术管理 on 沉风网事</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Sun, 08 Mar 2020 11:58:06 +0200</lastBuildDate>
     
-	<atom:link href="https://blog.ipds.top/categories/%E6%8A%80%E6%9C%AF%E7%AE%A1%E7%90%86/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://myself659.github.io/categories/%E6%8A%80%E6%9C%AF%E7%AE%A1%E7%90%86/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>微盟删库事件复盘与思考</title>
-      <link>https://blog.ipds.top/2020/03/08/%E5%BE%AE%E7%9B%9F%E5%88%A0%E5%BA%93%E4%BA%8B%E4%BB%B6%E5%A4%8D%E7%9B%98%E4%B8%8E%E6%80%9D%E8%80%83/</link>
+      <link>https://myself659.github.io/2020/03/08/%E5%BE%AE%E7%9B%9F%E5%88%A0%E5%BA%93%E4%BA%8B%E4%BB%B6%E5%A4%8D%E7%9B%98%E4%B8%8E%E6%80%9D%E8%80%83/</link>
       <pubDate>Sun, 08 Mar 2020 11:58:06 +0200</pubDate>
       
-      <guid>https://blog.ipds.top/2020/03/08/%E5%BE%AE%E7%9B%9F%E5%88%A0%E5%BA%93%E4%BA%8B%E4%BB%B6%E5%A4%8D%E7%9B%98%E4%B8%8E%E6%80%9D%E8%80%83/</guid>
+      <guid>https://myself659.github.io/2020/03/08/%E5%BE%AE%E7%9B%9F%E5%88%A0%E5%BA%93%E4%BA%8B%E4%BB%B6%E5%A4%8D%E7%9B%98%E4%B8%8E%E6%80%9D%E8%80%83/</guid>
       <description>事故 先简单看一下整个事故的粗略时间线。
 2月23日，微盟服务出现故障。商家商城、小程序均无法登录。
 2月25日，微盟紧急恢复了核心业务的线上生产环境，新用户使用不受影响，并提供老用户临时过渡方案，确保商家在数据暂时没有恢复的情况下可以正常经营。

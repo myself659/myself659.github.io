@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Golang on 沉风网事</title>
-    <link>https://blog.ipds.top/categories/golang/</link>
+    <link>https://myself659.github.io/categories/golang/</link>
     <description>Recent content in Golang on 沉风网事</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Fri, 06 Sep 2019 11:58:06 +0200</lastBuildDate>
     
-	<atom:link href="https://blog.ipds.top/categories/golang/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://myself659.github.io/categories/golang/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>深入分析Golang sync.pool优化</title>
-      <link>https://blog.ipds.top/2019/09/06/%E6%B7%B1%E5%85%A5%E5%88%86%E6%9E%90golang-sync.pool%E4%BC%98%E5%8C%96/</link>
+      <link>https://myself659.github.io/2019/09/06/%E6%B7%B1%E5%85%A5%E5%88%86%E6%9E%90golang-sync.pool%E4%BC%98%E5%8C%96/</link>
       <pubDate>Fri, 06 Sep 2019 11:58:06 +0200</pubDate>
       
-      <guid>https://blog.ipds.top/2019/09/06/%E6%B7%B1%E5%85%A5%E5%88%86%E6%9E%90golang-sync.pool%E4%BC%98%E5%8C%96/</guid>
+      <guid>https://myself659.github.io/2019/09/06/%E6%B7%B1%E5%85%A5%E5%88%86%E6%9E%90golang-sync.pool%E4%BC%98%E5%8C%96/</guid>
       <description>前言 最近golang的1.13版本发布了，有很多新特性与改进合入。这里主要分析sync.pool的优化。
 本文主要解答以下几个问题：
  sync.pool优化体现在哪里？ 优化是如何实现？ 优化的好处有哪些？  优化 具体优化项如下：
@@ -28,10 +28,10 @@ go1.12.1版本实现
     
     <item>
       <title>深入分析Golang sync.pool</title>
-      <link>https://blog.ipds.top/2019/06/10/%E6%B7%B1%E5%85%A5%E5%88%86%E6%9E%90golang-sync.pool/</link>
+      <link>https://myself659.github.io/2019/06/10/%E6%B7%B1%E5%85%A5%E5%88%86%E6%9E%90golang-sync.pool/</link>
       <pubDate>Mon, 10 Jun 2019 11:58:06 +0200</pubDate>
       
-      <guid>https://blog.ipds.top/2019/06/10/%E6%B7%B1%E5%85%A5%E5%88%86%E6%9E%90golang-sync.pool/</guid>
+      <guid>https://myself659.github.io/2019/06/10/%E6%B7%B1%E5%85%A5%E5%88%86%E6%9E%90golang-sync.pool/</guid>
       <description>定义 sync.Pool是一个可以存或取的临时对象池。对外提供New、Get、Put等API，利用mutex支持多线程并发。
 目标 sync.Pool解决以下问题：
  增加临时对象的用复用率，减少GC负担 通过对象的复用，减少内存申请开销，有利于提高一部分性能  实现 这一部分回答如何实现的问题。
@@ -41,10 +41,10 @@ go1.12.1版本实现
     
     <item>
       <title>Golang最工程化的语言</title>
-      <link>https://blog.ipds.top/2018/07/03/golang%E6%9C%80%E5%B7%A5%E7%A8%8B%E5%8C%96%E7%9A%84%E8%AF%AD%E8%A8%80/</link>
+      <link>https://myself659.github.io/2018/07/03/golang%E6%9C%80%E5%B7%A5%E7%A8%8B%E5%8C%96%E7%9A%84%E8%AF%AD%E8%A8%80/</link>
       <pubDate>Tue, 03 Jul 2018 11:58:06 +0200</pubDate>
       
-      <guid>https://blog.ipds.top/2018/07/03/golang%E6%9C%80%E5%B7%A5%E7%A8%8B%E5%8C%96%E7%9A%84%E8%AF%AD%E8%A8%80/</guid>
+      <guid>https://myself659.github.io/2018/07/03/golang%E6%9C%80%E5%B7%A5%E7%A8%8B%E5%8C%96%E7%9A%84%E8%AF%AD%E8%A8%80/</guid>
       <description>Golang是什么语言 PHP是最好的语言。
 Haskell最难学的语言。
 Golang最工程化的语言。
@@ -68,10 +68,10 @@ Golang最工程化的语言。
     
     <item>
       <title>Gorm小技巧: 如何优雅地创建多个相同的表</title>
-      <link>https://blog.ipds.top/2017/12/21/gorm%E5%B0%8F%E6%8A%80%E5%B7%A7-%E5%A6%82%E4%BD%95%E4%BC%98%E9%9B%85%E5%9C%B0%E5%88%9B%E5%BB%BA%E5%A4%9A%E4%B8%AA%E7%9B%B8%E5%90%8C%E7%9A%84%E8%A1%A8/</link>
+      <link>https://myself659.github.io/2017/12/21/gorm%E5%B0%8F%E6%8A%80%E5%B7%A7-%E5%A6%82%E4%BD%95%E4%BC%98%E9%9B%85%E5%9C%B0%E5%88%9B%E5%BB%BA%E5%A4%9A%E4%B8%AA%E7%9B%B8%E5%90%8C%E7%9A%84%E8%A1%A8/</link>
       <pubDate>Thu, 21 Dec 2017 11:58:06 +0200</pubDate>
       
-      <guid>https://blog.ipds.top/2017/12/21/gorm%E5%B0%8F%E6%8A%80%E5%B7%A7-%E5%A6%82%E4%BD%95%E4%BC%98%E9%9B%85%E5%9C%B0%E5%88%9B%E5%BB%BA%E5%A4%9A%E4%B8%AA%E7%9B%B8%E5%90%8C%E7%9A%84%E8%A1%A8/</guid>
+      <guid>https://myself659.github.io/2017/12/21/gorm%E5%B0%8F%E6%8A%80%E5%B7%A7-%E5%A6%82%E4%BD%95%E4%BC%98%E9%9B%85%E5%9C%B0%E5%88%9B%E5%BB%BA%E5%A4%9A%E4%B8%AA%E7%9B%B8%E5%90%8C%E7%9A%84%E8%A1%A8/</guid>
       <description>背景 因为需要bitfinex抓取各种历史交易信息。为了实现可扩展与便于数据管理，在数据架构设计方面满足下面的需求：
  不同的交易对的交易数据放到不同的表上。  方案 方案1 编写sql,通过多条sql语句创建多个不同名字的表。
 优点： 1. 理解简单，最容易的方案
@@ -88,10 +88,10 @@ package main import ( &amp;quot;fmt&amp;quot; _ &amp;quot;github.com/go-sql-driv
     
     <item>
       <title>slice复用的陷阱</title>
-      <link>https://blog.ipds.top/2017/07/28/slice%E5%A4%8D%E7%94%A8%E7%9A%84%E9%99%B7%E9%98%B1/</link>
+      <link>https://myself659.github.io/2017/07/28/slice%E5%A4%8D%E7%94%A8%E7%9A%84%E9%99%B7%E9%98%B1/</link>
       <pubDate>Fri, 28 Jul 2017 11:58:06 +0200</pubDate>
       
-      <guid>https://blog.ipds.top/2017/07/28/slice%E5%A4%8D%E7%94%A8%E7%9A%84%E9%99%B7%E9%98%B1/</guid>
+      <guid>https://myself659.github.io/2017/07/28/slice%E5%A4%8D%E7%94%A8%E7%9A%84%E9%99%B7%E9%98%B1/</guid>
       <description>前言 先下结论：slice复用得当心，引用不当深埋雷。如若复用请分叉，分叉之后再使用。
 问题 先看一下代码吧
 package main import ( &amp;quot;fmt&amp;quot; ) func a() { x := []int{} x = append(x, 0) x = append(x, 1) // commonTags := labelsToTags(app.Labels) y := append(x, 2) // Tags: append(commonTags, labelsToTags(d.Labels)...) z := append(x, 3) // Tags: append(commonTags, labelsToTags(d.Labels)...) fmt.Println(y, z) } func b() { x := []int{} x = append(x, 0) x = append(x, 1) x = append(x, 2) // commonTags := labelsToTags(app.Labels) y := append(x, 3) // Tags: append(commonTags, labelsToTags(d.</description>
@@ -99,10 +99,10 @@ package main import ( &amp;quot;fmt&amp;quot; ) func a() { x := []int{} x = appe
     
     <item>
       <title>使用golang present工具制作presentation</title>
-      <link>https://blog.ipds.top/2017/05/10/%E4%BD%BF%E7%94%A8golang-present%E5%B7%A5%E5%85%B7%E5%88%B6%E4%BD%9Cpresentation/</link>
+      <link>https://myself659.github.io/2017/05/10/%E4%BD%BF%E7%94%A8golang-present%E5%B7%A5%E5%85%B7%E5%88%B6%E4%BD%9Cpresentation/</link>
       <pubDate>Wed, 10 May 2017 11:58:06 +0200</pubDate>
       
-      <guid>https://blog.ipds.top/2017/05/10/%E4%BD%BF%E7%94%A8golang-present%E5%B7%A5%E5%85%B7%E5%88%B6%E4%BD%9Cpresentation/</guid>
+      <guid>https://myself659.github.io/2017/05/10/%E4%BD%BF%E7%94%A8golang-present%E5%B7%A5%E5%85%B7%E5%88%B6%E4%BD%9Cpresentation/</guid>
       <description>依赖  依赖golang的开发环境  安装 present工具在golang.org/x/tools中，依赖golang.org/x/net包,安装过程如下：
 root@ia-VirtualBox:~# go get golang.org/x/net root@ia-VirtualBox:~# go get golang.org/x/tools root@ia-VirtualBox:~# go install golang.org/x/tools/cmd/present  安装结束后查看present位置
 root@ia-VirtualBox:~# which present /usr/local/go/bin/present  slide文件语法 具体参考准官方文档
@@ -112,30 +112,30 @@ root@ia-VirtualBox:/share/gocode/src/github.com/pcrawfor# present -http=&amp;quo
     
     <item>
       <title>Go的50度灰补充--http response只能读一次</title>
-      <link>https://blog.ipds.top/2017/02/20/go%E7%9A%8450%E5%BA%A6%E7%81%B0%E8%A1%A5%E5%85%85-http-response%E5%8F%AA%E8%83%BD%E8%AF%BB%E4%B8%80%E6%AC%A1/</link>
+      <link>https://myself659.github.io/2017/02/20/go%E7%9A%8450%E5%BA%A6%E7%81%B0%E8%A1%A5%E5%85%85-http-response%E5%8F%AA%E8%83%BD%E8%AF%BB%E4%B8%80%E6%AC%A1/</link>
       <pubDate>Mon, 20 Feb 2017 11:58:06 +0200</pubDate>
       
-      <guid>https://blog.ipds.top/2017/02/20/go%E7%9A%8450%E5%BA%A6%E7%81%B0%E8%A1%A5%E5%85%85-http-response%E5%8F%AA%E8%83%BD%E8%AF%BB%E4%B8%80%E6%AC%A1/</guid>
+      <guid>https://myself659.github.io/2017/02/20/go%E7%9A%8450%E5%BA%A6%E7%81%B0%E8%A1%A5%E5%85%85-http-response%E5%8F%AA%E8%83%BD%E8%AF%BB%E4%B8%80%E6%AC%A1/</guid>
       <description>问题 还是从代码开始吧
 func fetch(url string) { tlsConfig := &amp;amp;tls.Config{ InsecureSkipVerify: true, } transport := &amp;amp;http.Transport{ TLSClientConfig: tlsConfig, } client := http.Client{Transport: transport} resp, err := client.Get(url) if err != nil { fmt.Println(err) &amp;lt;-time.After(300 * time.Second) go fetch(url) return } buf, err := ioutil.ReadAll(resp.Body) if err != nil { fmt.Println(&amp;quot;fetchyh:&amp;quot;, err) return } save(buf) //保存html到文件 defer resp.Body.Close() // http to doc doc, err := goquery.NewDocumentFromResponse(resp) if err != nil { fmt.</description>
     </item>
     
     <item>
       <title>从C语言epoll编程到go net实现分析</title>
-      <link>https://blog.ipds.top/2016/09/10/%E4%BB%8Ec%E8%AF%AD%E8%A8%80epoll%E7%BC%96%E7%A8%8B%E5%88%B0go-net%E5%AE%9E%E7%8E%B0%E5%88%86%E6%9E%90/</link>
+      <link>https://myself659.github.io/2016/09/10/%E4%BB%8Ec%E8%AF%AD%E8%A8%80epoll%E7%BC%96%E7%A8%8B%E5%88%B0go-net%E5%AE%9E%E7%8E%B0%E5%88%86%E6%9E%90/</link>
       <pubDate>Sat, 10 Sep 2016 11:58:06 +0200</pubDate>
       
-      <guid>https://blog.ipds.top/2016/09/10/%E4%BB%8Ec%E8%AF%AD%E8%A8%80epoll%E7%BC%96%E7%A8%8B%E5%88%B0go-net%E5%AE%9E%E7%8E%B0%E5%88%86%E6%9E%90/</guid>
+      <guid>https://myself659.github.io/2016/09/10/%E4%BB%8Ec%E8%AF%AD%E8%A8%80epoll%E7%BC%96%E7%A8%8B%E5%88%B0go-net%E5%AE%9E%E7%8E%B0%E5%88%86%E6%9E%90/</guid>
       <description>说明  go源码版本：1.7 go源码运行环境：Linux  epoll在c语言编程示例 先看一下大家比较熟悉的epoll在c语言中应用，代码取自rtmpserver_demo中的文件rtmpepollsrv.c
 int RtmpSessionHandle(int iFd, int iEvent, void *pContext) { int iRet; RTMP_SESSION *pSession = (RTMP_SESSION *)pContext; if(iEvent&amp;amp;EPOLLIN ) { if(0 == pSession-&amp;gt;handshake) { iRet = RtmpSessionHandshake(pSession); if(0 != iRet) { RtmpSessionHandleFin(pSession); } } else { iRet = RtmpPktHandle(pSession); } } if(iEvent &amp;amp; (EPOLLERR |EPOLLHUP) ) { RtmpSessionHandleFin(pSession); } return iRet; } int ListenHandle(int iFd, int iEvent, void *pContext) { int iNewFd; int iRet = 0; struct sockaddr tmpAddr; memset(&amp;amp;tmpAddr, 0, sizeof(tmpAddr)); int iSocketSize = sizeof(tmpAddr); EPOLL_CTX *pCtx; RTMP_SESSION *pServer; if(iEvent|EPOLLIN) { iNewFd = accept(iFd, &amp;amp;tmpAddr, (socklen_t *)&amp;amp;iSocketSize); if(RTMP_EPOLLSRV_INVALIDFD &amp;lt; iNewFd) { pServer = (RTMP_SESSION *)malloc(sizeof(RTMP_SESSION)); if(NULL == pServer) { return -1; } pServer-&amp;gt;handshake = 0; pCtx = (EPOLL_CTX *)malloc(sizeof(EPOLL_CTX)); if(NULL == pCtx) { free(pServer); return -1; } pServer-&amp;gt;socket = iNewFd; pCtx-&amp;gt;iFd = iNewFd; pCtx-&amp;gt;pContext = pServer; pCtx-&amp;gt;pfHandle = RtmpSessionHandle; /* 加入epoll */ iRet = epoll_op(g_iEpollFd, EPOLL_CTL_ADD, iNewFd, EPOLLIN|EPOLLERR|EPOLLHUP, pCtx); } else { printf(&amp;quot;accept errno:%s&amp;quot;,strerror(errno)); } } return iRet; } int epoll_op(int iEpollFd, int iOp, int iFd, int iEvent, EPOLL_CTX *pCtx) { int iRet; struct epoll_event ev; ev.</description>
     </item>
     
     <item>
       <title>Go channel 编程篇</title>
-      <link>https://blog.ipds.top/2016/08/20/go-channel-%E7%BC%96%E7%A8%8B%E7%AF%87/</link>
+      <link>https://myself659.github.io/2016/08/20/go-channel-%E7%BC%96%E7%A8%8B%E7%AF%87/</link>
       <pubDate>Sat, 20 Aug 2016 11:58:06 +0200</pubDate>
       
-      <guid>https://blog.ipds.top/2016/08/20/go-channel-%E7%BC%96%E7%A8%8B%E7%AF%87/</guid>
+      <guid>https://myself659.github.io/2016/08/20/go-channel-%E7%BC%96%E7%A8%8B%E7%AF%87/</guid>
       <description>本篇以ChanBroker版本迭代过程，总结常见Channel编程问题
 简介 ChanBroker设计主要参考Kafka模型，主要提供进程内goroutine之间通信，实现以下功能：
  支持多个Publisher发布内容 支持Subscriber注册与去注册订阅 发布内容可以是任何形式 ChanBroker根据订阅情况完成内容推送  版本1 具体代码如下:
@@ -144,10 +144,10 @@ package ChanBroker type Content interface{} type Subscriber chan Content type Ch
     
     <item>
       <title>Go channel 特点篇</title>
-      <link>https://blog.ipds.top/2016/07/26/go-channel-%E7%89%B9%E7%82%B9%E7%AF%87/</link>
+      <link>https://myself659.github.io/2016/07/26/go-channel-%E7%89%B9%E7%82%B9%E7%AF%87/</link>
       <pubDate>Tue, 26 Jul 2016 11:58:06 +0200</pubDate>
       
-      <guid>https://blog.ipds.top/2016/07/26/go-channel-%E7%89%B9%E7%82%B9%E7%AF%87/</guid>
+      <guid>https://myself659.github.io/2016/07/26/go-channel-%E7%89%B9%E7%82%B9%E7%AF%87/</guid>
       <description>channel模式 根据同步方式不同，channel有两种模式：
 1、同步模式,形式如下：
 ch := make(chan int)  2、队列模式，形式如下：

@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Substrate on 沉风网事</title>
-    <link>https://blog.ipds.top/categories/substrate/</link>
+    <link>https://myself659.github.io/categories/substrate/</link>
     <description>Recent content in Substrate on 沉风网事</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Wed, 18 Sep 2019 11:58:06 +0200</lastBuildDate>
     
-	<atom:link href="https://blog.ipds.top/categories/substrate/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://myself659.github.io/categories/substrate/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>搭建Substrate开发云节点</title>
-      <link>https://blog.ipds.top/2019/09/18/%E6%90%AD%E5%BB%BAsubstrate%E5%BC%80%E5%8F%91%E4%BA%91%E8%8A%82%E7%82%B9/</link>
+      <link>https://myself659.github.io/2019/09/18/%E6%90%AD%E5%BB%BAsubstrate%E5%BC%80%E5%8F%91%E4%BA%91%E8%8A%82%E7%82%B9/</link>
       <pubDate>Wed, 18 Sep 2019 11:58:06 +0200</pubDate>
       
-      <guid>https://blog.ipds.top/2019/09/18/%E6%90%AD%E5%BB%BAsubstrate%E5%BC%80%E5%8F%91%E4%BA%91%E8%8A%82%E7%82%B9/</guid>
+      <guid>https://myself659.github.io/2019/09/18/%E6%90%AD%E5%BB%BAsubstrate%E5%BC%80%E5%8F%91%E4%BA%91%E8%8A%82%E7%82%B9/</guid>
       <description>为什么要云节点 主要由以下几个原因：
  国内GFW太狠，github都不能幸免，代码都不能下载，影响正常的开发 rust这个编译太占用cpu，内存，硬盘 rust编译的时候cpu一直在叫，影响个人心情，进而影响开发效率 云节点方便共享 花小钱买时间是一件很划算的事情  搭建步骤 准备节点 具体参考这篇文章Installing Substrate，各种类型的操作系统都有说明。
 运行节点 设置代理 这里我采用是caddy作为代理

@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>职场 on 沉风网事</title>
-    <link>https://blog.ipds.top/tags/%E8%81%8C%E5%9C%BA/</link>
+    <link>https://myself659.github.io/tags/%E8%81%8C%E5%9C%BA/</link>
     <description>Recent content in 职场 on 沉风网事</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Wed, 23 Jan 2019 11:58:06 +0200</lastBuildDate>
     
-	<atom:link href="https://blog.ipds.top/tags/%E8%81%8C%E5%9C%BA/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://myself659.github.io/tags/%E8%81%8C%E5%9C%BA/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>谈谈做事的原则</title>
-      <link>https://blog.ipds.top/2019/01/23/%E8%B0%88%E8%B0%88%E5%81%9A%E4%BA%8B%E7%9A%84%E5%8E%9F%E5%88%99/</link>
+      <link>https://myself659.github.io/2019/01/23/%E8%B0%88%E8%B0%88%E5%81%9A%E4%BA%8B%E7%9A%84%E5%8E%9F%E5%88%99/</link>
       <pubDate>Wed, 23 Jan 2019 11:58:06 +0200</pubDate>
       
-      <guid>https://blog.ipds.top/2019/01/23/%E8%B0%88%E8%B0%88%E5%81%9A%E4%BA%8B%E7%9A%84%E5%8E%9F%E5%88%99/</guid>
+      <guid>https://myself659.github.io/2019/01/23/%E8%B0%88%E8%B0%88%E5%81%9A%E4%BA%8B%E7%9A%84%E5%8E%9F%E5%88%99/</guid>
       <description>前言 这篇文章规划了很久，本来打算年前写，各种事情加上自己的拖延症，到现在才开始写。
 做事 如果说人的一生做什么？总结一下，可以划分两个方面：
  做人 做事
@@ -45,10 +45,10 @@
     
     <item>
       <title>说说在不同行业的编程体验</title>
-      <link>https://blog.ipds.top/2018/12/02/%E8%AF%B4%E8%AF%B4%E5%9C%A8%E4%B8%8D%E5%90%8C%E8%A1%8C%E4%B8%9A%E7%9A%84%E7%BC%96%E7%A8%8B%E4%BD%93%E9%AA%8C/</link>
+      <link>https://myself659.github.io/2018/12/02/%E8%AF%B4%E8%AF%B4%E5%9C%A8%E4%B8%8D%E5%90%8C%E8%A1%8C%E4%B8%9A%E7%9A%84%E7%BC%96%E7%A8%8B%E4%BD%93%E9%AA%8C/</link>
       <pubDate>Sun, 02 Dec 2018 11:58:06 +0200</pubDate>
       
-      <guid>https://blog.ipds.top/2018/12/02/%E8%AF%B4%E8%AF%B4%E5%9C%A8%E4%B8%8D%E5%90%8C%E8%A1%8C%E4%B8%9A%E7%9A%84%E7%BC%96%E7%A8%8B%E4%BD%93%E9%AA%8C/</guid>
+      <guid>https://myself659.github.io/2018/12/02/%E8%AF%B4%E8%AF%B4%E5%9C%A8%E4%B8%8D%E5%90%8C%E8%A1%8C%E4%B8%9A%E7%9A%84%E7%BC%96%E7%A8%8B%E4%BD%93%E9%AA%8C/</guid>
       <description>回想起来，2010年毕业以来，在五家公司呆过，经历四个行业，在这引起行业编程体验各有不同，总结起来就下面四句话：
 嵌入式行业：面向DataSheet编程
 通信行业：面向标准编程
