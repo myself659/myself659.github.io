@@ -835,20 +835,14 @@
   </url>
   
   <url>
-    <loc>https://myself659.github.io/tags/sec/</loc>
-    <lastmod>2019-11-08T11:58:06+02:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://myself659.github.io/categories/sec/</loc>
-    <lastmod>2019-11-08T11:58:06+02:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://myself659.github.io/tags/secure/</loc>
-    <lastmod>2019-05-30T11:58:06+02:00</lastmod>
+    <lastmod>2019-11-08T11:58:06+02:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://myself659.github.io/categories/secure/</loc>
+    <lastmod>2019-11-08T11:58:06+02:00</lastmod>
     <priority>0</priority>
   </url>
   

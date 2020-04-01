@@ -6,10 +6,26 @@
     <description>Recent content in Secure on 沉风网事</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Thu, 30 May 2019 11:58:06 +0200</lastBuildDate>
+    <lastBuildDate>Fri, 08 Nov 2019 11:58:06 +0200</lastBuildDate>
     
 	<atom:link href="https://myself659.github.io/tags/secure/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>DoH FAQ</title>
+      <link>https://myself659.github.io/2019/11/08/doh-faq/</link>
+      <pubDate>Fri, 08 Nov 2019 11:58:06 +0200</pubDate>
+      
+      <guid>https://myself659.github.io/2019/11/08/doh-faq/</guid>
+      <description>什么是DoH DoH是DNS over HTTPS。
+传统DNS相当于DNS over UDP。
+DoH带来哪些好处？ 采用DoH对用户来说有如下好处：
+ DoH协议不允许其他用户，服务提供商或第三方查看您访问的网站并收集数据，保护了用户的隐私 DoH协议有利于防止欺骗与钓鱼攻击，保护在线数据的安全和隐私 加速DNS解析，提高网页访问速度 对于天朝人民，还有另一个好处就是科学上网  DoH现在可以使用吗？ We&#39;ve enabled an experiment in Chrome 79 for a fraction of our users.  Chrome 79版本对部分用户开启。
+firefox 70版本已经支持DoH。
+如何使用DoH? 以firefox为例：
+在地址输入：about:preferences#general，找到Network Settings选项，点击Settings即可进入设置，具体如下：
+参考  DNS over HTTPS Google Public DNS over HTTPS (DoH) supports RFC 8484 standard Moving to an era of Decentralized DNS registry Running a DNS over HTTPS Client  欢迎关注 欢迎关注微信公众帐号：沉风网事(savewind)</description>
+    </item>
     
     <item>
       <title>人生中最昂贵的教训：SIM卡转移攻击的细节(译文)</title>
@@ -79,6 +95,16 @@ SIM转移攻击 但是，“SIM转移攻击”是由未经授权的来源（攻�
 体系 针对交易所安全体系，分为以下几个方面：
  资产安全 平台安全 网络安全 用户安全 数据安全 交易安全 运营安全 安全策略  对于这8个方面，先挖坑，后面再填，有空的话一一展开说明。
 参考  Exchange Security Report  欢迎关注 欢迎关注微信公众帐号：沉风网事(savewind)</description>
+    </item>
+    
+    <item>
+      <title>阿里云ECS基本安全检查小结</title>
+      <link>https://myself659.github.io/2017/04/08/%E9%98%BF%E9%87%8C%E4%BA%91ecs%E5%9F%BA%E6%9C%AC%E5%AE%89%E5%85%A8%E6%A3%80%E6%9F%A5%E5%B0%8F%E7%BB%93/</link>
+      <pubDate>Sat, 08 Apr 2017 11:58:06 +0200</pubDate>
+      
+      <guid>https://myself659.github.io/2017/04/08/%E9%98%BF%E9%87%8C%E4%BA%91ecs%E5%9F%BA%E6%9C%AC%E5%AE%89%E5%85%A8%E6%A3%80%E6%9F%A5%E5%B0%8F%E7%BB%93/</guid>
+      <description>背景 查看阿里云ECS服务器日志发现如下：
+type=USER_AUTH msg=audit(1491669519.156:15631): pid=22938 uid=0 auid=4294967295 ses=4294967295 msg=&#39;op=PAM:authentication acct=&amp;quot;deploy&amp;quot; exe=&amp;quot;/usr/sbin/sshd&amp;quot; hostname=123.57.245.163 addr=123.57.245.163 terminal=ssh res=failed&#39; type=USER_LOGIN msg=audit(1491669519.156:15632): pid=22938 uid=0 auid=4294967295 ses=4294967295 msg=&#39;op=login acct=28696E76616C6964207573657229 exe=&amp;quot;/usr/sbin/sshd&amp;quot; hostname=? addr=123.57.245.163 terminal=sshd res=failed&#39; type=USER_LOGIN msg=audit(1491669587.368:15634): pid=22940 uid=0 auid=4294967295 ses=4294967295 msg=&#39;op=login acct=28756E6B6E6F776E207573657229 exe=&amp;quot;/usr/sbin/sshd&amp;quot; hostname=? addr=123.57.245.163 terminal=sshd res=failed&#39; type=USER_LOGIN msg=audit(1491669587.368:15635): pid=22940 uid=0 auid=4294967295 ses=4294967295 msg=&#39;op=login acct=28696E76616C6964207573657229 exe=&amp;quot;/usr/sbin/sshd&amp;quot; hostname=? addr=123.57.245.163 terminal=sshd res=failed&#39; type=USER_AUTH msg=audit(1491669589.420:15636): pid=22940 uid=0 auid=4294967295 ses=4294967295 msg=&#39;op=PAM:authentication acct=&amp;quot;deploy&amp;quot; exe=&amp;quot;/usr/sbin/sshd&amp;quot; hostname=123.57.245.163 addr=123.57.245.163 terminal=ssh res=failed&#39; type=USER_LOGIN msg=audit(1491669589.420:15637): pid=22940 uid=0 auid=4294967295 ses=4294967295 msg=&#39;op=login acct=28696E76616C6964207573657229 exe=&amp;quot;/usr/sbin/sshd&amp;quot; hostname=?</description>
     </item>
     
   </channel>
