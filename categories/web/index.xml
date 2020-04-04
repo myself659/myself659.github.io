@@ -13,10 +13,10 @@
     
     <item>
       <title>这也许是最快的搭建博客网站的方式</title>
-      <link>https://myself659.github.io/2017/10/27/%E8%BF%99%E4%B9%9F%E8%AE%B8%E6%98%AF%E6%9C%80%E5%BF%AB%E7%9A%84%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99%E7%9A%84%E6%96%B9%E5%BC%8F/</link>
+      <link>https://myself659.github.io/2017/10/27/website-fast-build/</link>
       <pubDate>Fri, 27 Oct 2017 11:58:06 +0200</pubDate>
       
-      <guid>https://myself659.github.io/2017/10/27/%E8%BF%99%E4%B9%9F%E8%AE%B8%E6%98%AF%E6%9C%80%E5%BF%AB%E7%9A%84%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99%E7%9A%84%E6%96%B9%E5%BC%8F/</guid>
+      <guid>https://myself659.github.io/2017/10/27/website-fast-build/</guid>
       <description>前言 搭建个人博客有很多方式，如wordpress，jekii, hexo，个人DIY;
 本文主要介绍另一种方案: hugo+caddy
 建一个网站要要做哪些事情 这里分解如下：
