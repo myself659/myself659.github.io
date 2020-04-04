@@ -2,7 +2,7 @@
 <html lang="zh-cn">
 <head>
     <title>一个linux网络丢包问题分析 &middot; 沉风网事</title>
-    <meta name="generator" content="Hugo 0.54.0" />
+    <meta name="generator" content="Hugo 0.68.3" />
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta name="author" content="沉风">
@@ -21,7 +21,7 @@
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400italic,400,600' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Source+Code+Pro' rel='stylesheet' type='text/css'>
     <meta property="og:title" content="一个linux网络丢包问题分析" />
-<meta property="og:description" content=" 丢包问题是十分常见一类问题，下面总结的一个网络丢包问题的分析过程。
+<meta property="og:description" content="丢包问题是十分常见一类问题，下面总结的一个网络丢包问题的分析过程。
 问题描述 组网：
 TC-PORT1&mdash;&mdash;-VSR-eth1
 TC-PORT2&mdash;&mdash;-VSR-eth2
@@ -31,17 +31,16 @@ TC-PORT2&mdash;&mdash;-VSR-eth2
 测试同学在根据RFC2544打流测试转发性能中，发现报文有效转发性能总是小于40W pps，总是会出现丢包，而实际cpu利用率才20%左右
 问题分析 丢包的原因很多，需要根据现场进行具体问题分析，下面就一个一个排查怀疑点，没有怀疑点再分析的过程：
  昨天测试都ok的，检查一下测试打流报文，报文正确 查看报文处理过程中丢包计数，以确认丢包阶段，不幸地发现处理过程中无丢包统计 与打多条流有关？实测打一流问题同样存在，与多条流无关 再次回头检查报文是否有多种code path，导致第2步遗漏检查到丢包点，确认报文走一条code path 上面又被否认，继续分析怀疑点，没有分析出怀疑点，自已动手打流，观察TC收发包统计发现丢包有周斯性，大概周期是30s，这是一个重要信息 又回过头去确认一下丢包统计是否有漏统计，很欣慰又很失望的结果：丢包，错包统计没有遗漏统计 这时候收包处理过程丢包可能性已经排除 从上到下的报文流排查，报文丢在网卡上送cpu过程中？ 内核采用epoll收包存在问题？ 进程如果得到调度就没有问题 top 查看进程调度，这时候有重大发现了： 看tc丢包统计与top的里面的进程natlog运行就同步了，但是看到natlog的线程状态为D状态，同时检查配置，开启nat log功能   natlog进程设置为D状态，导致不响应异步信号，在natlog释放cpu前，在转发线程与natlog运行在同一个cpu的情况下，转发线程得不到调度，导致报文接收缓冲区溢出，导致部分报文丢弃；
-与natlog线程开发同学交流，natlog早期是基于多核开发，natlog根据运营商需求，每30s定时运行，natlog线程运行在控制核，转发线程运行在数据核，导致问题没有暴露出来
+  与natlog线程开发同学交流，natlog早期是基于多核开发，natlog根据运营商需求，每30s定时运行，natlog线程运行在控制核，转发线程运行在数据核，导致问题没有暴露出来
  问题总结  定位问题，特别是未知的问题是一步步有依据推断与确认的过程 获取现场的全方位消息，同时要对信息进行去噪，避免关键信息遗漏与无关干扰  " />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://myself659.github.io/2015/05/24/%E4%B8%80%E4%B8%AAlinux%E7%BD%91%E7%BB%9C%E4%B8%A2%E5%8C%85%E9%97%AE%E9%A2%98%E5%88%86%E6%9E%90/" />
-<meta property="article:published_time" content="2015-05-24T11:58:06&#43;02:00"/>
-<meta property="article:modified_time" content="2015-05-24T11:58:06&#43;02:00"/>
+<meta property="article:published_time" content="2015-05-24T11:58:06+02:00" />
+<meta property="article:modified_time" content="2015-05-24T11:58:06+02:00" />
 
     
-    
-<meta itemprop="name" content="一个linux网络丢包问题分析">
-<meta itemprop="description" content=" 丢包问题是十分常见一类问题，下面总结的一个网络丢包问题的分析过程。
+    <meta itemprop="name" content="一个linux网络丢包问题分析">
+<meta itemprop="description" content="丢包问题是十分常见一类问题，下面总结的一个网络丢包问题的分析过程。
 问题描述 组网：
 TC-PORT1&mdash;&mdash;-VSR-eth1
 TC-PORT2&mdash;&mdash;-VSR-eth2
@@ -51,10 +50,8 @@ TC-PORT2&mdash;&mdash;-VSR-eth2
 测试同学在根据RFC2544打流测试转发性能中，发现报文有效转发性能总是小于40W pps，总是会出现丢包，而实际cpu利用率才20%左右
 问题分析 丢包的原因很多，需要根据现场进行具体问题分析，下面就一个一个排查怀疑点，没有怀疑点再分析的过程：
  昨天测试都ok的，检查一下测试打流报文，报文正确 查看报文处理过程中丢包计数，以确认丢包阶段，不幸地发现处理过程中无丢包统计 与打多条流有关？实测打一流问题同样存在，与多条流无关 再次回头检查报文是否有多种code path，导致第2步遗漏检查到丢包点，确认报文走一条code path 上面又被否认，继续分析怀疑点，没有分析出怀疑点，自已动手打流，观察TC收发包统计发现丢包有周斯性，大概周期是30s，这是一个重要信息 又回过头去确认一下丢包统计是否有漏统计，很欣慰又很失望的结果：丢包，错包统计没有遗漏统计 这时候收包处理过程丢包可能性已经排除 从上到下的报文流排查，报文丢在网卡上送cpu过程中？ 内核采用epoll收包存在问题？ 进程如果得到调度就没有问题 top 查看进程调度，这时候有重大发现了： 看tc丢包统计与top的里面的进程natlog运行就同步了，但是看到natlog的线程状态为D状态，同时检查配置，开启nat log功能   natlog进程设置为D状态，导致不响应异步信号，在natlog释放cpu前，在转发线程与natlog运行在同一个cpu的情况下，转发线程得不到调度，导致报文接收缓冲区溢出，导致部分报文丢弃；
-与natlog线程开发同学交流，natlog早期是基于多核开发，natlog根据运营商需求，每30s定时运行，natlog线程运行在控制核，转发线程运行在数据核，导致问题没有暴露出来
+  与natlog线程开发同学交流，natlog早期是基于多核开发，natlog根据运营商需求，每30s定时运行，natlog线程运行在控制核，转发线程运行在数据核，导致问题没有暴露出来
  问题总结  定位问题，特别是未知的问题是一步步有依据推断与确认的过程 获取现场的全方位消息，同时要对信息进行去噪，避免关键信息遗漏与无关干扰  ">
-
-
 <meta itemprop="datePublished" content="2015-05-24T11:58:06&#43;02:00" />
 <meta itemprop="dateModified" content="2015-05-24T11:58:06&#43;02:00" />
 <meta itemprop="wordCount" content="33">
@@ -62,10 +59,9 @@ TC-PORT2&mdash;&mdash;-VSR-eth2
 
 
 <meta itemprop="keywords" content="编程," />
-
     <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="一个linux网络丢包问题分析"/>
-<meta name="twitter:description" content=" 丢包问题是十分常见一类问题，下面总结的一个网络丢包问题的分析过程。
+<meta name="twitter:description" content="丢包问题是十分常见一类问题，下面总结的一个网络丢包问题的分析过程。
 问题描述 组网：
 TC-PORT1&mdash;&mdash;-VSR-eth1
 TC-PORT2&mdash;&mdash;-VSR-eth2
@@ -75,7 +71,7 @@ TC-PORT2&mdash;&mdash;-VSR-eth2
 测试同学在根据RFC2544打流测试转发性能中，发现报文有效转发性能总是小于40W pps，总是会出现丢包，而实际cpu利用率才20%左右
 问题分析 丢包的原因很多，需要根据现场进行具体问题分析，下面就一个一个排查怀疑点，没有怀疑点再分析的过程：
  昨天测试都ok的，检查一下测试打流报文，报文正确 查看报文处理过程中丢包计数，以确认丢包阶段，不幸地发现处理过程中无丢包统计 与打多条流有关？实测打一流问题同样存在，与多条流无关 再次回头检查报文是否有多种code path，导致第2步遗漏检查到丢包点，确认报文走一条code path 上面又被否认，继续分析怀疑点，没有分析出怀疑点，自已动手打流，观察TC收发包统计发现丢包有周斯性，大概周期是30s，这是一个重要信息 又回过头去确认一下丢包统计是否有漏统计，很欣慰又很失望的结果：丢包，错包统计没有遗漏统计 这时候收包处理过程丢包可能性已经排除 从上到下的报文流排查，报文丢在网卡上送cpu过程中？ 内核采用epoll收包存在问题？ 进程如果得到调度就没有问题 top 查看进程调度，这时候有重大发现了： 看tc丢包统计与top的里面的进程natlog运行就同步了，但是看到natlog的线程状态为D状态，同时检查配置，开启nat log功能   natlog进程设置为D状态，导致不响应异步信号，在natlog释放cpu前，在转发线程与natlog运行在同一个cpu的情况下，转发线程得不到调度，导致报文接收缓冲区溢出，导致部分报文丢弃；
-与natlog线程开发同学交流，natlog早期是基于多核开发，natlog根据运营商需求，每30s定时运行，natlog线程运行在控制核，转发线程运行在数据核，导致问题没有暴露出来
+  与natlog线程开发同学交流，natlog早期是基于多核开发，natlog根据运营商需求，每30s定时运行，natlog线程运行在控制核，转发线程运行在数据核，导致问题没有暴露出来
  问题总结  定位问题，特别是未知的问题是一步步有依据推断与确认的过程 获取现场的全方位消息，同时要对信息进行去噪，避免关键信息遗漏与无关干扰  "/>
 
     
@@ -369,30 +365,17 @@ TC-PORT2&mdash;&mdash;-VSR-eth2
 </header>
 
         <div class="article-entry" itemprop="articleBody">
-            
-
-<p>丢包问题是十分常见一类问题，下面总结的一个网络丢包问题的分析过程。</p>
-
+            <p>丢包问题是十分常见一类问题，下面总结的一个网络丢包问题的分析过程。</p>
 <h3 id="问题描述">问题描述</h3>
-
 <p>组网：</p>
-
 <p>TC-PORT1&mdash;&mdash;-VSR-eth1</p>
-
 <p>TC-PORT2&mdash;&mdash;-VSR-eth2</p>
-
 <p>打流：</p>
-
 <p>报文从TC-Port1打入VSR-eth1，再从VSR-eth2出，到TC-Port2，打流的时候变换了源ip与源端口</p>
-
 <p>问题：</p>
-
 <p>测试同学在根据RFC2544打流测试转发性能中，发现报文有效转发性能总是小于40W pps，总是会出现丢包，而实际cpu利用率才20%左右</p>
-
 <h3 id="问题分析">问题分析</h3>
-
 <p>丢包的原因很多，需要根据现场进行具体问题分析，下面就一个一个排查怀疑点，没有怀疑点再分析的过程：</p>
-
 <ol>
 <li>昨天测试都ok的，检查一下测试打流报文，报文正确</li>
 <li>查看报文处理过程中丢包计数，以确认丢包阶段，不幸地发现处理过程中无丢包统计</li>
@@ -406,15 +389,13 @@ TC-PORT2&mdash;&mdash;-VSR-eth2
 <li>top 查看进程调度，这时候有重大发现了：
 看tc丢包统计与top的里面的进程natlog运行就同步了，但是看到natlog的线程状态为D状态，同时检查配置，开启nat log功能</li>
 </ol>
-
 <blockquote>
 <p>natlog进程设置为D状态，导致不响应异步信号，在natlog释放cpu前，在转发线程与natlog运行在同一个cpu的情况下，转发线程得不到调度，导致报文接收缓冲区溢出，导致部分报文丢弃；</p>
-
+</blockquote>
+<blockquote>
 <p>与natlog线程开发同学交流，natlog早期是基于多核开发，natlog根据运营商需求，每30s定时运行，natlog线程运行在控制核，转发线程运行在数据核，导致问题没有暴露出来</p>
 </blockquote>
-
 <h3 id="问题总结">问题总结</h3>
-
 <ol>
 <li>定位问题，特别是未知的问题是一步步有依据推断与确认的过程</li>
 <li>获取现场的全方位消息，同时要对信息进行去噪，避免关键信息遗漏与无关干扰</li>

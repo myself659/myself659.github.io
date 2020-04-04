@@ -2,7 +2,7 @@
 <html lang="zh-cn">
 <head>
     <title>IM后端系统设计总结(2) &middot; 沉风网事</title>
-    <meta name="generator" content="Hugo 0.54.0" />
+    <meta name="generator" content="Hugo 0.68.3" />
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta name="author" content="沉风">
@@ -25,38 +25,21 @@
 后端架构 这个后端系统设计如下图：
 很大众，国内基本都这么干，不多说
 用户状态系统设计 初期设计 单IDC部署，设计如下:
-相关说明  AG：接入网关，负责用户的连接 ConnRouter：连接路由服务器，主要提供以下功能： 所有用户状态的维护 用户状态查询 用户状态推送 用户状态同步 异步消息路由与转发 状态通知流: 用户登录成功或者下线状态通知 状态同步流：ConnRouter服务器之间用户状态的同步，不需要推送给订阅者
- 用户消息流: 异步发送给用户的消息在服务器内部的传输  设计要点  参考Kafka的模型，将用户状态改变作为事件，将事件描述为消息，将消息队列化成消息队列 AG对应Kafka中的Producer角色，主要原因是用户状态是用户连接的影子，AG能真实快速感知用户状态 ConnRouter对应Kafka中的Broker UserStat（用户统计与分析）与StateNotify（用户状态通知）对应Kafka中的Consumer 减少耦合，以异步发送消息到用户为例，整个流程三步走： 第一步：生成发送消息，发送到ConnRouter
- 第二步：根据目的用户ID，查找到出口AG，将消息转发到出口AG 第三步：出口AG查找用户连接，通过连接发送到目的用户
-  ConnRouter设计 用户状态数据存储设计 用户状态数据存储设计，如下图所示：
- 内存消耗 主要内存消耗来自用户状态数组（与ConnRouter连接都是长连接，可以忽略不计） 每种客户端类型下每个用户占用一个1Byte，那么1G内存可以存1073741824个用户的状态，超过了10亿，支持亿级用户内存不是瓶颈
- 查找用户所在AG与状态O(1)
-  高可用性  服务器级Master-Master模式 根据用户ID选择ConnRouter Master实现用户级Master-Standby模式  高性能  epoll事件驱动
- 无锁数据访问 流程无阻塞 O(1)查找 多核并发
- 支持批量处理  支持Failover，方便升级  当ConnRouter宕机或者主动升级重启时，各AG重新建立连接时，将自身的用户状态同步到ConnRouter，完成用户状态数据恢复  无状态与单点自治  ConnRouter用户状态数据是各个AG的同步，真正用户状态保存在AG网关 单点可以独立工作  数据冲突处理 主要是一个数据优先级的原则（根据数据源，从高到低）：" />
+相关说明  AG：接入网关，负责用户的连接 ConnRouter：连接路由服务器，主要提供以下功能：   所有用户状态的维护 用户状态查询 用户状态推送 用户状态同步 异步消息路由与转发  状态通知流: 用户登录成功或者下线状态通知 状态同步流：ConnRouter服务器之间用户状态的同步，不需要推送给订阅者 用户消息流: 异步发送给用户的消息在服务器内部的传输  设计要点  参考Kafka的模型，将用户状态改变作为事件，将事件描述为消息，将消息队列化成消息队列 AG对应Kafka中的Producer角色，主要原因是用户状态是用户连接的影子，AG能真实快速感知用户状态 ConnRouter对应Kafka中的Broker UserStat（用户统计与分析）与StateNotify（用户状态通知）对应Kafka中的Consumer 减少耦合，以异步发送消息到用户为例，整个流程三步走：   第一步：生成发送消息，发送到ConnRouter 第二步：根据目的用户ID，查找到出口AG，将消息转发到出口AG 第三步：出口AG查找用户连接，通过连接发送到目的用户  ConnRouter设计 用户状态数据存储设计 用户状态数据存储设计，如下图所示：
+ 内存消耗 主要内存消耗来自用户状态数组（与ConnRouter连接都是长连接，可以忽略不计） 每种客户端类型下每个用户占用一个1Byte，那么1G内存可以存1073741824个用户的状态，超过了10亿，支持亿级用户内存不是瓶颈 查找用户所在AG与状态O(1)  高可用性  服务器级Master-Master模式 根据用户ID选择ConnRouter Master实现用户级Master-Standby模式  高性能  epoll事件驱动 无锁数据访问 流程无阻塞 O(1)查找 多核并发 支持批量处理  支持Failover，方便升级  当ConnRouter宕机或者主动升级重启时，各AG重新建立连接时，将自身的用户状态同步到ConnRouter，完成用户状态数据恢复  无状态与单点自治  ConnRouter用户状态数据是各个AG的同步，真正用户状态保存在AG网关 单点可以独立工作  数据冲突处理 主要是一个数据优先级的原则（根据数据源，从高到低）：" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://myself659.github.io/2016/08/05/im%E5%90%8E%E7%AB%AF%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1%E6%80%BB%E7%BB%932/" />
-<meta property="article:published_time" content="2016-08-05T11:58:06&#43;02:00"/>
-<meta property="article:modified_time" content="2016-08-05T11:58:06&#43;02:00"/>
+<meta property="article:published_time" content="2016-08-05T11:58:06+02:00" />
+<meta property="article:modified_time" content="2016-08-05T11:58:06+02:00" />
 
     
-    
-<meta itemprop="name" content="IM后端系统设计总结(2)">
+    <meta itemprop="name" content="IM后端系统设计总结(2)">
 <meta itemprop="description" content="这篇具体写一下用户在线状态系统的具体设计。
 后端架构 这个后端系统设计如下图：
 很大众，国内基本都这么干，不多说
 用户状态系统设计 初期设计 单IDC部署，设计如下:
-相关说明  AG：接入网关，负责用户的连接 ConnRouter：连接路由服务器，主要提供以下功能： 所有用户状态的维护 用户状态查询 用户状态推送 用户状态同步 异步消息路由与转发 状态通知流: 用户登录成功或者下线状态通知 状态同步流：ConnRouter服务器之间用户状态的同步，不需要推送给订阅者
- 用户消息流: 异步发送给用户的消息在服务器内部的传输  设计要点  参考Kafka的模型，将用户状态改变作为事件，将事件描述为消息，将消息队列化成消息队列 AG对应Kafka中的Producer角色，主要原因是用户状态是用户连接的影子，AG能真实快速感知用户状态 ConnRouter对应Kafka中的Broker UserStat（用户统计与分析）与StateNotify（用户状态通知）对应Kafka中的Consumer 减少耦合，以异步发送消息到用户为例，整个流程三步走： 第一步：生成发送消息，发送到ConnRouter
- 第二步：根据目的用户ID，查找到出口AG，将消息转发到出口AG 第三步：出口AG查找用户连接，通过连接发送到目的用户
-  ConnRouter设计 用户状态数据存储设计 用户状态数据存储设计，如下图所示：
- 内存消耗 主要内存消耗来自用户状态数组（与ConnRouter连接都是长连接，可以忽略不计） 每种客户端类型下每个用户占用一个1Byte，那么1G内存可以存1073741824个用户的状态，超过了10亿，支持亿级用户内存不是瓶颈
- 查找用户所在AG与状态O(1)
-  高可用性  服务器级Master-Master模式 根据用户ID选择ConnRouter Master实现用户级Master-Standby模式  高性能  epoll事件驱动
- 无锁数据访问 流程无阻塞 O(1)查找 多核并发
- 支持批量处理  支持Failover，方便升级  当ConnRouter宕机或者主动升级重启时，各AG重新建立连接时，将自身的用户状态同步到ConnRouter，完成用户状态数据恢复  无状态与单点自治  ConnRouter用户状态数据是各个AG的同步，真正用户状态保存在AG网关 单点可以独立工作  数据冲突处理 主要是一个数据优先级的原则（根据数据源，从高到低）：">
-
-
+相关说明  AG：接入网关，负责用户的连接 ConnRouter：连接路由服务器，主要提供以下功能：   所有用户状态的维护 用户状态查询 用户状态推送 用户状态同步 异步消息路由与转发  状态通知流: 用户登录成功或者下线状态通知 状态同步流：ConnRouter服务器之间用户状态的同步，不需要推送给订阅者 用户消息流: 异步发送给用户的消息在服务器内部的传输  设计要点  参考Kafka的模型，将用户状态改变作为事件，将事件描述为消息，将消息队列化成消息队列 AG对应Kafka中的Producer角色，主要原因是用户状态是用户连接的影子，AG能真实快速感知用户状态 ConnRouter对应Kafka中的Broker UserStat（用户统计与分析）与StateNotify（用户状态通知）对应Kafka中的Consumer 减少耦合，以异步发送消息到用户为例，整个流程三步走：   第一步：生成发送消息，发送到ConnRouter 第二步：根据目的用户ID，查找到出口AG，将消息转发到出口AG 第三步：出口AG查找用户连接，通过连接发送到目的用户  ConnRouter设计 用户状态数据存储设计 用户状态数据存储设计，如下图所示：
+ 内存消耗 主要内存消耗来自用户状态数组（与ConnRouter连接都是长连接，可以忽略不计） 每种客户端类型下每个用户占用一个1Byte，那么1G内存可以存1073741824个用户的状态，超过了10亿，支持亿级用户内存不是瓶颈 查找用户所在AG与状态O(1)  高可用性  服务器级Master-Master模式 根据用户ID选择ConnRouter Master实现用户级Master-Standby模式  高性能  epoll事件驱动 无锁数据访问 流程无阻塞 O(1)查找 多核并发 支持批量处理  支持Failover，方便升级  当ConnRouter宕机或者主动升级重启时，各AG重新建立连接时，将自身的用户状态同步到ConnRouter，完成用户状态数据恢复  无状态与单点自治  ConnRouter用户状态数据是各个AG的同步，真正用户状态保存在AG网关 单点可以独立工作  数据冲突处理 主要是一个数据优先级的原则（根据数据源，从高到低）：">
 <meta itemprop="datePublished" content="2016-08-05T11:58:06&#43;02:00" />
 <meta itemprop="dateModified" content="2016-08-05T11:58:06&#43;02:00" />
 <meta itemprop="wordCount" content="84">
@@ -64,22 +47,14 @@
 
 
 <meta itemprop="keywords" content="Arch," />
-
     <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="IM后端系统设计总结(2)"/>
 <meta name="twitter:description" content="这篇具体写一下用户在线状态系统的具体设计。
 后端架构 这个后端系统设计如下图：
 很大众，国内基本都这么干，不多说
 用户状态系统设计 初期设计 单IDC部署，设计如下:
-相关说明  AG：接入网关，负责用户的连接 ConnRouter：连接路由服务器，主要提供以下功能： 所有用户状态的维护 用户状态查询 用户状态推送 用户状态同步 异步消息路由与转发 状态通知流: 用户登录成功或者下线状态通知 状态同步流：ConnRouter服务器之间用户状态的同步，不需要推送给订阅者
- 用户消息流: 异步发送给用户的消息在服务器内部的传输  设计要点  参考Kafka的模型，将用户状态改变作为事件，将事件描述为消息，将消息队列化成消息队列 AG对应Kafka中的Producer角色，主要原因是用户状态是用户连接的影子，AG能真实快速感知用户状态 ConnRouter对应Kafka中的Broker UserStat（用户统计与分析）与StateNotify（用户状态通知）对应Kafka中的Consumer 减少耦合，以异步发送消息到用户为例，整个流程三步走： 第一步：生成发送消息，发送到ConnRouter
- 第二步：根据目的用户ID，查找到出口AG，将消息转发到出口AG 第三步：出口AG查找用户连接，通过连接发送到目的用户
-  ConnRouter设计 用户状态数据存储设计 用户状态数据存储设计，如下图所示：
- 内存消耗 主要内存消耗来自用户状态数组（与ConnRouter连接都是长连接，可以忽略不计） 每种客户端类型下每个用户占用一个1Byte，那么1G内存可以存1073741824个用户的状态，超过了10亿，支持亿级用户内存不是瓶颈
- 查找用户所在AG与状态O(1)
-  高可用性  服务器级Master-Master模式 根据用户ID选择ConnRouter Master实现用户级Master-Standby模式  高性能  epoll事件驱动
- 无锁数据访问 流程无阻塞 O(1)查找 多核并发
- 支持批量处理  支持Failover，方便升级  当ConnRouter宕机或者主动升级重启时，各AG重新建立连接时，将自身的用户状态同步到ConnRouter，完成用户状态数据恢复  无状态与单点自治  ConnRouter用户状态数据是各个AG的同步，真正用户状态保存在AG网关 单点可以独立工作  数据冲突处理 主要是一个数据优先级的原则（根据数据源，从高到低）："/>
+相关说明  AG：接入网关，负责用户的连接 ConnRouter：连接路由服务器，主要提供以下功能：   所有用户状态的维护 用户状态查询 用户状态推送 用户状态同步 异步消息路由与转发  状态通知流: 用户登录成功或者下线状态通知 状态同步流：ConnRouter服务器之间用户状态的同步，不需要推送给订阅者 用户消息流: 异步发送给用户的消息在服务器内部的传输  设计要点  参考Kafka的模型，将用户状态改变作为事件，将事件描述为消息，将消息队列化成消息队列 AG对应Kafka中的Producer角色，主要原因是用户状态是用户连接的影子，AG能真实快速感知用户状态 ConnRouter对应Kafka中的Broker UserStat（用户统计与分析）与StateNotify（用户状态通知）对应Kafka中的Consumer 减少耦合，以异步发送消息到用户为例，整个流程三步走：   第一步：生成发送消息，发送到ConnRouter 第二步：根据目的用户ID，查找到出口AG，将消息转发到出口AG 第三步：出口AG查找用户连接，通过连接发送到目的用户  ConnRouter设计 用户状态数据存储设计 用户状态数据存储设计，如下图所示：
+ 内存消耗 主要内存消耗来自用户状态数组（与ConnRouter连接都是长连接，可以忽略不计） 每种客户端类型下每个用户占用一个1Byte，那么1G内存可以存1073741824个用户的状态，超过了10亿，支持亿级用户内存不是瓶颈 查找用户所在AG与状态O(1)  高可用性  服务器级Master-Master模式 根据用户ID选择ConnRouter Master实现用户级Master-Standby模式  高性能  epoll事件驱动 无锁数据访问 流程无阻塞 O(1)查找 多核并发 支持批量处理  支持Failover，方便升级  当ConnRouter宕机或者主动升级重启时，各AG重新建立连接时，将自身的用户状态同步到ConnRouter，完成用户状态数据恢复  无状态与单点自治  ConnRouter用户状态数据是各个AG的同步，真正用户状态保存在AG网关 单点可以独立工作  数据冲突处理 主要是一个数据优先级的原则（根据数据源，从高到低）："/>
 
     
 
@@ -372,153 +347,117 @@
 </header>
 
         <div class="article-entry" itemprop="articleBody">
-            
-
-<p>这篇具体写一下用户在线状态系统的具体设计。</p>
-
+            <p>这篇具体写一下用户在线状态系统的具体设计。</p>
 <h2 id="后端架构">后端架构</h2>
-
 <p>这个后端系统设计如下图：</p>
-
-<p><img src="/images/im-arch.png" alt="基础架构" /></p>
-
+<p><img src="/images/im-arch.png" alt="基础架构"></p>
 <p>很大众，国内基本都这么干，不多说</p>
-
 <h2 id="用户状态系统设计">用户状态系统设计</h2>
-
 <h3 id="初期设计">初期设计</h3>
-
 <p>单IDC部署，设计如下:</p>
-
-<p><img src="/images/user-state-flow-1.png" alt="用户状态系统设计-1" /></p>
-
+<p><img src="/images/user-state-flow-1.png" alt="用户状态系统设计-1"></p>
 <h4 id="相关说明">相关说明</h4>
-
 <ol>
 <li>AG：接入网关，负责用户的连接</li>
 <li>ConnRouter：连接路由服务器，主要提供以下功能：</li>
+</ol>
+<ul>
 <li>所有用户状态的维护</li>
 <li>用户状态查询</li>
 <li>用户状态推送</li>
 <li>用户状态同步</li>
 <li>异步消息路由与转发</li>
+</ul>
+<ol start="3">
 <li>状态通知流: 用户登录成功或者下线状态通知</li>
-<li>状态同步流：ConnRouter服务器之间用户状态的同步，不需要推送给订阅者<br /></li>
+<li>状态同步流：ConnRouter服务器之间用户状态的同步，不需要推送给订阅者</li>
 <li>用户消息流: 异步发送给用户的消息在服务器内部的传输</li>
 </ol>
-
 <h4 id="设计要点">设计要点</h4>
-
 <ol>
 <li>参考Kafka的模型，将用户状态改变作为事件，将事件描述为消息，将消息队列化成消息队列</li>
 <li>AG对应Kafka中的Producer角色，主要原因是<strong>用户状态是用户连接的影子</strong>，AG能真实快速感知用户状态</li>
 <li>ConnRouter对应Kafka中的Broker</li>
 <li>UserStat（用户统计与分析）与StateNotify（用户状态通知）对应Kafka中的Consumer</li>
 <li>减少耦合，以异步发送消息到用户为例，整个流程三步走：</li>
-<li>第一步：生成发送消息，发送到ConnRouter<br /></li>
+</ol>
+<ul>
+<li>第一步：生成发送消息，发送到ConnRouter</li>
 <li>第二步：根据目的用户ID，查找到出口AG，将消息转发到出口AG</li>
-<li>第三步：出口AG查找用户连接，通过连接发送到目的用户<br /></li>
-</ol>
-
+<li>第三步：出口AG查找用户连接，通过连接发送到目的用户</li>
+</ul>
 <h4 id="connrouter设计">ConnRouter设计</h4>
-
 <h5 id="用户状态数据存储设计">用户状态数据存储设计</h5>
-
 <p>用户状态数据存储设计，如下图所示：</p>
-
-<p><img src="/images/user-state-router-data.png" alt="用户状态数据存储设计" /></p>
-
+<p><img src="/images/user-state-router-data.png" alt="用户状态数据存储设计"></p>
 <ol>
-<li>内存消耗
+<li>内存消耗 
 主要内存消耗来自用户状态数组（与ConnRouter连接都是长连接，可以忽略不计）
-每种客户端类型下每个用户占用一个1Byte，那么1G内存可以存1073741824个用户的状态，超过了10亿，支持亿级用户内存不是瓶颈<br /></li>
-<li>查找用户所在AG与状态O(1)<br /></li>
+每种客户端类型下每个用户占用一个1Byte，那么1G内存可以存1073741824个用户的状态，超过了10亿，支持亿级用户内存不是瓶颈</li>
+<li>查找用户所在AG与状态O(1)</li>
 </ol>
-
 <h5 id="高可用性">高可用性</h5>
-
 <ol>
 <li>服务器级Master-Master模式</li>
 <li>根据用户ID选择ConnRouter Master实现用户级Master-Standby模式</li>
 </ol>
-
 <h5 id="高性能">高性能</h5>
-
 <ol>
-<li>epoll事件驱动<br /></li>
+<li>epoll事件驱动</li>
 <li>无锁数据访问</li>
 <li>流程无阻塞</li>
 <li>O(1)查找</li>
-<li>多核并发<br /></li>
+<li>多核并发</li>
 <li>支持批量处理</li>
 </ol>
-
-<h5 id="支持failover-方便升级">支持Failover，方便升级</h5>
-
+<h5 id="支持failover方便升级">支持Failover，方便升级</h5>
 <ol>
 <li>当ConnRouter宕机或者主动升级重启时，各AG重新建立连接时，将自身的用户状态同步到ConnRouter，完成用户状态数据恢复</li>
 </ol>
-
 <h5 id="无状态与单点自治">无状态与单点自治</h5>
-
 <ol>
 <li>ConnRouter用户状态数据是各个AG的同步，真正用户状态保存在AG网关</li>
 <li>单点可以独立工作</li>
 </ol>
-
 <h5 id="数据冲突处理">数据冲突处理</h5>
-
 <p>主要是一个数据优先级的原则（根据数据源，从高到低）：</p>
-
 <ol>
 <li>状态数据来自AG</li>
-<li>状态数据来自ConnRouter-Master<br /></li>
+<li>状态数据来自ConnRouter-Master</li>
 <li>状态数据来自ConnRouter-Standby</li>
 <li>状态数据来自RouterProxy</li>
 </ol>
-
 <h3 id="支持多idc">支持多IDC</h3>
-
 <p>保证更高可用性，需要支持多机房部署，实现两城三中心甚至更多节点异地多活，具体设计如下图：</p>
-
-<p><img src="/images/user-state-flow-2.png" alt="用户状态系统设计-2" /></p>
-
+<p><img src="/images/user-state-flow-2.png" alt="用户状态系统设计-2"></p>
 <p>这里主要是引入了RouterProxy，将跨IDC ConnRouter连接起来，其中RouterProxy主要功能如下：</p>
-
 <ol>
 <li>作为Producer同步状态通知到其他IDC RouterProxy</li>
-<li>作为Comsumer接收同步状态发布到本IDC的ConnRouter<br /></li>
+<li>作为Comsumer接收同步状态发布到本IDC的ConnRouter</li>
 <li>作为IDC间消息转发的网关</li>
 </ol>
-
 <h3 id="connrouter扩展">ConnRouter扩展</h3>
-
 <p>随着用户量增长，ConnRouter转发消息量，状态通知量，消息转发量都会不断增长，当然可以简单采用更好机器来scale up;下面是考虑进行业务拆分方式进行scale out，具体设计如下图：
-<img src="/images/user-state-flow-3.png" alt="用户状态系统设计-3" /></p>
-
+<img src="/images/user-state-flow-3.png" alt="用户状态系统设计-3"></p>
 <p>从上图可知主要方案：</p>
-
 <ol>
 <li>将异步消息转发业务拆分出来由Forward服务器来完成</li>
 <li>将RouterProxy跨IDC消息转发业务拆分出来，由ForwardProxy服务器来完成</li>
 </ol>
-
 <h3 id="不足与应对">不足与应对</h3>
-
 <ol>
 <li>需要优化跨IDC间消息同步与转发流量</li>
 <li>在大量用户且系统中存在多个状态维护服务器，这样会有大量的状态同步通信，服务器的网络与CPU易成为瓶颈</li>
 <li>这时候就考虑将用户状态进行拆分，不将用户状态放到同一个服务器上维护，采用以下方式进行用户状态数据划分：</li>
+</ol>
+<ul>
 <li>哈希方式</li>
 <li>用户ID范围</li>
 <li>按用户量划分</li>
 <li>一致性hash</li>
-</ol>
-
+</ul>
 <h2 id="后记">后记</h2>
-
 <p>方案可以有很多种，觉得引入直接引入Kafka是一个很好的选择，以后再研究。</p>
-
 <p>由于个人水平有限，有什么不足与错误，敬请指正！</p>
 
         </div>

@@ -2,7 +2,7 @@
 <html lang="zh-cn">
 <head>
     <title>升级Linux内核，搭建docker环境 &middot; 沉风网事</title>
-    <meta name="generator" content="Hugo 0.54.0" />
+    <meta name="generator" content="Hugo 0.68.3" />
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta name="author" content="沉风">
@@ -24,21 +24,18 @@
 <meta property="og:description" content="docker可以说是去年最热的技术，也是业界大谈特谈的技术，到了今年有很多公司已经将docker应用于自己的生产环境。Docker已经从一个工具转化成平台，小生态圈。作为一名程序员应该与时俱进，学习新技术，不断地提高自己。
 升级内核 docker要求linux内核版本3.12以上，作为常用linux2.26.32版本，虽然也可以安装docker，但是有一些特性不支持，所以第一步就是升级内核。个人选择最新的长期维护版本升级linux4.13,内核升级最关键的一件事情就是配置内核，关于内核支持docker的内核配置文件，如果不想自己动手配置内核，可以参考Linux-4.13-configfordocker;
 在未正确配置linux内核会出现以下一些错误：
- docker启动过程中iptables命令执行失败，原因是 iptables模块没有配置  [root@localhost ~]# docker -d INFO[0000] Listening for HTTP on unix (/var/run/docker.sock) INFO[0000] [graphdriver] using prior storage driver &quot;devicemapper&quot; FATA[0000] Error starting daemon: Error initializing network controller: Error creating default &quot;bridge&quot; network: Failed to Setup IP tables: Unable to enable NAT rule: iptables failed: iptables -t nat -I POSTROUTING -s 172.17.42.1/16 ! -o docker0 -j MASQUERADE: iptables v1.4.7: can&#39;t initialize iptables table `nat&#39;: Table does not exist (do you need to insmod?" />
+ docker启动过程中iptables命令执行失败，原因是 iptables模块没有配置  [root@localhost ~]# docker -dINFO[0000] Listening for HTTP on unix (/var/run/docker.sock) INFO[0000] [graphdriver] using prior storage driver &quot;devicemapper&quot; FATA[0000] Error starting daemon: Error initializing network controller: Error creating default &quot;bridge&quot; network: Failed to Setup IP tables: Unable to enable NAT rule: iptables failed: iptables -t nat -I POSTROUTING -s 172.17.42.1/16 ! -o docker0 -j MASQUERADE: iptables v1.4.7: can&#39;t initialize iptables table `nat&#39;: Table does not exist (do you need to insmod?" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://myself659.github.io/2015/12/13/%E5%8D%87%E7%BA%A7linux%E5%86%85%E6%A0%B8%E6%90%AD%E5%BB%BAdocker%E7%8E%AF%E5%A2%83/" />
-<meta property="article:published_time" content="2015-12-13T11:58:06&#43;02:00"/>
-<meta property="article:modified_time" content="2015-12-13T11:58:06&#43;02:00"/>
+<meta property="article:published_time" content="2015-12-13T11:58:06+02:00" />
+<meta property="article:modified_time" content="2015-12-13T11:58:06+02:00" />
 
     
-    
-<meta itemprop="name" content="升级Linux内核，搭建docker环境">
+    <meta itemprop="name" content="升级Linux内核，搭建docker环境">
 <meta itemprop="description" content="docker可以说是去年最热的技术，也是业界大谈特谈的技术，到了今年有很多公司已经将docker应用于自己的生产环境。Docker已经从一个工具转化成平台，小生态圈。作为一名程序员应该与时俱进，学习新技术，不断地提高自己。
 升级内核 docker要求linux内核版本3.12以上，作为常用linux2.26.32版本，虽然也可以安装docker，但是有一些特性不支持，所以第一步就是升级内核。个人选择最新的长期维护版本升级linux4.13,内核升级最关键的一件事情就是配置内核，关于内核支持docker的内核配置文件，如果不想自己动手配置内核，可以参考Linux-4.13-configfordocker;
 在未正确配置linux内核会出现以下一些错误：
- docker启动过程中iptables命令执行失败，原因是 iptables模块没有配置  [root@localhost ~]# docker -d INFO[0000] Listening for HTTP on unix (/var/run/docker.sock) INFO[0000] [graphdriver] using prior storage driver &quot;devicemapper&quot; FATA[0000] Error starting daemon: Error initializing network controller: Error creating default &quot;bridge&quot; network: Failed to Setup IP tables: Unable to enable NAT rule: iptables failed: iptables -t nat -I POSTROUTING -s 172.17.42.1/16 ! -o docker0 -j MASQUERADE: iptables v1.4.7: can&#39;t initialize iptables table `nat&#39;: Table does not exist (do you need to insmod?">
-
-
+ docker启动过程中iptables命令执行失败，原因是 iptables模块没有配置  [root@localhost ~]# docker -dINFO[0000] Listening for HTTP on unix (/var/run/docker.sock) INFO[0000] [graphdriver] using prior storage driver &quot;devicemapper&quot; FATA[0000] Error starting daemon: Error initializing network controller: Error creating default &quot;bridge&quot; network: Failed to Setup IP tables: Unable to enable NAT rule: iptables failed: iptables -t nat -I POSTROUTING -s 172.17.42.1/16 ! -o docker0 -j MASQUERADE: iptables v1.4.7: can&#39;t initialize iptables table `nat&#39;: Table does not exist (do you need to insmod?">
 <meta itemprop="datePublished" content="2015-12-13T11:58:06&#43;02:00" />
 <meta itemprop="dateModified" content="2015-12-13T11:58:06&#43;02:00" />
 <meta itemprop="wordCount" content="246">
@@ -46,13 +43,12 @@
 
 
 <meta itemprop="keywords" content="Linux," />
-
     <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="升级Linux内核，搭建docker环境"/>
 <meta name="twitter:description" content="docker可以说是去年最热的技术，也是业界大谈特谈的技术，到了今年有很多公司已经将docker应用于自己的生产环境。Docker已经从一个工具转化成平台，小生态圈。作为一名程序员应该与时俱进，学习新技术，不断地提高自己。
 升级内核 docker要求linux内核版本3.12以上，作为常用linux2.26.32版本，虽然也可以安装docker，但是有一些特性不支持，所以第一步就是升级内核。个人选择最新的长期维护版本升级linux4.13,内核升级最关键的一件事情就是配置内核，关于内核支持docker的内核配置文件，如果不想自己动手配置内核，可以参考Linux-4.13-configfordocker;
 在未正确配置linux内核会出现以下一些错误：
- docker启动过程中iptables命令执行失败，原因是 iptables模块没有配置  [root@localhost ~]# docker -d INFO[0000] Listening for HTTP on unix (/var/run/docker.sock) INFO[0000] [graphdriver] using prior storage driver &quot;devicemapper&quot; FATA[0000] Error starting daemon: Error initializing network controller: Error creating default &quot;bridge&quot; network: Failed to Setup IP tables: Unable to enable NAT rule: iptables failed: iptables -t nat -I POSTROUTING -s 172.17.42.1/16 ! -o docker0 -j MASQUERADE: iptables v1.4.7: can&#39;t initialize iptables table `nat&#39;: Table does not exist (do you need to insmod?"/>
+ docker启动过程中iptables命令执行失败，原因是 iptables模块没有配置  [root@localhost ~]# docker -dINFO[0000] Listening for HTTP on unix (/var/run/docker.sock) INFO[0000] [graphdriver] using prior storage driver &quot;devicemapper&quot; FATA[0000] Error starting daemon: Error initializing network controller: Error creating default &quot;bridge&quot; network: Failed to Setup IP tables: Unable to enable NAT rule: iptables failed: iptables -t nat -I POSTROUTING -s 172.17.42.1/16 ! -o docker0 -j MASQUERADE: iptables v1.4.7: can&#39;t initialize iptables table `nat&#39;: Table does not exist (do you need to insmod?"/>
 
     
 
@@ -345,20 +341,13 @@
 </header>
 
         <div class="article-entry" itemprop="articleBody">
-            
-
-<p>docker可以说是去年最热的技术，也是业界大谈特谈的技术，到了今年有很多公司已经将docker应用于自己的生产环境。Docker已经从一个工具转化成平台，小生态圈。作为一名程序员应该与时俱进，学习新技术，不断地提高自己。</p>
-
+            <p>docker可以说是去年最热的技术，也是业界大谈特谈的技术，到了今年有很多公司已经将docker应用于自己的生产环境。Docker已经从一个工具转化成平台，小生态圈。作为一名程序员应该与时俱进，学习新技术，不断地提高自己。</p>
 <h3 id="升级内核">升级内核</h3>
-
 <p>docker要求linux内核版本3.12以上，作为常用linux2.26.32版本，虽然也可以安装docker，但是有一些特性不支持，所以第一步就是升级内核。个人选择最新的长期维护版本升级linux4.13,内核升级最关键的一件事情就是配置内核，关于内核支持docker的内核配置文件，如果不想自己动手配置内核，可以参考<a href="https://github.com/myself659/docker-way/blob/master/env/linux-4.1.3-configfordocker">Linux-4.13-configfordocker</a>;</p>
-
 <p>在未正确配置linux内核会出现以下一些错误：</p>
-
 <ol>
 <li>docker启动过程中iptables命令执行失败，原因是 iptables模块没有配置</li>
 </ol>
-
 <pre><code>[root@localhost ~]# docker -d
 INFO[0000] Listening for HTTP on unix (/var/run/docker.sock) 
 INFO[0000] [graphdriver] using prior storage driver &quot;devicemapper&quot; 
@@ -367,20 +356,14 @@ Perhaps iptables or your kernel needs to be upgraded.
  (exit status 3) 
 You have new mail in /var/spool/mail/root
 [root@localhost ~]# 
-</code></pre>
-
-<ol>
+</code></pre><ol start="2">
 <li>cgroup创建失败，具体参考<a href="http://stackoverflow.com/questions/25183063/docker-on-rhel-6-cgroup-mounting-failing">stackoverflow</a></li>
 </ol>
-
 <pre><code>[root@localhost ~]# service docker start 
 Starting cgconfig service: Error: cannot mount memory to /cgroup/memory: No such file or directory
 /sbin/cgconfigparser; error loading /etc/cgconfig.conf: Cgroup mounting failed
 Failed to parse /etc/cgconfig.conf or /etc/cgconfig.d[FAILED]
-</code></pre>
-
-<p>具体内核升级过程参考如下：</p>
-
+</code></pre><p>具体内核升级过程参考如下：</p>
 <pre><code>[root@localhost linux-4.1.13]# cp /share/github/docker-way/env/linux-4.1.3-configfordocker   .config 
 [root@localhost linux-4.1.13]# sh  -c   'yes  &quot;&quot; | make oldconfig'
 [root@localhost linux-4.1.13]# make   -j2 bzImage 
@@ -388,27 +371,15 @@ Failed to parse /etc/cgconfig.conf or /etc/cgconfig.d[FAILED]
 [root@localhost linux-4.1.13]# make   -j2   modules_install  
 [root@localhost linux-4.1.13]# make install
 
-</code></pre>
-
-<p>检查grub配置，修改并将linux-4.13作为默认启动项，重启系统，系统启动成功后，查看内核版本：</p>
-
+</code></pre><p>检查grub配置，修改并将linux-4.13作为默认启动项，重启系统，系统启动成功后，查看内核版本：</p>
 <pre><code>[root@localhost ~]# uname   -a
 Linux localhost.localdomain 4.1.13 #1 SMP Sat Dec 5 11:17:50 CST 2015 x86_64 x86_64 x86_64 GNU/Linux
-</code></pre>
-
-<h3 id="安装device-mapper">安装device-mapper</h3>
-
+</code></pre><h3 id="安装device-mapper">安装device-mapper</h3>
 <pre><code>[root@localhost ~]#yum install -y device-mapper
 
-</code></pre>
-
-<h3 id="安装docker">安装docker</h3>
-
+</code></pre><h3 id="安装docker">安装docker</h3>
 <pre><code>[root@localhost ~]# yum   -y   install docker-io  
-</code></pre>
-
-<p>安装完成后，检查docker是否能够正确启动</p>
-
+</code></pre><p>安装完成后，检查docker是否能够正确启动</p>
 <pre><code>[root@localhost ~]# docker  -d
 INFO[0000] [graphdriver] using prior storage driver &quot;devicemapper&quot; 
 INFO[0000] Listening for HTTP on unix (/var/run/docker.sock) 
@@ -418,9 +389,7 @@ INFO[0000] Loading containers: start.
 INFO[0000] Loading containers: done.                    
 INFO[0000] Daemon has completed initialization          
 INFO[0000] Docker daemon                                 commit=786b29d execdriver=native-0.2 graphdriver=devicemapper version=1.7.1
-</code></pre>
-
-<p>没有错误，接下来可以开启一段docker学习之旅了!</p>
+</code></pre><p>没有错误，接下来可以开启一段docker学习之旅了!</p>
 
         </div>
         <footer class="article-footer">

@@ -2,7 +2,7 @@
 <html lang="zh-cn">
 <head>
     <title>搭建Substrate开发云节点 &middot; 沉风网事</title>
-    <meta name="generator" content="Hugo 0.54.0" />
+    <meta name="generator" content="Hugo 0.68.3" />
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta name="author" content="沉风">
@@ -25,32 +25,29 @@
  国内GFW太狠，github都不能幸免，代码都不能下载，影响正常的开发 rust这个编译太占用cpu，内存，硬盘 rust编译的时候cpu一直在叫，影响个人心情，进而影响开发效率 云节点方便共享 花小钱买时间是一件很划算的事情  搭建步骤 准备节点 具体参考这篇文章Installing Substrate，各种类型的操作系统都有说明。
 运行节点 设置代理 这里我采用是caddy作为代理
 具体配置参考如下：
-yourwssaddr { proxy / http://0.0.0.0:9944 { websocket } }  启动节点 ./target/release/substrate --dev --ws-port 9944  浏览器 具体参考apps里面说明即可。
+yourwssaddr {proxy / http://0.0.0.0:9944 {websocket} }启动节点 ./target/release/substrate --dev --ws-port 9944浏览器 具体参考apps里面说明即可。
 运行如下命令即可：
-git clone https://github.com/polkadot-js/apps cd apps yarn yarn run start  在caddy中配置浏览器的代理：
-example.com { proxy / localhost:3000 { transparent } gzip }  最终具体效果如下：
+git clone https://github.com/polkadot-js/apps cd apps yarn yarn run start 在caddy中配置浏览器的代理：
+example.com {proxy / localhost:3000 {transparent }gzip}最终具体效果如下：
 这样你就拥有一个属于自己的区块链。具体代码参考hello-node
 参考  Build Substrate on Ubuntu: step-by-step guide  欢迎关注 欢迎关注微信公众帐号：沉风网事(savewind)" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://myself659.github.io/2019/09/18/%E6%90%AD%E5%BB%BAsubstrate%E5%BC%80%E5%8F%91%E4%BA%91%E8%8A%82%E7%82%B9/" />
-<meta property="article:published_time" content="2019-09-18T11:58:06&#43;02:00"/>
-<meta property="article:modified_time" content="2019-09-18T11:58:06&#43;02:00"/>
+<meta property="article:published_time" content="2019-09-18T11:58:06+02:00" />
+<meta property="article:modified_time" content="2019-09-18T11:58:06+02:00" />
 
     
-    
-<meta itemprop="name" content="搭建Substrate开发云节点">
+    <meta itemprop="name" content="搭建Substrate开发云节点">
 <meta itemprop="description" content="为什么要云节点 主要由以下几个原因：
  国内GFW太狠，github都不能幸免，代码都不能下载，影响正常的开发 rust这个编译太占用cpu，内存，硬盘 rust编译的时候cpu一直在叫，影响个人心情，进而影响开发效率 云节点方便共享 花小钱买时间是一件很划算的事情  搭建步骤 准备节点 具体参考这篇文章Installing Substrate，各种类型的操作系统都有说明。
 运行节点 设置代理 这里我采用是caddy作为代理
 具体配置参考如下：
-yourwssaddr { proxy / http://0.0.0.0:9944 { websocket } }  启动节点 ./target/release/substrate --dev --ws-port 9944  浏览器 具体参考apps里面说明即可。
+yourwssaddr {proxy / http://0.0.0.0:9944 {websocket} }启动节点 ./target/release/substrate --dev --ws-port 9944浏览器 具体参考apps里面说明即可。
 运行如下命令即可：
-git clone https://github.com/polkadot-js/apps cd apps yarn yarn run start  在caddy中配置浏览器的代理：
-example.com { proxy / localhost:3000 { transparent } gzip }  最终具体效果如下：
+git clone https://github.com/polkadot-js/apps cd apps yarn yarn run start 在caddy中配置浏览器的代理：
+example.com {proxy / localhost:3000 {transparent }gzip}最终具体效果如下：
 这样你就拥有一个属于自己的区块链。具体代码参考hello-node
 参考  Build Substrate on Ubuntu: step-by-step guide  欢迎关注 欢迎关注微信公众帐号：沉风网事(savewind)">
-
-
 <meta itemprop="datePublished" content="2019-09-18T11:58:06&#43;02:00" />
 <meta itemprop="dateModified" content="2019-09-18T11:58:06&#43;02:00" />
 <meta itemprop="wordCount" content="63">
@@ -58,17 +55,16 @@ example.com { proxy / localhost:3000 { transparent } gzip }  最终具体效果�
 
 
 <meta itemprop="keywords" content="Substrate,BlockChain," />
-
     <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="搭建Substrate开发云节点"/>
 <meta name="twitter:description" content="为什么要云节点 主要由以下几个原因：
  国内GFW太狠，github都不能幸免，代码都不能下载，影响正常的开发 rust这个编译太占用cpu，内存，硬盘 rust编译的时候cpu一直在叫，影响个人心情，进而影响开发效率 云节点方便共享 花小钱买时间是一件很划算的事情  搭建步骤 准备节点 具体参考这篇文章Installing Substrate，各种类型的操作系统都有说明。
 运行节点 设置代理 这里我采用是caddy作为代理
 具体配置参考如下：
-yourwssaddr { proxy / http://0.0.0.0:9944 { websocket } }  启动节点 ./target/release/substrate --dev --ws-port 9944  浏览器 具体参考apps里面说明即可。
+yourwssaddr {proxy / http://0.0.0.0:9944 {websocket} }启动节点 ./target/release/substrate --dev --ws-port 9944浏览器 具体参考apps里面说明即可。
 运行如下命令即可：
-git clone https://github.com/polkadot-js/apps cd apps yarn yarn run start  在caddy中配置浏览器的代理：
-example.com { proxy / localhost:3000 { transparent } gzip }  最终具体效果如下：
+git clone https://github.com/polkadot-js/apps cd apps yarn yarn run start 在caddy中配置浏览器的代理：
+example.com {proxy / localhost:3000 {transparent }gzip}最终具体效果如下：
 这样你就拥有一个属于自己的区块链。具体代码参考hello-node
 参考  Build Substrate on Ubuntu: step-by-step guide  欢迎关注 欢迎关注微信公众帐号：沉风网事(savewind)"/>
 
@@ -367,12 +363,8 @@ example.com { proxy / localhost:3000 { transparent } gzip }  最终具体效果�
 </header>
 
         <div class="article-entry" itemprop="articleBody">
-            
-
-<h1 id="为什么要云节点">为什么要云节点</h1>
-
+            <h1 id="为什么要云节点">为什么要云节点</h1>
 <p>主要由以下几个原因：</p>
-
 <ol>
 <li>国内GFW太狠，github都不能幸免，代码都不能下载，影响正常的开发</li>
 <li>rust这个编译太占用cpu，内存，硬盘</li>
@@ -380,47 +372,28 @@ example.com { proxy / localhost:3000 { transparent } gzip }  最终具体效果�
 <li>云节点方便共享</li>
 <li>花小钱买时间是一件很划算的事情</li>
 </ol>
-
 <h1 id="搭建步骤">搭建步骤</h1>
-
 <h2 id="准备节点">准备节点</h2>
-
 <p>具体参考这篇文章<a href="https://substrate.dev/docs/en/getting-started/installing-substrate">Installing Substrate</a>，各种类型的操作系统都有说明。</p>
-
 <h2 id="运行节点">运行节点</h2>
-
 <h3 id="设置代理">设置代理</h3>
-
 <p>这里我采用是caddy作为代理</p>
-
 <p>具体配置参考如下：</p>
-
 <pre><code>yourwssaddr {
   proxy / http://0.0.0.0:9944 {
        websocket
   } 
 }
-</code></pre>
-
-<h3 id="启动节点">启动节点</h3>
-
+</code></pre><h3 id="启动节点">启动节点</h3>
 <pre><code>./target/release/substrate   --dev   --ws-port  9944
-</code></pre>
-
-<h2 id="浏览器">浏览器</h2>
-
+</code></pre><h2 id="浏览器">浏览器</h2>
 <p>具体参考<a href="https://github.com/polkadot-js/apps">apps</a>里面说明即可。</p>
-
 <p>运行如下命令即可：</p>
-
 <pre><code>git clone https://github.com/polkadot-js/apps 
 cd apps 
 yarn 
 yarn run start  
-</code></pre>
-
-<p>在caddy中配置浏览器的代理：</p>
-
+</code></pre><p>在caddy中配置浏览器的代理：</p>
 <pre><code>example.com  {
    proxy / localhost:3000 {
         transparent   
@@ -428,25 +401,16 @@ yarn run start
    gzip
 }
 
-</code></pre>
-
-<p>最终具体效果如下：</p>
-
-<p><img src="/images/blockchain/polkappjs.png" alt="浏览器" /></p>
-
+</code></pre><p>最终具体效果如下：</p>
+<p><img src="/images/blockchain/polkappjs.png" alt="浏览器"></p>
 <p>这样你就拥有一个属于自己的区块链。具体代码参考<a href="https://github.com/myself659/hello-node">hello-node</a></p>
-
 <h1 id="参考">参考</h1>
-
 <ol>
 <li><a href="https://agryaznov.com/guides/2019/05/20/substrate-install.html">Build Substrate on Ubuntu: step-by-step guide</a></li>
 </ol>
-
 <h1 id="欢迎关注">欢迎关注</h1>
-
 <p>欢迎关注微信公众帐号：沉风网事(savewind)</p>
-
-<p><img src="/images/cfws.jpg" alt="沉风网事" /></p>
+<p><img src="/images/cfws.jpg" alt="沉风网事"></p>
 
         </div>
         <footer class="article-footer">

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>沉风网事</title>
@@ -28,9 +28,10 @@ Https证书被攻击如何正常的访问github 由于github证书出现了问�
 由于这类攻击往往具有地域性特点，如这次攻击大部分发生在国内，可以将本地的github访问流量通过代理导到其他没有受到攻击的地方，再由代理返回访问结果。科学上网就是属于这类方式。由于各种原因，这里不展开说明。
 如何解决go get不能正常工作 作为一名golang程序员，发现go get出现错误：
 出现上面的问题的原因同样是因为github网站的证书被攻击导致。解决方法是不走Https，走ssh下载github的代码库。在终端上进行如下配置即可：
-git config --global url.&amp;quot;git@github.com:&amp;quot;.insteadOf &amp;quot;https://github.com/&amp;quot;  查看配置结果如下：
-$ cat ~/.gitconfig [user] email = myself659@163.com name = myself659 [url &amp;quot;git@github.com:&amp;quot;] insteadOf = https://github.com/  小结 Https证书虽然被攻击，但是互联网有去中心化特点，可以改变网络访问路径来避免问题。 Https证书被攻击，影响是http协议，可以换成ssh协议来解决git下载的问题。 总之，遇到问题对症下药，也要跳出框架，think out the box，从另一个角度或层次来解决问题。
-欢迎关注 欢迎关注微信公众帐号：沉风网事(savewind)</description>
+git config --global url.&amp;quot;git@github.com:&amp;quot;.insteadOf &amp;quot;https://github.com/&amp;quot;查看配置结果如下：
+$ cat ~/.gitconfig[user]email = myself659@163.comname = myself659[url &amp;quot;git@github.com:&amp;quot;]insteadOf = https://github.com/小结 Https证书虽然被攻击，但是互联网有去中心化特点，可以改变网络访问路径来避免问题。 Https证书被攻击，影响是http协议，可以换成ssh协议来解决git下载的问题。 总之，遇到问题对症下药，也要跳出框架，think out the box，从另一个角度或层次来解决问题。
+欢迎关注 欢迎关注微信公众帐号：沉风网事(savewind)
+  </description>
     </item>
     
     <item>
@@ -77,9 +78,9 @@ $ cat ~/.gitconfig [user] email = myself659@163.com name = myself659 [url &amp;q
       <description>进入话题之前了解一下美股指数熔断机制。
  美股指数熔断机制的基准指数为标普500，单项跌幅阈值为7%、13%、20%。当指数较前一天收盘点位下跌7%、13%时，全美证券市场交易将暂停15分钟，当指数较前一天收盘点位下跌20%时，当天交易停止。
  再来看一下美股指数熔断的历史。
- 1997年10月27日，道琼斯工业指数暴跌7.18%，收于7161.15点，这是熔断机制在1988年引入之后第一次被触发。
- 2020年3月9日，受2019冠状病毒病疫情和油价崩盘影响，3月9日上午9点34分，标普500指数开盘后跌7%触发第一层熔断机制，暂停交易15分钟，这是美股历史上第二次熔断。
- 2020年3月12日开盘后，标普500下跌，触发7%的熔断点，这是美股历史上第三次熔断，收盘时，美股三大指数都下跌近10%。
+  1997年10月27日，道琼斯工业指数暴跌7.18%，收于7161.15点，这是熔断机制在1988年引入之后第一次被触发。
+  2020年3月9日，受2019冠状病毒病疫情和油价崩盘影响，3月9日上午9点34分，标普500指数开盘后跌7%触发第一层熔断机制，暂停交易15分钟，这是美股历史上第二次熔断。
+  2020年3月12日开盘后，标普500下跌，触发7%的熔断点，这是美股历史上第三次熔断，收盘时，美股三大指数都下跌近10%。
   人生“有幸”，大家在一周内见证两次美股的熔断。
 美股一周内熔断两次，全球的经济形势加上现在新型冠状病毒在全球已经开始流行，对于经济供应和需求是全方面的打击，这标志美股的下跌周期已经开始。
 明确了美股的下跌趋势，那就有下面两个问题：
@@ -89,7 +90,7 @@ $ cat ~/.gitconfig [user] email = myself659@163.com name = myself659 [url &amp;q
 从上面两图可以看到2008年的金融危机期间下跌从2007年10月开始，到2009年2月触底发弹回升，指数从17245.35下降到8609.71，下跌幅度为50%，下跌周期为16个月。
 2000年互联网泡沫道琼斯指数下跌情况如下：
 从上面两图可以看到2000年互联网泡沫期间下跌从1999年12月开始，到2002年9月触底发弹回升，指数从17671.07下降到10848.87，下跌幅度为38.6%，下跌周期为33个月。
- (17245.35 - 8609.71)/17245.35 0.5007517968611829  (17671.07 - 10848.87) / 17671.07 0.3860660390117859 (5686.69 - 814.82)/5686.69 = 0.856 -- 最后再看一下让人闻风丧胆的大萧条时期的股票市场情况。
+最后再看一下让人闻风丧胆的大萧条时期的股票市场情况。
 从上面两图可以看到大萧条期间下跌从1929年8月开始，到1932年7月触底发弹回升，指数从5686.69下降到814.82，下跌幅度为85.6%，下跌周期为36个月。下跌幅度不是腰斩而是膝斩，下跌时间长达3年，为美股历史上所有下跌之最。
 现在阶段抄底美股，话不多说，送下面这张图，自求多福：
 上面的分析是基于历史的参考，现在情况与历史任何一次美股下跌不一样，具体分析美股的走势要结合多方面的因素分析，如新型冠状病毒在全球开始流行，全球化各国相互影响，各国面临不同问题（股市泡沫、债务杠杆、金融机构风险、社会撕裂等）与应对策略（货币政策、财政政策、抗疫方式等）。
@@ -107,8 +108,9 @@ $ cat ~/.gitconfig [user] email = myself659@163.com name = myself659 [url &amp;q
  不要给自己设限 站在巨人的肩膀上 正确的方向 敏捷的行动  本文重点讨论如何选择做什么这一问题。不要给自己设限，这个主要是解决了选择范围的问题，不给自己设限，可以打破很多限制，为自己提供更多的选项。
  Quantity is a prerequisite to the selection of quality.
  数量是高质量选择的先决条件。
-那么在不给自己设限解决了选择的数量问题，那么如何作出正确的选择呢？兵圣孙子说过： &amp;gt;知己知彼，百战不殆。
-作出正确的选择需要在以下两个方面的认识：
+那么在不给自己设限解决了选择的数量问题，那么如何作出正确的选择呢？兵圣孙子说过：
+ 知己知彼，百战不殆。
+ 作出正确的选择需要在以下两个方面的认识：
  认识自己 认识世界  在这两个方面问自己以下四个问题：
  你喜欢什么？ 你擅长什么？ 世界需要什么？ 别人付钱请你做什么事情？  一图胜千言。
 从上图可以明显看到我们应该做的核心事情就是这个四个问题的集合的交集，也是ikagai部分。
@@ -137,7 +139,7 @@ ikagai这个方法不仅可以用于职业发展的选择，也可以用于指�
 问题 作为一名局外人，对这次微盟删库事件，个人有以下问题：
  运维贺某是由于什么原因作出删库的事件？ 贺某删除了哪些数据？贺某删除整个生产环境的数据包括备份数据吗？ 微盟是数据架构是如何设计？让一个运维能够删除整个生产环境的数据？ 微盟的数据物理分布是如何设计的？ 微盟运维权限是如何管理？ 微盟离线备份数据是备份方式是怎么样？是增量还是快照方式？ 微盟离线备份数据为什么花了五天都不能够恢复？离线备份数据有多少？ 众多离线备份数据是如何恢复的？ 微盟离线备份数据是否完整？ 微盟离线备份数据恢复后如何验证？如何检查恢复数据与备份数据之间的一致性？ 微盟离线备份数据恢复是否相互依赖？ 微盟离线备份数据（毕竟微盟成立于2013年）是否兼容？如与应用程序兼容？ 微盟离线备份数据恢复的速度的瓶颈在哪里？网络带宽？硬盘IO? 数据不能并行恢复？验证困难？ 从备份数据到线上数据恢复，是恢复几份数据？如何保证这几个线上数据的一致性？ 如何防止误操作？ 如何量化赔偿商家的损失？ 如何快速检测运维违规操作并迅速报警？ 是否知道技术风险的存在，由于存在侥幸心理和事不关已，多一事不如少一事，放过这个潜在的风险？  经验教训 微盟经过七天七夜的抢救，成功救回了全部数据，从结果上来看是一次成功的抢救。但是数据恢复的时间太长，服务高可用直接打到99%以下。
 事后微盟发布了改进计划，这些改进计划有针对性回答我上面一些问题。
- 措施一：数据安全管理机制全面加固与整改，加强运维平台治理 1、完善数据安全管理制度（涵盖权限、监控、审计方面），严格执行授权审批制度； 2、使用腾讯云CAM权限系统进行云资源管理，严格执行分级授权和最小集权限制度，对高危险动作执行二次授权制度； 3、建立科学、高效、安全的网络策略，对开发环境、测试环境和生产环境进行严格隔离；使用腾讯云堡垒机替换自建堡垒机，进行细粒度权限分级和授权管理，同时严格审计堡垒机操作日志，发送安全审计报表； 4、加强运维安全流程学习，职业道德学习，法律学习等。 措施二：加强灾备体系的建设，做到多云异地冷备 1、建立多云灾备体系，在北京、上海、南京等地区建立全备份的冷备系统架构； 2、借助腾讯云的IAAS的底层服务能力，建立高可用的同城双活架构； 3、云上所有的云主机，启用每天的快照策略，保证全量和增量备份； 4、所有非结构化数据，使用腾讯COS对象存储系统进行归档保存，启用COS的多异地复制功能，数据存放多地，并且COS 冷存储，确保数据只增不减； 5、建立月、季度级别的定期演练机制和制度 。 措施三：基础设施全力上云 1、借助腾讯云数据库MySQL的数据高可用和安全体系，逐步放弃自建数据库服务 ，迁移到腾讯云数据库（CDB），快速具备数据库跨可用区和异地灾备的能力； 2、黑石1.0物理机全面升级黑石2.0，全面使用云主机。  上面这些总结很到位，个人帮微盟补充一些：
+ 措施一：数据安全管理机制全面加固与整改，加强运维平台治理1、完善数据安全管理制度（涵盖权限、监控、审计方面），严格执行授权审批制度；2、使用腾讯云CAM权限系统进行云资源管理，严格执行分级授权和最小集权限制度，对高危险动作执行二次授权制度；3、建立科学、高效、安全的网络策略，对开发环境、测试环境和生产环境进行严格隔离；使用腾讯云堡垒机替换自建堡垒机，进行细粒度权限分级和授权管理，同时严格审计堡垒机操作日志，发送安全审计报表；4、加强运维安全流程学习，职业道德学习，法律学习等。措施二：加强灾备体系的建设，做到多云异地冷备1、建立多云灾备体系，在北京、上海、南京等地区建立全备份的冷备系统架构；2、借助腾讯云的IAAS的底层服务能力，建立高可用的同城双活架构；3、云上所有的云主机，启用每天的快照策略，保证全量和增量备份；4、所有非结构化数据，使用腾讯COS对象存储系统进行归档保存，启用COS的多异地复制功能，数据存放多地，并且COS 冷存储，确保数据只增不减；5、建立月、季度级别的定期演练机制和制度 。措施三：基础设施全力上云1、借助腾讯云数据库MySQL的数据高可用和安全体系，逐步放弃自建数据库服务 ，迁移到腾讯云数据库（CDB），快速具备数据库跨可用区和异地灾备的能力；2、黑石1.0物理机全面升级黑石2.0，全面使用云主机。上面这些总结很到位，个人帮微盟补充一些：
  学习netfix的企业文化中的第一条：招聘成年人。成年人不会作出对个人和公司双输的事件，成人有自己调整心态与控制情绪的能力。 学习netfix的实践，应用混顿工程，主动拥抱故障，提前演练与操作。国内阿里双11每年都要进行演练。 减少对人的依赖。在执行方面机器比人靠谱多了。  总结 总之，微盟这次删库事故是技术债与管理债长期累积不解决的结果。欠债不还，一定会在某个时间被某个黑天鹅事件引爆。
 这次显露出来的技术问题的本质是数据高可用性技术的不足。
 欢迎关注 欢迎关注微信公众帐号：沉风网事(savewind)</description>
@@ -152,8 +154,8 @@ ikagai这个方法不仅可以用于职业发展的选择，也可以用于指�
       <description>前言 在投资美股，先从数据分析开始这篇文章解决两个问题：
  从哪里找数据？ 如何得到这些数据？  在此基础这篇主要解决一个问题：以特斯拉为例说明如何利用这些数据预测股票价格的变化。同时关注一个问题：投入成本进行预测股票价格是否靠谱与必要？
 步骤 获取数据 直接调用api如下：
-import yfinance as yf tlsa_df = yf.download(&#39;TSLA&#39;, start=&#39;2015-01-01&#39;, end=&#39;2020-02-16&#39;, progress=False) tlsa_df.head()  绘制价格变化图 #plot %matplotlib notebook from IPython.core.interactiveshell import InteractiveShell InteractiveShell.ast_node_interactivity = &amp;quot;all&amp;quot; plt.figure(figsize=(10,6)) plt.grid(True) plt.xlabel(&#39;Dates&#39;) plt.ylabel(&#39;Close Prices&#39;) plt.plot(tlsa_df[&#39;Close&#39;]) plt.title(&#39;Tesla Close Price&#39;) plt.show()  得到从2015年起telsa收盘价格变化图：
-分析数据的统计特征信息 tsla_df_close = tlsa_df[&#39;Close&#39;] df_log = np.log(tsla_df_close) moving_avg = df_log.rolling(12).mean() std_dev = df_log.rolling(12).std() plt.title(&#39;Moving Average&#39;) plt.plot(std_dev, color =&amp;quot;black&amp;quot;, label = &amp;quot;Standard Deviation&amp;quot;) plt.plot(moving_avg, color=&amp;quot;red&amp;quot;, label = &amp;quot;Mean&amp;quot;) plt.</description>
+import yfinance as yf tlsa_df = yf.download(&#39;TSLA&#39;, start=&#39;2015-01-01&#39;, end=&#39;2020-02-16&#39;, progress=False)tlsa_df.head()绘制价格变化图 #plot %matplotlib notebook from IPython.core.interactiveshell import InteractiveShellInteractiveShell.ast_node_interactivity = &amp;quot;all&amp;quot; plt.figure(figsize=(10,6))plt.grid(True)plt.xlabel(&#39;Dates&#39;)plt.ylabel(&#39;Close Prices&#39;)plt.plot(tlsa_df[&#39;Close&#39;])plt.title(&#39;Tesla Close Price&#39;)plt.show()得到从2015年起telsa收盘价格变化图：
+分析数据的统计特征信息 tsla_df_close = tlsa_df[&#39;Close&#39;]df_log = np.log(tsla_df_close)moving_avg = df_log.rolling(12).mean()std_dev = df_log.rolling(12).std()plt.title(&#39;Moving Average&#39;)plt.plot(std_dev, color =&amp;quot;black&amp;quot;, label = &amp;quot;Standard Deviation&amp;quot;)plt.plot(moving_avg, color=&amp;quot;red&amp;quot;, label = &amp;quot;Mean&amp;quot;)plt.</description>
     </item>
     
     <item>
@@ -168,12 +170,12 @@ import yfinance as yf tlsa_df = yf.download(&#39;TSLA&#39;, start=&#39;2015-01-0
 这个问题可以拆为以下问题：
  从哪里找数据？ 如何得到这些数据？  先从第一个问题开始：从哪里找数据？美股的数据来源来很多，这里我直接选择了yahoo财经数据。 主要原因如下：
  yahoo财经数据详细 yahoo财经可以直接通过api获取，使用方便 最重要地一点，yahoo财经的api没有被墙，如果被墙了，也支持代理 yahoo财经数据实时性也不错，除了交易日当天的数据无法获取，其他的都可以获取  下面我们就看如何调用api获取数据。不多说了，直接上代码。
-import pandas as pd import yfinance as yf tsla_df = yf.download(&#39;TSLA&#39;, start=&#39;2020-01-01&#39;, end=&#39;2020-02-06&#39;, progress=False) tsla_df.tail()  具体结果如下：
+import pandas as pdimport yfinance as yftsla_df = yf.download(&#39;TSLA&#39;, start=&#39;2020-01-01&#39;, end=&#39;2020-02-06&#39;, progress=False)tsla_df.tail()具体结果如下：
 获取ticker数据：
-%matplotlib notebook ticker = yf.Ticker(&#39;TSLA&#39;) tsla_df = ticker.history(period=&amp;quot;max&amp;quot;) tsla_df.head() tsla_df[&#39;Close&#39;].plot(title=&amp;quot;Telsa&#39;s stock price&amp;quot;)  具体结果如下：
+%matplotlib notebookticker = yf.Ticker(&#39;TSLA&#39;)tsla_df = ticker.history(period=&amp;quot;max&amp;quot;)tsla_df.head()tsla_df[&#39;Close&#39;].plot(title=&amp;quot;Telsa&#39;s stock price&amp;quot;)具体结果如下：
 这些数据都可以股票软件都可以看到。 对的，下面说一下通过api获取原始数据的好处。
 灵活地获取ticker数据：
-%matplotlib notebook tsla_df = yf.download(&amp;quot;TSLA&amp;quot;, start=&amp;quot;2020-02-01&amp;quot;, end=&amp;quot;2020-02-06&amp;quot;, interval = &amp;quot;15m&amp;quot;) tsla_df[&#39;Close&#39;].plot(title=&amp;quot;TSLA FROM 2020-02-01 TO 2020-02-06 &amp;quot;)  具体结果如下： 股票对比分析：</description>
+%matplotlib notebooktsla_df = yf.download(&amp;quot;TSLA&amp;quot;, start=&amp;quot;2020-02-01&amp;quot;, end=&amp;quot;2020-02-06&amp;quot;, interval = &amp;quot;15m&amp;quot;)tsla_df[&#39;Close&#39;].plot(title=&amp;quot;TSLA FROM 2020-02-01 TO 2020-02-06 &amp;quot;)具体结果如下： 股票对比分析：</description>
     </item>
     
     <item>
@@ -224,8 +226,7 @@ import pandas as pd import yfinance as yf tsla_df = yf.download(&#39;TSLA&#39;, 
 在整个市场腰斩，不对是膝斩的过程，比特币在整个市场的比重逐渐提升。在整个过程比特币相比于经济危机的情况下避险贷币。
 原因 为什么在整个过程比特币比重越来越高呢？
 个人认为有以下几个原因：
- 比特币具有先发优势
- 在持有分布方面，比特币的持有分布有很好去中心化性 宣传上，一定程度上比特币等同了区块链，大大提高了比特币宣传 比特币一直在进步与发展，BIP不断有新提案出来并且能够得到落实 比特币有最完整的生态  未来 关于未来比特币的龙头地位是否会进一步加强呢？个人认为龙头地位不会再进一步扩大。主要原因如下：
+ 比特币具有先发优势 在持有分布方面，比特币的持有分布有很好去中心化性 宣传上，一定程度上比特币等同了区块链，大大提高了比特币宣传 比特币一直在进步与发展，BIP不断有新提案出来并且能够得到落实 比特币有最完整的生态  未来 关于未来比特币的龙头地位是否会进一步加强呢？个人认为龙头地位不会再进一步扩大。主要原因如下：
  最近两年比特币比重提升来自于山寨币的比重，而经过这两年的淘汰山寨币空间几乎消失殆净 比特币比重还有一部分来自于以太坊，以太坊2.0进展有利于以太坊的比重提高 其他领域的加密货币的发展，如跨链的大量应用会增加跨链部分的比重 闪电网络的发展与应用加上现在比特币强大的生态有利于比特币守住龙头地位  最后，个人认为2020年比特币挖矿收益的减半，并不会导致比特币的大爆发。</description>
     </item>
     
@@ -239,16 +240,14 @@ import pandas as pd import yfinance as yf tsla_df = yf.download(&#39;TSLA&#39;, 
 时机 为什么微信会在这个时候推出公众帐号付费阅读功能？
 在得到，喜马拉雅，极客时间，知识星球，小红圈，微博等一系列知识付费产品这几个的培训下，国内知识付费快速成长，付费内容增多，用户付费意识增强。同时微信订阅号打开率与阅读量遇到增长问题。
 目的 个人认为推出公众帐号付费阅读功能有以下目的：
- 抢占知识付费的市场 增加订阅号的服务类型，为用户提供一种新的新服务，为创作者提供一个新变现的选项 促进一些创作者的热情，进而创作出更加优秀的作品，为用户提供高质量的作品 多年订阅号的发展，一定量的用户付费的需求已经出现，推出公众帐号付费阅读功能，满足用户的需要
-  产品体验  ios用户付费由于苹果的原因，支付体验不流畅，不能直接走微信支付（注：苹果要发展自家apple pay） 付费阅读文章有明显的标示 可以灵活设置付费可见的内容比例 付费后有两条通知：支付凭证通知购买成功通知 没有广告 付费才能留言 如果不付费情况，影响阅读体验，伤害用户的情感  适用场景 并不是所有订阅号都适合开通付费阅读功能，Caoz看好付费阅读功能在以下领域的应用：
- 原创小说 原创动漫
- 金融财经/智库报告 其他平台导流到微信的付费阅读  除了黑产与灰产外，个人还看好在一些重要问题的付费解答方面的应用。
+ 抢占知识付费的市场 增加订阅号的服务类型，为用户提供一种新的新服务，为创作者提供一个新变现的选项 促进一些创作者的热情，进而创作出更加优秀的作品，为用户提供高质量的作品 多年订阅号的发展，一定量的用户付费的需求已经出现，推出公众帐号付费阅读功能，满足用户的需要  产品体验  ios用户付费由于苹果的原因，支付体验不流畅，不能直接走微信支付（注：苹果要发展自家apple pay） 付费阅读文章有明显的标示 可以灵活设置付费可见的内容比例 付费后有两条通知：支付凭证通知购买成功通知 没有广告 付费才能留言 如果不付费情况，影响阅读体验，伤害用户的情感  适用场景 并不是所有订阅号都适合开通付费阅读功能，Caoz看好付费阅读功能在以下领域的应用：
+ 原创小说 原创动漫 金融财经/智库报告 其他平台导流到微信的付费阅读  除了黑产与灰产外，个人还看好在一些重要问题的付费解答方面的应用。
 对比 有太多的付费产品，这里简单说一下微信公众帐号与其他的不同点：
  其他都是知识付费产品，而在微信付费阅读是一个功能或者说是feature 微信针对一篇文章的交易，其他是圈子付费或者平台会员付费 微信付费更加精准，就是具体一篇文章或者一个问题  那么多其他付费平台有哪些影响？
  如果微信付费将一些创作者吸引到微信公众帐号，那么其他付费平台会受到不小的冲击，如今天的中国没有哪一个互联网产品的用户不与微信重叠，这些创作者也会带着他的用户无成本迁移到微信 由于微信是文章类别，暂时对语言与视频类知识付费没有多少影响 平台之间相互抢创作者会再度出现 微信中心化付费阅读与基于区块链去中心的内容平台由于商业模型不一致，所以对去中心的内容平台影响不大  机会 这里的机会当然是指创作者的机会。面对的主要领域主要就是提到的五个领域。
  一种新变现的方式，可以看作一个新的知识价值交易的平台 一个展示自我实力与价值的平台 个人成长的平台，如果选定一个领域，不断深耕，个人能力回报肯定不错，如果有志如此，请先开始拥有一个公众帐号 经济回报这些机会属于大部分属于一些头部真硬核作者（马太效应），虽然我希望是长尾效应，但是实际估计还是二八定律 微信用户更多，用户时长更久，机会相比较于其他付费平台机会更大  作用 对于内容输出者来说，主要作用如下：
- 一个新的变现方式，一个10亿用户平台上的变现 防止洗稿，内容禁止复制 防止杠精，付费才能评论 经济上的激励促进进步，输出更好的内容
-  结语 对于个人来说，就是开一个公众帐号，专注一个领域，努力学习，持续精进，真诚分享，输出价值，不要随便开启付费阅读，一切随缘。</description>
+ 一个新的变现方式，一个10亿用户平台上的变现 防止洗稿，内容禁止复制 防止杠精，付费才能评论 经济上的激励促进进步，输出更好的内容  结语 对于个人来说，就是开一个公众帐号，专注一个领域，努力学习，持续精进，真诚分享，输出价值，不要随便开启付费阅读，一切随缘。
+欢迎关注 欢迎关注微信公众帐号：沉风网事(savewind)</description>
     </item>
     
     <item>
@@ -259,14 +258,24 @@ import pandas as pd import yfinance as yf tsla_df = yf.download(&#39;TSLA&#39;, 
       <guid>https://myself659.github.io/2020/01/08/gartner%E9%A2%84%E6%B5%8B2020%E5%B9%B4%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9A%84%E5%8F%91%E5%B1%95/</guid>
       <description>Gartner 首先介绍一下Gartner。 Gartner全球最具权威的IT研究与顾问咨询公司。同时也是魔力四象限与技术成熟度曲线提出者。所以Gartner报告值得一看，权威性比一般技术报告及预测强很多。
 十大技术趋势 Gartner对2020技术发展作了预测，列出十大技术趋势，具体如下：
- Hyperautomation超级自动化 Multiexperience多元体验 Democratization民主化 Human Augmentation人类增强 Transparency and Traceability透明与可追溯性 The Empowered Edge边缘计算 Distributed Cloud分布式云 Autonomous Things自主设备 Practical Blockchain实用区块链 AI Security人工智能安全
-  从上可知区块链也在榜上。下面具体看一下区块链部分的分析。
+ Hyperautomation超级自动化 Multiexperience多元体验 Democratization民主化 Human Augmentation人类增强 Transparency and Traceability透明与可追溯性 The Empowered Edge边缘计算 Distributed Cloud分布式云 Autonomous Things自主设备 Practical Blockchain实用区块链 AI Security人工智能安全  从上可知区块链也在榜上。下面具体看一下区块链部分的分析。
 Gartner预计区块链可扩展性将在2023年取得突破 区块链技术应用现在面临的主要体现以下两个方面：
  可扩展性 互操作性  可扩展性方面主流公链如比特币每秒支持七笔交易，以太坊每秒支持15笔交易；同时交易成本高。 互操作性方面私钥管理基本上原地踏步，助记词这种形式提高了用户的门槛的要求，同时丢失助记词是常有发生。
 报告中并没有说明哪种技术方案会取得突破。个人以为主要看点有两个：
  分片 layer2  重点期待以太坊, Harmony,Near, plokadot等公链。
 区块链应用场景 区块链是一个充满想像力的技术，但是现在主要落地应用在于数字货币领域。在其他的领域区块链落地比较少。Gartner在报告中列出区块链在企业应用领域有哪些呢？具体如下：
-1.资产跟踪。 2.索赔。 3.身份管理/KYC。 4.内部记录保存。 5.积分和奖励。 6.支付/结算。 7.溯源。 8.共享记录保存。 9.智能城市/物联网。 10.贸易融资。 11.交易。 此外Garnter还看好以下三个应用（不同于上面的企业应用领域）：
+1.资产跟踪。
+2.索赔。
+3.身份管理/KYC。
+4.内部记录保存。
+5.积分和奖励。
+6.支付/结算。
+7.溯源。
+8.共享记录保存。
+9.智能城市/物联网。
+10.贸易融资。
+11.交易。
+此外Garnter还看好以下三个应用（不同于上面的企业应用领域）：
  基于区块链的投票 基于区块链的自我主权的数字身份 数字加密货币的支付和转帐  建议 Gartner对于企业场景下应用区块链技术的建议：
  深入理解商业应用领域的问题和潜在的机会 深入理解区块链的功能和局限性 重新评估企业和行业信任架构 将技术作为核心业务战略的一部分 提高客户应用区块链运营架构的意愿和能力  参考  top-10-strategic-technology-trends-for-2020  欢迎关注 欢迎关注微信公众帐号：沉风网事(savewind)</description>
     </item>
@@ -279,12 +288,12 @@ Gartner预计区块链可扩展性将在2023年取得突破 区块链技术应�
       <guid>https://myself659.github.io/2020/01/02/%E7%A8%8B%E5%BA%8F%E5%91%98%E8%BF%9B%E9%98%B6%E7%B2%BE%E8%AF%BB%E4%B9%A6%E7%B1%8D%E6%B8%85%E5%8D%95/</guid>
       <description>2020年加大搬砖的力度，还是一名程序员，继续成长与进步。
 优秀程序员应该具备以下三方面能力：
- 扎实的计算机基础知识（计算机结构，操作系统，数据结构与算法 ）
- 良好的软件工程素质
- 一定的系统设计与架构能力
+  扎实的计算机基础知识（计算机结构，操作系统，数据结构与算法 ）
+  良好的软件工程素质
+  一定的系统设计与架构能力
   多年的程序员经历与读书经历告诉我：
- 读书不在多，贵在精。
- 精典书籍需要多读几遍，常读常新，每一次重读都会有新的收获
+  读书不在多，贵在精。
+  精典书籍需要多读几遍，常读常新，每一次重读都会有新的收获
   下面推荐软件工程师应该精读的十本书。
 1 编码：隐匿在计算机软硬件背后的语言 本书作者Charles Petzold创造性地以编码为主题，从电报机和手电筒讲到数字电路，然后利用数字电路中的逻辑门构造出加法器和触发器，最后构造出一个完整的存储程序计算机 。作者在书中使用大量形象贴切的类比简化了这些概念，使其成为通俗易懂的计算机入门读物。
 2 深入理解计算机系统 作为一名非科班出身的程序员，深入理解计算机系统是对我帮助最大。这本书里面将操作系统，计算机硬件与结构，编译原理这些计算机学科的基础内容结合在一起。具体内容涵盖：指令集体系架构，汇编语言，代码优化，计算机存储体系架构，链接，装载，进程，系统调用，虚拟内存，网络编程，并发编程等程序员在日常工作中所需要的必备知识。
@@ -339,7 +348,7 @@ Alphabet 说明一下，Alphabet是Google的母公司。
       <description>什么是DoH DoH是DNS over HTTPS。
 传统DNS相当于DNS over UDP。
 DoH带来哪些好处？ 采用DoH对用户来说有如下好处：
- DoH协议不允许其他用户，服务提供商或第三方查看您访问的网站并收集数据，保护了用户的隐私 DoH协议有利于防止欺骗与钓鱼攻击，保护在线数据的安全和隐私 加速DNS解析，提高网页访问速度 对于天朝人民，还有另一个好处就是科学上网  DoH现在可以使用吗？ We&#39;ve enabled an experiment in Chrome 79 for a fraction of our users.  Chrome 79版本对部分用户开启。
+ DoH协议不允许其他用户，服务提供商或第三方查看您访问的网站并收集数据，保护了用户的隐私 DoH协议有利于防止欺骗与钓鱼攻击，保护在线数据的安全和隐私 加速DNS解析，提高网页访问速度 对于天朝人民，还有另一个好处就是科学上网  DoH现在可以使用吗？ We&#39;ve enabled an experiment in Chrome 79 for a fraction of our users.Chrome 79版本对部分用户开启。
 firefox 70版本已经支持DoH。
 如何使用DoH? 以firefox为例：
 在地址输入：about:preferences#general，找到Network Settings选项，点击Settings即可进入设置，具体如下：
@@ -356,10 +365,10 @@ firefox 70版本已经支持DoH。
  国内GFW太狠，github都不能幸免，代码都不能下载，影响正常的开发 rust这个编译太占用cpu，内存，硬盘 rust编译的时候cpu一直在叫，影响个人心情，进而影响开发效率 云节点方便共享 花小钱买时间是一件很划算的事情  搭建步骤 准备节点 具体参考这篇文章Installing Substrate，各种类型的操作系统都有说明。
 运行节点 设置代理 这里我采用是caddy作为代理
 具体配置参考如下：
-yourwssaddr { proxy / http://0.0.0.0:9944 { websocket } }  启动节点 ./target/release/substrate --dev --ws-port 9944  浏览器 具体参考apps里面说明即可。
+yourwssaddr {proxy / http://0.0.0.0:9944 {websocket} }启动节点 ./target/release/substrate --dev --ws-port 9944浏览器 具体参考apps里面说明即可。
 运行如下命令即可：
-git clone https://github.com/polkadot-js/apps cd apps yarn yarn run start  在caddy中配置浏览器的代理：
-example.com { proxy / localhost:3000 { transparent } gzip }  最终具体效果如下：
+git clone https://github.com/polkadot-js/apps cd apps yarn yarn run start 在caddy中配置浏览器的代理：
+example.com {proxy / localhost:3000 {transparent }gzip}最终具体效果如下：
 这样你就拥有一个属于自己的区块链。具体代码参考hello-node
 参考  Build Substrate on Ubuntu: step-by-step guide  欢迎关注 欢迎关注微信公众帐号：沉风网事(savewind)</description>
     </item>
@@ -375,8 +384,8 @@ example.com { proxy / localhost:3000 { transparent } gzip }  最终具体效果�
  sync.pool优化体现在哪里？ 优化是如何实现？ 优化的好处有哪些？  优化 具体优化项如下：
  无锁化 GC策略  无锁化 sync.pool实现了无锁化，具体如下：
 go1.12.1版本实现
-// Local per-P Pool appendix. type poolLocalInternal struct { private interface{} // Can be used only by the respective P. shared []interface{} // Can be used by any P. Mutex // Protects shared. }  go1.13版本
-// Local per-P Pool appendix. type poolLocalInternal struct { private interface{} // Can be used only by the respective P.</description>
+// Local per-P Pool appendix.type poolLocalInternal struct {private interface{} // Can be used only by the respective P.shared []interface{} // Can be used by any P.Mutex // Protects shared.}go1.13版本
+// Local per-P Pool appendix.type poolLocalInternal struct {private interface{} // Can be used only by the respective P.</description>
     </item>
     
     <item>
@@ -393,8 +402,7 @@ go1.12.1版本实现
 他的话当然不同凡想，引人思考。
 当然我们不能随便轻信这个结论，我们应该具体了解一下，他是如何得出这个结论？下面展开说明如下：
 瑞·达利欧的理由 模型 在视频中瑞达利欧提出一个国家实力的模型，这个模型从六个方面来衡量一个国家的实力，具体如下：
- 科技和教育 生产 贸易 军事 金融 货币储备地位
-  下面这一张图是荷兰，英国，美国，中国这个四个国家在最近几百年来在上述六个方面的实力曲线图：
+ 科技和教育 生产 贸易 军事 金融 货币储备地位  下面这一张图是荷兰，英国，美国，中国这个四个国家在最近几百年来在上述六个方面的实力曲线图：
 多样性原则 作为一个掌握1500亿美元的对冲基金的掌门人，瑞达利欧深知保持投资多样性十分必要。他们的投资是面向全球。中国市场情况与欧美不相同，具有独特性，是风险投资组合保持多样性不或缺少的选择。
 相对风险 风险无处不在。常人都明白，都有风险的情况，选择风险最小的。
 下面对比欧洲，美国，中国三个地区的风险情况。
@@ -413,7 +421,8 @@ go1.12.1版本实现
 看到这张图，相信大家会理解中国再继续闷声发大财不是一件容易的事情了。
 相信这些数据会让很多人得出一个结论：中美毛衣冲突不影响中国继续崛起的进程。
 对中国十分熟悉 还有一点考虑，视频中没有明确投及，就是瑞·达利欧对中国的熟悉，作为一名美国人，其实瑞·达利欧对中国十分熟悉，他从1984年第一次来到中国后，此后35年里他不断地来到中国并熟悉中国，并且他的一个儿子曾经在中国读书。
-后记 本文只是简单介绍，关于瑞达利欧是如何看待中美毛衣冲突，更多信息请看原始视频，原始视频时长有31分钟。关注本公众帐号，输入 投资中国，获取原始视频的百度云下载链接。</description>
+后记 本文只是简单介绍，关于瑞达利欧是如何看待中美毛衣冲突，更多信息请看原始视频，原始视频时长有31分钟。关注本公众帐号，输入 投资中国，获取原始视频的百度云下载链接。
+参考  《原则》作者瑞·达利欧烧脑大作(1): 经济机器是怎样运行的  欢迎关注 欢迎关注微信公众帐号：沉风网事(savewind)</description>
     </item>
     
     <item>
@@ -425,7 +434,7 @@ go1.12.1版本实现
       <description>由于墙的原因，导致cargo build，cargo run都会出现概率性失败，并且整个过程十分缓慢。
 下面是解决方案：
 方案1 在 ~/.cargo/config文件（如果没有创建一个）下添加如下内容：
-[source.crates-io] replace-with = &amp;quot;rustcc&amp;quot; [source.rustcc] registry = &amp;quot;https://code.aliyun.com/rustcc/crates.io-index.git&amp;quot;  方案1现在还是实验阶段，充满变数与不确定性。不适用于CI/CD。
+[source.crates-io]replace-with = &amp;quot;rustcc&amp;quot;[source.rustcc]registry = &amp;quot;https://code.aliyun.com/rustcc/crates.io-index.git&amp;quot;方案1现在还是实验阶段，充满变数与不确定性。不适用于CI/CD。
 方案2 在阿里云，aws上申请一个香港地区云主机，将build工作交给云主机
 欢迎关注 欢迎关注微信公众帐号：沉风网事(savewind)</description>
     </item>
@@ -437,7 +446,7 @@ go1.12.1版本实现
       
       <guid>https://myself659.github.io/2019/08/08/%E5%AE%89%E8%A3%85python3.7/</guid>
       <description>说明 完全是为了记录自己的操作记录，换一台新机器真是免不了要装python。记录下来，便于以后操作。
-apt-get安装 apt update apt install software-properties-common add-apt-repository ppa:deadsnakes/ppa apt install python3.7  源码安装 sudo apt update sudo apt install build-essential zlib1g-dev libncurses5-dev libgdbm-dev libnss3-dev libssl-dev libreadline-dev libffi-dev wget wget https://www.python.org/ftp/python/3.7.3/Python-3.7.3.tar.xz tar -xf Python-3.7.3.tar.xz cd Python-3.7.3 ./configure --enable-optimizations make make altinstall  install pip apt-get install python3-pip  install virutalenv pip3 install virtualenv  install jupyter python3 -m pip install --upgrade pip python3 -m pip install jupyter  参考  Managing Multiple Versions of Python on Ubuntu  欢迎关注 欢迎关注微信公众帐号：沉风网事(savewind)</description>
+apt-get安装 apt update apt install software-properties-commonadd-apt-repository ppa:deadsnakes/ppaapt install python3.7源码安装 sudo apt updatesudo apt install build-essential zlib1g-dev libncurses5-dev libgdbm-dev libnss3-dev libssl-dev libreadline-dev libffi-dev wgetwget https://www.python.org/ftp/python/3.7.3/Python-3.7.3.tar.xz tar -xf Python-3.7.3.tar.xz cd Python-3.7.3./configure --enable-optimizationsmake make altinstall install pip apt-get install python3-pipinstall virutalenv pip3 install virtualenvinstall jupyter python3 -m pip install --upgrade pippython3 -m pip install jupyter参考  Managing Multiple Versions of Python on Ubuntu  欢迎关注 欢迎关注微信公众帐号：沉风网事(savewind)</description>
     </item>
     
     <item>
@@ -461,13 +470,10 @@ Strengths 显而易见，Facebook具有以下优势：
  Facebook在全球有27亿用户 Facebook有真实的用户社交数据，天然支持KYC Facebook有优秀人才 libra有广泛的合作伙伴 Facebook有钱 公司的执行力  Weaknesses Facebook一直是一个toC的公司，有以下劣势：
  Facebook在金融领域缺少经验 Facebook不擅长与政府打交道的  Opportunities 在白皮书列举的机会，具体如下：
  •• 我们认为，应该让更多人享有获得金融服务和廉价资本的权利。
-•• 我们认为，每个人都享有控制自己合法劳动成果的固有权利。
-•• 我们相信，开放、即时和低成本的全球性货币流动将为世界创造巨大的经济机遇和商业价值。
-•• 我们坚信，人们将会越来越信任分散化的管理形式。
-•• 我们认为，全球货币和金融基础设施应该作为一种公共产品来设计和管理。
-•• 我们认为，所有人都有责任帮助推进金融普惠，支持遵守网络道德规范的用户，并持续维护这个生态系统的完整性。
- 官方白皮书是从用户与全球经济角度来看的，从Facebook这个公司的角度来看，有如下机会：
- 一种货币 一个联盟 一种权力 一项收入 一种趋势  一种货币 显而易见这种货币就是Libra coin。在现在的经济系统中可以发行货币只有国家的央行。以美国为例，作个类比如下：</description>
+  •• 我们认为，每个人都享有控制自己合法劳动成果的固有权利。
+  •• 我们相信，开放、即时和低成本的全球性货币流动将为世界创造巨大的经济机遇和商业价值。
+  •• 我们坚信，人们将会越来越信任分散化的管理形式。
+  •• 我们认为，全球货币和金融基础设施应该作为一种公共产品来设计和管理。</description>
     </item>
     
     <item>
@@ -480,7 +486,7 @@ Strengths 显而易见，Facebook具有以下优势：
 目标 sync.Pool解决以下问题：
  增加临时对象的用复用率，减少GC负担 通过对象的复用，减少内存申请开销，有利于提高一部分性能  实现 这一部分回答如何实现的问题。
 关于了解实现，最好的办法就是看代码。
-描述 type Pool struct { noCopy noCopy local unsafe.Pointer // local fixed-size per-P pool, actual type is [P]poolLocal localSize uintptr // size of the local array // New optionally specifies a function to generate // a value when Get would otherwise return nil. // It may not be changed concurrently with calls to Get. New func() interface{} }  各个成员含义如下：</description>
+描述 type Pool struct {noCopy noCopylocal unsafe.Pointer // local fixed-size per-P pool, actual type is [P]poolLocallocalSize uintptr // size of the local array// New optionally specifies a function to generate// a value when Get would otherwise return nil.// It may not be changed concurrently with calls to Get.New func() interface{}}各个成员含义如下：</description>
     </item>
     
     <item>
@@ -489,7 +495,7 @@ Strengths 显而易见，Facebook具有以下优势：
       <pubDate>Thu, 30 May 2019 11:58:06 +0200</pubDate>
       
       <guid>https://myself659.github.io/2019/05/30/%E4%BA%BA%E7%94%9F%E4%B8%AD%E6%9C%80%E6%98%82%E8%B4%B5%E7%9A%84%E6%95%99%E8%AE%ADsim%E5%8D%A1%E8%BD%AC%E7%A7%BB%E6%94%BB%E5%87%BB%E7%9A%84%E7%BB%86%E8%8A%82%E8%AF%91%E6%96%87/</guid>
-      <description> 上周三我损失了10万美元。它在24小时的时间内在“SIM转移攻击”中消失，耗尽了我的Coinbase帐户。事件已经过去了四天，我被摧毁了。我寝食难安;我充满了焦虑，懊悔和尴尬。
+      <description>上周三我损失了10万美元。它在24小时的时间内在“SIM转移攻击”中消失，耗尽了我的Coinbase帐户。事件已经过去了四天，我被摧毁了。我寝食难安;我充满了焦虑，懊悔和尴尬。
 这是我生命中最昂贵的一课，我想与尽可能多的人分享我的经验与教训。我的目标是提高对这类攻击的认识，并促使大家提高在线身份的安全性。
 这仍然是非常原始的（我还没有告诉我的家人）；请大家保留对本文所述的天真安全措施的判断。
 攻击的细节 您可能会问自己，究竟什么是“SIM转移攻击”？为了描述攻击，我们来看一下典型的在线身份。对于大多数人来说，下图应该看起来很熟悉。
@@ -500,20 +506,17 @@ SIM转移攻击 但是，“SIM转移攻击”是由未经授权的来源（攻�
 花点时间检查一下单个Google帐户绑定的大量敏感信息：
  您的地址，出生日期和其他私人，个人身份信息 访问您（和/或您的合作伙伴）的潜在妥协照片 访问您的日历和即将到来的旅行日期 访问您的私人电子邮件，文档和搜索历史记录 访问您的个人联系人及其私人信息以及与您的关系 访问您的主电子邮件地址用作身份验证来源的所有其他在线服务  事件时间线 通过更好地掌握如何进行此类攻击以及所涉及的范围，让我们深入探讨此特定攻击的时间线。我想描绘一下攻击是如何被执行的，以及我是如何经历这些事件的，以及如果您遇到类似的症状，您可以做些什么来保护自己。
 时间线分为四个部分：
- 我所经历的：从我的观点来看所经历的事件。如果你遇到类似的事情，这些都是你可能受到攻击的明确指示。
- 攻击者正在做什么：黑客用来进入我的Coinbase帐户的基本策略。
- 我感知到的威胁级别：我在这些事件发生时将其归因于威胁级别。
- 我应该拥有的威胁级别：事后看来，我希望在这些事件发生时我会拥有的威胁级别。
+  我所经历的：从我的观点来看所经历的事件。如果你遇到类似的事情，这些都是你可能受到攻击的明确指示。
+  攻击者正在做什么：黑客用来进入我的Coinbase帐户的基本策略。
+  我感知到的威胁级别：我在这些事件发生时将其归因于威胁级别。
+  我应该拥有的威胁级别：事后看来，我希望在这些事件发生时我会拥有的威胁级别。
   经验教训+建议 这是我生命中最昂贵的一节课。我在24小时内失去了相当重要比例的净值资产; 并且是不可逆的。以下是我鼓励其他人用来更好地保护自己的在线安全的一些建议： 使用硬件钱包，以确保您的加密：将您的密码到硬件钱包 /离线存储/ 多SIG钱包，只要你不交易。不要将资金闲置在交易所或法定进场。我将Coinbase视为银行账户，并且在发生攻击时你绝对没有追索权。我比大多数人更了解风险，但从未想过这样的事情会发生在我身上。我非常后悔没有采取加密安全措施。
- 基于SMS的2FA还不够：无论您尝试在线保护的资产和/或身份如何，都要升级到基于硬件的安全性（即：攻击者为实施攻击而必须物理获取的物理内容）。虽然Google Authenticator和Authy可以将您的移动设备转变为基于硬件的安全性，但我建议您更进一步。拿起你实际控制的YubiKey，不能被欺骗。
- 减少您的在线足迹：减少不必要地在线分享个人身份信息（出生日期，位置，嵌入其中的地理位置数据的图片等）的冲动。在发生攻击时，所有这些准公开数据都可以针对您。 Google Voice 2FA：在某些情况下，在线服务不支持基于硬件的2FA（它们依赖于较弱的基于SMS的2FA）。在这些情况下，您最好创建一个Google语音电话号码（无法通过SIM卡转移）并使用具有2-Factor Auth恢复号码的电话号码。
- 创建辅助电子邮件地址：不是将所有内容绑定到单个电子邮件地址，而是为关键在线身份（银行帐户，社交媒体帐户，加密交换等）创建辅助地址。请勿将此电子邮件地址用于其他任何内容并将其保密。使用某种形式的基于硬件的2FA备份该地址。
- 离线密码管理器：使用密码管理器输入密码。更好的是，使用密码存储等脱机密码管理器。lrvick拥有各种密码管理器的优秀对比图表，以及针对更具技术倾向的审查建议。
+  基于SMS的2FA还不够：无论您尝试在线保护的资产和/或身份如何，都要升级到基于硬件的安全性（即：攻击者为实施攻击而必须物理获取的物理内容）。虽然Google Authenticator和Authy可以将您的移动设备转变为基于硬件的安全性，但我建议您更进一步。拿起你实际控制的YubiKey，不能被欺骗。
+  减少您的在线足迹：减少不必要地在线分享个人身份信息（出生日期，位置，嵌入其中的地理位置数据的图片等）的冲动。在发生攻击时，所有这些准公开数据都可以针对您。 Google Voice 2FA：在某些情况下，在线服务不支持基于硬件的2FA（它们依赖于较弱的基于SMS的2FA）。在这些情况下，您最好创建一个Google语音电话号码（无法通过SIM卡转移）并使用具有2-Factor Auth恢复号码的电话号码。
+  创建辅助电子邮件地址：不是将所有内容绑定到单个电子邮件地址，而是为关键在线身份（银行帐户，社交媒体帐户，加密交换等）创建辅助地址。请勿将此电子邮件地址用于其他任何内容并将其保密。使用某种形式的基于硬件的2FA备份该地址。
+  离线密码管理器：使用密码管理器输入密码。更好的是，使用密码存储等脱机密码管理器。lrvick拥有各种密码管理器的优秀对比图表，以及针对更具技术倾向的审查建议。
   关于读者的评论 我明白这一点：鉴于我天真的安全实践，我可能就应该注定被黑客攻击。这样做不会减少受到任何伤害，并且会削弱这个故事的主旨，即：
- 让别人知道受到伤害是多么容易 使用上述知识和建议来优先考虑您的在线身份的安全性  我禁不住想到我可以做的小而轻松的事情来保护自己。我的脑海中涌现各种假设。
-然而，这些想法伴随懒惰和幸存者偏见。我从来没有认真对待我的在线安全，因为我从未经历过攻击。虽然我了解自己的风险状况，但是我就是太懒导致我没有用该有的严谨来保护我的资产。
-我恳请你们从这些错误中吸取教训。
-参考  The Most Expensive Lesson Of My Life: Details of SIM port hack  </description>
+ 让别人知道受到伤害是多么容易 使用上述知识和建议来优先考虑您的在线身份的安全性  我禁不住想到我可以做的小而轻松的事情来保护自己。我的脑海中涌现各种假设。</description>
     </item>
     
     <item>
@@ -536,12 +539,11 @@ SIM转移攻击 但是，“SIM转移攻击”是由未经授权的来源（攻�
       
       <guid>https://myself659.github.io/2019/03/10/%E5%88%86%E4%BA%AB%E4%B8%80%E7%A7%8D%E5%88%86%E6%9E%90%E4%BF%A1%E6%81%AF%E6%8A%80%E6%9C%AF%E5%8F%91%E5%B1%95%E7%9A%84%E6%A1%86%E6%9E%B6/</guid>
       <description>信息技术发展史 为了与原文保持一致，将信息技术发展史分为以下6个阶段：
- 大型机时代 PC时代 互联网时代
- 社交网络时代
- 智能手机时代 区块链时代  框架介绍 将信息技术要素分为以下四种：
+ 大型机时代 PC时代 互联网时代 社交网络时代 智能手机时代 区块链时代  框架介绍 将信息技术要素分为以下四种：
  IO(接口) Infrastrure(基础设施) CPU(计算) HD(存储)  将技术要素分布为两个方向：
  User(用户端) Remote(远端即服务端及云端)  总体上来说，整个框架具有普适性，并且框架简单清晰。
 大型机时代-&amp;gt;PC时代 框架变化:
+PC时代&#34;
 成本：
  计算处理能力减弱，存储空间变小  收益：
  降低计算机使用门槛，方便更多人使用  数据:
@@ -549,12 +551,14 @@ SIM转移攻击 但是，“SIM转移攻击”是由未经授权的来源（攻�
 开发者的新机会：
  分发(软盘，CD) 新技术(本地数据，GUI，扬声器)  市场的新机会：
  消费级操作系统(微软，苹果) 视频游戏(EA sports，ID software) 硬件(Apple，IBM，HP，Dell)  PC时代-&amp;gt;互联网时代 框架变化:
+互联网时代&#34;
 成本：
  互联网数据成本 新公共基础设施的成本开支  收益：
  更多更便捷的信息访问入口，更大的存储空间，更强的计算处理能力  数据:
 中心化存储数据。
 开发者的新机会：
- 分发(云基础设施)  市场的新机会：</description>
+ 分发(云基础设施)  市场的新机会：
+ 网上购物(亚马逊，eBay，Paypal) 在线广告(谷歌，雅虎) 流媒体(Skype，Netflix) 互联网服务提供商(AOL)  互联网时代-&amp;gt;社交网络时代 框架变化:</description>
     </item>
     
     <item>
@@ -565,7 +569,7 @@ SIM转移攻击 但是，“SIM转移攻击”是由未经授权的来源（攻�
       <guid>https://myself659.github.io/2019/03/09/%E5%88%A9%E7%94%A8kube-eagle%E7%9B%91%E6%8E%A7kubernetes%E9%9B%86%E7%BE%A4%E8%B5%84%E6%BA%90/</guid>
       <description>安装helm helm是Kubernetes集群的npm。
 下载脚本add_helm.sh 脚本内容如下：
-#!/usr/bin/env bash echo &amp;quot;install helm&amp;quot; # installs helm with bash commands for easier command line integration curl https://raw.githubusercontent.com/kubernetes/helm/master/scripts/get | bash # add a service account within a namespace to segregate tiller kubectl --namespace kube-system create sa tiller # create a cluster role binding for tiller kubectl create clusterrolebinding tiller \ --clusterrole cluster-admin \ --serviceaccount=kube-system:tiller echo &amp;quot;initialize helm&amp;quot; # initialized helm within the tiller service account helm init --service-account tiller # updates the repos for Helm repo integration helm repo update echo &amp;quot;verify helm&amp;quot; # verify that helm is installed in the cluster kubectl get deploy,svc tiller-deploy -n kube-system  执行脚本安装helm sh add_helm.</description>
+#!/usr/bin/env bashecho &amp;quot;install helm&amp;quot;# installs helm with bash commands for easier command line integrationcurl https://raw.githubusercontent.com/kubernetes/helm/master/scripts/get | bash# add a service account within a namespace to segregate tillerkubectl --namespace kube-system create sa tiller# create a cluster role binding for tillerkubectl create clusterrolebinding tiller \--clusterrole cluster-admin \--serviceaccount=kube-system:tillerecho &amp;quot;initialize helm&amp;quot;# initialized helm within the tiller service accounthelm init --service-account tiller# updates the repos for Helm repo integrationhelm repo updateecho &amp;quot;verify helm&amp;quot;# verify that helm is installed in the clusterkubectl get deploy,svc tiller-deploy -n kube-system执行脚本安装helm sh add_helm.</description>
     </item>
     
     <item>
@@ -576,12 +580,9 @@ SIM转移攻击 但是，“SIM转移攻击”是由未经授权的来源（攻�
       <guid>https://myself659.github.io/2019/01/23/%E8%B0%88%E8%B0%88%E5%81%9A%E4%BA%8B%E7%9A%84%E5%8E%9F%E5%88%99/</guid>
       <description>前言 这篇文章规划了很久，本来打算年前写，各种事情加上自己的拖延症，到现在才开始写。
 做事 如果说人的一生做什么？总结一下，可以划分两个方面：
- 做人 做事
-  这两方面很多人喜欢用一句话来指导自己：低调做人，高调做事。在这里简单地谈一下自己对做事的原则的一些思考。
+ 做人 做事  这两方面很多人喜欢用一句话来指导自己：低调做人，高调做事。在这里简单地谈一下自己对做事的原则的一些思考。
 原则 关于做事，个人总结出来以下五个原则：
- 不要给自己设限
- 尊重事实与客观规律 站在巨人的肩膀上 正确的方向与方法 敏捷的行动
-  不要给自己设限 在中国历史上，从陈胜与吴广喊出&amp;rdquo;王候将相,宁有种乎&amp;rdquo;，在中国2000多年的历史，刘邦，刘裕，朱元璋以及太祖无不是从社会的底层走上权力的巅峰。在科技发展过程中 莱特兄弟并没有因为万有引力定律放弃研制飞机，终于发明世界上第一架飞机， 为后面的航空航天打下坚定的基础。
+ 不要给自己设限 尊重事实与客观规律 站在巨人的肩膀上 正确的方向与方法 敏捷的行动  不要给自己设限 在中国历史上，从陈胜与吴广喊出&amp;quot;王候将相,宁有种乎&amp;rdquo;，在中国2000多年的历史，刘邦，刘裕，朱元璋以及太祖无不是从社会的底层走上权力的巅峰。在科技发展过程中 莱特兄弟并没有因为万有引力定律放弃研制飞机，终于发明世界上第一架飞机， 为后面的航空航天打下坚定的基础。
 上面都是正面的例子，下面以自己为例举一个反面的例子：在2016年微信小程序出来的时候，当时就很看好微信小程序的未来，但是由于自己是一个后端程序员，不会前端代码开发，当时就认为这是前端作的事情。其实在现实工作中，我们时常也会给自己设限：
  &amp;ldquo;这个东西没有弄过&amp;rdquo; &amp;ldquo;我不会这个&amp;rdquo; &amp;ldquo;这个不属于我的工作范围&amp;rdquo;  二战以后，世界总体和平，特别是信息技术发展，无论是对公司和个人都有很多的空间和机会去探索。如果给自己设限，会失去大量的机会，对不起这个人类历史上最好的时代。
 尊重事实与客观规律 无论怎么样，事实就是事实，过去了就是过去了。大部分都是普通人，不是乔布斯没有强大的现实扭曲力。
@@ -594,10 +595,11 @@ SIM转移攻击 但是，“SIM转移攻击”是由未经授权的来源（攻�
  思想上作到拿来主义，行动方面要善假于物 避免不必要从0到1，如重复造轮子 合理地使用杠杆 不断学习与实践，提高认知水平与学习能力，保证可以站上更多巨人的肩膀  正确的方向与方法 &amp;ldquo;选择比努力重要&amp;rdquo;， 这是大家常说一句话，可见正确的方向与方法的重要性。
 这里引用曹大在其个人分享《成长的烦恼》中的一段话：
  告诉大家一个秘密，很多企业快速膨胀的时候，那些中层为了自己的发展，快速扩张，快速启动新的项目团队，每个项目看上去都很有价值很有机会，然后大家都很忙碌很拼为了各种新的机会打拼，但是呢，其实从公司战略和格局来说，绝大部分都是实验品，甚至连实验品都不算，是领导暂时没功夫搭理的垃圾。等遇到市场风向逆转的时候，老板开始核查成本，这些乱七八糟的玩意，咔嚓嚓砍掉，你觉得不公平，你很拼很努力的为公司效力，你加班修改bug，解决线上问题，各种辛苦各种贡献，结果老板看了一眼，一文不值，真的是一文不值。
-太多优秀的人才，在巨头公司里，连公司的核心价值和主要方向都看不清，在各种根本不重要的细枝末节里荒废了自己，最后在老板眼里一文不值。
+  太多优秀的人才，在巨头公司里，连公司的核心价值和主要方向都看不清，在各种根本不重要的细枝末节里荒废了自己，最后在老板眼里一文不值。
  只有方向对了，速度才有意义。
 其实在做事的时候，可以问一下自己几个问题：
- 我找到或想到了哪些方向与方法吗？ 这些方法可以起作用吗？ 还有没有更好的方法（选项）？  借助这几个问题，可以继续追问，找到事情与问题的关键所在。</description>
+ 我找到或想到了哪些方向与方法吗？ 这些方法可以起作用吗？ 还有没有更好的方法（选项）？  借助这几个问题，可以继续追问，找到事情与问题的关键所在。
+敏捷的行动 确定方向与方法后就是要行动。不然所有想法都是水中月，镜中花。这里自我批评一下，行动是我做的最差的一部分。</description>
     </item>
     
     <item>
@@ -630,14 +632,12 @@ SIM转移攻击 但是，“SIM转移攻击”是由未经授权的来源（攻�
  所以在技术上区块链的本质是分布式帐本技术(DLT)。
 重要性 Why Decentralization Matters这篇文章从互联网发展历程与面临问题说明去中心化重要性。
 去中心化重要性来自去中心化带来的影响与作用，具体如下：
- 去中心化可以降低垄断的可能性，是一种对抗垄断的重要方式 去中心化提供高可用性 去中心化对抗DDos 去中心化可以让人人参与，权力下放 去中心化是让数据归还用户，保护隐私的重要技术手段之一 去中心化消除中间环节，提高效率 去中心化与中心化并不是对立，可以相互补充 去中心化能够解决中心化无法解决的问题，如微信流控算法，并没有采用全局，而由节点根据延迟参数调整，另外是5G带来的高速传输与海量数据需要去中心化来来解决
-  去中心化解决问题  提供全球开放的分布式数据 提供不可更改的数据库 提供trustless的基础设施 基于以上三点的业务的需求  思考模型 如同前面的分布式系统一样，对于公链（去中心化系统）问题，也可以分为以下几个子问题：
+ 去中心化可以降低垄断的可能性，是一种对抗垄断的重要方式 去中心化提供高可用性 去中心化对抗DDos 去中心化可以让人人参与，权力下放 去中心化是让数据归还用户，保护隐私的重要技术手段之一 去中心化消除中间环节，提高效率 去中心化与中心化并不是对立，可以相互补充 去中心化能够解决中心化无法解决的问题，如微信流控算法，并没有采用全局，而由节点根据延迟参数调整，另外是5G带来的高速传输与海量数据需要去中心化来来解决  去中心化解决问题  提供全球开放的分布式数据 提供不可更改的数据库 提供trustless的基础设施 基于以上三点的业务的需求  思考模型 如同前面的分布式系统一样，对于公链（去中心化系统）问题，也可以分为以下几个子问题：
  在什么环境下？ 有哪些节点参与？ 通过什么样的共识算法？ 使什么业务？ 达成什么样的容错要求？  总结一句话：在什么环境下，有哪些节点参与，通过什么样的共识算法，使什么业务达成什么样的容错要求。
 下面就这五个问题展开说明。
 环境 大部分去中心化系统的环境要点如下：
  异步网络模型 网络结构是P2P网络 网络传输是不可靠的 系统异常是常态 并发 缺少全局时钟  (Ps:这里不展开说明了，谈谈对分布式系统的一些思考)
-节点 节点准入方面  节点自由加入与退出 节点需要通过PoW测试才能加入 节点需要PoS持仓才能加入
- 节点需要质押才能加入  节点角色  节点平等，无角色任何差异如比特币 节点分为超级节点，见证节点如EOS  节点数量  不限数量，如比特币，以太坊 指定数量，如EOS指定为21，steemit指定数量为11</description>
+节点 节点准入方面  节点自由加入与退出 节点需要通过PoW测试才能加入 节点需要PoS持仓才能加入 节点需要质押才能加入  节点角色  节点平等，无角色任何差异如比特币 节点分为超级节点，见证节点如EOS  节点数量  不限数量，如比特币，以太坊 指定数量，如EOS指定为21，steemit指定数量为11  节点可信  存在不可信的作恶节点 可信节点（算力）一定多于作恶节点（算力）  节点配置  机器性能波动大 网络带宽波动大 节点分布在全球各地 节点配置不受控 节点之间差异大如算力，POS投票权重  节点经济原则  99.</description>
     </item>
     
     <item>
@@ -676,16 +676,14 @@ Comware 开始之前，先介绍一下Comware。其主要要点如下：
  整个系统代码量超过了1000万行（开源代码除外） 巅峰时期开发人员1000左右 支持设备类型超过100多种，同时支持各种丰富的网络特性 性能与可用性要求高，需要满足欧美高端市场（金融，国防等）要求及互联网大流量的冲击 作为公司的中台，支撑公司绝大部分产业线（安全，路由，交换，云计算等）  下面我们就一一展开说明。
 业务 以业务中心。Comware作为一个网络操作系统，主要要求如下：
  充当网络设备的大脑 承载各种网络业务，并动态满足不同网络业务的要求及变化 保证整个系统 高可用性，高性能，可维护性，可扩展性，安全性等  文化 由于历史上的原因，整个研发文化总体上源于华为，稍有调整。具体要点如下：
- 质量为上 结果导向
- 研发三权分立 追求效率 鼓励创新 公开  关于科技公司的文化，推荐Netflix文化:自由与责任
+ 质量为上 结果导向 研发三权分立 追求效率 鼓励创新 公开  关于科技公司的文化，推荐Netflix文化:自由与责任
 团队 团队是从人的视角出发。要以人为本啊。
 团队梯队合理清楚，按技术水平划分具体如下：
  开发上岗人员 维护上岗人员 开发负责人 系统扩展组 系统组 架构组  团队组织划分以业务导向，按照不同的业务划分不同大组，独立进行代码管理。在各个大组一般分为开发与维护两个方面进行人员动态调配。
 团队建设主要是大组每周定期培训，鼓励分享，除此之外针对不同岗位有专项培训，如项目管理，代码管理。
 架构 架构不是我们常说的架构，这里的架导指导代码的工作（架构从事的角度出发）。
 选择开源，拥抱开源，不要重复造轮子 不得不说2008年开始预研下一代网络操作系统，当时的团队放弃vxwork，选择了开源linux，而且作到取自开源，高于开源，只使用linux基本组件（文件管理系统，内存管理系统，进程调度等），重新移植与修改协议栈，实现分布式网络协议，扩张SOCKET类型。采用Linux好处多多，具体如下：
- 充分吸引Linux开源精华 Linux开源发展路径，决定Linux便于改造与优化 与Linux一起升级，如内核2.6升级到4.x版本
- 方便开源引入支持，如移植wireshark， python Linux在服务器大量应用，业界有大量人才  合法合规 合法就不用多说了。注意的是要考虑到不同的国家与地区的差异。 合规方法最近的例子就是2017年百度要求内部全面停止使用React/React Native。利用开源的Linux作为基础开发商业操作系统，就不得不遵守开源协议。
+ 充分吸引Linux开源精华 Linux开源发展路径，决定Linux便于改造与优化 与Linux一起升级，如内核2.6升级到4.x版本 方便开源引入支持，如移植wireshark， python Linux在服务器大量应用，业界有大量人才  合法合规 合法就不用多说了。注意的是要考虑到不同的国家与地区的差异。 合规方法最近的例子就是2017年百度要求内部全面停止使用React/React Native。利用开源的Linux作为基础开发商业操作系统，就不得不遵守开源协议。
 KISS原则 关于KISS原则，架构设计通用原则，有太多说明，这里不展开。
 开放性 对外开放接口，如OAA（Open Application Architecture，开放应用架构），这样有以下好处：
  对公司内部来说，降低了耦合 对外部合作方来说，方便不同厂商系统集成 对客户来说，提供了更多的选择以及DIY能力 开放与释放了平台的能力  分层与分解 整个系统采用分层设计有如下优点：</description>
@@ -735,13 +733,12 @@ KISS原则 关于KISS原则，架构设计通用原则，有太多说明，这�
 私钥隔离 用冷钱包来实现与网络隔离，避免私钥被盗取或泄漏。
 私钥分片 私钥分片主要采用Shamir&amp;rsquo;s Secret Sharing技术。其技术原理如同藏宝图分成好几分份,这是多少电影与电视剧中出现的情节。
 原理：
-一个数学公式：y*y = a*x*x + b * x + c
+一个数学公式：yy = ax*x + b * x + c
 其中，c为私钥，当然中实际过程可以认为是保密的数据。 a，b这两个参数作为具体分片规则的描述。
 由上面公式可知，该公式对应一个双曲线。如果知道这个双曲线三个点的坐标，通过解方程组得出a，b，c的值。
 该技术有以下优点：
  该方案允许私钥拥有制定分片的规则。可以对同一个私钥采用不同的分片规则。拥有分片规则制定权，可以对分片对象加以管理，如添加分片，删除分片。 在没有不知道分片规则之下，通过任何一个分片都不能破解获取私钥。只有对应数量的分片在一起才能获取私钥和分片的规则。  具体应用如下：
- 私钥等敏感数据分割保护 多方验证 数据分享  参考  Shamir&amp;rsquo;s Secret Sharing
- Divide and Manage Secret Data Securely With Shamir&amp;rsquo;s Secret Sharing zeropass Threshold Signatures: The Future of Private Keys A beginner’s guide to Shamir’s Secret Sharing 私鑰分割 — Shamir’s Secret Sharing</description>
+ 私钥等敏感数据分割保护 多方验证 数据分享  参考  Shamir&amp;rsquo;s Secret Sharing Divide and Manage Secret Data Securely With Shamir&amp;rsquo;s Secret Sharing zeropass Threshold Signatures: The Future of Private Keys A beginner’s guide to Shamir’s Secret Sharing 私鑰分割 — Shamir’s Secret Sharing  </description>
     </item>
     
     <item>
@@ -771,9 +768,9 @@ KISS原则 关于KISS原则，架构设计通用原则，有太多说明，这�
       <pubDate>Wed, 17 Oct 2018 11:58:06 +0200</pubDate>
       
       <guid>https://myself659.github.io/2018/10/17/%E5%AE%89%E8%A3%85%E4%B8%8E%E5%BA%94%E7%94%A8prometheus%E7%9B%91%E6%8E%A7kubernetes%E9%9B%86%E7%BE%A4/</guid>
-      <description>安装Prometheus RBAC设置,获取创建集群角色权限 ACCOUNT=$(gcloud info --format=&#39;value(config.account)&#39;) kubectl create clusterrolebinding owner-cluster-admin-binding \ --clusterrole cluster-admin \ --user $ACCOUNT  注意：如果集群部署在google cloud上需要先执行这一步。
-创建Namespace kubectl create namespace monitoring  创建角色 脚本内容如下：
-apiVersion: rbac.authorization.k8s.io/v1beta1 kind: ClusterRole metadata: name: prometheus rules: - apiGroups: [&amp;quot;&amp;quot;] resources: - nodes - nodes/proxy - services - endpoints - pods verbs: [&amp;quot;get&amp;quot;, &amp;quot;list&amp;quot;, &amp;quot;watch&amp;quot;] - apiGroups: - extensions resources: - ingresses verbs: [&amp;quot;get&amp;quot;, &amp;quot;list&amp;quot;, &amp;quot;watch&amp;quot;] - nonResourceURLs: [&amp;quot;/metrics&amp;quot;] verbs: [&amp;quot;get&amp;quot;] --- apiVersion: rbac.</description>
+      <description>安装Prometheus RBAC设置,获取创建集群角色权限 ACCOUNT=$(gcloud info --format=&#39;value(config.account)&#39;)kubectl create clusterrolebinding owner-cluster-admin-binding \--clusterrole cluster-admin \--user $ACCOUNT注意：如果集群部署在google cloud上需要先执行这一步。
+创建Namespace kubectl create namespace monitoring创建角色 脚本内容如下：
+apiVersion: rbac.authorization.k8s.io/v1beta1kind: ClusterRolemetadata:name: prometheusrules:- apiGroups: [&amp;quot;&amp;quot;]resources:- nodes- nodes/proxy- services- endpoints- podsverbs: [&amp;quot;get&amp;quot;, &amp;quot;list&amp;quot;, &amp;quot;watch&amp;quot;]- apiGroups:- extensionsresources:- ingressesverbs: [&amp;quot;get&amp;quot;, &amp;quot;list&amp;quot;, &amp;quot;watch&amp;quot;]- nonResourceURLs: [&amp;quot;/metrics&amp;quot;]verbs: [&amp;quot;get&amp;quot;]---apiVersion: rbac.authorization.k8s.io/v1beta1kind: ClusterRoleBindingmetadata:name: prometheusroleRef:apiGroup: rbac.</description>
     </item>
     
     <item>
@@ -786,11 +783,11 @@ apiVersion: rbac.authorization.k8s.io/v1beta1 kind: ClusterRole metadata: name: 
  Golang Docker GitLab Kubernetes  具体原因参考关于技术选型的思考
 步骤 创建Kubernetes集群 自己搭建集群也可以，但是投入生产不建议使用。这里直接使用google cloud(调研几家发现G家这方面技术积累最深，生态完整)。
 创建帐号设置gitlab操作帐号，用于后面的CI/CD操作。
-kubectl apply -f gitlab-admin-service-account.yaml  kubectl -n kube-system describe secret $(kubectl -n kube-system get secret | grep gitlab-admin | awk &#39;{print $1}&#39;)  具体参考Adding and creating a new GKE cluster via GitLab
+kubectl apply -f gitlab-admin-service-account.yamlkubectl -n kube-system describe secret $(kubectl -n kube-system get secret | grep gitlab-admin | awk &#39;{print $1}&#39;)具体参考Adding and creating a new GKE cluster via GitLab
 创建DockerHub帐号 主要操作是在DockerHub创建帐号。 其他的云计算服务的镜像服务也可以。
 创建gitlab项目 正常创建代码仓库操作。
 准备代码 准备一个简单的web服务器。
-package main import ( &amp;quot;fmt&amp;quot; &amp;quot;net/http&amp;quot; ) func main() { http.HandleFunc(&amp;quot;/&amp;quot;, func(w http.ResponseWriter, r *http.Request) { fmt.</description>
+package mainimport (&amp;quot;fmt&amp;quot;&amp;quot;net/http&amp;quot;)func main() {http.HandleFunc(&amp;quot;/&amp;quot;, func(w http.ResponseWriter, r *http.Request) {fmt.Fprintf(w, &amp;quot;Hello, k8s-go!&amp;quot;)})http.</description>
     </item>
     
     <item>
@@ -822,8 +819,7 @@ package main import ( &amp;quot;fmt&amp;quot; &amp;quot;net/http&amp;quot; ) fun
  稳定优先，善用为上 立足现状，着眼未来 验证先行，应用在后 业务导向，实践驱动  下面就根据这些原则一一回答上面五个问题，但是不会涉及具体的问题如消息队列是选RabbitMQ还是Kafka。
 代码管理 对应上面的怎么管理代码的问题。首先是工具，现在大家都清一色的git。在git没有出来之前有以下这些工具：
  clearcase svn TortoiseCVS  再次就是选择平台。有以下选项
- github gitlab gitee gitbucket 自建gitlab
-  选择自建gitlab。主要考虑如下：
+ github gitlab gitee gitbucket 自建gitlab  选择自建gitlab。主要考虑如下：
  历史原因 Gitlab自带CI 代码安全考虑 自建gitlab带来的自主控制，有利于后续的发展  编程语言 以Golang为主，其他语言为辅助。
 Why Golang  个人及其团队主要成员都有Golang经验 Golang在区块链项目中会占主导地位 更多理由见：Golang最工程化的语言  运行环境 运行环境分为以下几种：
  物理主机 虚拟机 Docker  除了一些特殊的场景，现在流行的作法当然是Docker。</description>
@@ -847,7 +843,7 @@ Why Golang  个人及其团队主要成员都有Golang经验 Golang在区块链�
       <description>自2008年比特币诞生以来，其代表的区链技术的发展程度令人兴奋，区块链很快就成为日常生活中的流行语。特别是对于游戏行业，区块链能够带来新的游戏互动和体验方式，这种互动和体验方式有如下三个特点：
  玩家成为利益相关者 公正透明 大规模协作  下面对这三个特点分别说明：
 玩家成为利益的创造者与参与者 Play2Live平台是互动功能和货币化工具的独特组合。这项针对视频广播游戏和网络体育内容的服务允许每个参与者赚取收益，包括流媒体服务商和普通观众。
-公正透明 传统的游戏，由后台产生随机数，存在作假等各种暗箱操作。 有这么一款游戏：Piggy Breaker，他们是blockchain hero活动的胜利者，通过基于&amp;rdquo;可证明的公平&amp;rdquo;原则以透明的方式产生游戏中的随机性，解决了部分透明度问题。确保游戏的公平性。同时避免出现了平台跑路的潜在问题。另一个最典型的例子是中本聪筛子。
+公正透明 传统的游戏，由后台产生随机数，存在作假等各种暗箱操作。 有这么一款游戏：Piggy Breaker，他们是blockchain hero活动的胜利者，通过基于&amp;quot;可证明的公平&amp;quot;原则以透明的方式产生游戏中的随机性，解决了部分透明度问题。确保游戏的公平性。同时避免出现了平台跑路的潜在问题。另一个最典型的例子是中本聪筛子。
 大规模协作 依赖于P2P网络，可以提供去中心化协作。但是也存在一些问题，如去中心化网络的带来的延迟问题，适合策略性游戏。
 欢迎关注 欢迎关注微信公众帐号：沉风网事(savewind)</description>
     </item>
@@ -890,10 +886,10 @@ Why Golang  个人及其团队主要成员都有Golang经验 Golang在区块链�
 它看起来与衰退相似，但不同之处是，无法通过降低利率来挽回局面。在衰退中，可以通过降低利率来刺激借贷。但是，在去杠杆化过程中，由于利率已经很低接近0，从而丧失刺激功能，因此降低利率不起作用。美国国内的利率在1930年代的去杠杆化期间下降到0，在2008年也是如此。
 衰退与去杠杆化之间的差别在于，在去杠杆化过程中，借款人的债务负担变得过重，无法通过降低利率来减轻贷款人意识到，债务过于庞大，根本无法足额偿还。借款人失去了偿债能力，其抵押物失去价值，他们觉得受到债务的极大伤害，不想再借入更多债务。贷款人停止放贷，借款人停止借贷。
 整个经济体与个人一样都失去了信用度，那么应该怎样应对去杠杆化？问题在于，债务负担过重，必须减轻。为此可以采用四种办法：
- 个人、企业和政府削减支出
- 通过债务违约和重组来减少债务
- 财富再分配，将财富从富人转给穷人
- 最后，央行发行更多货币
+  个人、企业和政府削减支出
+  通过债务违约和重组来减少债务
+  财富再分配，将财富从富人转给穷人
+  最后，央行发行更多货币
   这四种办法被用于现代历史上的每一个去杠杆化过程。通常第一个措施是削减支出。我们刚才看到，个人、企业、银行和政府都勒紧裤带削减支出，从而能够减少债务。
 我们经常把这称为紧缩。当借款人不再借入新的债务，并开始减少旧债务的时候，你会以为债务负担会减轻但情况正好相反，支出减少了，而一个人的支出是另一个人的收入，这就导致收入下降。收入下降速度超过还债的速度，因此债务负担实际上更为沉重。我们已经看到，这种削减支出的做法引起通货紧缩，令人痛苦。企业不得不削减成本，这意味着工作机会减少，失业率上升。这导致下一个步骤，即必须减少债务！
 很多借款人无法偿还贷款，而借款人的债务是贷款人的资产。如果借款人不偿还银行贷款，人们会担心银行无法返还其存款。因此纷纷从银行取出存款银行受到挤兑，而个人、企业和银行出现债务违约。这种严重的经济收缩就是萧条。
@@ -903,9 +899,7 @@ Why Golang  个人及其团队主要成员都有Golang经验 Golang在区块链�
 由于政府需要更多的钱，而且大量财富集中在少数人的手中，政府自然而然地增加对富人的征税，以帮助经济中的财富再分配。把财富从富人那里转给穷人，正在困苦当中的穷人开始怨恨富人，承受经济疲弱、资产贬值和增税压力的富人开始怨恨穷人。如果萧条继续下去，就会爆发社会动荡。不仅国家内部的紧张加剧而且国家之间也会这样，债务国和债权国之间尤其如此。这种局势可以导致政治变革，有时是极端的变革。1930年代，这种局势导致希特勒掌权、欧洲爆发战争和美国的大萧条，要求采取行动来结束萧条的压力越来越大。
 不要忘记，人们心目中的货币实际上大部分是信贷因此，信贷一旦消失，人们的钱会不够花。人们迫切需要钱，而你一定记得，谁可以发行货币：中央银行可以。央行已经把利率降到接近零的水平，现在不得不发行更多货币。
 发行货币与削减支出、减少债务和财富再分配不同会引起通货膨胀和刺激经济。中央银行不可避免地凭空发行更多货币并使用这些货币来购买金融资产和政府债券。这种情况发生在美国大萧条期间，并于2008年再次爆发。当时美国的中央银行，即联邦储备委员会，增加发行了两万多亿美元。世界各地能够这样做的其他央行也增发了很多货币。央行通过用这些货币购买金融资产帮助推升了资产价格，从而提高了人们的信用，但是这仅仅有助于那些拥有金融资产的人。你看央行可以发行货币，但是只能购买金融资产。而另一方面，中央政府可以购买商品和服务，可以向人民送钱但是无法印钞票。因此，为了刺激经济，央行和政府必须合作。央行通过购买政府债券，其实是把钱借给政府，使其能够运行赤字预算，并通过刺激计划和失业救济金来增加购买商品和服务的支出这增加了人们的收入，也增加了政府的债务，但是这个办法将降低经济中的总债务负担，这是一个风险很大的时刻。
-决策者需要平衡考虑降低债务负担的四种办法，必须平衡兼顾通货紧缩的办法和通货膨胀的办法，以便保持稳定。如果取成适当的平衡，就可以带来和谐的去杠杆化。所以说去杠杆化可以是痛苦的，也可以是和谐的怎样才能实现和谐的去杠杆化？
-尽管去杠杆化是艰难的但以尽可能好的办法来处理艰难的局势却是一件好事。这比杠杆化阶段大量举债产生过度失衡现象要好得多。在和谐的去杠杆化过程中，债务收入比率下降，经济实际上是正增长。同时通货膨胀并不是一个问题。这是通过适当的平衡所取得的。为了取得适当的平衡，需要结合削减支出、减少债务、转移财富和发行货币的办法以保持经济和社会稳定。
-有人问，发行货币是否会加剧通货膨胀？如果增发的货币抵消信货的降幅，就不会引发通货膨胀。不要忘记，重要的是支出。每一块钱的支出无论支付的是货币，还是信用，对价格的影响都是一样的。央行可以通过增加货币发行量来弥补消失的信贷。央行为了扭转局面，不仅需要推动收入的增长，而且需要让收入的增长率超过所积累债务的利率。这是什么意思？主要的意思是，收入一定要比债务增长得快。例如，我们假设有个国家正在经历去杠杆化，其债务收入比率是100％ 这意味著，债务量相当于整个国家一年的收入。假设这些债务的利率是2%，如果债务以2%的速率增加而收入的增长率仅有大约1%。那么债务负担永远不会减轻必需发行更多货币，使收入增长率超过利率。然而，发行货币太容易了，而且比其他办法受欢迎。因此这个办法可能易于被滥用。关键是避免像1920年代去杠杆化的德国那样发行过多的货币，从而导致恶性通货膨胀。</description>
+决策者需要平衡考虑降低债务负担的四种办法，必须平衡兼顾通货紧缩的办法和通货膨胀的办法，以便保持稳定。如果取成适当的平衡，就可以带来和谐的去杠杆化。所以说去杠杆化可以是痛苦的，也可以是和谐的怎样才能实现和谐的去杠杆化？</description>
     </item>
     
     <item>
@@ -941,7 +935,7 @@ Golang最工程化的语言。
       <pubDate>Thu, 21 Jun 2018 11:58:06 +0200</pubDate>
       
       <guid>https://myself659.github.io/2018/06/21/ipfs%E4%B8%93%E9%A2%98/</guid>
-      <description> 前言 IPFS（包括filecoin）无论从技术视角还是商业视角都有很多有意思的内容（关键是自己很看好这个技术），所以要准备搞一个IPFS专题。
+      <description>前言 IPFS（包括filecoin）无论从技术视角还是商业视角都有很多有意思的内容（关键是自己很看好这个技术），所以要准备搞一个IPFS专题。
 文章  IPFS与下一代网络安全 下一代互联网基础：IPFS.pdf  动态  Filecoin 2017 Q4 Update Filecoin 2018 Q1 &amp;amp; Q2 Update Filecoin 2019 Q2 &amp;amp; Q3 Update Filecoin Roadmap Update Q4 2019  参考  ipfs filecoin  </description>
     </item>
     
@@ -965,8 +959,7 @@ Golang最工程化的语言。
  抽签 抽奖 抛硬币  随机是一种隐藏方式 同样拿抽奖为例，将少量的中奖者隐藏在抽奖参与者中。从概率论的角度上看就是将分子隐藏分母当中。
 随机是一种分散方式 典型的例子就是随机数，避免产生的数据集中；除此之外Markov链实现一种离散时间随机过程。
 随机是一种达成共识的方式 还拿抽签为例，这种方式是我们达成共识的一种重要的低成本且公平的共识方式，具体如下：
- 比赛过程中通过抽签解决出场顺序 家里贫穷时，有多个读书的，通过抽签来决定的
-  随机是一种降低冲突的方式 随机带来的分散性，可以帮助解决冲突，例如raft协议在选leader过程中通过随机来避免多个候选者同时竞争leader的情况出现。
+ 比赛过程中通过抽签解决出场顺序 家里贫穷时，有多个读书的，通过抽签来决定的  随机是一种降低冲突的方式 随机带来的分散性，可以帮助解决冲突，例如raft协议在选leader过程中通过随机来避免多个候选者同时竞争leader的情况出现。
 随机是一种保护与安全方式 一滴水只有放进大海才永远不会干涸。在Algorand中通过VRF保护记账节点，将记帐节点隐藏在于众多节点当中。在数字货币钱包利用随机性生产私钥来保护私钥；除了这些以外，更多随机数在在区块链有许多利用随机来保证公链安全的应用，可以参考这篇文章区块链中的随机数
 随机是一种需求 小道消息的抽奖助手将随机这一需求产品化。
 小结 总之，随机在生活中无处不在。随机以上用途来自随机的不确定性。随机的本质是不确性。 随机当中还有很多可以挖掘的认识与理解。
@@ -981,7 +974,7 @@ Golang最工程化的语言。
       <guid>https://myself659.github.io/2018/05/15/%E4%BB%A5%E5%A4%AA%E5%9D%8A%E4%BA%A4%E6%98%93%E6%B1%A0%E5%88%86%E6%9E%90/</guid>
       <description>简介 以太坊交易池有以下功能：
  缓存交易 清理交易 实现交易gasPrice竞价功能 配合出块，提供打包交易 交易查询  配置 配置描述 geth中用数据结构TxPoolConfig描述交易池配置，具体如下：
-// TxPoolConfig are the configuration parameters of the transaction pool. type TxPoolConfig struct { NoLocals bool // Whether local transaction handling should be disabled Journal string // Journal of local transactions to survive node restarts Rejournal time.Duration // Time interval to regenerate the local transaction journal PriceLimit uint64 // Minimum gas price to enforce for acceptance into the pool PriceBump uint64 // Minimum price bump percentage to replace an already existing transaction (nonce) AccountSlots uint64 // Minimum number of executable transaction slots guaranteed per account GlobalSlots uint64 // Maximum number of executable transaction slots for all accounts AccountQueue uint64 // Maximum number of non-executable transaction slots permitted per account GlobalQueue uint64 // Maximum number of non-executable transaction slots for all accounts Lifetime time.</description>
+// TxPoolConfig are the configuration parameters of the transaction pool.type TxPoolConfig struct {NoLocals bool // Whether local transaction handling should be disabledJournal string // Journal of local transactions to survive node restartsRejournal time.Duration // Time interval to regenerate the local transaction journalPriceLimit uint64 // Minimum gas price to enforce for acceptance into the poolPriceBump uint64 // Minimum price bump percentage to replace an already existing transaction (nonce)AccountSlots uint64 // Minimum number of executable transaction slots guaranteed per accountGlobalSlots uint64 // Maximum number of executable transaction slots for all accountsAccountQueue uint64 // Maximum number of non-executable transaction slots permitted per accountGlobalQueue uint64 // Maximum number of non-executable transaction slots for all accountsLifetime time.</description>
     </item>
     
     <item>
@@ -1005,7 +998,7 @@ Golang最工程化的语言。
       <guid>https://myself659.github.io/2018/05/05/%E4%BB%A5%E5%A4%AA%E5%9D%8A%E6%8F%90%E4%BA%A4%E4%BA%A4%E6%98%93%E6%B5%81%E7%A8%8B%E5%88%86%E6%9E%90/</guid>
       <description>说明 代码基于go-ethereum，版本v1.8.10。
 RPC代码入口 SendTransaction
-// SendTransaction will create a transaction from the given arguments and // tries to sign it with the key associated with args.To. If the given passwd isn&#39;t // able to decrypt the key it fails. func (s *PrivateAccountAPI) SendTransaction(ctx context.Context, args SendTxArgs, passwd string) (common.Hash, error) { if args.Nonce == nil { // Hold the addresse&#39;s mutex around signing to prevent concurrent assignment of // the same nonce to multiple accounts.</description>
+// SendTransaction will create a transaction from the given arguments and// tries to sign it with the key associated with args.To. If the given passwd isn&#39;t// able to decrypt the key it fails.func (s *PrivateAccountAPI) SendTransaction(ctx context.Context, args SendTxArgs, passwd string) (common.Hash, error) {if args.Nonce == nil {// Hold the addresse&#39;s mutex around signing to prevent concurrent assignment of// the same nonce to multiple accounts.</description>
     </item>
     
     <item>
@@ -1029,7 +1022,7 @@ QQ还是让位微信，活跃度下降，用户时长下降。
       <pubDate>Fri, 23 Mar 2018 11:58:06 +0200</pubDate>
       
       <guid>https://myself659.github.io/2018/03/23/%E4%B8%BA%E4%BB%80%E4%B9%88bft%E8%A6%81%E6%B1%82%E8%AF%9A%E5%AE%9E%E8%8A%82%E7%82%B9%E6%95%B0%E9%87%8F%E5%A4%A7%E4%BA%8E%E6%80%BB%E8%8A%82%E7%82%B9%E7%9A%84%E4%B8%89%E5%88%86%E4%B9%8B%E4%BA%8C/</guid>
-      <description> 相信很多人都知道，BFT(Byzantine fault tolerance)要求诚实节点数量大于总节点的三分之二。
+      <description>相信很多人都知道，BFT(Byzantine fault tolerance)要求诚实节点数量大于总节点的三分之二。
 为什么会有这个要求？
 多数派原则 多数派原则在分布式系统很常见，即确保网络分化情况下的决议唯一。其原理是，假如节点总数是2f+1，那么一项决议得到多于f个节点赞成则获得通过。leader选举中，网络分化下，只有具有多数派节点的部分才可能选出leader。多数派还可以用于副本管理，根据实际情况调整写副本数和读副本数，在可靠性和性能之间取得平衡。 在分布式系统，无论paxos，还是raft，以投票来达成共识，在整个达成共识的过程中都遵守多数派原则。
 下面先看多数派原则在raft中应用。
@@ -1046,7 +1039,7 @@ BFT 在Raft协议中假设所有节点都是诚实节点，而在BFT假定系统
       <pubDate>Thu, 08 Mar 2018 11:58:06 +0200</pubDate>
       
       <guid>https://myself659.github.io/2018/03/08/%E7%9F%BF%E5%B7%A5%E4%BA%94%E5%AE%97%E7%BD%AA/</guid>
-      <description> 比特币生态 比特币生态有以下几个角色：
+      <description>比特币生态 比特币生态有以下几个角色：
  比特币核心开发者，他们开发与更新比特币技术, 负责开发与维护代码 矿工们，运行区块链技术与算力保证，负责执行代码 交易所，比特币网络的IO,为整个网络的运行提供外部价值的IO  其中矿工有以下五宗罪，具体如下：
 IFO帮凶 从BCH开始，一时间多少IFO兴起，任何一个IFO背后都有矿工的支持。
 自私挖矿 这是矿工之间的作恶。
@@ -1064,8 +1057,7 @@ IFO帮凶 从BCH开始，一时间多少IFO兴起，任何一个IFO背后都有�
       <guid>https://myself659.github.io/2018/03/04/%E4%BB%8E%E7%97%9B%E7%82%B9%E7%88%BD%E7%82%B9%E7%97%92%E7%82%B9%E7%9C%8B%E5%8C%BA%E5%9D%97%E9%93%BE/</guid>
       <description>说明 希望通过痛点，爽点，痒点的分析，看看区块链是不是刚需？区块链在哪些场景下有迫切的需求？
 首先，先看看下面三个定义：
- 痛点就是恐惧
- 爽点是即时满足 痒点是满足虚拟自我  （PS:上述三个定义来自产品大神梁宁的《产品思维30讲》）
+ 痛点就是恐惧 爽点是即时满足 痒点是满足虚拟自我  （PS:上述三个定义来自产品大神梁宁的《产品思维30讲》）
 痛点 1. 数据共享 具体场景如下：
  银行征信数据共享，但是不想暴露原始数据  2. 隐私保护 具体场景如下：
  大数据“杀熟”不“杀生”，你还敢愉快地买买买吗 医疗数据共享，但是担心在共享过程中出现患者的隐私泄漏？  3. 财富配置 典型的就是比特币，抗通胀需求，防止财富在法币大量放水的情况下被稀释(虽然价格变动大)，同时也是一种新形式的财富配置方式。
@@ -1078,7 +1070,8 @@ IFO帮凶 从BCH开始，一时间多少IFO兴起，任何一个IFO背后都有�
 4. 抗监管 比特币的市场就说明一些人的特定需求，如大家都懂的洗钱等等
 痒点 1. ICO 如果在国内不禁止，估计有更多的人投入到ICO中，为什么呢？ICO前期造富运动，满足很多人对一夜暴富的强烈愿望。
 个人能力有限加上区块链应用领域十分广泛，上面并没有一一俱到，不足与错误欢迎指正。(PS: 币圈一日，世上一年，更有各种新技术层出不穷，需要深入学习，恕没有展开说明，更多应用参考下图)
-(To be continue)</description>
+(To be continue)
+参考  天猫 88VIP 大数据杀熟事件发酵，只能说阿里的反侦察技术做的太烂，被用户发现了  </description>
     </item>
     
     <item>
@@ -1087,7 +1080,7 @@ IFO帮凶 从BCH开始，一时间多少IFO兴起，任何一个IFO背后都有�
       <pubDate>Sun, 25 Feb 2018 11:58:06 +0200</pubDate>
       
       <guid>https://myself659.github.io/2018/02/25/usdt-faq/</guid>
-      <description> USDT可信吗？ 技术上可信，但是取决于背后公司的实力背书。更多可以参考reddit 讨论
+      <description>USDT可信吗？ 技术上可信，但是取决于背后公司的实力背书。更多可以参考reddit 讨论
 从现在的情况USDT并不可信，长期持有USDT有风险。
 USDT发行是可控吗？ USDT发行泰达公司掌握，缺少有效监管与审计。这样会导致USDT与美元的准备金并不是1：1，很有可能是1：0.1。
 USDT有什么风险？ 存在一定的风险，参考钱宝。
@@ -1111,16 +1104,16 @@ OP_RETURN是比特币0.9版本引入支持一种新的操作符，目的是允�
 USDT USDT又名Tether，通过Tether提供1：1美元兑换服务，为法币与数字货币提供兑换服务。 国内交易所关闭后，国内玩币的人都知道，这里不过多介绍。
 架构 各层介绍如下：
 比特币区块链层，主要实现Tether分布式帐本功能。Tether交易信息通过OP_RETURN保存在比特币的分布式帐本中。
-Omni协议层，Omni协议层主要功能如下： 1. 创建与销毁USDT 2. 提供OmniApi 3. 跟踪Tether流通，通过Omnichest.info提供区块链浏览器功能 4. 支持用户交易与保存Tether(USDT)
-Tether业务层，Tether业务层主要功能如下： 1. 法币兑换Tether(USDT) 2. Tether(USDT)兑换法币 3. 监管流通中Tether(USDT)
-流程 这里与普通交易所的流程类似。法币兑换USDT，发放相应USDT,USDT兑换法币，回收USDT。
+Omni协议层，Omni协议层主要功能如下：
+ 创建与销毁USDT 提供OmniApi 跟踪Tether流通，通过Omnichest.info提供区块链浏览器功能 支持用户交易与保存Tether(USDT)  Tether业务层，Tether业务层主要功能如下：
+ 法币兑换Tether(USDT) Tether(USDT)兑换法币 监管流通中Tether(USDT)  流程 这里与普通交易所的流程类似。法币兑换USDT，发放相应USDT,USDT兑换法币，回收USDT。
 交易 具体看一个交易吧。
 先上图：
 主要看交易的输入与输出，这里关注点主要在输出，为什么输出有三个呢？ 第一个很容易理解，表示找零 第二个表示什么呢？表示转帐对方的地址，具体参考wiki 第三个OP_RETURN用于存储Tether部分转帐信息
 图中的0x155十六进对应十进制341，在染色币的体系中对应类型表示Tether，具体参考染色币列表。 转帐的数量在哪里体现呢？转帐数字为000002ba7def3000，占用8个字节。对应十进制数字结果为：
-&amp;gt;&amp;gt;&amp;gt; int(&#39;0x000002ba7def3000&#39;,16) 3000000000000L  图中显示的Tether的交易的信息，这些交易信息来自比特币交易信息。
+&amp;gt;&amp;gt;&amp;gt; int(&#39;0x000002ba7def3000&#39;,16)3000000000000L图中显示的Tether的交易的信息，这些交易信息来自比特币交易信息。
 omni封装OP_RETURN信息代码如下：
-UniValue omni_createpayload_simplesend(const UniValue&amp;amp; params, bool fHelp) { if (fHelp || params.size() != 2) throw runtime_error( &amp;quot;omni_createpayload_simplesend propertyid \&amp;quot;amount\&amp;quot;\n&amp;quot; &amp;quot;\nCreate the payload for a simple send transaction.\n&amp;quot; &amp;quot;\nArguments:\n&amp;quot; &amp;quot;1.</description>
+UniValue omni_createpayload_simplesend(const UniValue&amp;amp; params, bool fHelp){if (fHelp || params.size() != 2)throw runtime_error(&amp;quot;omni_createpayload_simplesend propertyid \&amp;quot;amount\&amp;quot;\n&amp;quot;&amp;quot;\nCreate the payload for a simple send transaction.\n&amp;quot;&amp;quot;\nArguments:\n&amp;quot;&amp;quot;1. propertyid (number, required) the identifier of the tokens to send\n&amp;quot;&amp;quot;2.</description>
     </item>
     
     <item>
@@ -1157,8 +1150,7 @@ DID，例如美图的区块链白皮书所提到的内容。
 头部应用 选择一个不断扩展区块链平台，开发头部应用的Dapp。
 结论 如果公司有能力，如果业务与场景需要，开发自己的公链是最好的选择。主要原因是公链是面向全球市场，空间最大。
 一个资金充足的企业，如果投入一个10到20人小团队（要求吗，就是每个人都能独立干好活，当然有顶尖人才那更好了）。一年投入一到二千万就可以搞起来了，快的话也就半年吧。
-参考  Decentralized Digital Identities and Blockchain – The Future as We See It 美图区块链
-  欢迎关注 欢迎关注微信公众帐号：沉风网事(savewind)</description>
+参考  Decentralized Digital Identities and Blockchain – The Future as We See It 美图区块链  欢迎关注 欢迎关注微信公众帐号：沉风网事(savewind)</description>
     </item>
     
     <item>
@@ -1167,7 +1159,7 @@ DID，例如美图的区块链白皮书所提到的内容。
       <pubDate>Wed, 21 Feb 2018 11:58:06 +0200</pubDate>
       
       <guid>https://myself659.github.io/2018/02/21/%E8%B0%88%E8%B0%88%E6%95%B0%E5%AD%97%E8%B4%A7%E5%B8%81%E9%92%B1%E5%8C%85/</guid>
-      <description> 战略地位 基于区块链的价值互联网，离不开token经济。数字货币钱包在整个区块链生态的地位如同互联网的支付宝与微信支付。其重要性不用多说了。
+      <description>战略地位 基于区块链的价值互联网，离不开token经济。数字货币钱包在整个区块链生态的地位如同互联网的支付宝与微信支付。其重要性不用多说了。
 功能 从价值的角度来看，主要有以下三个功能：
  价值确权 价值存储 价值IO  价值IO，以Wallet as a Service方式有以下业务：
  金融（理财，期货等等） 交易（接入去中心化交易，中心化交易所，场外交易） Dapp平台，支持第三方Dapp接入  本质 从技术上看，本质上是私钥，私钥，私钥。重要的事情说三遍。
@@ -1197,8 +1189,8 @@ DID，例如美图的区块链白皮书所提到的内容。
  向商业银行提供货款 以本国法币兑换挣回来的外汇 向政府或者国有企业等单位提供借款  问题：货币的发行量怎么确定？ 具体理论模型： M = PQ/V
 其中M指流通中所需货币量（通货量） 其中P指商品的平均价格 其中Q指商品数量 其中V指货币流通速度（以货币周转次数计）
 如何设定于P,Q,V的值取决于政策与策略，反正是一件很复杂的事情。
-这里举两个乱发货币的典型（过于超发货币，是自寻死路，会造成信用破产）： 1. 国共内战的国民党 2. 津巴布韦
-货币发行控制权在央行手中。
+这里举两个乱发货币的典型（过于超发货币，是自寻死路，会造成信用破产）：
+ 国共内战的国民党 津巴布韦  货币发行控制权在央行手中。
 问题：货币发行以什么作为背书？ 国家实力，无论是早期的英镑还是现在的美元。
 比特币 问题：为什么需要比特币？ 存在即合理。比特币的一些特性满足市场的需求。
 问题：谁可以发行比特币？ 在比特币被挖完之前，通过竞争，成功获取记帐权的矿工可以发行比特币。
@@ -1218,8 +1210,7 @@ PS: 初学经济学，有不足与错误敬请指正。
       
       <guid>https://myself659.github.io/2018/02/05/%E5%AF%B9%E4%B8%AD%E5%9B%BD%E4%BA%92%E8%81%94%E7%BD%91%E4%BA%A7%E5%93%81%E7%9A%84%E4%B8%80%E4%BA%9B%E5%BB%BA%E8%AE%AE/</guid>
       <description>具体以公司及产品划分。
-腾讯  打通帐号系统，如qq与微信在其他腾讯产品的功能不一致  微信  整理未读信息，而不是让用户去找哪条信息未读，特别是存在大量的会话的情况 公众帐号平台写作支持从本地导入markdown功能 公众帐号与小程序帐号能否统一
-  腾讯云  优化一下linux包下载速度，直接走内部镜像 增加golang的api   微博  支持像twitter那样截图直接上传功能 继续像twitter学习，让用户来决定关注什么 (Tips: 建议用户遇到这种情况，直接将被动主动帐号屏蔽)  百度 hao123  让hao123回到它最初的形式  搜索  收录网站体验太差了，与google，bing比较这方面相差10倍以上 贴吧广告太多，自作死，支持内容电商也比插入广告要好  字节跳动 今日头条  希望推荐算法不止是迎合用户还有引导用户  飞聊  飞聊应该与今日头条打通，让头条号作者与读者之间更高层次的互动  网易 网易云音乐  ios版本闪退问题需要加快解决，概率达到百分之一吧 支持opus格式  (未完，持续更新)</description>
+腾讯  打通帐号系统，如qq与微信在其他腾讯产品的功能不一致  微信  整理未读信息，而不是让用户去找哪条信息未读，特别是存在大量的会话的情况 公众帐号平台写作支持从本地导入markdown功能 公众帐号与小程序帐号能否统一  腾讯云  优化一下linux包下载速度，直接走内部镜像 增加golang的api  微博  支持像twitter那样截图直接上传功能 继续像twitter学习，让用户来决定关注什么 (Tips: 建议用户遇到这种情况，直接将被动主动帐号屏蔽)  百度 hao123  让hao123回到它最初的形式  搜索  收录网站体验太差了，与google，bing比较这方面相差10倍以上 贴吧广告太多，自作死，支持内容电商也比插入广告要好  字节跳动 今日头条  希望推荐算法不止是迎合用户还有引导用户  飞聊  飞聊应该与今日头条打通，让头条号作者与读者之间更高层次的互动  网易 网易云音乐  ios版本闪退问题需要加快解决，概率达到百分之一吧 支持opus格式  (未完，持续更新)</description>
     </item>
     
     <item>
@@ -1228,7 +1219,7 @@ PS: 初学经济学，有不足与错误敬请指正。
       <pubDate>Thu, 25 Jan 2018 11:58:06 +0200</pubDate>
       
       <guid>https://myself659.github.io/2018/01/25/%E8%8B%B1%E6%96%87%E5%AD%A6%E4%B9%A0%E6%9D%90%E6%96%99/</guid>
-      <description> Golang  Let&amp;rsquo;s Talk Locks! Maintaining the Go Crypto Libraries  Blockchain  CoinTalk  Arch  Life of a Packet through Istio Algorithms behind Modern Storage Systems Aurora Serverless: The Good, the Bad and the Scalable  rust  How Rust Views Tradeoffs Rust&amp;rsquo;s Journey to Async/await  More  infoq Presentations  </description>
+      <description>Golang  Let&amp;rsquo;s Talk Locks! Maintaining the Go Crypto Libraries  Blockchain  CoinTalk  Arch  Life of a Packet through Istio Algorithms behind Modern Storage Systems Aurora Serverless: The Good, the Bad and the Scalable  rust  How Rust Views Tradeoffs Rust&amp;rsquo;s Journey to Async/await  More  infoq Presentations  </description>
     </item>
     
     <item>
@@ -1238,13 +1229,11 @@ PS: 初学经济学，有不足与错误敬请指正。
       
       <guid>https://myself659.github.io/2017/12/22/%E5%8C%BA%E5%9D%97%E9%93%BE%E9%A1%B9%E7%9B%AE%E7%82%B9%E8%AF%843-%E5%8E%BB%E4%B8%AD%E5%BF%83%E5%8C%96%E4%BA%A4%E6%98%93%E6%89%80/</guid>
       <description>中心化交易所 先从中心化交易所说起，从本质上看数字货币交易所与生活中常见的股票交易是一样。整个交易系统的核心是：撮合引擎。其中撮合系统核心原则如下：
- 队列顺序价格优先、同价格下时间优先
- 撮合顺序及要求：时间优先，条件判断（ 撮合引擎接收到新的买入订单,则会到卖出队列的头部查找是否存在符合价格规则的卖出订单,如果存在卖出价格小于或等于买入价格的订单,则从队列中取出此订单并撮合成一笔交易;如果卖出队列为空或队列头部不满足价格关系,则将买入订单插入买入队列中,由于买入队列是按照价格与时间先后进行排序,所以新插入的订单会经过一次排序插入到买入队列的相应位置。）
+  队列顺序价格优先、同价格下时间优先
+  撮合顺序及要求：时间优先，条件判断（ 撮合引擎接收到新的买入订单,则会到卖出队列的头部查找是否存在符合价格规则的卖出订单,如果存在卖出价格小于或等于买入价格的订单,则从队列中取出此订单并撮合成一笔交易;如果卖出队列为空或队列头部不满足价格关系,则将买入订单插入买入队列中,由于买入队列是按照价格与时间先后进行排序,所以新插入的订单会经过一次排序插入到买入队列的相应位置。）
   提到上面这些原则，不是为了引入如何设计一个撮合系统的话题，而是通过上面的原则认识到：撮合引擎属于中心化计算与处理。正如我常说一句话：控制要作集中式，业务要作分布式。
 去中心化交易所 由于中心化交易所各种缺点：
- 暗箱操作 存在跑路风险 政府的管制 资产托管风险
- 安全问题，例如黑客盗币 坚守自盗
-  去中心化交易具有以下优点：
+ 暗箱操作 存在跑路风险 政府的管制 资产托管风险 安全问题，例如黑客盗币 坚守自盗  去中心化交易具有以下优点：
  更加安全 更好流通性 简单便捷 资产可控  这里下结论：去中心化交易所才是未来。
 去中心化交易所现在处于战国七雄争霸时代，未来格局会是怎么样，需要继续观察与跟进。 下面就0x与KyberNetwork展开说明。
 0x 目标与定位 0x目标是建立公共开放的交易协议，将协议层和应用层解耦
@@ -1252,7 +1241,8 @@ PS: 初学经济学，有不足与错误敬请指正。
 各个流程说明如下：
  Maker授权DEX合约访问账户中TokenA的余额 Maker发起兑换TokenB的订单，订单包含兑换率、过期时间和签名 Maker广播这个订单到网络中，链下orderbook Taker获取订单后，决定执行这个交易 Taker授权DEX合约访问账户中TokenB的余额 Taker提交Maker签名的订单给DEX合约 DEX合约验证Maker签名，订单有效性，包括时间和是否已经完成，然后根据指定的兑换率执行Token转移  从上面的流程可知，整个交易流程是链下广播与链上结算。
 评价  专注于协议层，支持各种DApp接入 去中心化治理机制，方便升级与更新，同时不影响DApp与用户 链下广播与链上结算方式具有交易费低，交易速度快等优点 问题：由于订单信息并没有上链，链下广播的订单的有效性问题  参考  0x 白皮书  KyberNetwork 目标与定位 链上的去中心化交易所
-系统架构 这里面主要角色如下：
+系统架构 ![KyberNetwork架构](/images/kyber arch.png)
+这里面主要角色如下：
  在网络中发送与接收代币的用户。KyberNetwork的用户包括个人用户、智能合约用户、商家。 为平台提供流动性的（通常多个）储备实体。它可以是平台自己的储备库或者由其他人注册的第三方储备库。根据是否从公众那里获取储备代币，储备库分为两种：公有储备库和私有储备库。 储备贡献者，提供资金分享利润 维持储备、决定兑换率并将该比率反馈给KyberNetwork的储备管理者 KyberNetwork 运营者，负责在网络中添加、删除储备实体以及将代币对列入/移出交易列表  流程 几个主要流程如下：</description>
     </item>
     
@@ -1264,16 +1254,16 @@ PS: 初学经济学，有不足与错误敬请指正。
       <guid>https://myself659.github.io/2017/12/21/gorm%E5%B0%8F%E6%8A%80%E5%B7%A7-%E5%A6%82%E4%BD%95%E4%BC%98%E9%9B%85%E5%9C%B0%E5%88%9B%E5%BB%BA%E5%A4%9A%E4%B8%AA%E7%9B%B8%E5%90%8C%E7%9A%84%E8%A1%A8/</guid>
       <description>背景 因为需要bitfinex抓取各种历史交易信息。为了实现可扩展与便于数据管理，在数据架构设计方面满足下面的需求：
  不同的交易对的交易数据放到不同的表上。  方案 方案1 编写sql,通过多条sql语句创建多个不同名字的表。
-优点： 1. 理解简单，最容易的方案
-缺点：
- 如果修改表名称、调整表结构、调整索引，需要重新写sql，如果在线上部署，需要到多台机器上部署与执行，加大出错的概率
- 需要额外维护表名称
- 不利于docker部署，部署业务sql建立相应表
+优点：
+ 理解简单，最容易的方案  缺点：
+  如果修改表名称、调整表结构、调整索引，需要重新写sql，如果在线上部署，需要到多台机器上部署与执行，加大出错的概率
+  需要额外维护表名称
+  不利于docker部署，部署业务sql建立相应表
   总之，最容易的方案，确实最难维护的方案。
 方案2 方案1种种不足，让我这个懒人实在不感兴趣。要追求优雅的实现方案。所以就发现下面的方案。
-type User struct { Name string Pwd string tableName string } func (u *User) TableName() string { return u.tableName }  看完上面的代码，大家应该会立即明白：原来只需要对表结构对应的结构体定义一种方法 TableName(),就可以实现。
+type User struct {Name stringPwd stringtableName string}func (u *User) TableName() string {return u.tableName}看完上面的代码，大家应该会立即明白：原来只需要对表结构对应的结构体定义一种方法 TableName(),就可以实现。
 一个十分简单示例代码如下：
-package main import ( &amp;quot;fmt&amp;quot; _ &amp;quot;github.com/go-sql-driver/mysql&amp;quot; &amp;quot;github.com/jinzhu/gorm&amp;quot; ) type User struct { Name string Pwd string tableName string } func (u *User) TableName() string { // custom table name, this is default return u.</description>
+package mainimport (&amp;quot;fmt&amp;quot;_ &amp;quot;github.com/go-sql-driver/mysql&amp;quot;&amp;quot;github.com/jinzhu/gorm&amp;quot;)type User struct {Name stringPwd stringtableName string}func (u *User) TableName() string {// custom table name, this is defaultreturn u.</description>
     </item>
     
     <item>
@@ -1292,7 +1282,7 @@ package main import ( &amp;quot;fmt&amp;quot; _ &amp;quot;github.com/go-sql-driv
       
       <guid>https://myself659.github.io/2017/11/06/%E6%AF%94%E7%89%B9%E5%B8%81%E5%8F%8A%E8%8E%B1%E7%89%B9%E5%B8%81%E8%8A%82%E7%82%B9%E8%BF%9E%E6%8E%A5%E5%A4%B1%E8%B4%A5%E5%A4%84%E7%90%86/</guid>
       <description>问题描述 节点进程起来后，同其他的节点连接失败。
-2017-11-14 08:03:36 connect() to 104.236.211.206:19335 failed after select(): Connection refused (111) 2017-11-14 08:03:37 connect() to 66.178.182.35:19335 failed after select(): Connection refused (111) 2017-11-14 08:03:38 connect() to 104.236.211.206:19335 failed after select(): Connection refused (111) 2017-11-14 08:03:39 connect() to 66.178.182.35:19335 failed after select(): Connection refused (111) 2017-11-14 08:03:40 connect() to 104.236.211.206:19335 failed after select(): Connection refused (111) 2017-11-14 08:03:41 connect() to 104.236.211.206:19335 failed after select(): Connection refused (111) 2017-11-14 08:03:42 connect() to 66.</description>
+2017-11-14 08:03:36 connect() to 104.236.211.206:19335 failed after select(): Connection refused (111)2017-11-14 08:03:37 connect() to 66.178.182.35:19335 failed after select(): Connection refused (111)2017-11-14 08:03:38 connect() to 104.236.211.206:19335 failed after select(): Connection refused (111)2017-11-14 08:03:39 connect() to 66.178.182.35:19335 failed after select(): Connection refused (111)2017-11-14 08:03:40 connect() to 104.236.211.206:19335 failed after select(): Connection refused (111)2017-11-14 08:03:41 connect() to 104.236.211.206:19335 failed after select(): Connection refused (111)2017-11-14 08:03:42 connect() to 66.</description>
     </item>
     
     <item>
@@ -1304,7 +1294,7 @@ package main import ( &amp;quot;fmt&amp;quot; _ &amp;quot;github.com/go-sql-driv
       <description>由于20-1大的原因，各种梯子损失惨重。自己也只好自己动手搭建VPS。关于如何搭建梯子这里暂不描述。
 说明 下面的操作是建立在成功搭建VPS基础上
 步骤 查看代理端口 代理客户端使用Shadowsocks-NG-R8,它解决了一个长久以来的痛点，Shadowsocks没有HTTP代理，导致需要使用polipo等软件进行协议转换。
-第一步：选择HTTP代理设置 第二步：点击查看 设置代理命令 vim打开vim ~/.bash_profile 在尾部添加如下内容： alias proxy-on=&#39;export http_proxy=127.0.0.1:1087;export https_proxy=$http_proxy&#39; alias proxy-off=&#39;unset http_proxy;unset https_proxy&#39;  修改立即生效: source ~/.bash_profile 测试 Michaels-iMac:~ eric$ proxy-on Michaels-iMac:~ eric$ go get -u google.golang.org/grpc package golang.org/x/net/context: golang.org/x/net is a custom import path for https://go.googlesource.com/net, but /Users/eric/go/src/golang.org/x/net is checked out from https://github.com/golang/net package golang.org/x/net/http2: golang.org/x/net is a custom import path for https://go.googlesource.com/net, but /Users/eric/go/src/golang.org/x/net is checked out from https://github.com/golang/net package golang.</description>
+第一步：选择HTTP代理设置 第二步：点击查看 设置代理命令 vim打开vim ~/.bash_profile 在尾部添加如下内容： alias proxy-on=&#39;export http_proxy=127.0.0.1:1087;export https_proxy=$http_proxy&#39;alias proxy-off=&#39;unset http_proxy;unset https_proxy&#39;修改立即生效: source ~/.bash_profile 测试 Michaels-iMac:~ eric$ proxy-on Michaels-iMac:~ eric$ go get -u google.golang.org/grpc package golang.org/x/net/context: golang.org/x/net is a custom import path for https://go.googlesource.com/net, but /Users/eric/go/src/golang.org/x/net is checked out from https://github.com/golang/netpackage golang.org/x/net/http2: golang.org/x/net is a custom import path for https://go.googlesource.com/net, but /Users/eric/go/src/golang.org/x/net is checked out from https://github.com/golang/netpackage golang.org/x/net/trace: golang.org/x/net is a custom import path for https://go.</description>
     </item>
     
     <item>
@@ -1334,15 +1324,15 @@ package main import ( &amp;quot;fmt&amp;quot; _ &amp;quot;github.com/go-sql-driv
 建一个网站要要做哪些事情 这里分解如下：
  网站前端 网站后端 域名 主机 部署 维护  下面就这些方面以自己搭建ipds.top网站为例说明。
 网站前端 对于前端，个人能力与经历有限，缺少DIY能力，那就是找主题模板，经济有效。 就IPDS 由于对golang的热爱，后端选择hugo。那么主题有以下选择：
- 直接从gohugo 中查找 github中查找
-  个人采用的主题是icarus
+ 直接从gohugo 中查找 github中查找  个人采用的主题是icarus
 网站后端 如上面所说，后端选择hugo。
 这里讲一下主要碰到问题。
-版本问题  hugo版本不要使用apt-get命令直接的，防止hugo版本过低 个人使用版本如下  root@BC:~# hugo version Hugo Static Site Generator v0.31.1 linux/amd64 BuildDate: 2017-10-14T22:10:38+08:00  参数 常见的参数配置如下：
-hugo server --baseUrl=https://blog.ipds.top/ --appendPort=false  小结 这里要宣传一下hugo，采用hugo具有如下优点：
+版本问题  hugo版本不要使用apt-get命令直接的，防止hugo版本过低 个人使用版本如下  root@BC:~# hugo versionHugo Static Site Generator v0.31.1 linux/amd64 BuildDate: 2017-10-14T22:10:38+08:00参数 常见的参数配置如下：
+hugo server --baseUrl=https://blog.ipds.top/ --appendPort=false小结 这里要宣传一下hugo，采用hugo具有如下优点：
  有不错可用的主题 简单好用 社区不断更新与发展 内容可以保存到内存，访问速度快  域名 从阿里云注册一个top域名。 这里要吐槽一下阿里云，注册域名不提示域名一定要认证后才能用。（因为我的ECS买的是香港的，买完测试后也确认可用，过几天一看居然不能用）
 主机 主机采用阿里云ECS，地点在香港。 在香港最大的好处就是解决了墙的问题。
-部署 反向代理 方案1： 大家熟知的nginx</description>
+部署 反向代理 方案1： 大家熟知的nginx
+方案2： caddy</description>
     </item>
     
     <item>
@@ -1351,14 +1341,7 @@ hugo server --baseUrl=https://blog.ipds.top/ --appendPort=false  小结 这里�
       <pubDate>Sat, 21 Oct 2017 11:58:06 +0200</pubDate>
       
       <guid>https://myself659.github.io/2017/10/21/%E5%8C%BA%E5%9D%97%E9%93%BE%E9%A1%B9%E7%9B%AE%E7%82%B9%E8%AF%842-%E4%BB%A5%E5%A4%AA%E5%9D%8A/</guid>
-      <description>以太坊  一台超级计算机 现阶段最好的数字货币 继承比特币的区块链技术，同时引入了超级亮点：智能合约，让信任成为可能 以太币正在成为区块链经济中的石油 按交易次数计算数字货币交易市场一半以上，如下图所示  有以下问题： 交易速度慢，最大的问题，也是被容易被EOS挑战与冲击的地方 帐本体积大 隐私问题 链上的可信数据太单一，只有交易数据，制约智能合约的应用范围
- 以太坊sharding方案，加大了系统的复杂性，也带来了一些安全问题
- 不得不关注与小心的以太坊安全问题，例如DAO问题
- ICO是以太坊上最成功的应用
- CryptoKitties是以太坊上最让人鼓舞的Dapp
- 以太坊有优秀团队与成熟开放的社区
- 以太坊会不断地进化与成熟，以太坊未来可期
-  参考  ethereum CryptoKitties plasma  欢迎关注 欢迎关注微信公众帐号：沉风网事(savewind)</description>
+      <description>以太坊  一台超级计算机 现阶段最好的数字货币 继承比特币的区块链技术，同时引入了超级亮点：智能合约，让信任成为可能 以太币正在成为区块链经济中的石油 按交易次数计算数字货币交易市场一半以上，如下图所示  有以下问题：   交易速度慢，最大的问题，也是被容易被EOS挑战与冲击的地方 帐本体积大 隐私问题 链上的可信数据太单一，只有交易数据，制约智能合约的应用范围   以太坊sharding方案，加大了系统的复杂性，也带来了一些安全问题 不得不关注与小心的以太坊安全问题，例如DAO问题 ICO是以太坊上最成功的应用 CryptoKitties是以太坊上最让人鼓舞的Dapp 以太坊有优秀团队与成熟开放的社区 以太坊会不断地进化与成熟，以太坊未来可期  参考  ethereum CryptoKitties plasma  欢迎关注 欢迎关注微信公众帐号：沉风网事(savewind)</description>
     </item>
     
     <item>
@@ -1367,7 +1350,7 @@ hugo server --baseUrl=https://blog.ipds.top/ --appendPort=false  小结 这里�
       <pubDate>Fri, 20 Oct 2017 11:58:06 +0200</pubDate>
       
       <guid>https://myself659.github.io/2017/10/20/%E5%8C%BA%E5%9D%97%E9%93%BE%E9%A1%B9%E7%9B%AE%E7%82%B9%E8%AF%841-%E6%AF%94%E7%89%B9%E5%B8%81/</guid>
-      <description> 比特币  数字黄金，但是并比黄金好很多 区块链技术始祖 PoW共识是比特币技术最大的创新 将激励与竞争引入到机器，符合经济学原理 让财富最大程度上属于个人 比特币的信用来源数学, 来自于密码学，比特币是数学保护的财富 现阶段易涨难跌 去中心化是把双刃剑 技术并无罪，罪在人性 无国界，这是比特币坚强的重要因素 比特币不是泡沫，是共识的数字化 比特币财产的转移是一种基于多数人见证所达成的共识 比特币是一个英勇的挑战者，挑战法币，有强大的潜在的敌人，政治不正确，可能会受到强大的政治打压 点燃数字货币的星星之火，新方向的领航者与开拓者，但是并不完美 完成历史使命的传递，比特币最终会消失 IFO对于比特币来说一场分裂，并且带来安全问题（重放攻击），相同的地址影响体验 安全问题一直存在，聪明强大的AI是否带来致命一击呢 比特币价格与google搜索指数之间的关系，如下图  这张图表明比特币越来越受欢迎，且是用钱来投的票。
+      <description>比特币  数字黄金，但是并比黄金好很多 区块链技术始祖 PoW共识是比特币技术最大的创新 将激励与竞争引入到机器，符合经济学原理 让财富最大程度上属于个人 比特币的信用来源数学, 来自于密码学，比特币是数学保护的财富 现阶段易涨难跌 去中心化是把双刃剑 技术并无罪，罪在人性 无国界，这是比特币坚强的重要因素 比特币不是泡沫，是共识的数字化 比特币财产的转移是一种基于多数人见证所达成的共识 比特币是一个英勇的挑战者，挑战法币，有强大的潜在的敌人，政治不正确，可能会受到强大的政治打压 点燃数字货币的星星之火，新方向的领航者与开拓者，但是并不完美 完成历史使命的传递，比特币最终会消失 IFO对于比特币来说一场分裂，并且带来安全问题（重放攻击），相同的地址影响体验 安全问题一直存在，聪明强大的AI是否带来致命一击呢 比特币价格与google搜索指数之间的关系，如下图  ![搜索指数与价格](/images/bitcoin price trade.jpg) 这张图表明比特币越来越受欢迎，且是用钱来投的票。
 参考  bitcoin源码 bitcoinABC wiki developer-documentation  </description>
     </item>
     
@@ -1382,7 +1365,7 @@ hugo server --baseUrl=https://blog.ipds.top/ --appendPort=false  小结 这里�
 ☆☆☆，三星 不错，看个人口味与需求
 ☆☆，二星 不推荐
 ☆，一星 强烈不推荐，得不偿失，存在严重误导
-C/C++方面  《C与指针》 ☆☆☆☆☆，五星 入门推荐，不要上国产参考书的当 《 C陷阱与缺陷》 ☆☆☆☆☆，五星 帮你避开常见C语言坑 《C专家编程》 ☆☆☆☆，四星 《C++沉思录》 ☆☆☆☆，四星 C++ 进阶之道 《C++ Prime Plus》 ☆☆☆☆，四星 C++ 入门必备，讲解详细  Python  《Python 基础教程》☆☆☆☆☆，五星 个人觉得最佳Python入门学习材料，打好基础就用google，github来解决问题  Go  《Go程序设计语言 英文版》☆☆☆☆，四星  Rust  《The Rust Programming Language》 ☆☆☆☆，四星 2019  设计模式  《Head First 设计模式 中文版》  计算机基础  《深入理解计算机系统 第2版》 ☆☆☆☆☆，五星 请精读且多读几遍，计算机基础方面读这一本书就可以了。 《计算机程序的构造和解释》 ☆☆☆☆☆，五星 2018  网络编程  《TCP/IP 详解 卷1：协议》 ☆☆☆☆☆，五星 《UNIX 网络编程》 ☆☆☆☆，四星 《Linux 网络编程》 ☆☆☆，三星  数据结构与算法  《算法导论》 《数据结构 C语言版》  Linux  《鸟哥的Linux私房菜》 ☆☆☆☆，四星 Linux操作入门参考 《深入理解Linux 内核架构》 《精通Linux驱动程序开发》 《Linux内核设计艺术》 《The Linux Programming Interface Handbook》  云计算  《Software Defined Networks》 ☆☆☆☆，四星 偏架构，需要一定基础与背景 《腾云 云计算和大数据时代网络技术揭秘》 ☆☆☆☆，四星 通俗易懂地解释网络新技术</description>
+C/C++方面  《C与指针》 ☆☆☆☆☆，五星 入门推荐，不要上国产参考书的当 《 C陷阱与缺陷》 ☆☆☆☆☆，五星 帮你避开常见C语言坑 《C专家编程》 ☆☆☆☆，四星 《C++沉思录》 ☆☆☆☆，四星 C++ 进阶之道 《C++ Prime Plus》 ☆☆☆☆，四星 C++ 入门必备，讲解详细  Python  《Python 基础教程》☆☆☆☆☆，五星 个人觉得最佳Python入门学习材料，打好基础就用google，github来解决问题  Go  《Go程序设计语言 英文版》☆☆☆☆，四星  Rust  《The Rust Programming Language》 ☆☆☆☆，四星 2019  设计模式  《Head First 设计模式 中文版》  计算机基础  《深入理解计算机系统 第2版》 ☆☆☆☆☆，五星 请精读且多读几遍，计算机基础方面读这一本书就可以了。 《计算机程序的构造和解释》 ☆☆☆☆☆，五星 2018  网络编程  《TCP/IP 详解 卷1：协议》 ☆☆☆☆☆，五星 《UNIX 网络编程》 ☆☆☆☆，四星 《Linux 网络编程》 ☆☆☆，三星  数据结构与算法  《算法导论》 《数据结构 C语言版》  Linux  《鸟哥的Linux私房菜》 ☆☆☆☆，四星 Linux操作入门参考 《深入理解Linux 内核架构》 《精通Linux驱动程序开发》 《Linux内核设计艺术》 《The Linux Programming Interface Handbook》  云计算  《Software Defined Networks》 ☆☆☆☆，四星 偏架构，需要一定基础与背景 《腾云 云计算和大数据时代网络技术揭秘》 ☆☆☆☆，四星 通俗易懂地解释网络新技术 《云计算核心技术剖析》 ☆☆☆，三星 《云计算与分布式系统》 ☆☆，二星  架构设计  《SRE Google运维解密》 ☆☆☆☆☆，五星 2017 《设计数据密集型应用》 ☆☆☆☆☆，五星 2018  数据科学  《利用Python进行数据分析》 ☆☆☆☆☆，五星 2018  软件工程  《构建之法》 ☆☆☆☆☆，五星 邹老师多年软件开发精华总结，务实有趣，每个软件开发人员都可以买一本。  安全  《线上幽灵 世界头号黑客米特尼克自传》 ☆☆☆☆，四星 不得不防的社会工程学，不得不用的社会工程学  商业，经济，管理 ，科技  《从0到1&amp;mdash;开启商业与未来的秘密》 《创新者的窘境》 《杰克韦尔杰自传》 《重来:更为简单有效的商业思维》 《经济学原理 微观经济学》 ☆☆☆☆☆，五星 2017 《硅谷方法论》 ☆☆☆☆☆，五星 2019 《今日简史》 ☆☆☆☆☆，五星 2019 《人类简史》 ☆☆☆☆☆，四星 2019  军事，历史，政治, 社会  《中国历代政治得失》 ☆☆☆，三星 可以让你不局限一个事件，而是从历史进程角度看朝代变迁与历史事件 《孙子兵法与三十六计》 ☆☆☆☆☆，五星 这个还用说吗？ 《纸牌屋》 ☆☆☆☆，四星 《全球通史》 ☆☆☆，三星 《大明王朝1566》 ☆☆☆☆☆，五星 2018 《权力论》 ☆☆☆☆☆，五星 2018 《通往奴役之路》☆☆☆☆☆，五星 2019 《万历十五年》☆☆☆☆☆，五星 2019  区块链  《精通比特币》 ☆☆☆☆，四星 2017 《区块链与社会》 ☆☆☆☆，四星 2017 《区块链项目开发指南》☆☆☆☆，四星 2017 《The Bitcoin Standard》 ☆☆☆☆，四星 2019  人工智能  《终级算法》 ☆☆☆☆，四星 2017 《TensorFlow 实战Google深度学习框架》 ☆☆☆☆，四星 2017  其他  《黑客与画家》 《浪潮之巅》  文学  《红楼梦》 ☆☆☆☆，四星 2018  后记 此篇每年更新(有一股力量让自己去行动总是好的)！</description>
     </item>
     
     <item>
@@ -1400,7 +1383,7 @@ C/C++方面  《C与指针》 ☆☆☆☆☆，五星 入门推荐，不要上�
       <pubDate>Mon, 02 Oct 2017 21:49:20 +0200</pubDate>
       
       <guid>https://myself659.github.io/2017/10/02/slide/</guid>
-      <description> 2017  高性能服务器设计与优化(High performance server design and optimization) Golang基础 比特币介绍-技术基础篇  2018  数字货币钱包产品定位与战略.pdf 下一代互联网基础：IPFS.pdf  </description>
+      <description>2017  高性能服务器设计与优化(High performance server design and optimization) Golang基础 比特币介绍-技术基础篇  2018  数字货币钱包产品定位与战略.pdf 下一代互联网基础：IPFS.pdf  </description>
     </item>
     
     <item>
@@ -1411,18 +1394,16 @@ C/C++方面  《C与指针》 ☆☆☆☆☆，五星 入门推荐，不要上�
       <guid>https://myself659.github.io/2017/09/21/ipfs%E4%B8%8E%E4%B8%8B%E4%B8%80%E4%BB%A3%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/</guid>
       <description>IPFS 先简单说一下IPFS。 IPFS是点对点协议InterPlanetary File System的简称，它是一个面向全球的、点对点的分布式版本文件系统，试图将所有具有相同文件系统的计算设备连接在一起。它用基于内容的地址替代基于域名的地址，也就是用户寻找的不是某个地址而是储存在某个地方的内容，不需要验证发送者的身份，而只需要验证内容的哈希，通过这样可以让网页的速度更快、更安全、更健壮、更持久。IPFS目标是未来将替代HTTP。
 IPFS主要技术，用下面这张图说明：
-IPFS与安全 整个IPFS涉及很多方面的内容，这部分具体看一下IPFS对网络安全的影响。首先从DDOS防攻击展开，IPFS应对DDOS攻击主要如下： 1. 道哥在弹性安全网络中表达过DDOS存在的原因就是现在互联网严重依赖存在三大问题的DNS系统,而在IPFS中通过内容寻址方式绕开了DNS 2. IPFS底层网络是基于DHT，拥有大量节点的P2P网络，天生适合内容的分布式读写（PS：P2P网络安全需要另行考虑） 3. 内容签名，通过加密加大攻击的难度与成本
-上面的这些作法，很符合经济原理。DDOS存在主要经济学原因是DDOS获得的收益远大于DDOS的投资；IPFS的上述特点直接提高DDOS的成本。
+IPFS与安全 整个IPFS涉及很多方面的内容，这部分具体看一下IPFS对网络安全的影响。首先从DDOS防攻击展开，IPFS应对DDOS攻击主要如下：
+ 道哥在弹性安全网络中表达过DDOS存在的原因就是现在互联网严重依赖存在三大问题的DNS系统,而在IPFS中通过内容寻址方式绕开了DNS IPFS底层网络是基于DHT，拥有大量节点的P2P网络，天生适合内容的分布式读写（PS：P2P网络安全需要另行考虑） 内容签名，通过加密加大攻击的难度与成本  上面的这些作法，很符合经济原理。DDOS存在主要经济学原因是DDOS获得的收益远大于DDOS的投资；IPFS的上述特点直接提高DDOS的成本。
 比较 上一篇分析了道哥的提出的弹性安全网络设想。那么，就在这里搞事情，对比一下两者。
- 道哥和Juan Benet都是杰出的技术人员及创业者，富有远见 作为安全出身的道哥的出发点解决网络安全问题主要是DDOS安全攻击问题，而IPFS目标如下：We believe the internet has become humanity&#39;s most important technology. We build protocols, systems, and tools to improve how it works. Today, we are focused on how we store, locate, and move information.
- IPFS是一种去中心化技术，而弹性安全网络接入技术可以是一种大规模的云计算技术（中心化技术）。
- IPFS没有网络访问控制功能，自由开放；弹性安全网络有网络访问控制能力，方便监管与控制
- IPFS是从数据角度来解决问题（解决数据分布，版本，访问，权限控制等）,弹性安全网络从网络安全的角度来解决问题
- IPFS开放源码，弹性安全网络没有开源，开源的IPFS体现了去中心化技术的态度
- IPFS现网运行，弹性安全网络在游戏盾中得到应用与实践，两者都有很长的路需要走
- IPFS目标是取代HTTP,同时兼容HTTP，弹性安全网络将应用场景定位在非域名类的IP网络
- IPFS对现有应用冲击很大，因为去中心化应用及基础设施（如去中心数据库）还在起步阶段；弹性安全网络考虑基于现有云计算（大规模中心化技术）应用作为出发点一种网络安全的解决方案，能够兼容云计算应用。
- IPFS支持端对端加解密，保证数据的隐私。弹性安全网络不涉及这方面内容。</description>
+  道哥和Juan Benet都是杰出的技术人员及创业者，富有远见
+  作为安全出身的道哥的出发点解决网络安全问题主要是DDOS安全攻击问题，而IPFS目标如下：We believe the internet has become humanity&#39;s most important technology. We build protocols, systems, and tools to improve how it works. Today, we are focused on how we store, locate, and move information.
+  IPFS是一种去中心化技术，而弹性安全网络接入技术可以是一种大规模的云计算技术（中心化技术）。
+  IPFS没有网络访问控制功能，自由开放；弹性安全网络有网络访问控制能力，方便监管与控制
+  IPFS是从数据角度来解决问题（解决数据分布，版本，访问，权限控制等）,弹性安全网络从网络安全的角度来解决问题
+  IPFS开放源码，弹性安全网络没有开源，开源的IPFS体现了去中心化技术的态度
+  IPFS现网运行，弹性安全网络在游戏盾中得到应用与实践，两者都有很长的路需要走</description>
     </item>
     
     <item>
@@ -1431,28 +1412,26 @@ IPFS与安全 整个IPFS涉及很多方面的内容，这部分具体看一下IP
       <pubDate>Wed, 20 Sep 2017 11:58:06 +0200</pubDate>
       
       <guid>https://myself659.github.io/2017/09/20/%E5%85%B3%E4%BA%8E%E5%BC%B9%E6%80%A7%E5%AE%89%E5%85%A8%E7%BD%91%E7%BB%9C%E4%B8%80%E7%82%B9%E6%80%9D%E8%80%83/</guid>
-      <description> 作为网络研发出身的我，从事网络研发时间也最长，一直也关注道哥的微信公众号。
+      <description>作为网络研发出身的我，从事网络研发时间也最长，一直也关注道哥的微信公众号。
 下面就对道哥的提出弹性安全网络一些总结与思考。
 弹性安全网络 具体从以下几个方面解读弹性安全网络。
 来源 弹性安全网络这个设想来自阿里云游戏盾这个产品，而这个产品解决的问题就是如何解决DDOS问题。
 以前解决DDOS问题，很多厂商就是以暴制暴，准备大量带宽，抗住攻击流量，这种方式有以下问题：
- 流量成本高 万一没有抗住，服务会中断 业务局限于一个数据中心，目标明显，容易受攻击（将鸡蛋放到同一个篮子）
-  而在游戏盾产品采用另一种方式来解决问题，主要要点如下：
+ 流量成本高 万一没有抗住，服务会中断 业务局限于一个数据中心，目标明显，容易受攻击（将鸡蛋放到同一个篮子）  而在游戏盾产品采用另一种方式来解决问题，主要要点如下：
  首先，业务访问支持多IP解析，分散流量（狡免三窟） 第二就是应对攻击，支持业务地址迁移，地址迁移难点就是如何快速通知到各个用户（你打我，我就闪）  定义  弹性安全网络是将DDoS防御前置到网络边缘处。但是，未来真正要做的事情是通过端到端的连接，通过风险控制技术，重新构建一个干净的、安全的互联网
  目标  弹性安全网络真正想要去做的，是替换掉整个互联网最核心的心脏，替换掉DNS，从而让网络变得有弹性，能够快速调度资源，形成一个全新的网络架构。
-弹性安全网络技术，不是为某一个客户设计的，它是为整个互联网设计的。
+  弹性安全网络技术，不是为某一个客户设计的，它是为整个互联网设计的。
  DNS三个问题  DNS是互联网的心脏
-第一个，是DNS完全解析的时间过长，这是整个DNS使用中遇到的一个非常大的痛点。
-第二个问题是今天DNS Server软件中的解析数遇到了瓶颈，没有办法一个名字解析到几千个、甚至上万个，甚至未来十几万个不同地址。一个名字可能最多也就解析到十几个或几十个地址就不能再扩大了。这种瓶颈限制了我们的一些能力拓展。
-第三个就是，原本可以基于DNS去实现的一些安全机制，比如风险控制，并没有建立起来。其实也比较好理解，在互联网1.0时代并没有如今天这般强大的数据能力和计算能力。
- 实现 文中并没有提及具体的实现，主要要点是： 1. 基于大数据的足迹库 2. 基于人工智能的快速识别能力
-3. 分布式的统一网络访问入口，取代DNS，具体细节未知
-未来  主要机会就是在IoT和移动互联网，因为这两者实际上是没有DNS的需求的
+  第一个，是DNS完全解析的时间过长，这是整个DNS使用中遇到的一个非常大的痛点。
+  第二个问题是今天DNS Server软件中的解析数遇到了瓶颈，没有办法一个名字解析到几千个、甚至上万个，甚至未来十几万个不同地址。一个名字可能最多也就解析到十几个或几十个地址就不能再扩大了。这种瓶颈限制了我们的一些能力拓展。
+  第三个就是，原本可以基于DNS去实现的一些安全机制，比如风险控制，并没有建立起来。其实也比较好理解，在互联网1.0时代并没有如今天这般强大的数据能力和计算能力。
+ 实现 文中并没有提及具体的实现，主要要点是：
+ 基于大数据的足迹库 基于人工智能的快速识别能力 分布式的统一网络访问入口，取代DNS，具体细节未知  未来  主要机会就是在IoT和移动互联网，因为这两者实际上是没有DNS的需求的
  总结 道哥的弹性安全网络，是一个伟大的构思。
 弹性安全网络出发点主要是解决DDOS问题。
 主要目标应用于IOT和移动互联网。
-弹性安全网络思考主要出发点是如何应对网络攻击，主要从两个角度出发： 1. 如何快速应对攻击 2. 如何利用技术（大数据，人工智能等）识别攻击
-参考  弹性安全网络 &amp;ndash; 构建下一代安全的互联网 IPFS与下一代网络安全  </description>
+弹性安全网络思考主要出发点是如何应对网络攻击，主要从两个角度出发：
+ 如何快速应对攻击 如何利用技术（大数据，人工智能等）识别攻击  参考  弹性安全网络 &amp;ndash; 构建下一代安全的互联网 IPFS与下一代网络安全  </description>
     </item>
     
     <item>
@@ -1461,10 +1440,9 @@ IPFS与安全 整个IPFS涉及很多方面的内容，这部分具体看一下IP
       <pubDate>Thu, 24 Aug 2017 11:58:06 +0200</pubDate>
       
       <guid>https://myself659.github.io/2017/08/24/%E4%BB%A5%E5%A4%AA%E5%9D%8A%E7%A7%81%E9%93%BE%E6%99%BA%E8%83%BD%E5%90%88%E7%BA%A6%E5%AE%9E%E8%B7%B5/</guid>
-      <description>环境说明  操作系统: macos.10.12.1 geth版本：1.5.9 solc版本：0.4.15
-  实践 1. 启动本地geth节点 Michaels-iMac:wallet eric$ geth --rpc --rpcaddr 127.0.0.1 --rpcport 8545 --dev --datadir myethchain  如上操作后，geth console输出如下：
-I0824 17:28:57.448455 p2p/server.go:340] Starting Server I0824 17:28:59.554115 p2p/discover/udp.go:227] Listening, enode://04697f62537244ee34aea28e613530a1f46a64de75d8174d963c9ca0c2e6b96d4aa756ef7a33e269de1b7c088163835b72dda8f4dea712cf39569db4e8d8e43a@[::]:54798 I0824 17:28:59.554264 p2p/server.go:608] Listening on [::]:58245 I0824 17:28:59.554324 whisper/whisperv2/whisper.go:176] Whisper started I0824 17:28:59.570668 node/node.go:341] IPC endpoint opened: /Users/eric/wallet/myethchain/geth.ipc I0824 17:28:59.581423 node/node.go:411] HTTP endpoint opened: http://127.0.0.1:8545  同时也创建在当前目录创建目录myethchain，其结构如下：
-Michaels-iMac:wallet eric$ tree myethchain/ myethchain/ ├── geth │ ├── LOCK │ ├── chaindata │ │ ├── 000002.</description>
+      <description>环境说明  操作系统: macos.10.12.1 geth版本：1.5.9 solc版本：0.4.15  实践 1. 启动本地geth节点 Michaels-iMac:wallet eric$ geth --rpc --rpcaddr 127.0.0.1 --rpcport 8545 --dev --datadir myethchain 如上操作后，geth console输出如下：
+I0824 17:28:57.448455 p2p/server.go:340] Starting ServerI0824 17:28:59.554115 p2p/discover/udp.go:227] Listening, enode://04697f62537244ee34aea28e613530a1f46a64de75d8174d963c9ca0c2e6b96d4aa756ef7a33e269de1b7c088163835b72dda8f4dea712cf39569db4e8d8e43a@[::]:54798I0824 17:28:59.554264 p2p/server.go:608] Listening on [::]:58245I0824 17:28:59.554324 whisper/whisperv2/whisper.go:176] Whisper startedI0824 17:28:59.570668 node/node.go:341] IPC endpoint opened: /Users/eric/wallet/myethchain/geth.ipcI0824 17:28:59.581423 node/node.go:411] HTTP endpoint opened: http://127.0.0.1:8545同时也创建在当前目录创建目录myethchain，其结构如下：
+Michaels-iMac:wallet eric$ tree myethchain/myethchain/├── geth│ ├── LOCK│ ├── chaindata│ │ ├── 000002.</description>
     </item>
     
     <item>
@@ -1475,9 +1453,9 @@ Michaels-iMac:wallet eric$ tree myethchain/ myethchain/ ├── geth │ ├�
       <guid>https://myself659.github.io/2017/08/22/%E4%BB%A5%E5%A4%AA%E5%9D%8A%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E9%97%AE%E9%A2%98%E8%AE%B0%E5%BD%95/</guid>
       <description>说明 主要记录以太坊开发环境过程出现的问题
 getCompilers返回失败 问题描述 在搭建以太坊开发环境过程中，出现下面的错误信息：
-Welcome to the Geth JavaScript console! instance: Geth/v1.6.7-stable-ab5646c5/darwin-amd64/go1.8.3 modules: admin:1.0 debug:1.0 eth:1.0 miner:1.0 net:1.0 personal:1.0 rpc:1.0 shh:1.0 txpool:1.0 web3:1.0 &amp;gt; web3.eth.getCompilers() Error: The method eth_getCompilers does not exist/is not available at web3.js:3104:20 at web3.js:6191:15 at web3.js:5004:36 at &amp;lt;anonymous&amp;gt;:1:1  问题原因 geth版本编译不在gopath目录下编译
+Welcome to the Geth JavaScript console!instance: Geth/v1.6.7-stable-ab5646c5/darwin-amd64/go1.8.3modules: admin:1.0 debug:1.0 eth:1.0 miner:1.0 net:1.0 personal:1.0 rpc:1.0 shh:1.0 txpool:1.0 web3:1.0&amp;gt; web3.eth.getCompilers() Error: The method eth_getCompilers does not exist/is not availableat web3.js:3104:20at web3.js:6191:15at web3.js:5004:36at &amp;lt;anonymous&amp;gt;:1:1问题原因 geth版本编译不在gopath目录下编译
 解决方法 在gopath目录重新编译即可
-Michaels-iMac:wallet eric$ geth attach ipc://Users/eric/wallet/privchain/geth.ipc Welcome to the Geth JavaScript console! instance: Geth/v1.5.9-stable-a07539fb/darwin/go1.8.3 modules: admin:1.0 debug:1.0 eth:1.0 miner:1.0 net:1.0 personal:1.0 rpc:1.0 shh:1.</description>
+Michaels-iMac:wallet eric$ geth attach ipc://Users/eric/wallet/privchain/geth.ipc Welcome to the Geth JavaScript console!instance: Geth/v1.5.9-stable-a07539fb/darwin/go1.8.3modules: admin:1.0 debug:1.0 eth:1.0 miner:1.0 net:1.0 personal:1.0 rpc:1.0 shh:1.0 txpool:1.0 web3:1.</description>
     </item>
     
     <item>
@@ -1488,7 +1466,7 @@ Michaels-iMac:wallet eric$ geth attach ipc://Users/eric/wallet/privchain/geth.ip
       <guid>https://myself659.github.io/2017/07/28/slice%E5%A4%8D%E7%94%A8%E7%9A%84%E9%99%B7%E9%98%B1/</guid>
       <description>前言 先下结论：slice复用得当心，引用不当深埋雷。如若复用请分叉，分叉之后再使用。
 问题 先看一下代码吧
-package main import ( &amp;quot;fmt&amp;quot; ) func a() { x := []int{} x = append(x, 0) x = append(x, 1) // commonTags := labelsToTags(app.Labels) y := append(x, 2) // Tags: append(commonTags, labelsToTags(d.Labels)...) z := append(x, 3) // Tags: append(commonTags, labelsToTags(d.Labels)...) fmt.Println(y, z) } func b() { x := []int{} x = append(x, 0) x = append(x, 1) x = append(x, 2) // commonTags := labelsToTags(app.Labels) y := append(x, 3) // Tags: append(commonTags, labelsToTags(d.</description>
+package mainimport (&amp;quot;fmt&amp;quot;)func a() {x := []int{}x = append(x, 0)x = append(x, 1) // commonTags := labelsToTags(app.Labels)y := append(x, 2) // Tags: append(commonTags, labelsToTags(d.Labels)...)z := append(x, 3) // Tags: append(commonTags, labelsToTags(d.Labels)...)fmt.Println(y, z)}func b() {x := []int{}x = append(x, 0)x = append(x, 1)x = append(x, 2) // commonTags := labelsToTags(app.Labels)y := append(x, 3) // Tags: append(commonTags, labelsToTags(d.</description>
     </item>
     
     <item>
@@ -1499,8 +1477,8 @@ package main import ( &amp;quot;fmt&amp;quot; ) func a() { x := []int{} x = appe
       <guid>https://myself659.github.io/2017/05/10/linux%E8%BF%9B%E7%A8%8B%E8%AF%8A%E6%96%AD%E5%B0%8F%E7%BB%93/</guid>
       <description>日常工作中最常见问题是如何诊断一个进程运行过程中出现的问题，下面的总结从进程诊断的角度来展示，而是不从工具与命令角度来展示，进程诊断是工作的主体，工具与命令只是工具。
 进程信息 获得进程PID 方式一：
-root@iZ2ze9qnmldt4l3l82gtviZ:~# pidof tmsf-zc 2064  方式2：
-root@iZ2ze9qnmldt4l3l82gtviZ:~# ps -ef | grep tmsf-zc root 2064 1 0 Mar17 ? 02:24:25 ./tmsf-zc root 7596 7288 0 15:07 pts/4 00:00:00 grep --color=auto tmsf-zc root@iZ2ze9qnmldt4l3l82gtviZ:~#  查看进程线程个数 及对应PID root@iZ2ze9qnmldt4l3l82gtviZ:~# ps -efL | grep tmsf-zc root 2064 1 2064 0 5 Mar17 ? 00:00:00 ./tmsf-zc root 2064 1 2066 0 5 Mar17 ? 01:04:46 ./tmsf-zc root 2064 1 2067 0 5 Mar17 ?</description>
+root@iZ2ze9qnmldt4l3l82gtviZ:~# pidof tmsf-zc2064方式2：
+root@iZ2ze9qnmldt4l3l82gtviZ:~# ps -ef | grep tmsf-zcroot 2064 1 0 Mar17 ? 02:24:25 ./tmsf-zcroot 7596 7288 0 15:07 pts/4 00:00:00 grep --color=auto tmsf-zcroot@iZ2ze9qnmldt4l3l82gtviZ:~# 查看进程线程个数 及对应PID root@iZ2ze9qnmldt4l3l82gtviZ:~# ps -efL | grep tmsf-zcroot 2064 1 2064 0 5 Mar17 ? 00:00:00 ./tmsf-zcroot 2064 1 2066 0 5 Mar17 ? 01:04:46 ./tmsf-zcroot 2064 1 2067 0 5 Mar17 ? 00:44:53 .</description>
     </item>
     
     <item>
@@ -1510,10 +1488,10 @@ root@iZ2ze9qnmldt4l3l82gtviZ:~# ps -ef | grep tmsf-zc root 2064 1 0 Mar17 ? 02:2
       
       <guid>https://myself659.github.io/2017/05/10/%E4%BD%BF%E7%94%A8golang-present%E5%B7%A5%E5%85%B7%E5%88%B6%E4%BD%9Cpresentation/</guid>
       <description>依赖  依赖golang的开发环境  安装 present工具在golang.org/x/tools中，依赖golang.org/x/net包,安装过程如下：
-root@ia-VirtualBox:~# go get golang.org/x/net root@ia-VirtualBox:~# go get golang.org/x/tools root@ia-VirtualBox:~# go install golang.org/x/tools/cmd/present  安装结束后查看present位置
-root@ia-VirtualBox:~# which present /usr/local/go/bin/present  slide文件语法 具体参考准官方文档
-生成slide root@ia-VirtualBox:/share/gocode/src/github.com/pcrawfor# present golanguk/talk.slide 2017/05/09 23:53:15 Open your web browser and visit http://127.0.0.1:3999 2017/05/09 23:57:19 accepting connection from: 127.0.0.1:50852  共享slide 通过http选项指定外部访问地址
-root@ia-VirtualBox:/share/gocode/src/github.com/pcrawfor# present -http=&amp;quot;192.168.56.5:3999&amp;quot; golanguk/talk.slide 2017/05/10 00:02:47 WARNING! WARNING! WARNING! The present server appears to be listening on an address that is not localhost.</description>
+root@ia-VirtualBox:~# go get golang.org/x/net root@ia-VirtualBox:~# go get golang.org/x/toolsroot@ia-VirtualBox:~# go install golang.org/x/tools/cmd/present 安装结束后查看present位置
+root@ia-VirtualBox:~# which present/usr/local/go/bin/presentslide文件语法 具体参考准官方文档
+生成slide root@ia-VirtualBox:/share/gocode/src/github.com/pcrawfor# present golanguk/talk.slide 2017/05/09 23:53:15 Open your web browser and visit http://127.0.0.1:39992017/05/09 23:57:19 accepting connection from: 127.0.0.1:50852共享slide 通过http选项指定外部访问地址
+root@ia-VirtualBox:/share/gocode/src/github.com/pcrawfor# present -http=&amp;quot;192.168.56.5:3999&amp;quot; golanguk/talk.slide 2017/05/10 00:02:47 WARNING! WARNING! WARNING!The present server appears to be listening on an address that is not localhost.Anyone with access to this address and port will have access to this machine asthe user running present.</description>
     </item>
     
     <item>
@@ -1526,14 +1504,13 @@ root@ia-VirtualBox:/share/gocode/src/github.com/pcrawfor# present -http=&amp;quo
 其实就是这一句话：立足需求与业务，利用工程与技术，得到最合适的tradeofff，追求更简单的设计与方案，以此不断推进系统的演化。
 下面对这句话展开说明（当然，下面是一堆费话，只是为了解决自己的不吐不快而已罢了）。
 立足需求与业务 套用一句话：一切脱离需求的设计都是耍流氓。这里不进行具体案例分析，主要从以下角度来细化需求，提供思考的方向。
-用户角度  performance（性能）
- availability（可用性） usability（易用性） security（安全性）  研发角度  maintainablity （可维护性性） protability（可移植性） reusability（可重用性） scalable(可扩展性) testability（可测试性）  商业与市场角度  time to market（及时发布推向市场） cost and benifits（成本和收益） projected life time （产品生命周期） targeted market（目标市场） integration with legacy system (系统集成) roll back schedule （回退时间表）  KISS(Keep It Simple, Stupid) 有太多的例子，说明追求简单与遵循简单的设计原则的重要性，最典型就是unix的设计哲学成就伟大的linux的操作系统。
+用户角度  performance（性能） availability（可用性） usability（易用性） security（安全性）  研发角度  maintainablity （可维护性性） protability（可移植性） reusability（可重用性） scalable(可扩展性) testability（可测试性）  商业与市场角度  time to market（及时发布推向市场） cost and benifits（成本和收益） projected life time （产品生命周期） targeted market（目标市场） integration with legacy system (系统集成) roll back schedule （回退时间表）  KISS(Keep It Simple, Stupid) 有太多的例子，说明追求简单与遵循简单的设计原则的重要性，最典型就是unix的设计哲学成就伟大的linux的操作系统。
 什么是简单的系统设计呢？ 这是需要不断思考的问题，举个例子说明吧；在GFS实现中，针对client向chunk server写文件失败的问题，GFS的作法是直接返回失败，由client决定是否重写，这种作法就是聪明的简单之举。
 简单并不是随手可得的。关于这个可以参考rob pike，golang发明人之一的这篇演进： Simplicity is Complicated
 下面借此说明以下几个问题？
  什么是简单？  简单很难定义，还是举例说明吧 追求简单并不是单纯追求技术实现上的简单。简单追求是使用的简单，因为使用是高频，实现可能只有几次，例如上面演进谈到的GC,实现并不简单，想出这个GC算法就相当困难，实现那就更难了，但是有了GC，我们用golang编程的时候就不需要像C/C++那样关心内存的申请释放，再也不用担心踩内存的问题了，专心于设计与业务，给程序员带来了简单。（以我自己为例，学会了golang，我写代码都写得多，之前只会C/C++时候，业余时间主要是阅读代码，写代码都是工作驱动）
 另外还有一点，简单是先实现，再改进，例如golang的GC算法一开始并不好，GC导致应用 延迟大，到了1.5才有改进
- 如何实现简单？  演进中const同c语言定义一个常量不一样，不需要关心类型，在生活中一般人说数字2017除了程序员谁关心它是整型数还是浮点数啊</description>
+如何实现简单？  演进中const同c语言定义一个常量不一样，不需要关心类型，在生活中一般人说数字2017除了程序员谁关心它是整型数还是浮点数啊</description>
     </item>
     
     <item>
@@ -1543,7 +1520,7 @@ root@ia-VirtualBox:/share/gocode/src/github.com/pcrawfor# present -http=&amp;quo
       
       <guid>https://myself659.github.io/2017/04/08/%E9%98%BF%E9%87%8C%E4%BA%91ecs%E5%9F%BA%E6%9C%AC%E5%AE%89%E5%85%A8%E6%A3%80%E6%9F%A5%E5%B0%8F%E7%BB%93/</guid>
       <description>背景 查看阿里云ECS服务器日志发现如下：
-type=USER_AUTH msg=audit(1491669519.156:15631): pid=22938 uid=0 auid=4294967295 ses=4294967295 msg=&#39;op=PAM:authentication acct=&amp;quot;deploy&amp;quot; exe=&amp;quot;/usr/sbin/sshd&amp;quot; hostname=123.57.245.163 addr=123.57.245.163 terminal=ssh res=failed&#39; type=USER_LOGIN msg=audit(1491669519.156:15632): pid=22938 uid=0 auid=4294967295 ses=4294967295 msg=&#39;op=login acct=28696E76616C6964207573657229 exe=&amp;quot;/usr/sbin/sshd&amp;quot; hostname=? addr=123.57.245.163 terminal=sshd res=failed&#39; type=USER_LOGIN msg=audit(1491669587.368:15634): pid=22940 uid=0 auid=4294967295 ses=4294967295 msg=&#39;op=login acct=28756E6B6E6F776E207573657229 exe=&amp;quot;/usr/sbin/sshd&amp;quot; hostname=? addr=123.57.245.163 terminal=sshd res=failed&#39; type=USER_LOGIN msg=audit(1491669587.368:15635): pid=22940 uid=0 auid=4294967295 ses=4294967295 msg=&#39;op=login acct=28696E76616C6964207573657229 exe=&amp;quot;/usr/sbin/sshd&amp;quot; hostname=? addr=123.57.245.163 terminal=sshd res=failed&#39; type=USER_AUTH msg=audit(1491669589.420:15636): pid=22940 uid=0 auid=4294967295 ses=4294967295 msg=&#39;op=PAM:authentication acct=&amp;quot;deploy&amp;quot; exe=&amp;quot;/usr/sbin/sshd&amp;quot; hostname=123.57.245.163 addr=123.57.245.163 terminal=ssh res=failed&#39; type=USER_LOGIN msg=audit(1491669589.420:15637): pid=22940 uid=0 auid=4294967295 ses=4294967295 msg=&#39;op=login acct=28696E76616C6964207573657229 exe=&amp;quot;/usr/sbin/sshd&amp;quot; hostname=?</description>
+type=USER_AUTH msg=audit(1491669519.156:15631): pid=22938 uid=0 auid=4294967295 ses=4294967295 msg=&#39;op=PAM:authentication acct=&amp;quot;deploy&amp;quot; exe=&amp;quot;/usr/sbin/sshd&amp;quot; hostname=123.57.245.163 addr=123.57.245.163 terminal=ssh res=failed&#39;type=USER_LOGIN msg=audit(1491669519.156:15632): pid=22938 uid=0 auid=4294967295 ses=4294967295 msg=&#39;op=login acct=28696E76616C6964207573657229 exe=&amp;quot;/usr/sbin/sshd&amp;quot; hostname=? addr=123.57.245.163 terminal=sshd res=failed&#39;type=USER_LOGIN msg=audit(1491669587.368:15634): pid=22940 uid=0 auid=4294967295 ses=4294967295 msg=&#39;op=login acct=28756E6B6E6F776E207573657229 exe=&amp;quot;/usr/sbin/sshd&amp;quot; hostname=? addr=123.57.245.163 terminal=sshd res=failed&#39;type=USER_LOGIN msg=audit(1491669587.368:15635): pid=22940 uid=0 auid=4294967295 ses=4294967295 msg=&#39;op=login acct=28696E76616C6964207573657229 exe=&amp;quot;/usr/sbin/sshd&amp;quot; hostname=? addr=123.57.245.163 terminal=sshd res=failed&#39;type=USER_AUTH msg=audit(1491669589.420:15636): pid=22940 uid=0 auid=4294967295 ses=4294967295 msg=&#39;op=PAM:authentication acct=&amp;quot;deploy&amp;quot; exe=&amp;quot;/usr/sbin/sshd&amp;quot; hostname=123.57.245.163 addr=123.57.245.163 terminal=ssh res=failed&#39;type=USER_LOGIN msg=audit(1491669589.420:15637): pid=22940 uid=0 auid=4294967295 ses=4294967295 msg=&#39;op=login acct=28696E76616C6964207573657229 exe=&amp;quot;/usr/sbin/sshd&amp;quot; hostname=?</description>
     </item>
     
     <item>
@@ -1568,8 +1545,8 @@ type=USER_AUTH msg=audit(1491669519.156:15631): pid=22938 uid=0 auid=4294967295 
 互联网还有哪些没有覆盖到人群？ 上面引子的大叔虽然算是互联网用户，也只能是入门了，对于使用过程中一些wifi设置，app设置还是没有掌握。
 中国有14亿人口，网民有7亿，还有7亿不是网民，在这7亿中除了一些小孩子（高中生现在有相当一部分都有手机了）有相当一部分人，还是希望赶上互联网这躺车，他们不希望成为那些被抛弃的少数人，例如家里的一个伯母会主动让妈妈教她如何使用微信聊天。
 这里主要是想得出一个这样的人群：
- 50岁以上使用手机，却没有使用智能手机的人群，帮他们跨过手机进入智能手机应该不是很难的事情,毕竟会使用手机升级到使用智能手机也不是件很难的事情。（Ps：当这些用户转化互联网用户，视频是他们第一消费内容， 这个用户群体有多大呢？ 快手主动满足三四线城市的“低俗”用户，到现在收割大量用户，E轮3.5亿融资）  互联网产品如果要覆盖更多的人群要做些什么？ 简单表达如下： 1. 追求产品更简单，打开app各个功能入口一目了然 2. 生活化的内容，例如快手定位为生活分享平台 3. 智能的推荐算法，例如今日头条在三四线及以下城市得到大量的使用，占据大量的用户时间 4. 针对性优化，手机有老人机，app也可以针对性优化，视频只会wifi下载和播放，字体变大 5. 剩下的，相信各位产品经理会有更深入的思考。
-不要忘记那些正在追赶互联网潮流的用户，用技术与产品帮助他们上车吧！
+ 50岁以上使用手机，却没有使用智能手机的人群，帮他们跨过手机进入智能手机应该不是很难的事情,毕竟会使用手机升级到使用智能手机也不是件很难的事情。（Ps：当这些用户转化互联网用户，视频是他们第一消费内容， 这个用户群体有多大呢？ 快手主动满足三四线城市的“低俗”用户，到现在收割大量用户，E轮3.5亿融资）  互联网产品如果要覆盖更多的人群要做些什么？ 简单表达如下：
+ 追求产品更简单，打开app各个功能入口一目了然 生活化的内容，例如快手定位为生活分享平台 智能的推荐算法，例如今日头条在三四线及以下城市得到大量的使用，占据大量的用户时间 针对性优化，手机有老人机，app也可以针对性优化，视频只会wifi下载和播放，字体变大 剩下的，相信各位产品经理会有更深入的思考。  不要忘记那些正在追赶互联网潮流的用户，用技术与产品帮助他们上车吧！
 希望未来让更多人享受到互联网技术和产品带来的便利。
 参考  2017各省网民人数公布，总数7亿，看你们省多少人  （end）</description>
     </item>
@@ -1590,7 +1567,7 @@ type=USER_AUTH msg=audit(1491669519.156:15631): pid=22938 uid=0 auid=4294967295 
       
       <guid>https://myself659.github.io/2017/02/20/go%E7%9A%8450%E5%BA%A6%E7%81%B0%E8%A1%A5%E5%85%85-http-response%E5%8F%AA%E8%83%BD%E8%AF%BB%E4%B8%80%E6%AC%A1/</guid>
       <description>问题 还是从代码开始吧
-func fetch(url string) { tlsConfig := &amp;amp;tls.Config{ InsecureSkipVerify: true, } transport := &amp;amp;http.Transport{ TLSClientConfig: tlsConfig, } client := http.Client{Transport: transport} resp, err := client.Get(url) if err != nil { fmt.Println(err) &amp;lt;-time.After(300 * time.Second) go fetch(url) return } buf, err := ioutil.ReadAll(resp.Body) if err != nil { fmt.Println(&amp;quot;fetchyh:&amp;quot;, err) return } save(buf) //保存html到文件 defer resp.Body.Close() // http to doc doc, err := goquery.NewDocumentFromResponse(resp) if err != nil { fmt.</description>
+func fetch(url string) {tlsConfig := &amp;amp;tls.Config{InsecureSkipVerify: true,}transport := &amp;amp;http.Transport{TLSClientConfig: tlsConfig,}client := http.Client{Transport: transport}resp, err := client.Get(url)if err != nil {fmt.Println(err)&amp;lt;-time.After(300 * time.Second)go fetch(url)return}buf, err := ioutil.ReadAll(resp.Body)if err != nil {fmt.Println(&amp;quot;fetchyh:&amp;quot;, err)return}save(buf) //保存html到文件defer resp.Body.Close()// http to docdoc, err := goquery.NewDocumentFromResponse(resp)if err != nil {fmt.Println(err, &amp;quot;http resp to doc failed&amp;quot;)return}/*&amp;lt;div class=&amp;quot;datanowin&amp;quot; id=&amp;quot;myCont2&amp;quot;&amp;gt;*/datanowin := doc.</description>
     </item>
     
     <item>
@@ -1603,17 +1580,16 @@ func fetch(url string) { tlsConfig := &amp;amp;tls.Config{ InsecureSkipVerify: t
 另起一行，到此为止，进入正题
 缘起 最近通过uc浏览器下载apk的时候，偶尔出现下载apk，下载了60%左右卡住，想到以前看到这篇文章：The curious case of slow downloads（PS：毕竟这个问题不是常出现，就算一次下载失败，反正可以重新下载，总能下载成功的）
 说明 由于本人英文水平有限，翻译水平更是不足，就不具体翻译上面的文章，仅作简单说明，更深的理解请阅读The curious case of slow downloads
-问题描述 Cloudflare是美国一家CDN厂商，他们的工程师发现下面的问题： &amp;gt;一些下载速度很慢的连接被突然关闭，导致用户下载失败
- 这些连接不是客户端主动关闭，而是服务端主动关闭的
+问题描述 Cloudflare是美国一家CDN厂商，他们的工程师发现下面的问题：
+ 一些下载速度很慢的连接被突然关闭，导致用户下载失败
+  这些连接不是客户端主动关闭，而是服务端主动关闭的
  问题原因 原文有具体解决这个问题详细过程，还是值得一看，这里不作描述。
 在满足如下条件情况下会出现下载失败：
- socket发送缓冲区可用空间低于缓冲区总大小的三分之一 用户下载速度不能达到在60秒内使该socket发送缓冲区可用空间超过缓冲区总大小的三分之一
- nginx配置项send_timeout对应值为60秒  当满足上述条件，当60秒超时后，nginx会关闭该连接
+ socket发送缓冲区可用空间低于缓冲区总大小的三分之一 用户下载速度不能达到在60秒内使该socket发送缓冲区可用空间超过缓冲区总大小的三分之一 nginx配置项send_timeout对应值为60秒  当满足上述条件，当60秒超时后，nginx会关闭该连接
 这里大家可能有一个问题，网速慢也会不断发送，怎么会超时出现关闭连接？
 这里有一个普遍的误解：认为send像recv那样，每发送成功一个都上报epoll事件（以linux为例）,而实际send上报epoll事件条件如下：
- send buffer有可用发送空间
- 进入发送队列的数据一定要低于LOWAT的设置值（注意：linux 内核2.6版本没有这个限制，linux 内核4.5版本以上有此条件，其他版本情况未知） 发送缓存区的可用空间一定要超过大于发送空间的已使用的空间的二分之一  其中第三个条件对应内核代码如下：
-unsigned int tcp_poll(struct file *file, struct socket *sock, poll_table *wait) { unsigned int mask; struct sock *sk = sock-&amp;gt;sk; struct tcp_sock *tp = tcp_sk(sk); sock_poll_wait(file, sk-&amp;gt;sk_sleep, wait); if (sk-&amp;gt;sk_state == TCP_LISTEN) // 侦听状态，进入listen poll，即检查侦听socket的accpet队列是否为空 return inet_csk_listen_poll(sk); /* Socket is not locked.</description>
+ send buffer有可用发送空间 进入发送队列的数据一定要低于LOWAT的设置值（注意：linux 内核2.6版本没有这个限制，linux 内核4.5版本以上有此条件，其他版本情况未知） 发送缓存区的可用空间一定要超过大于发送空间的已使用的空间的二分之一  其中第三个条件对应内核代码如下：
+unsigned int tcp_poll(struct file *file, struct socket *sock, poll_table *wait){unsigned int mask;struct sock *sk = sock-&amp;gt;sk;struct tcp_sock *tp = tcp_sk(sk);sock_poll_wait(file, sk-&amp;gt;sk_sleep, wait);if (sk-&amp;gt;sk_state == TCP_LISTEN) // 侦听状态，进入listen poll，即检查侦听socket的accpet队列是否为空return inet_csk_listen_poll(sk);/* Socket is not locked.</description>
     </item>
     
     <item>
@@ -1677,7 +1653,7 @@ unsigned int tcp_poll(struct file *file, struct socket *sock, poll_table *wait) 
       
       <guid>https://myself659.github.io/2016/09/10/%E4%BB%8Ec%E8%AF%AD%E8%A8%80epoll%E7%BC%96%E7%A8%8B%E5%88%B0go-net%E5%AE%9E%E7%8E%B0%E5%88%86%E6%9E%90/</guid>
       <description>说明  go源码版本：1.7 go源码运行环境：Linux  epoll在c语言编程示例 先看一下大家比较熟悉的epoll在c语言中应用，代码取自rtmpserver_demo中的文件rtmpepollsrv.c
-int RtmpSessionHandle(int iFd, int iEvent, void *pContext) { int iRet; RTMP_SESSION *pSession = (RTMP_SESSION *)pContext; if(iEvent&amp;amp;EPOLLIN ) { if(0 == pSession-&amp;gt;handshake) { iRet = RtmpSessionHandshake(pSession); if(0 != iRet) { RtmpSessionHandleFin(pSession); } } else { iRet = RtmpPktHandle(pSession); } } if(iEvent &amp;amp; (EPOLLERR |EPOLLHUP) ) { RtmpSessionHandleFin(pSession); } return iRet; } int ListenHandle(int iFd, int iEvent, void *pContext) { int iNewFd; int iRet = 0; struct sockaddr tmpAddr; memset(&amp;amp;tmpAddr, 0, sizeof(tmpAddr)); int iSocketSize = sizeof(tmpAddr); EPOLL_CTX *pCtx; RTMP_SESSION *pServer; if(iEvent|EPOLLIN) { iNewFd = accept(iFd, &amp;amp;tmpAddr, (socklen_t *)&amp;amp;iSocketSize); if(RTMP_EPOLLSRV_INVALIDFD &amp;lt; iNewFd) { pServer = (RTMP_SESSION *)malloc(sizeof(RTMP_SESSION)); if(NULL == pServer) { return -1; } pServer-&amp;gt;handshake = 0; pCtx = (EPOLL_CTX *)malloc(sizeof(EPOLL_CTX)); if(NULL == pCtx) { free(pServer); return -1; } pServer-&amp;gt;socket = iNewFd; pCtx-&amp;gt;iFd = iNewFd; pCtx-&amp;gt;pContext = pServer; pCtx-&amp;gt;pfHandle = RtmpSessionHandle; /* 加入epoll */ iRet = epoll_op(g_iEpollFd, EPOLL_CTL_ADD, iNewFd, EPOLLIN|EPOLLERR|EPOLLHUP, pCtx); } else { printf(&amp;quot;accept errno:%s&amp;quot;,strerror(errno)); } } return iRet; } int epoll_op(int iEpollFd, int iOp, int iFd, int iEvent, EPOLL_CTX *pCtx) { int iRet; struct epoll_event ev; ev.</description>
+int RtmpSessionHandle(int iFd, int iEvent, void *pContext){int iRet;RTMP_SESSION *pSession = (RTMP_SESSION *)pContext;if(iEvent&amp;amp;EPOLLIN ){if(0 == pSession-&amp;gt;handshake){iRet = RtmpSessionHandshake(pSession); if(0 != iRet){RtmpSessionHandleFin(pSession); }}else{ iRet = RtmpPktHandle(pSession);}}if(iEvent &amp;amp; (EPOLLERR |EPOLLHUP) ){RtmpSessionHandleFin(pSession);}return iRet;}int ListenHandle(int iFd, int iEvent, void *pContext){int iNewFd;int iRet = 0;struct sockaddr tmpAddr;memset(&amp;amp;tmpAddr, 0, sizeof(tmpAddr));int iSocketSize = sizeof(tmpAddr);EPOLL_CTX *pCtx; RTMP_SESSION *pServer;if(iEvent|EPOLLIN){iNewFd = accept(iFd, &amp;amp;tmpAddr, (socklen_t *)&amp;amp;iSocketSize); if(RTMP_EPOLLSRV_INVALIDFD &amp;lt; iNewFd) {pServer = (RTMP_SESSION *)malloc(sizeof(RTMP_SESSION));if(NULL == pServer){return -1;}pServer-&amp;gt;handshake = 0; pCtx = (EPOLL_CTX *)malloc(sizeof(EPOLL_CTX));if(NULL == pCtx){free(pServer);return -1;}pServer-&amp;gt;socket = iNewFd;pCtx-&amp;gt;iFd = iNewFd;pCtx-&amp;gt;pContext = pServer;pCtx-&amp;gt;pfHandle = RtmpSessionHandle;/* 加入epoll */iRet = epoll_op(g_iEpollFd, EPOLL_CTL_ADD, iNewFd, EPOLLIN|EPOLLERR|EPOLLHUP, pCtx);}else{printf(&amp;quot;accept errno:%s&amp;quot;,strerror(errno));}}return iRet;}int epoll_op(int iEpollFd, int iOp, int iFd, int iEvent, EPOLL_CTX *pCtx){int iRet;struct epoll_event ev;ev.</description>
     </item>
     
     <item>
@@ -1689,7 +1665,7 @@ int RtmpSessionHandle(int iFd, int iEvent, void *pContext) { int iRet; RTMP_SESS
       <description>本篇以ChanBroker版本迭代过程，总结常见Channel编程问题
 简介 ChanBroker设计主要参考Kafka模型，主要提供进程内goroutine之间通信，实现以下功能：
  支持多个Publisher发布内容 支持Subscriber注册与去注册订阅 发布内容可以是任何形式 ChanBroker根据订阅情况完成内容推送  版本1 具体代码如下:
-package ChanBroker type Content interface{} type Subscriber chan Content type ChanBroker struct { RegSub chan Subscriber UnRegSub chan Subscriber Contents chan Content Stop chan bool Subscribers map[Subscriber]bool } func NewChanBroker() *ChanBroker { ChanBroker := new(ChanBroker) ChanBroker.RegSub = make(chan Subscriber) ChanBroker.UnRegSub = make(chan Subscriber) ChanBroker.Contents = make(chan Content) ChanBroker.Stop = make(chan bool) ChanBroker.Subscribers = make(map[Subscriber]bool) ChanBroker.run() return ChanBroker } func (self *ChanBroker) run() { go func() { // Broker goroutine for { select { case content := &amp;lt;-self.</description>
+package ChanBrokertype Content interface{}type Subscriber chan Contenttype ChanBroker struct {RegSub chan SubscriberUnRegSub chan SubscriberContents chan ContentStop chan boolSubscribers map[Subscriber]bool}func NewChanBroker() *ChanBroker {ChanBroker := new(ChanBroker)ChanBroker.RegSub = make(chan Subscriber)ChanBroker.UnRegSub = make(chan Subscriber)ChanBroker.Contents = make(chan Content)ChanBroker.Stop = make(chan bool)ChanBroker.Subscribers = make(map[Subscriber]bool)ChanBroker.run()return ChanBroker}func (self *ChanBroker) run() {go func() { // Broker goroutine for {select {case content := &amp;lt;-self.</description>
     </item>
     
     <item>
@@ -1702,15 +1678,8 @@ package ChanBroker type Content interface{} type Subscriber chan Content type Ch
 后端架构 这个后端系统设计如下图：
 很大众，国内基本都这么干，不多说
 用户状态系统设计 初期设计 单IDC部署，设计如下:
-相关说明  AG：接入网关，负责用户的连接 ConnRouter：连接路由服务器，主要提供以下功能： 所有用户状态的维护 用户状态查询 用户状态推送 用户状态同步 异步消息路由与转发 状态通知流: 用户登录成功或者下线状态通知 状态同步流：ConnRouter服务器之间用户状态的同步，不需要推送给订阅者
- 用户消息流: 异步发送给用户的消息在服务器内部的传输  设计要点  参考Kafka的模型，将用户状态改变作为事件，将事件描述为消息，将消息队列化成消息队列 AG对应Kafka中的Producer角色，主要原因是用户状态是用户连接的影子，AG能真实快速感知用户状态 ConnRouter对应Kafka中的Broker UserStat（用户统计与分析）与StateNotify（用户状态通知）对应Kafka中的Consumer 减少耦合，以异步发送消息到用户为例，整个流程三步走： 第一步：生成发送消息，发送到ConnRouter
- 第二步：根据目的用户ID，查找到出口AG，将消息转发到出口AG 第三步：出口AG查找用户连接，通过连接发送到目的用户
-  ConnRouter设计 用户状态数据存储设计 用户状态数据存储设计，如下图所示：
- 内存消耗 主要内存消耗来自用户状态数组（与ConnRouter连接都是长连接，可以忽略不计） 每种客户端类型下每个用户占用一个1Byte，那么1G内存可以存1073741824个用户的状态，超过了10亿，支持亿级用户内存不是瓶颈
- 查找用户所在AG与状态O(1)
-  高可用性  服务器级Master-Master模式 根据用户ID选择ConnRouter Master实现用户级Master-Standby模式  高性能  epoll事件驱动
- 无锁数据访问 流程无阻塞 O(1)查找 多核并发
- 支持批量处理  支持Failover，方便升级  当ConnRouter宕机或者主动升级重启时，各AG重新建立连接时，将自身的用户状态同步到ConnRouter，完成用户状态数据恢复  无状态与单点自治  ConnRouter用户状态数据是各个AG的同步，真正用户状态保存在AG网关 单点可以独立工作  数据冲突处理 主要是一个数据优先级的原则（根据数据源，从高到低）：</description>
+相关说明  AG：接入网关，负责用户的连接 ConnRouter：连接路由服务器，主要提供以下功能：   所有用户状态的维护 用户状态查询 用户状态推送 用户状态同步 异步消息路由与转发  状态通知流: 用户登录成功或者下线状态通知 状态同步流：ConnRouter服务器之间用户状态的同步，不需要推送给订阅者 用户消息流: 异步发送给用户的消息在服务器内部的传输  设计要点  参考Kafka的模型，将用户状态改变作为事件，将事件描述为消息，将消息队列化成消息队列 AG对应Kafka中的Producer角色，主要原因是用户状态是用户连接的影子，AG能真实快速感知用户状态 ConnRouter对应Kafka中的Broker UserStat（用户统计与分析）与StateNotify（用户状态通知）对应Kafka中的Consumer 减少耦合，以异步发送消息到用户为例，整个流程三步走：   第一步：生成发送消息，发送到ConnRouter 第二步：根据目的用户ID，查找到出口AG，将消息转发到出口AG 第三步：出口AG查找用户连接，通过连接发送到目的用户  ConnRouter设计 用户状态数据存储设计 用户状态数据存储设计，如下图所示：
+ 内存消耗 主要内存消耗来自用户状态数组（与ConnRouter连接都是长连接，可以忽略不计） 每种客户端类型下每个用户占用一个1Byte，那么1G内存可以存1073741824个用户的状态，超过了10亿，支持亿级用户内存不是瓶颈 查找用户所在AG与状态O(1)  高可用性  服务器级Master-Master模式 根据用户ID选择ConnRouter Master实现用户级Master-Standby模式  高性能  epoll事件驱动 无锁数据访问 流程无阻塞 O(1)查找 多核并发 支持批量处理  支持Failover，方便升级  当ConnRouter宕机或者主动升级重启时，各AG重新建立连接时，将自身的用户状态同步到ConnRouter，完成用户状态数据恢复  无状态与单点自治  ConnRouter用户状态数据是各个AG的同步，真正用户状态保存在AG网关 单点可以独立工作  数据冲突处理 主要是一个数据优先级的原则（根据数据源，从高到低）：</description>
     </item>
     
     <item>
@@ -1734,14 +1703,12 @@ package ChanBroker type Content interface{} type Subscriber chan Content type Ch
       <guid>https://myself659.github.io/2016/07/26/go-channel-%E7%89%B9%E7%82%B9%E7%AF%87/</guid>
       <description>channel模式 根据同步方式不同，channel有两种模式：
 1、同步模式,形式如下：
-ch := make(chan int)  2、队列模式，形式如下：
-ch := make(chan int, 10)  根据数据方向流不同，channel类型可以有以下三种模式：
+ch := make(chan int)2、队列模式，形式如下：
+ch := make(chan int, 10)根据数据方向流不同，channel类型可以有以下三种模式：
  写操作模式（只发送） 读操作模式（只接收） 读写操作模式（不限发送与接收）  channel操作 channel有以下操作：
- 创建 关闭 写(发送)操作 读(接收)操作
-  这些操作都是原子操作
+ 创建 关闭 写(发送)操作 读(接收)操作  这些操作都是原子操作
 channel状态 根据模式与操作，channel有以下状态：
- 同步写阻塞 同步读阻塞 关闭状态
- 队列写阻塞 队列读阻塞 队列可读写 nil状态  channel状态与操作之间关系    状态/操作 写操作 读操作 关闭 创建     nil状态 写阻塞 写阻塞 产生panic(close of nil channel) -   同步写阻塞 写阻塞 成功读取数据 进入关闭状态，产生panic -   同步读阻塞 成功写入数据 读阻塞 进入关闭状态 -   关闭状态 产生panic 立即返回(nil，false) 产生panic -   队列写阻塞 写阻塞 成功读取队列中数据 进入关闭状态，成功写入队列的数据可读 -   队列读阻塞 成功写入数据 读阻塞 进入关闭状态 -   队列可读写 成功写入数据 成功读取数据 进入关闭状态，成功写入队列的数据可读 -    由于个人水平有限，有什么不足与错误，敬请指正！</description>
+ 同步写阻塞 同步读阻塞 关闭状态 队列写阻塞 队列读阻塞 队列可读写 nil状态  channel状态与操作之间关系    状态/操作 写操作 读操作 关闭 创建     nil状态 写阻塞 写阻塞 产生panic(close of nil channel) -   同步写阻塞 写阻塞 成功读取数据 进入关闭状态，产生panic -   同步读阻塞 成功写入数据 读阻塞 进入关闭状态 -   关闭状态 产生panic 立即返回(nil，false) 产生panic -   队列写阻塞 写阻塞 成功读取队列中数据 进入关闭状态，成功写入队列的数据可读 -   队列读阻塞 成功写入数据 读阻塞 进入关闭状态 -   队列可读写 成功写入数据 成功读取数据 进入关闭状态，成功写入队列的数据可读 -    由于个人水平有限，有什么不足与错误，敬请指正！</description>
     </item>
     
     <item>
@@ -1751,30 +1718,25 @@ channel状态 根据模式与操作，channel有以下状态：
       
       <guid>https://myself659.github.io/2016/06/02/10-lessons-from-10-years-of-amazon-web-services%E8%AF%91%E6%96%87/</guid>
       <description>前言  亚马逊在2006年3月14日发布AWS，到现在差不多10年了。回首过去的10年里，我们在构建 安全，高可用性，可扩展性，低成本的服务方面积累了几百条经验与教训。 由于AWS是建设并在全球运营这些服务的先驱，这些教训对我们的业务至关重要。正如我们以前多次说，“没有压缩经验的算法”，每月有超过百万的活跃客户，这些客户服务几个亿的用户，在这个过程我们不乏机会积累经验并持续优化从而为客户提供更好的服务。
-我选择了下面这些经验教训，与大家分享，希望它们对你们有用。
+  我选择了下面这些经验教训，与大家分享，希望它们对你们有用。
  1. 构建不断进化的系统  几乎从第一天开始,我们知道自己开发的软件在一年后将不会继续运行。我们需要重新审视和改进架构，以确保我们可以解决订单规模增长一到二个数量级所带来的问题。但是我们不能采取停电检修这种旧方法升级系统，这是因为遍布世界各地的海量业务需要我们的平台提供7*24小时高可用性服务。我们需要建立这样架构：能够在不停止服务的情况下引入新的组件。Marvin Theimer,亚马逊杰出工程师，曾开玩笑地说，亚马逊S3的演变可以被描述为从当初的单引擎飞机，随着时间的推移飞机不断升级，先是升级到737，然后是一组747，现在成了3805的空中舰队。在此期间，我们在飞行过程中完成加油，而客户甚至没有觉察到这一点。
  感悟： 唯有变化才是确定，系统应该保证灵活性与扩展性。云计算系统是需要不断进化，开发人员也需要不断进化
 2. 总有想不到的  异常总是会发生的，随着时间的推移，一切都会出现异常：从路由器到硬盘，从操作系统到内存单元，从瞬态错误到永久性故障。无论你使用的是最高品质的硬件或最低成本的硬件，这些总是会发生的。在大规模系统中更是如此，例如，在S3中处理和存储的万亿交易，任何异常，即使是最小的可能性也将成为现实。部分这样的异常可以事先预见的，但更多的异常却在设计和开发过程中未能被发现。
-我们需要开发一个视异常为常态的系统，即使我们不知道会有什么样的异常。即使“房子着火了”，系统也需要保持运行。重要的是在整个系统在不宕机的情况下能够处理这些异常。我们掌握隔离异常与控制异常的影响范围的方法从而使整个系统能够正常运行。
+  我们需要开发一个视异常为常态的系统，即使我们不知道会有什么样的异常。即使“房子着火了”，系统也需要保持运行。重要的是在整个系统在不宕机的情况下能够处理这些异常。我们掌握隔离异常与控制异常的影响范围的方法从而使整个系统能够正常运行。
  感悟：异常是常态，如何处理异常是系统设计阶段必须考虑到的问题。
 3. 提供基元而不是框架  我们很快意识到，客户的需求是不断变化的。当客户摆脱传统的IT硬件和数据中心的限制，他们开始使用感兴趣却没有应用过的模式搭建系统。因此，我们努力做到超级敏捷以确保满足客户的需求。
-其中一个最重要的策略是向客户提供的基元和工具，让客户从中选择最合适他们的集合，而不是只提供一个框架中，迫使他们不得不使用。这种做法使我们的客户取得了成功，其后的AWS服务也同样利用这些客户已经熟悉的基础服务。
-同样重要的是我们不知道客户下一个关心问题是什么，直到他们开始使用我们的服务。这就是为什么我们经常用最少的功能集提供新的服务，让我们的客户能够帮助推动产品路线图规划与新功能的开发。
+  其中一个最重要的策略是向客户提供的基元和工具，让客户从中选择最合适他们的集合，而不是只提供一个框架中，迫使他们不得不使用。这种做法使我们的客户取得了成功，其后的AWS服务也同样利用这些客户已经熟悉的基础服务。
+  同样重要的是我们不知道客户下一个关心问题是什么，直到他们开始使用我们的服务。这就是为什么我们经常用最少的功能集提供新的服务，让我们的客户能够帮助推动产品路线图规划与新功能的开发。
  感悟： 客户的需求是下一个产品。立足基础，理解客户的需求，才能满足客户。
 4. 自动化是关键  提供云计算服务不同于开发并交付软件，管理大规模系统需要不同的思维方式，以确保满足用户的高可用性，高性能和可扩展性的需求。
-这其中关键的一点是尽可能地实现自动化管理以避免容易出错的手动操作。要做到这一点，我们需要实现管理API从而管理我们的业务的关键功能。AWS可以帮助客户做到这一点。通过为应用程序的每一个分解组件提供管理API，从而应用自动化的规则来保证可靠性和预期的性能。
-如果你需要SSH到一个服务器或一个实例，那么你仍然需要更多的自动化，这是一个衡量自动化水平的好方法。
+  这其中关键的一点是尽可能地实现自动化管理以避免容易出错的手动操作。要做到这一点，我们需要实现管理API从而管理我们的业务的关键功能。AWS可以帮助客户做到这一点。通过为应用程序的每一个分解组件提供管理API，从而应用自动化的规则来保证可靠性和预期的性能。
+  如果你需要SSH到一个服务器或一个实例，那么你仍然需要更多的自动化，这是一个衡量自动化水平的好方法。
  感悟： 用人管理代码，用代码管理机器
 5. APIs are forever（API是不会变的）  这是我们从亚马逊零售业务经验中吸取的教训，它的重要性甚至超过了AWS中那些以API为中心的业务。
-一旦客户开始使用我们的API构建他们的应用程序和系统，改变这些API变得不可能，因我们修改这些API,会影响客户的业务运营。我们只有一次机会定义API,所以设计API是一个非常重要的工作。
+  一旦客户开始使用我们的API构建他们的应用程序和系统，改变这些API变得不可能，因我们修改这些API,会影响客户的业务运营。我们只有一次机会定义API,所以设计API是一个非常重要的工作。
  感悟： 接口优先，实现其次，实现可以调整，而接口一旦上线就没有什么回旋的余地。
 6. 监控资源应用  当构建一个服务，一定要有服务及其运营成本的数据以确定相应的计费方式，尤其是对于运行高营业额-低利润率的业务。AWS理所应当关注服务的成本，这样我们在为客户的提供服务的同时能够明确在哪些地方可以提高运营效率，以进一步削减成本，以更低的价格回馈客户。
-在创业初期，我们不知道S3服务应该采用哪种计费方式：我们曾认为应该对存储和带宽资源计费;经过一段时间，我们认识到请求的数量也应当计费。如果客户有许多微小的文件，即使他们上百万次数请求服务，消耗的存储和带宽都不会很高。我们不得不针对资源使用各个维度调整计费方式使AWS成为是一个可持续发展的业务。
- 感悟： 无监控不系统，无度量不优化。 作任何商业服务不仅要有成本意识，而且应该作到度量成本。
-7. 从一开始集成安全  保护你的客户应该永远是你的首选，对于AWS来说亦是如此。不管运营的角度，还是策略方面，这将永远是我们的头号投资领域。
-我们很快地发现只有在一开始就把安全考虑进去才能提供安全的服务。安全团队的工作不是服务开发完成之后进行验证，他们必须在服务设计的第一天确认安全已经落实，且稳如泰山。总之对于安全，没有任何妥协。
- 感悟： 安全是基本功能。
-8. 加密是一等公民  加密是为确保客户能控制谁有权访问他们的数据一个关键机制。十年前，加密工具和服务很难使用，直到几年前我们学会更好地将加密集成到我们的服务当中。最早的加密是从S3服务端开始的。如果您想检查我们的数据中心的任何磁盘，任何数据都不可访问的。但随着亚马逊推出CloudHSM（硬件安全模块）和Amazon Key Management Service（密钥管理服务），客户可以加密自己的密钥，从而不再需要AWS来管理钥匙。一段时间以来，每个新服务均支持加密。例如，Amazon Redshift的每个数据块默认以随机密钥加密，随后这些随机密钥被私钥再加密。私钥由客户提供，确保他们是唯一可以解密和访问他们的关键业务数据或个人身份信息。</description>
+  在创业初期，我们不知道S3服务应该采用哪种计费方式：我们曾认为应该对存储和带宽资源计费;经过一段时间，我们认识到请求的数量也应当计费。如果客户有许多微小的文件，即使他们上百万次数请求服务，消耗的存储和带宽都不会很高。我们不得不针对资源使用各个维度调整计费方式使AWS成为是一个可持续发展的业务。</description>
     </item>
     
     <item>
@@ -1785,8 +1747,8 @@ channel状态 根据模式与操作，channel有以下状态：
       <guid>https://myself659.github.io/2016/05/27/facebook-live%E4%B8%80%E4%BA%9B%E6%8A%80%E6%9C%AF%E7%BB%86%E8%8A%82/</guid>
       <description>协议选择 最初选择HLS,后面切换为RTMP，切换为RTMP主要为了降低延迟，提供更好直播用户体验。
 解决并发问题  分发架构
-采用Live stream server， origin server， edge server 三层架构；如下图如示：   一句话就是：通过遍布各地的CDN节点（edge server）实现海量用户的播放请求。
- 请求合并应对高并发 采用的CDN方案，应对一般数量级的播放是没有问题，但是facebook上有很多名人与网红，他们每个人都有几百万个粉丝，这就要求facebook live 直播系统能够处理超过一亿人同时播放的能力。假如一个名人的直播有100万粉丝同时观看，edge server缓存命中率为98%，那么未命中用户为2万，这2万用户回源到origin server甚至回源到Live stream server，服务器压力可想而知，这不是2W个连接而已，而是2W个视频播放，带宽，cpu都是一个很大的考验。用数字说话，以带宽为例； 假设一个HLS切片为3S，高清视频码率为1800K bps，那么一秒带宽需求为：  20K /3 *1800K b/s * 1s = 20*600 Mb = 12 Gb  每秒的带宽超过10Gb，服务器网卡高配也才10Gb。
+采用Live stream server， origin server， edge server 三层架构；如下图如示： ![分发架构图](/images/facebook live arch.png)  一句话就是：通过遍布各地的CDN节点（edge server）实现海量用户的播放请求。
+ 请求合并应对高并发 采用的CDN方案，应对一般数量级的播放是没有问题，但是facebook上有很多名人与网红，他们每个人都有几百万个粉丝，这就要求facebook live 直播系统能够处理超过一亿人同时播放的能力。假如一个名人的直播有100万粉丝同时观看，edge server缓存命中率为98%，那么未命中用户为2万，这2万用户回源到origin server甚至回源到Live stream server，服务器压力可想而知，这不是2W个连接而已，而是2W个视频播放，带宽，cpu都是一个很大的考验。用数字说话，以带宽为例； 假设一个HLS切片为3S，高清视频码率为1800K bps，那么一秒带宽需求为：  20K /3 *1800K b/s * 1s = 20*600 Mb = 12 Gb每秒的带宽超过10Gb，服务器网卡高配也才10Gb。
 业务驱动方案，其具体解决方案如下： 在edge server 对同一个视频切片的多人cache miss请求进行合并，只发送一个到 origin server，待origin server 返回该视频切片，同时发送给该视频切片的所有请求。这样就可以大量减少回源的请求数量。origin server亦是如此。
 想到下面的问题：
  最近520，林心如与霍建华在微博宣布恋爱关系，微博是怎么搞定推送信息众粉丝的呢？ 一个直播有100W在线观看，如何实现海量消息的转发？
@@ -1800,19 +1762,7 @@ channel状态 根据模式与操作，channel有以下状态：
       <pubDate>Sat, 21 May 2016 11:58:06 +0200</pubDate>
       
       <guid>https://myself659.github.io/2016/05/21/git%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E6%80%BB%E7%BB%93/</guid>
-      <description>git仓库  初始化一个版本仓库
-git init  clone远程版本库
-git clone git@github.com:myself659/FFmpeg.git  添加远程版本库origin
-git remote add origin git@github.com:myself659/rtmpserver_demo.git  查看远程仓库信息
-git remote -v  删除远程仓库
-git remote rm &amp;lt;repository&amp;gt;   git修改  添加当前修改的文件到暂存区
-git add .  提交修改到本地
-git commit -m &amp;quot;fix bug 0001&amp;quot;  提交修改到远程
-git push -u origin master  查看修改状态
-git status  重命名文件
-git mv README readme  从版本库中删除文件
-git rm readme  取消对文件修改
-git checkout -- readme  修改最新一次修改注释</description>
+      <description>git仓库  初始化一个版本仓库  git initclone远程版本库  git clone git@github.com:myself659/FFmpeg.git 添加远程版本库origin  git remote add origin git@github.com:myself659/rtmpserver_demo.git 查看远程仓库信息  git remote -v删除远程仓库  git remote rm &amp;lt;repository&amp;gt;git修改  添加当前修改的文件到暂存区  git add .提交修改到本地  git commit -m &amp;quot;fix bug 0001&amp;quot;提交修改到远程  git push -u origin master 查看修改状态  git status 重命名文件  git mv README readme 从版本库中删除文件  git rm readme 取消对文件修改  git checkout -- readme 修改最新一次修改注释  git commit amend 显示所有提交  git show 恢复最后一次提交的状态  git revert HEAD 恢复某次提交的状态  git revert &amp;lt;$id&amp;gt;git log  查看修改log  git log 查看指定文件每次提交记录  git log &amp;lt;filename&amp;gt;查看最近两次详细修改内容的diff  git log -p -2查看提交统计信息  git log --stat git分支  查看远程分支  git branch -r 创建新分支  git branch &amp;lt;new_branch&amp;gt;查看各分支创建最后提交信息  git branch -v 删除指定分支  git branch -d &amp;lt;branch_name&amp;gt; 强制删除指定分支  git branch -D &amp;lt;branch_name&amp;gt; 查看已经被合并到当前分支的分支  git branch --merged查看尚未被合并到当前分支的分支  git branch --no-merged合并分支  git merge &amp;lt;merge_branch&amp;gt; 切换分支  git checkout &amp;lt;branch_name&amp;gt;抓取远程仓库所有分支更新并合并到本地  git pull 抓取远程仓库所有分支更新并合并到本地，不要快进合并  git pull --no-ff抓取远程仓库更新  git fetch originpush所有分支  git push 将本地主分支推到远程主分支  git push origin master 将本地主分支推到远程(如无远程主分支则创建，用于初始化远程仓库)  git push -u origin master 创建远程分支  git push origin &amp;lt;local_branch&amp;gt;:&amp;lt;remote_branch&amp;gt;git diff  比较当前文件和暂存区文件差异  git diff &amp;lt;file&amp;gt;比较两次提交之间的差异  git diff &amp;lt;$id1&amp;gt; &amp;lt;$id2&amp;gt;比较两个分支  git diff &amp;lt;branch1&amp;gt; &amp;lt;branch2&amp;gt;比较统计信息  git diff --stat misc  提交文件超过100M  git filter-branch -f --index-filter &amp;quot;git rm -rf --cached --ignore-unmatch slides/tt.</description>
     </item>
     
     <item>
@@ -1823,8 +1773,7 @@ git checkout -- readme  修改最新一次修改注释</description>
       <guid>https://myself659.github.io/2016/04/17/linux%E5%86%85%E6%A0%B8%E5%B8%B8%E8%A7%81crash%E5%8E%9F%E5%9B%A0/</guid>
       <description>前言 与前同事交流，发现以前的技术经历与解决的问题，现在接触不多，但是想想还是很有意思，虽然很多细节现在已经不能表达出来或展示出来，但是还得写出来。下面写的得主要个人经历的linux内核crash原因。
 内存类 这一类同用户态类似，主要有以下几种情况，
- 访问NULL 访问释放后的内存 非法访问内存 内存被踩 内存耗尽 野指针操作  堆栈类  内核调用栈溢出
- 写坏调用栈  锁  死锁 rcu使用错误 锁内存被写坏 长期获取不到锁，导致看门狗饿死，狗叫重启  调度  线程陷入死循环或者长时间占用cpu，在非抢占模式下其他线程得不到调度  中断上下文  在中断上下文调用错误的函数，例如在中断上下文使用信号量，更多参考那些可进入睡眠状态的Linux内核函数  硬件故障 在系统运行过程出现硬件故障也会导致内核crash。接触较少，不作说明。
+ 访问NULL 访问释放后的内存 非法访问内存 内存被踩 内存耗尽 野指针操作  堆栈类  内核调用栈溢出 写坏调用栈  锁  死锁 rcu使用错误 锁内存被写坏 长期获取不到锁，导致看门狗饿死，狗叫重启  调度  线程陷入死循环或者长时间占用cpu，在非抢占模式下其他线程得不到调度  中断上下文  在中断上下文调用错误的函数，例如在中断上下文使用信号量，更多参考那些可进入睡眠状态的Linux内核函数  硬件故障 在系统运行过程出现硬件故障也会导致内核crash。接触较少，不作说明。
 后记 能力有限，条件有限，写的很虚，也不全面，以后有机会再来点实际的，这个目的主要是回忆总结自己的知识体系。</description>
     </item>
     
@@ -1836,8 +1785,8 @@ git checkout -- readme  修改最新一次修改注释</description>
       <guid>https://myself659.github.io/2016/03/09/linux-x86-64-%E5%87%BD%E6%95%B0%E8%B0%83%E7%94%A8%E6%A0%88%E5%AE%9E%E4%BE%8B%E5%88%86%E6%9E%90/</guid>
       <description>前言 动手实践并写文章花5倍的时间一次性把事情做到90分，好过读别人文章只能做到60分，后面还需要花时间继续深入学习。本文目的希望通过分析一个简单的函数调用加深对x86-64寄存器及栈帧的结构的认识，以便在定位问题需要的时候能够熟练运用。
 环境 1.操作系统和内核
-[root@localhost ~]# cat /proc/version Linux version 3.10.0-229.4.2.el7.x86_64 (builder@kbuilder.dev.centos.org) (gcc version 4.8.2 20140120 (Red Hat 4.8.2-16) (GCC) ) #1 SMP Wed May 13 10:06:09 UTC 2015  2.GCC版本
-[root@localhost ~]# gcc -v Using built-in specs. COLLECT_GCC=gcc COLLECT_LTO_WRAPPER=/usr/libexec/gcc/x86_64-redhat-linux/4.8.3/lto-wrapper Target: x86_64-redhat-linux Configured with: ../configure --prefix=/usr --mandir=/usr/share/man --infodir=/usr/share/info --with-bugurl=http://bugzilla.redhat.com/bugzilla --enable-bootstrap --enable-shared --enable-threads=posix --enable-checking=release --with-system-zlib --enable-__cxa_atexit --disable-libunwind-exceptions --enable-gnu-unique-object --enable-linker-build-id --with-linker-hash-style=gnu --enable-languages=c,c++,objc,obj-c++,java,fortran,ada,go,lto --enable-plugin --enable-initfini-array --disable-libgcj --with-isl=/builddir/build/BUILD/gcc-4.8.3-20140911/obj-x86_64-redhat-linux/isl-install --with-cloog=/builddir/build/BUILD/gcc-4.8.3-20140911/obj-x86_64-redhat-linux/cloog-install --enable-gnu-indirect-function --with-tune=generic --with-arch_32=x86-64 --build=x86_64-redhat-linux Thread model: posix gcc version 4.</description>
+[root@localhost ~]# cat /proc/version Linux version 3.10.0-229.4.2.el7.x86_64 (builder@kbuilder.dev.centos.org) (gcc version 4.8.2 20140120 (Red Hat 4.8.2-16) (GCC) ) #1 SMP Wed May 13 10:06:09 UTC 20152.GCC版本
+[root@localhost ~]# gcc -vUsing built-in specs.COLLECT_GCC=gccCOLLECT_LTO_WRAPPER=/usr/libexec/gcc/x86_64-redhat-linux/4.8.3/lto-wrapperTarget: x86_64-redhat-linuxConfigured with: ../configure --prefix=/usr --mandir=/usr/share/man --infodir=/usr/share/info --with-bugurl=http://bugzilla.redhat.com/bugzilla --enable-bootstrap --enable-shared --enable-threads=posix --enable-checking=release --with-system-zlib --enable-__cxa_atexit --disable-libunwind-exceptions --enable-gnu-unique-object --enable-linker-build-id --with-linker-hash-style=gnu --enable-languages=c,c++,objc,obj-c++,java,fortran,ada,go,lto --enable-plugin --enable-initfini-array --disable-libgcj --with-isl=/builddir/build/BUILD/gcc-4.8.3-20140911/obj-x86_64-redhat-linux/isl-install --with-cloog=/builddir/build/BUILD/gcc-4.8.3-20140911/obj-x86_64-redhat-linux/cloog-install --enable-gnu-indirect-function --with-tune=generic --with-arch_32=x86-64 --build=x86_64-redhat-linuxThread model: posixgcc version 4.</description>
     </item>
     
     <item>
@@ -1850,7 +1799,7 @@ git checkout -- readme  修改最新一次修改注释</description>
 引子 同事自已造轮子要实现一个rtmp协议，在调试过程由于有一个问题有没有解决，影响团队的联调，对于他造主动造轮子，我是不支持的。重复实现一个完整的rtmp协议，会走很多坑的，需要花费较多的时间，而开源的librtmp已经实现完整的rtmp协议功能，我决定将librtmp协议移植到现在系统。
 接着就自己开始干，了解librtmp实现，动手写一个利用librtmp支持epoll的rtmpserver。 在调试过程出现rtmp握手失败的问题，初看定位无果的情况下，我修改了makefile，生成调试的符号表，同时打开调试开关。这些弄好之后，试了一下，没有我期待的符号表与调试信息。
 于是我怀疑自己对makefile是否正确。重新学习makefile与编译的一些知识还是无果，觉得makefile修改是正确的。这时候灵光一现，看看进程加载的是哪些lib
-(gdb) info sharedlibrary From To Syms Read Shared Object Library 0x0000003a74600b00 0x0000003a746198db Yes (*) /lib64/ld-linux-x86-64.so.2 0x00007ffff7dd57e0 0x00007ffff7de4358 Yes (*) /usr/local/lib/librtmp.so.1 #加载的librtmp库 0x0000003c39a18340 0x0000003c39a53558 Yes (*) /usr/lib64/libssl.so.10 0x0000003c39669cc0 0x0000003c3975dbe8 Yes (*) /usr/lib64/libcrypto.so.10 0x0000003a76602120 0x0000003a7660d3a8 Yes (*) /lib64/libz.so.1 0x0000003a74a1ea20 0x0000003a74b3f76c Yes (*) /lib64/libc.so.6 0x0000003a8260ac30 0x0000003a82638728 Yes (*) /lib64/libgssapi_krb5.so.2 0x0000003a8161b430 0x0000003a81694a78 Yes (*) /lib64/libkrb5.so.3 0x0000003a806013f0 0x0000003a80601fc8 Yes (*) /lib64/libcom_err.so.2 0x0000003a812043d0 0x0000003a8121d5a8 Yes (*) /lib64/libk5crypto.so.3 0x0000003a74e00de0 0x0000003a74e01998 Yes (*) /lib64/libdl.</description>
+(gdb) info sharedlibrary From To Syms Read Shared Object Library0x0000003a74600b00 0x0000003a746198db Yes (*) /lib64/ld-linux-x86-64.so.20x00007ffff7dd57e0 0x00007ffff7de4358 Yes (*) /usr/local/lib/librtmp.so.1 #加载的librtmp库0x0000003c39a18340 0x0000003c39a53558 Yes (*) /usr/lib64/libssl.so.100x0000003c39669cc0 0x0000003c3975dbe8 Yes (*) /usr/lib64/libcrypto.so.100x0000003a76602120 0x0000003a7660d3a8 Yes (*) /lib64/libz.so.10x0000003a74a1ea20 0x0000003a74b3f76c Yes (*) /lib64/libc.so.60x0000003a8260ac30 0x0000003a82638728 Yes (*) /lib64/libgssapi_krb5.so.20x0000003a8161b430 0x0000003a81694a78 Yes (*) /lib64/libkrb5.so.30x0000003a806013f0 0x0000003a80601fc8 Yes (*) /lib64/libcom_err.so.20x0000003a812043d0 0x0000003a8121d5a8 Yes (*) /lib64/libk5crypto.so.30x0000003a74e00de0 0x0000003a74e01998 Yes (*) /lib64/libdl.</description>
     </item>
     
     <item>
@@ -1860,7 +1809,7 @@ git checkout -- readme  修改最新一次修改注释</description>
       
       <guid>https://myself659.github.io/2016/01/28/docker-image%E5%91%BD%E4%BB%A4%E5%AE%9E%E8%B7%B5/</guid>
       <description>搭建了docker环境，就来体验一下Docker，常用docker image命令如下：
-1. 搜索docker image root@localhost ~]# docker search ubuntu NAME DESCRIPTION STARS OFFICIAL AUTOMATED ubuntu Ubuntu is a Debian-based Linux operating s... 2954 [OK] ubuntu-upstart Upstart is an event-based replacement for ... 58 [OK] dorowu/ubuntu-desktop-lxde-vnc Ubuntu with openssh-server and NoVNC on po... 32 [OK] torusware/speedus-ubuntu Always updated official Ubuntu docker imag... 25 [OK] ubuntu-debootstrap debootstrap --variant=minbase --components... 22 [OK] tleyden5iwx/ubuntu-cuda Ubuntu 14.04 with CUDA drivers pre-installed 18 [OK] rastasheep/ubuntu-sshd Dockerized SSH service, built on top of of.</description>
+1. 搜索docker image root@localhost ~]# docker search ubuntu NAME DESCRIPTION STARS OFFICIAL AUTOMATEDubuntu Ubuntu is a Debian-based Linux operating s... 2954 [OK] ubuntu-upstart Upstart is an event-based replacement for ... 58 [OK] dorowu/ubuntu-desktop-lxde-vnc Ubuntu with openssh-server and NoVNC on po... 32 [OK]torusware/speedus-ubuntu Always updated official Ubuntu docker imag... 25 [OK]ubuntu-debootstrap debootstrap --variant=minbase --components... 22 [OK] tleyden5iwx/ubuntu-cuda Ubuntu 14.04 with CUDA drivers pre-installed 18 [OK]rastasheep/ubuntu-sshd Dockerized SSH service, built on top of of.</description>
     </item>
     
     <item>
@@ -1872,7 +1821,7 @@ git checkout -- readme  修改最新一次修改注释</description>
       <description>docker可以说是去年最热的技术，也是业界大谈特谈的技术，到了今年有很多公司已经将docker应用于自己的生产环境。Docker已经从一个工具转化成平台，小生态圈。作为一名程序员应该与时俱进，学习新技术，不断地提高自己。
 升级内核 docker要求linux内核版本3.12以上，作为常用linux2.26.32版本，虽然也可以安装docker，但是有一些特性不支持，所以第一步就是升级内核。个人选择最新的长期维护版本升级linux4.13,内核升级最关键的一件事情就是配置内核，关于内核支持docker的内核配置文件，如果不想自己动手配置内核，可以参考Linux-4.13-configfordocker;
 在未正确配置linux内核会出现以下一些错误：
- docker启动过程中iptables命令执行失败，原因是 iptables模块没有配置  [root@localhost ~]# docker -d INFO[0000] Listening for HTTP on unix (/var/run/docker.sock) INFO[0000] [graphdriver] using prior storage driver &amp;quot;devicemapper&amp;quot; FATA[0000] Error starting daemon: Error initializing network controller: Error creating default &amp;quot;bridge&amp;quot; network: Failed to Setup IP tables: Unable to enable NAT rule: iptables failed: iptables -t nat -I POSTROUTING -s 172.17.42.1/16 ! -o docker0 -j MASQUERADE: iptables v1.4.7: can&#39;t initialize iptables table `nat&#39;: Table does not exist (do you need to insmod?</description>
+ docker启动过程中iptables命令执行失败，原因是 iptables模块没有配置  [root@localhost ~]# docker -dINFO[0000] Listening for HTTP on unix (/var/run/docker.sock) INFO[0000] [graphdriver] using prior storage driver &amp;quot;devicemapper&amp;quot; FATA[0000] Error starting daemon: Error initializing network controller: Error creating default &amp;quot;bridge&amp;quot; network: Failed to Setup IP tables: Unable to enable NAT rule: iptables failed: iptables -t nat -I POSTROUTING -s 172.17.42.1/16 ! -o docker0 -j MASQUERADE: iptables v1.4.7: can&#39;t initialize iptables table `nat&#39;: Table does not exist (do you need to insmod?</description>
     </item>
     
     <item>
@@ -1882,7 +1831,8 @@ git checkout -- readme  修改最新一次修改注释</description>
       
       <guid>https://myself659.github.io/2015/08/28/gdb%E8%87%AA%E5%AE%9A%E4%B9%89%E6%96%AD%E7%82%B9%E6%93%8D%E4%BD%9C/</guid>
       <description>gdb是c/c++上调试利器，有很多技巧能让调试程序与解决问题更加方便与高效，下面关于command 命令的使用一个实例，具体如下：
-1. 设置断点 (gdb) b GenVedioSeekPoint Breakpoint 1 at 0x402e58: file GenIndex.cpp, line 140. (gdb)  2. 利用commad自定义断点操作 (gdb) command 1 Type commands for breakpoint(s) 1, one per line. End with a line saying just &amp;quot;end&amp;quot;. &amp;gt;p *pstPktHead &amp;gt;continue &amp;gt;end (gdb)  3. 设置gdb log信息输出到指定文件 (gdb) set logging file genindex.txt (gdb) set logging on Copying output to genindex.txt. (gdb) set pagination off (gdb)  4. 开始或继续执行程序 (gdb) run  有输出信息如下：</description>
+1. 设置断点 (gdb) b GenVedioSeekPointBreakpoint 1 at 0x402e58: file GenIndex.cpp, line 140.(gdb) 2. 利用commad自定义断点操作 (gdb) command 1Type commands for breakpoint(s) 1, one per line.End with a line saying just &amp;quot;end&amp;quot;.&amp;gt;p *pstPktHead&amp;gt;continue &amp;gt;end(gdb) 3. 设置gdb log信息输出到指定文件 (gdb) set logging file genindex.txt (gdb) set logging onCopying output to genindex.txt.(gdb) set pagination off(gdb)4. 开始或继续执行程序 (gdb) run有输出信息如下：
+...Breakpoint 1, GenVedioSeekPoint (pstPktHead=0x7fffffdfdcff, offset=71678) at GenIndex.</description>
     </item>
     
     <item>
@@ -1893,9 +1843,9 @@ git checkout -- readme  修改最新一次修改注释</description>
       <guid>https://myself659.github.io/2015/08/08/nginx%E5%AE%9E%E8%B7%B5-%E6%B7%BB%E5%8A%A0%E8%87%AA%E5%AE%9A%E4%B9%89%E6%A8%A1%E5%9D%97hello/</guid>
       <description>nginx是一个值得学习与研究的开源代码，写这篇文章主要目的是让自己能够能够从最简单的任务开始，通过写作促进自己一步一步地深入学习与分析nginx。本文是这个系列的第一篇，主要是记录自己实现一个自定义的模块hello的过程。
 1. 下载源码 下载nginx 1.8.0 源代码
-root@localhost github]# wget http://nginx.org/download/nginx-1.8.0.tar.gz root@localhost github]# tar zxf  2. 准备文件与代码 在nginx解压目录下，添加如下文件：
-[root@localhost nginx-1.8.0]# tree | more . |-- **addon** | `-- **hello** | |-- **config** | `-- **ngx_http_hello_module.c** |-- auto | |-- cc | | |-- acc | | |-- bcc  新增文件分析参考nginx-hello
-[root@localhost nginx-1.8.0]# grep -r ngx_addon_name /share/github/nginx-1.8.0 /share/github/nginx-1.8.0/auto/modules: echo &amp;quot; + $ngx_addon_name was configured&amp;quot; /share/github/nginx-1.8.0/addon/hello/config:ngx_addon_name=ngx_http_hello_module [root@localhost nginx-1.8.0]# [root@localhost nginx-1.8.0]# grep -r add-module /share/github/nginx-1.</description>
+root@localhost github]# wget http://nginx.org/download/nginx-1.8.0.tar.gzroot@localhost github]# tar zxf 2. 准备文件与代码 在nginx解压目录下，添加如下文件：
+[root@localhost nginx-1.8.0]# tree | more.|-- **addon**| `-- **hello**| |-- **config**| `-- **ngx_http_hello_module.c**|-- auto| |-- cc| | |-- acc| | |-- bcc新增文件分析参考nginx-hello
+[root@localhost nginx-1.8.0]# grep -r ngx_addon_name /share/github/nginx-1.8.0/share/github/nginx-1.8.0/auto/modules: echo &amp;quot; + $ngx_addon_name was configured&amp;quot;/share/github/nginx-1.8.0/addon/hello/config:ngx_addon_name=ngx_http_hello_module[root@localhost nginx-1.8.0]# [root@localhost nginx-1.8.0]# grep -r add-module /share/github/nginx-1.8.0/share/github/nginx-1.</description>
     </item>
     
     <item>
@@ -1917,9 +1867,9 @@ root@localhost github]# wget http://nginx.org/download/nginx-1.8.0.tar.gz root@l
 -c 每隔一个固定时间，执行该netstat命令
 注意：LISTEN和LISTENING的状态只有用-a或者-l才能看到
 应用实例 1. 选项组合应用 命令：
-netstat -tlnp  说明：显示处于listen状态的tcp连接，并显示对应进程pid
+netstat -tlnp说明：显示处于listen状态的tcp连接，并显示对应进程pid
 示例：
- [root@localhost default]# netstat -tlnp Active Internet connections (only servers) Proto Recv-Q Send-Q Local Address Foreign Address State PID/Program name tcp 0 0 0.0.0.0:21 0.0.0.0:* LISTEN 1284/pure-ftpd tcp 0 0 0.</description>
+ [root@localhost default]# netstat -tlnp Active Internet connections (only servers)Proto Recv-Q Send-Q Local Address Foreign Address State PID/Program name tcp 0 0 0.0.0.0:21 0.0.0.0:* LISTEN 1284/pure-ftpd tcp 0 0 0.</description>
     </item>
     
     <item>
@@ -1928,24 +1878,21 @@ netstat -tlnp  说明：显示处于listen状态的tcp连接，并显示对应�
       <pubDate>Fri, 03 Jul 2015 11:58:06 +0200</pubDate>
       
       <guid>https://myself659.github.io/2015/07/03/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%E4%BB%8E0%E5%88%B01-%E5%BC%80%E5%90%AF%E5%95%86%E4%B8%9A%E4%B8%8E%E6%9C%AA%E6%9D%A5%E7%9A%84%E7%A7%98%E5%AF%86/</guid>
-      <description>启发思考  在什么重要问题上你与其他有不同的看法？ &amp;gt;除了书中讲到参考模式:太多数人相信X，但是事实却是X的对立面；世界是多样的，我们应当追求正确的差异化
- 企业失败的共同的原因 &amp;gt;企业失败的原因却是相同：它们都无法逃脱竞争
- 应对趋势潮流 &amp;gt;最反主流的行动不是抵制潮流，而是在潮流中不丢弃自己的独立思考
- 从0到1vs从1到N &amp;gt;从0到1是创新，创造；从1到N是创新成果应用及商业化
-  ###关于团队 1. 现金奖励不是王道，股票报酬才能让员工全力以赴 2. 那些决定命运的基础元素：合伙人，早期团队成员 3. 所有权，经营权，控制权 4. 招聘要求：有才华+真正喜欢与团队合作及一起成长的意愿 5. 特立独行的创始人
-###关于销售 这一部分内容作者回答一系列问题：
- 销售是什么？ &amp;gt;产品离不开销售，销售是产品设计的一部分；销售是隐形的，销售人员第一要务是说服而不是真诚
- 谁是销售对象？ &amp;gt; 品牌无界限，销售对象除了产品与服务的潜在用户，还要社会，媒体销售公司，建立品牌
- 谁是销售员？ &amp;gt;不论是员工，创始人，还是投资者，都应该是销售，无人不销售，无时不销售
- 怎么进行销售？ &amp;gt;常用销售方法：复杂销售，人员销售，市场营销和广告，病毒式营销，粉丝营销；
- 销售的法则？ &amp;gt; 选择一个最有效的销售方法或者销售渠道
-  绿色能源与特斯拉 绿色能源与特斯拉是《从0到1》这本书倒数是第二章，这一章是对前面章节讲到竞争，团队，未来，销售等观点在具体行业与具体公司的具体应用的一个展示，有意创业，投资或者像我有时仅好分析一个企业的人，可以细细口味。
+      <description>启发思考  在什么重要问题上你与其他有不同的看法？   除了书中讲到参考模式:太多数人相信X，但是事实却是X的对立面；世界是多样的，我们应当追求正确的差异化
+  企业失败的共同的原因   企业失败的原因却是相同：它们都无法逃脱竞争
+  应对趋势潮流   最反主流的行动不是抵制潮流，而是在潮流中不丢弃自己的独立思考
+ 从0到1vs从1到N   从0到1是创新，创造；从1到N是创新成果应用及商业化
+ ###关于团队
+ 现金奖励不是王道，股票报酬才能让员工全力以赴 那些决定命运的基础元素：合伙人，早期团队成员 所有权，经营权，控制权 招聘要求：有才华+真正喜欢与团队合作及一起成长的意愿 特立独行的创始人  ###关于销售 这一部分内容作者回答一系列问题：
+ 销售是什么？   产品离不开销售，销售是产品设计的一部分；销售是隐形的，销售人员第一要务是说服而不是真诚
+ 谁是销售对象？   品牌无界限，销售对象除了产品与服务的潜在用户，还要社会，媒体销售公司，建立品牌
+ 谁是销售员？   不论是员工，创始人，还是投资者，都应该是销售，无人不销售，无时不销售
+ 怎么进行销售？   常用销售方法：复杂销售，人员销售，市场营销和广告，病毒式营销，粉丝营销；
+  销售的法则？   选择一个最有效的销售方法或者销售渠道
+ 绿色能源与特斯拉 绿色能源与特斯拉是《从0到1》这本书倒数是第二章，这一章是对前面章节讲到竞争，团队，未来，销售等观点在具体行业与具体公司的具体应用的一个展示，有意创业，投资或者像我有时仅好分析一个企业的人，可以细细口味。
 这一章节提到的七个必须回答的问题，可以作为分析一家企业的checklist问题，具体如下：
- 工程问题： &amp;gt; 你的技术具有突破性，而不是仅仅是稍有改进吗？
- 时机问题： &amp;gt; 现在开创事业，时机合适吗？
- 垄断问题： &amp;gt;开创之初，是在一个小市场抢占大份额吗？
- 人员问题： &amp;gt; 你有合适的团队吗？
- 销售问题： &amp;gt; 除了创造产品，你有没有办法销售产品？</description>
+ 工程问题：   你的技术具有突破性，而不是仅仅是稍有改进吗？
+ 时机问题：   现在开创事业，时机合适吗？</description>
     </item>
     
     <item>
@@ -1958,7 +1905,7 @@ netstat -tlnp  说明：显示处于listen状态的tcp连接，并显示对应�
  N &amp;gt;= M； N与M都是无符号整型数  求：一共有多少中拆分方法？
 分析 参考代码
 代码 代码实现计算拆分方法及打印拆分组合信息
- #include &amp;lt;iostream&amp;gt; #include &amp;lt;stdint.h&amp;gt; using namespace std; class CSolution { private: uint32_t uiM; uint32_t uiN; uint32_t uiCount; uint32_t *puiRecord; public: CSolution(); CSolution(uint32_t uiM, uint32_t uiN); ~CSolution(); uint32_t GetCount() {return uiCount;} void PrintCombinations(); uint32_t CountNum(uint32_t uiM, uint32_t uiN); void GetCombination(uint32_t uiMin, uint32_t uiLeft, uint32_t uiGetNum, uint32_t uiTargetNum, uint32_t *puiRecord); }; CSolution::CSolution(uint32_t uiM,uint32_t uiN){ this-&amp;gt;uiM = uiM; this-&amp;gt;uiN = uiN; this-&amp;gt;puiRecord = new unsigned int [uiM]; this-&amp;gt;uiCount = CountNum(uiM, uiN); return ; } CSolution::CSolution() { uiM = 1; uiN = 1; puiRecord = new unsigned int [uiM]; uiCount = CountNum(uiM, uiN); return ; } CSolution::~CSolution() { delete [] puiRecord; return ; } uint32_t CSolution::CountNum(uint32_t uiM, uint32_t uiN) { if((0 == uiM) || (0 == uiN) || ( 1 == uiM) || ( 1 == uiN)) { return 1; } if(uiN &amp;lt; uiM) { return CountNum(uiN,uiN); } return CountNum(uiM - 1, uiN) + CountNum(uiM, uiN - uiM); } /* UINT uiMin 最小值 UINT uiLeft 剩下值 UINT uiGetNum 已拆分元素个数 UINT uiTargetNum 需要拆分的个数 UINT *puiCombination 拆分组合首地址 */ void CSolution::GetCombination(uint32_t uiMin, uint32_t uiLeft, uint32_t uiGetNum, uint32_t uiTargetNum, uint32_t *puiRecord) { uint32_t i; uint32_t j; /*递归结束条件 */ if(1 == uiTargetNum) { cout &amp;lt;&amp;lt; uiLeft&amp;lt;&amp;lt;endl; return ; } /* 将剩下值拆分为多个数,除了最后一个拆分值，其他的拆分数都应小于等于uiLeft/2 */ for(i = uiMin; i &amp;lt;= uiLeft / 2; i++) { puiRecord[uiGetNum] = i; uiGetNum++; if(uiGetNum + 1 == uiTargetNum) { puiRecord[uiGetNum] = uiLeft - i; for(j = 0; j &amp;lt; uiTargetNum; j++) { cout &amp;lt;&amp;lt;puiRecord[j]&amp;lt;&amp;lt; &amp;quot; &amp;quot;; } cout &amp;lt;&amp;lt; endl; } else { GetCombination(i, uiLeft - i, uiGetNum, uiTargetNum, puiRecord); } uiGetNum--; } return ; } void CSolution::PrintCombinations() { uint32_t i; cout&amp;lt;&amp;lt;&amp;quot;print combinations as follow:&amp;quot;&amp;lt;&amp;lt;endl; for(i = 1; i &amp;lt;= uiM; i++) { GetCombination(1, uiN, 0, i, puiRecord); } cout&amp;lt;&amp;lt;&amp;quot;The Total num is &amp;quot;&amp;lt;&amp;lt; GetCount()&amp;lt;&amp;lt;endl; return ; } int main(void) { CSolution test(7, 11); test.</description>
+#include &amp;lt;iostream&amp;gt;#include &amp;lt;stdint.h&amp;gt;using namespace std;class CSolution{private:uint32_t uiM;uint32_t uiN;uint32_t uiCount;uint32_t *puiRecord;public:CSolution();CSolution(uint32_t uiM, uint32_t uiN);~CSolution();uint32_t GetCount() {return uiCount;}void PrintCombinations();uint32_t CountNum(uint32_t uiM, uint32_t uiN);	void GetCombination(uint32_t uiMin,uint32_t uiLeft, uint32_t uiGetNum, uint32_t uiTargetNum, uint32_t *puiRecord);};CSolution::CSolution(uint32_t uiM,uint32_t uiN){this-&amp;gt;uiM = uiM;this-&amp;gt;uiN = uiN;this-&amp;gt;puiRecord = new unsigned int [uiM];this-&amp;gt;uiCount = CountNum(uiM, uiN);return ;}CSolution::CSolution(){uiM = 1;uiN = 1;puiRecord = new unsigned int [uiM];uiCount = CountNum(uiM, uiN);return ;}CSolution::~CSolution(){delete [] puiRecord;return ;}uint32_t CSolution::CountNum(uint32_t uiM, uint32_t uiN){if((0 == uiM) || (0 == uiN) || ( 1 == uiM) || ( 1 == uiN)){return 1;}if(uiN &amp;lt; uiM){return CountNum(uiN,uiN);}return CountNum(uiM - 1, uiN) + CountNum(uiM, uiN - uiM);}	/*UINT uiMin 最小值UINT uiLeft 剩下值 UINT uiGetNum 已拆分元素个数 UINT uiTargetNum	需要拆分的个数UINT *puiCombination 拆分组合首地址 */void CSolution::GetCombination(uint32_t uiMin,uint32_t uiLeft, uint32_t uiGetNum, uint32_t uiTargetNum, uint32_t *puiRecord) {uint32_t i;uint32_t j;/*递归结束条件 */if(1 == uiTargetNum) {cout &amp;lt;&amp;lt; uiLeft&amp;lt;&amp;lt;endl;return ;}/* 将剩下值拆分为多个数,除了最后一个拆分值，其他的拆分数都应小于等于uiLeft/2 */for(i = uiMin; i &amp;lt;= uiLeft / 2; i++){puiRecord[uiGetNum] = i;uiGetNum++;if(uiGetNum + 1 == uiTargetNum){puiRecord[uiGetNum] = uiLeft - i; for(j = 0; j &amp;lt; uiTargetNum; j++){cout &amp;lt;&amp;lt;puiRecord[j]&amp;lt;&amp;lt; &amp;quot; &amp;quot;;} cout &amp;lt;&amp;lt; endl;}else{GetCombination(i, uiLeft - i, uiGetNum, uiTargetNum, puiRecord);}uiGetNum--;}return ;	}void CSolution::PrintCombinations(){uint32_t i;cout&amp;lt;&amp;lt;&amp;quot;print combinations as follow:&amp;quot;&amp;lt;&amp;lt;endl;for(i = 1; i &amp;lt;= uiM; i++){GetCombination(1, uiN, 0, i, puiRecord);	}cout&amp;lt;&amp;lt;&amp;quot;The Total num is &amp;quot;&amp;lt;&amp;lt; GetCount()&amp;lt;&amp;lt;endl;return ;}int main(void){CSolution test(7, 11);test.</description>
     </item>
     
     <item>
@@ -1967,9 +1914,7 @@ netstat -tlnp  说明：显示处于listen状态的tcp连接，并显示对应�
       <pubDate>Wed, 27 May 2015 11:58:06 +0200</pubDate>
       
       <guid>https://myself659.github.io/2015/05/27/ping%E4%B8%8D%E9%80%9A%E5%B8%B8%E8%A7%81%E5%8E%9F%E5%9B%A0%E6%80%BB%E7%BB%93/</guid>
-      <description>ping不通从ping的流程分为两大类：请求报文没有到达对端与应答报文未收到
-请求报文没有到达对端的可能原因 1. 发送端发送流程出错 2. 源端,转发设备没有目的地址的路由 2. ttl 小于转发跳数 3. 分片丢包 4. MTU限制 5. 转发丢包 6. 报文错误 7. 防火墙规则不允许该类型报文通过 8. 中间进行nat转换等处理出错 8. 目的地址不存在 9. 接收端收包流程出错
-应答报文未收到的可能原因 1. 发送端发送流程出错 2. MTU限制 3. 目的端禁止应答 4. 接收报文错误 5. 防火墙规则不允许该类型报文通过 6. 接收到了报文，但是超出等待时间 7. 接收报文错误，ping 应答检查失败 8. 转发丢包</description>
+      <description>ping不通从ping的流程分为两大类：请求报文没有到达对端与应答报文未收到</description>
     </item>
     
     <item>
@@ -1978,8 +1923,8 @@ netstat -tlnp  说明：显示处于listen状态的tcp连接，并显示对应�
       <pubDate>Wed, 27 May 2015 11:58:06 +0200</pubDate>
       
       <guid>https://myself659.github.io/2015/05/27/%E9%82%A3%E4%BA%9B%E5%8F%AF%E8%BF%9B%E5%85%A5%E7%9D%A1%E7%9C%A0%E7%8A%B6%E6%80%81%E7%9A%84linux%E5%86%85%E6%A0%B8%E5%87%BD%E6%95%B0/</guid>
-      <description> 在linux内核开发中断处理函数不能调用可能导致睡眠的函数，下面总结linux内核可能引起睡眠的函数如下：
-schedule函数   schedule_timeout schedule_timeout_uninterruptible schedule_timeout_interruptible cond_resched might_resched   sleep函数   msleep msleep_interruputible ssleep osal_usleep might_sleep   取信号量函数   down down_timeout down_read down_write down_interruptible wait_for_completion wait_for_completion_interruptible wait_for_completion_timeout wait_for_completion_interruptible_timeout   kmalloc相关函数含有标志GFP_KERNEL   kmalloc kzalloc krealloc kmem_cache_create kmem_cache_alloc kmem_cache_zalloc   取睡眠锁函数   mutex_lock mutex_lock_timeout mutex_lock_nested mutex_lock_interruptible mutex_lock_interruptible_nested   在中断处理函数不能使用睡眠函数原因 主要原因如下：
+      <description>在linux内核开发中断处理函数不能调用可能导致睡眠的函数，下面总结linux内核可能引起睡眠的函数如下：
+schedule函数    schedule_timeout schedule_timeout_uninterruptible schedule_timeout_interruptible cond_resched might_resched    sleep函数    msleep msleep_interruputible ssleep osal_usleep might_sleep    取信号量函数    down down_timeout down_read down_write down_interruptible wait_for_completion wait_for_completion_interruptible wait_for_completion_timeout wait_for_completion_interruptible_timeout    kmalloc相关函数含有标志GFP_KERNEL    kmalloc kzalloc krealloc kmem_cache_create kmem_cache_alloc kmem_cache_zalloc    取睡眠锁函数    mutex_lock mutex_lock_timeout mutex_lock_nested mutex_lock_interruptible mutex_lock_interruptible_nested    在中断处理函数不能使用睡眠函数原因 主要原因如下：
  中断是一种紧急事务，中断处理函数要求快 linux是以进程为调度单位的，调度器只看到进程内核栈，而看不到中断栈，在独立中断栈的模式下，如果linux内核在中断处理函数内发生了调度或者睡眠，导致无法找到回家的路，未执行的中断处理代码再也无法获得执行机会（贪睡开小差是有代价哦）  </description>
     </item>
     
@@ -1989,9 +1934,9 @@ schedule函数   schedule_timeout schedule_timeout_uninterruptible schedule_time
       <pubDate>Sun, 24 May 2015 11:58:06 +0200</pubDate>
       
       <guid>https://myself659.github.io/2015/05/24/c%E8%AF%AD%E8%A8%80%E4%BB%A3%E7%A0%81-review%E7%9A%84%E6%80%BB%E7%BB%93/</guid>
-      <description> 代码review是保证代码质量在项目开发及代码修改中一项重要的环节，下面就代码reiew的一些总结，总结一些代码的review的关注点，提高代码review的效率与效果，提前发现问题，降低后期的测试成本，以及避免软件上线或交付出问题导致的经济损失和恶劣影响（ps:对每一行代码保持敬畏之心）。
+      <description>代码review是保证代码质量在项目开发及代码修改中一项重要的环节，下面就代码reiew的一些总结，总结一些代码的review的关注点，提高代码review的效率与效果，提前发现问题，降低后期的测试成本，以及避免软件上线或交付出问题导致的经济损失和恶劣影响（ps:对每一行代码保持敬畏之心）。
 代码中的资源  以内存为例，C语言内存操作都是由程序员来定义与控制，内存的一些错误总是不断地出现，例如内存泄漏，踩内存，写越界等，如果这种问题在线上系统中出现，定位与修复的成本都是很高的。
- 动态内存 信号量 文件描述符 锁 句柄 中断 资源的引用 资源的引用计数   代码的错误高发特征   冗余实现 异常处理 结构复杂 层次嵌套多 不合理实现 字符串处理 代码临界区 移植代码   代码的追求   正确性 可靠性 可读性 可维护性 可测试性 可扩展性 可移植性 可伸缩性 易用性 可用性 可重用性 互操作性 可管理性 一致性 安全性 性能 稳定性 精确性 可差异化性 魯棒性   </description>
+    动态内存 信号量 文件描述符 锁 句柄 中断 资源的引用 资源的引用计数  代码的错误高发特征    冗余实现 异常处理 结构复杂 层次嵌套多 不合理实现 字符串处理 代码临界区 移植代码  代码的追求    正确性 可靠性 可读性 可维护性 可测试性 可扩展性 可移植性 可伸缩性 易用性 可用性 可重用性 互操作性 可管理性 一致性 安全性 性能 稳定性 精确性 可差异化性 魯棒性  </description>
     </item>
     
     <item>
@@ -2000,8 +1945,7 @@ schedule函数   schedule_timeout schedule_timeout_uninterruptible schedule_time
       <pubDate>Sun, 24 May 2015 11:58:06 +0200</pubDate>
       
       <guid>https://myself659.github.io/2015/05/24/linux%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%E6%9D%82%E8%B0%88/</guid>
-      <description>性能不仅仅是一串串数字，性能体现更大的吞吐量及更低的延迟；如果网络延迟增加0.1秒，google每秒损失100W,不是人民币是美元；网页响应慢0.1秒，运营成本每天增加100万美金。亚马逊的数据也显示，网页延迟1秒可能导致全年损失16亿美金；移动页面加载时间时长超过5秒，74%的用户会选择离开，高性能主要体现下面三个方面：
- 少资源 高吞吐 低延迟  在具体网络转发性能优化过程中对性能优化有以下几点体会与总结：
+      <description>少资源 高吞吐 低延迟  在具体网络转发性能优化过程中对性能优化有以下几点体会与总结：
 软硬结合 软件灵活，硬件高效，软硬结合就像双剑合壁，威力巨大；具体在网络设备中交换机就是一个很好的例子：通常由CPU完成协议的处理，下发转发表项到芯片，由芯片完成报文的转发，在这种思路下才会cisco，H3C，Huawei的大容量的交换机；如果完全交给CPU来处理成本很高，而且在现有技术下很难完成那么大的交换容量（1T以上）。在这种情况对于软件上来说基本不需要优化，本文后面的优化是针对软转的优化；
 分离与分解 控制与转发分离 由控制平面维护转发表项，转发平面根据表项完成转发
 针对性优化 性能优化一定要指定优化场景，例如对于收包优化针对不同的接入方式，不同报文类型；
@@ -2025,7 +1969,7 @@ do more with less 性能优化大体就是开源与节流，do more with less需
       <pubDate>Sun, 24 May 2015 11:58:06 +0200</pubDate>
       
       <guid>https://myself659.github.io/2015/05/24/%E4%B8%80%E4%B8%AAlinux%E7%BD%91%E7%BB%9C%E4%B8%A2%E5%8C%85%E9%97%AE%E9%A2%98%E5%88%86%E6%9E%90/</guid>
-      <description> 丢包问题是十分常见一类问题，下面总结的一个网络丢包问题的分析过程。
+      <description>丢包问题是十分常见一类问题，下面总结的一个网络丢包问题的分析过程。
 问题描述 组网：
 TC-PORT1&amp;mdash;&amp;mdash;-VSR-eth1
 TC-PORT2&amp;mdash;&amp;mdash;-VSR-eth2
@@ -2035,7 +1979,7 @@ TC-PORT2&amp;mdash;&amp;mdash;-VSR-eth2
 测试同学在根据RFC2544打流测试转发性能中，发现报文有效转发性能总是小于40W pps，总是会出现丢包，而实际cpu利用率才20%左右
 问题分析 丢包的原因很多，需要根据现场进行具体问题分析，下面就一个一个排查怀疑点，没有怀疑点再分析的过程：
  昨天测试都ok的，检查一下测试打流报文，报文正确 查看报文处理过程中丢包计数，以确认丢包阶段，不幸地发现处理过程中无丢包统计 与打多条流有关？实测打一流问题同样存在，与多条流无关 再次回头检查报文是否有多种code path，导致第2步遗漏检查到丢包点，确认报文走一条code path 上面又被否认，继续分析怀疑点，没有分析出怀疑点，自已动手打流，观察TC收发包统计发现丢包有周斯性，大概周期是30s，这是一个重要信息 又回过头去确认一下丢包统计是否有漏统计，很欣慰又很失望的结果：丢包，错包统计没有遗漏统计 这时候收包处理过程丢包可能性已经排除 从上到下的报文流排查，报文丢在网卡上送cpu过程中？ 内核采用epoll收包存在问题？ 进程如果得到调度就没有问题 top 查看进程调度，这时候有重大发现了： 看tc丢包统计与top的里面的进程natlog运行就同步了，但是看到natlog的线程状态为D状态，同时检查配置，开启nat log功能   natlog进程设置为D状态，导致不响应异步信号，在natlog释放cpu前，在转发线程与natlog运行在同一个cpu的情况下，转发线程得不到调度，导致报文接收缓冲区溢出，导致部分报文丢弃；
-与natlog线程开发同学交流，natlog早期是基于多核开发，natlog根据运营商需求，每30s定时运行，natlog线程运行在控制核，转发线程运行在数据核，导致问题没有暴露出来
+  与natlog线程开发同学交流，natlog早期是基于多核开发，natlog根据运营商需求，每30s定时运行，natlog线程运行在控制核，转发线程运行在数据核，导致问题没有暴露出来
  问题总结  定位问题，特别是未知的问题是一步步有依据推断与确认的过程 获取现场的全方位消息，同时要对信息进行去噪，避免关键信息遗漏与无关干扰  </description>
     </item>
     
@@ -2045,17 +1989,15 @@ TC-PORT2&amp;mdash;&amp;mdash;-VSR-eth2
       <pubDate>Sun, 24 May 2015 11:58:06 +0200</pubDate>
       
       <guid>https://myself659.github.io/2015/05/24/%E5%9C%A8%E6%B2%A1%E6%9C%89%E5%88%86%E6%94%AFmiss%E6%9D%A1%E4%BB%B6%E4%B8%8B%E5%AE%9E%E7%8E%B0%E5%8F%96%E6%9C%80%E5%B0%8F%E5%80%BC/</guid>
-      <description> 在实际性能优化过程，加了一个if判断整个系统转发性能就有大约5%的下降，下面简单分享一种在没有分支miss条件下，实现取最小值的方法。
+      <description>在实际性能优化过程，加了一个if判断整个系统转发性能就有大约5%的下降，下面简单分享一种在没有分支miss条件下，实现取最小值的方法。
 一般实现 取两个数最小值，一般代码常见两种写法如下：
- 写法一：
-if(a &amp;lt; b ) { min = a } else { min = b}  写法二：
-min = a &amp;lt; b ? a:b;   这两种写法只是代码写法不一致，实际都是通过一个if的语句的比较，存在if语句就代码运行过程就存在分支miss，而一个分支的miss的开销范围40到60 cycles；在追求高性能代码，且没有太多的优化点的过程中这是极其宝贵，且这两个分支出现概率都相当，也就不能简单通过likely与unlikely来实现分支预测
+ 写法一：  if(a &amp;lt; b ) { min = a } else { min = b}写法二：  min = a &amp;lt; b ? a:b;这两种写法只是代码写法不一致，实际都是通过一个if的语句的比较，存在if语句就代码运行过程就存在分支miss，而一个分支的miss的开销范围40到60 cycles；在追求高性能代码，且没有太多的优化点的过程中这是极其宝贵，且这两个分支出现概率都相当，也就不能简单通过likely与unlikely来实现分支预测
 无分支miss实现 无分支实现代码如下：
-min = b ^ ((a ^ b) &amp;amp;-(a&amp;lt;b));  分两种情况分析如下：
+min = b ^ ((a ^ b) &amp;amp;-(a&amp;lt;b));分两种情况分析如下：
 当a&amp;lt;b时,-(a&amp;lt;b)为True，表达式等价于min= b ^(a ^ b) = a;
 当a&amp;gt;=b时，-（a &amp;lt; b）为False，表达式等价于min= b ^ 0 = b
 故可以宏定义如下：
-#define min(a,b) = (b) ^ ( ((a) ^ (b)) &amp;amp; (-((a)&amp;lt;(b))) )  </description>
+#define min(a,b) = (b) ^ ( ((a) ^ (b)) &amp;amp; (-((a)&amp;lt;(b))) )</description>
     </item>
     
     <item>
@@ -2064,11 +2006,10 @@ min = b ^ ((a ^ b) &amp;amp;-(a&amp;lt;b));  分两种情况分析如下：
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://myself659.github.io/1/01/01/</guid>
-      <description>+++ banner = &amp;ldquo;&amp;rdquo; categories = [&amp;ldquo;闲谈乱扯&amp;rdquo;] date = &amp;ldquo;2017-02-04T11:58:06+02:00&amp;rdquo; description = &amp;ldquo;&amp;rdquo; images = [] menu = &amp;ldquo;&amp;rdquo; tags = [&amp;ldquo;闲谈乱扯&amp;rdquo;] title = &amp;ldquo;互联网在农村-音乐&amp;rdquo; draft = false +++
+      <description>+++ banner = &amp;quot;&amp;rdquo; categories = [&amp;ldquo;闲谈乱扯&amp;rdquo;] date = &amp;ldquo;2017-02-04T11:58:06+02:00&amp;rdquo; description = &amp;quot;&amp;rdquo; images = [] menu = &amp;quot;&amp;rdquo; tags = [&amp;ldquo;闲谈乱扯&amp;rdquo;] title = &amp;ldquo;互联网在农村-音乐&amp;rdquo; draft = false +++
 手机上网就是通过app获取服务，在农村里人们上网喜欢干些什么呢？先从喜欢听什么歌开始？ 在家里时间有限，这次就写这么多，待以后回家再观察其他方面。这里仅仅是开一个小引子：农村互联网用户喜欢什么样内容？
 通过小样本获取不负责农村流行歌单如下：
- 小苹果 青藏高原 送情郎
- 江南 十三不亲 辣妹子 刘三姐 路边的野花不要采 美酒加咖啡 南泥湾 伤不起 妈妈的吻 茉莉花 火苗 月亮之上  再次申明，样本数量有限，不要太当真，随手记记而已
+ 小苹果 青藏高原 送情郎 江南 十三不亲 辣妹子 刘三姐 路边的野花不要采 美酒加咖啡 南泥湾 伤不起 妈妈的吻 茉莉花 火苗 月亮之上  再次申明，样本数量有限，不要太当真，随手记记而已
 从上面的歌单可以看出神曲，流行歌曲在哪里都流行，另外就是90年代左右的经典歌曲。
 （End）</description>
     </item>
@@ -2079,7 +2020,7 @@ min = b ^ ((a ^ b) &amp;amp;-(a&amp;lt;b));  分两种情况分析如下：
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://myself659.github.io/1/01/01/</guid>
-      <description>+++ banner = &amp;ldquo;&amp;rdquo; categories = [&amp;ldquo;Arch&amp;rdquo;] date = &amp;ldquo;2017-05-09T11:58:06+02:00&amp;rdquo; description = &amp;ldquo;&amp;rdquo; images = [] menu = &amp;ldquo;&amp;rdquo; tags = [&amp;ldquo;Arch&amp;rdquo;] title = &amp;ldquo;高性能服务器设计与优化&amp;rdquo; draft = false +++
+      <description>+++ banner = &amp;quot;&amp;rdquo; categories = [&amp;ldquo;Arch&amp;rdquo;] date = &amp;ldquo;2017-05-09T11:58:06+02:00&amp;rdquo; description = &amp;quot;&amp;rdquo; images = [] menu = &amp;quot;&amp;rdquo; tags = [&amp;ldquo;Arch&amp;rdquo;] title = &amp;ldquo;高性能服务器设计与优化&amp;rdquo; draft = false +++
 为了构建自己的知识体系，对高性能服务器设计与优化一点想法，其中不足与错误，欢迎指正。
 高性能服务器设计与优化</description>
     </item>
@@ -2090,7 +2031,7 @@ min = b ^ ((a ^ b) &amp;amp;-(a&amp;lt;b));  分两种情况分析如下：
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://myself659.github.io/1/01/01/</guid>
-      <description>每周完成一个ARTS： 1.Algorithm：每周至少做一个 leetcode 的算法题 2.Review：阅读并点评至少一篇英文技术文章 3.Tip：学习至少一个技术技巧 4.Share：分享一篇有观点和思考的技术文章 +++ banner = &amp;ldquo;&amp;rdquo; categories = [&amp;ldquo;DataStruct&amp;rdquo;] date = &amp;ldquo;2019-03-08T11:58:06+02:00&amp;rdquo; description = &amp;ldquo;&amp;rdquo; images = [] menu = &amp;ldquo;&amp;rdquo; tags = [&amp;ldquo;DataStruct&amp;rdquo;] title = &amp;ldquo;作恶的矿工们&amp;rdquo; draft = true +++
+      <description>每周完成一个ARTS： 1.Algorithm：每周至少做一个 leetcode 的算法题 2.Review：阅读并点评至少一篇英文技术文章 3.Tip：学习至少一个技术技巧 4.Share：分享一篇有观点和思考的技术文章 +++ banner = &amp;quot;&amp;rdquo; categories = [&amp;ldquo;DataStruct&amp;rdquo;] date = &amp;ldquo;2019-03-08T11:58:06+02:00&amp;rdquo; description = &amp;quot;&amp;rdquo; images = [] menu = &amp;quot;&amp;rdquo; tags = [&amp;ldquo;DataStruct&amp;rdquo;] title = &amp;ldquo;作恶的矿工们&amp;rdquo; draft = true +++
  Algorithm leetcode-42 42. Trapping Rain Water
 Desc Given n non-negative integers representing an elevation map where the width of each bar is 1, compute how much water it is able to trap after raining.</description>
     </item>
@@ -2110,10 +2051,10 @@ Desc Given n non-negative integers representing an elevation map where the width
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://myself659.github.io/1/01/01/</guid>
-      <description>banner = &amp;ldquo;&amp;rdquo; categories = [&amp;ldquo;Substrate&amp;rdquo;] date = &amp;ldquo;2019-09-19T11:58:06+02:00&amp;rdquo; description = &amp;ldquo;&amp;rdquo; images = [] menu = &amp;ldquo;&amp;rdquo; tags = [&amp;ldquo;Substrate&amp;rdquo;, &amp;ldquo;BlockChain&amp;rdquo;] title = &amp;ldquo;Substrate Runtime实践&amp;rdquo; draft = true +++
+      <description>banner = &amp;quot;&amp;rdquo; categories = [&amp;ldquo;Substrate&amp;rdquo;] date = &amp;ldquo;2019-09-19T11:58:06+02:00&amp;rdquo; description = &amp;quot;&amp;rdquo; images = [] menu = &amp;quot;&amp;rdquo; tags = [&amp;ldquo;Substrate&amp;rdquo;, &amp;ldquo;BlockChain&amp;rdquo;] title = &amp;ldquo;Substrate Runtime实践&amp;rdquo; draft = true +++
 install substrate 安装substrate有以下两种方式：
- 快速安装
- 完全安装  快速安装 curl https://getsubstrate.io -sSf | bash -s -- --fast  完全安装 curl https://getsubstrate.io -sSf | bash  更新环境变量 source ~/.cargo/env  检查版本 root@IA:~/rust/install-substrate# substrate --version substrate 2.0.0-37bc8c545-x86_64-linux-gnu root@IA:~/rust/install-substrate# subkey --version subkey 2.</description>
+ 快速安装 完全安装  快速安装 curl https://getsubstrate.io -sSf | bash -s -- --fast完全安装 curl https://getsubstrate.io -sSf | bash更新环境变量 source ~/.cargo/env检查版本 root@IA:~/rust/install-substrate# substrate --versionsubstrate 2.0.0-37bc8c545-x86_64-linux-gnuroot@IA:~/rust/install-substrate# subkey --versionsubkey 2.0.0同时安装的还有以下文件：
+ substrate-module-new substrate-node-new substrate-ui-new  更新substrate f=`mktemp -d`git clone https://github.</description>
     </item>
     
   </channel>

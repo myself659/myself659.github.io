@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Data on 沉风网事</title>
@@ -20,8 +20,8 @@
       <description>前言 在投资美股，先从数据分析开始这篇文章解决两个问题：
  从哪里找数据？ 如何得到这些数据？  在此基础这篇主要解决一个问题：以特斯拉为例说明如何利用这些数据预测股票价格的变化。同时关注一个问题：投入成本进行预测股票价格是否靠谱与必要？
 步骤 获取数据 直接调用api如下：
-import yfinance as yf tlsa_df = yf.download(&#39;TSLA&#39;, start=&#39;2015-01-01&#39;, end=&#39;2020-02-16&#39;, progress=False) tlsa_df.head()  绘制价格变化图 #plot %matplotlib notebook from IPython.core.interactiveshell import InteractiveShell InteractiveShell.ast_node_interactivity = &amp;quot;all&amp;quot; plt.figure(figsize=(10,6)) plt.grid(True) plt.xlabel(&#39;Dates&#39;) plt.ylabel(&#39;Close Prices&#39;) plt.plot(tlsa_df[&#39;Close&#39;]) plt.title(&#39;Tesla Close Price&#39;) plt.show()  得到从2015年起telsa收盘价格变化图：
-分析数据的统计特征信息 tsla_df_close = tlsa_df[&#39;Close&#39;] df_log = np.log(tsla_df_close) moving_avg = df_log.rolling(12).mean() std_dev = df_log.rolling(12).std() plt.title(&#39;Moving Average&#39;) plt.plot(std_dev, color =&amp;quot;black&amp;quot;, label = &amp;quot;Standard Deviation&amp;quot;) plt.plot(moving_avg, color=&amp;quot;red&amp;quot;, label = &amp;quot;Mean&amp;quot;) plt.</description>
+import yfinance as yf tlsa_df = yf.download(&#39;TSLA&#39;, start=&#39;2015-01-01&#39;, end=&#39;2020-02-16&#39;, progress=False)tlsa_df.head()绘制价格变化图 #plot %matplotlib notebook from IPython.core.interactiveshell import InteractiveShellInteractiveShell.ast_node_interactivity = &amp;quot;all&amp;quot; plt.figure(figsize=(10,6))plt.grid(True)plt.xlabel(&#39;Dates&#39;)plt.ylabel(&#39;Close Prices&#39;)plt.plot(tlsa_df[&#39;Close&#39;])plt.title(&#39;Tesla Close Price&#39;)plt.show()得到从2015年起telsa收盘价格变化图：
+分析数据的统计特征信息 tsla_df_close = tlsa_df[&#39;Close&#39;]df_log = np.log(tsla_df_close)moving_avg = df_log.rolling(12).mean()std_dev = df_log.rolling(12).std()plt.title(&#39;Moving Average&#39;)plt.plot(std_dev, color =&amp;quot;black&amp;quot;, label = &amp;quot;Standard Deviation&amp;quot;)plt.plot(moving_avg, color=&amp;quot;red&amp;quot;, label = &amp;quot;Mean&amp;quot;)plt.</description>
     </item>
     
     <item>
@@ -36,12 +36,12 @@ import yfinance as yf tlsa_df = yf.download(&#39;TSLA&#39;, start=&#39;2015-01-0
 这个问题可以拆为以下问题：
  从哪里找数据？ 如何得到这些数据？  先从第一个问题开始：从哪里找数据？美股的数据来源来很多，这里我直接选择了yahoo财经数据。 主要原因如下：
  yahoo财经数据详细 yahoo财经可以直接通过api获取，使用方便 最重要地一点，yahoo财经的api没有被墙，如果被墙了，也支持代理 yahoo财经数据实时性也不错，除了交易日当天的数据无法获取，其他的都可以获取  下面我们就看如何调用api获取数据。不多说了，直接上代码。
-import pandas as pd import yfinance as yf tsla_df = yf.download(&#39;TSLA&#39;, start=&#39;2020-01-01&#39;, end=&#39;2020-02-06&#39;, progress=False) tsla_df.tail()  具体结果如下：
+import pandas as pdimport yfinance as yftsla_df = yf.download(&#39;TSLA&#39;, start=&#39;2020-01-01&#39;, end=&#39;2020-02-06&#39;, progress=False)tsla_df.tail()具体结果如下：
 获取ticker数据：
-%matplotlib notebook ticker = yf.Ticker(&#39;TSLA&#39;) tsla_df = ticker.history(period=&amp;quot;max&amp;quot;) tsla_df.head() tsla_df[&#39;Close&#39;].plot(title=&amp;quot;Telsa&#39;s stock price&amp;quot;)  具体结果如下：
+%matplotlib notebookticker = yf.Ticker(&#39;TSLA&#39;)tsla_df = ticker.history(period=&amp;quot;max&amp;quot;)tsla_df.head()tsla_df[&#39;Close&#39;].plot(title=&amp;quot;Telsa&#39;s stock price&amp;quot;)具体结果如下：
 这些数据都可以股票软件都可以看到。 对的，下面说一下通过api获取原始数据的好处。
 灵活地获取ticker数据：
-%matplotlib notebook tsla_df = yf.download(&amp;quot;TSLA&amp;quot;, start=&amp;quot;2020-02-01&amp;quot;, end=&amp;quot;2020-02-06&amp;quot;, interval = &amp;quot;15m&amp;quot;) tsla_df[&#39;Close&#39;].plot(title=&amp;quot;TSLA FROM 2020-02-01 TO 2020-02-06 &amp;quot;)  具体结果如下： 股票对比分析：</description>
+%matplotlib notebooktsla_df = yf.download(&amp;quot;TSLA&amp;quot;, start=&amp;quot;2020-02-01&amp;quot;, end=&amp;quot;2020-02-06&amp;quot;, interval = &amp;quot;15m&amp;quot;)tsla_df[&#39;Close&#39;].plot(title=&amp;quot;TSLA FROM 2020-02-01 TO 2020-02-06 &amp;quot;)具体结果如下： 股票对比分析：</description>
     </item>
     
   </channel>

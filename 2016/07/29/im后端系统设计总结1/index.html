@@ -2,7 +2,7 @@
 <html lang="zh-cn">
 <head>
     <title>IM后端系统设计总结(1) &middot; 沉风网事</title>
-    <meta name="generator" content="Hugo 0.54.0" />
+    <meta name="generator" content="Hugo 0.68.3" />
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta name="author" content="沉风">
@@ -28,19 +28,16 @@
    比较项 XML 文本 MQTT 自定义二进制     可读性 好 好 差 差   通用性 标准协议，易通用 支持通用http协议，也可自定义 通用标准协议 私有协议，无法通用   扩展性 易扩展，支持第三方 易扩展 可扩展 仅协议可扩展，不支持第三方   流量消耗 极大 大 小 小   处理效率 低 一般 高 高   网络适应性 差 一般 较好 较好   业内应用 新浪微博/GTalk MSN facebook messenger QQ/weixin    再补充说一点，采用二进制协议，在网络带宽及消息存储方面可以节约成本，特别用户量达到千万级以上" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://myself659.github.io/2016/07/29/im%E5%90%8E%E7%AB%AF%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1%E6%80%BB%E7%BB%931/" />
-<meta property="article:published_time" content="2016-07-29T11:58:06&#43;02:00"/>
-<meta property="article:modified_time" content="2016-07-29T11:58:06&#43;02:00"/>
+<meta property="article:published_time" content="2016-07-29T11:58:06+02:00" />
+<meta property="article:modified_time" content="2016-07-29T11:58:06+02:00" />
 
     
-    
-<meta itemprop="name" content="IM后端系统设计总结(1)">
+    <meta itemprop="name" content="IM后端系统设计总结(1)">
 <meta itemprop="description" content="定义IM 为用户提供即时消息服务，这里面有三个关键词：用户，消息，服务；下面根据三个关键词来展开总结，先从消息开始。
 消息 消息分类 对消息分类，很简单但是重要，方便后面业务的拆分。
  注册 登录 用户信息 聊天消息 群组 好友 文件 版本 内部服务器之间消息 客户端诊断 其他业务消息  信息语义描述 在互联网和移动互联网时代常见有以下几种方式：
  XML 文本 MQTT 自定义二进制（这里一般默认为google protobuf）  这四种类型比较如下表所示：
    比较项 XML 文本 MQTT 自定义二进制     可读性 好 好 差 差   通用性 标准协议，易通用 支持通用http协议，也可自定义 通用标准协议 私有协议，无法通用   扩展性 易扩展，支持第三方 易扩展 可扩展 仅协议可扩展，不支持第三方   流量消耗 极大 大 小 小   处理效率 低 一般 高 高   网络适应性 差 一般 较好 较好   业内应用 新浪微博/GTalk MSN facebook messenger QQ/weixin    再补充说一点，采用二进制协议，在网络带宽及消息存储方面可以节约成本，特别用户量达到千万级以上">
-
-
 <meta itemprop="datePublished" content="2016-07-29T11:58:06&#43;02:00" />
 <meta itemprop="dateModified" content="2016-07-29T11:58:06&#43;02:00" />
 <meta itemprop="wordCount" content="154">
@@ -48,7 +45,6 @@
 
 
 <meta itemprop="keywords" content="Arch," />
-
     <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="IM后端系统设计总结(1)"/>
 <meta name="twitter:description" content="定义IM 为用户提供即时消息服务，这里面有三个关键词：用户，消息，服务；下面根据三个关键词来展开总结，先从消息开始。
@@ -348,18 +344,11 @@
 </header>
 
         <div class="article-entry" itemprop="articleBody">
-            
-
-<h3 id="定义im">定义IM</h3>
-
+            <h3 id="定义im">定义IM</h3>
 <p>为用户提供即时消息服务，这里面有三个关键词：用户，消息，服务；下面根据三个关键词来展开总结，先从消息开始。</p>
-
 <h3 id="消息">消息</h3>
-
 <h4 id="消息分类">消息分类</h4>
-
 <p>对消息分类，很简单但是重要，方便后面业务的拆分。</p>
-
 <ol>
 <li>注册</li>
 <li>登录</li>
@@ -373,20 +362,15 @@
 <li>客户端诊断</li>
 <li>其他业务消息</li>
 </ol>
-
 <h4 id="信息语义描述">信息语义描述</h4>
-
 <p>在互联网和移动互联网时代常见有以下几种方式：</p>
-
 <ol>
 <li>XML</li>
 <li>文本</li>
 <li>MQTT</li>
 <li>自定义二进制（这里一般默认为google protobuf）</li>
 </ol>
-
 <p>这四种类型比较如下表所示：</p>
-
 <table>
 <thead>
 <tr>
@@ -397,7 +381,6 @@
 <th align="right">自定义二进制</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td>可读性</td>
@@ -406,7 +389,6 @@
 <td align="center">差</td>
 <td align="right">差</td>
 </tr>
-
 <tr>
 <td>通用性</td>
 <td align="center">标准协议，易通用</td>
@@ -414,7 +396,6 @@
 <td align="center">通用标准协议</td>
 <td align="right">私有协议，无法通用</td>
 </tr>
-
 <tr>
 <td>扩展性</td>
 <td align="center">易扩展，支持第三方</td>
@@ -422,7 +403,6 @@
 <td align="center">可扩展</td>
 <td align="right">仅协议可扩展，不支持第三方</td>
 </tr>
-
 <tr>
 <td>流量消耗</td>
 <td align="center">极大</td>
@@ -430,7 +410,6 @@
 <td align="center">小</td>
 <td align="right">小</td>
 </tr>
-
 <tr>
 <td>处理效率</td>
 <td align="center">低</td>
@@ -438,7 +417,6 @@
 <td align="center">高</td>
 <td align="right">高</td>
 </tr>
-
 <tr>
 <td>网络适应性</td>
 <td align="center">差</td>
@@ -446,7 +424,6 @@
 <td align="center">较好</td>
 <td align="right">较好</td>
 </tr>
-
 <tr>
 <td>业内应用</td>
 <td align="center">新浪微博/GTalk</td>
@@ -456,11 +433,8 @@
 </tr>
 </tbody>
 </table>
-
 <p>再补充说一点，采用二进制协议，在网络带宽及消息存储方面可以节约成本，特别用户量达到千万级以上</p>
-
 <p>参考业内应用和移动互联网需求，二进制协议应该是不二选择。这里强烈推荐google protobuf，理由如下：</p>
-
 <ol>
 <li>亲爹是google</li>
 <li>支持多种编程语言(C++, JAVA, PYTHON, GO，PHP,C#)，支持多种平台</li>
@@ -468,11 +442,8 @@
 <li>支持数据压缩</li>
 <li>完整的技术生态，以及多年的应用实践</li>
 </ol>
-
 <h4 id="消息可扩展性">消息可扩展性</h4>
-
 <p>自定义二进制消息（google protobuf）可扩展性方面的一些经验：</p>
-
 <ol>
 <li>采用T(ype)L(ength)V(alue)</li>
 <li>数据结构中的成员不要使用变长数据类型，例如long，在32位系统中占4Bytes，在64位系统占用8Bytes</li>
@@ -483,32 +454,24 @@
 <li>除非确定，protobuf消息字段尽量使用optional，由代码逻辑确定是否需要相应字段</li>
 <li>考虑业务需求与变化，为未来留有应对变化的空间，同时保证消息的简洁</li>
 </ol>
-
 <h4 id="消息存储">消息存储</h4>
-
 <ol>
 <li>初期简单点，采用mysql，同时利用mysql主备部署解决单点故障问题，分布式存储后面再说了，针对大量的消息存储后面考虑</li>
 <li>对用户之间的聊天消息分表</li>
 <li>对群信息等利用redis缓存</li>
 <li>对于热点数据可以直接加载到内存</li>
 </ol>
-
 <h4 id="消息转发">消息转发</h4>
-
 <ol>
 <li>消息从用户到用户（单播）</li>
 <li>消息从用户到服务器 （单播）</li>
 <li>消息从用户到群组 （组播）</li>
 <li>消息从服务器到用户（单播）</li>
-<li>消息从服务器到群组（组播）<br /></li>
+<li>消息从服务器到群组（组播）</li>
 </ol>
-
 <h4 id="消息传输">消息传输</h4>
-
 <p>相对于PC互联网情况下，移动互联网情况下，丢包概率高，传输延迟大，问题自然就比较多，这方面优化请参考<a href="http://www.infoq.com/cn/presentations/the-road-of-mobile-qq-mobile-network-practice">手机QQ的移动网络实践之路</a></p>
-
 <h4 id="消息安全">消息安全</h4>
-
 <ol>
 <li>防修改   消息检查或校验</li>
 <li>防窃听   消息加密</li>
@@ -517,11 +480,8 @@
 <li>防损坏   多副本，分布式存储</li>
 <li>防伪装   身份验证，签名</li>
 </ol>
-
 <h3 id="消息描述">消息描述</h3>
-
 <p>消息由消息头和消息体组成，消息头参考如下：</p>
-
 <pre><code>
 #pragma pack(1)
 typedef struct {
@@ -534,10 +494,7 @@ typedef struct {
 } UserPduHeader_t;
 #pragma pack()
 
-</code></pre>
-
-<h3 id="后记">后记</h3>
-
+</code></pre><h3 id="后记">后记</h3>
 <p>由于个人水平有限，有什么不足与错误，敬请指正！</p>
 
         </div>

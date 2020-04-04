@@ -2,7 +2,7 @@
 <html lang="zh-cn">
 <head>
     <title>ping不通常见原因总结 &middot; 沉风网事</title>
-    <meta name="generator" content="Hugo 0.54.0" />
+    <meta name="generator" content="Hugo 0.68.3" />
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta name="author" content="沉风">
@@ -21,35 +21,25 @@
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400italic,400,600' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Source+Code+Pro' rel='stylesheet' type='text/css'>
     <meta property="og:title" content="ping不通常见原因总结" />
-<meta property="og:description" content="ping不通从ping的流程分为两大类：请求报文没有到达对端与应答报文未收到
-请求报文没有到达对端的可能原因 1. 发送端发送流程出错 2. 源端,转发设备没有目的地址的路由 2. ttl 小于转发跳数 3. 分片丢包 4. MTU限制 5. 转发丢包 6. 报文错误 7. 防火墙规则不允许该类型报文通过 8. 中间进行nat转换等处理出错 8. 目的地址不存在 9. 接收端收包流程出错
-应答报文未收到的可能原因 1. 发送端发送流程出错 2. MTU限制 3. 目的端禁止应答 4. 接收报文错误 5. 防火墙规则不允许该类型报文通过 6. 接收到了报文，但是超出等待时间 7. 接收报文错误，ping 应答检查失败 8. 转发丢包" />
+<meta property="og:description" content="ping不通从ping的流程分为两大类：请求报文没有到达对端与应答报文未收到" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://myself659.github.io/2015/05/27/ping%E4%B8%8D%E9%80%9A%E5%B8%B8%E8%A7%81%E5%8E%9F%E5%9B%A0%E6%80%BB%E7%BB%93/" />
-<meta property="article:published_time" content="2015-05-27T11:58:06&#43;02:00"/>
-<meta property="article:modified_time" content="2015-05-27T11:58:06&#43;02:00"/>
+<meta property="article:published_time" content="2015-05-27T11:58:06+02:00" />
+<meta property="article:modified_time" content="2015-05-27T11:58:06+02:00" />
 
     
-    
-<meta itemprop="name" content="ping不通常见原因总结">
-<meta itemprop="description" content="ping不通从ping的流程分为两大类：请求报文没有到达对端与应答报文未收到
-请求报文没有到达对端的可能原因 1. 发送端发送流程出错 2. 源端,转发设备没有目的地址的路由 2. ttl 小于转发跳数 3. 分片丢包 4. MTU限制 5. 转发丢包 6. 报文错误 7. 防火墙规则不允许该类型报文通过 8. 中间进行nat转换等处理出错 8. 目的地址不存在 9. 接收端收包流程出错
-应答报文未收到的可能原因 1. 发送端发送流程出错 2. MTU限制 3. 目的端禁止应答 4. 接收报文错误 5. 防火墙规则不允许该类型报文通过 6. 接收到了报文，但是超出等待时间 7. 接收报文错误，ping 应答检查失败 8. 转发丢包">
-
-
+    <meta itemprop="name" content="ping不通常见原因总结">
+<meta itemprop="description" content="ping不通从ping的流程分为两大类：请求报文没有到达对端与应答报文未收到">
 <meta itemprop="datePublished" content="2015-05-27T11:58:06&#43;02:00" />
 <meta itemprop="dateModified" content="2015-05-27T11:58:06&#43;02:00" />
-<meta itemprop="wordCount" content="43">
+<meta itemprop="wordCount" content="1">
 
 
 
 <meta itemprop="keywords" content="Network," />
-
     <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="ping不通常见原因总结"/>
-<meta name="twitter:description" content="ping不通从ping的流程分为两大类：请求报文没有到达对端与应答报文未收到
-请求报文没有到达对端的可能原因 1. 发送端发送流程出错 2. 源端,转发设备没有目的地址的路由 2. ttl 小于转发跳数 3. 分片丢包 4. MTU限制 5. 转发丢包 6. 报文错误 7. 防火墙规则不允许该类型报文通过 8. 中间进行nat转换等处理出错 8. 目的地址不存在 9. 接收端收包流程出错
-应答报文未收到的可能原因 1. 发送端发送流程出错 2. MTU限制 3. 目的端禁止应答 4. 接收报文错误 5. 防火墙规则不允许该类型报文通过 6. 接收到了报文，但是超出等待时间 7. 接收报文错误，ping 应答检查失败 8. 转发丢包"/>
+<meta name="twitter:description" content="ping不通从ping的流程分为两大类：请求报文没有到达对端与应答报文未收到"/>
 
     
 
@@ -304,7 +294,7 @@
             <i class="fa fa-calendar"></i>
             <time datetime="2015-05-27 11:58:06 &#43;0200 &#43;0200" itemprop="datePublished">2015-05-27</time>
             &middot;
-            43
+            1
             words
             &middot;
             1
@@ -343,29 +333,8 @@
 
         <div class="article-entry" itemprop="articleBody">
             <p>ping不通从ping的流程分为两大类：请求报文没有到达对端与应答报文未收到</p>
-
-<p><h3>请求报文没有到达对端的可能原因</h3>
-1. 发送端发送流程出错
-2. 源端,转发设备没有目的地址的路由
-2. ttl 小于转发跳数
-3. 分片丢包
-4. MTU限制
-5. 转发丢包
-6. 报文错误
-7. 防火墙规则不允许该类型报文通过
-8. 中间进行nat转换等处理出错
-8. 目的地址不存在
-9. 接收端收包流程出错</p>
-
-<p><h3>应答报文未收到的可能原因</h3>
-1. 发送端发送流程出错
-2. MTU限制
-3. 目的端禁止应答
-4. 接收报文错误
-5. 防火墙规则不允许该类型报文通过
-6. 接收到了报文，但是超出等待时间
-7. 接收报文错误，ping 应答检查失败
-8. 转发丢包</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
 
         </div>
         <footer class="article-footer">

@@ -2,7 +2,7 @@
 <html lang="zh-cn">
 <head>
     <title>以太坊提交交易流程分析 &middot; 沉风网事</title>
-    <meta name="generator" content="Hugo 0.54.0" />
+    <meta name="generator" content="Hugo 0.68.3" />
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta name="author" content="沉风">
@@ -23,20 +23,17 @@
     <meta property="og:title" content="以太坊提交交易流程分析" />
 <meta property="og:description" content="说明 代码基于go-ethereum，版本v1.8.10。
 RPC代码入口 SendTransaction
-// SendTransaction will create a transaction from the given arguments and // tries to sign it with the key associated with args.To. If the given passwd isn&#39;t // able to decrypt the key it fails. func (s *PrivateAccountAPI) SendTransaction(ctx context.Context, args SendTxArgs, passwd string) (common.Hash, error) { if args.Nonce == nil { // Hold the addresse&#39;s mutex around signing to prevent concurrent assignment of // the same nonce to multiple accounts." />
+// SendTransaction will create a transaction from the given arguments and// tries to sign it with the key associated with args.To. If the given passwd isn&#39;t// able to decrypt the key it fails.func (s *PrivateAccountAPI) SendTransaction(ctx context.Context, args SendTxArgs, passwd string) (common.Hash, error) {if args.Nonce == nil {// Hold the addresse&#39;s mutex around signing to prevent concurrent assignment of// the same nonce to multiple accounts." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://myself659.github.io/2018/05/05/%E4%BB%A5%E5%A4%AA%E5%9D%8A%E6%8F%90%E4%BA%A4%E4%BA%A4%E6%98%93%E6%B5%81%E7%A8%8B%E5%88%86%E6%9E%90/" />
-<meta property="article:published_time" content="2018-05-05T11:58:06&#43;02:00"/>
-<meta property="article:modified_time" content="2018-05-05T11:58:06&#43;02:00"/>
+<meta property="article:published_time" content="2018-05-05T11:58:06+02:00" />
+<meta property="article:modified_time" content="2018-05-05T11:58:06+02:00" />
 
     
-    
-<meta itemprop="name" content="以太坊提交交易流程分析">
+    <meta itemprop="name" content="以太坊提交交易流程分析">
 <meta itemprop="description" content="说明 代码基于go-ethereum，版本v1.8.10。
 RPC代码入口 SendTransaction
-// SendTransaction will create a transaction from the given arguments and // tries to sign it with the key associated with args.To. If the given passwd isn&#39;t // able to decrypt the key it fails. func (s *PrivateAccountAPI) SendTransaction(ctx context.Context, args SendTxArgs, passwd string) (common.Hash, error) { if args.Nonce == nil { // Hold the addresse&#39;s mutex around signing to prevent concurrent assignment of // the same nonce to multiple accounts.">
-
-
+// SendTransaction will create a transaction from the given arguments and// tries to sign it with the key associated with args.To. If the given passwd isn&#39;t// able to decrypt the key it fails.func (s *PrivateAccountAPI) SendTransaction(ctx context.Context, args SendTxArgs, passwd string) (common.Hash, error) {if args.Nonce == nil {// Hold the addresse&#39;s mutex around signing to prevent concurrent assignment of// the same nonce to multiple accounts.">
 <meta itemprop="datePublished" content="2018-05-05T11:58:06&#43;02:00" />
 <meta itemprop="dateModified" content="2018-05-05T11:58:06&#43;02:00" />
 <meta itemprop="wordCount" content="775">
@@ -44,12 +41,11 @@ RPC代码入口 SendTransaction
 
 
 <meta itemprop="keywords" content="BlockChain,ethereum," />
-
     <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="以太坊提交交易流程分析"/>
 <meta name="twitter:description" content="说明 代码基于go-ethereum，版本v1.8.10。
 RPC代码入口 SendTransaction
-// SendTransaction will create a transaction from the given arguments and // tries to sign it with the key associated with args.To. If the given passwd isn&#39;t // able to decrypt the key it fails. func (s *PrivateAccountAPI) SendTransaction(ctx context.Context, args SendTxArgs, passwd string) (common.Hash, error) { if args.Nonce == nil { // Hold the addresse&#39;s mutex around signing to prevent concurrent assignment of // the same nonce to multiple accounts."/>
+// SendTransaction will create a transaction from the given arguments and// tries to sign it with the key associated with args.To. If the given passwd isn&#39;t// able to decrypt the key it fails.func (s *PrivateAccountAPI) SendTransaction(ctx context.Context, args SendTxArgs, passwd string) (common.Hash, error) {if args.Nonce == nil {// Hold the addresse&#39;s mutex around signing to prevent concurrent assignment of// the same nonce to multiple accounts."/>
 
     
 
@@ -346,16 +342,10 @@ RPC代码入口 SendTransaction
 </header>
 
         <div class="article-entry" itemprop="articleBody">
-            
-
-<h1 id="说明">说明</h1>
-
+            <h1 id="说明">说明</h1>
 <p>代码基于go-ethereum，版本v1.8.10。</p>
-
 <h2 id="rpc代码入口">RPC代码入口</h2>
-
 <p><a href="https://github.com/myself659/go-ethereum/blob/eae63c511ceafab14b92e274c1b18bf1700e2d3d/internal/ethapi/api.go#L365">SendTransaction</a></p>
-
 <pre><code>// SendTransaction will create a transaction from the given arguments and
 // tries to sign it with the key associated with args.To. If the given passwd isn't
 // able to decrypt the key it fails.
@@ -373,10 +363,7 @@ func (s *PrivateAccountAPI) SendTransaction(ctx context.Context, args SendTxArgs
     return submitTransaction(ctx, s.b, signed)
 }
 
-</code></pre>
-
-<p><a href="https://github.com/myself659/go-ethereum/blob/eae63c511ceafab14b92e274c1b18bf1700e2d3d/internal/ethapi/api.go#L1105:6">SendTxArgs</a>的数据结构如下：</p>
-
+</code></pre><p><a href="https://github.com/myself659/go-ethereum/blob/eae63c511ceafab14b92e274c1b18bf1700e2d3d/internal/ethapi/api.go#L1105:6">SendTxArgs</a>的数据结构如下：</p>
 <pre><code>type SendTxArgs struct {
     From     common.Address  `json:&quot;from&quot;`
     To       *common.Address `json:&quot;to&quot;`
@@ -389,24 +376,16 @@ func (s *PrivateAccountAPI) SendTransaction(ctx context.Context, args SendTxArgs
     Data  *hexutil.Bytes `json:&quot;data&quot;`
     Input *hexutil.Bytes `json:&quot;input&quot;`
 }
-</code></pre>
-
-<p>新增加Input字段。用于替换原来Data字段，为了兼容保留Data字段。</p>
-
+</code></pre><p>新增加Input字段。用于替换原来Data字段，为了兼容保留Data字段。</p>
 <h2 id="查找钱包">查找钱包</h2>
-
 <p>根据from地址信息查找钱包。</p>
-
 <pre><code>    // Look up the wallet containing the requested signer
     account := accounts.Account{Address: args.From}
     wallet, err := s.am.Find(account)
     if err != nil {
         return nil, err
     }
-</code></pre>
-
-<h2 id="设置参数">设置参数</h2>
-
+</code></pre><h2 id="设置参数">设置参数</h2>
 <pre><code>// setDefaults is a helper function that fills in default values for unspecified tx fields.
 func (args *SendTxArgs) setDefaults(ctx context.Context, b Backend) error {
     if args.Gas == nil {
@@ -447,12 +426,8 @@ func (args *SendTxArgs) setDefaults(ctx context.Context, b Backend) error {
     }
     return nil
 }
-</code></pre>
-
-<h2 id="创建交易">创建交易</h2>
-
+</code></pre><h2 id="创建交易">创建交易</h2>
 <p>根据交易参数创建交易。</p>
-
 <pre><code>func (args *SendTxArgs) toTransaction() *types.Transaction {
     var input []byte
     if args.Data != nil {
@@ -465,10 +440,7 @@ func (args *SendTxArgs) setDefaults(ctx context.Context, b Backend) error {
     }
     return types.NewTransaction(uint64(*args.Nonce), *args.To, (*big.Int)(args.Value), uint64(*args.Gas), (*big.Int)(args.GasPrice), input)
 }
-</code></pre>
-
-<p>相关数据结构如下：</p>
-
+</code></pre><p>相关数据结构如下：</p>
 <pre><code>type Transaction struct {
     data txdata
     // caches
@@ -493,20 +465,13 @@ type txdata struct {
     // This is only used when marshaling to JSON.
     Hash *common.Hash `json:&quot;hash&quot; rlp:&quot;-&quot;`
 }
-</code></pre>
-
-<h2 id="获取chainid">获取ChainId</h2>
-
+</code></pre><h2 id="获取chainid">获取ChainId</h2>
 <p>为了防止重放攻击，获得了chainID（EIP155之后才支持），用于签名。</p>
-
 <pre><code>    var chainID *big.Int
     if config := s.b.ChainConfig(); config.IsEIP155(s.b.CurrentBlock().Number()) {
         chainID = config.ChainId
     }
-</code></pre>
-
-<p>chainID是如何使用的？简单说就是：以一系列数学运算将chainID保存到签名信息中。</p>
-
+</code></pre><p>chainID是如何使用的？简单说就是：以一系列数学运算将chainID保存到签名信息中。</p>
 <pre><code>func NewEIP155Signer(chainId *big.Int) EIP155Signer {
     if chainId == nil {
         chainId = new(big.Int)
@@ -516,9 +481,7 @@ type txdata struct {
         chainIdMul: new(big.Int).Mul(chainId, big.NewInt(2)),
     }
 }
-</code></pre>
-
-<pre><code>// WithSignature returns a new transaction with the given signature. This signature
+</code></pre><pre><code>// WithSignature returns a new transaction with the given signature. This signature
 // needs to be in the [R || S || V] format where V is 0 or 1.
 func (s EIP155Signer) SignatureValues(tx *Transaction, sig []byte) (R, S, V *big.Int, err error) {
     R, S, V, err = HomesteadSigner{}.SignatureValues(tx, sig)
@@ -531,12 +494,8 @@ func (s EIP155Signer) SignatureValues(tx *Transaction, sig []byte) (R, S, V *big
     }
     return R, S, V, nil
 }
-</code></pre>
-
-<h2 id="签名">签名</h2>
-
+</code></pre><h2 id="签名">签名</h2>
 <p>从keystore获取私钥用于签名交易。</p>
-
 <pre><code>// SignHashWithPassphrase signs hash if the private key matching the given address
 // can be decrypted with the given passphrase. The produced signature is in the
 // [R || S || V] format where V is 0 or 1.
@@ -548,10 +507,7 @@ func (ks *KeyStore) SignHashWithPassphrase(a accounts.Account, passphrase string
     defer zeroKey(key.PrivateKey)
     return crypto.Sign(hash, key.PrivateKey)
 }
-</code></pre>
-
-<h2 id="提交交易">提交交易</h2>
-
+</code></pre><h2 id="提交交易">提交交易</h2>
 <pre><code>// submitTransaction is a helper function that submits tx to txPool and logs a message.
 func submitTransaction(ctx context.Context, b Backend, tx *types.Transaction) (common.Hash, error) {
     if err := b.SendTx(ctx, tx); err != nil {
@@ -570,26 +526,16 @@ func submitTransaction(ctx context.Context, b Backend, tx *types.Transaction) (c
     }
     return tx.Hash(), nil
 }
-</code></pre>
-
-<p>添加交易到本地交易池。</p>
-
+</code></pre><p>添加交易到本地交易池。</p>
 <pre><code>func (b *EthAPIBackend) SendTx(ctx context.Context, signedTx *types.Transaction) error {
     return b.eth.txPool.AddLocal(signedTx)
 }
-</code></pre>
-
-<h1 id="小结">小结</h1>
-
+</code></pre><h1 id="小结">小结</h1>
 <p>到此为止，交易已经提交到交易池。这才是整个交易完成过程中第一步，后面还有广播、检查、打包、确认等流程。</p>
-
 <p>这是节点钱包提交交易的过程。轻钱包提交交易与此有一些不同，是通过rpc调用提交到钱包服务的节点钱包。</p>
-
 <h2 id="欢迎关注">欢迎关注</h2>
-
 <p>欢迎关注微信公众帐号：沉风网事(savewind)</p>
-
-<p><img src="/images/cfws.jpg" alt="沉风网事" /></p>
+<p><img src="/images/cfws.jpg" alt="沉风网事"></p>
 
         </div>
         <footer class="article-footer">

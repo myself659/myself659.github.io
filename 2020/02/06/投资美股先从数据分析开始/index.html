@@ -2,7 +2,7 @@
 <html lang="zh-cn">
 <head>
     <title>投资美股，先从数据分析开始 &middot; 沉风网事</title>
-    <meta name="generator" content="Hugo 0.54.0" />
+    <meta name="generator" content="Hugo 0.68.3" />
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta name="author" content="沉风">
@@ -27,34 +27,31 @@
 这个问题可以拆为以下问题：
  从哪里找数据？ 如何得到这些数据？  先从第一个问题开始：从哪里找数据？美股的数据来源来很多，这里我直接选择了yahoo财经数据。 主要原因如下：
  yahoo财经数据详细 yahoo财经可以直接通过api获取，使用方便 最重要地一点，yahoo财经的api没有被墙，如果被墙了，也支持代理 yahoo财经数据实时性也不错，除了交易日当天的数据无法获取，其他的都可以获取  下面我们就看如何调用api获取数据。不多说了，直接上代码。
-import pandas as pd import yfinance as yf tsla_df = yf.download(&#39;TSLA&#39;, start=&#39;2020-01-01&#39;, end=&#39;2020-02-06&#39;, progress=False) tsla_df.tail()  具体结果如下：
+import pandas as pdimport yfinance as yftsla_df = yf.download(&#39;TSLA&#39;, start=&#39;2020-01-01&#39;, end=&#39;2020-02-06&#39;, progress=False)tsla_df.tail()具体结果如下：
 获取ticker数据：
-%matplotlib notebook ticker = yf.Ticker(&#39;TSLA&#39;) tsla_df = ticker.history(period=&quot;max&quot;) tsla_df.head() tsla_df[&#39;Close&#39;].plot(title=&quot;Telsa&#39;s stock price&quot;)  具体结果如下：
+%matplotlib notebookticker = yf.Ticker(&#39;TSLA&#39;)tsla_df = ticker.history(period=&quot;max&quot;)tsla_df.head()tsla_df[&#39;Close&#39;].plot(title=&quot;Telsa&#39;s stock price&quot;)具体结果如下：
 这些数据都可以股票软件都可以看到。 对的，下面说一下通过api获取原始数据的好处。
 灵活地获取ticker数据：
-%matplotlib notebook tsla_df = yf.download(&quot;TSLA&quot;, start=&quot;2020-02-01&quot;, end=&quot;2020-02-06&quot;, interval = &quot;15m&quot;) tsla_df[&#39;Close&#39;].plot(title=&quot;TSLA FROM 2020-02-01 TO 2020-02-06 &quot;)  具体结果如下： 股票对比分析：" />
+%matplotlib notebooktsla_df = yf.download(&quot;TSLA&quot;, start=&quot;2020-02-01&quot;, end=&quot;2020-02-06&quot;, interval = &quot;15m&quot;)tsla_df[&#39;Close&#39;].plot(title=&quot;TSLA FROM 2020-02-01 TO 2020-02-06 &quot;)具体结果如下： 股票对比分析：" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://myself659.github.io/2020/02/06/%E6%8A%95%E8%B5%84%E7%BE%8E%E8%82%A1%E5%85%88%E4%BB%8E%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%BC%80%E5%A7%8B/" />
-<meta property="article:published_time" content="2020-02-06T11:58:06&#43;02:00"/>
-<meta property="article:modified_time" content="2020-02-06T11:58:06&#43;02:00"/>
+<meta property="article:published_time" content="2020-02-06T11:58:06+02:00" />
+<meta property="article:modified_time" content="2020-02-06T11:58:06+02:00" />
 
     
-    
-<meta itemprop="name" content="投资美股，先从数据分析开始">
+    <meta itemprop="name" content="投资美股，先从数据分析开始">
 <meta itemprop="description" content="背景 川大爷，常在twitter上吆喝美股多次创造历史高点。美股确实是一个资产配置的重要选项。
 在进入市场之前，研究先行，作好功课。
 获取数据 对于一个公司的股票的研究与分析有多个方面。这里只看股票的数据情况。 既然是分析数据，那么如何获取获取呢？
 这个问题可以拆为以下问题：
  从哪里找数据？ 如何得到这些数据？  先从第一个问题开始：从哪里找数据？美股的数据来源来很多，这里我直接选择了yahoo财经数据。 主要原因如下：
  yahoo财经数据详细 yahoo财经可以直接通过api获取，使用方便 最重要地一点，yahoo财经的api没有被墙，如果被墙了，也支持代理 yahoo财经数据实时性也不错，除了交易日当天的数据无法获取，其他的都可以获取  下面我们就看如何调用api获取数据。不多说了，直接上代码。
-import pandas as pd import yfinance as yf tsla_df = yf.download(&#39;TSLA&#39;, start=&#39;2020-01-01&#39;, end=&#39;2020-02-06&#39;, progress=False) tsla_df.tail()  具体结果如下：
+import pandas as pdimport yfinance as yftsla_df = yf.download(&#39;TSLA&#39;, start=&#39;2020-01-01&#39;, end=&#39;2020-02-06&#39;, progress=False)tsla_df.tail()具体结果如下：
 获取ticker数据：
-%matplotlib notebook ticker = yf.Ticker(&#39;TSLA&#39;) tsla_df = ticker.history(period=&quot;max&quot;) tsla_df.head() tsla_df[&#39;Close&#39;].plot(title=&quot;Telsa&#39;s stock price&quot;)  具体结果如下：
+%matplotlib notebookticker = yf.Ticker(&#39;TSLA&#39;)tsla_df = ticker.history(period=&quot;max&quot;)tsla_df.head()tsla_df[&#39;Close&#39;].plot(title=&quot;Telsa&#39;s stock price&quot;)具体结果如下：
 这些数据都可以股票软件都可以看到。 对的，下面说一下通过api获取原始数据的好处。
 灵活地获取ticker数据：
-%matplotlib notebook tsla_df = yf.download(&quot;TSLA&quot;, start=&quot;2020-02-01&quot;, end=&quot;2020-02-06&quot;, interval = &quot;15m&quot;) tsla_df[&#39;Close&#39;].plot(title=&quot;TSLA FROM 2020-02-01 TO 2020-02-06 &quot;)  具体结果如下： 股票对比分析：">
-
-
+%matplotlib notebooktsla_df = yf.download(&quot;TSLA&quot;, start=&quot;2020-02-01&quot;, end=&quot;2020-02-06&quot;, interval = &quot;15m&quot;)tsla_df[&#39;Close&#39;].plot(title=&quot;TSLA FROM 2020-02-01 TO 2020-02-06 &quot;)具体结果如下： 股票对比分析：">
 <meta itemprop="datePublished" content="2020-02-06T11:58:06&#43;02:00" />
 <meta itemprop="dateModified" content="2020-02-06T11:58:06&#43;02:00" />
 <meta itemprop="wordCount" content="240">
@@ -62,7 +59,6 @@ import pandas as pd import yfinance as yf tsla_df = yf.download(&#39;TSLA&#39;, 
 
 
 <meta itemprop="keywords" content="Data," />
-
     <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="投资美股，先从数据分析开始"/>
 <meta name="twitter:description" content="背景 川大爷，常在twitter上吆喝美股多次创造历史高点。美股确实是一个资产配置的重要选项。
@@ -71,12 +67,12 @@ import pandas as pd import yfinance as yf tsla_df = yf.download(&#39;TSLA&#39;, 
 这个问题可以拆为以下问题：
  从哪里找数据？ 如何得到这些数据？  先从第一个问题开始：从哪里找数据？美股的数据来源来很多，这里我直接选择了yahoo财经数据。 主要原因如下：
  yahoo财经数据详细 yahoo财经可以直接通过api获取，使用方便 最重要地一点，yahoo财经的api没有被墙，如果被墙了，也支持代理 yahoo财经数据实时性也不错，除了交易日当天的数据无法获取，其他的都可以获取  下面我们就看如何调用api获取数据。不多说了，直接上代码。
-import pandas as pd import yfinance as yf tsla_df = yf.download(&#39;TSLA&#39;, start=&#39;2020-01-01&#39;, end=&#39;2020-02-06&#39;, progress=False) tsla_df.tail()  具体结果如下：
+import pandas as pdimport yfinance as yftsla_df = yf.download(&#39;TSLA&#39;, start=&#39;2020-01-01&#39;, end=&#39;2020-02-06&#39;, progress=False)tsla_df.tail()具体结果如下：
 获取ticker数据：
-%matplotlib notebook ticker = yf.Ticker(&#39;TSLA&#39;) tsla_df = ticker.history(period=&quot;max&quot;) tsla_df.head() tsla_df[&#39;Close&#39;].plot(title=&quot;Telsa&#39;s stock price&quot;)  具体结果如下：
+%matplotlib notebookticker = yf.Ticker(&#39;TSLA&#39;)tsla_df = ticker.history(period=&quot;max&quot;)tsla_df.head()tsla_df[&#39;Close&#39;].plot(title=&quot;Telsa&#39;s stock price&quot;)具体结果如下：
 这些数据都可以股票软件都可以看到。 对的，下面说一下通过api获取原始数据的好处。
 灵活地获取ticker数据：
-%matplotlib notebook tsla_df = yf.download(&quot;TSLA&quot;, start=&quot;2020-02-01&quot;, end=&quot;2020-02-06&quot;, interval = &quot;15m&quot;) tsla_df[&#39;Close&#39;].plot(title=&quot;TSLA FROM 2020-02-01 TO 2020-02-06 &quot;)  具体结果如下： 股票对比分析："/>
+%matplotlib notebooktsla_df = yf.download(&quot;TSLA&quot;, start=&quot;2020-02-01&quot;, end=&quot;2020-02-06&quot;, interval = &quot;15m&quot;)tsla_df[&#39;Close&#39;].plot(title=&quot;TSLA FROM 2020-02-01 TO 2020-02-06 &quot;)具体结果如下： 股票对比分析："/>
 
     
 
@@ -369,39 +365,26 @@ import pandas as pd import yfinance as yf tsla_df = yf.download(&#39;TSLA&#39;, 
 </header>
 
         <div class="article-entry" itemprop="articleBody">
-            
-
-<!-- TELSA股票数据分析  -->
-
+            <!-- raw HTML omitted -->
 <h1 id="背景">背景</h1>
-
 <p>川大爷，常在twitter上吆喝美股多次创造历史高点。美股确实是一个资产配置的重要选项。</p>
-
 <p>在进入市场之前，研究先行，作好功课。</p>
-
 <h1 id="获取数据">获取数据</h1>
-
 <p>对于一个公司的股票的研究与分析有多个方面。这里只看股票的数据情况。 既然是分析数据，那么如何获取获取呢？</p>
-
 <p>这个问题可以拆为以下问题：</p>
-
 <ol>
 <li>从哪里找数据？</li>
 <li>如何得到这些数据？</li>
 </ol>
-
 <p>先从第一个问题开始：从哪里找数据？美股的数据来源来很多，这里我直接选择了yahoo财经数据。
 主要原因如下：</p>
-
 <ol>
 <li>yahoo财经数据详细</li>
 <li>yahoo财经可以直接通过api获取，使用方便</li>
 <li>最重要地一点，yahoo财经的api没有被墙，如果被墙了，也支持代理</li>
 <li>yahoo财经数据实时性也不错，除了交易日当天的数据无法获取，其他的都可以获取</li>
 </ol>
-
 <p>下面我们就看如何调用api获取数据。不多说了，直接上代码。</p>
-
 <pre><code>import pandas as pd
 import yfinance as yf
 
@@ -411,41 +394,26 @@ tsla_df = yf.download('TSLA',
                       progress=False)
 
 tsla_df.tail()
-</code></pre>
-
-<p>具体结果如下：</p>
-
-<p><img src="/images/economy/stock-telsa1.png" alt="" /></p>
-
+</code></pre><p>具体结果如下：</p>
+<p><img src="/images/economy/stock-telsa1.png" alt=""></p>
 <p>获取ticker数据：</p>
-
 <pre><code>%matplotlib notebook
 ticker = yf.Ticker('TSLA')
 
 tsla_df = ticker.history(period=&quot;max&quot;)
 tsla_df.head()
 tsla_df['Close'].plot(title=&quot;Telsa's stock price&quot;)
-</code></pre>
-
-<p>具体结果如下：</p>
-
-<p><img src="/images/economy/stock-telsa-max.png" alt="" /></p>
-
+</code></pre><p>具体结果如下：</p>
+<p><img src="/images/economy/stock-telsa-max.png" alt=""></p>
 <p>这些数据都可以股票软件都可以看到。
 对的，下面说一下通过api获取原始数据的好处。</p>
-
 <p>灵活地获取ticker数据：</p>
-
 <pre><code>%matplotlib notebook
 tsla_df = yf.download(&quot;TSLA&quot;, start=&quot;2020-02-01&quot;, end=&quot;2020-02-06&quot;, interval = &quot;15m&quot;)
 tsla_df['Close'].plot(title=&quot;TSLA FROM  2020-02-01 TO 2020-02-06 &quot;)
-</code></pre>
-
-<p>具体结果如下：
-<img src="/images/economy/stock-telsa-timerange.png" alt="" /></p>
-
+</code></pre><p>具体结果如下： 
+<img src="/images/economy/stock-telsa-timerange.png" alt=""></p>
 <p>股票对比分析：</p>
-
 <pre><code>
 from plotly.offline import download_plotlyjs, init_notebook_mode, iplot
 
@@ -492,47 +460,16 @@ data_tam_close = data_tam_close.dropna()
 
 iplot(data_tam_close.iplot(asFigure=True, kind='line', title='TSLA VS MS VS APPLE', dimensions=(800,500)))
 
-</code></pre>
-
-<p>具体结果如下：</p>
-
-<p><img src="/images/economy/stock-telsa-ms-apple.png" alt="" /></p>
-
+</code></pre><p>具体结果如下：</p>
+<p><img src="/images/economy/stock-telsa-ms-apple.png" alt=""></p>
 <p>一眼可以看出在2020年前任何一个时间点买入telsa并持有是一个正确的选择，投资收益远超过了苹果与微软。</p>
-
 <h1 id="后记">后记</h1>
-
 <p>本文主要解决了如何获取美股交易数据的问题，对于这些数据的分析及预测后面再展开。</p>
-
 <h1 id="欢迎关注">欢迎关注</h1>
-
 <p>欢迎关注微信公众帐号：沉风网事(savewind)</p>
-
-<p><img src="/images/cfws.jpg" alt="沉风网事" /></p>
-
-<!-- 
-# 参考 
-
-1. [Web Scraping Yahoo Finance](https://towardsdatascience.com/web-scraping-yahoo-finance-477fe3daa852)
-2. [How to Invest like a Data Scientist - Towards Data Science
-](https://towardsdatascience.com/how-to-invest-like-a-data-scientist-bada78787d57)
-3. [A comprehensive guide to downloading stock prices in Python](https://towardsdatascience.com/a-comprehensive-guide-to-downloading-stock-prices-in-python-2cd93ff821d4)
-4. [yfinance](https://github.com/ranaroussi/yfinance)
-5. [Tesla’s Stock Is Up 36% in Two Days. What’s Going On?](https://www.nytimes.com/2020/02/04/business/tesla-stock-price.html)
-6. [
-Creating Plotly Charts Directly from Pandas Data Frame](https://nbviewer.jupyter.org/github/pybokeh/jupyter_notebooks/blob/master/plotly/plotly_with_pandas.html)
-
-7. [Best 6 free and paid stock market APIs for 2020](https://towardsdatascience.com/best-free-and-paid-stock-market-apis-for-2020-11adb98e7023)
-8. [tencent quote](https://sg.finance.yahoo.com/quote/0700.HK/)
-9. [360 quoto](https://sg.finance.yahoo.com/quote/601360.SS) 
-10. [finnhub api](https://finnhub.io/docs/api#company-metrics)
-11. [Comparing the best free financial market data APIs](https://towardsdatascience.com/comparing-the-best-free-financial-market-data-apis-158ae73c16ba)
-12. [Impact of Coronavirus on Stock Prices](https://towardsdatascience.com/impact-of-coronavirus-on-stock-prices-41c108c1ec65)
-13. [Free Stock Data for Python Using Yahoo Finance API](https://towardsdatascience.com/free-stock-data-for-python-using-yahoo-finance-api-9dafd96cad2e)
-14. [Build an Algorithmic Trading System](https://towardsdatascience.com/build-an-algorithmic-trading-system-a5b54de5379)
-
-
--->
+<p><img src="/images/cfws.jpg" alt="沉风网事"></p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
 
         </div>
         <footer class="article-footer">

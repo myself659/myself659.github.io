@@ -2,7 +2,7 @@
 <html lang="zh-cn">
 <head>
     <title>以太坊私链智能合约实践 &middot; 沉风网事</title>
-    <meta name="generator" content="Hugo 0.54.0" />
+    <meta name="generator" content="Hugo 0.68.3" />
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta name="author" content="沉风">
@@ -21,24 +21,19 @@
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400italic,400,600' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Source+Code+Pro' rel='stylesheet' type='text/css'>
     <meta property="og:title" content="以太坊私链智能合约实践" />
-<meta property="og:description" content="环境说明  操作系统: macos.10.12.1 geth版本：1.5.9 solc版本：0.4.15
-  实践 1. 启动本地geth节点 Michaels-iMac:wallet eric$ geth --rpc --rpcaddr 127.0.0.1 --rpcport 8545 --dev --datadir myethchain  如上操作后，geth console输出如下：
-I0824 17:28:57.448455 p2p/server.go:340] Starting Server I0824 17:28:59.554115 p2p/discover/udp.go:227] Listening, enode://04697f62537244ee34aea28e613530a1f46a64de75d8174d963c9ca0c2e6b96d4aa756ef7a33e269de1b7c088163835b72dda8f4dea712cf39569db4e8d8e43a@[::]:54798 I0824 17:28:59.554264 p2p/server.go:608] Listening on [::]:58245 I0824 17:28:59.554324 whisper/whisperv2/whisper.go:176] Whisper started I0824 17:28:59.570668 node/node.go:341] IPC endpoint opened: /Users/eric/wallet/myethchain/geth.ipc I0824 17:28:59.581423 node/node.go:411] HTTP endpoint opened: http://127.0.0.1:8545  同时也创建在当前目录创建目录myethchain，其结构如下：
-Michaels-iMac:wallet eric$ tree myethchain/ myethchain/ ├── geth │ ├── LOCK │ ├── chaindata │ │ ├── 000002." />
+<meta property="og:description" content="环境说明  操作系统: macos.10.12.1 geth版本：1.5.9 solc版本：0.4.15  实践 1. 启动本地geth节点 Michaels-iMac:wallet eric$ geth --rpc --rpcaddr 127.0.0.1 --rpcport 8545 --dev --datadir myethchain 如上操作后，geth console输出如下：
+I0824 17:28:57.448455 p2p/server.go:340] Starting ServerI0824 17:28:59.554115 p2p/discover/udp.go:227] Listening, enode://04697f62537244ee34aea28e613530a1f46a64de75d8174d963c9ca0c2e6b96d4aa756ef7a33e269de1b7c088163835b72dda8f4dea712cf39569db4e8d8e43a@[::]:54798I0824 17:28:59.554264 p2p/server.go:608] Listening on [::]:58245I0824 17:28:59.554324 whisper/whisperv2/whisper.go:176] Whisper startedI0824 17:28:59.570668 node/node.go:341] IPC endpoint opened: /Users/eric/wallet/myethchain/geth.ipcI0824 17:28:59.581423 node/node.go:411] HTTP endpoint opened: http://127.0.0.1:8545同时也创建在当前目录创建目录myethchain，其结构如下：
+Michaels-iMac:wallet eric$ tree myethchain/myethchain/├── geth│ ├── LOCK│ ├── chaindata│ │ ├── 000002." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://myself659.github.io/2017/08/24/%E4%BB%A5%E5%A4%AA%E5%9D%8A%E7%A7%81%E9%93%BE%E6%99%BA%E8%83%BD%E5%90%88%E7%BA%A6%E5%AE%9E%E8%B7%B5/" />
-<meta property="article:published_time" content="2017-08-24T11:58:06&#43;02:00"/>
-<meta property="article:modified_time" content="2017-08-24T11:58:06&#43;02:00"/>
+<meta property="article:published_time" content="2017-08-24T11:58:06+02:00" />
+<meta property="article:modified_time" content="2017-08-24T11:58:06+02:00" />
 
     
-    
-<meta itemprop="name" content="以太坊私链智能合约实践">
-<meta itemprop="description" content="环境说明  操作系统: macos.10.12.1 geth版本：1.5.9 solc版本：0.4.15
-  实践 1. 启动本地geth节点 Michaels-iMac:wallet eric$ geth --rpc --rpcaddr 127.0.0.1 --rpcport 8545 --dev --datadir myethchain  如上操作后，geth console输出如下：
-I0824 17:28:57.448455 p2p/server.go:340] Starting Server I0824 17:28:59.554115 p2p/discover/udp.go:227] Listening, enode://04697f62537244ee34aea28e613530a1f46a64de75d8174d963c9ca0c2e6b96d4aa756ef7a33e269de1b7c088163835b72dda8f4dea712cf39569db4e8d8e43a@[::]:54798 I0824 17:28:59.554264 p2p/server.go:608] Listening on [::]:58245 I0824 17:28:59.554324 whisper/whisperv2/whisper.go:176] Whisper started I0824 17:28:59.570668 node/node.go:341] IPC endpoint opened: /Users/eric/wallet/myethchain/geth.ipc I0824 17:28:59.581423 node/node.go:411] HTTP endpoint opened: http://127.0.0.1:8545  同时也创建在当前目录创建目录myethchain，其结构如下：
-Michaels-iMac:wallet eric$ tree myethchain/ myethchain/ ├── geth │ ├── LOCK │ ├── chaindata │ │ ├── 000002.">
-
-
+    <meta itemprop="name" content="以太坊私链智能合约实践">
+<meta itemprop="description" content="环境说明  操作系统: macos.10.12.1 geth版本：1.5.9 solc版本：0.4.15  实践 1. 启动本地geth节点 Michaels-iMac:wallet eric$ geth --rpc --rpcaddr 127.0.0.1 --rpcport 8545 --dev --datadir myethchain 如上操作后，geth console输出如下：
+I0824 17:28:57.448455 p2p/server.go:340] Starting ServerI0824 17:28:59.554115 p2p/discover/udp.go:227] Listening, enode://04697f62537244ee34aea28e613530a1f46a64de75d8174d963c9ca0c2e6b96d4aa756ef7a33e269de1b7c088163835b72dda8f4dea712cf39569db4e8d8e43a@[::]:54798I0824 17:28:59.554264 p2p/server.go:608] Listening on [::]:58245I0824 17:28:59.554324 whisper/whisperv2/whisper.go:176] Whisper startedI0824 17:28:59.570668 node/node.go:341] IPC endpoint opened: /Users/eric/wallet/myethchain/geth.ipcI0824 17:28:59.581423 node/node.go:411] HTTP endpoint opened: http://127.0.0.1:8545同时也创建在当前目录创建目录myethchain，其结构如下：
+Michaels-iMac:wallet eric$ tree myethchain/myethchain/├── geth│ ├── LOCK│ ├── chaindata│ │ ├── 000002.">
 <meta itemprop="datePublished" content="2017-08-24T11:58:06&#43;02:00" />
 <meta itemprop="dateModified" content="2017-08-24T11:58:06&#43;02:00" />
 <meta itemprop="wordCount" content="596">
@@ -46,13 +41,11 @@ Michaels-iMac:wallet eric$ tree myethchain/ myethchain/ ├── geth │ ├�
 
 
 <meta itemprop="keywords" content="blockchain," />
-
     <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="以太坊私链智能合约实践"/>
-<meta name="twitter:description" content="环境说明  操作系统: macos.10.12.1 geth版本：1.5.9 solc版本：0.4.15
-  实践 1. 启动本地geth节点 Michaels-iMac:wallet eric$ geth --rpc --rpcaddr 127.0.0.1 --rpcport 8545 --dev --datadir myethchain  如上操作后，geth console输出如下：
-I0824 17:28:57.448455 p2p/server.go:340] Starting Server I0824 17:28:59.554115 p2p/discover/udp.go:227] Listening, enode://04697f62537244ee34aea28e613530a1f46a64de75d8174d963c9ca0c2e6b96d4aa756ef7a33e269de1b7c088163835b72dda8f4dea712cf39569db4e8d8e43a@[::]:54798 I0824 17:28:59.554264 p2p/server.go:608] Listening on [::]:58245 I0824 17:28:59.554324 whisper/whisperv2/whisper.go:176] Whisper started I0824 17:28:59.570668 node/node.go:341] IPC endpoint opened: /Users/eric/wallet/myethchain/geth.ipc I0824 17:28:59.581423 node/node.go:411] HTTP endpoint opened: http://127.0.0.1:8545  同时也创建在当前目录创建目录myethchain，其结构如下：
-Michaels-iMac:wallet eric$ tree myethchain/ myethchain/ ├── geth │ ├── LOCK │ ├── chaindata │ │ ├── 000002."/>
+<meta name="twitter:description" content="环境说明  操作系统: macos.10.12.1 geth版本：1.5.9 solc版本：0.4.15  实践 1. 启动本地geth节点 Michaels-iMac:wallet eric$ geth --rpc --rpcaddr 127.0.0.1 --rpcport 8545 --dev --datadir myethchain 如上操作后，geth console输出如下：
+I0824 17:28:57.448455 p2p/server.go:340] Starting ServerI0824 17:28:59.554115 p2p/discover/udp.go:227] Listening, enode://04697f62537244ee34aea28e613530a1f46a64de75d8174d963c9ca0c2e6b96d4aa756ef7a33e269de1b7c088163835b72dda8f4dea712cf39569db4e8d8e43a@[::]:54798I0824 17:28:59.554264 p2p/server.go:608] Listening on [::]:58245I0824 17:28:59.554324 whisper/whisperv2/whisper.go:176] Whisper startedI0824 17:28:59.570668 node/node.go:341] IPC endpoint opened: /Users/eric/wallet/myethchain/geth.ipcI0824 17:28:59.581423 node/node.go:411] HTTP endpoint opened: http://127.0.0.1:8545同时也创建在当前目录创建目录myethchain，其结构如下：
+Michaels-iMac:wallet eric$ tree myethchain/myethchain/├── geth│ ├── LOCK│ ├── chaindata│ │ ├── 000002."/>
 
     
 
@@ -345,35 +338,23 @@ Michaels-iMac:wallet eric$ tree myethchain/ myethchain/ ├── geth │ ├�
 </header>
 
         <div class="article-entry" itemprop="articleBody">
-            
-
-<h1 id="环境说明">环境说明</h1>
-
+            <h1 id="环境说明">环境说明</h1>
 <ul>
 <li>操作系统: macos.10.12.1</li>
 <li>geth版本：1.5.9</li>
-<li>solc版本：0.4.15<br /></li>
+<li>solc版本：0.4.15</li>
 </ul>
-
 <h1 id="实践">实践</h1>
-
 <h2 id="1-启动本地geth节点">1. 启动本地geth节点</h2>
-
 <pre><code>Michaels-iMac:wallet eric$ geth   --rpc --rpcaddr 127.0.0.1 --rpcport 8545 --dev --datadir myethchain  
-</code></pre>
-
-<p>如上操作后，geth  console输出如下：</p>
-
+</code></pre><p>如上操作后，geth  console输出如下：</p>
 <pre><code>I0824 17:28:57.448455 p2p/server.go:340] Starting Server
 I0824 17:28:59.554115 p2p/discover/udp.go:227] Listening, enode://04697f62537244ee34aea28e613530a1f46a64de75d8174d963c9ca0c2e6b96d4aa756ef7a33e269de1b7c088163835b72dda8f4dea712cf39569db4e8d8e43a@[::]:54798
 I0824 17:28:59.554264 p2p/server.go:608] Listening on [::]:58245
 I0824 17:28:59.554324 whisper/whisperv2/whisper.go:176] Whisper started
 I0824 17:28:59.570668 node/node.go:341] IPC endpoint opened: /Users/eric/wallet/myethchain/geth.ipc
 I0824 17:28:59.581423 node/node.go:411] HTTP endpoint opened: http://127.0.0.1:8545
-</code></pre>
-
-<p>同时也创建在当前目录创建目录myethchain，其结构如下：</p>
-
+</code></pre><p>同时也创建在当前目录创建目录myethchain，其结构如下：</p>
 <pre><code>Michaels-iMac:wallet eric$ tree  myethchain/
 myethchain/
 ├── geth
@@ -395,12 +376,8 @@ myethchain/
 └── keystore
 
 4 directories, 13 files
-</code></pre>
-
-<h2 id="2-连接geth节点">2. 连接geth节点</h2>
-
+</code></pre><h2 id="2-连接geth节点">2. 连接geth节点</h2>
 <p>在另外一个终端里连接geth节点。</p>
-
 <pre><code>Michaels-iMac:wallet eric$ geth  attach   ipc://Users/eric/wallet/myethchain/geth.ipc  
 Welcome to the Geth JavaScript console!
 
@@ -408,55 +385,32 @@ instance: Geth/v1.5.9-stable-a07539fb/darwin/go1.8.3
  modules: admin:1.0 debug:1.0 eth:1.0 miner:1.0 net:1.0 personal:1.0 rpc:1.0 shh:1.0 txpool:1.0 web3:1.0
 
 &gt; 
-</code></pre>
-
-<h2 id="3-确保solidity编译器安装正确">3. 确保solidity编译器安装正确</h2>
-
+</code></pre><h2 id="3-确保solidity编译器安装正确">3. 确保solidity编译器安装正确</h2>
 <pre><code>&gt; web3.eth.getCompilers()
 [&quot;Solidity&quot;]
 &gt; 
-</code></pre>
-
-<p>如果出错或者获取为空，请检查solc安装情况。</p>
-
+</code></pre><p>如果出错或者获取为空，请检查solc安装情况。</p>
 <h2 id="4-查看帐户列表">4. 查看帐户列表</h2>
-
 <pre><code>&gt; personal.listAccounts
 null
 &gt; 
-</code></pre>
-
-<h2 id="5-创建帐户">5. 创建帐户</h2>
-
+</code></pre><h2 id="5-创建帐户">5. 创建帐户</h2>
 <pre><code>&gt; personal.newAccount('pw1234')
 &quot;0xaf3139393f2ecb2455cbc2c7639ce111017fb90b&quot;
 &gt; 
-</code></pre>
-
-<h2 id="6-查看帐户列表">6. 查看帐户列表</h2>
-
+</code></pre><h2 id="6-查看帐户列表">6. 查看帐户列表</h2>
 <pre><code>&gt; personal.listAccounts
 [&quot;0xaf3139393f2ecb2455cbc2c7639ce111017fb90b&quot;]
 &gt; 
-</code></pre>
-
-<h2 id="7-查看coibase地址">7. 查看coibase地址</h2>
-
+</code></pre><h2 id="7-查看coibase地址">7. 查看coibase地址</h2>
 <pre><code>&gt; web3.eth.coinbase 
 &quot;0xaf3139393f2ecb2455cbc2c7639ce111017fb90b&quot;
-</code></pre>
-
-<p>与上面地址一致，默认取第一个创建帐户的地址，作为挖矿的收益打入该地址</p>
-
+</code></pre><p>与上面地址一致，默认取第一个创建帐户的地址，作为挖矿的收益打入该地址</p>
 <h2 id="8-准备智能合约">8. 准备智能合约</h2>
-
 <pre><code>&gt; source = &quot;contract hello { function multen(uint a) returns(uint d){return a * 10;}}&quot;
 &quot;contract hello { function multen(uint a) returns(uint d){return a * 10;}}&quot;
 &gt; 
-</code></pre>
-
-<h2 id="9-编译智能合约">9. 编译智能合约</h2>
-
+</code></pre><h2 id="9-编译智能合约">9. 编译智能合约</h2>
 <pre><code>&gt; code = web3.eth.compile.solidity(source)
 {
   &lt;stdin&gt;:hello: {
@@ -477,10 +431,7 @@ null
     }
   }
 }
-</code></pre>
-
-<h3 id="10-根据abi创建合约对象">10. 根据ABI创建合约对象</h3>
-
+</code></pre><h3 id="10-根据abi创建合约对象">10. 根据ABI创建合约对象</h3>
 <pre><code>&gt; MyContract = web3.eth.contract(code[&quot;&lt;stdin&gt;:hello&quot;].info.abiDefinition)
 {
   abi: [{
@@ -555,69 +506,39 @@ null
 }
 &gt; 
 
-</code></pre>
-
-<h2 id="11-挖矿">11. 挖矿</h2>
-
+</code></pre><h2 id="11-挖矿">11. 挖矿</h2>
 <p>第一步：获取帐户地址</p>
-
-<pre><code> &gt; account1 = web3.eth.coinbase
+<pre><code>&gt; account1 = web3.eth.coinbase
 &quot;0xaf3139393f2ecb2455cbc2c7639ce111017fb90b&quot;
 &gt; 
-</code></pre>
-
-<p>第二步：查看balance</p>
-
+</code></pre><p>第二步：查看balance</p>
 <pre><code>&gt; web3.eth.getBalance(account1)
 0
 &gt; 
-</code></pre>
-
-<p>第三步：启动挖矿</p>
-
+</code></pre><p>第三步：启动挖矿</p>
 <pre><code>&gt; miner.start() 
 true
-</code></pre>
-
-<p>第四步：查看balance</p>
-
+</code></pre><p>第四步：查看balance</p>
 <pre><code>&gt; web3.eth.getBalance(account1)
 424531250000000000000
-</code></pre>
-
-<p>第五步: 停止挖矿</p>
-
+</code></pre><p>第五步: 停止挖矿</p>
 <p>钱差不多就够了。</p>
-
 <pre><code>&gt; miner.stop()
 true
 &gt; 
-</code></pre>
-
-<h2 id="12-解锁帐户">12. 解锁帐户</h2>
-
+</code></pre><h2 id="12-解锁帐户">12. 解锁帐户</h2>
 <p>目的是为了发送交易</p>
-
 <pre><code>&gt; personal.unlockAccount(account1, 'pw1234')
 true
-</code></pre>
-
-<h2 id="13-初始化智能合约">13. 初始化智能合约</h2>
-
+</code></pre><h2 id="13-初始化智能合约">13. 初始化智能合约</h2>
 <pre><code>&gt; bytecode = code[&quot;&lt;stdin&gt;:hello&quot;].code
 &quot;0x60606040523415600e57600080fd5b5b60978061001d6000396000f300606060405263ffffffff7c0100000000000000000000000000000000000000000000000000000000600035041663e847973c8114603c575b600080fd5b3415604657600080fd5b604f6004356061565b60405190815260200160405180910390f35b600a81025b9190505600a165627a7a72305820395c2030cb020d0b4f79ac0803f1aa28b97082d962a13f37a914f7950e1de5ec0029&quot;
 &gt; 
-</code></pre>
-
-<p>获取部署合约的gas费用开销</p>
-
+</code></pre><p>获取部署合约的gas费用开销</p>
 <pre><code>&gt; web3.eth.estimateGas({data: bytecode})
 30886
 &gt; 
-</code></pre>
-
-<h2 id="14-部署智能合约">14. 部署智能合约</h2>
-
+</code></pre><h2 id="14-部署智能合约">14. 部署智能合约</h2>
 <pre><code>contractInstance = MyContract.new({data: bytecode gas: 1000000, from: account1}, function(e, contract){if(!e){if(!contract.address){console.log(&quot;Contract transaction send: Transaction Hash: &quot;+contract.transactionHash+&quot; waiting to be mined...&quot;);}else{console.log(&quot;Contract mined! Address: &quot;+contract.address);console.log(contract);}}else{console.log(e)}})  
 Contract transaction send: Transaction Hash: 0xeeac0f028e559d469b94805b986b1d9a0bd0d30289e3285487310ca426dae034 waiting to be mined...
 {
@@ -632,10 +553,7 @@ Contract transaction send: Transaction Hash: 0xeeac0f028e559d469b94805b986b1d9a0
   address: undefined,
   transactionHash: &quot;0xeeac0f028e559d469b94805b986b1d9a0bd0d30289e3285487310ca426dae034&quot;
 }
-</code></pre>
-
-<p>如果出现以下错误：</p>
-
+</code></pre><p>如果出现以下错误：</p>
 <pre><code>&gt; contractInstance = MyContract.new({data: bytecode gas: 1000000, from: account1}, function(e, contract){if(!e){if(!contract.address){console.log(&quot;Contract transaction send: Transaction Hash: &quot;+contract.transactionHash+&quot; waiting to be mined...&quot;);}else{console.log(&quot;Contract mined! Address: &quot;+contract.address);console.log(contract);}}else{console.log(e)}})
 Error: authentication needed: password or unlock
 {
@@ -650,40 +568,25 @@ Error: authentication needed: password or unlock
   address: undefined,
   transactionHash: null
 }
-</code></pre>
-
-<p>重新解锁用户即可</p>
-
+</code></pre><p>重新解锁用户即可</p>
 <h2 id="14-重新挖矿">14. 重新挖矿</h2>
-
 <pre><code>&gt; miner.start() 
 true
 &gt; Contract mined! Address: 0x58dba5bddccde639cef014c1766561abbc46c13f
 [object Object]
-</code></pre>
-
-<h2 id="15-切换-console">15. 切换 console</h2>
-
+</code></pre><h2 id="15-切换-console">15. 切换 console</h2>
 <pre><code>&gt; Contract mined! Address: 0x58dba5bddccde639cef014c1766561abbc46c13f
 [object Object]
 ^C
 &gt;
-</code></pre>
-
-<h2 id="16-检查合约安装是否成功">16. 检查合约安装是否成功</h2>
-
+</code></pre><h2 id="16-检查合约安装是否成功">16. 检查合约安装是否成功</h2>
 <pre><code>&gt; eth.getCode(contractInstance.address)
 &quot;0x606060405263ffffffff7c0100000000000000000000000000000000000000000000000000000000600035041663e847973c8114603c575b600080fd5b3415604657600080fd5b604f6004356061565b60405190815260200160405180910390f35b600a81025b9190505600a165627a7a72305820395c2030cb020d0b4f79ac0803f1aa28b97082d962a13f37a914f7950e1de5ec0029&quot;
 &gt; 
-</code></pre>
-
-<h2 id="17-调用合约函数">17. 调用合约函数</h2>
-
+</code></pre><h2 id="17-调用合约函数">17. 调用合约函数</h2>
 <pre><code>&gt; contractInstance.multen.call(9)  
 90
-</code></pre>
-
-<p>(end)</p>
+</code></pre><p>(end)</p>
 
         </div>
         <footer class="article-footer">

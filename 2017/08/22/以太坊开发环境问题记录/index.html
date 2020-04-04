@@ -2,7 +2,7 @@
 <html lang="zh-cn">
 <head>
     <title>以太坊开发环境问题记录 &middot; 沉风网事</title>
-    <meta name="generator" content="Hugo 0.54.0" />
+    <meta name="generator" content="Hugo 0.68.3" />
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta name="author" content="沉风">
@@ -23,24 +23,21 @@
     <meta property="og:title" content="以太坊开发环境问题记录" />
 <meta property="og:description" content="说明 主要记录以太坊开发环境过程出现的问题
 getCompilers返回失败 问题描述 在搭建以太坊开发环境过程中，出现下面的错误信息：
-Welcome to the Geth JavaScript console! instance: Geth/v1.6.7-stable-ab5646c5/darwin-amd64/go1.8.3 modules: admin:1.0 debug:1.0 eth:1.0 miner:1.0 net:1.0 personal:1.0 rpc:1.0 shh:1.0 txpool:1.0 web3:1.0 &gt; web3.eth.getCompilers() Error: The method eth_getCompilers does not exist/is not available at web3.js:3104:20 at web3.js:6191:15 at web3.js:5004:36 at &lt;anonymous&gt;:1:1  问题原因 geth版本编译不在gopath目录下编译
+Welcome to the Geth JavaScript console!instance: Geth/v1.6.7-stable-ab5646c5/darwin-amd64/go1.8.3modules: admin:1.0 debug:1.0 eth:1.0 miner:1.0 net:1.0 personal:1.0 rpc:1.0 shh:1.0 txpool:1.0 web3:1.0&gt; web3.eth.getCompilers() Error: The method eth_getCompilers does not exist/is not availableat web3.js:3104:20at web3.js:6191:15at web3.js:5004:36at &lt;anonymous&gt;:1:1问题原因 geth版本编译不在gopath目录下编译
 解决方法 在gopath目录重新编译即可
-Michaels-iMac:wallet eric$ geth attach ipc://Users/eric/wallet/privchain/geth.ipc Welcome to the Geth JavaScript console! instance: Geth/v1.5.9-stable-a07539fb/darwin/go1.8.3 modules: admin:1.0 debug:1.0 eth:1.0 miner:1.0 net:1.0 personal:1.0 rpc:1.0 shh:1." />
+Michaels-iMac:wallet eric$ geth attach ipc://Users/eric/wallet/privchain/geth.ipc Welcome to the Geth JavaScript console!instance: Geth/v1.5.9-stable-a07539fb/darwin/go1.8.3modules: admin:1.0 debug:1.0 eth:1.0 miner:1.0 net:1.0 personal:1.0 rpc:1.0 shh:1.0 txpool:1.0 web3:1." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://myself659.github.io/2017/08/22/%E4%BB%A5%E5%A4%AA%E5%9D%8A%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E9%97%AE%E9%A2%98%E8%AE%B0%E5%BD%95/" />
-<meta property="article:published_time" content="2017-08-22T11:58:06&#43;02:00"/>
-<meta property="article:modified_time" content="2017-08-22T11:58:06&#43;02:00"/>
+<meta property="article:published_time" content="2017-08-22T11:58:06+02:00" />
+<meta property="article:modified_time" content="2017-08-22T11:58:06+02:00" />
 
     
-    
-<meta itemprop="name" content="以太坊开发环境问题记录">
+    <meta itemprop="name" content="以太坊开发环境问题记录">
 <meta itemprop="description" content="说明 主要记录以太坊开发环境过程出现的问题
 getCompilers返回失败 问题描述 在搭建以太坊开发环境过程中，出现下面的错误信息：
-Welcome to the Geth JavaScript console! instance: Geth/v1.6.7-stable-ab5646c5/darwin-amd64/go1.8.3 modules: admin:1.0 debug:1.0 eth:1.0 miner:1.0 net:1.0 personal:1.0 rpc:1.0 shh:1.0 txpool:1.0 web3:1.0 &gt; web3.eth.getCompilers() Error: The method eth_getCompilers does not exist/is not available at web3.js:3104:20 at web3.js:6191:15 at web3.js:5004:36 at &lt;anonymous&gt;:1:1  问题原因 geth版本编译不在gopath目录下编译
+Welcome to the Geth JavaScript console!instance: Geth/v1.6.7-stable-ab5646c5/darwin-amd64/go1.8.3modules: admin:1.0 debug:1.0 eth:1.0 miner:1.0 net:1.0 personal:1.0 rpc:1.0 shh:1.0 txpool:1.0 web3:1.0&gt; web3.eth.getCompilers() Error: The method eth_getCompilers does not exist/is not availableat web3.js:3104:20at web3.js:6191:15at web3.js:5004:36at &lt;anonymous&gt;:1:1问题原因 geth版本编译不在gopath目录下编译
 解决方法 在gopath目录重新编译即可
-Michaels-iMac:wallet eric$ geth attach ipc://Users/eric/wallet/privchain/geth.ipc Welcome to the Geth JavaScript console! instance: Geth/v1.5.9-stable-a07539fb/darwin/go1.8.3 modules: admin:1.0 debug:1.0 eth:1.0 miner:1.0 net:1.0 personal:1.0 rpc:1.0 shh:1.">
-
-
+Michaels-iMac:wallet eric$ geth attach ipc://Users/eric/wallet/privchain/geth.ipc Welcome to the Geth JavaScript console!instance: Geth/v1.5.9-stable-a07539fb/darwin/go1.8.3modules: admin:1.0 debug:1.0 eth:1.0 miner:1.0 net:1.0 personal:1.0 rpc:1.0 shh:1.0 txpool:1.0 web3:1.">
 <meta itemprop="datePublished" content="2017-08-22T11:58:06&#43;02:00" />
 <meta itemprop="dateModified" content="2017-08-22T11:58:06&#43;02:00" />
 <meta itemprop="wordCount" content="180">
@@ -48,14 +45,13 @@ Michaels-iMac:wallet eric$ geth attach ipc://Users/eric/wallet/privchain/geth.ip
 
 
 <meta itemprop="keywords" content="blockchain," />
-
     <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="以太坊开发环境问题记录"/>
 <meta name="twitter:description" content="说明 主要记录以太坊开发环境过程出现的问题
 getCompilers返回失败 问题描述 在搭建以太坊开发环境过程中，出现下面的错误信息：
-Welcome to the Geth JavaScript console! instance: Geth/v1.6.7-stable-ab5646c5/darwin-amd64/go1.8.3 modules: admin:1.0 debug:1.0 eth:1.0 miner:1.0 net:1.0 personal:1.0 rpc:1.0 shh:1.0 txpool:1.0 web3:1.0 &gt; web3.eth.getCompilers() Error: The method eth_getCompilers does not exist/is not available at web3.js:3104:20 at web3.js:6191:15 at web3.js:5004:36 at &lt;anonymous&gt;:1:1  问题原因 geth版本编译不在gopath目录下编译
+Welcome to the Geth JavaScript console!instance: Geth/v1.6.7-stable-ab5646c5/darwin-amd64/go1.8.3modules: admin:1.0 debug:1.0 eth:1.0 miner:1.0 net:1.0 personal:1.0 rpc:1.0 shh:1.0 txpool:1.0 web3:1.0&gt; web3.eth.getCompilers() Error: The method eth_getCompilers does not exist/is not availableat web3.js:3104:20at web3.js:6191:15at web3.js:5004:36at &lt;anonymous&gt;:1:1问题原因 geth版本编译不在gopath目录下编译
 解决方法 在gopath目录重新编译即可
-Michaels-iMac:wallet eric$ geth attach ipc://Users/eric/wallet/privchain/geth.ipc Welcome to the Geth JavaScript console! instance: Geth/v1.5.9-stable-a07539fb/darwin/go1.8.3 modules: admin:1.0 debug:1.0 eth:1.0 miner:1.0 net:1.0 personal:1.0 rpc:1.0 shh:1."/>
+Michaels-iMac:wallet eric$ geth attach ipc://Users/eric/wallet/privchain/geth.ipc Welcome to the Geth JavaScript console!instance: Geth/v1.5.9-stable-a07539fb/darwin/go1.8.3modules: admin:1.0 debug:1.0 eth:1.0 miner:1.0 net:1.0 personal:1.0 rpc:1.0 shh:1.0 txpool:1.0 web3:1."/>
 
     
 
@@ -348,18 +344,11 @@ Michaels-iMac:wallet eric$ geth attach ipc://Users/eric/wallet/privchain/geth.ip
 </header>
 
         <div class="article-entry" itemprop="articleBody">
-            
-
-<h1 id="说明">说明</h1>
-
+            <h1 id="说明">说明</h1>
 <p>主要记录以太坊开发环境过程出现的问题</p>
-
 <h1 id="getcompilers返回失败">getCompilers返回失败</h1>
-
 <h2 id="问题描述">问题描述</h2>
-
 <p>在搭建以太坊开发环境过程中，出现下面的错误信息：</p>
-
 <pre><code>Welcome to the Geth JavaScript console!
 
 instance: Geth/v1.6.7-stable-ab5646c5/darwin-amd64/go1.8.3
@@ -371,16 +360,10 @@ Error: The method eth_getCompilers does not exist/is not available
     at web3.js:6191:15
     at web3.js:5004:36
     at &lt;anonymous&gt;:1:1
-</code></pre>
-
-<h2 id="问题原因">问题原因</h2>
-
+</code></pre><h2 id="问题原因">问题原因</h2>
 <p>geth版本编译不在gopath目录下编译</p>
-
 <h2 id="解决方法">解决方法</h2>
-
 <p>在gopath目录重新编译即可</p>
-
 <pre><code>Michaels-iMac:wallet eric$ geth  attach    ipc://Users/eric/wallet/privchain/geth.ipc  
 Welcome to the Geth JavaScript console!
 
@@ -390,74 +373,39 @@ instance: Geth/v1.5.9-stable-a07539fb/darwin/go1.8.3
 &gt; web3.eth.getCompilers()
 [&quot;Solidity&quot;]
 &gt; 
-</code></pre>
-
-<h1 id="parity启动失败">parity启动失败</h1>
-
+</code></pre><h1 id="parity启动失败">parity启动失败</h1>
 <h2 id="问题描述-1">问题描述</h2>
-
 <p>搭建测试环境中出现以下问题：</p>
-
 <pre><code>root@ia:~#parity --chain=kovan --jsonrpc-hosts=all 
 parity: /usr/lib/x86_64-linux-gnu/libstdc++.so.6: version `CXXABI_1.3.8' not found (required by parity)
 parity: /usr/lib/x86_64-linux-gnu/libstdc++.so.6: version `GLIBCXX_3.4.20' not found (required by parity)
 parity: /usr/lib/x86_64-linux-gnu/libstdc++.so.6: version `GLIBCXX_3.4.21' not found (required by parity)
-</code></pre>
-
-<h2 id="问题原因-1">问题原因</h2>
-
+</code></pre><h2 id="问题原因-1">问题原因</h2>
 <p>gcc/g++版本是4.8版本</p>
-
 <h2 id="解决方案">解决方案</h2>
-
 <p>升级gcc/g++</p>
-
 <pre><code>sudo add-apt-repository ppa:ubuntu-toolchain-r/test
 sudo apt-get update
 sudo apt-get install gcc-4.9 g++-4.9
 sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-4.9 60 --slave /usr/bin/g++ g++ /usr/bin/g++-4.9
-</code></pre>
-
-<h1 id="parity访问出现bad-gateway问题">parity访问出现bad gateway问题</h1>
-
+</code></pre><h1 id="parity访问出现bad-gateway问题">parity访问出现bad gateway问题</h1>
 <h2 id="问题描述-2">问题描述</h2>
-
 <pre><code> curl   -X POST  http://localhost:8545  -H &quot;Content-Type: application/json&quot;  -d  '{&quot;jsonrpc&quot;:&quot;2.0&quot;,&quot;method&quot;:&quot;eth_getBlockByNumber&quot;,&quot;params&quot;:[&quot;0x1b4&quot;, true],&quot;id&quot;:1}'
-</code></pre>
-
-<p>本地访问ok</p>
-
+</code></pre><p>本地访问ok</p>
 <pre><code>curl   -X POST  http://47.96.45.67:8545  -H &quot;Content-Type: application/json&quot;  -d  '{&quot;jsonrpc&quot;:&quot;2.0&quot;,&quot;method&quot;:&quot;eth_getBlockByNumber&quot;,&quot;params&quot;:[&quot;0x1b4&quot;, true],&quot;id&quot;:1}'    
-</code></pre>
-
-<p>远程访问返回失败</p>
-
+</code></pre><p>远程访问返回失败</p>
 <h2 id="问题原因-2">问题原因</h2>
-
 <pre><code>parity --chain=kovan --jsonrpc-hosts=all
-</code></pre>
-
-<p>上面命令限定侦听端口为本机接口</p>
-
+</code></pre><p>上面命令限定侦听端口为本机接口</p>
 <h2 id="解决方案-1">解决方案</h2>
-
 <pre><code>parity --chain=kovan   --jsonrpc-interface=0.0.0.0  --jsonrpc-hosts=all
-</code></pre>
-
-<p>以上述命令启动parity打开侦听限制</p>
-
+</code></pre><p>以上述命令启动parity打开侦听限制</p>
 <h1 id="没有eth无法在kovan上部署智能合约">没有eth无法在kovan上部署智能合约</h1>
-
 <h2 id="问题描述-3">问题描述</h2>
-
 <p>没有eth无法部署成功部署智能合约</p>
-
 <h2 id="问题原因-3">问题原因</h2>
-
 <p>天下没有免费的午餐</p>
-
 <h2 id="解决方法-1">解决方法</h2>
-
 <p>参考<a href="https://github.com/kovan-testnet/faucet">Kovan Faucet</a>,四种方式选择其中一个即可，Github Gist Faucet方式参考<a href="https://gist.github.com/myself659/5c803a89aa725a64206fb775e00a0815">这里</a></p>
 
         </div>

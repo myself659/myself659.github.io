@@ -2,7 +2,7 @@
 <html lang="zh-cn">
 <head>
     <title>基于Gitlab&#43;Kubernetes实现CI/CD &middot; 沉风网事</title>
-    <meta name="generator" content="Hugo 0.54.0" />
+    <meta name="generator" content="Hugo 0.68.3" />
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta name="author" content="沉风">
@@ -25,30 +25,27 @@
  Golang Docker GitLab Kubernetes  具体原因参考关于技术选型的思考
 步骤 创建Kubernetes集群 自己搭建集群也可以，但是投入生产不建议使用。这里直接使用google cloud(调研几家发现G家这方面技术积累最深，生态完整)。
 创建帐号设置gitlab操作帐号，用于后面的CI/CD操作。
-kubectl apply -f gitlab-admin-service-account.yaml  kubectl -n kube-system describe secret $(kubectl -n kube-system get secret | grep gitlab-admin | awk &#39;{print $1}&#39;)  具体参考Adding and creating a new GKE cluster via GitLab
+kubectl apply -f gitlab-admin-service-account.yamlkubectl -n kube-system describe secret $(kubectl -n kube-system get secret | grep gitlab-admin | awk &#39;{print $1}&#39;)具体参考Adding and creating a new GKE cluster via GitLab
 创建DockerHub帐号 主要操作是在DockerHub创建帐号。 其他的云计算服务的镜像服务也可以。
 创建gitlab项目 正常创建代码仓库操作。
 准备代码 准备一个简单的web服务器。
-package main import ( &quot;fmt&quot; &quot;net/http&quot; ) func main() { http.HandleFunc(&quot;/&quot;, func(w http.ResponseWriter, r *http.Request) { fmt." />
+package mainimport (&quot;fmt&quot;&quot;net/http&quot;)func main() {http.HandleFunc(&quot;/&quot;, func(w http.ResponseWriter, r *http.Request) {fmt.Fprintf(w, &quot;Hello, k8s-go!&quot;)})http." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://myself659.github.io/2018/10/16/%E5%9F%BA%E4%BA%8Egitlab-kubernetes%E5%AE%9E%E7%8E%B0ci/cd/" />
-<meta property="article:published_time" content="2018-10-16T11:58:06&#43;02:00"/>
-<meta property="article:modified_time" content="2018-10-16T11:58:06&#43;02:00"/>
+<meta property="article:published_time" content="2018-10-16T11:58:06+02:00" />
+<meta property="article:modified_time" content="2018-10-16T11:58:06+02:00" />
 
     
-    
-<meta itemprop="name" content="基于Gitlab&#43;Kubernetes实现CI/CD">
+    <meta itemprop="name" content="基于Gitlab&#43;Kubernetes实现CI/CD">
 <meta itemprop="description" content="要求 基本技术栈要求如下：
  Golang Docker GitLab Kubernetes  具体原因参考关于技术选型的思考
 步骤 创建Kubernetes集群 自己搭建集群也可以，但是投入生产不建议使用。这里直接使用google cloud(调研几家发现G家这方面技术积累最深，生态完整)。
 创建帐号设置gitlab操作帐号，用于后面的CI/CD操作。
-kubectl apply -f gitlab-admin-service-account.yaml  kubectl -n kube-system describe secret $(kubectl -n kube-system get secret | grep gitlab-admin | awk &#39;{print $1}&#39;)  具体参考Adding and creating a new GKE cluster via GitLab
+kubectl apply -f gitlab-admin-service-account.yamlkubectl -n kube-system describe secret $(kubectl -n kube-system get secret | grep gitlab-admin | awk &#39;{print $1}&#39;)具体参考Adding and creating a new GKE cluster via GitLab
 创建DockerHub帐号 主要操作是在DockerHub创建帐号。 其他的云计算服务的镜像服务也可以。
 创建gitlab项目 正常创建代码仓库操作。
 准备代码 准备一个简单的web服务器。
-package main import ( &quot;fmt&quot; &quot;net/http&quot; ) func main() { http.HandleFunc(&quot;/&quot;, func(w http.ResponseWriter, r *http.Request) { fmt.">
-
-
+package mainimport (&quot;fmt&quot;&quot;net/http&quot;)func main() {http.HandleFunc(&quot;/&quot;, func(w http.ResponseWriter, r *http.Request) {fmt.Fprintf(w, &quot;Hello, k8s-go!&quot;)})http.">
 <meta itemprop="datePublished" content="2018-10-16T11:58:06&#43;02:00" />
 <meta itemprop="dateModified" content="2018-10-16T11:58:06&#43;02:00" />
 <meta itemprop="wordCount" content="351">
@@ -56,18 +53,17 @@ package main import ( &quot;fmt&quot; &quot;net/http&quot; ) func main() { http.
 
 
 <meta itemprop="keywords" content="Docker,Kubernetes," />
-
     <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="基于Gitlab&#43;Kubernetes实现CI/CD"/>
 <meta name="twitter:description" content="要求 基本技术栈要求如下：
  Golang Docker GitLab Kubernetes  具体原因参考关于技术选型的思考
 步骤 创建Kubernetes集群 自己搭建集群也可以，但是投入生产不建议使用。这里直接使用google cloud(调研几家发现G家这方面技术积累最深，生态完整)。
 创建帐号设置gitlab操作帐号，用于后面的CI/CD操作。
-kubectl apply -f gitlab-admin-service-account.yaml  kubectl -n kube-system describe secret $(kubectl -n kube-system get secret | grep gitlab-admin | awk &#39;{print $1}&#39;)  具体参考Adding and creating a new GKE cluster via GitLab
+kubectl apply -f gitlab-admin-service-account.yamlkubectl -n kube-system describe secret $(kubectl -n kube-system get secret | grep gitlab-admin | awk &#39;{print $1}&#39;)具体参考Adding and creating a new GKE cluster via GitLab
 创建DockerHub帐号 主要操作是在DockerHub创建帐号。 其他的云计算服务的镜像服务也可以。
 创建gitlab项目 正常创建代码仓库操作。
 准备代码 准备一个简单的web服务器。
-package main import ( &quot;fmt&quot; &quot;net/http&quot; ) func main() { http.HandleFunc(&quot;/&quot;, func(w http.ResponseWriter, r *http.Request) { fmt."/>
+package mainimport (&quot;fmt&quot;&quot;net/http&quot;)func main() {http.HandleFunc(&quot;/&quot;, func(w http.ResponseWriter, r *http.Request) {fmt.Fprintf(w, &quot;Hello, k8s-go!&quot;)})http."/>
 
     
 
@@ -364,50 +360,29 @@ package main import ( &quot;fmt&quot; &quot;net/http&quot; ) func main() { http.
 </header>
 
         <div class="article-entry" itemprop="articleBody">
-            
-
-<h1 id="要求">要求</h1>
-
+            <h1 id="要求">要求</h1>
 <p>基本技术栈要求如下：</p>
-
 <ol>
 <li>Golang</li>
 <li>Docker</li>
 <li>GitLab</li>
 <li>Kubernetes</li>
 </ol>
-
-<p>具体原因参考<a href="https://blog.ipds.top/2018/09/05/关于技术选型的思考">关于技术选型的思考</a></p>
-
+<p>具体原因参考<a href="https://blog.ipds.top/2018/09/05/%E5%85%B3%E4%BA%8E%E6%8A%80%E6%9C%AF%E9%80%89%E5%9E%8B%E7%9A%84%E6%80%9D%E8%80%83">关于技术选型的思考</a></p>
 <h1 id="步骤">步骤</h1>
-
 <h2 id="创建kubernetes集群">创建Kubernetes集群</h2>
-
 <p>自己搭建集群也可以，但是投入生产不建议使用。这里直接使用google cloud(调研几家发现G家这方面技术积累最深，生态完整)。</p>
-
 <p>创建帐号设置gitlab操作帐号，用于后面的CI/CD操作。</p>
-
 <pre><code>kubectl apply -f gitlab-admin-service-account.yaml
-</code></pre>
-
-<pre><code>kubectl -n kube-system describe secret $(kubectl -n kube-system get secret | grep gitlab-admin | awk '{print $1}')
-</code></pre>
-
-<p>具体参考<a href="https://docs.gitlab.com/ee/user/project/clusters/#adding-and-creating-a-new-gke-cluster-via-gitlab">Adding and creating a new GKE cluster via GitLab</a></p>
-
+</code></pre><pre><code>kubectl -n kube-system describe secret $(kubectl -n kube-system get secret | grep gitlab-admin | awk '{print $1}')
+</code></pre><p>具体参考<a href="https://docs.gitlab.com/ee/user/project/clusters/#adding-and-creating-a-new-gke-cluster-via-gitlab">Adding and creating a new GKE cluster via GitLab</a></p>
 <h2 id="创建dockerhub帐号">创建DockerHub帐号</h2>
-
 <p>主要操作是在<a href="https://hub.docker.com/">DockerHub</a>创建帐号。
 其他的云计算服务的镜像服务也可以。</p>
-
 <h2 id="创建gitlab项目">创建gitlab项目</h2>
-
 <p>正常创建代码仓库操作。</p>
-
 <h2 id="准备代码">准备代码</h2>
-
 <p>准备一个简单的web服务器。</p>
-
 <pre><code>package main
 
 import (
@@ -427,10 +402,7 @@ func main() {
   http.ListenAndServe(&quot;:8090&quot;, nil)
 }
 
-</code></pre>
-
-<h2 id="dockerfile">DockerFile</h2>
-
+</code></pre><h2 id="dockerfile">DockerFile</h2>
 <pre><code>FROM golang:1.11-alpine as builder
 WORKDIR /usr/build
 ADD main.go .
@@ -444,39 +416,20 @@ COPY --from=builder /usr/build/k8s-app .
 EXPOSE 8090
 
 CMD [&quot;/usr/src/k8s-app&quot;]
-</code></pre>
-
-<h2 id="配置docker环境变量">配置docker环境变量</h2>
-
-<p><img src="/images/k8s/gitlab-env-k8s.jpg" alt="docker环境变量" /></p>
-
+</code></pre><h2 id="配置docker环境变量">配置docker环境变量</h2>
+<p><img src="/images/k8s/gitlab-env-k8s.jpg" alt="docker环境变量"></p>
 <p>设置对应用户名与密码即可。</p>
-
 <h2 id="配置kubernetes集群环境变量">配置Kubernetes集群环境变量</h2>
-
 <p>主要配置下图三个变量（用于连接Kubernetes集群）：</p>
-
-<p><img src="/images/k8s/gitlab-env-k8s.jpg" alt="Kubernetes集群环境变量" /></p>
-
-<h3 id="certificate-authority-data">CERTIFICATE_AUTHORITY_DATA</h3>
-
+<p><img src="/images/k8s/gitlab-env-k8s.jpg" alt="Kubernetes集群环境变量"></p>
+<h3 id="certificate_authority_data">CERTIFICATE_AUTHORITY_DATA</h3>
 <pre><code>cat  ~/.kube/config   | grep certificate-authority-data   | tr -d  '\n'    | grep certificate-authority-data     |  awk   '{print $2}'
-</code></pre>
-
-<h3 id="user-token">USER_TOKEN</h3>
-
+</code></pre><h3 id="user_token">USER_TOKEN</h3>
 <pre><code>kubectl -n kube-system describe secret $(kubectl -n kube-system get secret | grep gitlab-admin | awk '{print $1}')
-</code></pre>
-
-<h3 id="server">SERVER</h3>
-
+</code></pre><h3 id="server">SERVER</h3>
 <pre><code>kubectl cluster-info  | grep master
-</code></pre>
-
-<p>从输出结果中获取master对应url即可。</p>
-
+</code></pre><p>从输出结果中获取master对应url即可。</p>
 <h2 id="设置deployment">设置deployment</h2>
-
 <pre><code>apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -528,12 +481,8 @@ spec:
     port: 80
     targetPort: 8090
   type: LoadBalancer
-</code></pre>
-
-<h2 id="设置ci-cd">设置CI/CD</h2>
-
+</code></pre><h2 id="设置cicd">设置CI/CD</h2>
 <p>gitlab.yml内容如下：</p>
-
 <pre><code>image: docker:latest
 services:
   - docker:dind
@@ -566,34 +515,21 @@ deploy:
     - sed -i &quot;s/&lt;VERSION&gt;/${CI_COMMIT_SHORT_SHA}/g&quot; deployment.yaml
     - kubectl apply -f deployment.yaml
 
-</code></pre>
-
-<h2 id="测试ci-cd">测试CI/CD</h2>
-
-<p><img src="/images/k8s/gitlab-cicd-ok.jpg" alt="CI/CD状态" /></p>
-
-<p><img src="/images/k8s/k8s-go-test.jpg" alt="CI/CD检查" /></p>
-
-<p><img src="/images/k8s/k8s-go-test-2.jpg" alt="提交代码自动部署" /></p>
-
+</code></pre><h2 id="测试cicd">测试CI/CD</h2>
+<p><img src="/images/k8s/gitlab-cicd-ok.jpg" alt="CI/CD状态"></p>
+<p><img src="/images/k8s/k8s-go-test.jpg" alt="CI/CD检查"></p>
+<p><img src="/images/k8s/k8s-go-test-2.jpg" alt="提交代码自动部署"></p>
 <h2 id="部署迁移">部署迁移</h2>
-
 <p>如何将部署迁移到其他的集群，在配置好新的集群后，只需要重新配置相关Kubernetes环境变量即可。</p>
-
 <h1 id="参考">参考</h1>
-
 <ol>
 <li><a href="https://cloud.google.com/kubernetes-engine/continuous-deployment/">更快部署代码：CI/CD 与 Kubernetes</a></li>
 <li><a href="https://edenmal.moe/post/2018/GitLab-Kubernetes-Using-GitLab-CIs-Kubernetes-Cluster-feature/">GitLab + Kubernetes: Using GitLab CI&rsquo;s Kubernetes Cluster feature</a></li>
 </ol>
-
 <p>(end)</p>
-
 <h2 id="欢迎关注">欢迎关注</h2>
-
 <p>欢迎关注微信公众帐号：沉风网事(savewind)</p>
-
-<p><img src="/images/cfws.jpg" alt="沉风网事" /></p>
+<p><img src="/images/cfws.jpg" alt="沉风网事"></p>
 
         </div>
         <footer class="article-footer">

@@ -2,7 +2,7 @@
 <html lang="zh-cn">
 <head>
     <title>Golang最工程化的语言 &middot; 沉风网事</title>
-    <meta name="generator" content="Hugo 0.54.0" />
+    <meta name="generator" content="Hugo 0.68.3" />
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta name="author" content="沉风">
@@ -42,12 +42,11 @@ Golang最工程化的语言。
 欢迎关注 欢迎关注微信公众帐号：沉风网事(savewind)" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://myself659.github.io/2018/07/03/golang%E6%9C%80%E5%B7%A5%E7%A8%8B%E5%8C%96%E7%9A%84%E8%AF%AD%E8%A8%80/" />
-<meta property="article:published_time" content="2018-07-03T11:58:06&#43;02:00"/>
-<meta property="article:modified_time" content="2018-07-03T11:58:06&#43;02:00"/>
+<meta property="article:published_time" content="2018-07-03T11:58:06+02:00" />
+<meta property="article:modified_time" content="2018-07-03T11:58:06+02:00" />
 
     
-    
-<meta itemprop="name" content="Golang最工程化的语言">
+    <meta itemprop="name" content="Golang最工程化的语言">
 <meta itemprop="description" content="Golang是什么语言 PHP是最好的语言。
 Haskell最难学的语言。
 Golang最工程化的语言。
@@ -67,8 +66,6 @@ Golang最工程化的语言。
  还算丰富的基础库 避免内存管理 天然支持并发  后记 当然Golang也有自己的缺点，如GC问题，延时大等。但是用一个语言的策略就应该扬长避短，当然熟练应用Golang的特性得深入学习与实践。
 (End)
 欢迎关注 欢迎关注微信公众帐号：沉风网事(savewind)">
-
-
 <meta itemprop="datePublished" content="2018-07-03T11:58:06&#43;02:00" />
 <meta itemprop="dateModified" content="2018-07-03T11:58:06&#43;02:00" />
 <meta itemprop="wordCount" content="48">
@@ -76,7 +73,6 @@ Golang最工程化的语言。
 
 
 <meta itemprop="keywords" content="Golang," />
-
     <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Golang最工程化的语言"/>
 <meta name="twitter:description" content="Golang是什么语言 PHP是最好的语言。
@@ -390,64 +386,35 @@ Golang最工程化的语言。
 </header>
 
         <div class="article-entry" itemprop="articleBody">
-            
-
-<h1 id="golang是什么语言">Golang是什么语言</h1>
-
+            <h1 id="golang是什么语言">Golang是什么语言</h1>
 <p>PHP是最好的语言。</p>
-
 <p>Haskell最难学的语言。</p>
-
 <p><strong>Golang最工程化的语言</strong>。</p>
-
 <p>下面分别从语言层面及软件工程两个方面进行说明。</p>
-
 <h1 id="语言">语言</h1>
-
 <h2 id="安全性">安全性</h2>
-
 <p>相比较于C/C++，golang不支持指针操作，不支持隐式类型转换，支持内存溢出与越界检查。</p>
-
 <h2 id="并发与扩展">并发与扩展</h2>
-
 <p>通过goroutine，Golang从语言层面上解决了并发与扩展的问题，而不像C/C++, JAVA通过框架来解决这个问题。Golang自适应多核运行。</p>
-
 <h2 id="简单">简单</h2>
-
 <p>语法简单，代码不涉及内存管理，上手容易。新人学习几天就可以上手写代码。</p>
-
 <h2 id="可维护性">可维护性</h2>
-
 <p>自带godoc统一代码格式。
 一个文件夹对应一个包有利于代码模块化。</p>
-
 <h2 id="打包一切">打包一切</h2>
-
 <p>相比较于C/C++，动态库和静态库的依赖，Golang将所有编译成一个二进制文件。
 解决依赖带来高度耦合问题，这样十分有利于交付与部署。</p>
-
 <h2 id="可移植">可移植</h2>
-
 <p>支持多种体系架构与不同的操作系统以及跨平台编译。</p>
-
 <h2 id="高效率">高效率</h2>
-
 <p>Golang实现了程序员开发高效率与机器运行高效率两者的有效结合，进而实现经济上高效率。</p>
-
-<p><img src="/images/golang/perfect-go.jpg" alt="主流语言开发效率与运行效率" /></p>
-
+<p><img src="/images/golang/perfect-go.jpg" alt="主流语言开发效率与运行效率"></p>
 <p>相比较于C/C++，Golang编译速度更快了。特别是大型项目，以前用C语言的时候，在刀片服务器上时编译一个测试版本都要半个小时左右。</p>
-
 <h2 id="生态成长">生态成长</h2>
-
 <p>背靠Google，从09年发布已来，已经在云生态占据绝对主导地位。有不少明星开源项目。如Docker、Kubernetes、Prometheus、Hyperleder、Ethereum、Etcd等。随着云时代不断发展，Golang生态一定会越来越强大与丰富。</p>
-
 <h1 id="软件工程">软件工程</h1>
-
 <h2 id="流程">流程</h2>
-
 <p>一般软件工程流程分为规划、需求、设计、编码、测试、发布、维护等几个阶段。除了规划与需求阶段，Golang对其他阶段在语言层面都有强力特性支持。举例如下：</p>
-
 <ol>
 <li>设计阶段：利用interface可以进行protype编程，可以实现代码及文档。</li>
 <li>编码阶段：go fmt统一代码格式</li>
@@ -455,32 +422,21 @@ Golang最工程化的语言。
 <li>发布阶段：上面说到可移植及打包一切，便于交付，发布，部署</li>
 <li>维护阶段：Golang天然支持CPU扩展及其上面所说的便于交付，发布，部署</li>
 </ol>
-
 <h2 id="大规模协作">大规模协作</h2>
-
 <p>Golang引入interface特性，实际在语言层面支持SOLID设计原则中依赖倒置原则。再加上包的独立性，有利于大规模系统的大团队协作开发。</p>
-
 <h2 id="编程友好">编程友好</h2>
-
 <p>软件工程是人是关键因素。编码是核心阶段。Golang以下特性释放了程序员的生产力：</p>
-
 <ol>
 <li>还算丰富的基础库</li>
 <li>避免内存管理</li>
 <li>天然支持并发</li>
 </ol>
-
 <h1 id="后记">后记</h1>
-
 <p>当然Golang也有自己的缺点，如GC问题，延时大等。但是用一个语言的策略就应该扬长避短，当然熟练应用Golang的特性得深入学习与实践。</p>
-
 <p>(End)</p>
-
 <h2 id="欢迎关注">欢迎关注</h2>
-
 <p>欢迎关注微信公众帐号：沉风网事(savewind)</p>
-
-<p><img src="/images/cfws.jpg" alt="沉风网事" /></p>
+<p><img src="/images/cfws.jpg" alt="沉风网事"></p>
 
         </div>
         <footer class="article-footer">

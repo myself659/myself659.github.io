@@ -2,7 +2,7 @@
 <html lang="zh-cn">
 <head>
     <title>gdb自定义断点操作 &middot; 沉风网事</title>
-    <meta name="generator" content="Hugo 0.54.0" />
+    <meta name="generator" content="Hugo 0.68.3" />
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta name="author" content="沉风">
@@ -22,19 +22,18 @@
     <link href='https://fonts.googleapis.com/css?family=Source+Code+Pro' rel='stylesheet' type='text/css'>
     <meta property="og:title" content="gdb自定义断点操作" />
 <meta property="og:description" content="gdb是c/c&#43;&#43;上调试利器，有很多技巧能让调试程序与解决问题更加方便与高效，下面关于command 命令的使用一个实例，具体如下：
-1. 设置断点 (gdb) b GenVedioSeekPoint Breakpoint 1 at 0x402e58: file GenIndex.cpp, line 140. (gdb)  2. 利用commad自定义断点操作 (gdb) command 1 Type commands for breakpoint(s) 1, one per line. End with a line saying just &quot;end&quot;. &gt;p *pstPktHead &gt;continue &gt;end (gdb)  3. 设置gdb log信息输出到指定文件 (gdb) set logging file genindex.txt (gdb) set logging on Copying output to genindex.txt. (gdb) set pagination off (gdb)  4. 开始或继续执行程序 (gdb) run  有输出信息如下：" />
+1. 设置断点 (gdb) b GenVedioSeekPointBreakpoint 1 at 0x402e58: file GenIndex.cpp, line 140.(gdb) 2. 利用commad自定义断点操作 (gdb) command 1Type commands for breakpoint(s) 1, one per line.End with a line saying just &quot;end&quot;.&gt;p *pstPktHead&gt;continue &gt;end(gdb) 3. 设置gdb log信息输出到指定文件 (gdb) set logging file genindex.txt (gdb) set logging onCopying output to genindex.txt.(gdb) set pagination off(gdb)4. 开始或继续执行程序 (gdb) run有输出信息如下：
+...Breakpoint 1, GenVedioSeekPoint (pstPktHead=0x7fffffdfdcff, offset=71678) at GenIndex." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://myself659.github.io/2015/08/28/gdb%E8%87%AA%E5%AE%9A%E4%B9%89%E6%96%AD%E7%82%B9%E6%93%8D%E4%BD%9C/" />
-<meta property="article:published_time" content="2015-08-28T11:58:06&#43;02:00"/>
-<meta property="article:modified_time" content="2015-08-28T11:58:06&#43;02:00"/>
+<meta property="article:published_time" content="2015-08-28T11:58:06+02:00" />
+<meta property="article:modified_time" content="2015-08-28T11:58:06+02:00" />
 
     
-    
-<meta itemprop="name" content="gdb自定义断点操作">
+    <meta itemprop="name" content="gdb自定义断点操作">
 <meta itemprop="description" content="gdb是c/c&#43;&#43;上调试利器，有很多技巧能让调试程序与解决问题更加方便与高效，下面关于command 命令的使用一个实例，具体如下：
-1. 设置断点 (gdb) b GenVedioSeekPoint Breakpoint 1 at 0x402e58: file GenIndex.cpp, line 140. (gdb)  2. 利用commad自定义断点操作 (gdb) command 1 Type commands for breakpoint(s) 1, one per line. End with a line saying just &quot;end&quot;. &gt;p *pstPktHead &gt;continue &gt;end (gdb)  3. 设置gdb log信息输出到指定文件 (gdb) set logging file genindex.txt (gdb) set logging on Copying output to genindex.txt. (gdb) set pagination off (gdb)  4. 开始或继续执行程序 (gdb) run  有输出信息如下：">
-
-
+1. 设置断点 (gdb) b GenVedioSeekPointBreakpoint 1 at 0x402e58: file GenIndex.cpp, line 140.(gdb) 2. 利用commad自定义断点操作 (gdb) command 1Type commands for breakpoint(s) 1, one per line.End with a line saying just &quot;end&quot;.&gt;p *pstPktHead&gt;continue &gt;end(gdb) 3. 设置gdb log信息输出到指定文件 (gdb) set logging file genindex.txt (gdb) set logging onCopying output to genindex.txt.(gdb) set pagination off(gdb)4. 开始或继续执行程序 (gdb) run有输出信息如下：
+...Breakpoint 1, GenVedioSeekPoint (pstPktHead=0x7fffffdfdcff, offset=71678) at GenIndex.">
 <meta itemprop="datePublished" content="2015-08-28T11:58:06&#43;02:00" />
 <meta itemprop="dateModified" content="2015-08-28T11:58:06&#43;02:00" />
 <meta itemprop="wordCount" content="200">
@@ -42,11 +41,11 @@
 
 
 <meta itemprop="keywords" content="Linux," />
-
     <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="gdb自定义断点操作"/>
 <meta name="twitter:description" content="gdb是c/c&#43;&#43;上调试利器，有很多技巧能让调试程序与解决问题更加方便与高效，下面关于command 命令的使用一个实例，具体如下：
-1. 设置断点 (gdb) b GenVedioSeekPoint Breakpoint 1 at 0x402e58: file GenIndex.cpp, line 140. (gdb)  2. 利用commad自定义断点操作 (gdb) command 1 Type commands for breakpoint(s) 1, one per line. End with a line saying just &quot;end&quot;. &gt;p *pstPktHead &gt;continue &gt;end (gdb)  3. 设置gdb log信息输出到指定文件 (gdb) set logging file genindex.txt (gdb) set logging on Copying output to genindex.txt. (gdb) set pagination off (gdb)  4. 开始或继续执行程序 (gdb) run  有输出信息如下："/>
+1. 设置断点 (gdb) b GenVedioSeekPointBreakpoint 1 at 0x402e58: file GenIndex.cpp, line 140.(gdb) 2. 利用commad自定义断点操作 (gdb) command 1Type commands for breakpoint(s) 1, one per line.End with a line saying just &quot;end&quot;.&gt;p *pstPktHead&gt;continue &gt;end(gdb) 3. 设置gdb log信息输出到指定文件 (gdb) set logging file genindex.txt (gdb) set logging onCopying output to genindex.txt.(gdb) set pagination off(gdb)4. 开始或继续执行程序 (gdb) run有输出信息如下：
+...Breakpoint 1, GenVedioSeekPoint (pstPktHead=0x7fffffdfdcff, offset=71678) at GenIndex."/>
 
     
 
@@ -339,19 +338,12 @@
 </header>
 
         <div class="article-entry" itemprop="articleBody">
-            
-
-<p>gdb是c/c++上调试利器，有很多技巧能让调试程序与解决问题更加方便与高效，下面关于command 命令的使用一个实例，具体如下：</p>
-
+            <p>gdb是c/c++上调试利器，有很多技巧能让调试程序与解决问题更加方便与高效，下面关于command 命令的使用一个实例，具体如下：</p>
 <h3 id="1-设置断点">1. 设置断点</h3>
-
 <pre><code>(gdb) b GenVedioSeekPoint
 Breakpoint 1 at 0x402e58: file GenIndex.cpp, line 140.
 (gdb) 
-</code></pre>
-
-<h3 id="2-利用commad自定义断点操作">2. 利用commad自定义断点操作</h3>
-
+</code></pre><h3 id="2-利用commad自定义断点操作">2. 利用commad自定义断点操作</h3>
 <pre><code>(gdb) command  1
 Type commands for breakpoint(s) 1, one per line.
 End with a line saying just &quot;end&quot;.
@@ -359,24 +351,15 @@ End with a line saying just &quot;end&quot;.
 &gt;continue 
 &gt;end
 (gdb) 
-</code></pre>
-
-<h3 id="3-设置gdb-log信息输出到指定文件">3. 设置gdb log信息输出到指定文件</h3>
-
+</code></pre><h3 id="3-设置gdb-log信息输出到指定文件">3. 设置gdb log信息输出到指定文件</h3>
 <pre><code>(gdb) set logging file genindex.txt 
 (gdb) set logging on
 Copying output to genindex.txt.
 (gdb) set pagination  off
 (gdb)
-</code></pre>
-
-<h3 id="4-开始或继续执行程序">4. 开始或继续执行程序</h3>
-
+</code></pre><h3 id="4-开始或继续执行程序">4. 开始或继续执行程序</h3>
 <pre><code>(gdb) run
-</code></pre>
-
-<p>有输出信息如下：</p>
-
+</code></pre><p>有输出信息如下：</p>
 <pre><code>...
 Breakpoint 1, GenVedioSeekPoint (pstPktHead=0x7fffffdfdcff, offset=71678) at GenIndex.cpp:140
 140             uiTimeStamp = pstPktHead-&gt;stBlockHead.iTimeStamp;
@@ -390,12 +373,8 @@ Breakpoint 1, GenVedioSeekPoint (pstPktHead=0x7fffffdfde86, offset=72069) at Gen
 140             uiTimeStamp = pstPktHead-&gt;stBlockHead.iTimeStamp;
 $255 = {cFlag = 170 '\252', uiPktLen = 1959, uiPktSeq = 3774212197, sCheckNum = 257, cBlockCount = 125 '}', stBlockHead = {cBlogTag = 90 'Z', iTimeStamp = 127730004, iDatalen = 0}}
 ...
-</code></pre>
-
-<p>同时在gdb的运行程序的目录下生成genindex.txt文件，这样可以通过分析genindex.txt找问题的原因；同时整个执行的过程中不需要个人操作，在断点不断命中的情况下极大提高效率，如果是生产的环境，避免长时间占用进程，进而影响业务，</p>
-
+</code></pre><p>同时在gdb的运行程序的目录下生成genindex.txt文件，这样可以通过分析genindex.txt找问题的原因；同时整个执行的过程中不需要个人操作，在断点不断命中的情况下极大提高效率，如果是生产的环境，避免长时间占用进程，进而影响业务，</p>
 <h3 id="5-分析log文件">5. 分析log文件</h3>
-
 <p>这一步你可以用shell，awk， sed，python等来分析genindex.txt文件内容</p>
 
         </div>

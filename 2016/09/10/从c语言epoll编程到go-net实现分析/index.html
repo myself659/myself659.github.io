@@ -2,7 +2,7 @@
 <html lang="zh-cn">
 <head>
     <title>从C语言epoll编程到go net实现分析 &middot; 沉风网事</title>
-    <meta name="generator" content="Hugo 0.54.0" />
+    <meta name="generator" content="Hugo 0.68.3" />
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta name="author" content="沉风">
@@ -22,19 +22,16 @@
     <link href='https://fonts.googleapis.com/css?family=Source+Code+Pro' rel='stylesheet' type='text/css'>
     <meta property="og:title" content="从C语言epoll编程到go net实现分析" />
 <meta property="og:description" content="说明  go源码版本：1.7 go源码运行环境：Linux  epoll在c语言编程示例 先看一下大家比较熟悉的epoll在c语言中应用，代码取自rtmpserver_demo中的文件rtmpepollsrv.c
-int RtmpSessionHandle(int iFd, int iEvent, void *pContext) { int iRet; RTMP_SESSION *pSession = (RTMP_SESSION *)pContext; if(iEvent&amp;EPOLLIN ) { if(0 == pSession-&gt;handshake) { iRet = RtmpSessionHandshake(pSession); if(0 != iRet) { RtmpSessionHandleFin(pSession); } } else { iRet = RtmpPktHandle(pSession); } } if(iEvent &amp; (EPOLLERR |EPOLLHUP) ) { RtmpSessionHandleFin(pSession); } return iRet; } int ListenHandle(int iFd, int iEvent, void *pContext) { int iNewFd; int iRet = 0; struct sockaddr tmpAddr; memset(&amp;tmpAddr, 0, sizeof(tmpAddr)); int iSocketSize = sizeof(tmpAddr); EPOLL_CTX *pCtx; RTMP_SESSION *pServer; if(iEvent|EPOLLIN) { iNewFd = accept(iFd, &amp;tmpAddr, (socklen_t *)&amp;iSocketSize); if(RTMP_EPOLLSRV_INVALIDFD &lt; iNewFd) { pServer = (RTMP_SESSION *)malloc(sizeof(RTMP_SESSION)); if(NULL == pServer) { return -1; } pServer-&gt;handshake = 0; pCtx = (EPOLL_CTX *)malloc(sizeof(EPOLL_CTX)); if(NULL == pCtx) { free(pServer); return -1; } pServer-&gt;socket = iNewFd; pCtx-&gt;iFd = iNewFd; pCtx-&gt;pContext = pServer; pCtx-&gt;pfHandle = RtmpSessionHandle; /* 加入epoll */ iRet = epoll_op(g_iEpollFd, EPOLL_CTL_ADD, iNewFd, EPOLLIN|EPOLLERR|EPOLLHUP, pCtx); } else { printf(&quot;accept errno:%s&quot;,strerror(errno)); } } return iRet; } int epoll_op(int iEpollFd, int iOp, int iFd, int iEvent, EPOLL_CTX *pCtx) { int iRet; struct epoll_event ev; ev." />
+int RtmpSessionHandle(int iFd, int iEvent, void *pContext){int iRet;RTMP_SESSION *pSession = (RTMP_SESSION *)pContext;if(iEvent&amp;EPOLLIN ){if(0 == pSession-&gt;handshake){iRet = RtmpSessionHandshake(pSession); if(0 != iRet){RtmpSessionHandleFin(pSession); }}else{ iRet = RtmpPktHandle(pSession);}}if(iEvent &amp; (EPOLLERR |EPOLLHUP) ){RtmpSessionHandleFin(pSession);}return iRet;}int ListenHandle(int iFd, int iEvent, void *pContext){int iNewFd;int iRet = 0;struct sockaddr tmpAddr;memset(&amp;tmpAddr, 0, sizeof(tmpAddr));int iSocketSize = sizeof(tmpAddr);EPOLL_CTX *pCtx; RTMP_SESSION *pServer;if(iEvent|EPOLLIN){iNewFd = accept(iFd, &amp;tmpAddr, (socklen_t *)&amp;iSocketSize); if(RTMP_EPOLLSRV_INVALIDFD &lt; iNewFd) {pServer = (RTMP_SESSION *)malloc(sizeof(RTMP_SESSION));if(NULL == pServer){return -1;}pServer-&gt;handshake = 0; pCtx = (EPOLL_CTX *)malloc(sizeof(EPOLL_CTX));if(NULL == pCtx){free(pServer);return -1;}pServer-&gt;socket = iNewFd;pCtx-&gt;iFd = iNewFd;pCtx-&gt;pContext = pServer;pCtx-&gt;pfHandle = RtmpSessionHandle;/* 加入epoll */iRet = epoll_op(g_iEpollFd, EPOLL_CTL_ADD, iNewFd, EPOLLIN|EPOLLERR|EPOLLHUP, pCtx);}else{printf(&quot;accept errno:%s&quot;,strerror(errno));}}return iRet;}int epoll_op(int iEpollFd, int iOp, int iFd, int iEvent, EPOLL_CTX *pCtx){int iRet;struct epoll_event ev;ev." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://myself659.github.io/2016/09/10/%E4%BB%8Ec%E8%AF%AD%E8%A8%80epoll%E7%BC%96%E7%A8%8B%E5%88%B0go-net%E5%AE%9E%E7%8E%B0%E5%88%86%E6%9E%90/" />
-<meta property="article:published_time" content="2016-09-10T11:58:06&#43;02:00"/>
-<meta property="article:modified_time" content="2016-09-10T11:58:06&#43;02:00"/>
+<meta property="article:published_time" content="2016-09-10T11:58:06+02:00" />
+<meta property="article:modified_time" content="2016-09-10T11:58:06+02:00" />
 
     
-    
-<meta itemprop="name" content="从C语言epoll编程到go net实现分析">
+    <meta itemprop="name" content="从C语言epoll编程到go net实现分析">
 <meta itemprop="description" content="说明  go源码版本：1.7 go源码运行环境：Linux  epoll在c语言编程示例 先看一下大家比较熟悉的epoll在c语言中应用，代码取自rtmpserver_demo中的文件rtmpepollsrv.c
-int RtmpSessionHandle(int iFd, int iEvent, void *pContext) { int iRet; RTMP_SESSION *pSession = (RTMP_SESSION *)pContext; if(iEvent&amp;EPOLLIN ) { if(0 == pSession-&gt;handshake) { iRet = RtmpSessionHandshake(pSession); if(0 != iRet) { RtmpSessionHandleFin(pSession); } } else { iRet = RtmpPktHandle(pSession); } } if(iEvent &amp; (EPOLLERR |EPOLLHUP) ) { RtmpSessionHandleFin(pSession); } return iRet; } int ListenHandle(int iFd, int iEvent, void *pContext) { int iNewFd; int iRet = 0; struct sockaddr tmpAddr; memset(&amp;tmpAddr, 0, sizeof(tmpAddr)); int iSocketSize = sizeof(tmpAddr); EPOLL_CTX *pCtx; RTMP_SESSION *pServer; if(iEvent|EPOLLIN) { iNewFd = accept(iFd, &amp;tmpAddr, (socklen_t *)&amp;iSocketSize); if(RTMP_EPOLLSRV_INVALIDFD &lt; iNewFd) { pServer = (RTMP_SESSION *)malloc(sizeof(RTMP_SESSION)); if(NULL == pServer) { return -1; } pServer-&gt;handshake = 0; pCtx = (EPOLL_CTX *)malloc(sizeof(EPOLL_CTX)); if(NULL == pCtx) { free(pServer); return -1; } pServer-&gt;socket = iNewFd; pCtx-&gt;iFd = iNewFd; pCtx-&gt;pContext = pServer; pCtx-&gt;pfHandle = RtmpSessionHandle; /* 加入epoll */ iRet = epoll_op(g_iEpollFd, EPOLL_CTL_ADD, iNewFd, EPOLLIN|EPOLLERR|EPOLLHUP, pCtx); } else { printf(&quot;accept errno:%s&quot;,strerror(errno)); } } return iRet; } int epoll_op(int iEpollFd, int iOp, int iFd, int iEvent, EPOLL_CTX *pCtx) { int iRet; struct epoll_event ev; ev.">
-
-
+int RtmpSessionHandle(int iFd, int iEvent, void *pContext){int iRet;RTMP_SESSION *pSession = (RTMP_SESSION *)pContext;if(iEvent&amp;EPOLLIN ){if(0 == pSession-&gt;handshake){iRet = RtmpSessionHandshake(pSession); if(0 != iRet){RtmpSessionHandleFin(pSession); }}else{ iRet = RtmpPktHandle(pSession);}}if(iEvent &amp; (EPOLLERR |EPOLLHUP) ){RtmpSessionHandleFin(pSession);}return iRet;}int ListenHandle(int iFd, int iEvent, void *pContext){int iNewFd;int iRet = 0;struct sockaddr tmpAddr;memset(&amp;tmpAddr, 0, sizeof(tmpAddr));int iSocketSize = sizeof(tmpAddr);EPOLL_CTX *pCtx; RTMP_SESSION *pServer;if(iEvent|EPOLLIN){iNewFd = accept(iFd, &amp;tmpAddr, (socklen_t *)&amp;iSocketSize); if(RTMP_EPOLLSRV_INVALIDFD &lt; iNewFd) {pServer = (RTMP_SESSION *)malloc(sizeof(RTMP_SESSION));if(NULL == pServer){return -1;}pServer-&gt;handshake = 0; pCtx = (EPOLL_CTX *)malloc(sizeof(EPOLL_CTX));if(NULL == pCtx){free(pServer);return -1;}pServer-&gt;socket = iNewFd;pCtx-&gt;iFd = iNewFd;pCtx-&gt;pContext = pServer;pCtx-&gt;pfHandle = RtmpSessionHandle;/* 加入epoll */iRet = epoll_op(g_iEpollFd, EPOLL_CTL_ADD, iNewFd, EPOLLIN|EPOLLERR|EPOLLHUP, pCtx);}else{printf(&quot;accept errno:%s&quot;,strerror(errno));}}return iRet;}int epoll_op(int iEpollFd, int iOp, int iFd, int iEvent, EPOLL_CTX *pCtx){int iRet;struct epoll_event ev;ev.">
 <meta itemprop="datePublished" content="2016-09-10T11:58:06&#43;02:00" />
 <meta itemprop="dateModified" content="2016-09-10T11:58:06&#43;02:00" />
 <meta itemprop="wordCount" content="1456">
@@ -42,11 +39,10 @@ int RtmpSessionHandle(int iFd, int iEvent, void *pContext) { int iRet; RTMP_SESS
 
 
 <meta itemprop="keywords" content="golang," />
-
     <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="从C语言epoll编程到go net实现分析"/>
 <meta name="twitter:description" content="说明  go源码版本：1.7 go源码运行环境：Linux  epoll在c语言编程示例 先看一下大家比较熟悉的epoll在c语言中应用，代码取自rtmpserver_demo中的文件rtmpepollsrv.c
-int RtmpSessionHandle(int iFd, int iEvent, void *pContext) { int iRet; RTMP_SESSION *pSession = (RTMP_SESSION *)pContext; if(iEvent&amp;EPOLLIN ) { if(0 == pSession-&gt;handshake) { iRet = RtmpSessionHandshake(pSession); if(0 != iRet) { RtmpSessionHandleFin(pSession); } } else { iRet = RtmpPktHandle(pSession); } } if(iEvent &amp; (EPOLLERR |EPOLLHUP) ) { RtmpSessionHandleFin(pSession); } return iRet; } int ListenHandle(int iFd, int iEvent, void *pContext) { int iNewFd; int iRet = 0; struct sockaddr tmpAddr; memset(&amp;tmpAddr, 0, sizeof(tmpAddr)); int iSocketSize = sizeof(tmpAddr); EPOLL_CTX *pCtx; RTMP_SESSION *pServer; if(iEvent|EPOLLIN) { iNewFd = accept(iFd, &amp;tmpAddr, (socklen_t *)&amp;iSocketSize); if(RTMP_EPOLLSRV_INVALIDFD &lt; iNewFd) { pServer = (RTMP_SESSION *)malloc(sizeof(RTMP_SESSION)); if(NULL == pServer) { return -1; } pServer-&gt;handshake = 0; pCtx = (EPOLL_CTX *)malloc(sizeof(EPOLL_CTX)); if(NULL == pCtx) { free(pServer); return -1; } pServer-&gt;socket = iNewFd; pCtx-&gt;iFd = iNewFd; pCtx-&gt;pContext = pServer; pCtx-&gt;pfHandle = RtmpSessionHandle; /* 加入epoll */ iRet = epoll_op(g_iEpollFd, EPOLL_CTL_ADD, iNewFd, EPOLLIN|EPOLLERR|EPOLLHUP, pCtx); } else { printf(&quot;accept errno:%s&quot;,strerror(errno)); } } return iRet; } int epoll_op(int iEpollFd, int iOp, int iFd, int iEvent, EPOLL_CTX *pCtx) { int iRet; struct epoll_event ev; ev."/>
+int RtmpSessionHandle(int iFd, int iEvent, void *pContext){int iRet;RTMP_SESSION *pSession = (RTMP_SESSION *)pContext;if(iEvent&amp;EPOLLIN ){if(0 == pSession-&gt;handshake){iRet = RtmpSessionHandshake(pSession); if(0 != iRet){RtmpSessionHandleFin(pSession); }}else{ iRet = RtmpPktHandle(pSession);}}if(iEvent &amp; (EPOLLERR |EPOLLHUP) ){RtmpSessionHandleFin(pSession);}return iRet;}int ListenHandle(int iFd, int iEvent, void *pContext){int iNewFd;int iRet = 0;struct sockaddr tmpAddr;memset(&amp;tmpAddr, 0, sizeof(tmpAddr));int iSocketSize = sizeof(tmpAddr);EPOLL_CTX *pCtx; RTMP_SESSION *pServer;if(iEvent|EPOLLIN){iNewFd = accept(iFd, &amp;tmpAddr, (socklen_t *)&amp;iSocketSize); if(RTMP_EPOLLSRV_INVALIDFD &lt; iNewFd) {pServer = (RTMP_SESSION *)malloc(sizeof(RTMP_SESSION));if(NULL == pServer){return -1;}pServer-&gt;handshake = 0; pCtx = (EPOLL_CTX *)malloc(sizeof(EPOLL_CTX));if(NULL == pCtx){free(pServer);return -1;}pServer-&gt;socket = iNewFd;pCtx-&gt;iFd = iNewFd;pCtx-&gt;pContext = pServer;pCtx-&gt;pfHandle = RtmpSessionHandle;/* 加入epoll */iRet = epoll_op(g_iEpollFd, EPOLL_CTL_ADD, iNewFd, EPOLLIN|EPOLLERR|EPOLLHUP, pCtx);}else{printf(&quot;accept errno:%s&quot;,strerror(errno));}}return iRet;}int epoll_op(int iEpollFd, int iOp, int iFd, int iEvent, EPOLL_CTX *pCtx){int iRet;struct epoll_event ev;ev."/>
 
     
 
@@ -339,19 +335,13 @@ int RtmpSessionHandle(int iFd, int iEvent, void *pContext) { int iRet; RTMP_SESS
 </header>
 
         <div class="article-entry" itemprop="articleBody">
-            
-
-<h2 id="说明">说明</h2>
-
+            <h2 id="说明">说明</h2>
 <ol>
 <li>go源码版本：1.7</li>
 <li>go源码运行环境：Linux</li>
 </ol>
-
 <h2 id="epoll在c语言编程示例">epoll在c语言编程示例</h2>
-
 <p>先看一下大家比较熟悉的epoll在c语言中应用，代码取自<a href="https://github.com/myself659/rtmpserver_demo">rtmpserver_demo</a>中的文件<a href="https://github.com/myself659/rtmpserver_demo/blob/master/rtmpepollsrv.c">rtmpepollsrv.c</a></p>
-
 <pre><code>int RtmpSessionHandle(int iFd, int iEvent, void *pContext)
 {
     int iRet;
@@ -531,38 +521,25 @@ int main(void)
     return  0;
     
 }
-</code></pre>
-
-<h3 id="功能">功能</h3>
-
+</code></pre><h3 id="功能">功能</h3>
 <p>上述代码代码主要通过epoll实现一个最基本的网络服务器（侦听一个端口，处理这个端口上连接）</p>
-
 <p>几个重要数据结构</p>
-
 <h3 id="实现分析">实现分析</h3>
-
 <p>简单说明如下：</p>
-
 <p>用下面的结构体EPOLL_CTX保存epoll的回调及异步处理的上下文</p>
-
 <pre><code>typedef struct 
 {
     int iFd; 
     EpollCallBack_PF pfHandle;
     void  *pContext;
 }EPOLL_CTX;
-</code></pre>
-
-<p>从面向过程编程角度简单梳理一下epoll相关的代码</p>
-
+</code></pre><p>从面向过程编程角度简单梳理一下epoll相关的代码</p>
 <ol>
 <li>创建epoll</li>
 <li>加入epoll</li>
 <li>进入epoll_loop,处理epoll事件</li>
 </ol>
-
 <h2 id="go-编程示例">go 编程示例</h2>
-
 <pre><code>package main
 
 import (
@@ -616,40 +593,27 @@ func handleRequest(conn net.Conn) {
     // Close the connection when you're done with it.
     conn.Close()
 }
-</code></pre>
-
-<h2 id="对比">对比</h2>
-
+</code></pre><h2 id="对比">对比</h2>
 <ol>
 <li>handleRequest代码对应c语言版本epoll回调，但是这个代码与业务逻辑很搭，读取报文，进行处理，返回结果这些操作可以同一个函数内（也就是同一个逻辑上面）实现，没有异步回调就是爽啊</li>
 <li>go语言上编程上不需要看到epoll，也就没添加/删除epoll的操作</li>
 <li>编程模型方面无论是原生的回调还是reactor模型，go语言更符合业务的逻辑，而不需要考虑epoll相关处理</li>
 <li>够简洁明了，有着与c语言相当的性能，程序员们让我们一起go吧！</li>
 </ol>
-
 <h2 id="go-net实现分析">Go Net实现分析</h2>
-
 <p>通过以上对比，显而易见，go语言保证效率的情况，在易用性大大超过了c，那golang是如何实现的？下面具体分析golang的net库实现</p>
-
 <h3 id="goroutine调度时机">goroutine调度时机</h3>
-
 <p>一般在以下四种情况下进行goroutine调度：</p>
-
 <ol>
 <li>channel收发</li>
 <li>显示调用go函数</li>
 <li>阻塞的系统调用，如read,write</li>
 <li>GC</li>
 </ol>
-
 <h3 id="epoll使用">epoll使用</h3>
-
 <p>先简单看一下各个epoll操作代码实现，先找到他们，再分析如何利用这些操作来完成简洁的网络编程</p>
-
 <h4 id="epoll初始化">epoll初始化</h4>
-
 <p>对应c语言版本的epoll_create，go语言版本在初始化在下面的代码中完成:</p>
-
 <pre><code>func netpollinit() {
     epfd = epollcreate1(_EPOLL_CLOEXEC)
     if epfd &gt;= 0 {
@@ -663,36 +627,23 @@ func handleRequest(conn net.Conn) {
     println(&quot;netpollinit: failed to create epoll descriptor&quot;, -epfd)
     throw(&quot;netpollinit: failed to create descriptor&quot;)
 }
-</code></pre>
-
-<h4 id="将fd加入epoll">将fd加入epoll</h4>
-
+</code></pre><h4 id="将fd加入epoll">将fd加入epoll</h4>
 <p>对应c语言版本的epoll_op，go语言版本在初始化在下面的代码中完成:</p>
-
 <pre><code>func netpollopen(fd uintptr, pd *pollDesc) int32 {
     var ev epollevent
     ev.events = _EPOLLIN | _EPOLLOUT | _EPOLLRDHUP | _EPOLLET
     *(**pollDesc)(unsafe.Pointer(&amp;ev.data)) = pd
     return -epollctl(epfd, _EPOLL_CTL_ADD, int32(fd), &amp;ev)
 }
-</code></pre>
-
-<p>注意这里采用的边沿触发</p>
-
+</code></pre><p>注意这里采用的边沿触发</p>
 <h4 id="从epoll摘除fd">从epoll摘除fd</h4>
-
 <p>对应c语言版本的epoll_op，go语言版本在初始化在下面的代码中完成:</p>
-
 <pre><code>func netpollclose(fd uintptr) int32 {
     var ev epollevent
     return -epollctl(epfd, _EPOLL_CTL_DEL, int32(fd), &amp;ev)
 }
-</code></pre>
-
-<h4 id="数据结构-polldesc">数据结构 pollDesc</h4>
-
+</code></pre><h4 id="数据结构-polldesc">数据结构 pollDesc</h4>
 <p>结构体pollDesc用于关联fd与epoll，具体结构如下：</p>
-
 <pre><code>// Network poller descriptor.
 // 每个添加到epoll中的fd都对应了一个PollDesc结构实例
 type pollDesc struct {
@@ -724,12 +675,8 @@ type pollDesc struct {
     wd   int64  // write deadline
     user uint32 // user settable cookie
 }
-</code></pre>
-
-<h4 id="epoll操作封装">epoll操作封装</h4>
-
+</code></pre><h4 id="epoll操作封装">epoll操作封装</h4>
 <p>以初始化epoll及加入epoll为例，在下面的函数中完成的</p>
-
 <pre><code>
 var serverInit sync.Once
 
@@ -742,9 +689,7 @@ func (pd *pollDesc) init(fd *netFD) error {
     pd.runtimeCtx = ctx
     return nil
 }
-</code></pre>
-
-<pre><code>func (fd *netFD) accept() (netfd *netFD, err error) {
+</code></pre><pre><code>func (fd *netFD) accept() (netfd *netFD, err error) {
     if err := fd.readLock(); err != nil {
         return nil, err
     }
@@ -792,12 +737,8 @@ func (pd *pollDesc) init(fd *netFD) error {
     netfd.setAddr(netfd.addrFunc()(lsa), netfd.addrFunc()(rsa))
     return netfd, nil
 }
-</code></pre>
-
-<h4 id="读处理">读处理</h4>
-
+</code></pre><h4 id="读处理">读处理</h4>
 <p>先从为Read代码开始</p>
-
 <pre><code>
 func (fd *netFD) Read(p []byte) (n int, err error) {
     if err := fd.readLock(); err != nil {
@@ -834,10 +775,7 @@ func (fd *netFD) Read(p []byte) (n int, err error) {
     return
 }
 
-</code></pre>
-
-<p>具体分析读等待处理,跳过封装，直接分析处理代码：</p>
-
+</code></pre><p>具体分析读等待处理,跳过封装，直接分析处理代码：</p>
 <pre><code>//go:linkname net_runtime_pollWait net.runtime_pollWait
 // 进入pollwait状态进行goroutine调度
 func net_runtime_pollWait(pd *pollDesc, mode int) int {
@@ -862,9 +800,7 @@ func net_runtime_pollWait(pd *pollDesc, mode int) int {
     return 0
 }
 
-</code></pre>
-
-<pre><code>// returns true if IO is ready, or false if timedout or closed
+</code></pre><pre><code>// returns true if IO is ready, or false if timedout or closed
 // waitio - wait only for completed IO, ignore errors
 // 返回true表示IO就绪，返回false表示超时或者关闭
 // waitio 表示是否等待IO,超时时该参数为false
@@ -905,10 +841,7 @@ func netpollblock(pd *pollDesc, mode int32, waitio bool) bool {
     }
     return old == pdReady
 }
-</code></pre>
-
-<h3 id="总结">总结</h3>
-
+</code></pre><h3 id="总结">总结</h3>
 <ol>
 <li>net网络库的设计的精华,良好的封装与接口,提高简单可靠的接口</li>
 <li>充分利用goroutine机制</li>
@@ -918,9 +851,7 @@ func netpollblock(pd *pollDesc, mode int32, waitio bool) bool {
 <li>异步编程能够带来高性能，但是也是高要求，如果系统复杂，出现问题不好定位，同时代码的可读性也差</li>
 <li>代码在满足正确性的基础上，应先追求可读性，规范性，高性能往后排</li>
 </ol>
-
 <h3 id="参考">参考</h3>
-
 <ol>
 <li><a href="http://blog.nindalf.com/how-goroutines-work/">How Goroutines Work</a></li>
 </ol>

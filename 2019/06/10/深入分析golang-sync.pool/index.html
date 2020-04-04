@@ -2,7 +2,7 @@
 <html lang="zh-cn">
 <head>
     <title>深入分析Golang sync.pool &middot; 沉风网事</title>
-    <meta name="generator" content="Hugo 0.54.0" />
+    <meta name="generator" content="Hugo 0.68.3" />
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta name="author" content="沉风">
@@ -25,22 +25,19 @@
 目标 sync.Pool解决以下问题：
  增加临时对象的用复用率，减少GC负担 通过对象的复用，减少内存申请开销，有利于提高一部分性能  实现 这一部分回答如何实现的问题。
 关于了解实现，最好的办法就是看代码。
-描述 type Pool struct { noCopy noCopy local unsafe.Pointer // local fixed-size per-P pool, actual type is [P]poolLocal localSize uintptr // size of the local array // New optionally specifies a function to generate // a value when Get would otherwise return nil. // It may not be changed concurrently with calls to Get. New func() interface{} }  各个成员含义如下：" />
+描述 type Pool struct {noCopy noCopylocal unsafe.Pointer // local fixed-size per-P pool, actual type is [P]poolLocallocalSize uintptr // size of the local array// New optionally specifies a function to generate// a value when Get would otherwise return nil.// It may not be changed concurrently with calls to Get.New func() interface{}}各个成员含义如下：" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://myself659.github.io/2019/06/10/%E6%B7%B1%E5%85%A5%E5%88%86%E6%9E%90golang-sync.pool/" />
-<meta property="article:published_time" content="2019-06-10T11:58:06&#43;02:00"/>
-<meta property="article:modified_time" content="2019-06-10T11:58:06&#43;02:00"/>
+<meta property="article:published_time" content="2019-06-10T11:58:06+02:00" />
+<meta property="article:modified_time" content="2019-06-10T11:58:06+02:00" />
 
     
-    
-<meta itemprop="name" content="深入分析Golang sync.pool">
+    <meta itemprop="name" content="深入分析Golang sync.pool">
 <meta itemprop="description" content="定义 sync.Pool是一个可以存或取的临时对象池。对外提供New、Get、Put等API，利用mutex支持多线程并发。
 目标 sync.Pool解决以下问题：
  增加临时对象的用复用率，减少GC负担 通过对象的复用，减少内存申请开销，有利于提高一部分性能  实现 这一部分回答如何实现的问题。
 关于了解实现，最好的办法就是看代码。
-描述 type Pool struct { noCopy noCopy local unsafe.Pointer // local fixed-size per-P pool, actual type is [P]poolLocal localSize uintptr // size of the local array // New optionally specifies a function to generate // a value when Get would otherwise return nil. // It may not be changed concurrently with calls to Get. New func() interface{} }  各个成员含义如下：">
-
-
+描述 type Pool struct {noCopy noCopylocal unsafe.Pointer // local fixed-size per-P pool, actual type is [P]poolLocallocalSize uintptr // size of the local array// New optionally specifies a function to generate// a value when Get would otherwise return nil.// It may not be changed concurrently with calls to Get.New func() interface{}}各个成员含义如下：">
 <meta itemprop="datePublished" content="2019-06-10T11:58:06&#43;02:00" />
 <meta itemprop="dateModified" content="2019-06-10T11:58:06&#43;02:00" />
 <meta itemprop="wordCount" content="1087">
@@ -48,14 +45,13 @@
 
 
 <meta itemprop="keywords" content="Golang," />
-
     <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="深入分析Golang sync.pool"/>
 <meta name="twitter:description" content="定义 sync.Pool是一个可以存或取的临时对象池。对外提供New、Get、Put等API，利用mutex支持多线程并发。
 目标 sync.Pool解决以下问题：
  增加临时对象的用复用率，减少GC负担 通过对象的复用，减少内存申请开销，有利于提高一部分性能  实现 这一部分回答如何实现的问题。
 关于了解实现，最好的办法就是看代码。
-描述 type Pool struct { noCopy noCopy local unsafe.Pointer // local fixed-size per-P pool, actual type is [P]poolLocal localSize uintptr // size of the local array // New optionally specifies a function to generate // a value when Get would otherwise return nil. // It may not be changed concurrently with calls to Get. New func() interface{} }  各个成员含义如下："/>
+描述 type Pool struct {noCopy noCopylocal unsafe.Pointer // local fixed-size per-P pool, actual type is [P]poolLocallocalSize uintptr // size of the local array// New optionally specifies a function to generate// a value when Get would otherwise return nil.// It may not be changed concurrently with calls to Get.New func() interface{}}各个成员含义如下："/>
 
     
 
@@ -348,29 +344,18 @@
 </header>
 
         <div class="article-entry" itemprop="articleBody">
-            
-
-<h1 id="定义">定义</h1>
-
+            <h1 id="定义">定义</h1>
 <p>sync.Pool是一个可以存或取的临时对象池。对外提供New、Get、Put等API，利用mutex支持多线程并发。</p>
-
 <h1 id="目标">目标</h1>
-
 <p>sync.Pool解决以下问题：</p>
-
 <ol>
 <li>增加临时对象的用复用率，减少GC负担</li>
 <li>通过对象的复用，减少内存申请开销，有利于提高一部分性能</li>
 </ol>
-
 <h1 id="实现">实现</h1>
-
 <p>这一部分回答如何实现的问题。</p>
-
 <p>关于了解实现，最好的办法就是看代码。</p>
-
 <h2 id="描述">描述</h2>
-
 <pre><code>type Pool struct {
     noCopy noCopy
 
@@ -382,18 +367,11 @@
     // It may not be changed concurrently with calls to Get.
     New func() interface{}
 }
-</code></pre>
-
-<p>各个成员含义如下：</p>
-
+</code></pre><p>各个成员含义如下：</p>
 <p>noCopy： 防止sync.Pool被复制</p>
-
 <p>local： poolLocal数组的指针</p>
-
 <p>localSize： poolLocal数组大小</p>
-
 <p>New： 函数指针申请具体的对象，便于用户定制各种类型的对象</p>
-
 <pre><code>// Local per-P Pool appendix.
 type poolLocalInternal struct {
     private interface{}   // Can be used only by the respective P.
@@ -408,33 +386,21 @@ type poolLocal struct {
     // 128 mod (cache line size) = 0 .
     pad [128 - unsafe.Sizeof(poolLocalInternal{})%128]byte
 }
-</code></pre>
-
-<p>private：private私有池，只能被对应P使用（说明：P是指goroutine执行所占用的处理器，下同）</p>
-
+</code></pre><p>private：private私有池，只能被对应P使用（说明：P是指goroutine执行所占用的处理器，下同）</p>
 <p>shared： shared共享池，能被任何P使用</p>
-
 <p>Mutex： 保护shared共享池</p>
-
 <p>pad：poolLocal结构体中特别增加了pad成员，这是为了防止false sharing。</p>
-
 <h2 id="操作">操作</h2>
-
 <p>操作分为四种类型：</p>
-
 <ol>
 <li>New</li>
 <li>Get</li>
 <li>Put</li>
 <li>CleanUp</li>
 </ol>
-
 <h3 id="new">New</h3>
-
 <p>这部分主要解决问题：如何创建一个具体对象池？</p>
-
 <p>具体参考代码如下：</p>
-
 <pre><code>// Object Object
 type Object struct {
     a int
@@ -444,24 +410,16 @@ type Object struct {
 var pool = sync.Pool{
     New: func() interface{} { return new(Object) },
 }
-</code></pre>
-
-<h3 id="get">Get</h3>
-
+</code></pre><h3 id="get">Get</h3>
 <p>Get解决了如何从具体sync.Pool中获取对象的问题。</p>
-
 <p>获取对象有三个来源：</p>
-
 <ol>
 <li>private池</li>
 <li>shared池</li>
 <li>系统的Heap内存</li>
 </ol>
-
 <p>获取对象顺序是先从private池获取，如果不成功则从shared池获取，如果继续不成功，则从Heap中申请一个对象。这是不是有熟悉的味道？在两级cache的情况下，CPU获取数据，先从L1 cache开始，再是L2 cache， 是内存。</p>
-
 <p>具体代码实现如下：</p>
-
 <pre><code>func (p *Pool) Get() interface{} {
     if race.Enabled {
         race.Disable()
@@ -556,20 +514,14 @@ func (p *Pool) pinSlow() *poolLocal {
     return &amp;local[pid] // 返回新的poolLocal
 }
 
-</code></pre>
-
-<p>总结Get主要要点如下：</p>
-
+</code></pre><p>总结Get主要要点如下：</p>
 <ol>
 <li>先从本P绑定的poolLocal获取对象：先从本poolLocal的private池获取对象，再从本poolLocal的shared池获取对象</li>
 <li>上一步没有成功获取对象，再从其他P的shared池获取对象</li>
 <li>上一步没有成功获取对象，则从Heap申请对象</li>
 </ol>
-
 <h3 id="put">Put</h3>
-
 <p>Put完成将对象放回对象池。</p>
-
 <pre><code>// Put adds x to the pool.
 func (p *Pool) Put(x interface{}) {
     if x == nil {
@@ -598,29 +550,19 @@ func (p *Pool) Put(x interface{}) {
         race.Enable()
     }
 }
-</code></pre>
-
-<p>上面的代码总结如下：</p>
-
+</code></pre><p>上面的代码总结如下：</p>
 <ol>
 <li>如果poolLocalInternal的private为空，则将回收的对象放到private池中</li>
 <li>如果poolLocalInternal的private非空，则将回收的对象放到shared池中</li>
 </ol>
-
 <h3 id="cleanup">CleanUp</h3>
-
 <h4 id="cleanup实现">CleanUp实现</h4>
-
 <p>注册poolCleanup函数。</p>
-
 <pre><code>func init() {
    runtime_registerPoolCleanup(poolCleanup)
 }
 
-</code></pre>
-
-<p>poolCleanup函数具体实现，</p>
-
+</code></pre><p>poolCleanup函数具体实现，</p>
 <pre><code>func poolCleanup() {
     // This function is called with the world stopped, at the beginning of a garbage collection.
     // It must not allocate and probably should not call any runtime functions.
@@ -643,14 +585,9 @@ func (p *Pool) Put(x interface{}) {
     }
     allPools = []*Pool{}
 }
-</code></pre>
-
-<h4 id="cleanup时机">CleanUp时机</h4>
-
+</code></pre><h4 id="cleanup时机">CleanUp时机</h4>
 <p>什么时候进行CleanUp回收对象池？在gc开始前。</p>
-
 <p>具体代码(代码文件为runtime/mgc.go)如下：</p>
-
 <pre><code>func gcStart(trigger gcTrigger) {
     ... 
     // clearpools before we start the GC. If we wait they memory will not be
@@ -670,9 +607,7 @@ func (p *Pool) Put(x interface{}) {
     }
     ...
 }
-</code></pre>
-
-<pre><code>func clearpools() {
+</code></pre><pre><code>func clearpools() {
     // clear sync.Pools
     if poolcleanup != nil {
         poolcleanup() // 如果poolcleanup不为空，调用poolcleanup函数
@@ -706,12 +641,8 @@ func (p *Pool) Put(x interface{}) {
     }
     unlock(&amp;sched.deferlock)
 }
-</code></pre>
-
-<h2 id="总结">总结</h2>
-
+</code></pre><h2 id="总结">总结</h2>
 <p>总结一下sync.Pool的实现，要点如下：</p>
-
 <ol>
 <li>提供New定义实现用户自定义对象</li>
 <li>需要使用对象调用Get从对象池获取临时对象，Get优先级首先是本P绑定的poolLocal, 其次是其他P绑定的poolLocal，最后是Heap内存</li>
@@ -719,13 +650,9 @@ func (p *Pool) Put(x interface{}) {
 <li>未被使用的对象会定时GC回收</li>
 <li>对象没有类似于linux cache object对应的free函数</li>
 </ol>
-
 <h1 id="应用">应用</h1>
-
 <p>sync.Pool并不是万能药。要根据具体情境而定是否使用sync.Pool。</p>
-
 <p>总结不适合使用sync.Pool的情境，具体如下：</p>
-
 <ol>
 <li>对象中分配的系统资源如socket，buffer</li>
 <li>对象需要进行异步处理</li>
@@ -733,16 +660,12 @@ func (p *Pool) Put(x interface{}) {
 <li>批量对象需要并发处理</li>
 <li>复用对象大小存在的波动，如对象结构成员存在slice</li>
 </ol>
-
 <p>在排除上面情境下，适合使用的sync.Pool应满足以下条件，具体如下：</p>
-
 <ol>
 <li>对象是buffer或非组合类型如buffer reader, json decode, bufio writer</li>
 <li>对象内存可以重复使用</li>
 </ol>
-
 <p>同时在使用应该注意问题：</p>
-
 <ol>
 <li>Put对象之前完成初始化，避免数据污染带来问题, 这可能带来各种各样的问题</li>
 <li>写代码时要满足one Get， one Put的要求</li>
@@ -750,11 +673,8 @@ func (p *Pool) Put(x interface{}) {
 <li>关注应用场景是否容易出现Pool竞争的情况</li>
 <li>sync.Pool不是万能药，不要拿着锤子，看什么都是钉子</li>
 </ol>
-
 <p>(Ps: 个人能力不足，若有错误不足，欢迎指正！)</p>
-
 <h1 id="参考">参考</h1>
-
 <ol>
 <li><a href="https://github.com/golang/go/issues/23199">sync: Pool example suggests incorrect usage</a></li>
 </ol>

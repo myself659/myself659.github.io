@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Web on 沉风网事</title>
@@ -22,15 +22,15 @@
 建一个网站要要做哪些事情 这里分解如下：
  网站前端 网站后端 域名 主机 部署 维护  下面就这些方面以自己搭建ipds.top网站为例说明。
 网站前端 对于前端，个人能力与经历有限，缺少DIY能力，那就是找主题模板，经济有效。 就IPDS 由于对golang的热爱，后端选择hugo。那么主题有以下选择：
- 直接从gohugo 中查找 github中查找
-  个人采用的主题是icarus
+ 直接从gohugo 中查找 github中查找  个人采用的主题是icarus
 网站后端 如上面所说，后端选择hugo。
 这里讲一下主要碰到问题。
-版本问题  hugo版本不要使用apt-get命令直接的，防止hugo版本过低 个人使用版本如下  root@BC:~# hugo version Hugo Static Site Generator v0.31.1 linux/amd64 BuildDate: 2017-10-14T22:10:38+08:00  参数 常见的参数配置如下：
-hugo server --baseUrl=https://blog.ipds.top/ --appendPort=false  小结 这里要宣传一下hugo，采用hugo具有如下优点：
+版本问题  hugo版本不要使用apt-get命令直接的，防止hugo版本过低 个人使用版本如下  root@BC:~# hugo versionHugo Static Site Generator v0.31.1 linux/amd64 BuildDate: 2017-10-14T22:10:38+08:00参数 常见的参数配置如下：
+hugo server --baseUrl=https://blog.ipds.top/ --appendPort=false小结 这里要宣传一下hugo，采用hugo具有如下优点：
  有不错可用的主题 简单好用 社区不断更新与发展 内容可以保存到内存，访问速度快  域名 从阿里云注册一个top域名。 这里要吐槽一下阿里云，注册域名不提示域名一定要认证后才能用。（因为我的ECS买的是香港的，买完测试后也确认可用，过几天一看居然不能用）
 主机 主机采用阿里云ECS，地点在香港。 在香港最大的好处就是解决了墙的问题。
-部署 反向代理 方案1： 大家熟知的nginx</description>
+部署 反向代理 方案1： 大家熟知的nginx
+方案2： caddy</description>
     </item>
     
   </channel>

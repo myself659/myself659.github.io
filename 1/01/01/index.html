@@ -2,7 +2,7 @@
 <html lang="zh-cn">
 <head>
     <title> &middot; 沉风网事</title>
-    <meta name="generator" content="Hugo 0.54.0" />
+    <meta name="generator" content="Hugo 0.68.3" />
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta name="author" content="沉风">
@@ -21,36 +21,32 @@
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400italic,400,600' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Source+Code+Pro' rel='stylesheet' type='text/css'>
     <meta property="og:title" content="" />
-<meta property="og:description" content="banner = &ldquo;&rdquo; categories = [&ldquo;Substrate&rdquo;] date = &ldquo;2019-09-19T11:58:06&#43;02:00&rdquo; description = &ldquo;&rdquo; images = [] menu = &ldquo;&rdquo; tags = [&ldquo;Substrate&rdquo;, &ldquo;BlockChain&rdquo;] title = &ldquo;Substrate Runtime实践&rdquo; draft = true &#43;&#43;&#43;
+<meta property="og:description" content="banner = &quot;&rdquo; categories = [&ldquo;Substrate&rdquo;] date = &ldquo;2019-09-19T11:58:06&#43;02:00&rdquo; description = &quot;&rdquo; images = [] menu = &quot;&rdquo; tags = [&ldquo;Substrate&rdquo;, &ldquo;BlockChain&rdquo;] title = &ldquo;Substrate Runtime实践&rdquo; draft = true &#43;&#43;&#43;
 install substrate 安装substrate有以下两种方式：
- 快速安装
- 完全安装  快速安装 curl https://getsubstrate.io -sSf | bash -s -- --fast  完全安装 curl https://getsubstrate.io -sSf | bash  更新环境变量 source ~/.cargo/env  检查版本 root@IA:~/rust/install-substrate# substrate --version substrate 2.0.0-37bc8c545-x86_64-linux-gnu root@IA:~/rust/install-substrate# subkey --version subkey 2." />
+ 快速安装 完全安装  快速安装 curl https://getsubstrate.io -sSf | bash -s -- --fast完全安装 curl https://getsubstrate.io -sSf | bash更新环境变量 source ~/.cargo/env检查版本 root@IA:~/rust/install-substrate# substrate --versionsubstrate 2.0.0-37bc8c545-x86_64-linux-gnuroot@IA:~/rust/install-substrate# subkey --versionsubkey 2.0.0同时安装的还有以下文件：
+ substrate-module-new substrate-node-new substrate-ui-new  更新substrate f=`mktemp -d`git clone https://github." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://myself659.github.io/1/01/01/" />
 
 
     
-    
-<meta itemprop="name" content="">
-<meta itemprop="description" content="banner = &ldquo;&rdquo; categories = [&ldquo;Substrate&rdquo;] date = &ldquo;2019-09-19T11:58:06&#43;02:00&rdquo; description = &ldquo;&rdquo; images = [] menu = &ldquo;&rdquo; tags = [&ldquo;Substrate&rdquo;, &ldquo;BlockChain&rdquo;] title = &ldquo;Substrate Runtime实践&rdquo; draft = true &#43;&#43;&#43;
+    <meta itemprop="name" content="">
+<meta itemprop="description" content="banner = &quot;&rdquo; categories = [&ldquo;Substrate&rdquo;] date = &ldquo;2019-09-19T11:58:06&#43;02:00&rdquo; description = &quot;&rdquo; images = [] menu = &quot;&rdquo; tags = [&ldquo;Substrate&rdquo;, &ldquo;BlockChain&rdquo;] title = &ldquo;Substrate Runtime实践&rdquo; draft = true &#43;&#43;&#43;
 install substrate 安装substrate有以下两种方式：
- 快速安装
- 完全安装  快速安装 curl https://getsubstrate.io -sSf | bash -s -- --fast  完全安装 curl https://getsubstrate.io -sSf | bash  更新环境变量 source ~/.cargo/env  检查版本 root@IA:~/rust/install-substrate# substrate --version substrate 2.0.0-37bc8c545-x86_64-linux-gnu root@IA:~/rust/install-substrate# subkey --version subkey 2.">
-
-
+ 快速安装 完全安装  快速安装 curl https://getsubstrate.io -sSf | bash -s -- --fast完全安装 curl https://getsubstrate.io -sSf | bash更新环境变量 source ~/.cargo/env检查版本 root@IA:~/rust/install-substrate# substrate --versionsubstrate 2.0.0-37bc8c545-x86_64-linux-gnuroot@IA:~/rust/install-substrate# subkey --versionsubkey 2.0.0同时安装的还有以下文件：
+ substrate-module-new substrate-node-new substrate-ui-new  更新substrate f=`mktemp -d`git clone https://github.">
 
 <meta itemprop="wordCount" content="1042">
 
 
 
 <meta itemprop="keywords" content="" />
-
     <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content=""/>
-<meta name="twitter:description" content="banner = &ldquo;&rdquo; categories = [&ldquo;Substrate&rdquo;] date = &ldquo;2019-09-19T11:58:06&#43;02:00&rdquo; description = &ldquo;&rdquo; images = [] menu = &ldquo;&rdquo; tags = [&ldquo;Substrate&rdquo;, &ldquo;BlockChain&rdquo;] title = &ldquo;Substrate Runtime实践&rdquo; draft = true &#43;&#43;&#43;
+<meta name="twitter:description" content="banner = &quot;&rdquo; categories = [&ldquo;Substrate&rdquo;] date = &ldquo;2019-09-19T11:58:06&#43;02:00&rdquo; description = &quot;&rdquo; images = [] menu = &quot;&rdquo; tags = [&ldquo;Substrate&rdquo;, &ldquo;BlockChain&rdquo;] title = &ldquo;Substrate Runtime实践&rdquo; draft = true &#43;&#43;&#43;
 install substrate 安装substrate有以下两种方式：
- 快速安装
- 完全安装  快速安装 curl https://getsubstrate.io -sSf | bash -s -- --fast  完全安装 curl https://getsubstrate.io -sSf | bash  更新环境变量 source ~/.cargo/env  检查版本 root@IA:~/rust/install-substrate# substrate --version substrate 2.0.0-37bc8c545-x86_64-linux-gnu root@IA:~/rust/install-substrate# subkey --version subkey 2."/>
+ 快速安装 完全安装  快速安装 curl https://getsubstrate.io -sSf | bash -s -- --fast完全安装 curl https://getsubstrate.io -sSf | bash更新环境变量 source ~/.cargo/env检查版本 root@IA:~/rust/install-substrate# substrate --versionsubstrate 2.0.0-37bc8c545-x86_64-linux-gnuroot@IA:~/rust/install-substrate# subkey --versionsubkey 2.0.0同时安装的还有以下文件：
+ substrate-module-new substrate-node-new substrate-ui-new  更新substrate f=`mktemp -d`git clone https://github."/>
 
     
 
@@ -319,92 +315,56 @@ install substrate 安装substrate有以下两种方式：
 </header>
 
         <div class="article-entry" itemprop="articleBody">
-            
-
-<p>banner = &ldquo;&rdquo;
+            <p>banner = &quot;&rdquo;
 categories = [&ldquo;Substrate&rdquo;]
 date = &ldquo;2019-09-19T11:58:06+02:00&rdquo;
-description = &ldquo;&rdquo;
+description = &quot;&rdquo;
 images = []
-menu = &ldquo;&rdquo;
+menu = &quot;&rdquo;
 tags = [&ldquo;Substrate&rdquo;, &ldquo;BlockChain&rdquo;]
 title = &ldquo;Substrate Runtime实践&rdquo;
 draft = true
 +++</p>
-
 <h1 id="install-substrate">install substrate</h1>
-
 <p>安装substrate有以下两种方式：</p>
-
 <ol>
-<li>快速安装<br /></li>
+<li>快速安装</li>
 <li>完全安装</li>
 </ol>
-
 <h2 id="快速安装">快速安装</h2>
-
 <pre><code>curl https://getsubstrate.io -sSf | bash -s -- --fast
-</code></pre>
-
-<h2 id="完全安装">完全安装</h2>
-
+</code></pre><h2 id="完全安装">完全安装</h2>
 <pre><code>curl https://getsubstrate.io -sSf | bash
-</code></pre>
-
-<h2 id="更新环境变量">更新环境变量</h2>
-
+</code></pre><h2 id="更新环境变量">更新环境变量</h2>
 <pre><code>source ~/.cargo/env
-</code></pre>
-
-<h2 id="检查版本">检查版本</h2>
-
+</code></pre><h2 id="检查版本">检查版本</h2>
 <pre><code>root@IA:~/rust/install-substrate# substrate  --version
 substrate 2.0.0-37bc8c545-x86_64-linux-gnu
 root@IA:~/rust/install-substrate# subkey  --version
 subkey 2.0.0
-</code></pre>
-
-<p>同时安装的还有以下文件：</p>
-
+</code></pre><p>同时安装的还有以下文件：</p>
 <ol>
-<li>substrate-module-new<br /></li>
-<li>substrate-node-new<br /></li>
-<li>substrate-ui-new<br /></li>
+<li>substrate-module-new</li>
+<li>substrate-node-new</li>
+<li>substrate-ui-new</li>
 </ol>
-
 <h1 id="更新substrate">更新substrate</h1>
-
 <pre><code>f=`mktemp -d`
 git clone https://github.com/paritytech/substrate-up $f
 cp -a $f/substrate-* ~/.cargo/bin
 cp -a $f/polkadot-* ~/.cargo/bin
-</code></pre>
-
-<h1 id="substrate-help">substrate &ndash;help</h1>
-
+</code></pre><h1 id="substrate---help">substrate &ndash;help</h1>
 <p>这一步虽然简单，但是很有必要，了解常用的substrate命令。方便以后出现问题快速解决或者找到线索。</p>
-
 <p>这相当于官方文档。必须要做的一步。短时间的投入，有益的作用。</p>
-
 <h1 id="runtime">Runtime</h1>
-
 <h2 id="srml">SRML</h2>
-
 <p>SRML全称Substrate Runtime Module Library</p>
-
 <h1 id="实践">实践</h1>
-
 <p>准备作一个基于substrate的hello world的实例。</p>
-
 <h2 id="创建节点">创建节点</h2>
-
 <pre><code>root@IA:~/rust/runtime-demo# substrate-node-new   hello-node  chenfeng
-</code></pre>
-
-<p>这个过程可以持续10分钟左右</p>
-
+</code></pre><p>这个过程可以持续10分钟左右</p>
 <h2 id="启动节点">启动节点</h2>
-
 <pre><code>root@IA:~/rust/runtime-demo/hello-node# ./target/release/hello-node   --dev
 2019-09-20 16:04:28 Substrate Node
 2019-09-20 16:04:28   version 1.0.0-7f6843a-x86_64-linux-gnu
@@ -434,31 +394,19 @@ cp -a $f/polkadot-* ~/.cargo/bin
 2019-09-20 16:04:40 Pre-sealed block for proposal at 2. Hash now 0x6e5b0fb72f9476d03b7b510f21935a8238eaa3f85d8ff7355a66a466b8637204, previously 0x773e99df58009dd0331262b6468131c3d4ce9de609db8a79ef0e5e1f673de5ae.
 2019-09-20 16:04:40 Imported #2 (0x6e5b…7204)
 
-</code></pre>
-
-<h2 id="连接远端节点">连接远端节点</h2>
-
+</code></pre><h2 id="连接远端节点">连接远端节点</h2>
 <p>前面的文章提到，在中国现在的网络环境下，选择远端节点开发是一个十分明智的选择。
 根据前面的文章，连接远端节点即可以。</p>
-
 <p>这个我们省得自己搭节点，直接用官方的UI: <a href="https://polkadot.js.org/apps/#/explorer">polkadot.js.org/apps</a>。</p>
-
 <p>具体步骤如下：</p>
-
 <ol>
 <li>进入 <a href="https://polkadot.js.org/apps/#/setting">https://polkadot.js.org/apps/#/setting</a> 页面</li>
 <li>打开custom endpoint选项，设置对应wss网址即可</li>
 </ol>
-
 <h2 id="添加模块">添加模块</h2>
-
 <h3 id="进入runtime目录">进入runtime目录</h3>
-
 <pre><code>root@IA:~/rust/runtime-demo/hello-node/runtime/src# 
-</code></pre>
-
-<h3 id="新建mod">新建mod</h3>
-
+</code></pre><h3 id="新建mod">新建mod</h3>
 <pre><code>root@IA:~/rust/runtime-demo/hello-node/runtime/src# substrate-module-new   hello
 
   Substrate Module Setup 
@@ -468,24 +416,14 @@ cp -a $f/polkadot-* ~/.cargo/bin
 SRML module created as ./hello.rs and added to git.
 Ensure that you include in your ./lib.rs the line:
    mod hello;
-</code></pre>
-
-<h3 id="修改lib-rs">修改lib.rs</h3>
-
+</code></pre><h3 id="修改librs">修改lib.rs</h3>
 <h4 id="引入hello-mod">引入hello mod</h4>
-
 <pre><code>mod hello;
-</code></pre>
-
-<h4 id="为hello实现runtime-trait">为hello实现Runtime trait</h4>
-
+</code></pre><h4 id="为hello实现runtime-trait">为hello实现Runtime trait</h4>
 <pre><code>impl hello::Trait for Runtime {
     type Event = Event;
 }
-</code></pre>
-
-<h4 id="添加mod到construct-runtime-宏">添加mod到construct_runtime!宏</h4>
-
+</code></pre><h4 id="添加mod到construct_runtime宏">添加mod到construct_runtime!宏</h4>
 <pre><code>construct_runtime!(
     pub enum Runtime with Log(InternalLog: DigestItem&lt;Hash, AuthorityId, AuthoritySignature&gt;) where
         Block = Block,
@@ -498,10 +436,7 @@ Ensure that you include in your ./lib.rs the line:
         Hello: hello::{Module, Call, Storage, Event&lt;T&gt;},
     }
 );
-</code></pre>
-
-<h3 id="重新编译与启动">重新编译与启动</h3>
-
+</code></pre><h3 id="重新编译与启动">重新编译与启动</h3>
 <pre><code># 编译runtime的wasm版本
 ./scripts/build.sh
 
@@ -514,12 +449,8 @@ cargo build --release
 # 启动本地测试网络
 ./target/release/hello-node --dev
 
-</code></pre>
-
-<h3 id="自定义业务">自定义业务</h3>
-
+</code></pre><h3 id="自定义业务">自定义业务</h3>
 <h4 id="自动生成mod代码">自动生成mod代码</h4>
-
 <pre><code>/// A runtime module template with necessary imports
 
 /// Feel free to remove or edit this file as needed.
@@ -648,27 +579,18 @@ mod tests {
         });
     }
 }
-</code></pre>
-
-<h4 id="修改代码如下">修改代码如下</h4>
-
+</code></pre><h4 id="修改代码如下">修改代码如下</h4>
 <pre><code>
-</code></pre>
-
-<h1 id="参考">参考</h1>
-
+</code></pre><h1 id="参考">参考</h1>
 <ol>
 <li><a href="https://docs.google.com/presentation/d/1dhaoLb5V2K_vDe4EJlUcKwePD1nMktr57fOdSo8bHns/edit#slide=id.g45ee0ba2ab_3_12">Getting Started on Substrate</a></li>
 <li><a href="https://www.shawntabrizi.com/substrate-collectables-workshop/#/README?id=what-is-this">Substrate Collectables</a></li>
 <li><a href="https://substrate.dev/docs/en/getting-started/using-the-substrate-scripts#substrate-module-new">Using the Substrate Scripts</a></li>
 <li><a href="https://polkadot.js.org/api/types/#codec-types">Codec types</a></li>
 </ol>
-
 <h1 id="欢迎关注">欢迎关注</h1>
-
 <p>欢迎关注微信公众帐号：沉风网事(savewind)</p>
-
-<p><img src="/images/cfws.jpg" alt="沉风网事" /></p>
+<p><img src="/images/cfws.jpg" alt="沉风网事"></p>
 
         </div>
         <footer class="article-footer">

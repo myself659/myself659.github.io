@@ -2,7 +2,7 @@
 <html lang="zh-cn">
 <head>
     <title>slice复用的陷阱 &middot; 沉风网事</title>
-    <meta name="generator" content="Hugo 0.54.0" />
+    <meta name="generator" content="Hugo 0.68.3" />
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta name="author" content="沉风">
@@ -23,20 +23,17 @@
     <meta property="og:title" content="slice复用的陷阱" />
 <meta property="og:description" content="前言 先下结论：slice复用得当心，引用不当深埋雷。如若复用请分叉，分叉之后再使用。
 问题 先看一下代码吧
-package main import ( &quot;fmt&quot; ) func a() { x := []int{} x = append(x, 0) x = append(x, 1) // commonTags := labelsToTags(app.Labels) y := append(x, 2) // Tags: append(commonTags, labelsToTags(d.Labels)...) z := append(x, 3) // Tags: append(commonTags, labelsToTags(d.Labels)...) fmt.Println(y, z) } func b() { x := []int{} x = append(x, 0) x = append(x, 1) x = append(x, 2) // commonTags := labelsToTags(app.Labels) y := append(x, 3) // Tags: append(commonTags, labelsToTags(d." />
+package mainimport (&quot;fmt&quot;)func a() {x := []int{}x = append(x, 0)x = append(x, 1) // commonTags := labelsToTags(app.Labels)y := append(x, 2) // Tags: append(commonTags, labelsToTags(d.Labels)...)z := append(x, 3) // Tags: append(commonTags, labelsToTags(d.Labels)...)fmt.Println(y, z)}func b() {x := []int{}x = append(x, 0)x = append(x, 1)x = append(x, 2) // commonTags := labelsToTags(app.Labels)y := append(x, 3) // Tags: append(commonTags, labelsToTags(d." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://myself659.github.io/2017/07/28/slice%E5%A4%8D%E7%94%A8%E7%9A%84%E9%99%B7%E9%98%B1/" />
-<meta property="article:published_time" content="2017-07-28T11:58:06&#43;02:00"/>
-<meta property="article:modified_time" content="2017-07-28T11:58:06&#43;02:00"/>
+<meta property="article:published_time" content="2017-07-28T11:58:06+02:00" />
+<meta property="article:modified_time" content="2017-07-28T11:58:06+02:00" />
 
     
-    
-<meta itemprop="name" content="slice复用的陷阱">
+    <meta itemprop="name" content="slice复用的陷阱">
 <meta itemprop="description" content="前言 先下结论：slice复用得当心，引用不当深埋雷。如若复用请分叉，分叉之后再使用。
 问题 先看一下代码吧
-package main import ( &quot;fmt&quot; ) func a() { x := []int{} x = append(x, 0) x = append(x, 1) // commonTags := labelsToTags(app.Labels) y := append(x, 2) // Tags: append(commonTags, labelsToTags(d.Labels)...) z := append(x, 3) // Tags: append(commonTags, labelsToTags(d.Labels)...) fmt.Println(y, z) } func b() { x := []int{} x = append(x, 0) x = append(x, 1) x = append(x, 2) // commonTags := labelsToTags(app.Labels) y := append(x, 3) // Tags: append(commonTags, labelsToTags(d.">
-
-
+package mainimport (&quot;fmt&quot;)func a() {x := []int{}x = append(x, 0)x = append(x, 1) // commonTags := labelsToTags(app.Labels)y := append(x, 2) // Tags: append(commonTags, labelsToTags(d.Labels)...)z := append(x, 3) // Tags: append(commonTags, labelsToTags(d.Labels)...)fmt.Println(y, z)}func b() {x := []int{}x = append(x, 0)x = append(x, 1)x = append(x, 2) // commonTags := labelsToTags(app.Labels)y := append(x, 3) // Tags: append(commonTags, labelsToTags(d.">
 <meta itemprop="datePublished" content="2017-07-28T11:58:06&#43;02:00" />
 <meta itemprop="dateModified" content="2017-07-28T11:58:06&#43;02:00" />
 <meta itemprop="wordCount" content="286">
@@ -44,12 +41,11 @@ package main import ( &quot;fmt&quot; ) func a() { x := []int{} x = append(x, 0)
 
 
 <meta itemprop="keywords" content="golang," />
-
     <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="slice复用的陷阱"/>
 <meta name="twitter:description" content="前言 先下结论：slice复用得当心，引用不当深埋雷。如若复用请分叉，分叉之后再使用。
 问题 先看一下代码吧
-package main import ( &quot;fmt&quot; ) func a() { x := []int{} x = append(x, 0) x = append(x, 1) // commonTags := labelsToTags(app.Labels) y := append(x, 2) // Tags: append(commonTags, labelsToTags(d.Labels)...) z := append(x, 3) // Tags: append(commonTags, labelsToTags(d.Labels)...) fmt.Println(y, z) } func b() { x := []int{} x = append(x, 0) x = append(x, 1) x = append(x, 2) // commonTags := labelsToTags(app.Labels) y := append(x, 3) // Tags: append(commonTags, labelsToTags(d."/>
+package mainimport (&quot;fmt&quot;)func a() {x := []int{}x = append(x, 0)x = append(x, 1) // commonTags := labelsToTags(app.Labels)y := append(x, 2) // Tags: append(commonTags, labelsToTags(d.Labels)...)z := append(x, 3) // Tags: append(commonTags, labelsToTags(d.Labels)...)fmt.Println(y, z)}func b() {x := []int{}x = append(x, 0)x = append(x, 1)x = append(x, 2) // commonTags := labelsToTags(app.Labels)y := append(x, 3) // Tags: append(commonTags, labelsToTags(d."/>
 
     
 
@@ -342,128 +338,98 @@ package main import ( &quot;fmt&quot; ) func a() { x := []int{} x = append(x, 0)
 </header>
 
         <div class="article-entry" itemprop="articleBody">
-            
-
-<h3 id="前言">前言</h3>
-
+            <h3 id="前言">前言</h3>
 <p>先下结论：slice复用得当心，引用不当深埋雷。如若复用请分叉，分叉之后再使用。</p>
-
 <h3 id="问题">问题</h3>
-
 <p>先看一下代码吧</p>
-
 <pre><code>package main
 
 import (
-    &quot;fmt&quot;
+	&quot;fmt&quot;
 )
 
 func a() {
-    x := []int{}
-    x = append(x, 0)
-    x = append(x, 1)  // commonTags := labelsToTags(app.Labels)
-    y := append(x, 2) // Tags: append(commonTags, labelsToTags(d.Labels)...)
-    z := append(x, 3) // Tags: append(commonTags, labelsToTags(d.Labels)...)
-    fmt.Println(y, z)
+	x := []int{}
+	x = append(x, 0)
+	x = append(x, 1)  // commonTags := labelsToTags(app.Labels)
+	y := append(x, 2) // Tags: append(commonTags, labelsToTags(d.Labels)...)
+	z := append(x, 3) // Tags: append(commonTags, labelsToTags(d.Labels)...)
+	fmt.Println(y, z)
 }
 
 func b() {
-    x := []int{}
-    x = append(x, 0)
-    x = append(x, 1)
-    x = append(x, 2)  // commonTags := labelsToTags(app.Labels)
-    y := append(x, 3) // Tags: append(commonTags, labelsToTags(d.Labels)...)
-    z := append(x, 4) // Tags: append(commonTags, labelsToTags(d.Labels)...)
-    fmt.Println(y, z)
+	x := []int{}
+	x = append(x, 0)
+	x = append(x, 1)
+	x = append(x, 2)  // commonTags := labelsToTags(app.Labels)
+	y := append(x, 3) // Tags: append(commonTags, labelsToTags(d.Labels)...)
+	z := append(x, 4) // Tags: append(commonTags, labelsToTags(d.Labels)...)
+	fmt.Println(y, z)
 }
 
 func main() {
-    a()
-    b()
+	a()
+	b()
 }
-</code></pre>
-
-<p>上面的如此简单的代码，分析代码希望得到预期结果如下：</p>
-
+</code></pre><p>上面的如此简单的代码，分析代码希望得到预期结果如下：</p>
 <pre><code>[0 1 2] [0 1 3]
 [0 1 2 3] [0 1 2 4]
-</code></pre>
-
-<p>但是执行后，得到结果如下：</p>
-
+</code></pre><p>但是执行后，得到结果如下：</p>
 <pre><code>Michaels-iMac:golab eric$ go run slice.go  
 [0 1 2] [0 1 3]
 [0 1 2 4] [0 1 2 4]
-</code></pre>
-
-<h3 id="原因分析">原因分析</h3>
-
+</code></pre><h3 id="原因分析">原因分析</h3>
 <p>我们先不急着分析具体原因，我们对比一下下面这段代码，看看执行结果是怎么样</p>
-
 <pre><code>package main
 
 import (
-    &quot;fmt&quot;
+	&quot;fmt&quot;
 )
 
 func a() {
-    x := []int{}
-    x = append(x, 0)
-    x = append(x, 1)  // commonTags := labelsToTags(app.Labels)
-    y := append(x, 2) // Tags: append(commonTags, labelsToTags(d.Labels)...)
-    z := append(x, 3) // Tags: append(commonTags, labelsToTags(d.Labels)...)
-    fmt.Println(y, z)
+	x := []int{}
+	x = append(x, 0)
+	x = append(x, 1)  // commonTags := labelsToTags(app.Labels)
+	y := append(x, 2) // Tags: append(commonTags, labelsToTags(d.Labels)...)
+	z := append(x, 3) // Tags: append(commonTags, labelsToTags(d.Labels)...)
+	fmt.Println(y, z)
 }
 
 func deepcopy(src []int) []int {
-    dst := make([]int, len(src))
-    copy(dst, src)
-    return dst
+	dst := make([]int, len(src))
+	copy(dst, src)
+	return dst
 }
 
 func b() {
-    x := []int{}
-    x = append(x, 0)
-    x = append(x, 1)
-    x = append(x, 2) // commonTags := labelsToTags(app.Labels)
-    y := deepcopy(x)
-    y = append(y, 3)  // Tags: append(commonTags, labelsToTags(d.Labels)...)
-    z := append(x, 4) // Tags: append(commonTags, labelsToTags(d.Labels)...)
-    fmt.Println(y, z)
+	x := []int{}
+	x = append(x, 0)
+	x = append(x, 1)
+	x = append(x, 2) // commonTags := labelsToTags(app.Labels)
+	y := deepcopy(x)
+	y = append(y, 3)  // Tags: append(commonTags, labelsToTags(d.Labels)...)
+	z := append(x, 4) // Tags: append(commonTags, labelsToTags(d.Labels)...)
+	fmt.Println(y, z)
 }
 
 func main() {
-    a()
-    b()
+	a()
+	b()
 }
 
-</code></pre>
-
-<p>具体执行结果如下：</p>
-
+</code></pre><p>具体执行结果如下：</p>
 <pre><code>Michaels-iMac:golab eric$ go run slice-2.go    
 [0 1 2] [0 1 3]
 [0 1 2 3] [0 1 2 4]
-</code></pre>
-
-<p>对比错误的代码，会发现问题原因出现下面的代码：</p>
-
-<pre><code>    y := append(x, 3) // Tags: append(commonTags, labelsToTags(d.Labels)...)
-    z := append(x, 4) // Tags: append(commonTags, labelsToTags(d.Labels)...)
-</code></pre>
-
-<p>从内存角度来思考，y与z对应是同一段内存，z的操作override的y的操作。（备注：y与z为什么会更对应同一段内存，请了解一下slice的实现及slice的巧妙的使用，也请阅读下面参考文章<a href="http://allegro.tech/2017/07/golang-slices-gotcha.html">Golang slices gotcha</a>）</p>
-
+</code></pre><p>对比错误的代码，会发现问题原因出现下面的代码：</p>
+<pre><code>	y := append(x, 3) // Tags: append(commonTags, labelsToTags(d.Labels)...)
+	z := append(x, 4) // Tags: append(commonTags, labelsToTags(d.Labels)...)
+</code></pre><p>从内存角度来思考，y与z对应是同一段内存，z的操作override的y的操作。（备注：y与z为什么会更对应同一段内存，请了解一下slice的实现及slice的巧妙的使用，也请阅读下面参考文章<a href="http://allegro.tech/2017/07/golang-slices-gotcha.html">Golang slices gotcha</a>）</p>
 <p>解决方法就是如果slice要进行复用的时候，进行深度copy再进行使用。</p>
-
 <h3 id="总结">总结</h3>
-
 <p>slice在golang编程属于超高频使用，如果出现上面的错误，前期没有发现，如果上线，并且系统复杂，出现了问题，定位成本是很大。</p>
-
 <p>虽然上面没有slice的内存分析，但是对于程序员来说学习一些内存知识还很帮助，理解上面的问题就是小case了。</p>
-
 <h3 id="参考">参考</h3>
-
 <ol>
 <li><a href="http://allegro.tech/2017/07/golang-slices-gotcha.html">Golang slices gotcha</a></li>
 </ol>
