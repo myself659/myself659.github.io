@@ -13,10 +13,10 @@
     
     <item>
       <title>说说微信付费阅读</title>
-      <link>https://myself659.github.io/2020/01/16/%E8%AF%B4%E8%AF%B4%E5%BE%AE%E4%BF%A1%E4%BB%98%E8%B4%B9%E9%98%85%E8%AF%BB/</link>
+      <link>https://myself659.github.io/2020/01/16/wechat-payment-read/</link>
       <pubDate>Thu, 16 Jan 2020 11:58:06 +0200</pubDate>
       
-      <guid>https://myself659.github.io/2020/01/16/%E8%AF%B4%E8%AF%B4%E5%BE%AE%E4%BF%A1%E4%BB%98%E8%B4%B9%E9%98%85%E8%AF%BB/</guid>
+      <guid>https://myself659.github.io/2020/01/16/wechat-payment-read/</guid>
       <description>背景 2020年1月15号微信灰度发布公众帐号付费阅读功能。微信10亿用户的体量，最长的用户时长，所以一个付费阅读功能差不多引起全网的讨论。
 时机 为什么微信会在这个时候推出公众帐号付费阅读功能？
 在得到，喜马拉雅，极客时间，知识星球，小红圈，微博等一系列知识付费产品这几个的培训下，国内知识付费快速成长，付费内容增多，用户付费意识增强。同时微信订阅号打开率与阅读量遇到增长问题。
@@ -35,10 +35,10 @@
     
     <item>
       <title>关于zoom的一些思考与看法</title>
-      <link>https://myself659.github.io/2019/04/28/%E5%85%B3%E4%BA%8Ezoom%E7%9A%84%E4%B8%80%E4%BA%9B%E6%80%9D%E8%80%83%E4%B8%8E%E7%9C%8B%E6%B3%95/</link>
+      <link>https://myself659.github.io/2019/04/28/about-zoom/</link>
       <pubDate>Sun, 28 Apr 2019 11:58:06 +0200</pubDate>
       
-      <guid>https://myself659.github.io/2019/04/28/%E5%85%B3%E4%BA%8Ezoom%E7%9A%84%E4%B8%80%E4%BA%9B%E6%80%9D%E8%80%83%E4%B8%8E%E7%9C%8B%E6%B3%95/</guid>
+      <guid>https://myself659.github.io/2019/04/28/about-zoom/</guid>
       <description>前言 最近zoom上市，作为一名华人创业公司自然大受关注。下面从以下几个方面谈谈自己的一些思考与看法：
  技术 领导 产品 商业  技术 对于视频面试会议，技术核心分为以下三大块：
  基础设施架构 网络传输技术 音视频技术  领导  招聘方面重点在自我激励和学习，招聘有发展潜力的人 2019年，Zoom还在全美最佳雇主公司排名中位居第二位，也是一个非常让员工喜欢的创业公司。这个投票应该还是可以相信的，没有内幕 信任来自开放。越开放，越信任。作为公司的领导要开放与底层员工的连接通道 一个公司或者一个组织甚至一个国家，解决问题是第一要义是正视问题，而不是逃避问题，应该鼓励发现问题  产品 先说对于zoom的评价，确实好用，个人从2016年就开始使用。
@@ -71,10 +71,10 @@
     
     <item>
       <title>关于微软收购github几点看法</title>
-      <link>https://myself659.github.io/2018/06/10/%E5%85%B3%E4%BA%8E%E5%BE%AE%E8%BD%AF%E6%94%B6%E8%B4%ADgithub%E5%87%A0%E7%82%B9%E7%9C%8B%E6%B3%95/</link>
+      <link>https://myself659.github.io/2018/06/10/ms-github/</link>
       <pubDate>Sun, 10 Jun 2018 11:58:06 +0200</pubDate>
       
-      <guid>https://myself659.github.io/2018/06/10/%E5%85%B3%E4%BA%8E%E5%BE%AE%E8%BD%AF%E6%94%B6%E8%B4%ADgithub%E5%87%A0%E7%82%B9%E7%9C%8B%E6%B3%95/</guid>
+      <guid>https://myself659.github.io/2018/06/10/ms-github/</guid>
       <description>开源已经是一种潮流与趋势。从linux开始，开源软件支撑现在的互联网与云计算。有太多的项目如redis，docker，k8s，etcd等等；区块链领域更是如此。 得开发者得天下。github上有最多的开发者和开发项目。 代码管理平台的重要性凸显。 估计google会在未来收购gitlab。 github找到微软爸爸，服务体验会有改善（如国内下载代码慢）。 github大量的开源代码会成为AI编程的学习材料，未来CRUD可能由AI来完成了。 未来人人都是开发者。随着教育的发展，编程肯定是每个人的必修课。这样github会成为代码管理的操作系统。 github与vscode会有深度集成，提高开发效率与体验。 github与azure集成，提供一站式开发服务。  参考  收购 GitHub，微软的又一次大转变  欢迎关注 欢迎关注微信公众帐号：沉风网事(savewind)</description>
     </item>
     

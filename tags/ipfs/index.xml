@@ -23,10 +23,10 @@
     
     <item>
       <title>IPFS与下一代网络安全</title>
-      <link>https://myself659.github.io/2017/09/21/ipfs%E4%B8%8E%E4%B8%8B%E4%B8%80%E4%BB%A3%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/</link>
+      <link>https://myself659.github.io/2017/09/21/2017-09-21-ipfs-sec/</link>
       <pubDate>Thu, 21 Sep 2017 11:58:06 +0200</pubDate>
       
-      <guid>https://myself659.github.io/2017/09/21/ipfs%E4%B8%8E%E4%B8%8B%E4%B8%80%E4%BB%A3%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/</guid>
+      <guid>https://myself659.github.io/2017/09/21/2017-09-21-ipfs-sec/</guid>
       <description>IPFS 先简单说一下IPFS。 IPFS是点对点协议InterPlanetary File System的简称，它是一个面向全球的、点对点的分布式版本文件系统，试图将所有具有相同文件系统的计算设备连接在一起。它用基于内容的地址替代基于域名的地址，也就是用户寻找的不是某个地址而是储存在某个地方的内容，不需要验证发送者的身份，而只需要验证内容的哈希，通过这样可以让网页的速度更快、更安全、更健壮、更持久。IPFS目标是未来将替代HTTP。
 IPFS主要技术，用下面这张图说明：
 IPFS与安全 整个IPFS涉及很多方面的内容，这部分具体看一下IPFS对网络安全的影响。首先从DDOS防攻击展开，IPFS应对DDOS攻击主要如下： 1. 道哥在弹性安全网络中表达过DDOS存在的原因就是现在互联网严重依赖存在三大问题的DNS系统,而在IPFS中通过内容寻址方式绕开了DNS 2. IPFS底层网络是基于DHT，拥有大量节点的P2P网络，天生适合内容的分布式读写（PS：P2P网络安全需要另行考虑） 3. 内容签名，通过加密加大攻击的难度与成本
@@ -45,10 +45,10 @@ IPFS与安全 整个IPFS涉及很多方面的内容，这部分具体看一下IP
     
     <item>
       <title>关于弹性安全网络一点思考</title>
-      <link>https://myself659.github.io/2017/09/20/%E5%85%B3%E4%BA%8E%E5%BC%B9%E6%80%A7%E5%AE%89%E5%85%A8%E7%BD%91%E7%BB%9C%E4%B8%80%E7%82%B9%E6%80%9D%E8%80%83/</link>
+      <link>https://myself659.github.io/2017/09/20/2017-09-20-next-network/</link>
       <pubDate>Wed, 20 Sep 2017 11:58:06 +0200</pubDate>
       
-      <guid>https://myself659.github.io/2017/09/20/%E5%85%B3%E4%BA%8E%E5%BC%B9%E6%80%A7%E5%AE%89%E5%85%A8%E7%BD%91%E7%BB%9C%E4%B8%80%E7%82%B9%E6%80%9D%E8%80%83/</guid>
+      <guid>https://myself659.github.io/2017/09/20/2017-09-20-next-network/</guid>
       <description> 作为网络研发出身的我，从事网络研发时间也最长，一直也关注道哥的微信公众号。
 下面就对道哥的提出弹性安全网络一些总结与思考。
 弹性安全网络 具体从以下几个方面解读弹性安全网络。

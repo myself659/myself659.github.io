@@ -13,10 +13,10 @@
     
     <item>
       <title>DoH FAQ</title>
-      <link>https://myself659.github.io/2019/11/08/doh-faq/</link>
+      <link>https://myself659.github.io/2019/11/08/about-doh/</link>
       <pubDate>Fri, 08 Nov 2019 11:58:06 +0200</pubDate>
       
-      <guid>https://myself659.github.io/2019/11/08/doh-faq/</guid>
+      <guid>https://myself659.github.io/2019/11/08/about-doh/</guid>
       <description>什么是DoH DoH是DNS over HTTPS。
 传统DNS相当于DNS over UDP。
 DoH带来哪些好处？ 采用DoH对用户来说有如下好处：
@@ -29,10 +29,10 @@ firefox 70版本已经支持DoH。
     
     <item>
       <title>人生中最昂贵的教训：SIM卡转移攻击的细节(译文)</title>
-      <link>https://myself659.github.io/2019/05/30/%E4%BA%BA%E7%94%9F%E4%B8%AD%E6%9C%80%E6%98%82%E8%B4%B5%E7%9A%84%E6%95%99%E8%AE%ADsim%E5%8D%A1%E8%BD%AC%E7%A7%BB%E6%94%BB%E5%87%BB%E7%9A%84%E7%BB%86%E8%8A%82%E8%AF%91%E6%96%87/</link>
+      <link>https://myself659.github.io/2019/05/30/sim-port-attack/</link>
       <pubDate>Thu, 30 May 2019 11:58:06 +0200</pubDate>
       
-      <guid>https://myself659.github.io/2019/05/30/%E4%BA%BA%E7%94%9F%E4%B8%AD%E6%9C%80%E6%98%82%E8%B4%B5%E7%9A%84%E6%95%99%E8%AE%ADsim%E5%8D%A1%E8%BD%AC%E7%A7%BB%E6%94%BB%E5%87%BB%E7%9A%84%E7%BB%86%E8%8A%82%E8%AF%91%E6%96%87/</guid>
+      <guid>https://myself659.github.io/2019/05/30/sim-port-attack/</guid>
       <description> 上周三我损失了10万美元。它在24小时的时间内在“SIM转移攻击”中消失，耗尽了我的Coinbase帐户。事件已经过去了四天，我被摧毁了。我寝食难安;我充满了焦虑，懊悔和尴尬。
 这是我生命中最昂贵的一课，我想与尽可能多的人分享我的经验与教训。我的目标是提高对这类攻击的认识，并促使大家提高在线身份的安全性。
 这仍然是非常原始的（我还没有告诉我的家人）；请大家保留对本文所述的天真安全措施的判断。
@@ -62,10 +62,10 @@ SIM转移攻击 但是，“SIM转移攻击”是由未经授权的来源（攻�
     
     <item>
       <title>数字货币交易所安全体系-资产篇</title>
-      <link>https://myself659.github.io/2018/10/19/%E6%95%B0%E5%AD%97%E8%B4%A7%E5%B8%81%E4%BA%A4%E6%98%93%E6%89%80%E5%AE%89%E5%85%A8%E4%BD%93%E7%B3%BB-%E8%B5%84%E4%BA%A7%E7%AF%87/</link>
+      <link>https://myself659.github.io/2018/10/19/exchage-safe-asset/</link>
       <pubDate>Fri, 19 Oct 2018 11:58:06 +0200</pubDate>
       
-      <guid>https://myself659.github.io/2018/10/19/%E6%95%B0%E5%AD%97%E8%B4%A7%E5%B8%81%E4%BA%A4%E6%98%93%E6%89%80%E5%AE%89%E5%85%A8%E4%BD%93%E7%B3%BB-%E8%B5%84%E4%BA%A7%E7%AF%87/</guid>
+      <guid>https://myself659.github.io/2018/10/19/exchage-safe-asset/</guid>
       <description>前面，简单介绍了数字货币交易所的安全体系，这一篇主要说说一下资产安全的一些要点。
 如果将一条公链比作一个银行的话，当然这个银行是去中心化银行，那个各个交易所的节点就相当于银行的网点。这个节点有以下功能：
  帐本数据同步 用户资产托管 充币与提币  资产安全主要分为以下几个方面展开说明，具体如下：
@@ -83,10 +83,10 @@ SIM转移攻击 但是，“SIM转移攻击”是由未经授权的来源（攻�
     
     <item>
       <title>数字货币交易所安全防护体系介绍</title>
-      <link>https://myself659.github.io/2018/10/15/%E6%95%B0%E5%AD%97%E8%B4%A7%E5%B8%81%E4%BA%A4%E6%98%93%E6%89%80%E5%AE%89%E5%85%A8%E9%98%B2%E6%8A%A4%E4%BD%93%E7%B3%BB%E4%BB%8B%E7%BB%8D/</link>
+      <link>https://myself659.github.io/2018/10/15/exchage-safe-arch/</link>
       <pubDate>Mon, 15 Oct 2018 11:58:06 +0200</pubDate>
       
-      <guid>https://myself659.github.io/2018/10/15/%E6%95%B0%E5%AD%97%E8%B4%A7%E5%B8%81%E4%BA%A4%E6%98%93%E6%89%80%E5%AE%89%E5%85%A8%E9%98%B2%E6%8A%A4%E4%BD%93%E7%B3%BB%E4%BB%8B%E7%BB%8D/</guid>
+      <guid>https://myself659.github.io/2018/10/15/exchage-safe-arch/</guid>
       <description>说明 这里的交易所是指中心化交易所。下面按标题三个关键词展开说明。
 交易所 交易所作为数字资产交易的平台。一直不断地就有安全问题出现，最著名的是Mt. Gox事件，影响恶劣。后续事故也不少，不多说了。交易所安全事故这只黑天鹅未来一定会再出现。
 安全防护 安全的重要性毋庸置疑。
@@ -99,10 +99,10 @@ SIM转移攻击 但是，“SIM转移攻击”是由未经授权的来源（攻�
     
     <item>
       <title>阿里云ECS基本安全检查小结</title>
-      <link>https://myself659.github.io/2017/04/08/%E9%98%BF%E9%87%8C%E4%BA%91ecs%E5%9F%BA%E6%9C%AC%E5%AE%89%E5%85%A8%E6%A3%80%E6%9F%A5%E5%B0%8F%E7%BB%93/</link>
+      <link>https://myself659.github.io/2017/04/08/2017-04-08-ecs-basic-sec-check/</link>
       <pubDate>Sat, 08 Apr 2017 11:58:06 +0200</pubDate>
       
-      <guid>https://myself659.github.io/2017/04/08/%E9%98%BF%E9%87%8C%E4%BA%91ecs%E5%9F%BA%E6%9C%AC%E5%AE%89%E5%85%A8%E6%A3%80%E6%9F%A5%E5%B0%8F%E7%BB%93/</guid>
+      <guid>https://myself659.github.io/2017/04/08/2017-04-08-ecs-basic-sec-check/</guid>
       <description>背景 查看阿里云ECS服务器日志发现如下：
 type=USER_AUTH msg=audit(1491669519.156:15631): pid=22938 uid=0 auid=4294967295 ses=4294967295 msg=&#39;op=PAM:authentication acct=&amp;quot;deploy&amp;quot; exe=&amp;quot;/usr/sbin/sshd&amp;quot; hostname=123.57.245.163 addr=123.57.245.163 terminal=ssh res=failed&#39; type=USER_LOGIN msg=audit(1491669519.156:15632): pid=22938 uid=0 auid=4294967295 ses=4294967295 msg=&#39;op=login acct=28696E76616C6964207573657229 exe=&amp;quot;/usr/sbin/sshd&amp;quot; hostname=? addr=123.57.245.163 terminal=sshd res=failed&#39; type=USER_LOGIN msg=audit(1491669587.368:15634): pid=22940 uid=0 auid=4294967295 ses=4294967295 msg=&#39;op=login acct=28756E6B6E6F776E207573657229 exe=&amp;quot;/usr/sbin/sshd&amp;quot; hostname=? addr=123.57.245.163 terminal=sshd res=failed&#39; type=USER_LOGIN msg=audit(1491669587.368:15635): pid=22940 uid=0 auid=4294967295 ses=4294967295 msg=&#39;op=login acct=28696E76616C6964207573657229 exe=&amp;quot;/usr/sbin/sshd&amp;quot; hostname=? addr=123.57.245.163 terminal=sshd res=failed&#39; type=USER_AUTH msg=audit(1491669589.420:15636): pid=22940 uid=0 auid=4294967295 ses=4294967295 msg=&#39;op=PAM:authentication acct=&amp;quot;deploy&amp;quot; exe=&amp;quot;/usr/sbin/sshd&amp;quot; hostname=123.57.245.163 addr=123.57.245.163 terminal=ssh res=failed&#39; type=USER_LOGIN msg=audit(1491669589.420:15637): pid=22940 uid=0 auid=4294967295 ses=4294967295 msg=&#39;op=login acct=28696E76616C6964207573657229 exe=&amp;quot;/usr/sbin/sshd&amp;quot; hostname=?</description>
     </item>

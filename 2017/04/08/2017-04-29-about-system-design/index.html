@@ -1,0 +1,1449 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <title>对于系统设计的一些想法 &middot; 沉风网事</title>
+    <meta name="generator" content="Hugo 0.54.0" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="author" content="沉风">
+    
+      <meta name="description" content="沉风网事，以人为本，尊重事实与原理，立足现实，以科技与金融为驱动，中西结合，虚实相应，主要关注互联网，系统架构，区块链，经济，数据等领域">
+    
+    
+    <link rel="canonical" href="https://myself659.github.io/2017/04/08/2017-04-29-about-system-design/"/>
+    <link rel="icon" href="https://myself659.github.io/favicon.ico">
+    <link rel="apple-touch-icon" href="https://myself659.github.io/apple-touch-icon.png"/>
+    <link rel="stylesheet" href="https://myself659.github.io/css/style.css">
+    <link rel="stylesheet" href="https://myself659.github.io/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://myself659.github.io/css/monokai.css">
+    <link rel="stylesheet" href="https://myself659.github.io/fancybox/jquery.fancybox.css">
+    
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400italic,400,600' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Source+Code+Pro' rel='stylesheet' type='text/css'>
+    <meta property="og:title" content="对于系统设计的一些想法" />
+<meta property="og:description" content="前言 学习了google，facebook等国际一流大厂的开源方案，也研究了国内BAT的一些设计案例，在平时工作自然也少不了一些系统设计的工作，想写一些自己的想法，同时也帮助自己梳理一下思路，实现自己的系统设计的套路。
+其实就是这一句话：立足需求与业务，利用工程与技术，得到最合适的tradeofff，追求更简单的设计与方案，以此不断推进系统的演化。
+下面对这句话展开说明（当然，下面是一堆费话，只是为了解决自己的不吐不快而已罢了）。
+立足需求与业务 套用一句话：一切脱离需求的设计都是耍流氓。这里不进行具体案例分析，主要从以下角度来细化需求，提供思考的方向。
+用户角度  performance（性能）
+ availability（可用性） usability（易用性） security（安全性）  研发角度  maintainablity （可维护性性） protability（可移植性） reusability（可重用性） scalable(可扩展性) testability（可测试性）  商业与市场角度  time to market（及时发布推向市场） cost and benifits（成本和收益） projected life time （产品生命周期） targeted market（目标市场） integration with legacy system (系统集成) roll back schedule （回退时间表）  KISS(Keep It Simple, Stupid) 有太多的例子，说明追求简单与遵循简单的设计原则的重要性，最典型就是unix的设计哲学成就伟大的linux的操作系统。
+什么是简单的系统设计呢？ 这是需要不断思考的问题，举个例子说明吧；在GFS实现中，针对client向chunk server写文件失败的问题，GFS的作法是直接返回失败，由client决定是否重写，这种作法就是聪明的简单之举。
+简单并不是随手可得的。关于这个可以参考rob pike，golang发明人之一的这篇演进： Simplicity is Complicated
+下面借此说明以下几个问题？
+ 什么是简单？  简单很难定义，还是举例说明吧 追求简单并不是单纯追求技术实现上的简单。简单追求是使用的简单，因为使用是高频，实现可能只有几次，例如上面演进谈到的GC,实现并不简单，想出这个GC算法就相当困难，实现那就更难了，但是有了GC，我们用golang编程的时候就不需要像C/C&#43;&#43;那样关心内存的申请释放，再也不用担心踩内存的问题了，专心于设计与业务，给程序员带来了简单。（以我自己为例，学会了golang，我写代码都写得多，之前只会C/C&#43;&#43;时候，业余时间主要是阅读代码，写代码都是工作驱动）
+另外还有一点，简单是先实现，再改进，例如golang的GC算法一开始并不好，GC导致应用 延迟大，到了1.5才有改进
+ 如何实现简单？  演进中const同c语言定义一个常量不一样，不需要关心类型，在生活中一般人说数字2017除了程序员谁关心它是整型数还是浮点数啊" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://myself659.github.io/2017/04/08/2017-04-29-about-system-design/" />
+<meta property="article:published_time" content="2017-04-08T11:58:06&#43;02:00"/>
+<meta property="article:modified_time" content="2017-04-08T11:58:06&#43;02:00"/>
+
+    
+    
+<meta itemprop="name" content="对于系统设计的一些想法">
+<meta itemprop="description" content="前言 学习了google，facebook等国际一流大厂的开源方案，也研究了国内BAT的一些设计案例，在平时工作自然也少不了一些系统设计的工作，想写一些自己的想法，同时也帮助自己梳理一下思路，实现自己的系统设计的套路。
+其实就是这一句话：立足需求与业务，利用工程与技术，得到最合适的tradeofff，追求更简单的设计与方案，以此不断推进系统的演化。
+下面对这句话展开说明（当然，下面是一堆费话，只是为了解决自己的不吐不快而已罢了）。
+立足需求与业务 套用一句话：一切脱离需求的设计都是耍流氓。这里不进行具体案例分析，主要从以下角度来细化需求，提供思考的方向。
+用户角度  performance（性能）
+ availability（可用性） usability（易用性） security（安全性）  研发角度  maintainablity （可维护性性） protability（可移植性） reusability（可重用性） scalable(可扩展性) testability（可测试性）  商业与市场角度  time to market（及时发布推向市场） cost and benifits（成本和收益） projected life time （产品生命周期） targeted market（目标市场） integration with legacy system (系统集成) roll back schedule （回退时间表）  KISS(Keep It Simple, Stupid) 有太多的例子，说明追求简单与遵循简单的设计原则的重要性，最典型就是unix的设计哲学成就伟大的linux的操作系统。
+什么是简单的系统设计呢？ 这是需要不断思考的问题，举个例子说明吧；在GFS实现中，针对client向chunk server写文件失败的问题，GFS的作法是直接返回失败，由client决定是否重写，这种作法就是聪明的简单之举。
+简单并不是随手可得的。关于这个可以参考rob pike，golang发明人之一的这篇演进： Simplicity is Complicated
+下面借此说明以下几个问题？
+ 什么是简单？  简单很难定义，还是举例说明吧 追求简单并不是单纯追求技术实现上的简单。简单追求是使用的简单，因为使用是高频，实现可能只有几次，例如上面演进谈到的GC,实现并不简单，想出这个GC算法就相当困难，实现那就更难了，但是有了GC，我们用golang编程的时候就不需要像C/C&#43;&#43;那样关心内存的申请释放，再也不用担心踩内存的问题了，专心于设计与业务，给程序员带来了简单。（以我自己为例，学会了golang，我写代码都写得多，之前只会C/C&#43;&#43;时候，业余时间主要是阅读代码，写代码都是工作驱动）
+另外还有一点，简单是先实现，再改进，例如golang的GC算法一开始并不好，GC导致应用 延迟大，到了1.5才有改进
+ 如何实现简单？  演进中const同c语言定义一个常量不一样，不需要关心类型，在生活中一般人说数字2017除了程序员谁关心它是整型数还是浮点数啊">
+
+
+<meta itemprop="datePublished" content="2017-04-08T11:58:06&#43;02:00" />
+<meta itemprop="dateModified" content="2017-04-08T11:58:06&#43;02:00" />
+<meta itemprop="wordCount" content="130">
+
+
+
+<meta itemprop="keywords" content="Arch," />
+
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="对于系统设计的一些想法"/>
+<meta name="twitter:description" content="前言 学习了google，facebook等国际一流大厂的开源方案，也研究了国内BAT的一些设计案例，在平时工作自然也少不了一些系统设计的工作，想写一些自己的想法，同时也帮助自己梳理一下思路，实现自己的系统设计的套路。
+其实就是这一句话：立足需求与业务，利用工程与技术，得到最合适的tradeofff，追求更简单的设计与方案，以此不断推进系统的演化。
+下面对这句话展开说明（当然，下面是一堆费话，只是为了解决自己的不吐不快而已罢了）。
+立足需求与业务 套用一句话：一切脱离需求的设计都是耍流氓。这里不进行具体案例分析，主要从以下角度来细化需求，提供思考的方向。
+用户角度  performance（性能）
+ availability（可用性） usability（易用性） security（安全性）  研发角度  maintainablity （可维护性性） protability（可移植性） reusability（可重用性） scalable(可扩展性) testability（可测试性）  商业与市场角度  time to market（及时发布推向市场） cost and benifits（成本和收益） projected life time （产品生命周期） targeted market（目标市场） integration with legacy system (系统集成) roll back schedule （回退时间表）  KISS(Keep It Simple, Stupid) 有太多的例子，说明追求简单与遵循简单的设计原则的重要性，最典型就是unix的设计哲学成就伟大的linux的操作系统。
+什么是简单的系统设计呢？ 这是需要不断思考的问题，举个例子说明吧；在GFS实现中，针对client向chunk server写文件失败的问题，GFS的作法是直接返回失败，由client决定是否重写，这种作法就是聪明的简单之举。
+简单并不是随手可得的。关于这个可以参考rob pike，golang发明人之一的这篇演进： Simplicity is Complicated
+下面借此说明以下几个问题？
+ 什么是简单？  简单很难定义，还是举例说明吧 追求简单并不是单纯追求技术实现上的简单。简单追求是使用的简单，因为使用是高频，实现可能只有几次，例如上面演进谈到的GC,实现并不简单，想出这个GC算法就相当困难，实现那就更难了，但是有了GC，我们用golang编程的时候就不需要像C/C&#43;&#43;那样关心内存的申请释放，再也不用担心踩内存的问题了，专心于设计与业务，给程序员带来了简单。（以我自己为例，学会了golang，我写代码都写得多，之前只会C/C&#43;&#43;时候，业余时间主要是阅读代码，写代码都是工作驱动）
+另外还有一点，简单是先实现，再改进，例如golang的GC算法一开始并不好，GC导致应用 延迟大，到了1.5才有改进
+ 如何实现简单？  演进中const同c语言定义一个常量不一样，不需要关心类型，在生活中一般人说数字2017除了程序员谁关心它是整型数还是浮点数啊"/>
+
+    
+
+    
+
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+
+     
+ <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+ <script type="text/x-mathjax-config">
+   MathJax.Hub.Config({
+     tex2jax: {
+       skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+       inlineMath: [['$','$']]
+     }
+   });
+ </script>
+</head>
+<body>
+<div class="container">
+
+
+<div id="container">
+	<header id="header">
+  <div id="header-main" class="header-inner">
+    <div class="outer">
+      <a href="https://myself659.github.io/" id="logo">
+          
+          <i class="logo" style="background-image: url('https://myself659.github.io/css/images/logo.png')"></i>
+          
+          <span class="site-title">沉风网事</span>
+      </a>
+      <nav id="main-nav">
+          
+          
+          <a class="main-nav-link" href="https://myself659.github.io/">Home</a>
+          
+          
+          
+          
+          
+          
+
+          
+          <a class="main-nav-link" href="/about/">About</a>
+          
+          <a class="main-nav-link" href="/2017/03/18/leetcode/">LeetCode</a>
+          
+          <a class="main-nav-link" href="/2017/10/02/read-post/">Read</a>
+          
+          <a class="main-nav-link" href="/2017/10/02/share-post/">Share</a>
+          
+          <a class="main-nav-link" href="/2017/10/02/slide-post/">Slide</a>
+          
+
+          
+          
+          
+          
+          <a class="main-nav-link" href="https://myself659.github.io/tags/">Tags</a>
+          
+          
+          
+          <a class="main-nav-link" href="https://myself659.github.io/categories/">Categories</a>
+          
+          
+      </nav>
+        <nav id="sub-nav">
+          <div class="profile" id="profile-nav">
+            <a id="profile-anchor" href="javascript:;"><img class="avatar" src="https://myself659.github.io/css/images/avatar.png"><i class="fa fa-caret-down"></i></a>
+          </div>
+        </nav>
+        <div id="search-form-wrap">
+          <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form">
+              <input type="search" name="q" class="search-form-input" placeholder="Search">
+              <button type="submit" class="search-form-submit">
+              </button>
+              <input type="hidden" name="sitesearch" value="https://myself659.github.io/" />
+         </form>
+        </div>
+    </div>
+  </div>
+  <div id="main-nav-mobile" class="header-sub header-inner">
+    <table class="menu outer">
+      <tbody>
+          <tr>
+          
+          
+          <td><a class="main-nav-link" href="https://myself659.github.io/">Home</a></td>
+          
+          
+          
+          
+          
+          
+
+          
+          <td><a class="main-nav-link" href="/about/">About</a></td>
+          
+          <td><a class="main-nav-link" href="/2017/03/18/leetcode/">LeetCode</a></td>
+          
+          <td><a class="main-nav-link" href="/2017/10/02/read-post/">Read</a></td>
+          
+          <td><a class="main-nav-link" href="/2017/10/02/share-post/">Share</a></td>
+          
+          <td><a class="main-nav-link" href="/2017/10/02/slide-post/">Slide</a></td>
+          
+
+          
+          
+          
+          
+          <td><a class="main-nav-link" href="https://myself659.github.io/tags/">Tags</a></td>
+          
+          
+          
+          <td><a class="main-nav-link" href="https://myself659.github.io/categories/">Categories</a></td>
+          
+          
+          <td>
+          <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form">
+          <input type="search" name="q" class="search-form-input" placeholder="Search">
+          <input type="hidden" name="sitesearch" value="https://myself659.github.io/" />
+          </form>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</header>
+
+   	
+   	<div class="outer">
+   	
+    	<aside id="profile">
+  <div class="inner profile-inner">
+    <div class="base-info profile-block">
+      
+      <img id="avatar" src="https://www.gravatar.com/avatar/45ae86ea3c111a5537490c3b370c03ee?s=100&d=identicon"/>
+      
+      <h2 id="name">沉风</h2>
+      <h3 id="title">All is well, just do it</h3>
+      <span id="location"><i class="fa fa-map-marker"></i>hangzhou, china</span>
+      
+          <a id="follow" href="https://github.com/myself659">
+              Follow
+          </a>
+      
+    </div>
+    <div class="article-info profile-block">
+      <div class="article-info-block">
+        118
+        <span>Posts</span>
+      </div>
+      <div class="article-info-block">
+        
+          33
+        
+        <span>
+            Tags
+        </span>
+      </div>
+    </div>
+    <div class="profile-block social-links">
+      <table>
+        <tr>
+          
+<td><a href="//github.com/myself659" target="_blank" title="GitHub"><i class="fa fa-github"></i></a></td>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<td><a href="//medium.com/@myself659" target="_blank" title="Medium"><i class="fa fa-medium"></i></a></td>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          <td><a href="https://myself659.github.io/index.xml" target="_blank" title="RSS"><i class="fa fa-rss"></i></a></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</aside>
+
+    
+
+    <section id="main">
+    
+    <article id="page-undefined" class="article article-type-page" itemscope="" itemprop="blogPost">
+    <div class="article-inner">
+        
+
+        <header class="article-header">
+    <a href="https://myself659.github.io/2017/04/08/2017-04-29-about-system-design/">
+    <h1 class="article-title" itemprop="name">
+        对于系统设计的一些想法
+    </h1>
+    </a>
+    <div class="article-meta">
+
+        
+        <div class="article-date">
+            <i class="fa fa-calendar"></i>
+            <time datetime="2017-04-08 11:58:06 &#43;0200 &#43;0200" itemprop="datePublished">2017-04-08</time>
+            &middot;
+            130
+            words
+            &middot;
+            1
+            minute read
+        </div>
+        
+        
+            
+            
+            <div class="article-category">
+                <i class="fa fa-folder"></i>
+                
+                
+                <a class="article-category-link" href="https://myself659.github.io/categories/arch">Arch</a>
+                
+                
+            </div>
+            
+        
+
+        
+            
+            
+            <div class="article-category">
+                <i class="fa fa-tags"></i>
+                
+                
+                <a class="article-category-link" href="https://myself659.github.io/tags/arch">Arch</a>
+                
+                
+            </div>
+            
+        
+    </div>
+</header>
+
+        <div class="article-entry" itemprop="articleBody">
+            
+
+<h3 id="前言">前言</h3>
+
+<p>学习了google，facebook等国际一流大厂的开源方案，也研究了国内BAT的一些设计案例，在平时工作自然也少不了一些系统设计的工作，想写一些自己的想法，同时也帮助自己梳理一下思路，实现自己的系统设计的套路。</p>
+
+<p>其实就是这一句话：<strong>立足需求与业务，利用工程与技术，得到最合适的tradeofff，追求更简单的设计与方案，以此不断推进系统的演化</strong>。</p>
+
+<p>下面对这句话展开说明（当然，下面是一堆费话，只是为了解决自己的不吐不快而已罢了）。</p>
+
+<h3 id="立足需求与业务">立足需求与业务</h3>
+
+<p>套用一句话：一切脱离需求的设计都是耍流氓。这里不进行具体案例分析，主要从以下角度来细化需求，提供思考的方向。</p>
+
+<h4 id="用户角度">用户角度</h4>
+
+<ol>
+<li>performance（性能）<br /></li>
+<li>availability（可用性）</li>
+<li>usability（易用性）</li>
+<li>security（安全性）</li>
+</ol>
+
+<h4 id="研发角度">研发角度</h4>
+
+<ol>
+<li>maintainablity （可维护性性）</li>
+<li>protability（可移植性）</li>
+<li>reusability（可重用性）</li>
+<li>scalable(可扩展性)</li>
+<li>testability（可测试性）</li>
+</ol>
+
+<h4 id="商业与市场角度">商业与市场角度</h4>
+
+<ol>
+<li>time to market（及时发布推向市场）</li>
+<li>cost and benifits（成本和收益）</li>
+<li>projected life time （产品生命周期）</li>
+<li>targeted market（目标市场）</li>
+<li>integration with legacy system (系统集成)</li>
+<li>roll back schedule （回退时间表）</li>
+</ol>
+
+<h3 id="kiss-keep-it-simple-stupid">KISS(Keep It Simple, Stupid)</h3>
+
+<p>有太多的例子，说明追求简单与遵循简单的设计原则的重要性，最典型就是unix的设计哲学成就伟大的linux的操作系统。</p>
+
+<p>什么是简单的系统设计呢？
+这是需要不断思考的问题，举个例子说明吧；在GFS实现中，针对client向chunk server写文件失败的问题，GFS的作法是直接返回失败，由client决定是否重写，这种作法就是聪明的简单之举。</p>
+
+<p>简单并不是随手可得的。关于这个可以参考rob pike，golang发明人之一的这篇演进：
+<a href="https://www.youtube.com/watch?v=rFejpH_tAHM">Simplicity is Complicated</a></p>
+
+<p>下面借此说明以下几个问题？</p>
+
+<ol>
+<li>什么是简单？</li>
+</ol>
+
+<p>简单很难定义，还是举例说明吧
+追求简单并不是单纯追求技术实现上的简单。简单追求是使用的简单，因为使用是高频，实现可能只有几次，例如上面演进谈到的GC,实现并不简单，想出这个GC算法就相当困难，实现那就更难了，但是有了GC，我们用golang编程的时候就不需要像C/C++那样关心内存的申请释放，再也不用担心踩内存的问题了，专心于设计与业务，给程序员带来了简单。（以我自己为例，学会了golang，我写代码都写得多，之前只会C/C++时候，业余时间主要是阅读代码，写代码都是工作驱动）</p>
+
+<p>另外还有一点，简单是先实现，再改进，例如golang的GC算法一开始并不好，GC导致应用
+延迟大，到了1.5才有改进</p>
+
+<ol>
+<li>如何实现简单？</li>
+</ol>
+
+<p>演进中const同c语言定义一个常量不一样，不需要关心类型，在生活中一般人说数字2017除了程序员谁关心它是整型数还是浮点数啊</p>
+
+<ol>
+<li>如何判断设计是否简单呢？</li>
+</ol>
+
+<p>让普通人也能容易理解与使用。</p>
+
+<p>在生活中能够找到对应参考。</p>
+
+<p>能够简单描述问题。</p>
+
+<p>给人一种刚刚好感觉，不多不少。</p>
+
+<p>还有更多。。。</p>
+
+<h3 id="everything-is-tradeoff">Everything is tradeoff</h3>
+
+<blockquote>
+<p>理想很丰满，但是现实很骨感</p>
+
+<p>硬币总是两面的</p>
+</blockquote>
+
+<p>在系统设计过程中我们总会遇到下面的问题：</p>
+
+<ol>
+<li>分布式场景下CAP只能三选二</li>
+<li>Push vs Pull</li>
+<li>Latency vs Throughput</li>
+<li>速度 vs 成本 vs 质量</li>
+<li>SSD vs Disk</li>
+<li>SQL vs NoSQL</li>
+<li>Sharding vs Partitioning</li>
+<li>Scale Up vs Scale Out<br /></li>
+<li>Performance vs Scalability</li>
+<li>集中式 vs 分布式</li>
+<li>同步 vs 异步</li>
+<li>&hellip;</li>
+</ol>
+
+<p><strong>如果系统设计过程不知道系统优缺点，那表示你无法掌握这个系统设计</strong>；相反如果深入理解每一个具体方案的优缺点，就可以SWOT原则作出判断与选择，而不是面对选择总是有那么多犹豫不决，而是一种感觉：在这种需求和条件，这样的选择是最合适的。</p>
+
+<h3 id="工程与技术能力是基础">工程与技术能力是基础</h3>
+
+<p>需要掌握技术，立足需求，协调不断变化需求与技术实现的矛盾。
+技术方案实现的实现需要软件工程的指导，保证整个这个方案落地过程中保持顺畅与有序进行。</p>
+
+<p>对于一个工作多年的程序员来说，从技术上就是要构建自己的知识体系，这里引用一张图如下：
+<img src="/images/system-designSystem-Design-Layers.png" alt="系统设计的典型分层和涉及的知识点" /></p>
+
+<p>这张图从网络请求处理时序的角度概括系统设计过程中可能涉及的技术点。</p>
+
+<p>关于软件工程能力，在这里不多讲了，更多请参考微软邹欣老师的大作《构建之法》。</p>
+
+<h3 id="后记">后记</h3>
+
+<p>人生贵在行动，迟疑不决时，不妨先迈出小小一步，若是美好，叫做精彩；若是糟糕，叫做经历！</p>
+
+<p>写了一篇水货文章，方向大了，内容空洞，只能待以后将其拧干了。</p>
+
+<p>（to be continued）</p>
+
+<h3 id="参考">参考</h3>
+
+<ol>
+<li><a href="https://www.youtube.com/watch?v=rFejpH_tAHM">Simplicity is Complicated</a><br /></li>
+<li><a href="https://github.com/donnemartin/system-design-primer">system design primer</a></li>
+<li><a href="http://www.raychase.net/3165">系统设计的典型分层和涉及的知识点</a></li>
+</ol>
+
+        </div>
+        <footer class="article-footer">
+    <a data-url="https://myself659.github.io/2017/04/08/2017-04-29-about-system-design/" data-id="fe83c20057a5b678249f91d5fb85105e" class="article-share-link">
+        <i class="fa fa-share"></i>
+        Share
+    </a>
+    
+
+    <script>
+    (function ($) {
+        
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+    </script>
+</footer>
+
+    </div>
+
+    
+<nav id="article-nav">
+    
+    <a href="https://myself659.github.io/2017/04/08/2017-04-08-ecs-basic-sec-check/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">
+          Older
+      </strong>
+      <div class="article-nav-title">阿里云ECS基本安全检查小结</div>
+    </a>
+    
+
+    
+    <a href="https://myself659.github.io/2017/05/10/2017-05-10-golang-present/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">
+          Newer
+      </strong>
+      <div class="article-nav-title">使用golang present工具制作presentation</div>
+    </a>
+    
+</nav>
+
+
+</article>
+
+
+    <script src="https://utteranc.es/client.js"
+        repo="myself659/ipds-public"
+        issue-term="url"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+    </script>
+    
+
+    </section>
+
+
+
+   	
+    	<aside id="sidebar">
+    
+<div class="widget-wrap">
+    <h3 class="widget-title">
+        Recents
+    </h3>
+    <div class="widget">
+        <ul id="recent-post">
+            
+            <li>
+                <div class="item-thumbnail">
+                    <a href="https://myself659.github.io/2020/04/04/%E7%91%9E%E5%B9%B8%E4%BD%9C%E5%81%87/" class="thumbnail">
+                    
+                        <span class="thumbnail-image thumbnail-none"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    <p class="item-category">
+                        
+                        <a class="article-category-link" href="https://myself659.github.io/categories/economics">
+                        Economics
+                        </a>
+                    </p>
+                    
+                    
+                    <p class="item-title"><a href="https://myself659.github.io/2020/04/04/%E7%91%9E%E5%B9%B8%E4%BD%9C%E5%81%87/" class="title">对投资一点感悟</a></p>
+                    <p class="item-date">
+                        <time datetime="2020-04-04 11:58:06 &#43;0200 &#43;0200" itemprop="datePublished">2020-04-04</time>
+                    </p>
+                </div>
+            </li>
+            
+            <li>
+                <div class="item-thumbnail">
+                    <a href="https://myself659.github.io/2020/04/03/about-invest/" class="thumbnail">
+                    
+                        <span class="thumbnail-image thumbnail-none"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    <p class="item-category">
+                        
+                        <a class="article-category-link" href="https://myself659.github.io/categories/economics">
+                        Economics
+                        </a>
+                    </p>
+                    
+                    
+                    <p class="item-title"><a href="https://myself659.github.io/2020/04/03/about-invest/" class="title">关于投资几点感悟</a></p>
+                    <p class="item-date">
+                        <time datetime="2020-04-03 11:58:06 &#43;0200 &#43;0200" itemprop="datePublished">2020-04-03</time>
+                    </p>
+                </div>
+            </li>
+            
+            <li>
+                <div class="item-thumbnail">
+                    <a href="https://myself659.github.io/2020/03/29/github-hack/" class="thumbnail">
+                    
+                        <span class="thumbnail-image thumbnail-none"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    <p class="item-category">
+                        
+                        <a class="article-category-link" href="https://myself659.github.io/categories/%E7%BC%96%E7%A8%8B">
+                        编程
+                        </a>
+                    </p>
+                    
+                    
+                    <p class="item-title"><a href="https://myself659.github.io/2020/03/29/github-hack/" class="title">github被攻击，程序员该怎么办</a></p>
+                    <p class="item-date">
+                        <time datetime="2020-03-29 11:58:06 &#43;0200 &#43;0200" itemprop="datePublished">2020-03-29</time>
+                    </p>
+                </div>
+            </li>
+            
+            <li>
+                <div class="item-thumbnail">
+                    <a href="https://myself659.github.io/2020/03/22/data-avoid-leak/" class="thumbnail">
+                    
+                        <span class="thumbnail-image thumbnail-none"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    <p class="item-category">
+                        
+                        <a class="article-category-link" href="https://myself659.github.io/categories/internet">
+                        Internet
+                        </a>
+                    </p>
+                    
+                    
+                    <p class="item-title"><a href="https://myself659.github.io/2020/03/22/data-avoid-leak/" class="title">提高个人隐私数据安全的几点建议</a></p>
+                    <p class="item-date">
+                        <time datetime="2020-03-22 11:58:06 &#43;0200 &#43;0200" itemprop="datePublished">2020-03-22</time>
+                    </p>
+                </div>
+            </li>
+            
+            <li>
+                <div class="item-thumbnail">
+                    <a href="https://myself659.github.io/2020/03/15/howmuch-us-stock-willfall/" class="thumbnail">
+                    
+                        <span class="thumbnail-image thumbnail-none"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    <p class="item-category">
+                        
+                        <a class="article-category-link" href="https://myself659.github.io/categories/economics">
+                        Economics
+                        </a>
+                    </p>
+                    
+                    
+                    <p class="item-title"><a href="https://myself659.github.io/2020/03/15/howmuch-us-stock-willfall/" class="title">一周经历两次熔断，美股会跌多少?</a></p>
+                    <p class="item-date">
+                        <time datetime="2020-03-15 11:58:06 &#43;0200 &#43;0200" itemprop="datePublished">2020-03-15</time>
+                    </p>
+                </div>
+            </li>
+            
+        </ul>
+    </div>
+</div>
+
+
+    
+
+
+<div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+        <ul class="category-list">
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://myself659.github.io/categories/arch">
+                    arch
+                </a>
+                <span class="category-list-count">5</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://myself659.github.io/categories/blockchain">
+                    blockchain
+                </a>
+                <span class="category-list-count">25</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://myself659.github.io/categories/cryptography">
+                    cryptography
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://myself659.github.io/categories/data">
+                    data
+                </a>
+                <span class="category-list-count">2</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://myself659.github.io/categories/data-struct">
+                    data-struct
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://myself659.github.io/categories/distributed">
+                    distributed
+                </a>
+                <span class="category-list-count">2</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://myself659.github.io/categories/economics">
+                    economics
+                </a>
+                <span class="category-list-count">5</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://myself659.github.io/categories/english">
+                    english
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://myself659.github.io/categories/ethereum">
+                    ethereum
+                </a>
+                <span class="category-list-count">2</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://myself659.github.io/categories/golang">
+                    golang
+                </a>
+                <span class="category-list-count">10</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://myself659.github.io/categories/internet">
+                    internet
+                </a>
+                <span class="category-list-count">4</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://myself659.github.io/categories/ipfs">
+                    ipfs
+                </a>
+                <span class="category-list-count">3</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://myself659.github.io/categories/kubernetes">
+                    kubernetes
+                </a>
+                <span class="category-list-count">3</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://myself659.github.io/categories/linux">
+                    linux
+                </a>
+                <span class="category-list-count">11</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://myself659.github.io/categories/network">
+                    network
+                </a>
+                <span class="category-list-count">3</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://myself659.github.io/categories/nginx">
+                    nginx
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://myself659.github.io/categories/python">
+                    python
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://myself659.github.io/categories/rust">
+                    rust
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://myself659.github.io/categories/secure">
+                    secure
+                </a>
+                <span class="category-list-count">2</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://myself659.github.io/categories/substrate">
+                    substrate
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://myself659.github.io/categories/web">
+                    web
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://myself659.github.io/categories/%E5%95%86%E4%B8%9A">
+                    商业
+                </a>
+                <span class="category-list-count">5</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://myself659.github.io/categories/%E6%88%90%E9%95%BF">
+                    成长
+                </a>
+                <span class="category-list-count">2</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://myself659.github.io/categories/%E6%8A%80%E6%9C%AF%E7%AE%A1%E7%90%86">
+                    技术管理
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://myself659.github.io/categories/%E7%A0%94%E5%8F%91%E7%AE%A1%E7%90%86">
+                    研发管理
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://myself659.github.io/categories/%E7%BC%96%E7%A8%8B">
+                    编程
+                </a>
+                <span class="category-list-count">5</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://myself659.github.io/categories/%E9%97%B2%E8%B0%88%E4%B9%B1%E6%89%AF">
+                    闲谈乱扯
+                </a>
+                <span class="category-list-count">10</span>
+            </li>
+            
+        </ul>
+    </div>
+</div>
+
+
+
+
+    
+
+
+<div class="widget-wrap">
+    <h3 class="widget-title">
+        Tags
+    </h3>
+    <div class="widget">
+        <ul class="category-list">
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://myself659.github.io/tags/arch">
+                    arch
+                </a>
+                <span class="category-list-count">5</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://myself659.github.io/tags/bitcoin">
+                    bitcoin
+                </a>
+                <span class="category-list-count">2</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://myself659.github.io/tags/blockchain">
+                    blockchain
+                </a>
+                <span class="category-list-count">29</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://myself659.github.io/tags/btc">
+                    btc
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://myself659.github.io/tags/cryptography">
+                    cryptography
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://myself659.github.io/tags/data">
+                    data
+                </a>
+                <span class="category-list-count">2</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://myself659.github.io/tags/data-struct">
+                    data-struct
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://myself659.github.io/tags/distributed">
+                    distributed
+                </a>
+                <span class="category-list-count">3</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://myself659.github.io/tags/docker">
+                    docker
+                </a>
+                <span class="category-list-count">3</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://myself659.github.io/tags/economics">
+                    economics
+                </a>
+                <span class="category-list-count">5</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://myself659.github.io/tags/english">
+                    english
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://myself659.github.io/tags/ethereum">
+                    ethereum
+                </a>
+                <span class="category-list-count">2</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://myself659.github.io/tags/golang">
+                    golang
+                </a>
+                <span class="category-list-count">10</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://myself659.github.io/tags/internet">
+                    internet
+                </a>
+                <span class="category-list-count">10</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://myself659.github.io/tags/ipfs">
+                    ipfs
+                </a>
+                <span class="category-list-count">3</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://myself659.github.io/tags/kubernetes">
+                    kubernetes
+                </a>
+                <span class="category-list-count">3</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://myself659.github.io/tags/linux">
+                    linux
+                </a>
+                <span class="category-list-count">11</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://myself659.github.io/tags/nba">
+                    nba
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://myself659.github.io/tags/network">
+                    network
+                </a>
+                <span class="category-list-count">3</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://myself659.github.io/tags/nginx">
+                    nginx
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://myself659.github.io/tags/python">
+                    python
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://myself659.github.io/tags/rust">
+                    rust
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://myself659.github.io/tags/secure">
+                    secure
+                </a>
+                <span class="category-list-count">5</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://myself659.github.io/tags/smart-contract">
+                    smart-contract
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://myself659.github.io/tags/substrate">
+                    substrate
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://myself659.github.io/tags/web">
+                    web
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://myself659.github.io/tags/%E5%95%86%E4%B8%9A">
+                    商业
+                </a>
+                <span class="category-list-count">5</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://myself659.github.io/tags/%E6%88%90%E9%95%BF">
+                    成长
+                </a>
+                <span class="category-list-count">2</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://myself659.github.io/tags/%E6%8A%80%E6%9C%AF%E7%AE%A1%E7%90%86">
+                    技术管理
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://myself659.github.io/tags/%E7%A0%94%E5%8F%91%E7%AE%A1%E7%90%86">
+                    研发管理
+                </a>
+                <span class="category-list-count">3</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://myself659.github.io/tags/%E7%BC%96%E7%A8%8B">
+                    编程
+                </a>
+                <span class="category-list-count">6</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://myself659.github.io/tags/%E8%81%8C%E5%9C%BA">
+                    职场
+                </a>
+                <span class="category-list-count">2</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://myself659.github.io/tags/%E9%97%B2%E8%B0%88%E4%B9%B1%E6%89%AF">
+                    闲谈乱扯
+                </a>
+                <span class="category-list-count">9</span>
+            </li>
+            
+        </ul>
+    </div>
+</div>
+
+
+
+
+    
+
+
+<div class="widget-wrap">
+    <h3 class="widget-title">
+        Tag cloud
+    </h3>
+    <div class="widget tagcloud">
+        
+        
+        <a href="https://myself659.github.io/tags/arch" style="font-size: 12px;">arch</a>
+        
+        
+        <a href="https://myself659.github.io/tags/bitcoin" style="font-size: 12px;">bitcoin</a>
+        
+        
+        <a href="https://myself659.github.io/tags/blockchain" style="font-size: 12px;">blockchain</a>
+        
+        
+        <a href="https://myself659.github.io/tags/btc" style="font-size: 12px;">btc</a>
+        
+        
+        <a href="https://myself659.github.io/tags/cryptography" style="font-size: 12px;">cryptography</a>
+        
+        
+        <a href="https://myself659.github.io/tags/data" style="font-size: 12px;">data</a>
+        
+        
+        <a href="https://myself659.github.io/tags/data-struct" style="font-size: 12px;">data-struct</a>
+        
+        
+        <a href="https://myself659.github.io/tags/distributed" style="font-size: 12px;">distributed</a>
+        
+        
+        <a href="https://myself659.github.io/tags/docker" style="font-size: 12px;">docker</a>
+        
+        
+        <a href="https://myself659.github.io/tags/economics" style="font-size: 12px;">economics</a>
+        
+        
+        <a href="https://myself659.github.io/tags/english" style="font-size: 12px;">english</a>
+        
+        
+        <a href="https://myself659.github.io/tags/ethereum" style="font-size: 12px;">ethereum</a>
+        
+        
+        <a href="https://myself659.github.io/tags/golang" style="font-size: 12px;">golang</a>
+        
+        
+        <a href="https://myself659.github.io/tags/internet" style="font-size: 12px;">internet</a>
+        
+        
+        <a href="https://myself659.github.io/tags/ipfs" style="font-size: 12px;">ipfs</a>
+        
+        
+        <a href="https://myself659.github.io/tags/kubernetes" style="font-size: 12px;">kubernetes</a>
+        
+        
+        <a href="https://myself659.github.io/tags/linux" style="font-size: 12px;">linux</a>
+        
+        
+        <a href="https://myself659.github.io/tags/nba" style="font-size: 12px;">nba</a>
+        
+        
+        <a href="https://myself659.github.io/tags/network" style="font-size: 12px;">network</a>
+        
+        
+        <a href="https://myself659.github.io/tags/nginx" style="font-size: 12px;">nginx</a>
+        
+        
+        <a href="https://myself659.github.io/tags/python" style="font-size: 12px;">python</a>
+        
+        
+        <a href="https://myself659.github.io/tags/rust" style="font-size: 12px;">rust</a>
+        
+        
+        <a href="https://myself659.github.io/tags/secure" style="font-size: 12px;">secure</a>
+        
+        
+        <a href="https://myself659.github.io/tags/smart-contract" style="font-size: 12px;">smart-contract</a>
+        
+        
+        <a href="https://myself659.github.io/tags/substrate" style="font-size: 12px;">substrate</a>
+        
+        
+        <a href="https://myself659.github.io/tags/web" style="font-size: 12px;">web</a>
+        
+        
+        <a href="https://myself659.github.io/tags/%E5%95%86%E4%B8%9A" style="font-size: 12px;">商业</a>
+        
+        
+        <a href="https://myself659.github.io/tags/%E6%88%90%E9%95%BF" style="font-size: 12px;">成长</a>
+        
+        
+        <a href="https://myself659.github.io/tags/%E6%8A%80%E6%9C%AF%E7%AE%A1%E7%90%86" style="font-size: 12px;">技术管理</a>
+        
+        
+        <a href="https://myself659.github.io/tags/%E7%A0%94%E5%8F%91%E7%AE%A1%E7%90%86" style="font-size: 12px;">研发管理</a>
+        
+        
+        <a href="https://myself659.github.io/tags/%E7%BC%96%E7%A8%8B" style="font-size: 12px;">编程</a>
+        
+        
+        <a href="https://myself659.github.io/tags/%E8%81%8C%E5%9C%BA" style="font-size: 12px;">职场</a>
+        
+        
+        <a href="https://myself659.github.io/tags/%E9%97%B2%E8%B0%88%E4%B9%B1%E6%89%AF" style="font-size: 12px;">闲谈乱扯</a>
+        
+    </div>
+</div>
+
+
+
+
+
+    <div id="toTop" class="fa fa-angle-up"></div>
+</aside>
+
+    
+	</div>
+</div>
+
+<footer id="footer">
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2020
+      copyright@沉风网事 <a href="http://www.beian.miit.gov.cn/">浙ICP备19035943号-2</a>
+    </div>
+  </div>
+</footer>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-144475213-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+<script src="https://myself659.github.io/fancybox/jquery.fancybox.pack.js"></script>
+<script src="https://myself659.github.io/js/script.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js"></script>
+
+
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']]}
+  });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+
+
+</body>
+</html>

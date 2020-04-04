@@ -13,10 +13,10 @@
     
     <item>
       <title>对于系统设计的一些想法</title>
-      <link>https://myself659.github.io/2017/04/08/%E5%AF%B9%E4%BA%8E%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1%E7%9A%84%E4%B8%80%E4%BA%9B%E6%83%B3%E6%B3%95/</link>
+      <link>https://myself659.github.io/2017/04/08/2017-04-29-about-system-design/</link>
       <pubDate>Sat, 08 Apr 2017 11:58:06 +0200</pubDate>
       
-      <guid>https://myself659.github.io/2017/04/08/%E5%AF%B9%E4%BA%8E%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1%E7%9A%84%E4%B8%80%E4%BA%9B%E6%83%B3%E6%B3%95/</guid>
+      <guid>https://myself659.github.io/2017/04/08/2017-04-29-about-system-design/</guid>
       <description>前言 学习了google，facebook等国际一流大厂的开源方案，也研究了国内BAT的一些设计案例，在平时工作自然也少不了一些系统设计的工作，想写一些自己的想法，同时也帮助自己梳理一下思路，实现自己的系统设计的套路。
 其实就是这一句话：立足需求与业务，利用工程与技术，得到最合适的tradeofff，追求更简单的设计与方案，以此不断推进系统的演化。
 下面对这句话展开说明（当然，下面是一堆费话，只是为了解决自己的不吐不快而已罢了）。
@@ -33,10 +33,10 @@
     
     <item>
       <title>IM后端系统设计总结(2)</title>
-      <link>https://myself659.github.io/2016/08/05/im%E5%90%8E%E7%AB%AF%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1%E6%80%BB%E7%BB%932/</link>
+      <link>https://myself659.github.io/2016/08/05/2016-08-05-im-user-state/</link>
       <pubDate>Fri, 05 Aug 2016 11:58:06 +0200</pubDate>
       
-      <guid>https://myself659.github.io/2016/08/05/im%E5%90%8E%E7%AB%AF%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1%E6%80%BB%E7%BB%932/</guid>
+      <guid>https://myself659.github.io/2016/08/05/2016-08-05-im-user-state/</guid>
       <description>这篇具体写一下用户在线状态系统的具体设计。
 后端架构 这个后端系统设计如下图：
 很大众，国内基本都这么干，不多说
@@ -54,10 +54,10 @@
     
     <item>
       <title>IM后端系统设计总结(1)</title>
-      <link>https://myself659.github.io/2016/07/29/im%E5%90%8E%E7%AB%AF%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1%E6%80%BB%E7%BB%931/</link>
+      <link>https://myself659.github.io/2016/07/29/2016-07-29-im-message/</link>
       <pubDate>Fri, 29 Jul 2016 11:58:06 +0200</pubDate>
       
-      <guid>https://myself659.github.io/2016/07/29/im%E5%90%8E%E7%AB%AF%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1%E6%80%BB%E7%BB%931/</guid>
+      <guid>https://myself659.github.io/2016/07/29/2016-07-29-im-message/</guid>
       <description>定义IM 为用户提供即时消息服务，这里面有三个关键词：用户，消息，服务；下面根据三个关键词来展开总结，先从消息开始。
 消息 消息分类 对消息分类，很简单但是重要，方便后面业务的拆分。
  注册 登录 用户信息 聊天消息 群组 好友 文件 版本 内部服务器之间消息 客户端诊断 其他业务消息  信息语义描述 在互联网和移动互联网时代常见有以下几种方式：
@@ -67,10 +67,10 @@
     
     <item>
       <title>10 Lessons from 10 Years of Amazon Web Services（译文）</title>
-      <link>https://myself659.github.io/2016/06/02/10-lessons-from-10-years-of-amazon-web-services%E8%AF%91%E6%96%87/</link>
+      <link>https://myself659.github.io/2016/06/02/2016-06-02-10-lessons-from-10-years-of-amazon-web-services/</link>
       <pubDate>Thu, 02 Jun 2016 11:58:06 +0200</pubDate>
       
-      <guid>https://myself659.github.io/2016/06/02/10-lessons-from-10-years-of-amazon-web-services%E8%AF%91%E6%96%87/</guid>
+      <guid>https://myself659.github.io/2016/06/02/2016-06-02-10-lessons-from-10-years-of-amazon-web-services/</guid>
       <description>前言  亚马逊在2006年3月14日发布AWS，到现在差不多10年了。回首过去的10年里，我们在构建 安全，高可用性，可扩展性，低成本的服务方面积累了几百条经验与教训。 由于AWS是建设并在全球运营这些服务的先驱，这些教训对我们的业务至关重要。正如我们以前多次说，“没有压缩经验的算法”，每月有超过百万的活跃客户，这些客户服务几个亿的用户，在这个过程我们不乏机会积累经验并持续优化从而为客户提供更好的服务。
 我选择了下面这些经验教训，与大家分享，希望它们对你们有用。
  1. 构建不断进化的系统  几乎从第一天开始,我们知道自己开发的软件在一年后将不会继续运行。我们需要重新审视和改进架构，以确保我们可以解决订单规模增长一到二个数量级所带来的问题。但是我们不能采取停电检修这种旧方法升级系统，这是因为遍布世界各地的海量业务需要我们的平台提供7*24小时高可用性服务。我们需要建立这样架构：能够在不停止服务的情况下引入新的组件。Marvin Theimer,亚马逊杰出工程师，曾开玩笑地说，亚马逊S3的演变可以被描述为从当初的单引擎飞机，随着时间的推移飞机不断升级，先是升级到737，然后是一组747，现在成了3805的空中舰队。在此期间，我们在飞行过程中完成加油，而客户甚至没有觉察到这一点。
@@ -100,10 +100,10 @@
     
     <item>
       <title>Facebook live一些技术细节</title>
-      <link>https://myself659.github.io/2016/05/27/facebook-live%E4%B8%80%E4%BA%9B%E6%8A%80%E6%9C%AF%E7%BB%86%E8%8A%82/</link>
+      <link>https://myself659.github.io/2016/05/27/2016-05-27-facebook-live-detail/</link>
       <pubDate>Fri, 27 May 2016 11:58:06 +0200</pubDate>
       
-      <guid>https://myself659.github.io/2016/05/27/facebook-live%E4%B8%80%E4%BA%9B%E6%8A%80%E6%9C%AF%E7%BB%86%E8%8A%82/</guid>
+      <guid>https://myself659.github.io/2016/05/27/2016-05-27-facebook-live-detail/</guid>
       <description>协议选择 最初选择HLS,后面切换为RTMP，切换为RTMP主要为了降低延迟，提供更好直播用户体验。
 解决并发问题  分发架构
 采用Live stream server， origin server， edge server 三层架构；如下图如示：   一句话就是：通过遍布各地的CDN节点（edge server）实现海量用户的播放请求。

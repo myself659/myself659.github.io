@@ -13,10 +13,10 @@
     
     <item>
       <title>github被攻击，程序员该怎么办</title>
-      <link>https://myself659.github.io/2020/03/29/github%E8%A2%AB%E6%94%BB%E5%87%BB%E7%A8%8B%E5%BA%8F%E5%91%98%E8%AF%A5%E6%80%8E%E4%B9%88%E5%8A%9E/</link>
+      <link>https://myself659.github.io/2020/03/29/github-hack/</link>
       <pubDate>Sun, 29 Mar 2020 11:58:06 +0200</pubDate>
       
-      <guid>https://myself659.github.io/2020/03/29/github%E8%A2%AB%E6%94%BB%E5%87%BB%E7%A8%8B%E5%BA%8F%E5%91%98%E8%AF%A5%E6%80%8E%E4%B9%88%E5%8A%9E/</guid>
+      <guid>https://myself659.github.io/2020/03/29/github-hack/</guid>
       <description>2020年3月27日，全世界最大的同性交友网站github被攻击了，连正常的首页都打不开。
 Https并不是100%安全 github被攻击说明Https并不是100%安全，Https也有自己的阿喀琉斯之踵-Https证书。Https不能解决以下五种情况的攻击：
  证书颁发机构被入侵 攻击任何证书颁发机构附近的路由器 攻击证书颁发机构的递归DNS服务器 攻击网络协议如TCP或者BGP 证书颁发机构作恶，恶意修改与替换证书  这五种攻击方式不是攻击证书就是攻击证书的分发网络路径与协议。
@@ -35,10 +35,10 @@ $ cat ~/.gitconfig [user] email = myself659@163.com name = myself659 [url &amp;q
     
     <item>
       <title>程序员进阶精读书籍清单</title>
-      <link>https://myself659.github.io/2020/01/02/%E7%A8%8B%E5%BA%8F%E5%91%98%E8%BF%9B%E9%98%B6%E7%B2%BE%E8%AF%BB%E4%B9%A6%E7%B1%8D%E6%B8%85%E5%8D%95/</link>
+      <link>https://myself659.github.io/2020/01/02/programer-book-list/</link>
       <pubDate>Thu, 02 Jan 2020 11:58:06 +0200</pubDate>
       
-      <guid>https://myself659.github.io/2020/01/02/%E7%A8%8B%E5%BA%8F%E5%91%98%E8%BF%9B%E9%98%B6%E7%B2%BE%E8%AF%BB%E4%B9%A6%E7%B1%8D%E6%B8%85%E5%8D%95/</guid>
+      <guid>https://myself659.github.io/2020/01/02/programer-book-list/</guid>
       <description>2020年加大搬砖的力度，还是一名程序员，继续成长与进步。
 优秀程序员应该具备以下三方面能力：
  扎实的计算机基础知识（计算机结构，操作系统，数据结构与算法 ）
@@ -66,10 +66,10 @@ $ cat ~/.gitconfig [user] email = myself659@163.com name = myself659 [url &amp;q
     
     <item>
       <title>实现无符号整型数的分解</title>
-      <link>https://myself659.github.io/2015/06/14/%E5%AE%9E%E7%8E%B0%E6%97%A0%E7%AC%A6%E5%8F%B7%E6%95%B4%E5%9E%8B%E6%95%B0%E7%9A%84%E5%88%86%E8%A7%A3/</link>
+      <link>https://myself659.github.io/2015/06/14/2015-06-14-number-divide/</link>
       <pubDate>Sun, 14 Jun 2015 11:58:06 +0200</pubDate>
       
-      <guid>https://myself659.github.io/2015/06/14/%E5%AE%9E%E7%8E%B0%E6%97%A0%E7%AC%A6%E5%8F%B7%E6%95%B4%E5%9E%8B%E6%95%B0%E7%9A%84%E5%88%86%E8%A7%A3/</guid>
+      <guid>https://myself659.github.io/2015/06/14/2015-06-14-number-divide/</guid>
       <description>题目 将一个无符号数N拆分为不多于M个数，使拆分的数之和等于N,条件：
  N &amp;gt;= M； N与M都是无符号整型数  求：一共有多少中拆分方法？
 分析 参考代码
@@ -79,10 +79,10 @@ $ cat ~/.gitconfig [user] email = myself659@163.com name = myself659 [url &amp;q
     
     <item>
       <title>C语言代码 review的总结</title>
-      <link>https://myself659.github.io/2015/05/24/c%E8%AF%AD%E8%A8%80%E4%BB%A3%E7%A0%81-review%E7%9A%84%E6%80%BB%E7%BB%93/</link>
+      <link>https://myself659.github.io/2015/05/24/2015-05-24-c-codereivew/</link>
       <pubDate>Sun, 24 May 2015 11:58:06 +0200</pubDate>
       
-      <guid>https://myself659.github.io/2015/05/24/c%E8%AF%AD%E8%A8%80%E4%BB%A3%E7%A0%81-review%E7%9A%84%E6%80%BB%E7%BB%93/</guid>
+      <guid>https://myself659.github.io/2015/05/24/2015-05-24-c-codereivew/</guid>
       <description> 代码review是保证代码质量在项目开发及代码修改中一项重要的环节，下面就代码reiew的一些总结，总结一些代码的review的关注点，提高代码review的效率与效果，提前发现问题，降低后期的测试成本，以及避免软件上线或交付出问题导致的经济损失和恶劣影响（ps:对每一行代码保持敬畏之心）。
 代码中的资源  以内存为例，C语言内存操作都是由程序员来定义与控制，内存的一些错误总是不断地出现，例如内存泄漏，踩内存，写越界等，如果这种问题在线上系统中出现，定位与修复的成本都是很高的。
  动态内存 信号量 文件描述符 锁 句柄 中断 资源的引用 资源的引用计数   代码的错误高发特征   冗余实现 异常处理 结构复杂 层次嵌套多 不合理实现 字符串处理 代码临界区 移植代码   代码的追求   正确性 可靠性 可读性 可维护性 可测试性 可扩展性 可移植性 可伸缩性 易用性 可用性 可重用性 互操作性 可管理性 一致性 安全性 性能 稳定性 精确性 可差异化性 魯棒性   </description>
@@ -90,10 +90,10 @@ $ cat ~/.gitconfig [user] email = myself659@163.com name = myself659 [url &amp;q
     
     <item>
       <title>一个linux网络丢包问题分析</title>
-      <link>https://myself659.github.io/2015/05/24/%E4%B8%80%E4%B8%AAlinux%E7%BD%91%E7%BB%9C%E4%B8%A2%E5%8C%85%E9%97%AE%E9%A2%98%E5%88%86%E6%9E%90/</link>
+      <link>https://myself659.github.io/2015/05/24/2015-05-24-linux-perf-droppacket/</link>
       <pubDate>Sun, 24 May 2015 11:58:06 +0200</pubDate>
       
-      <guid>https://myself659.github.io/2015/05/24/%E4%B8%80%E4%B8%AAlinux%E7%BD%91%E7%BB%9C%E4%B8%A2%E5%8C%85%E9%97%AE%E9%A2%98%E5%88%86%E6%9E%90/</guid>
+      <guid>https://myself659.github.io/2015/05/24/2015-05-24-linux-perf-droppacket/</guid>
       <description> 丢包问题是十分常见一类问题，下面总结的一个网络丢包问题的分析过程。
 问题描述 组网：
 TC-PORT1&amp;mdash;&amp;mdash;-VSR-eth1
