@@ -2,7 +2,7 @@
 <html lang="zh-cn">
 <head>
     <title>说说私钥保护技术 &middot; 沉风网事</title>
-    <meta name="generator" content="Hugo 0.68.3" />
+    <meta name="generator" content="Hugo 0.54.0" />
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta name="author" content="沉风">
@@ -31,19 +31,21 @@
 私钥隔离 用冷钱包来实现与网络隔离，避免私钥被盗取或泄漏。
 私钥分片 私钥分片主要采用Shamir&rsquo;s Secret Sharing技术。其技术原理如同藏宝图分成好几分份,这是多少电影与电视剧中出现的情节。
 原理：
-一个数学公式：yy = ax*x &#43; b * x &#43; c
+一个数学公式：y*y = a*x*x &#43; b * x &#43; c
 其中，c为私钥，当然中实际过程可以认为是保密的数据。 a，b这两个参数作为具体分片规则的描述。
 由上面公式可知，该公式对应一个双曲线。如果知道这个双曲线三个点的坐标，通过解方程组得出a，b，c的值。
 该技术有以下优点：
  该方案允许私钥拥有制定分片的规则。可以对同一个私钥采用不同的分片规则。拥有分片规则制定权，可以对分片对象加以管理，如添加分片，删除分片。 在没有不知道分片规则之下，通过任何一个分片都不能破解获取私钥。只有对应数量的分片在一起才能获取私钥和分片的规则。  具体应用如下：
- 私钥等敏感数据分割保护 多方验证 数据分享  参考  Shamir&rsquo;s Secret Sharing Divide and Manage Secret Data Securely With Shamir&rsquo;s Secret Sharing zeropass Threshold Signatures: The Future of Private Keys A beginner’s guide to Shamir’s Secret Sharing 私鑰分割 — Shamir’s Secret Sharing  " />
+ 私钥等敏感数据分割保护 多方验证 数据分享  参考  Shamir&rsquo;s Secret Sharing
+ Divide and Manage Secret Data Securely With Shamir&rsquo;s Secret Sharing zeropass Threshold Signatures: The Future of Private Keys A beginner’s guide to Shamir’s Secret Sharing 私鑰分割 — Shamir’s Secret Sharing" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://myself659.github.io/2018/10/21/%E8%AF%B4%E8%AF%B4%E7%A7%81%E9%92%A5%E4%BF%9D%E6%8A%A4%E6%8A%80%E6%9C%AF/" />
-<meta property="article:published_time" content="2018-10-21T11:58:06+02:00" />
-<meta property="article:modified_time" content="2018-10-21T11:58:06+02:00" />
+<meta property="article:published_time" content="2018-10-21T11:58:06&#43;02:00"/>
+<meta property="article:modified_time" content="2018-10-21T11:58:06&#43;02:00"/>
 
     
-    <meta itemprop="name" content="说说私钥保护技术">
+    
+<meta itemprop="name" content="说说私钥保护技术">
 <meta itemprop="description" content="前言 私钥在区块链系统中代表是什么？私钥是钱。钱包的本质就是私钥。谁控制了私钥谁就控制对应钱包的数字资产，谁丢失了私钥也就相当于丢了对应钱包的数字资产。
 因此，在区块链系统中如何保护私钥一直都是重要的问题。
 保护私钥一直都要解决以下问题：
@@ -54,12 +56,15 @@
 私钥隔离 用冷钱包来实现与网络隔离，避免私钥被盗取或泄漏。
 私钥分片 私钥分片主要采用Shamir&rsquo;s Secret Sharing技术。其技术原理如同藏宝图分成好几分份,这是多少电影与电视剧中出现的情节。
 原理：
-一个数学公式：yy = ax*x &#43; b * x &#43; c
+一个数学公式：y*y = a*x*x &#43; b * x &#43; c
 其中，c为私钥，当然中实际过程可以认为是保密的数据。 a，b这两个参数作为具体分片规则的描述。
 由上面公式可知，该公式对应一个双曲线。如果知道这个双曲线三个点的坐标，通过解方程组得出a，b，c的值。
 该技术有以下优点：
  该方案允许私钥拥有制定分片的规则。可以对同一个私钥采用不同的分片规则。拥有分片规则制定权，可以对分片对象加以管理，如添加分片，删除分片。 在没有不知道分片规则之下，通过任何一个分片都不能破解获取私钥。只有对应数量的分片在一起才能获取私钥和分片的规则。  具体应用如下：
- 私钥等敏感数据分割保护 多方验证 数据分享  参考  Shamir&rsquo;s Secret Sharing Divide and Manage Secret Data Securely With Shamir&rsquo;s Secret Sharing zeropass Threshold Signatures: The Future of Private Keys A beginner’s guide to Shamir’s Secret Sharing 私鑰分割 — Shamir’s Secret Sharing  ">
+ 私钥等敏感数据分割保护 多方验证 数据分享  参考  Shamir&rsquo;s Secret Sharing
+ Divide and Manage Secret Data Securely With Shamir&rsquo;s Secret Sharing zeropass Threshold Signatures: The Future of Private Keys A beginner’s guide to Shamir’s Secret Sharing 私鑰分割 — Shamir’s Secret Sharing">
+
+
 <meta itemprop="datePublished" content="2018-10-21T11:58:06&#43;02:00" />
 <meta itemprop="dateModified" content="2018-10-21T11:58:06&#43;02:00" />
 <meta itemprop="wordCount" content="77">
@@ -67,6 +72,7 @@
 
 
 <meta itemprop="keywords" content="BlockChain,Cryptography," />
+
     <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="说说私钥保护技术"/>
 <meta name="twitter:description" content="前言 私钥在区块链系统中代表是什么？私钥是钱。钱包的本质就是私钥。谁控制了私钥谁就控制对应钱包的数字资产，谁丢失了私钥也就相当于丢了对应钱包的数字资产。
@@ -79,12 +85,13 @@
 私钥隔离 用冷钱包来实现与网络隔离，避免私钥被盗取或泄漏。
 私钥分片 私钥分片主要采用Shamir&rsquo;s Secret Sharing技术。其技术原理如同藏宝图分成好几分份,这是多少电影与电视剧中出现的情节。
 原理：
-一个数学公式：yy = ax*x &#43; b * x &#43; c
+一个数学公式：y*y = a*x*x &#43; b * x &#43; c
 其中，c为私钥，当然中实际过程可以认为是保密的数据。 a，b这两个参数作为具体分片规则的描述。
 由上面公式可知，该公式对应一个双曲线。如果知道这个双曲线三个点的坐标，通过解方程组得出a，b，c的值。
 该技术有以下优点：
  该方案允许私钥拥有制定分片的规则。可以对同一个私钥采用不同的分片规则。拥有分片规则制定权，可以对分片对象加以管理，如添加分片，删除分片。 在没有不知道分片规则之下，通过任何一个分片都不能破解获取私钥。只有对应数量的分片在一起才能获取私钥和分片的规则。  具体应用如下：
- 私钥等敏感数据分割保护 多方验证 数据分享  参考  Shamir&rsquo;s Secret Sharing Divide and Manage Secret Data Securely With Shamir&rsquo;s Secret Sharing zeropass Threshold Signatures: The Future of Private Keys A beginner’s guide to Shamir’s Secret Sharing 私鑰分割 — Shamir’s Secret Sharing  "/>
+ 私钥等敏感数据分割保护 多方验证 数据分享  参考  Shamir&rsquo;s Secret Sharing
+ Divide and Manage Secret Data Securely With Shamir&rsquo;s Secret Sharing zeropass Threshold Signatures: The Future of Private Keys A beginner’s guide to Shamir’s Secret Sharing 私鑰分割 — Shamir’s Secret Sharing"/>
 
     
 
@@ -381,53 +388,80 @@
 </header>
 
         <div class="article-entry" itemprop="articleBody">
-            <h1 id="前言">前言</h1>
+            
+
+<h1 id="前言">前言</h1>
+
 <p>私钥在区块链系统中代表是什么？私钥是钱。钱包的本质就是私钥。谁控制了私钥谁就控制对应钱包的数字资产，谁丢失了私钥也就相当于丢了对应钱包的数字资产。</p>
+
 <p>因此，在区块链系统中如何保护私钥一直都是重要的问题。</p>
+
 <p>保护私钥一直都要解决以下问题：</p>
+
 <ol>
 <li>用户体验</li>
 <li>私钥备份与存储</li>
 <li>私钥安全（攻击、泄漏、盗取）</li>
 </ol>
+
 <h2 id="私钥助记词化">私钥助记词化</h2>
+
 <p>私钥数学本质是一串数字：</p>
+
 <p>用户体验极差，那么一长串数字怎么记，每次使用都是一个大麻烦。
 所有就有只要玩过数字货币的人都清楚的助记词。这一部分改进如同汇编对二进指定的优化。</p>
+
 <h2 id="私钥加密">私钥加密</h2>
+
 <p>对于私钥内容进行加密，最典型例子就是key-store。</p>
+
 <h2 id="共用私钥">共用私钥</h2>
+
 <p>这里面的技术主要是BIP-44。在数字货币钱包里面得到应用，
 避免每一个数字货币地址都要维护一个私钥。如果数字货币满足BIP-44规范，
 就可以通过一个私钥来控制多个钱包。</p>
+
 <h2 id="私钥隔离">私钥隔离</h2>
+
 <p>用冷钱包来实现与网络隔离，避免私钥被盗取或泄漏。</p>
+
 <h2 id="私钥分片">私钥分片</h2>
+
 <p>私钥分片主要采用Shamir&rsquo;s Secret Sharing技术。其技术原理如同藏宝图分成好几分份,这是多少电影与电视剧中出现的情节。</p>
+
 <p>原理：</p>
-<p>一个数学公式：y<em>y = a</em>x*x + b * x + c</p>
+
+<p>一个数学公式：y*y = a*x*x + b * x + c</p>
+
 <p>其中，c为私钥，当然中实际过程可以认为是保密的数据。
 a，b这两个参数作为具体分片规则的描述。</p>
+
 <p>由上面公式可知，该公式对应一个双曲线。如果知道这个双曲线三个点的坐标，通过解方程组得出a，b，c的值。</p>
+
 <p>该技术有以下优点：</p>
+
 <ol>
 <li>该方案允许私钥拥有制定分片的规则。可以对同一个私钥采用不同的分片规则。拥有分片规则制定权，可以对分片对象加以管理，如添加分片，删除分片。</li>
 <li>在没有不知道分片规则之下，通过任何一个分片都不能破解获取私钥。只有对应数量的分片在一起才能获取私钥和分片的规则。</li>
 </ol>
+
 <p>具体应用如下：</p>
+
 <ol>
 <li>私钥等敏感数据分割保护</li>
 <li>多方验证</li>
 <li>数据分享</li>
 </ol>
+
 <h1 id="参考">参考</h1>
+
 <ol>
-<li><a href="https://en.wikipedia.org/wiki/Shamir%27s_Secret_Sharing">Shamir&rsquo;s Secret Sharing</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Shamir%27s_Secret_Sharing">Shamir&rsquo;s Secret Sharing</a><br /></li>
 <li><a href="https://kimh.github.io/blog/en/security/protect-your-secret-key-with-shamirs-secret-sharing/">Divide and Manage Secret Data Securely With Shamir&rsquo;s Secret Sharing</a></li>
 <li><a href="https://www.zeropass.io/">zeropass</a></li>
 <li><a href="https://www.kzencorp.com/post/threshold-signatures-private-key-the-next-generation">Threshold Signatures: The Future of Private Keys</a></li>
 <li><a href="https://medium.com/keylesstech/a-beginners-guide-to-shamir-s-secret-sharing-e864efbf3648">A beginner’s guide to Shamir’s Secret Sharing</a></li>
-<li><a href="https://medium.com/taipei-ethereum-meetup/%E7%A7%81%E9%91%B0%E5%88%86%E5%89%B2-shamirs-secret-sharing-7a70c8abf664">私鑰分割 — Shamir’s Secret Sharing</a></li>
+<li><a href="https://medium.com/taipei-ethereum-meetup/%E7%A7%81%E9%91%B0%E5%88%86%E5%89%B2-shamirs-secret-sharing-7a70c8abf664">私鑰分割 — Shamir’s Secret Sharing</a><br /></li>
 </ol>
 
         </div>

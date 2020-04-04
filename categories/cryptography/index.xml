@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Cryptography on 沉风网事</title>
@@ -27,12 +27,13 @@
 私钥隔离 用冷钱包来实现与网络隔离，避免私钥被盗取或泄漏。
 私钥分片 私钥分片主要采用Shamir&amp;rsquo;s Secret Sharing技术。其技术原理如同藏宝图分成好几分份,这是多少电影与电视剧中出现的情节。
 原理：
-一个数学公式：yy = ax*x + b * x + c
+一个数学公式：y*y = a*x*x + b * x + c
 其中，c为私钥，当然中实际过程可以认为是保密的数据。 a，b这两个参数作为具体分片规则的描述。
 由上面公式可知，该公式对应一个双曲线。如果知道这个双曲线三个点的坐标，通过解方程组得出a，b，c的值。
 该技术有以下优点：
  该方案允许私钥拥有制定分片的规则。可以对同一个私钥采用不同的分片规则。拥有分片规则制定权，可以对分片对象加以管理，如添加分片，删除分片。 在没有不知道分片规则之下，通过任何一个分片都不能破解获取私钥。只有对应数量的分片在一起才能获取私钥和分片的规则。  具体应用如下：
- 私钥等敏感数据分割保护 多方验证 数据分享  参考  Shamir&amp;rsquo;s Secret Sharing Divide and Manage Secret Data Securely With Shamir&amp;rsquo;s Secret Sharing zeropass Threshold Signatures: The Future of Private Keys A beginner’s guide to Shamir’s Secret Sharing 私鑰分割 — Shamir’s Secret Sharing  </description>
+ 私钥等敏感数据分割保护 多方验证 数据分享  参考  Shamir&amp;rsquo;s Secret Sharing
+ Divide and Manage Secret Data Securely With Shamir&amp;rsquo;s Secret Sharing zeropass Threshold Signatures: The Future of Private Keys A beginner’s guide to Shamir’s Secret Sharing 私鑰分割 — Shamir’s Secret Sharing</description>
     </item>
     
   </channel>

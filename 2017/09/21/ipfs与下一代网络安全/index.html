@@ -2,7 +2,7 @@
 <html lang="zh-cn">
 <head>
     <title>IPFS与下一代网络安全 &middot; 沉风网事</title>
-    <meta name="generator" content="Hugo 0.68.3" />
+    <meta name="generator" content="Hugo 0.54.0" />
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta name="author" content="沉风">
@@ -23,56 +23,66 @@
     <meta property="og:title" content="IPFS与下一代网络安全" />
 <meta property="og:description" content="IPFS 先简单说一下IPFS。 IPFS是点对点协议InterPlanetary File System的简称，它是一个面向全球的、点对点的分布式版本文件系统，试图将所有具有相同文件系统的计算设备连接在一起。它用基于内容的地址替代基于域名的地址，也就是用户寻找的不是某个地址而是储存在某个地方的内容，不需要验证发送者的身份，而只需要验证内容的哈希，通过这样可以让网页的速度更快、更安全、更健壮、更持久。IPFS目标是未来将替代HTTP。
 IPFS主要技术，用下面这张图说明：
-IPFS与安全 整个IPFS涉及很多方面的内容，这部分具体看一下IPFS对网络安全的影响。首先从DDOS防攻击展开，IPFS应对DDOS攻击主要如下：
- 道哥在弹性安全网络中表达过DDOS存在的原因就是现在互联网严重依赖存在三大问题的DNS系统,而在IPFS中通过内容寻址方式绕开了DNS IPFS底层网络是基于DHT，拥有大量节点的P2P网络，天生适合内容的分布式读写（PS：P2P网络安全需要另行考虑） 内容签名，通过加密加大攻击的难度与成本  上面的这些作法，很符合经济原理。DDOS存在主要经济学原因是DDOS获得的收益远大于DDOS的投资；IPFS的上述特点直接提高DDOS的成本。
+IPFS与安全 整个IPFS涉及很多方面的内容，这部分具体看一下IPFS对网络安全的影响。首先从DDOS防攻击展开，IPFS应对DDOS攻击主要如下： 1. 道哥在弹性安全网络中表达过DDOS存在的原因就是现在互联网严重依赖存在三大问题的DNS系统,而在IPFS中通过内容寻址方式绕开了DNS 2. IPFS底层网络是基于DHT，拥有大量节点的P2P网络，天生适合内容的分布式读写（PS：P2P网络安全需要另行考虑） 3. 内容签名，通过加密加大攻击的难度与成本
+上面的这些作法，很符合经济原理。DDOS存在主要经济学原因是DDOS获得的收益远大于DDOS的投资；IPFS的上述特点直接提高DDOS的成本。
 比较 上一篇分析了道哥的提出的弹性安全网络设想。那么，就在这里搞事情，对比一下两者。
-  道哥和Juan Benet都是杰出的技术人员及创业者，富有远见
-  作为安全出身的道哥的出发点解决网络安全问题主要是DDOS安全攻击问题，而IPFS目标如下：We believe the internet has become humanity&#39;s most important technology. We build protocols, systems, and tools to improve how it works. Today, we are focused on how we store, locate, and move information.
-  IPFS是一种去中心化技术，而弹性安全网络接入技术可以是一种大规模的云计算技术（中心化技术）。
-  IPFS没有网络访问控制功能，自由开放；弹性安全网络有网络访问控制能力，方便监管与控制
-  IPFS是从数据角度来解决问题（解决数据分布，版本，访问，权限控制等）,弹性安全网络从网络安全的角度来解决问题
-  IPFS开放源码，弹性安全网络没有开源，开源的IPFS体现了去中心化技术的态度
-  IPFS现网运行，弹性安全网络在游戏盾中得到应用与实践，两者都有很长的路需要走" />
+ 道哥和Juan Benet都是杰出的技术人员及创业者，富有远见 作为安全出身的道哥的出发点解决网络安全问题主要是DDOS安全攻击问题，而IPFS目标如下：We believe the internet has become humanity&#39;s most important technology. We build protocols, systems, and tools to improve how it works. Today, we are focused on how we store, locate, and move information.
+ IPFS是一种去中心化技术，而弹性安全网络接入技术可以是一种大规模的云计算技术（中心化技术）。
+ IPFS没有网络访问控制功能，自由开放；弹性安全网络有网络访问控制能力，方便监管与控制
+ IPFS是从数据角度来解决问题（解决数据分布，版本，访问，权限控制等）,弹性安全网络从网络安全的角度来解决问题
+ IPFS开放源码，弹性安全网络没有开源，开源的IPFS体现了去中心化技术的态度
+ IPFS现网运行，弹性安全网络在游戏盾中得到应用与实践，两者都有很长的路需要走
+ IPFS目标是取代HTTP,同时兼容HTTP，弹性安全网络将应用场景定位在非域名类的IP网络
+ IPFS对现有应用冲击很大，因为去中心化应用及基础设施（如去中心数据库）还在起步阶段；弹性安全网络考虑基于现有云计算（大规模中心化技术）应用作为出发点一种网络安全的解决方案，能够兼容云计算应用。
+ IPFS支持端对端加解密，保证数据的隐私。弹性安全网络不涉及这方面内容。" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://myself659.github.io/2017/09/21/ipfs%E4%B8%8E%E4%B8%8B%E4%B8%80%E4%BB%A3%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/" />
-<meta property="article:published_time" content="2017-09-21T11:58:06+02:00" />
-<meta property="article:modified_time" content="2017-09-21T11:58:06+02:00" />
+<meta property="article:published_time" content="2017-09-21T11:58:06&#43;02:00"/>
+<meta property="article:modified_time" content="2017-09-21T11:58:06&#43;02:00"/>
 
     
-    <meta itemprop="name" content="IPFS与下一代网络安全">
+    
+<meta itemprop="name" content="IPFS与下一代网络安全">
 <meta itemprop="description" content="IPFS 先简单说一下IPFS。 IPFS是点对点协议InterPlanetary File System的简称，它是一个面向全球的、点对点的分布式版本文件系统，试图将所有具有相同文件系统的计算设备连接在一起。它用基于内容的地址替代基于域名的地址，也就是用户寻找的不是某个地址而是储存在某个地方的内容，不需要验证发送者的身份，而只需要验证内容的哈希，通过这样可以让网页的速度更快、更安全、更健壮、更持久。IPFS目标是未来将替代HTTP。
 IPFS主要技术，用下面这张图说明：
-IPFS与安全 整个IPFS涉及很多方面的内容，这部分具体看一下IPFS对网络安全的影响。首先从DDOS防攻击展开，IPFS应对DDOS攻击主要如下：
- 道哥在弹性安全网络中表达过DDOS存在的原因就是现在互联网严重依赖存在三大问题的DNS系统,而在IPFS中通过内容寻址方式绕开了DNS IPFS底层网络是基于DHT，拥有大量节点的P2P网络，天生适合内容的分布式读写（PS：P2P网络安全需要另行考虑） 内容签名，通过加密加大攻击的难度与成本  上面的这些作法，很符合经济原理。DDOS存在主要经济学原因是DDOS获得的收益远大于DDOS的投资；IPFS的上述特点直接提高DDOS的成本。
+IPFS与安全 整个IPFS涉及很多方面的内容，这部分具体看一下IPFS对网络安全的影响。首先从DDOS防攻击展开，IPFS应对DDOS攻击主要如下： 1. 道哥在弹性安全网络中表达过DDOS存在的原因就是现在互联网严重依赖存在三大问题的DNS系统,而在IPFS中通过内容寻址方式绕开了DNS 2. IPFS底层网络是基于DHT，拥有大量节点的P2P网络，天生适合内容的分布式读写（PS：P2P网络安全需要另行考虑） 3. 内容签名，通过加密加大攻击的难度与成本
+上面的这些作法，很符合经济原理。DDOS存在主要经济学原因是DDOS获得的收益远大于DDOS的投资；IPFS的上述特点直接提高DDOS的成本。
 比较 上一篇分析了道哥的提出的弹性安全网络设想。那么，就在这里搞事情，对比一下两者。
-  道哥和Juan Benet都是杰出的技术人员及创业者，富有远见
-  作为安全出身的道哥的出发点解决网络安全问题主要是DDOS安全攻击问题，而IPFS目标如下：We believe the internet has become humanity&#39;s most important technology. We build protocols, systems, and tools to improve how it works. Today, we are focused on how we store, locate, and move information.
-  IPFS是一种去中心化技术，而弹性安全网络接入技术可以是一种大规模的云计算技术（中心化技术）。
-  IPFS没有网络访问控制功能，自由开放；弹性安全网络有网络访问控制能力，方便监管与控制
-  IPFS是从数据角度来解决问题（解决数据分布，版本，访问，权限控制等）,弹性安全网络从网络安全的角度来解决问题
-  IPFS开放源码，弹性安全网络没有开源，开源的IPFS体现了去中心化技术的态度
-  IPFS现网运行，弹性安全网络在游戏盾中得到应用与实践，两者都有很长的路需要走">
+ 道哥和Juan Benet都是杰出的技术人员及创业者，富有远见 作为安全出身的道哥的出发点解决网络安全问题主要是DDOS安全攻击问题，而IPFS目标如下：We believe the internet has become humanity&#39;s most important technology. We build protocols, systems, and tools to improve how it works. Today, we are focused on how we store, locate, and move information.
+ IPFS是一种去中心化技术，而弹性安全网络接入技术可以是一种大规模的云计算技术（中心化技术）。
+ IPFS没有网络访问控制功能，自由开放；弹性安全网络有网络访问控制能力，方便监管与控制
+ IPFS是从数据角度来解决问题（解决数据分布，版本，访问，权限控制等）,弹性安全网络从网络安全的角度来解决问题
+ IPFS开放源码，弹性安全网络没有开源，开源的IPFS体现了去中心化技术的态度
+ IPFS现网运行，弹性安全网络在游戏盾中得到应用与实践，两者都有很长的路需要走
+ IPFS目标是取代HTTP,同时兼容HTTP，弹性安全网络将应用场景定位在非域名类的IP网络
+ IPFS对现有应用冲击很大，因为去中心化应用及基础设施（如去中心数据库）还在起步阶段；弹性安全网络考虑基于现有云计算（大规模中心化技术）应用作为出发点一种网络安全的解决方案，能够兼容云计算应用。
+ IPFS支持端对端加解密，保证数据的隐私。弹性安全网络不涉及这方面内容。">
+
+
 <meta itemprop="datePublished" content="2017-09-21T11:58:06&#43;02:00" />
 <meta itemprop="dateModified" content="2017-09-21T11:58:06&#43;02:00" />
-<meta itemprop="wordCount" content="84">
+<meta itemprop="wordCount" content="87">
 
 
 
 <meta itemprop="keywords" content="IPFS," />
+
     <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="IPFS与下一代网络安全"/>
 <meta name="twitter:description" content="IPFS 先简单说一下IPFS。 IPFS是点对点协议InterPlanetary File System的简称，它是一个面向全球的、点对点的分布式版本文件系统，试图将所有具有相同文件系统的计算设备连接在一起。它用基于内容的地址替代基于域名的地址，也就是用户寻找的不是某个地址而是储存在某个地方的内容，不需要验证发送者的身份，而只需要验证内容的哈希，通过这样可以让网页的速度更快、更安全、更健壮、更持久。IPFS目标是未来将替代HTTP。
 IPFS主要技术，用下面这张图说明：
-IPFS与安全 整个IPFS涉及很多方面的内容，这部分具体看一下IPFS对网络安全的影响。首先从DDOS防攻击展开，IPFS应对DDOS攻击主要如下：
- 道哥在弹性安全网络中表达过DDOS存在的原因就是现在互联网严重依赖存在三大问题的DNS系统,而在IPFS中通过内容寻址方式绕开了DNS IPFS底层网络是基于DHT，拥有大量节点的P2P网络，天生适合内容的分布式读写（PS：P2P网络安全需要另行考虑） 内容签名，通过加密加大攻击的难度与成本  上面的这些作法，很符合经济原理。DDOS存在主要经济学原因是DDOS获得的收益远大于DDOS的投资；IPFS的上述特点直接提高DDOS的成本。
+IPFS与安全 整个IPFS涉及很多方面的内容，这部分具体看一下IPFS对网络安全的影响。首先从DDOS防攻击展开，IPFS应对DDOS攻击主要如下： 1. 道哥在弹性安全网络中表达过DDOS存在的原因就是现在互联网严重依赖存在三大问题的DNS系统,而在IPFS中通过内容寻址方式绕开了DNS 2. IPFS底层网络是基于DHT，拥有大量节点的P2P网络，天生适合内容的分布式读写（PS：P2P网络安全需要另行考虑） 3. 内容签名，通过加密加大攻击的难度与成本
+上面的这些作法，很符合经济原理。DDOS存在主要经济学原因是DDOS获得的收益远大于DDOS的投资；IPFS的上述特点直接提高DDOS的成本。
 比较 上一篇分析了道哥的提出的弹性安全网络设想。那么，就在这里搞事情，对比一下两者。
-  道哥和Juan Benet都是杰出的技术人员及创业者，富有远见
-  作为安全出身的道哥的出发点解决网络安全问题主要是DDOS安全攻击问题，而IPFS目标如下：We believe the internet has become humanity&#39;s most important technology. We build protocols, systems, and tools to improve how it works. Today, we are focused on how we store, locate, and move information.
-  IPFS是一种去中心化技术，而弹性安全网络接入技术可以是一种大规模的云计算技术（中心化技术）。
-  IPFS没有网络访问控制功能，自由开放；弹性安全网络有网络访问控制能力，方便监管与控制
-  IPFS是从数据角度来解决问题（解决数据分布，版本，访问，权限控制等）,弹性安全网络从网络安全的角度来解决问题
-  IPFS开放源码，弹性安全网络没有开源，开源的IPFS体现了去中心化技术的态度
-  IPFS现网运行，弹性安全网络在游戏盾中得到应用与实践，两者都有很长的路需要走"/>
+ 道哥和Juan Benet都是杰出的技术人员及创业者，富有远见 作为安全出身的道哥的出发点解决网络安全问题主要是DDOS安全攻击问题，而IPFS目标如下：We believe the internet has become humanity&#39;s most important technology. We build protocols, systems, and tools to improve how it works. Today, we are focused on how we store, locate, and move information.
+ IPFS是一种去中心化技术，而弹性安全网络接入技术可以是一种大规模的云计算技术（中心化技术）。
+ IPFS没有网络访问控制功能，自由开放；弹性安全网络有网络访问控制能力，方便监管与控制
+ IPFS是从数据角度来解决问题（解决数据分布，版本，访问，权限控制等）,弹性安全网络从网络安全的角度来解决问题
+ IPFS开放源码，弹性安全网络没有开源，开源的IPFS体现了去中心化技术的态度
+ IPFS现网运行，弹性安全网络在游戏盾中得到应用与实践，两者都有很长的路需要走
+ IPFS目标是取代HTTP,同时兼容HTTP，弹性安全网络将应用场景定位在非域名类的IP网络
+ IPFS对现有应用冲击很大，因为去中心化应用及基础设施（如去中心数据库）还在起步阶段；弹性安全网络考虑基于现有云计算（大规模中心化技术）应用作为出发点一种网络安全的解决方案，能够兼容云计算应用。
+ IPFS支持端对端加解密，保证数据的隐私。弹性安全网络不涉及这方面内容。"/>
 
     
 
@@ -327,7 +337,7 @@ IPFS与安全 整个IPFS涉及很多方面的内容，这部分具体看一下IP
             <i class="fa fa-calendar"></i>
             <time datetime="2017-09-21 11:58:06 &#43;0200 &#43;0200" itemprop="datePublished">2017-09-21</time>
             &middot;
-            84
+            87
             words
             &middot;
             1
@@ -365,62 +375,62 @@ IPFS与安全 整个IPFS涉及很多方面的内容，这部分具体看一下IP
 </header>
 
         <div class="article-entry" itemprop="articleBody">
-            <h3 id="ipfs">IPFS</h3>
+            
+
+<h3 id="ipfs">IPFS</h3>
+
 <p>先简单说一下IPFS。
 IPFS是点对点协议InterPlanetary File System的简称，它是一个面向全球的、点对点的分布式版本文件系统，试图将所有具有相同文件系统的计算设备连接在一起。它用基于内容的地址替代基于域名的地址，也就是用户寻找的不是某个地址而是储存在某个地方的内容，不需要验证发送者的身份，而只需要验证内容的哈希，通过这样可以让网页的速度更快、更安全、更健壮、更持久。IPFS目标是未来将替代HTTP。</p>
+
 <p>IPFS主要技术，用下面这张图说明：</p>
-<p><img src="/images/ipfs-stack-3.png" alt="IPFS主要技术栈"></p>
+
+<p><img src="/images/ipfs-stack-3.png" alt="IPFS主要技术栈" /></p>
+
 <h3 id="ipfs与安全">IPFS与安全</h3>
-<p>整个IPFS涉及很多方面的内容，这部分具体看一下IPFS对网络安全的影响。首先从DDOS防攻击展开，IPFS应对DDOS攻击主要如下：</p>
-<ol>
-<li>道哥在弹性安全网络中表达过DDOS存在的原因就是现在互联网严重依赖存在三大问题的DNS系统,而在IPFS中通过内容寻址方式绕开了DNS</li>
-<li>IPFS底层网络是基于DHT，拥有大量节点的P2P网络，天生适合内容的分布式读写（PS：P2P网络安全需要另行考虑）</li>
-<li>内容签名，通过加密加大攻击的难度与成本</li>
-</ol>
+
+<p>整个IPFS涉及很多方面的内容，这部分具体看一下IPFS对网络安全的影响。首先从DDOS防攻击展开，IPFS应对DDOS攻击主要如下：
+1. 道哥在弹性安全网络中表达过DDOS存在的原因就是现在互联网严重依赖存在三大问题的DNS系统,而在IPFS中通过内容寻址方式绕开了DNS
+2. IPFS底层网络是基于DHT，拥有大量节点的P2P网络，天生适合内容的分布式读写（PS：P2P网络安全需要另行考虑）
+3. 内容签名，通过加密加大攻击的难度与成本</p>
+
 <p>上面的这些作法，很符合经济原理。DDOS存在主要经济学原因是DDOS获得的收益远大于DDOS的投资；IPFS的上述特点直接提高DDOS的成本。</p>
+
 <h3 id="比较">比较</h3>
+
 <p><a href="https://myself659.github.io/next-network">上一篇</a>分析了道哥的提出的弹性安全网络设想。那么，就在这里搞事情，对比一下两者。</p>
+
 <ol>
-<li>
-<p>道哥和Juan Benet都是杰出的技术人员及创业者，富有远见</p>
-</li>
-<li>
-<p>作为安全出身的道哥的出发点解决网络安全问题主要是DDOS安全攻击问题，而IPFS目标如下：<code>We believe the internet has become humanity's most important technology. We build protocols, systems, and tools to improve how it works. Today, we are focused on how we store, locate, and move information.</code></p>
-</li>
-<li>
-<p>IPFS是一种去中心化技术，而弹性安全网络接入技术可以是一种大规模的云计算技术（中心化技术）。</p>
-</li>
-<li>
-<p>IPFS没有网络访问控制功能，自由开放；弹性安全网络有网络访问控制能力，方便监管与控制</p>
-</li>
-<li>
-<p>IPFS是从数据角度来解决问题（解决数据分布，版本，访问，权限控制等）,弹性安全网络从网络安全的角度来解决问题</p>
-</li>
-<li>
-<p>IPFS开放源码，弹性安全网络没有开源，开源的IPFS体现了去中心化技术的态度</p>
-</li>
-<li>
-<p>IPFS现网运行，弹性安全网络在游戏盾中得到应用与实践，两者都有很长的路需要走</p>
-</li>
-<li>
-<p>IPFS目标是取代HTTP,同时兼容HTTP，弹性安全网络将应用场景定位在非域名类的IP网络</p>
-</li>
-<li>
-<p>IPFS对现有应用冲击很大，因为去中心化应用及基础设施（如去中心数据库）还在起步阶段；弹性安全网络考虑基于现有云计算（大规模中心化技术）应用作为出发点一种网络安全的解决方案，能够兼容云计算应用。</p>
-</li>
-<li>
-<p>IPFS支持端对端加解密，保证数据的隐私。弹性安全网络不涉及这方面内容。</p>
-</li>
-<li>
-<p>IPFS是事前准备，弹性安全网络更多体现发现攻击一种事后处理角度出发。</p>
-</li>
-<li>
-<p>IPFS用去中以化来应对攻击，弹性安全网络用技术（大数据，人工智能）来应对攻击。</p>
-</li>
+<li>道哥和Juan Benet都是杰出的技术人员及创业者，富有远见</li>
+
+<li><p>作为安全出身的道哥的出发点解决网络安全问题主要是DDOS安全攻击问题，而IPFS目标如下：<code>We believe the internet has become humanity's most important technology. We build protocols, systems, and tools to improve how it works. Today, we are focused on how we store, locate, and move information.</code></p></li>
+
+<li><p>IPFS是一种去中心化技术，而弹性安全网络接入技术可以是一种大规模的云计算技术（中心化技术）。</p></li>
+
+<li><p>IPFS没有网络访问控制功能，自由开放；弹性安全网络有网络访问控制能力，方便监管与控制</p></li>
+
+<li><p>IPFS是从数据角度来解决问题（解决数据分布，版本，访问，权限控制等）,弹性安全网络从网络安全的角度来解决问题</p></li>
+
+<li><p>IPFS开放源码，弹性安全网络没有开源，开源的IPFS体现了去中心化技术的态度</p></li>
+
+<li><p>IPFS现网运行，弹性安全网络在游戏盾中得到应用与实践，两者都有很长的路需要走</p></li>
+
+<li><p>IPFS目标是取代HTTP,同时兼容HTTP，弹性安全网络将应用场景定位在非域名类的IP网络</p></li>
+
+<li><p>IPFS对现有应用冲击很大，因为去中心化应用及基础设施（如去中心数据库）还在起步阶段；弹性安全网络考虑基于现有云计算（大规模中心化技术）应用作为出发点一种网络安全的解决方案，能够兼容云计算应用。</p></li>
+
+<li><p>IPFS支持端对端加解密，保证数据的隐私。弹性安全网络不涉及这方面内容。</p></li>
+
+<li><p>IPFS是事前准备，弹性安全网络更多体现发现攻击一种事后处理角度出发。</p></li>
+
+<li><p>IPFS用去中以化来应对攻击，弹性安全网络用技术（大数据，人工智能）来应对攻击。</p></li>
 </ol>
+
 <p>最后说一下：IPFS就像以电为动力的特斯拉，道哥的弹性安全网络则像是不断改进的燃油车。就如同特斯拉给汽车带来的革命和冲击一样，IPFS对整个互联网带来变革与颠覆。</p>
+
 <p>（个人能力有限，不足与错误欢迎指正，欢迎交流！）</p>
+
 <h3 id="参考">参考</h3>
+
 <ol>
 <li><a href="https://ipfs.io/">IPFS</a></li>
 <li><a href="https://www.theverge.com/2017/2/28/14765042/amazon-s3-outage-causing-trouble">Amazon&rsquo;s web servers are down and it&rsquo;s causing trouble across the internet</a></li>

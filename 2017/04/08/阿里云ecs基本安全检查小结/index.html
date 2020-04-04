@@ -2,7 +2,7 @@
 <html lang="zh-cn">
 <head>
     <title>阿里云ECS基本安全检查小结 &middot; 沉风网事</title>
-    <meta name="generator" content="Hugo 0.68.3" />
+    <meta name="generator" content="Hugo 0.54.0" />
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta name="author" content="沉风">
@@ -22,27 +22,31 @@
     <link href='https://fonts.googleapis.com/css?family=Source+Code+Pro' rel='stylesheet' type='text/css'>
     <meta property="og:title" content="阿里云ECS基本安全检查小结" />
 <meta property="og:description" content="背景 查看阿里云ECS服务器日志发现如下：
-type=USER_AUTH msg=audit(1491669519.156:15631): pid=22938 uid=0 auid=4294967295 ses=4294967295 msg=&#39;op=PAM:authentication acct=&quot;deploy&quot; exe=&quot;/usr/sbin/sshd&quot; hostname=123.57.245.163 addr=123.57.245.163 terminal=ssh res=failed&#39;type=USER_LOGIN msg=audit(1491669519.156:15632): pid=22938 uid=0 auid=4294967295 ses=4294967295 msg=&#39;op=login acct=28696E76616C6964207573657229 exe=&quot;/usr/sbin/sshd&quot; hostname=? addr=123.57.245.163 terminal=sshd res=failed&#39;type=USER_LOGIN msg=audit(1491669587.368:15634): pid=22940 uid=0 auid=4294967295 ses=4294967295 msg=&#39;op=login acct=28756E6B6E6F776E207573657229 exe=&quot;/usr/sbin/sshd&quot; hostname=? addr=123.57.245.163 terminal=sshd res=failed&#39;type=USER_LOGIN msg=audit(1491669587.368:15635): pid=22940 uid=0 auid=4294967295 ses=4294967295 msg=&#39;op=login acct=28696E76616C6964207573657229 exe=&quot;/usr/sbin/sshd&quot; hostname=? addr=123.57.245.163 terminal=sshd res=failed&#39;type=USER_AUTH msg=audit(1491669589.420:15636): pid=22940 uid=0 auid=4294967295 ses=4294967295 msg=&#39;op=PAM:authentication acct=&quot;deploy&quot; exe=&quot;/usr/sbin/sshd&quot; hostname=123.57.245.163 addr=123.57.245.163 terminal=ssh res=failed&#39;type=USER_LOGIN msg=audit(1491669589.420:15637): pid=22940 uid=0 auid=4294967295 ses=4294967295 msg=&#39;op=login acct=28696E76616C6964207573657229 exe=&quot;/usr/sbin/sshd&quot; hostname=?" />
+type=USER_AUTH msg=audit(1491669519.156:15631): pid=22938 uid=0 auid=4294967295 ses=4294967295 msg=&#39;op=PAM:authentication acct=&quot;deploy&quot; exe=&quot;/usr/sbin/sshd&quot; hostname=123.57.245.163 addr=123.57.245.163 terminal=ssh res=failed&#39; type=USER_LOGIN msg=audit(1491669519.156:15632): pid=22938 uid=0 auid=4294967295 ses=4294967295 msg=&#39;op=login acct=28696E76616C6964207573657229 exe=&quot;/usr/sbin/sshd&quot; hostname=? addr=123.57.245.163 terminal=sshd res=failed&#39; type=USER_LOGIN msg=audit(1491669587.368:15634): pid=22940 uid=0 auid=4294967295 ses=4294967295 msg=&#39;op=login acct=28756E6B6E6F776E207573657229 exe=&quot;/usr/sbin/sshd&quot; hostname=? addr=123.57.245.163 terminal=sshd res=failed&#39; type=USER_LOGIN msg=audit(1491669587.368:15635): pid=22940 uid=0 auid=4294967295 ses=4294967295 msg=&#39;op=login acct=28696E76616C6964207573657229 exe=&quot;/usr/sbin/sshd&quot; hostname=? addr=123.57.245.163 terminal=sshd res=failed&#39; type=USER_AUTH msg=audit(1491669589.420:15636): pid=22940 uid=0 auid=4294967295 ses=4294967295 msg=&#39;op=PAM:authentication acct=&quot;deploy&quot; exe=&quot;/usr/sbin/sshd&quot; hostname=123.57.245.163 addr=123.57.245.163 terminal=ssh res=failed&#39; type=USER_LOGIN msg=audit(1491669589.420:15637): pid=22940 uid=0 auid=4294967295 ses=4294967295 msg=&#39;op=login acct=28696E76616C6964207573657229 exe=&quot;/usr/sbin/sshd&quot; hostname=?" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://myself659.github.io/2017/04/08/%E9%98%BF%E9%87%8C%E4%BA%91ecs%E5%9F%BA%E6%9C%AC%E5%AE%89%E5%85%A8%E6%A3%80%E6%9F%A5%E5%B0%8F%E7%BB%93/" />
-<meta property="article:published_time" content="2017-04-08T11:58:06+02:00" />
-<meta property="article:modified_time" content="2017-04-08T11:58:06+02:00" />
+<meta property="article:published_time" content="2017-04-08T11:58:06&#43;02:00"/>
+<meta property="article:modified_time" content="2017-04-08T11:58:06&#43;02:00"/>
 
     
-    <meta itemprop="name" content="阿里云ECS基本安全检查小结">
+    
+<meta itemprop="name" content="阿里云ECS基本安全检查小结">
 <meta itemprop="description" content="背景 查看阿里云ECS服务器日志发现如下：
-type=USER_AUTH msg=audit(1491669519.156:15631): pid=22938 uid=0 auid=4294967295 ses=4294967295 msg=&#39;op=PAM:authentication acct=&quot;deploy&quot; exe=&quot;/usr/sbin/sshd&quot; hostname=123.57.245.163 addr=123.57.245.163 terminal=ssh res=failed&#39;type=USER_LOGIN msg=audit(1491669519.156:15632): pid=22938 uid=0 auid=4294967295 ses=4294967295 msg=&#39;op=login acct=28696E76616C6964207573657229 exe=&quot;/usr/sbin/sshd&quot; hostname=? addr=123.57.245.163 terminal=sshd res=failed&#39;type=USER_LOGIN msg=audit(1491669587.368:15634): pid=22940 uid=0 auid=4294967295 ses=4294967295 msg=&#39;op=login acct=28756E6B6E6F776E207573657229 exe=&quot;/usr/sbin/sshd&quot; hostname=? addr=123.57.245.163 terminal=sshd res=failed&#39;type=USER_LOGIN msg=audit(1491669587.368:15635): pid=22940 uid=0 auid=4294967295 ses=4294967295 msg=&#39;op=login acct=28696E76616C6964207573657229 exe=&quot;/usr/sbin/sshd&quot; hostname=? addr=123.57.245.163 terminal=sshd res=failed&#39;type=USER_AUTH msg=audit(1491669589.420:15636): pid=22940 uid=0 auid=4294967295 ses=4294967295 msg=&#39;op=PAM:authentication acct=&quot;deploy&quot; exe=&quot;/usr/sbin/sshd&quot; hostname=123.57.245.163 addr=123.57.245.163 terminal=ssh res=failed&#39;type=USER_LOGIN msg=audit(1491669589.420:15637): pid=22940 uid=0 auid=4294967295 ses=4294967295 msg=&#39;op=login acct=28696E76616C6964207573657229 exe=&quot;/usr/sbin/sshd&quot; hostname=?">
+type=USER_AUTH msg=audit(1491669519.156:15631): pid=22938 uid=0 auid=4294967295 ses=4294967295 msg=&#39;op=PAM:authentication acct=&quot;deploy&quot; exe=&quot;/usr/sbin/sshd&quot; hostname=123.57.245.163 addr=123.57.245.163 terminal=ssh res=failed&#39; type=USER_LOGIN msg=audit(1491669519.156:15632): pid=22938 uid=0 auid=4294967295 ses=4294967295 msg=&#39;op=login acct=28696E76616C6964207573657229 exe=&quot;/usr/sbin/sshd&quot; hostname=? addr=123.57.245.163 terminal=sshd res=failed&#39; type=USER_LOGIN msg=audit(1491669587.368:15634): pid=22940 uid=0 auid=4294967295 ses=4294967295 msg=&#39;op=login acct=28756E6B6E6F776E207573657229 exe=&quot;/usr/sbin/sshd&quot; hostname=? addr=123.57.245.163 terminal=sshd res=failed&#39; type=USER_LOGIN msg=audit(1491669587.368:15635): pid=22940 uid=0 auid=4294967295 ses=4294967295 msg=&#39;op=login acct=28696E76616C6964207573657229 exe=&quot;/usr/sbin/sshd&quot; hostname=? addr=123.57.245.163 terminal=sshd res=failed&#39; type=USER_AUTH msg=audit(1491669589.420:15636): pid=22940 uid=0 auid=4294967295 ses=4294967295 msg=&#39;op=PAM:authentication acct=&quot;deploy&quot; exe=&quot;/usr/sbin/sshd&quot; hostname=123.57.245.163 addr=123.57.245.163 terminal=ssh res=failed&#39; type=USER_LOGIN msg=audit(1491669589.420:15637): pid=22940 uid=0 auid=4294967295 ses=4294967295 msg=&#39;op=login acct=28696E76616C6964207573657229 exe=&quot;/usr/sbin/sshd&quot; hostname=?">
+
+
 <meta itemprop="datePublished" content="2017-04-08T11:58:06&#43;02:00" />
 <meta itemprop="dateModified" content="2017-04-08T11:58:06&#43;02:00" />
-<meta itemprop="wordCount" content="824">
+<meta itemprop="wordCount" content="827">
 
 
 
 <meta itemprop="keywords" content="Secure," />
+
     <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="阿里云ECS基本安全检查小结"/>
 <meta name="twitter:description" content="背景 查看阿里云ECS服务器日志发现如下：
-type=USER_AUTH msg=audit(1491669519.156:15631): pid=22938 uid=0 auid=4294967295 ses=4294967295 msg=&#39;op=PAM:authentication acct=&quot;deploy&quot; exe=&quot;/usr/sbin/sshd&quot; hostname=123.57.245.163 addr=123.57.245.163 terminal=ssh res=failed&#39;type=USER_LOGIN msg=audit(1491669519.156:15632): pid=22938 uid=0 auid=4294967295 ses=4294967295 msg=&#39;op=login acct=28696E76616C6964207573657229 exe=&quot;/usr/sbin/sshd&quot; hostname=? addr=123.57.245.163 terminal=sshd res=failed&#39;type=USER_LOGIN msg=audit(1491669587.368:15634): pid=22940 uid=0 auid=4294967295 ses=4294967295 msg=&#39;op=login acct=28756E6B6E6F776E207573657229 exe=&quot;/usr/sbin/sshd&quot; hostname=? addr=123.57.245.163 terminal=sshd res=failed&#39;type=USER_LOGIN msg=audit(1491669587.368:15635): pid=22940 uid=0 auid=4294967295 ses=4294967295 msg=&#39;op=login acct=28696E76616C6964207573657229 exe=&quot;/usr/sbin/sshd&quot; hostname=? addr=123.57.245.163 terminal=sshd res=failed&#39;type=USER_AUTH msg=audit(1491669589.420:15636): pid=22940 uid=0 auid=4294967295 ses=4294967295 msg=&#39;op=PAM:authentication acct=&quot;deploy&quot; exe=&quot;/usr/sbin/sshd&quot; hostname=123.57.245.163 addr=123.57.245.163 terminal=ssh res=failed&#39;type=USER_LOGIN msg=audit(1491669589.420:15637): pid=22940 uid=0 auid=4294967295 ses=4294967295 msg=&#39;op=login acct=28696E76616C6964207573657229 exe=&quot;/usr/sbin/sshd&quot; hostname=?"/>
+type=USER_AUTH msg=audit(1491669519.156:15631): pid=22938 uid=0 auid=4294967295 ses=4294967295 msg=&#39;op=PAM:authentication acct=&quot;deploy&quot; exe=&quot;/usr/sbin/sshd&quot; hostname=123.57.245.163 addr=123.57.245.163 terminal=ssh res=failed&#39; type=USER_LOGIN msg=audit(1491669519.156:15632): pid=22938 uid=0 auid=4294967295 ses=4294967295 msg=&#39;op=login acct=28696E76616C6964207573657229 exe=&quot;/usr/sbin/sshd&quot; hostname=? addr=123.57.245.163 terminal=sshd res=failed&#39; type=USER_LOGIN msg=audit(1491669587.368:15634): pid=22940 uid=0 auid=4294967295 ses=4294967295 msg=&#39;op=login acct=28756E6B6E6F776E207573657229 exe=&quot;/usr/sbin/sshd&quot; hostname=? addr=123.57.245.163 terminal=sshd res=failed&#39; type=USER_LOGIN msg=audit(1491669587.368:15635): pid=22940 uid=0 auid=4294967295 ses=4294967295 msg=&#39;op=login acct=28696E76616C6964207573657229 exe=&quot;/usr/sbin/sshd&quot; hostname=? addr=123.57.245.163 terminal=sshd res=failed&#39; type=USER_AUTH msg=audit(1491669589.420:15636): pid=22940 uid=0 auid=4294967295 ses=4294967295 msg=&#39;op=PAM:authentication acct=&quot;deploy&quot; exe=&quot;/usr/sbin/sshd&quot; hostname=123.57.245.163 addr=123.57.245.163 terminal=ssh res=failed&#39; type=USER_LOGIN msg=audit(1491669589.420:15637): pid=22940 uid=0 auid=4294967295 ses=4294967295 msg=&#39;op=login acct=28696E76616C6964207573657229 exe=&quot;/usr/sbin/sshd&quot; hostname=?"/>
 
     
 
@@ -297,7 +301,7 @@ type=USER_AUTH msg=audit(1491669519.156:15631): pid=22938 uid=0 auid=4294967295 
             <i class="fa fa-calendar"></i>
             <time datetime="2017-04-08 11:58:06 &#43;0200 &#43;0200" itemprop="datePublished">2017-04-08</time>
             &middot;
-            824
+            827
             words
             &middot;
             4
@@ -335,8 +339,12 @@ type=USER_AUTH msg=audit(1491669519.156:15631): pid=22938 uid=0 auid=4294967295 
 </header>
 
         <div class="article-entry" itemprop="articleBody">
-            <h3 id="背景">背景</h3>
+            
+
+<h3 id="背景">背景</h3>
+
 <p>查看阿里云ECS服务器日志发现如下：</p>
+
 <pre><code>type=USER_AUTH msg=audit(1491669519.156:15631): pid=22938 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:authentication acct=&quot;deploy&quot; exe=&quot;/usr/sbin/sshd&quot; hostname=123.57.245.163 addr=123.57.245.163 terminal=ssh res=failed'
 type=USER_LOGIN msg=audit(1491669519.156:15632): pid=22938 uid=0 auid=4294967295 ses=4294967295 msg='op=login acct=28696E76616C6964207573657229 exe=&quot;/usr/sbin/sshd&quot; hostname=? addr=123.57.245.163 terminal=sshd res=failed'
 type=USER_LOGIN msg=audit(1491669587.368:15634): pid=22940 uid=0 auid=4294967295 ses=4294967295 msg='op=login acct=28756E6B6E6F776E207573657229 exe=&quot;/usr/sbin/sshd&quot; hostname=? addr=123.57.245.163 terminal=sshd res=failed'
@@ -344,49 +352,98 @@ type=USER_LOGIN msg=audit(1491669587.368:15635): pid=22940 uid=0 auid=4294967295
 type=USER_AUTH msg=audit(1491669589.420:15636): pid=22940 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:authentication acct=&quot;deploy&quot; exe=&quot;/usr/sbin/sshd&quot; hostname=123.57.245.163 addr=123.57.245.163 terminal=ssh res=failed'
 type=USER_LOGIN msg=audit(1491669589.420:15637): pid=22940 uid=0 auid=4294967295 ses=4294967295 msg='op=login acct=28696E76616C6964207573657229 exe=&quot;/usr/sbin/sshd&quot; hostname=? addr=123.57.245.163 terminal=sshd res=failed'
 type=USER_LOGIN msg=audit(1491669658.624:15639): pid=22948 uid=0 auid=4294967295 ses=4294967295 msg='op=login acct=28756E6B6E6F776E207573657229 exe=&quot;/usr/sbin/sshd&quot; hostname=? addr=123.57.245.163 terminal=sshd res=failed'
-</code></pre><p>百度一下这个ip地址，如下图所示：
-![记下这个IP,留下证据](/images/attck ip.png)</p>
+</code></pre>
+
+<p>百度一下这个ip地址，如下图所示：
+<img src="/images/attck ip.png" alt="记下这个IP,留下证据" /></p>
+
 <p>这是有人在阿里云ECS写脚本要暴力破解云主机的密码。这个引起我的注意，赶紧检查一下自己的ECS是否被破解。</p>
+
 <p>说点题外话：记得去年帮人弄一个网站的时候，后面的她的云主机密码泄漏了，人家第一反应过来就是怀疑我，还得花心思给她解释有多种情况会导致密码泄漏与破解，伤不起啊。</p>
+
 <p>整个检查大体如下，分为以下几个部分：</p>
+
 <ol>
 <li>检查有哪些用户？</li>
 <li>用户会干什么？</li>
 <li>用户干过什么？</li>
 <li>处于什么样的环境？</li>
 </ol>
+
 <h2 id="检查用户">检查用户</h2>
+
 <h3 id="查看当前在线用户">查看当前在线用户</h3>
+
 <pre><code>root@ecs-1:~# who 
-</code></pre><p>为了确定是否当前就有不明用户登录，如果有不明用户登录，那么得赶紧修改密码。</p>
+</code></pre>
+
+<p>为了确定是否当前就有不明用户登录，如果有不明用户登录，那么得赶紧修改密码。</p>
+
 <h3 id="查看当前ssh连接情况">查看当前ssh连接情况</h3>
+
 <pre><code>root@ecs-1:~# ss  -t   sport = :22   
-</code></pre><p>查看用户的ssh连接情况，进行对比确认</p>
+</code></pre>
+
+<p>查看用户的ssh连接情况，进行对比确认</p>
+
 <h3 id="查看新增用户">查看新增用户</h3>
+
 <pre><code>root@ecs-1:~# awk -F':' '{ print $1}' /etc/passwd
-</code></pre><h3 id="查看当前用户">查看当前用户</h3>
+</code></pre>
+
+<h3 id="查看当前用户">查看当前用户</h3>
+
 <pre><code>root@ecs-1:~# awk -F':' '{ print $1}' /etc/passwd
-</code></pre><p>主要是确定是否存在可疑用户，是否有可疑用户加入</p>
+</code></pre>
+
+<p>主要是确定是否存在可疑用户，是否有可疑用户加入</p>
+
 <h3 id="检查是否存在特权用户">检查是否存在特权用户</h3>
+
 <pre><code>root@ecs-1:~# awk -F: '$3==0 {print $1}' /etc/passwd
 root
-</code></pre><h3 id="检查用户口令是否为空">检查用户口令是否为空</h3>
+</code></pre>
+
+<h3 id="检查用户口令是否为空">检查用户口令是否为空</h3>
+
 <pre><code>root@ecs-1:~# awk -F: 'length($2)==0 {print $1}' /etc/shadow
-</code></pre><h2 id="检查用户会干什么">检查用户会干什么</h2>
+</code></pre>
+
+<h2 id="检查用户会干什么">检查用户会干什么</h2>
+
 <h3 id="top查看内存与内存使用情况">top查看内存与内存使用情况</h3>
+
 <pre><code>root@ecs-1:~# top  
-</code></pre><p>关注高cpu使用率与高内存占用程序，例如比特币的矿机一般会占用大量的cpu资源</p>
+</code></pre>
+
+<p>关注高cpu使用率与高内存占用程序，例如比特币的矿机一般会占用大量的cpu资源</p>
+
 <h3 id="查看任务计划">查看任务计划</h3>
+
 <pre><code>root@ecs-1:~# crontab   -l
-</code></pre><h3 id="查看网络连接情况">查看网络连接情况</h3>
+</code></pre>
+
+<h3 id="查看网络连接情况">查看网络连接情况</h3>
+
 <pre><code>root@ecs-1:~# netstat   -natp  
-</code></pre><h3 id="检查隐藏进程">检查隐藏进程</h3>
+</code></pre>
+
+<h3 id="检查隐藏进程">检查隐藏进程</h3>
+
 <p>检查隐藏进程，三步走：</p>
+
 <p>第一步：</p>
+
 <pre><code>root@ecs-1:~# ps  -ef    | awk   '{print $2}'  | sort  -n    |  uniq   &gt; pid1
-</code></pre><p>第二步：</p>
+</code></pre>
+
+<p>第二步：</p>
+
 <pre><code>root@ecs-1:~# ls   /proc  | grep -E '[0-9]{1,}' | sort   -n    | uniq   &gt; pid2  
-</code></pre><p>第三步：</p>
+</code></pre>
+
+<p>第三步：</p>
+
 <pre><code>root@ecs-1:~# diff pid1 pid2  
 1d0
 &lt; PID
@@ -399,44 +456,75 @@ root
 &gt; 29589
 &gt; 29590
 &gt; 29591
-</code></pre><p>结果说明： 第一步有4个不同的进程表示这条命令对应的进程，第二步同样的，所以这里没有发现隐藏的进程</p>
-<h3 id="检查rcxd">检查rcx.d</h3>
+</code></pre>
+
+<p>结果说明： 第一步有4个不同的进程表示这条命令对应的进程，第二步同样的，所以这里没有发现隐藏的进程</p>
+
+<h3 id="检查rcx-d">检查rcx.d</h3>
+
 <pre><code>root@ecs-1:~# ls /etc/rc3.d
-</code></pre><h2 id="检查用户干过什么">检查用户干过什么</h2>
-<p>重点检查以下情况：</p>
-<ol>
-<li>用户登录</li>
-<li>机器重启情况</li>
-<li>安全日志</li>
-<li>历史操作</li>
-<li>安全文件检查</li>
-</ol>
-<h3 id="用last--d-查看登录情况">用last -d 查看登录情况</h3>
+</code></pre>
+
+<h2 id="检查用户干过什么">检查用户干过什么</h2>
+
+<p>重点检查以下情况：
+1. 用户登录
+2. 机器重启情况
+3. 安全日志
+4. 历史操作
+5. 安全文件检查</p>
+
+<h3 id="用last-d-查看登录情况">用last -d 查看登录情况</h3>
+
 <pre><code>root@ecs-1:~# last   -d  
-</code></pre><h3 id="用last---x-查看机器重启情况">用last  -x 查看机器重启情况</h3>
+</code></pre>
+
+<h3 id="用last-x-查看机器重启情况">用last  -x 查看机器重启情况</h3>
+
 <pre><code>root@ecs-1:~# last   -x reboot  
-</code></pre><h3 id="查看audit的log信息">查看audit的log信息</h3>
+</code></pre>
+
+<h3 id="查看audit的log信息">查看audit的log信息</h3>
+
 <pre><code>root@ecs-1:~# cat   /var/log/audit/audit.log  
-</code></pre><h3 id="查看历史命令">查看历史命令</h3>
+</code></pre>
+
+<h3 id="查看历史命令">查看历史命令</h3>
+
 <pre><code>root@ecs-1:~# history    
   271  iptables   -L
   272  package main
-</code></pre><h3 id="安全文件检查">安全文件检查</h3>
+</code></pre>
+
+<h3 id="安全文件检查">安全文件检查</h3>
+
 <ol>
 <li>检查授权的ssh key，查看是否有未知的ssh key添加</li>
 </ol>
+
 <pre><code>root@ecs-1:~#  cat   ~/.ssh/authorized_keys       
-</code></pre><ol start="2">
+</code></pre>
+
+<ol>
 <li>检查bashrc</li>
 </ol>
+
 <pre><code>root@ecs-1:~#  cat   ~/.bashrc      
-</code></pre><ol start="3">
+</code></pre>
+
+<ol>
 <li>检查密码最后修改时间</li>
 </ol>
+
 <pre><code>root@ecs-1:~# ls -l /etc/passwd
-</code></pre><h2 id="环境">环境</h2>
+</code></pre>
+
+<h2 id="环境">环境</h2>
+
 <h3 id="网络隔离性">网络隔离性</h3>
+
 <p>网络采用了VPC网络模式，检测结果如下：</p>
+
 <pre><code>root@ecs-1#  nmap -v -sT 172.17.11.0/28   --open
 
 Starting Nmap 6.40 ( http://nmap.org ) at 2017-03-14 10:23 CST
@@ -484,7 +572,10 @@ Completed Connect Scan at 10:46, 1342.34s elapsed (16000 total ports)
 Read data files from: /usr/bin/../share/nmap
 Nmap done: 16 IP addresses (16 hosts up) scanned in 1355.80 seconds
            Raw packets sent: 16 (448B) | Rcvd: 16 (448B)
-</code></pre><p>如果网络没有隔离，各个VM同一个局域网内，会发现同一个网段的开放的端口，检查结果如下：</p>
+</code></pre>
+
+<p>如果网络没有隔离，各个VM同一个局域网内，会发现同一个网段的开放的端口，检查结果如下：</p>
+
 <pre><code>root@centos# nmap   -v -sT  192.168.20.0/24 --open 
 
 Discovered open port 80/tcp on 192.168.20.10
@@ -499,8 +590,12 @@ Discovered open port 445/tcp on 192.168.20.36
 Discovered open port 135/tcp on 192.168.20.14
 Discovered open port 3389/tcp on 192.168.20.38
 Discovered open port 135/tcp on 192.168.20.50
-</code></pre><p>通过对比可知，采用VPC隔离的ECS不能发现同一个网段开放的网络端口，这样安全性也大大增加，好在阿里云ECS已经支持上VPC,这样就不担心来自同一个网段的攻击了（堡垒更容易从内部攻破）</p>
+</code></pre>
+
+<p>通过对比可知，采用VPC隔离的ECS不能发现同一个网段开放的网络端口，这样安全性也大大增加，好在阿里云ECS已经支持上VPC,这样就不担心来自同一个网段的攻击了（堡垒更容易从内部攻破）</p>
+
 <h2 id="总结">总结</h2>
+
 <ol>
 <li>安全首先是一个意识问题，需要保证足够的敏锐</li>
 <li>阿里云的ip基本是一个大段范围，这么多IP对应的ECS肯定有些用户是安全小白用户，这样攻击者的成本也不会很高，写一个脚本遍历这个大的ip池，就可以获取一些小白用户的ECS</li>
@@ -508,12 +603,16 @@ Discovered open port 135/tcp on 192.168.20.50
 <li>对阿里云一个建议：对于暴力破解ssh密码，增加功能实现同一个ip地址多次尝试ssh的限制</li>
 <li>这篇主要写一些基本检查操作，有空的时候再写一篇加强基础安全防护的文章</li>
 </ol>
+
 <p>不足与建议，欢迎指正与交流。</p>
+
 <p>（end）</p>
+
 <h3 id="参考">参考</h3>
+
 <ol>
 <li><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/6/html/Security_Guide/sec-Understanding_Audit_Log_Files.html">Understanding Audit Log Files</a></li>
-<li>linux man</li>
+<li>linux man<br /></li>
 <li><a href="https://sysdig.com/blog/hiding-linux-processes-for-fun-and-profit/">Hiding Linux Processes For Fun And Profit</a></li>
 <li><a href="https://www.cyberciti.biz/faq/linux-hide-processes-from-other-users/">Linux: Hide Processes From Other Users</a></li>
 <li><a href="http://www.linuxjournal.com/article/1274">Understanding Red Hat Run Levels</a></li>

@@ -2,7 +2,7 @@
 <html lang="zh-cn">
 <head>
     <title>Linux进程诊断小结 &middot; 沉风网事</title>
-    <meta name="generator" content="Hugo 0.68.3" />
+    <meta name="generator" content="Hugo 0.54.0" />
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta name="author" content="沉风">
@@ -23,32 +23,36 @@
     <meta property="og:title" content="Linux进程诊断小结" />
 <meta property="og:description" content="日常工作中最常见问题是如何诊断一个进程运行过程中出现的问题，下面的总结从进程诊断的角度来展示，而是不从工具与命令角度来展示，进程诊断是工作的主体，工具与命令只是工具。
 进程信息 获得进程PID 方式一：
-root@iZ2ze9qnmldt4l3l82gtviZ:~# pidof tmsf-zc2064方式2：
-root@iZ2ze9qnmldt4l3l82gtviZ:~# ps -ef | grep tmsf-zcroot 2064 1 0 Mar17 ? 02:24:25 ./tmsf-zcroot 7596 7288 0 15:07 pts/4 00:00:00 grep --color=auto tmsf-zcroot@iZ2ze9qnmldt4l3l82gtviZ:~# 查看进程线程个数 及对应PID root@iZ2ze9qnmldt4l3l82gtviZ:~# ps -efL | grep tmsf-zcroot 2064 1 2064 0 5 Mar17 ? 00:00:00 ./tmsf-zcroot 2064 1 2066 0 5 Mar17 ? 01:04:46 ./tmsf-zcroot 2064 1 2067 0 5 Mar17 ? 00:44:53 ." />
+root@iZ2ze9qnmldt4l3l82gtviZ:~# pidof tmsf-zc 2064  方式2：
+root@iZ2ze9qnmldt4l3l82gtviZ:~# ps -ef | grep tmsf-zc root 2064 1 0 Mar17 ? 02:24:25 ./tmsf-zc root 7596 7288 0 15:07 pts/4 00:00:00 grep --color=auto tmsf-zc root@iZ2ze9qnmldt4l3l82gtviZ:~#  查看进程线程个数 及对应PID root@iZ2ze9qnmldt4l3l82gtviZ:~# ps -efL | grep tmsf-zc root 2064 1 2064 0 5 Mar17 ? 00:00:00 ./tmsf-zc root 2064 1 2066 0 5 Mar17 ? 01:04:46 ./tmsf-zc root 2064 1 2067 0 5 Mar17 ?" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://myself659.github.io/2017/05/10/linux%E8%BF%9B%E7%A8%8B%E8%AF%8A%E6%96%AD%E5%B0%8F%E7%BB%93/" />
-<meta property="article:published_time" content="2017-05-10T11:58:06+02:00" />
-<meta property="article:modified_time" content="2017-05-10T11:58:06+02:00" />
+<meta property="article:published_time" content="2017-05-10T11:58:06&#43;02:00"/>
+<meta property="article:modified_time" content="2017-05-10T11:58:06&#43;02:00"/>
 
     
-    <meta itemprop="name" content="Linux进程诊断小结">
+    
+<meta itemprop="name" content="Linux进程诊断小结">
 <meta itemprop="description" content="日常工作中最常见问题是如何诊断一个进程运行过程中出现的问题，下面的总结从进程诊断的角度来展示，而是不从工具与命令角度来展示，进程诊断是工作的主体，工具与命令只是工具。
 进程信息 获得进程PID 方式一：
-root@iZ2ze9qnmldt4l3l82gtviZ:~# pidof tmsf-zc2064方式2：
-root@iZ2ze9qnmldt4l3l82gtviZ:~# ps -ef | grep tmsf-zcroot 2064 1 0 Mar17 ? 02:24:25 ./tmsf-zcroot 7596 7288 0 15:07 pts/4 00:00:00 grep --color=auto tmsf-zcroot@iZ2ze9qnmldt4l3l82gtviZ:~# 查看进程线程个数 及对应PID root@iZ2ze9qnmldt4l3l82gtviZ:~# ps -efL | grep tmsf-zcroot 2064 1 2064 0 5 Mar17 ? 00:00:00 ./tmsf-zcroot 2064 1 2066 0 5 Mar17 ? 01:04:46 ./tmsf-zcroot 2064 1 2067 0 5 Mar17 ? 00:44:53 .">
+root@iZ2ze9qnmldt4l3l82gtviZ:~# pidof tmsf-zc 2064  方式2：
+root@iZ2ze9qnmldt4l3l82gtviZ:~# ps -ef | grep tmsf-zc root 2064 1 0 Mar17 ? 02:24:25 ./tmsf-zc root 7596 7288 0 15:07 pts/4 00:00:00 grep --color=auto tmsf-zc root@iZ2ze9qnmldt4l3l82gtviZ:~#  查看进程线程个数 及对应PID root@iZ2ze9qnmldt4l3l82gtviZ:~# ps -efL | grep tmsf-zc root 2064 1 2064 0 5 Mar17 ? 00:00:00 ./tmsf-zc root 2064 1 2066 0 5 Mar17 ? 01:04:46 ./tmsf-zc root 2064 1 2067 0 5 Mar17 ?">
+
+
 <meta itemprop="datePublished" content="2017-05-10T11:58:06&#43;02:00" />
 <meta itemprop="dateModified" content="2017-05-10T11:58:06&#43;02:00" />
-<meta itemprop="wordCount" content="2109">
+<meta itemprop="wordCount" content="2115">
 
 
 
 <meta itemprop="keywords" content="Linux," />
+
     <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Linux进程诊断小结"/>
 <meta name="twitter:description" content="日常工作中最常见问题是如何诊断一个进程运行过程中出现的问题，下面的总结从进程诊断的角度来展示，而是不从工具与命令角度来展示，进程诊断是工作的主体，工具与命令只是工具。
 进程信息 获得进程PID 方式一：
-root@iZ2ze9qnmldt4l3l82gtviZ:~# pidof tmsf-zc2064方式2：
-root@iZ2ze9qnmldt4l3l82gtviZ:~# ps -ef | grep tmsf-zcroot 2064 1 0 Mar17 ? 02:24:25 ./tmsf-zcroot 7596 7288 0 15:07 pts/4 00:00:00 grep --color=auto tmsf-zcroot@iZ2ze9qnmldt4l3l82gtviZ:~# 查看进程线程个数 及对应PID root@iZ2ze9qnmldt4l3l82gtviZ:~# ps -efL | grep tmsf-zcroot 2064 1 2064 0 5 Mar17 ? 00:00:00 ./tmsf-zcroot 2064 1 2066 0 5 Mar17 ? 01:04:46 ./tmsf-zcroot 2064 1 2067 0 5 Mar17 ? 00:44:53 ."/>
+root@iZ2ze9qnmldt4l3l82gtviZ:~# pidof tmsf-zc 2064  方式2：
+root@iZ2ze9qnmldt4l3l82gtviZ:~# ps -ef | grep tmsf-zc root 2064 1 0 Mar17 ? 02:24:25 ./tmsf-zc root 7596 7288 0 15:07 pts/4 00:00:00 grep --color=auto tmsf-zc root@iZ2ze9qnmldt4l3l82gtviZ:~#  查看进程线程个数 及对应PID root@iZ2ze9qnmldt4l3l82gtviZ:~# ps -efL | grep tmsf-zc root 2064 1 2064 0 5 Mar17 ? 00:00:00 ./tmsf-zc root 2064 1 2066 0 5 Mar17 ? 01:04:46 ./tmsf-zc root 2064 1 2067 0 5 Mar17 ?"/>
 
     
 
@@ -303,7 +307,7 @@ root@iZ2ze9qnmldt4l3l82gtviZ:~# ps -ef | grep tmsf-zcroot 2064 1 0 Mar17 ? 02:2
             <i class="fa fa-calendar"></i>
             <time datetime="2017-05-10 11:58:06 &#43;0200 &#43;0200" itemprop="datePublished">2017-05-10</time>
             &middot;
-            2109
+            2115
             words
             &middot;
             10
@@ -341,18 +345,30 @@ root@iZ2ze9qnmldt4l3l82gtviZ:~# ps -ef | grep tmsf-zcroot 2064 1 0 Mar17 ? 02:2
 </header>
 
         <div class="article-entry" itemprop="articleBody">
-            <p>日常工作中最常见问题是如何诊断一个进程运行过程中出现的问题，下面的总结从进程诊断的角度来展示，而是不从工具与命令角度来展示，进程诊断是工作的主体，工具与命令只是工具。</p>
+            
+
+<p>日常工作中最常见问题是如何诊断一个进程运行过程中出现的问题，下面的总结从进程诊断的角度来展示，而是不从工具与命令角度来展示，进程诊断是工作的主体，工具与命令只是工具。</p>
+
 <h2 id="进程信息">进程信息</h2>
+
 <h3 id="获得进程pid">获得进程PID</h3>
+
 <p>方式一：</p>
+
 <pre><code>root@iZ2ze9qnmldt4l3l82gtviZ:~# pidof  tmsf-zc
 2064
-</code></pre><p>方式2：</p>
+</code></pre>
+
+<p>方式2：</p>
+
 <pre><code>root@iZ2ze9qnmldt4l3l82gtviZ:~# ps   -ef   | grep  tmsf-zc
 root      2064     1  0 Mar17 ?        02:24:25 ./tmsf-zc
 root      7596  7288  0 15:07 pts/4    00:00:00 grep --color=auto tmsf-zc
 root@iZ2ze9qnmldt4l3l82gtviZ:~# 
-</code></pre><h3 id="查看进程线程个数-及对应pid">查看进程线程个数 及对应PID</h3>
+</code></pre>
+
+<h3 id="查看进程线程个数-及对应pid">查看进程线程个数 及对应PID</h3>
+
 <pre><code>root@iZ2ze9qnmldt4l3l82gtviZ:~# ps   -efL   | grep  tmsf-zc
 root      2064     1  2064  0    5 Mar17 ?        00:00:00 ./tmsf-zc
 root      2064     1  2066  0    5 Mar17 ?        01:04:46 ./tmsf-zc
@@ -361,7 +377,10 @@ root      2064     1  2068  0    5 Mar17 ?        00:34:39 ./tmsf-zc
 root      2064     1  2069  0    5 Mar17 ?        00:00:04 ./tmsf-zc
 root      7604  7288  7604  0    1 15:08 pts/4    00:00:00 grep --color=auto tmsf-zc
 root@iZ2ze9qnmldt4l3l82gtviZ:~# 
-</code></pre><h3 id="查看进程cpu与内存使用情况">查看进程CPU与内存使用情况</h3>
+</code></pre>
+
+<h3 id="查看进程cpu与内存使用情况">查看进程CPU与内存使用情况</h3>
+
 <pre><code>root@iZ2ze9qnmldt4l3l82gtviZ:~# top -H   -p 2064
 
 top - 15:10:57 up 14 days,  5:43,  3 users,  load average: 0.00, 0.03, 0.05
@@ -376,7 +395,9 @@ KiB Swap:        0 total,        0 used,        0 free.  1334832 cached Mem
  2067 root      20   0   55752   7180   2756 S  0.0  0.4  44:53.83 tmsf-zc                                    
  2068 root      20   0   55752   7180   2756 S  0.0  0.4  34:39.08 tmsf-zc                                    
  2069 root      20   0   55752   7180   2756 S  0.0  0.4   0:04.49 tmsf-zc
-</code></pre><pre><code>root@iZ2ze9qnmldt4l3l82gtviZ:~# top    -p 2064
+</code></pre>
+
+<pre><code>root@iZ2ze9qnmldt4l3l82gtviZ:~# top    -p 2064
 
 top - 15:11:05 up 14 days,  5:43,  3 users,  load average: 0.00, 0.03, 0.05
 Tasks:   1 total,   0 running,   1 sleeping,   0 stopped,   0 zombie
@@ -386,14 +407,22 @@ KiB Swap:        0 total,        0 used,        0 free.  1334836 cached Mem
 
   PID USER      PR  NI    VIRT    RES    SHR S %CPU %MEM     TIME+ COMMAND                                    
  2064 root      20   0   55752   7180   2756 S  0.0  0.4 144:25.09 tmsf-zc   
-</code></pre><h3 id="查看进程对应的可执行文件">查看进程对应的可执行文件</h3>
+</code></pre>
+
+<h3 id="查看进程对应的可执行文件">查看进程对应的可执行文件</h3>
+
 <pre><code>root@iZ2ze9qnmldt4l3l82gtviZ:~# ls   -l   /proc/2064/exe   
 lrwxrwxrwx 1 root root 0 Mar 17 10:12 /proc/2064/exe -&gt; /test/tmsf-zc
 root@iZ2ze9qnmldt4l3l82gtviZ:~# 
-</code></pre><h3 id="查看进程占用fd个数">查看进程占用fd个数</h3>
+</code></pre>
+
+<h3 id="查看进程占用fd个数">查看进程占用fd个数</h3>
+
 <pre><code>root@iZ2ze9qnmldt4l3l82gtviZ:~# ls   -l   /proc/2064/fdinfo   | wc   -l
 18
-</code></pre><pre><code>root@iZ2ze9qnmldt4l3l82gtviZ:~# lsof    -p   2064     |  grep  tmsf-zc 
+</code></pre>
+
+<pre><code>root@iZ2ze9qnmldt4l3l82gtviZ:~# lsof    -p   2064     |  grep  tmsf-zc 
 tmsf-zc 2064 root  cwd    DIR  253,1     4096 1967431 /test
 tmsf-zc 2064 root  rtd    DIR  253,1     4096       2 /test
 tmsf-zc 2064 root  txt    REG  253,1  8660422 1049012 test/tmsf-zc
@@ -417,7 +446,10 @@ tmsf-zc 2064 root   13u  IPv4 717507      0t0     TCP 172.17.11.187:42001-&gt;60
 tmsf-zc 2064 root   14u  IPv4 755724      0t0     TCP 172.17.11.187:42108-&gt;60.191.13.122:http (ESTABLISHED)
 tmsf-zc 2064 root   15u  IPv4 846915      0t0     TCP 172.17.11.187:48714-&gt;60.191.13.153:http (ESTABLISHED)
 tmsf-zc 2064 root   16u  IPv4 974784      0t0     TCP 172.17.11.187:49598-&gt;60.191.13.153:http (ESTABLISHED)
-</code></pre><h3 id="从procpidstat获取更多进程信息">从proc/pid/stat获取更多进程信息</h3>
+</code></pre>
+
+<h3 id="从proc-pid-stat获取更多进程信息">从proc/pid/stat获取更多进程信息</h3>
+
 <pre><code>root@iZ2ze9qnmldt4l3l82gtviZ:~# procstat   2064
                  pid: 2064
                tcomm: (tmsf-zc)
@@ -461,14 +493,20 @@ tmsf-zc 2064 root   16u  IPv4 974784      0t0     TCP 172.17.11.187:49598-&gt;60
          rt_priority: 0
               policy: 0
 root@iZ2ze9qnmldt4l3l82gtviZ:~#
-</code></pre><h3 id="查看进程父子关系">查看进程父子关系</h3>
+</code></pre>
+
+<h3 id="查看进程父子关系">查看进程父子关系</h3>
+
 <pre><code>root@iZ2ze9qnmldt4l3l82gtviZ:~# pstree -g -p  -s   2064 
 init(1,1)───tmsf-zc(2064,2058)─┬─{tmsf-zc}(2066,2058)
                                ├─{tmsf-zc}(2067,2058)
                                ├─{tmsf-zc}(2068,2058)
                                └─{tmsf-zc}(2069,2058)
 root@iZ2ze9qnmldt4l3l82gtviZ:~# 
-</code></pre><h3 id="查看进程内存map信息">查看进程内存map信息</h3>
+</code></pre>
+
+<h3 id="查看进程内存map信息">查看进程内存map信息</h3>
+
 <pre><code>root@iZ2ze9qnmldt4l3l82gtviZ:~# pmap   -x  -p   2064 
 2064:   ./tmsf-zc
 Address           Kbytes     RSS   Dirty Mode  Mapping
@@ -512,14 +550,16 @@ Address           Kbytes     RSS   Dirty Mode  Mapping
 ffffffffff600000       4       0       0 r-x--   [ anon ]
 ---------------- ------- ------- ------- 
 total kB           55752    7964    5092
-</code></pre><p>从上面可以获取以下信息：</p>
-<ol>
-<li>进程使用哪些共享库及其版本信息，以及这些共享库在内存中的起始位置</li>
-<li>指令起始位置 0000000000400000</li>
-<li>初始化全部</li>
-<li>RSS</li>
-</ol>
+</code></pre>
+
+<p>从上面可以获取以下信息：
+1. 进程使用哪些共享库及其版本信息，以及这些共享库在内存中的起始位置
+2. 指令起始位置 0000000000400000
+3. 初始化全部
+4. RSS</p>
+
 <h3 id="查看进程当前的调用栈">查看进程当前的调用栈</h3>
+
 <pre><code>[root@localhost db_proxy_server]# pstack  31002
 Thread 22 (Thread 0x7f62dafae700 (LWP 31003)):
 #0  0x00000038332e1523 in select () from /lib64/libc.so.6
@@ -673,24 +713,35 @@ Thread 1 (Thread 0x7f62db1be820 (LWP 31002)):
 #2  0x000000000063f5fd in netlib_eventloop (wait_timeout=10) at /home/wubo/LeTalk/server/src/base/netlib.cpp:160
 #3  0x00000000005e21ad in main (argc=1, argv=0x7ffd32681a78) at /home/wubo/LeTalk/server/src/db_proxy_server/db_proxy_server.cpp:216
 [root@localhost db_proxy_server]# 
-</code></pre><h2 id="进程故障信息">进程故障信息</h2>
+</code></pre>
+
+<h2 id="进程故障信息">进程故障信息</h2>
+
 <h3 id="dmesg查找">dmesg查找</h3>
+
 <pre><code>[root@sqwx1 demo_server]# dmesg   | grep demo_server
 demo_server[8425]: segfault at 22 ip 0000000000548b4c sp 00007ffff50281b0 error 4 in demo_server[400000+5c4000]
 demo_server[22891]: segfault at 50a09b ip 0000000000562723 sp 00007ffdde9276d0 error 7 in demo_server[400000+647000]
 demo_server[26185]: segfault at 52ecdb ip 0000000000562723 sp 00007fff09ca4120 error 7 in demo_server[400000+647000]
-</code></pre><h3 id="查看进程被谁杀死">查看进程被谁杀死</h3>
+</code></pre>
+
+<h3 id="查看进程被谁杀死">查看进程被谁杀死</h3>
+
 <pre><code>root@iZ2ze9qnmldt4l3l82gtviZ:~# cat   /var/log/audit/audit.log     | grep  16135
 type=OBJ_PID msg=audit(1491364584.465:11575): opid=16135 oauid=0 ouid=0 oses=35 ocomm=&quot;tmsf-zc&quot;
-</code></pre><h2 id="进程性能分析">进程性能分析</h2>
-<p>主要有下面两种方式：</p>
-<ol>
-<li>perf工具</li>
-<li>google perf</li>
-</ol>
+</code></pre>
+
+<h2 id="进程性能分析">进程性能分析</h2>
+
+<p>主要有下面两种方式：
+1. perf工具<br />
+2. google perf</p>
+
 <h2 id="进程调试">进程调试</h2>
+
 <p>主要针对linux上gdb调试，可以参考文章，这里不作描述</p>
-<h2 id="未完待续">未完，待续</h2>
+
+<h2 id="未完-待续">未完，待续</h2>
 
         </div>
         <footer class="article-footer">

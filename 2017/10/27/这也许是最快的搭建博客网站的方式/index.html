@@ -2,7 +2,7 @@
 <html lang="zh-cn">
 <head>
     <title>这也许是最快的搭建博客网站的方式 &middot; 沉风网事</title>
-    <meta name="generator" content="Hugo 0.68.3" />
+    <meta name="generator" content="Hugo 0.54.0" />
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta name="author" content="沉风">
@@ -26,36 +26,39 @@
 建一个网站要要做哪些事情 这里分解如下：
  网站前端 网站后端 域名 主机 部署 维护  下面就这些方面以自己搭建ipds.top网站为例说明。
 网站前端 对于前端，个人能力与经历有限，缺少DIY能力，那就是找主题模板，经济有效。 就IPDS 由于对golang的热爱，后端选择hugo。那么主题有以下选择：
- 直接从gohugo 中查找 github中查找  个人采用的主题是icarus
+ 直接从gohugo 中查找 github中查找
+  个人采用的主题是icarus
 网站后端 如上面所说，后端选择hugo。
 这里讲一下主要碰到问题。
-版本问题  hugo版本不要使用apt-get命令直接的，防止hugo版本过低 个人使用版本如下  root@BC:~# hugo versionHugo Static Site Generator v0.31.1 linux/amd64 BuildDate: 2017-10-14T22:10:38&#43;08:00参数 常见的参数配置如下：
-hugo server --baseUrl=https://blog.ipds.top/ --appendPort=false小结 这里要宣传一下hugo，采用hugo具有如下优点：
+版本问题  hugo版本不要使用apt-get命令直接的，防止hugo版本过低 个人使用版本如下  root@BC:~# hugo version Hugo Static Site Generator v0.31.1 linux/amd64 BuildDate: 2017-10-14T22:10:38&#43;08:00  参数 常见的参数配置如下：
+hugo server --baseUrl=https://blog.ipds.top/ --appendPort=false  小结 这里要宣传一下hugo，采用hugo具有如下优点：
  有不错可用的主题 简单好用 社区不断更新与发展 内容可以保存到内存，访问速度快  域名 从阿里云注册一个top域名。 这里要吐槽一下阿里云，注册域名不提示域名一定要认证后才能用。（因为我的ECS买的是香港的，买完测试后也确认可用，过几天一看居然不能用）
 主机 主机采用阿里云ECS，地点在香港。 在香港最大的好处就是解决了墙的问题。
-部署 反向代理 方案1： 大家熟知的nginx
-方案2： caddy" />
+部署 反向代理 方案1： 大家熟知的nginx" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://myself659.github.io/2017/10/27/%E8%BF%99%E4%B9%9F%E8%AE%B8%E6%98%AF%E6%9C%80%E5%BF%AB%E7%9A%84%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99%E7%9A%84%E6%96%B9%E5%BC%8F/" />
-<meta property="article:published_time" content="2017-10-27T11:58:06+02:00" />
-<meta property="article:modified_time" content="2017-10-27T11:58:06+02:00" />
+<meta property="article:published_time" content="2017-10-27T11:58:06&#43;02:00"/>
+<meta property="article:modified_time" content="2017-10-27T11:58:06&#43;02:00"/>
 
     
-    <meta itemprop="name" content="这也许是最快的搭建博客网站的方式">
+    
+<meta itemprop="name" content="这也许是最快的搭建博客网站的方式">
 <meta itemprop="description" content="前言 搭建个人博客有很多方式，如wordpress，jekii, hexo，个人DIY;
 本文主要介绍另一种方案: hugo&#43;caddy
 建一个网站要要做哪些事情 这里分解如下：
  网站前端 网站后端 域名 主机 部署 维护  下面就这些方面以自己搭建ipds.top网站为例说明。
 网站前端 对于前端，个人能力与经历有限，缺少DIY能力，那就是找主题模板，经济有效。 就IPDS 由于对golang的热爱，后端选择hugo。那么主题有以下选择：
- 直接从gohugo 中查找 github中查找  个人采用的主题是icarus
+ 直接从gohugo 中查找 github中查找
+  个人采用的主题是icarus
 网站后端 如上面所说，后端选择hugo。
 这里讲一下主要碰到问题。
-版本问题  hugo版本不要使用apt-get命令直接的，防止hugo版本过低 个人使用版本如下  root@BC:~# hugo versionHugo Static Site Generator v0.31.1 linux/amd64 BuildDate: 2017-10-14T22:10:38&#43;08:00参数 常见的参数配置如下：
-hugo server --baseUrl=https://blog.ipds.top/ --appendPort=false小结 这里要宣传一下hugo，采用hugo具有如下优点：
+版本问题  hugo版本不要使用apt-get命令直接的，防止hugo版本过低 个人使用版本如下  root@BC:~# hugo version Hugo Static Site Generator v0.31.1 linux/amd64 BuildDate: 2017-10-14T22:10:38&#43;08:00  参数 常见的参数配置如下：
+hugo server --baseUrl=https://blog.ipds.top/ --appendPort=false  小结 这里要宣传一下hugo，采用hugo具有如下优点：
  有不错可用的主题 简单好用 社区不断更新与发展 内容可以保存到内存，访问速度快  域名 从阿里云注册一个top域名。 这里要吐槽一下阿里云，注册域名不提示域名一定要认证后才能用。（因为我的ECS买的是香港的，买完测试后也确认可用，过几天一看居然不能用）
 主机 主机采用阿里云ECS，地点在香港。 在香港最大的好处就是解决了墙的问题。
-部署 反向代理 方案1： 大家熟知的nginx
-方案2： caddy">
+部署 反向代理 方案1： 大家熟知的nginx">
+
+
 <meta itemprop="datePublished" content="2017-10-27T11:58:06&#43;02:00" />
 <meta itemprop="dateModified" content="2017-10-27T11:58:06&#43;02:00" />
 <meta itemprop="wordCount" content="140">
@@ -63,6 +66,7 @@ hugo server --baseUrl=https://blog.ipds.top/ --appendPort=false小结 这里要
 
 
 <meta itemprop="keywords" content="Web," />
+
     <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="这也许是最快的搭建博客网站的方式"/>
 <meta name="twitter:description" content="前言 搭建个人博客有很多方式，如wordpress，jekii, hexo，个人DIY;
@@ -70,15 +74,15 @@ hugo server --baseUrl=https://blog.ipds.top/ --appendPort=false小结 这里要
 建一个网站要要做哪些事情 这里分解如下：
  网站前端 网站后端 域名 主机 部署 维护  下面就这些方面以自己搭建ipds.top网站为例说明。
 网站前端 对于前端，个人能力与经历有限，缺少DIY能力，那就是找主题模板，经济有效。 就IPDS 由于对golang的热爱，后端选择hugo。那么主题有以下选择：
- 直接从gohugo 中查找 github中查找  个人采用的主题是icarus
+ 直接从gohugo 中查找 github中查找
+  个人采用的主题是icarus
 网站后端 如上面所说，后端选择hugo。
 这里讲一下主要碰到问题。
-版本问题  hugo版本不要使用apt-get命令直接的，防止hugo版本过低 个人使用版本如下  root@BC:~# hugo versionHugo Static Site Generator v0.31.1 linux/amd64 BuildDate: 2017-10-14T22:10:38&#43;08:00参数 常见的参数配置如下：
-hugo server --baseUrl=https://blog.ipds.top/ --appendPort=false小结 这里要宣传一下hugo，采用hugo具有如下优点：
+版本问题  hugo版本不要使用apt-get命令直接的，防止hugo版本过低 个人使用版本如下  root@BC:~# hugo version Hugo Static Site Generator v0.31.1 linux/amd64 BuildDate: 2017-10-14T22:10:38&#43;08:00  参数 常见的参数配置如下：
+hugo server --baseUrl=https://blog.ipds.top/ --appendPort=false  小结 这里要宣传一下hugo，采用hugo具有如下优点：
  有不错可用的主题 简单好用 社区不断更新与发展 内容可以保存到内存，访问速度快  域名 从阿里云注册一个top域名。 这里要吐槽一下阿里云，注册域名不提示域名一定要认证后才能用。（因为我的ECS买的是香港的，买完测试后也确认可用，过几天一看居然不能用）
 主机 主机采用阿里云ECS，地点在香港。 在香港最大的好处就是解决了墙的问题。
-部署 反向代理 方案1： 大家熟知的nginx
-方案2： caddy"/>
+部署 反向代理 方案1： 大家熟知的nginx"/>
 
     
 
@@ -371,11 +375,18 @@ hugo server --baseUrl=https://blog.ipds.top/ --appendPort=false小结 这里要
 </header>
 
         <div class="article-entry" itemprop="articleBody">
-            <h2 id="前言">前言</h2>
+            
+
+<h2 id="前言">前言</h2>
+
 <p>搭建个人博客有很多方式，如wordpress，jekii, hexo，个人DIY;</p>
+
 <p>本文主要介绍另一种方案: hugo+caddy</p>
+
 <h2 id="建一个网站要要做哪些事情">建一个网站要要做哪些事情</h2>
+
 <p>这里分解如下：</p>
+
 <ol>
 <li>网站前端</li>
 <li>网站后端</li>
@@ -384,54 +395,88 @@ hugo server --baseUrl=https://blog.ipds.top/ --appendPort=false小结 这里要
 <li>部署</li>
 <li>维护</li>
 </ol>
+
 <p>下面就这些方面以自己搭建ipds.top网站为例说明。</p>
+
 <h2 id="网站前端">网站前端</h2>
+
 <p>对于前端，个人能力与经历有限，缺少DIY能力，那就是找主题模板，经济有效。
 就<a href="https://ipds.top">IPDS</a>
 由于对golang的热爱，后端选择hugo。那么主题有以下选择：</p>
+
 <ol>
 <li>直接从<a href="https://themes.gohugo.io/">gohugo</a> 中查找</li>
-<li>github中查找</li>
+<li>github中查找<br /></li>
 </ol>
+
 <p>个人采用的主题是<a href="https://github.com/digitalcraftsman/hugo-icarus-theme">icarus</a></p>
+
 <h2 id="网站后端">网站后端</h2>
+
 <p>如上面所说，后端选择hugo。</p>
+
 <p>这里讲一下主要碰到问题。</p>
+
 <h3 id="版本问题">版本问题</h3>
+
 <ol>
 <li>hugo版本不要使用apt-get命令直接的，防止hugo版本过低</li>
 <li>个人使用版本如下</li>
 </ol>
+
 <pre><code>root@BC:~# hugo version
 Hugo Static Site Generator v0.31.1 linux/amd64 BuildDate: 2017-10-14T22:10:38+08:00
-</code></pre><h3 id="参数">参数</h3>
+</code></pre>
+
+<h3 id="参数">参数</h3>
+
 <p>常见的参数配置如下：</p>
+
 <pre><code>hugo server --baseUrl=https://blog.ipds.top/ --appendPort=false
-</code></pre><h2 id="小结">小结</h2>
+</code></pre>
+
+<h2 id="小结">小结</h2>
+
 <p>这里要宣传一下hugo，采用hugo具有如下优点：</p>
+
 <ol>
 <li>有不错可用的主题</li>
 <li>简单好用</li>
 <li>社区不断更新与发展</li>
 <li>内容可以保存到内存，访问速度快</li>
 </ol>
+
 <h2 id="域名">域名</h2>
+
 <p>从阿里云注册一个top域名。
 这里要吐槽一下阿里云，注册域名不提示域名一定要认证后才能用。（因为我的ECS买的是香港的，买完测试后也确认可用，过几天一看居然不能用）</p>
+
 <h2 id="主机">主机</h2>
+
 <p>主机采用阿里云ECS，地点在香港。
 在香港最大的好处就是解决了墙的问题。</p>
+
 <h2 id="部署">部署</h2>
+
 <h3 id="反向代理">反向代理</h3>
+
 <p>方案1： 大家熟知的nginx</p>
+
 <p>方案2： caddy</p>
+
 <p>这里选择了caddy，理由参考后面提到的caddy的优点。</p>
+
 <h3 id="如何支持https">如何支持https</h3>
+
 <p>方案1： <a href="https://coolshell.cn/articles/18094.html">Let’s Encrypt</a>
 方案2：caddy</p>
+
 <p>由于反向代理选择了caddy，这里也就天然支持https</p>
+
 <h3 id="caddy配置">caddy配置</h3>
+
 <p>首先说一下caddy的优点：</p>
+
 <ul>
 <li>部署方便，由于是Go开发的，所以，只需要一个可执行文件，就可以运行Caddy Server了</li>
 <li>跨平台，也是因为是由Go开发的，好处不言而喻，可以交叉编译并运行在多个平台</li>
@@ -441,7 +486,9 @@ Hugo Static Site Generator v0.31.1 linux/amd64 BuildDate: 2017-10-14T22:10:38+08
 <li>多核支持，分利用多核性能，这其实也就是golang的优势</li>
 <li>天生的HTTPS支持，能把证书申请和配置一系列繁琐的事情简化到极致，用caddy即可支持https</li>
 </ul>
+
 <p>以IPDS网站为例，具体的配置如下：</p>
+
 <pre><code>ipds.top {
    proxy / localhost:1314 {
         transparent   
@@ -462,18 +509,32 @@ slides.ipds.top {
    }
    gzip
 }
-</code></pre><h3 id="监控">监控</h3>
+</code></pre>
+
+<h3 id="监控">监控</h3>
+
 <p>利用pm2来实现进程监控，提高可用性。</p>
+
 <h2 id="更新">更新</h2>
+
 <p>有以下方案，具体如下：</p>
+
 <h3 id="rync">rync</h3>
+
 <p>通过sync同步本地内容到云主机，实现更新。</p>
+
 <h3 id="github">github</h3>
+
 <p>通过将内容保存到github，github再更新到ECS方式进行。好处就是git流操作，同时也实现了对文章与内容的备份，历史记录等功能。</p>
+
 <p>本人采用是这种方式，推荐使用这种方式。</p>
+
 <h2 id="其他">其他</h2>
+
 <p>底层技术出身，在web技术方面个人水平有限，如有不足，敬请指正。</p>
+
 <h2 id="参考">参考</h2>
+
 <ol>
 <li><a href="https://www.golangnote.com/topic/216.html">Caddy、 SSLDocker、Nginx 性能比较及使用体验</a></li>
 <li><a href="https://coolshell.cn/articles/18094.html">如何免费的让网站启用HTTPS</a></li>

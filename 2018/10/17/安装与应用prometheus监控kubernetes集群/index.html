@@ -2,7 +2,7 @@
 <html lang="zh-cn">
 <head>
     <title>安装与应用Prometheus监控Kubernetes集群 &middot; 沉风网事</title>
-    <meta name="generator" content="Hugo 0.68.3" />
+    <meta name="generator" content="Hugo 0.54.0" />
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta name="author" content="沉风">
@@ -21,19 +21,22 @@
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400italic,400,600' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Source+Code+Pro' rel='stylesheet' type='text/css'>
     <meta property="og:title" content="安装与应用Prometheus监控Kubernetes集群" />
-<meta property="og:description" content="安装Prometheus RBAC设置,获取创建集群角色权限 ACCOUNT=$(gcloud info --format=&#39;value(config.account)&#39;)kubectl create clusterrolebinding owner-cluster-admin-binding \--clusterrole cluster-admin \--user $ACCOUNT注意：如果集群部署在google cloud上需要先执行这一步。
-创建Namespace kubectl create namespace monitoring创建角色 脚本内容如下：
-apiVersion: rbac.authorization.k8s.io/v1beta1kind: ClusterRolemetadata:name: prometheusrules:- apiGroups: [&quot;&quot;]resources:- nodes- nodes/proxy- services- endpoints- podsverbs: [&quot;get&quot;, &quot;list&quot;, &quot;watch&quot;]- apiGroups:- extensionsresources:- ingressesverbs: [&quot;get&quot;, &quot;list&quot;, &quot;watch&quot;]- nonResourceURLs: [&quot;/metrics&quot;]verbs: [&quot;get&quot;]---apiVersion: rbac.authorization.k8s.io/v1beta1kind: ClusterRoleBindingmetadata:name: prometheusroleRef:apiGroup: rbac." />
+<meta property="og:description" content="安装Prometheus RBAC设置,获取创建集群角色权限 ACCOUNT=$(gcloud info --format=&#39;value(config.account)&#39;) kubectl create clusterrolebinding owner-cluster-admin-binding \ --clusterrole cluster-admin \ --user $ACCOUNT  注意：如果集群部署在google cloud上需要先执行这一步。
+创建Namespace kubectl create namespace monitoring  创建角色 脚本内容如下：
+apiVersion: rbac.authorization.k8s.io/v1beta1 kind: ClusterRole metadata: name: prometheus rules: - apiGroups: [&quot;&quot;] resources: - nodes - nodes/proxy - services - endpoints - pods verbs: [&quot;get&quot;, &quot;list&quot;, &quot;watch&quot;] - apiGroups: - extensions resources: - ingresses verbs: [&quot;get&quot;, &quot;list&quot;, &quot;watch&quot;] - nonResourceURLs: [&quot;/metrics&quot;] verbs: [&quot;get&quot;] --- apiVersion: rbac." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://myself659.github.io/2018/10/17/%E5%AE%89%E8%A3%85%E4%B8%8E%E5%BA%94%E7%94%A8prometheus%E7%9B%91%E6%8E%A7kubernetes%E9%9B%86%E7%BE%A4/" />
-<meta property="article:published_time" content="2018-10-17T11:58:06+02:00" />
-<meta property="article:modified_time" content="2018-10-17T11:58:06+02:00" />
+<meta property="article:published_time" content="2018-10-17T11:58:06&#43;02:00"/>
+<meta property="article:modified_time" content="2018-10-17T11:58:06&#43;02:00"/>
 
     
-    <meta itemprop="name" content="安装与应用Prometheus监控Kubernetes集群">
-<meta itemprop="description" content="安装Prometheus RBAC设置,获取创建集群角色权限 ACCOUNT=$(gcloud info --format=&#39;value(config.account)&#39;)kubectl create clusterrolebinding owner-cluster-admin-binding \--clusterrole cluster-admin \--user $ACCOUNT注意：如果集群部署在google cloud上需要先执行这一步。
-创建Namespace kubectl create namespace monitoring创建角色 脚本内容如下：
-apiVersion: rbac.authorization.k8s.io/v1beta1kind: ClusterRolemetadata:name: prometheusrules:- apiGroups: [&quot;&quot;]resources:- nodes- nodes/proxy- services- endpoints- podsverbs: [&quot;get&quot;, &quot;list&quot;, &quot;watch&quot;]- apiGroups:- extensionsresources:- ingressesverbs: [&quot;get&quot;, &quot;list&quot;, &quot;watch&quot;]- nonResourceURLs: [&quot;/metrics&quot;]verbs: [&quot;get&quot;]---apiVersion: rbac.authorization.k8s.io/v1beta1kind: ClusterRoleBindingmetadata:name: prometheusroleRef:apiGroup: rbac.">
+    
+<meta itemprop="name" content="安装与应用Prometheus监控Kubernetes集群">
+<meta itemprop="description" content="安装Prometheus RBAC设置,获取创建集群角色权限 ACCOUNT=$(gcloud info --format=&#39;value(config.account)&#39;) kubectl create clusterrolebinding owner-cluster-admin-binding \ --clusterrole cluster-admin \ --user $ACCOUNT  注意：如果集群部署在google cloud上需要先执行这一步。
+创建Namespace kubectl create namespace monitoring  创建角色 脚本内容如下：
+apiVersion: rbac.authorization.k8s.io/v1beta1 kind: ClusterRole metadata: name: prometheus rules: - apiGroups: [&quot;&quot;] resources: - nodes - nodes/proxy - services - endpoints - pods verbs: [&quot;get&quot;, &quot;list&quot;, &quot;watch&quot;] - apiGroups: - extensions resources: - ingresses verbs: [&quot;get&quot;, &quot;list&quot;, &quot;watch&quot;] - nonResourceURLs: [&quot;/metrics&quot;] verbs: [&quot;get&quot;] --- apiVersion: rbac.">
+
+
 <meta itemprop="datePublished" content="2018-10-17T11:58:06&#43;02:00" />
 <meta itemprop="dateModified" content="2018-10-17T11:58:06&#43;02:00" />
 <meta itemprop="wordCount" content="480">
@@ -41,11 +44,12 @@ apiVersion: rbac.authorization.k8s.io/v1beta1kind: ClusterRolemetadata:name: 
 
 
 <meta itemprop="keywords" content="Docker,Kubernetes," />
+
     <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="安装与应用Prometheus监控Kubernetes集群"/>
-<meta name="twitter:description" content="安装Prometheus RBAC设置,获取创建集群角色权限 ACCOUNT=$(gcloud info --format=&#39;value(config.account)&#39;)kubectl create clusterrolebinding owner-cluster-admin-binding \--clusterrole cluster-admin \--user $ACCOUNT注意：如果集群部署在google cloud上需要先执行这一步。
-创建Namespace kubectl create namespace monitoring创建角色 脚本内容如下：
-apiVersion: rbac.authorization.k8s.io/v1beta1kind: ClusterRolemetadata:name: prometheusrules:- apiGroups: [&quot;&quot;]resources:- nodes- nodes/proxy- services- endpoints- podsverbs: [&quot;get&quot;, &quot;list&quot;, &quot;watch&quot;]- apiGroups:- extensionsresources:- ingressesverbs: [&quot;get&quot;, &quot;list&quot;, &quot;watch&quot;]- nonResourceURLs: [&quot;/metrics&quot;]verbs: [&quot;get&quot;]---apiVersion: rbac.authorization.k8s.io/v1beta1kind: ClusterRoleBindingmetadata:name: prometheusroleRef:apiGroup: rbac."/>
+<meta name="twitter:description" content="安装Prometheus RBAC设置,获取创建集群角色权限 ACCOUNT=$(gcloud info --format=&#39;value(config.account)&#39;) kubectl create clusterrolebinding owner-cluster-admin-binding \ --clusterrole cluster-admin \ --user $ACCOUNT  注意：如果集群部署在google cloud上需要先执行这一步。
+创建Namespace kubectl create namespace monitoring  创建角色 脚本内容如下：
+apiVersion: rbac.authorization.k8s.io/v1beta1 kind: ClusterRole metadata: name: prometheus rules: - apiGroups: [&quot;&quot;] resources: - nodes - nodes/proxy - services - endpoints - pods verbs: [&quot;get&quot;, &quot;list&quot;, &quot;watch&quot;] - apiGroups: - extensions resources: - ingresses verbs: [&quot;get&quot;, &quot;list&quot;, &quot;watch&quot;] - nonResourceURLs: [&quot;/metrics&quot;] verbs: [&quot;get&quot;] --- apiVersion: rbac."/>
 
     
 
@@ -342,17 +346,29 @@ apiVersion: rbac.authorization.k8s.io/v1beta1kind: ClusterRolemetadata:name: 
 </header>
 
         <div class="article-entry" itemprop="articleBody">
-            <h1 id="安装prometheus">安装Prometheus</h1>
-<h2 id="rbac设置获取创建集群角色权限">RBAC设置,获取创建集群角色权限</h2>
+            
+
+<h1 id="安装prometheus">安装Prometheus</h1>
+
+<h2 id="rbac设置-获取创建集群角色权限">RBAC设置,获取创建集群角色权限</h2>
+
 <pre><code>ACCOUNT=$(gcloud info --format='value(config.account)')
 kubectl create clusterrolebinding owner-cluster-admin-binding \
     --clusterrole cluster-admin \
     --user $ACCOUNT
-</code></pre><p>注意：如果集群部署在google cloud上需要先执行这一步。</p>
+</code></pre>
+
+<p>注意：如果集群部署在google cloud上需要先执行这一步。</p>
+
 <h2 id="创建namespace">创建Namespace</h2>
+
 <pre><code>kubectl create namespace monitoring
-</code></pre><h2 id="创建角色">创建角色</h2>
+</code></pre>
+
+<h2 id="创建角色">创建角色</h2>
+
 <p>脚本内容如下：</p>
+
 <pre><code>apiVersion: rbac.authorization.k8s.io/v1beta1
 kind: ClusterRole
 metadata:
@@ -386,10 +402,17 @@ subjects:
 - kind: ServiceAccount
   name: default
   namespace: monitoring
-</code></pre><p>执行创建角色脚本：</p>
+</code></pre>
+
+<p>执行创建角色脚本：</p>
+
 <pre><code>kubectl create -f 01-clusterRole.yaml
-</code></pre><h2 id="配置">配置</h2>
+</code></pre>
+
+<h2 id="配置">配置</h2>
+
 <p>脚本内容如下：</p>
+
 <pre><code>apiVersion: v1
 kind: ConfigMap
 metadata:
@@ -539,10 +562,17 @@ data:
           action: replace
           target_label: kubernetes_name
 
-</code></pre><p>执行配置脚本：</p>
+</code></pre>
+
+<p>执行配置脚本：</p>
+
 <pre><code>kubectl create -f 02-config-map.yaml -n monitoring
-</code></pre><h2 id="部署">部署</h2>
+</code></pre>
+
+<h2 id="部署">部署</h2>
+
 <p>脚本内容如下：</p>
+
 <pre><code>apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
@@ -589,24 +619,42 @@ spec:
     port: 90
     targetPort: 9090
   type: LoadBalancer
-</code></pre><p>执行部署脚本：</p>
+</code></pre>
+
+<p>执行部署脚本：</p>
+
 <pre><code>kubectl create  -f 03-prometheus-deployment.yaml --namespace=monitoring
-</code></pre><h2 id="查看部署">查看部署</h2>
+</code></pre>
+
+<h2 id="查看部署">查看部署</h2>
+
 <pre><code>kubectl get deployments --namespace=monitoring
-</code></pre><h1 id="应用">应用</h1>
+</code></pre>
+
+<h1 id="应用">应用</h1>
+
 <h2 id="web访问">web访问</h2>
-<p><img src="/images/k8s/prometheus-web.jpg" alt="查看监控项"></p>
+
+<p><img src="/images/k8s/prometheus-web.jpg" alt="查看监控项" /></p>
+
 <h2 id="可视化">可视化</h2>
+
 <p>可视化使用Grafana。效果如下：</p>
-<p><img src="/images/k8s/grafana-k8s-3.jpg" alt="节点内存及Pod内存使用情况"></p>
+
+<p><img src="/images/k8s/grafana-k8s-3.jpg" alt="节点内存及Pod内存使用情况" /></p>
+
 <h1 id="参考">参考</h1>
+
 <ol>
 <li><a href="https://grafana.com/dashboards/6417">Kubernetes Cluster (Prometheus)</a></li>
 <li><a href="http://www.h3c.com/cn/d_201505/868805_30003_0.htm">RBAC技术白皮书</a></li>
 </ol>
+
 <h2 id="欢迎关注">欢迎关注</h2>
+
 <p>欢迎关注微信公众帐号：沉风网事(savewind)</p>
-<p><img src="/images/cfws.jpg" alt="沉风网事"></p>
+
+<p><img src="/images/cfws.jpg" alt="沉风网事" /></p>
 
         </div>
         <footer class="article-footer">

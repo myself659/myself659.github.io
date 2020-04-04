@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>研发管理 on 沉风网事</title>
@@ -24,7 +24,8 @@
  稳定优先，善用为上 立足现状，着眼未来 验证先行，应用在后 业务导向，实践驱动  下面就根据这些原则一一回答上面五个问题，但是不会涉及具体的问题如消息队列是选RabbitMQ还是Kafka。
 代码管理 对应上面的怎么管理代码的问题。首先是工具，现在大家都清一色的git。在git没有出来之前有以下这些工具：
  clearcase svn TortoiseCVS  再次就是选择平台。有以下选项
- github gitlab gitee gitbucket 自建gitlab  选择自建gitlab。主要考虑如下：
+ github gitlab gitee gitbucket 自建gitlab
+  选择自建gitlab。主要考虑如下：
  历史原因 Gitlab自带CI 代码安全考虑 自建gitlab带来的自主控制，有利于后续的发展  编程语言 以Golang为主，其他语言为辅助。
 Why Golang  个人及其团队主要成员都有Golang经验 Golang在区块链项目中会占主导地位 更多理由见：Golang最工程化的语言  运行环境 运行环境分为以下几种：
  物理主机 虚拟机 Docker  除了一些特殊的场景，现在流行的作法当然是Docker。</description>

@@ -2,7 +2,7 @@
 <html lang="zh-cn">
 <head>
     <title>github被攻击，程序员该怎么办 &middot; 沉风网事</title>
-    <meta name="generator" content="Hugo 0.68.3" />
+    <meta name="generator" content="Hugo 0.54.0" />
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta name="author" content="沉风">
@@ -32,17 +32,17 @@ Https证书被攻击如何正常的访问github 由于github证书出现了问�
 由于这类攻击往往具有地域性特点，如这次攻击大部分发生在国内，可以将本地的github访问流量通过代理导到其他没有受到攻击的地方，再由代理返回访问结果。科学上网就是属于这类方式。由于各种原因，这里不展开说明。
 如何解决go get不能正常工作 作为一名golang程序员，发现go get出现错误：
 出现上面的问题的原因同样是因为github网站的证书被攻击导致。解决方法是不走Https，走ssh下载github的代码库。在终端上进行如下配置即可：
-git config --global url.&quot;git@github.com:&quot;.insteadOf &quot;https://github.com/&quot;查看配置结果如下：
-$ cat ~/.gitconfig[user]email = myself659@163.comname = myself659[url &quot;git@github.com:&quot;]insteadOf = https://github.com/小结 Https证书虽然被攻击，但是互联网有去中心化特点，可以改变网络访问路径来避免问题。 Https证书被攻击，影响是http协议，可以换成ssh协议来解决git下载的问题。 总之，遇到问题对症下药，也要跳出框架，think out the box，从另一个角度或层次来解决问题。
-欢迎关注 欢迎关注微信公众帐号：沉风网事(savewind)
-  " />
+git config --global url.&quot;git@github.com:&quot;.insteadOf &quot;https://github.com/&quot;  查看配置结果如下：
+$ cat ~/.gitconfig [user] email = myself659@163.com name = myself659 [url &quot;git@github.com:&quot;] insteadOf = https://github.com/  小结 Https证书虽然被攻击，但是互联网有去中心化特点，可以改变网络访问路径来避免问题。 Https证书被攻击，影响是http协议，可以换成ssh协议来解决git下载的问题。 总之，遇到问题对症下药，也要跳出框架，think out the box，从另一个角度或层次来解决问题。
+欢迎关注 欢迎关注微信公众帐号：沉风网事(savewind)" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://myself659.github.io/2020/03/29/github%E8%A2%AB%E6%94%BB%E5%87%BB%E7%A8%8B%E5%BA%8F%E5%91%98%E8%AF%A5%E6%80%8E%E4%B9%88%E5%8A%9E/" />
-<meta property="article:published_time" content="2020-03-29T11:58:06+02:00" />
-<meta property="article:modified_time" content="2020-03-29T11:58:06+02:00" />
+<meta property="article:published_time" content="2020-03-29T11:58:06&#43;02:00"/>
+<meta property="article:modified_time" content="2020-03-29T11:58:06&#43;02:00"/>
 
     
-    <meta itemprop="name" content="github被攻击，程序员该怎么办">
+    
+<meta itemprop="name" content="github被攻击，程序员该怎么办">
 <meta itemprop="description" content="2020年3月27日，全世界最大的同性交友网站github被攻击了，连正常的首页都打不开。
 Https并不是100%安全 github被攻击说明Https并不是100%安全，Https也有自己的阿喀琉斯之踵-Https证书。Https不能解决以下五种情况的攻击：
  证书颁发机构被入侵 攻击任何证书颁发机构附近的路由器 攻击证书颁发机构的递归DNS服务器 攻击网络协议如TCP或者BGP 证书颁发机构作恶，恶意修改与替换证书  这五种攻击方式不是攻击证书就是攻击证书的分发网络路径与协议。
@@ -54,10 +54,11 @@ Https证书被攻击如何正常的访问github 由于github证书出现了问�
 由于这类攻击往往具有地域性特点，如这次攻击大部分发生在国内，可以将本地的github访问流量通过代理导到其他没有受到攻击的地方，再由代理返回访问结果。科学上网就是属于这类方式。由于各种原因，这里不展开说明。
 如何解决go get不能正常工作 作为一名golang程序员，发现go get出现错误：
 出现上面的问题的原因同样是因为github网站的证书被攻击导致。解决方法是不走Https，走ssh下载github的代码库。在终端上进行如下配置即可：
-git config --global url.&quot;git@github.com:&quot;.insteadOf &quot;https://github.com/&quot;查看配置结果如下：
-$ cat ~/.gitconfig[user]email = myself659@163.comname = myself659[url &quot;git@github.com:&quot;]insteadOf = https://github.com/小结 Https证书虽然被攻击，但是互联网有去中心化特点，可以改变网络访问路径来避免问题。 Https证书被攻击，影响是http协议，可以换成ssh协议来解决git下载的问题。 总之，遇到问题对症下药，也要跳出框架，think out the box，从另一个角度或层次来解决问题。
-欢迎关注 欢迎关注微信公众帐号：沉风网事(savewind)
-  ">
+git config --global url.&quot;git@github.com:&quot;.insteadOf &quot;https://github.com/&quot;  查看配置结果如下：
+$ cat ~/.gitconfig [user] email = myself659@163.com name = myself659 [url &quot;git@github.com:&quot;] insteadOf = https://github.com/  小结 Https证书虽然被攻击，但是互联网有去中心化特点，可以改变网络访问路径来避免问题。 Https证书被攻击，影响是http协议，可以换成ssh协议来解决git下载的问题。 总之，遇到问题对症下药，也要跳出框架，think out the box，从另一个角度或层次来解决问题。
+欢迎关注 欢迎关注微信公众帐号：沉风网事(savewind)">
+
+
 <meta itemprop="datePublished" content="2020-03-29T11:58:06&#43;02:00" />
 <meta itemprop="dateModified" content="2020-03-29T11:58:06&#43;02:00" />
 <meta itemprop="wordCount" content="52">
@@ -65,6 +66,7 @@ $ cat ~/.gitconfig[user]email = myself659@163.comname = myself659[url &quot;
 
 
 <meta itemprop="keywords" content="编程," />
+
     <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="github被攻击，程序员该怎么办"/>
 <meta name="twitter:description" content="2020年3月27日，全世界最大的同性交友网站github被攻击了，连正常的首页都打不开。
@@ -78,10 +80,9 @@ Https证书被攻击如何正常的访问github 由于github证书出现了问�
 由于这类攻击往往具有地域性特点，如这次攻击大部分发生在国内，可以将本地的github访问流量通过代理导到其他没有受到攻击的地方，再由代理返回访问结果。科学上网就是属于这类方式。由于各种原因，这里不展开说明。
 如何解决go get不能正常工作 作为一名golang程序员，发现go get出现错误：
 出现上面的问题的原因同样是因为github网站的证书被攻击导致。解决方法是不走Https，走ssh下载github的代码库。在终端上进行如下配置即可：
-git config --global url.&quot;git@github.com:&quot;.insteadOf &quot;https://github.com/&quot;查看配置结果如下：
-$ cat ~/.gitconfig[user]email = myself659@163.comname = myself659[url &quot;git@github.com:&quot;]insteadOf = https://github.com/小结 Https证书虽然被攻击，但是互联网有去中心化特点，可以改变网络访问路径来避免问题。 Https证书被攻击，影响是http协议，可以换成ssh协议来解决git下载的问题。 总之，遇到问题对症下药，也要跳出框架，think out the box，从另一个角度或层次来解决问题。
-欢迎关注 欢迎关注微信公众帐号：沉风网事(savewind)
-  "/>
+git config --global url.&quot;git@github.com:&quot;.insteadOf &quot;https://github.com/&quot;  查看配置结果如下：
+$ cat ~/.gitconfig [user] email = myself659@163.com name = myself659 [url &quot;git@github.com:&quot;] insteadOf = https://github.com/  小结 Https证书虽然被攻击，但是互联网有去中心化特点，可以改变网络访问路径来避免问题。 Https证书被攻击，影响是http协议，可以换成ssh协议来解决git下载的问题。 总之，遇到问题对症下药，也要跳出框架，think out the box，从另一个角度或层次来解决问题。
+欢迎关注 欢迎关注微信公众帐号：沉风网事(savewind)"/>
 
     
 
@@ -374,10 +375,16 @@ $ cat ~/.gitconfig[user]email = myself659@163.comname = myself659[url &quot;
 </header>
 
         <div class="article-entry" itemprop="articleBody">
-            <p>2020年3月27日，全世界最大的同性交友网站github被攻击了，连正常的首页都打不开。</p>
-<p><img src="/images/sec/github-attack-timeline.jpg" alt=""></p>
-<h1 id="https并不是100安全">Https并不是100%安全</h1>
+            
+
+<p>2020年3月27日，全世界最大的同性交友网站github被攻击了，连正常的首页都打不开。</p>
+
+<p><img src="/images/sec/github-attack-timeline.jpg" alt="" /></p>
+
+<h1 id="https并不是100-安全">Https并不是100%安全</h1>
+
 <p>github被攻击说明Https并不是100%安全，Https也有自己的阿喀琉斯之踵-Https证书。Https不能解决以下五种情况的攻击：</p>
+
 <ol>
 <li>证书颁发机构被入侵</li>
 <li>攻击任何证书颁发机构附近的路由器</li>
@@ -385,40 +392,66 @@ $ cat ~/.gitconfig[user]email = myself659@163.comname = myself659[url &quot;
 <li>攻击网络协议如TCP或者BGP</li>
 <li>证书颁发机构作恶，恶意修改与替换证书</li>
 </ol>
+
 <p>这五种攻击方式不是攻击证书就是攻击证书的分发网络路径与协议。</p>
+
 <p>即然https并不是100%安全，那么怎么应对https证书攻击呢？</p>
+
 <h1 id="发现网站https证书被攻击">发现网站Https证书被攻击</h1>
+
 <p>首先第一步发现网站Https证书被攻击。拿这次github被网站Https证书被攻击为例，github证书被攻击时，在chrome浏览品上访问github，会提示如下错误：</p>
-<p><img src="/images/sec/github-attack-tip.png" alt=""></p>
+
+<p><img src="/images/sec/github-attack-tip.png" alt="" /></p>
+
 <p>从上图可以看出，不是通常HTTP的错误码，也不是超时错误，而是直接提示了证书错误。</p>
+
 <p>正常的Https证书是这样的：</p>
-<p><img src="/images/sec/github-ca.png" alt=""></p>
+
+<p><img src="/images/sec/github-ca.png" alt="" /></p>
+
 <h1 id="https证书被攻击如何正常的访问github">Https证书被攻击如何正常的访问github</h1>
+
 <p>由于github证书出现了问题，用户是无法解决的。那么怎么正常访问github呢？</p>
+
 <p>由于这类攻击往往具有地域性特点，如这次攻击大部分发生在国内，可以将本地的github访问流量通过代理导到其他没有受到攻击的地方，再由代理返回访问结果。科学上网就是属于这类方式。由于各种原因，这里不展开说明。</p>
+
 <h1 id="如何解决go-get不能正常工作">如何解决go get不能正常工作</h1>
+
 <p>作为一名golang程序员，发现go get出现错误：</p>
-<p><img src="/images/sec/github-http-goget.png" alt=""></p>
+
+<p><img src="/images/sec/github-http-goget.png" alt="" /></p>
+
 <p>出现上面的问题的原因同样是因为github网站的证书被攻击导致。解决方法是不走Https，走ssh下载github的代码库。在终端上进行如下配置即可：</p>
+
 <pre><code>git config --global url.&quot;git@github.com:&quot;.insteadOf &quot;https://github.com/&quot;
-</code></pre><p>查看配置结果如下：</p>
+</code></pre>
+
+<p>查看配置结果如下：</p>
+
 <pre><code>$ cat  ~/.gitconfig
 [user]
         email = myself659@163.com
         name = myself659
 [url &quot;git@github.com:&quot;]
         insteadOf = https://github.com/
-</code></pre><h1 id="小结">小结</h1>
+</code></pre>
+
+<h1 id="小结">小结</h1>
+
 <p>Https证书虽然被攻击，但是互联网有去中心化特点，可以改变网络访问路径来避免问题。
 Https证书被攻击，影响是http协议，可以换成ssh协议来解决git下载的问题。
 总之，遇到问题对症下药，也要跳出框架，think out the box，从另一个角度或层次来解决问题。</p>
+
 <h1 id="欢迎关注">欢迎关注</h1>
+
 <p>欢迎关注微信公众帐号：沉风网事(savewind)</p>
-<p><img src="/images/cfws.jpg" alt="沉风网事"></p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<blockquote>
-</blockquote>
+
+<p><img src="/images/cfws.jpg" alt="沉风网事" /></p>
+
+<!-- # 参考 
+
+1. [一些网站https证书出现问题的情况分析](https://blog.netlab.360.com/ongoing-websites-hijacking/)
+2. [How HTTPS Works to Keep You Secure 🔐 and How it Differs From HTTP](https://love2dev.com/blog/how-https-works/) -->
 
         </div>
         <footer class="article-footer">

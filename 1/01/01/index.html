@@ -2,7 +2,7 @@
 <html lang="zh-cn">
 <head>
     <title> &middot; 沉风网事</title>
-    <meta name="generator" content="Hugo 0.68.3" />
+    <meta name="generator" content="Hugo 0.54.0" />
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta name="author" content="沉风">
@@ -21,32 +21,33 @@
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400italic,400,600' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Source+Code+Pro' rel='stylesheet' type='text/css'>
     <meta property="og:title" content="" />
-<meta property="og:description" content="banner = &quot;&rdquo; categories = [&ldquo;Substrate&rdquo;] date = &ldquo;2019-09-19T11:58:06&#43;02:00&rdquo; description = &quot;&rdquo; images = [] menu = &quot;&rdquo; tags = [&ldquo;Substrate&rdquo;, &ldquo;BlockChain&rdquo;] title = &ldquo;Substrate Runtime实践&rdquo; draft = true &#43;&#43;&#43;
-install substrate 安装substrate有以下两种方式：
- 快速安装 完全安装  快速安装 curl https://getsubstrate.io -sSf | bash -s -- --fast完全安装 curl https://getsubstrate.io -sSf | bash更新环境变量 source ~/.cargo/env检查版本 root@IA:~/rust/install-substrate# substrate --versionsubstrate 2.0.0-37bc8c545-x86_64-linux-gnuroot@IA:~/rust/install-substrate# subkey --versionsubkey 2.0.0同时安装的还有以下文件：
- substrate-module-new substrate-node-new substrate-ui-new  更新substrate f=`mktemp -d`git clone https://github." />
+<meta property="og:description" content="每周完成一个ARTS： 1.Algorithm：每周至少做一个 leetcode 的算法题 2.Review：阅读并点评至少一篇英文技术文章 3.Tip：学习至少一个技术技巧 4.Share：分享一篇有观点和思考的技术文章 &#43;&#43;&#43; banner = &ldquo;&rdquo; categories = [&ldquo;DataStruct&rdquo;] date = &ldquo;2019-03-08T11:58:06&#43;02:00&rdquo; description = &ldquo;&rdquo; images = [] menu = &ldquo;&rdquo; tags = [&ldquo;DataStruct&rdquo;] title = &ldquo;作恶的矿工们&rdquo; draft = true &#43;&#43;&#43;
+ Algorithm leetcode-42 42. Trapping Rain Water
+Desc Given n non-negative integers representing an elevation map where the width of each bar is 1, compute how much water it is able to trap after raining." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://myself659.github.io/1/01/01/" />
 
 
     
-    <meta itemprop="name" content="">
-<meta itemprop="description" content="banner = &quot;&rdquo; categories = [&ldquo;Substrate&rdquo;] date = &ldquo;2019-09-19T11:58:06&#43;02:00&rdquo; description = &quot;&rdquo; images = [] menu = &quot;&rdquo; tags = [&ldquo;Substrate&rdquo;, &ldquo;BlockChain&rdquo;] title = &ldquo;Substrate Runtime实践&rdquo; draft = true &#43;&#43;&#43;
-install substrate 安装substrate有以下两种方式：
- 快速安装 完全安装  快速安装 curl https://getsubstrate.io -sSf | bash -s -- --fast完全安装 curl https://getsubstrate.io -sSf | bash更新环境变量 source ~/.cargo/env检查版本 root@IA:~/rust/install-substrate# substrate --versionsubstrate 2.0.0-37bc8c545-x86_64-linux-gnuroot@IA:~/rust/install-substrate# subkey --versionsubkey 2.0.0同时安装的还有以下文件：
- substrate-module-new substrate-node-new substrate-ui-new  更新substrate f=`mktemp -d`git clone https://github.">
+    
+<meta itemprop="name" content="">
+<meta itemprop="description" content="每周完成一个ARTS： 1.Algorithm：每周至少做一个 leetcode 的算法题 2.Review：阅读并点评至少一篇英文技术文章 3.Tip：学习至少一个技术技巧 4.Share：分享一篇有观点和思考的技术文章 &#43;&#43;&#43; banner = &ldquo;&rdquo; categories = [&ldquo;DataStruct&rdquo;] date = &ldquo;2019-03-08T11:58:06&#43;02:00&rdquo; description = &ldquo;&rdquo; images = [] menu = &ldquo;&rdquo; tags = [&ldquo;DataStruct&rdquo;] title = &ldquo;作恶的矿工们&rdquo; draft = true &#43;&#43;&#43;
+ Algorithm leetcode-42 42. Trapping Rain Water
+Desc Given n non-negative integers representing an elevation map where the width of each bar is 1, compute how much water it is able to trap after raining.">
 
-<meta itemprop="wordCount" content="1042">
+
+
+<meta itemprop="wordCount" content="623">
 
 
 
 <meta itemprop="keywords" content="" />
+
     <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content=""/>
-<meta name="twitter:description" content="banner = &quot;&rdquo; categories = [&ldquo;Substrate&rdquo;] date = &ldquo;2019-09-19T11:58:06&#43;02:00&rdquo; description = &quot;&rdquo; images = [] menu = &quot;&rdquo; tags = [&ldquo;Substrate&rdquo;, &ldquo;BlockChain&rdquo;] title = &ldquo;Substrate Runtime实践&rdquo; draft = true &#43;&#43;&#43;
-install substrate 安装substrate有以下两种方式：
- 快速安装 完全安装  快速安装 curl https://getsubstrate.io -sSf | bash -s -- --fast完全安装 curl https://getsubstrate.io -sSf | bash更新环境变量 source ~/.cargo/env检查版本 root@IA:~/rust/install-substrate# substrate --versionsubstrate 2.0.0-37bc8c545-x86_64-linux-gnuroot@IA:~/rust/install-substrate# subkey --versionsubkey 2.0.0同时安装的还有以下文件：
- substrate-module-new substrate-node-new substrate-ui-new  更新substrate f=`mktemp -d`git clone https://github."/>
+<meta name="twitter:description" content="每周完成一个ARTS： 1.Algorithm：每周至少做一个 leetcode 的算法题 2.Review：阅读并点评至少一篇英文技术文章 3.Tip：学习至少一个技术技巧 4.Share：分享一篇有观点和思考的技术文章 &#43;&#43;&#43; banner = &ldquo;&rdquo; categories = [&ldquo;DataStruct&rdquo;] date = &ldquo;2019-03-08T11:58:06&#43;02:00&rdquo; description = &ldquo;&rdquo; images = [] menu = &ldquo;&rdquo; tags = [&ldquo;DataStruct&rdquo;] title = &ldquo;作恶的矿工们&rdquo; draft = true &#43;&#43;&#43;
+ Algorithm leetcode-42 42. Trapping Rain Water
+Desc Given n non-negative integers representing an elevation map where the width of each bar is 1, compute how much water it is able to trap after raining."/>
 
     
 
@@ -301,10 +302,10 @@ install substrate 安装substrate有以下两种方式：
             <i class="fa fa-calendar"></i>
             <time datetime="0001-01-01 00:00:00 &#43;0000 UTC" itemprop="datePublished">0001-01-01</time>
             &middot;
-            1042
+            623
             words
             &middot;
-            5
+            3
             minute read
         </div>
         
@@ -315,286 +316,142 @@ install substrate 安装substrate有以下两种方式：
 </header>
 
         <div class="article-entry" itemprop="articleBody">
-            <p>banner = &quot;&rdquo;
-categories = [&ldquo;Substrate&rdquo;]
-date = &ldquo;2019-09-19T11:58:06+02:00&rdquo;
-description = &quot;&rdquo;
+            
+
+<blockquote>
+<p>每周完成一个ARTS：
+1.Algorithm：每周至少做一个 leetcode 的算法题
+2.Review：阅读并点评至少一篇英文技术文章
+3.Tip：学习至少一个技术技巧
+4.Share：分享一篇有观点和思考的技术文章
++++
+banner = &ldquo;&rdquo;
+categories = [&ldquo;DataStruct&rdquo;]
+date = &ldquo;2019-03-08T11:58:06+02:00&rdquo;
+description = &ldquo;&rdquo;
 images = []
-menu = &quot;&rdquo;
-tags = [&ldquo;Substrate&rdquo;, &ldquo;BlockChain&rdquo;]
-title = &ldquo;Substrate Runtime实践&rdquo;
+menu = &ldquo;&rdquo;
+tags = [&ldquo;DataStruct&rdquo;]
+title = &ldquo;作恶的矿工们&rdquo;
 draft = true
 +++</p>
-<h1 id="install-substrate">install substrate</h1>
-<p>安装substrate有以下两种方式：</p>
-<ol>
-<li>快速安装</li>
-<li>完全安装</li>
-</ol>
-<h2 id="快速安装">快速安装</h2>
-<pre><code>curl https://getsubstrate.io -sSf | bash -s -- --fast
-</code></pre><h2 id="完全安装">完全安装</h2>
-<pre><code>curl https://getsubstrate.io -sSf | bash
-</code></pre><h2 id="更新环境变量">更新环境变量</h2>
-<pre><code>source ~/.cargo/env
-</code></pre><h2 id="检查版本">检查版本</h2>
-<pre><code>root@IA:~/rust/install-substrate# substrate  --version
-substrate 2.0.0-37bc8c545-x86_64-linux-gnu
-root@IA:~/rust/install-substrate# subkey  --version
-subkey 2.0.0
-</code></pre><p>同时安装的还有以下文件：</p>
-<ol>
-<li>substrate-module-new</li>
-<li>substrate-node-new</li>
-<li>substrate-ui-new</li>
-</ol>
-<h1 id="更新substrate">更新substrate</h1>
-<pre><code>f=`mktemp -d`
-git clone https://github.com/paritytech/substrate-up $f
-cp -a $f/substrate-* ~/.cargo/bin
-cp -a $f/polkadot-* ~/.cargo/bin
-</code></pre><h1 id="substrate---help">substrate &ndash;help</h1>
-<p>这一步虽然简单，但是很有必要，了解常用的substrate命令。方便以后出现问题快速解决或者找到线索。</p>
-<p>这相当于官方文档。必须要做的一步。短时间的投入，有益的作用。</p>
-<h1 id="runtime">Runtime</h1>
-<h2 id="srml">SRML</h2>
-<p>SRML全称Substrate Runtime Module Library</p>
-<h1 id="实践">实践</h1>
-<p>准备作一个基于substrate的hello world的实例。</p>
-<h2 id="创建节点">创建节点</h2>
-<pre><code>root@IA:~/rust/runtime-demo# substrate-node-new   hello-node  chenfeng
-</code></pre><p>这个过程可以持续10分钟左右</p>
-<h2 id="启动节点">启动节点</h2>
-<pre><code>root@IA:~/rust/runtime-demo/hello-node# ./target/release/hello-node   --dev
-2019-09-20 16:04:28 Substrate Node
-2019-09-20 16:04:28   version 1.0.0-7f6843a-x86_64-linux-gnu
-2019-09-20 16:04:28   by chenfeng, 2017, 2018
-2019-09-20 16:04:28 Chain specification: Development
-2019-09-20 16:04:28 Node name: exotic-drain-0405
-2019-09-20 16:04:28 Roles: AUTHORITY
-2019-09-20 16:04:28 Initializing Genesis block/state (state: 0xc727…2701, header-hash: 0x4e61…bccd)
-2019-09-20 16:04:28 Loaded block-time = 10 seconds from genesis on first-launch
-2019-09-20 16:04:28 Best block: #0
-2019-09-20 16:04:28 Using default protocol ID &quot;sup&quot; because none is configured in the chain specs
-2019-09-20 16:04:28 Local node identity is: QmXzUZcAxzmAWL8htpX6upw1W9tvecUXLx5h8dP18j3ouL
-2019-09-20 16:04:28 Libp2p =&gt; Random Kademlia query has yielded empty results
-2019-09-20 16:04:28 Listening for new connections on 127.0.0.1:9944.
-2019-09-20 16:04:28 Using authority key 5FA9nQDVg267DEd8m1ZypXLBnvN7SFxYwV7ndqSYGiN9TTpu
-2019-09-20 16:04:30 Starting consensus session on top of parent 0x4e61ac8af8f7b3e822d04c678e85c954eb1ec09256253a61c59a3e38d719bccd
-2019-09-20 16:04:30 Prepared block for proposing at 1 [hash: 0x0004fc217c56f2970fd3e9d4b80b8263d258424edd13454d34cabda98ff8c110; parent_hash: 0x4e61…bccd; extrinsics: [0x44d0…6310]]
-2019-09-20 16:04:30 Pre-sealed block for proposal at 1. Hash now 0x17574e947b8024789cc1af6048fdc69e00ec92fbec46a57c8844989e909fb058, previously 0x0004fc217c56f2970fd3e9d4b80b8263d258424edd13454d34cabda98ff8c110.
-2019-09-20 16:04:30 Imported #1 (0x1757…b058)
-2019-09-20 16:04:30 Accepted a new tcp connection from 127.0.0.1:20003.
-2019-09-20 16:04:31 Libp2p =&gt; Random Kademlia query has yielded empty results
-2019-09-20 16:04:33 Idle (0 peers), best: #1 (0x1757…b058), finalized #0 (0x4e61…bccd), ⬇ 0 ⬆ 0
-2019-09-20 16:04:35 Libp2p =&gt; Random Kademlia query has yielded empty results
-2019-09-20 16:04:38 Idle (0 peers), best: #1 (0x1757…b058), finalized #0 (0x4e61…bccd), ⬇ 0 ⬆ 0
-2019-09-20 16:04:40 Starting consensus session on top of parent 0x17574e947b8024789cc1af6048fdc69e00ec92fbec46a57c8844989e909fb058
-2019-09-20 16:04:40 Prepared block for proposing at 2 [hash: 0x773e99df58009dd0331262b6468131c3d4ce9de609db8a79ef0e5e1f673de5ae; parent_hash: 0x1757…b058; extrinsics: [0x0bf0…c888]]
-2019-09-20 16:04:40 Pre-sealed block for proposal at 2. Hash now 0x6e5b0fb72f9476d03b7b510f21935a8238eaa3f85d8ff7355a66a466b8637204, previously 0x773e99df58009dd0331262b6468131c3d4ce9de609db8a79ef0e5e1f673de5ae.
-2019-09-20 16:04:40 Imported #2 (0x6e5b…7204)
+</blockquote>
 
-</code></pre><h2 id="连接远端节点">连接远端节点</h2>
-<p>前面的文章提到，在中国现在的网络环境下，选择远端节点开发是一个十分明智的选择。
-根据前面的文章，连接远端节点即可以。</p>
-<p>这个我们省得自己搭节点，直接用官方的UI: <a href="https://polkadot.js.org/apps/#/explorer">polkadot.js.org/apps</a>。</p>
-<p>具体步骤如下：</p>
-<ol>
-<li>进入 <a href="https://polkadot.js.org/apps/#/setting">https://polkadot.js.org/apps/#/setting</a> 页面</li>
-<li>打开custom endpoint选项，设置对应wss网址即可</li>
-</ol>
-<h2 id="添加模块">添加模块</h2>
-<h3 id="进入runtime目录">进入runtime目录</h3>
-<pre><code>root@IA:~/rust/runtime-demo/hello-node/runtime/src# 
-</code></pre><h3 id="新建mod">新建mod</h3>
-<pre><code>root@IA:~/rust/runtime-demo/hello-node/runtime/src# substrate-module-new   hello
+<h1 id="algorithm">Algorithm</h1>
 
-  Substrate Module Setup 
-  Creating module in ....
-  Customising module...
+<h2 id="leetcode-42">leetcode-42</h2>
 
-SRML module created as ./hello.rs and added to git.
-Ensure that you include in your ./lib.rs the line:
-   mod hello;
-</code></pre><h3 id="修改librs">修改lib.rs</h3>
-<h4 id="引入hello-mod">引入hello mod</h4>
-<pre><code>mod hello;
-</code></pre><h4 id="为hello实现runtime-trait">为hello实现Runtime trait</h4>
-<pre><code>impl hello::Trait for Runtime {
-    type Event = Event;
-}
-</code></pre><h4 id="添加mod到construct_runtime宏">添加mod到construct_runtime!宏</h4>
-<pre><code>construct_runtime!(
-    pub enum Runtime with Log(InternalLog: DigestItem&lt;Hash, AuthorityId, AuthoritySignature&gt;) where
-        Block = Block,
-        NodeBlock = opaque::Block,
-        UncheckedExtrinsic = UncheckedExtrinsic
-    {
+<p><a href="https://leetcode.com/problems/trapping-rain-water/">42. Trapping Rain Water</a></p>
 
-        // add hello mod 
-        //Hello: hello::{Module, Call, Storage},
-        Hello: hello::{Module, Call, Storage, Event&lt;T&gt;},
-    }
-);
-</code></pre><h3 id="重新编译与启动">重新编译与启动</h3>
-<pre><code># 编译runtime的wasm版本
-./scripts/build.sh
+<h3 id="desc">Desc</h3>
 
-# 编译runtime的本地二进制版本，并构建可执行的客户端
-cargo build --release
+<pre><code>Given n non-negative integers representing an elevation map where the width of each bar is 1, compute how much water it is able to trap after raining.
 
-# 删除链上的历史数据
-./target/release/hello-node purge-chain --dev
 
-# 启动本地测试网络
-./target/release/hello-node --dev
+The above elevation map is represented by array [0,1,0,2,1,0,1,3,2,1,2,1]. In this case, 6 units of rain water (blue section) are being trapped. Thanks Marcos for contributing this image!
 
-</code></pre><h3 id="自定义业务">自定义业务</h3>
-<h4 id="自动生成mod代码">自动生成mod代码</h4>
-<pre><code>/// A runtime module template with necessary imports
+Example:
 
-/// Feel free to remove or edit this file as needed.
-/// If you change the name of this file, make sure to update its references in runtime/src/lib.rs
-/// If you remove this file, you can remove those references
+Input: [0,1,0,2,1,0,1,3,2,1,2,1]
+Output: 6
+</code></pre>
 
-/// For more guidance on Substrate modules, see the example module
-/// https://github.com/paritytech/substrate/blob/master/srml/example/src/lib.rs
-use support::{decl_event, decl_module, decl_storage, dispatch::Result, StorageValue};
-use system::ensure_signed;
+<h3 id="analyze">Analyze</h3>
 
-/// The module's configuration trait.
-pub trait Trait: system::Trait {
-    // TODO: Add other types and constants required configure this module.
+<p>第一遍遍历dp[i]中存入i位置左边的最大值，然后开始第二遍遍历数组，第二次遍历时找右边最大值，然后和左边最大值比较取其中的较小值，然后跟当前值height[i]相比，如果大于当前值，则将差值存入结果</p>
 
-    /// The overarching event type.
-    type Event: From&lt;Event&lt;Self&gt;&gt; + Into&lt;&lt;Self as system::Trait&gt;::Event&gt;;
-}
+<h3 id="solution">Solution</h3>
 
-/// This module's storage items.
-decl_storage! {
-    trait Store for Module&lt;T: Trait&gt; as hello {
-        // Just a dummy storage item.
-        // Here we are declaring a StorageValue, `Something` as a Option&lt;u32&gt;
-        // `get(something)` is the default getter which returns either the stored `u32` or `None` if nothing stored
-        Something get(something): Option&lt;u32&gt;;
-    }
-}
-
-decl_module! {
-    /// The module declaration.
-    pub struct Module&lt;T: Trait&gt; for enum Call where origin: T::Origin {
-        // Initializing events
-        // this is needed only if you are using events in your module
-        fn deposit_event&lt;T&gt;() = default;
-
-        // Just a dummy entry point.
-        // function that can be called by the external world as an extrinsics call
-        // takes a parameter of the type `AccountId`, stores it and emits an event
-        pub fn do_something(origin, something: u32) -&gt; Result {
-            // TODO: You only need this if you want to check it was signed.
-            let who = ensure_signed(origin)?;
-
-            // TODO: Code to execute when something calls this.
-            // For example: the following line stores the passed in u32 in the storage
-            &lt;Something&lt;T&gt;&gt;::put(something);
-
-            // here we are raising the Something event
-            Self::deposit_event(RawEvent::SomethingStored(something, who));
-            Ok(())
+<pre><code>class Solution {
+public:
+    int trap(vector&lt;int&gt;&amp; height) {
+        int res = 0, mx = 0, n = height.size();
+        vector&lt;int&gt; dp(n, 0);
+        for (int i = 0; i &lt; n; ++i) {
+            dp[i] = mx;
+            mx = max(mx, height[i]);
         }
+        mx = 0;
+        for (int i = n - 1; i &gt;= 0; --i) {
+            dp[i] = min(dp[i], mx);
+            mx = max(mx, height[i]);
+            if (dp[i] &gt; height[i]) res += dp[i] - height[i];
+        }
+        return res;
     }
-}
+};
+</code></pre>
 
-decl_event!(
-    pub enum Event&lt;T&gt;
-    where
-        AccountId = &lt;T as system::Trait&gt;::AccountId,
-    {
-        // Just a dummy event.
-        // Event `Something` is declared with a parameter of the type `u32` and `AccountId`
-        // To emit this event, we call the deposit funtion, from our runtime funtions
-        SomethingStored(u32, AccountId),
-    }
-);
+<h3 id="deep">Deep</h3>
 
-/// tests for this module
-#[cfg(test)]
-mod tests {
-    use super::*;
+<p>参考Relation部分</p>
 
-    use primitives::{Blake2Hasher, H256};
-    use runtime_io::with_externalities;
-    use runtime_primitives::{
-        testing::{Digest, DigestItem, Header},
-        traits::{BlakeTwo256, IdentityLookup},
-        BuildStorage,
-    };
-    use support::{assert_ok, impl_outer_origin};
+<h3 id="relation">Relation</h3>
 
-    impl_outer_origin! {
-        pub enum Origin for Test {}
-    }
-
-    // For testing the module, we construct most of a mock runtime. This means
-    // first constructing a configuration type (`Test`) which `impl`s each of the
-    // configuration traits of modules we want to use.
-    #[derive(Clone, Eq, PartialEq)]
-    pub struct Test;
-    impl system::Trait for Test {
-        type Origin = Origin;
-        type Index = u64;
-        type BlockNumber = u64;
-        type Hash = H256;
-        type Hashing = BlakeTwo256;
-        type Digest = Digest;
-        type AccountId = u64;
-        type Lookup = IdentityLookup&lt;Self::AccountId&gt;;
-        type Header = Header;
-        type Event = ();
-        type Log = DigestItem;
-    }
-    impl Trait for Test {
-        type Event = ();
-    }
-    type hello = Module&lt;Test&gt;;
-
-    // This function basically just builds a genesis storage key/value store according to
-    // our desired mockup.
-    fn new_test_ext() -&gt; runtime_io::TestExternalities&lt;Blake2Hasher&gt; {
-        system::GenesisConfig::&lt;Test&gt;::default()
-            .build_storage()
-            .unwrap()
-            .0
-            .into()
-    }
-
-    #[test]
-    fn it_works_for_default_value() {
-        with_externalities(&amp;mut new_test_ext(), || {
-            // Just a dummy test for the dummy funtion `do_something`
-            // calling the `do_something` function with a value 42
-            assert_ok!(hello::do_something(Origin::signed(1), 42));
-            // asserting that the stored value is equal to what we stored
-            assert_eq!(hello::something(), Some(42));
-        });
-    }
-}
-</code></pre><h4 id="修改代码如下">修改代码如下</h4>
-<pre><code>
-</code></pre><h1 id="参考">参考</h1>
 <ol>
-<li><a href="https://docs.google.com/presentation/d/1dhaoLb5V2K_vDe4EJlUcKwePD1nMktr57fOdSo8bHns/edit#slide=id.g45ee0ba2ab_3_12">Getting Started on Substrate</a></li>
-<li><a href="https://www.shawntabrizi.com/substrate-collectables-workshop/#/README?id=what-is-this">Substrate Collectables</a></li>
-<li><a href="https://substrate.dev/docs/en/getting-started/using-the-substrate-scripts#substrate-module-new">Using the Substrate Scripts</a></li>
-<li><a href="https://polkadot.js.org/api/types/#codec-types">Codec types</a></li>
+<li><a href="https://leetcode.com/problems/trapping-rain-water-ii/">407. Trapping Rain Water II</a></li>
 </ol>
+
+<h1 id="review">Review</h1>
+
+<h2 id="优点">优点</h2>
+
+<ol>
+<li>Minimal disruption</li>
+<li>Balance</li>
+<li>Consistency<br /></li>
+</ol>
+
+<h2 id="要点">要点</h2>
+
+<ol>
+<li>U 表示key的集合</li>
+<li>S 表示资源的集合</li>
+<li>W 当前已经匹配key的buckets集合</li>
+<li>A 表示所有buckets的集合</li>
+</ol>
+
+<p>内容来自<a href="https://arxiv.org/pdf/1812.09674.pdf">AnchorHash: A Scalable Consistent Hash</a></p>
+
+<h1 id="tip">Tip</h1>
+
+<ol>
+<li>使用partyTu实现在ios上实现后台播放youtube视频</li>
+</ol>
+
+<h1 id="share">Share</h1>
+
+<p>Lessons to learn in your first 5 years as a programmer:</p>
+
+<ol>
+<li><p>Don&rsquo;t be afraid to do the same work multiple times. Your first try will often have a lot of bad design. You need repetitions before you get good. Don&rsquo;t let laziness get in the way of learning and improving.</p></li>
+
+<li><p>Reliability is important. The new hot tech has those new features you&rsquo;ve been dying to try! But it&rsquo;s also a giant mess, constantly updating, has bad documentation, is hard to set up and difficult to debug. Older tech has google-able solutions. You&rsquo;ll save time with older tech.</p></li>
+
+<li><p>Code for readability. It&rsquo;s tempting to show off how clever you are by using some obscure language feature that does everything you want in one line. It&rsquo;s clever, but makes maintenance hard. The new grad that&rsquo;s reading your code will curse you. Don&rsquo;t be that guy.</p></li>
+
+<li><p>Write unit tests. Seriously, your QA teammates will thank you. You&rsquo;ll have less bugs. You&rsquo;ll understand your own code a lot better. You&rsquo;ll also make your code a lot more modular and testable. Yea, it takes more time, but you&rsquo;ll probably spend the time you save debugging later.</p></li>
+
+<li><p>Don&rsquo;t over-abstract. I blame this on OO. No, you don&rsquo;t need some super abstract class that can handle all cases. Just make the program do what you need it to. Abstract later when it makes sense, not before any other instance is written.</p></li>
+
+<li><p>Don&rsquo;t be afraid to learn. Too many devs are one trick ponies (<em>cough</em> Java <em>cough</em>). Learn new stuff or you&rsquo;ll grow stale. The ability to learn quickly is one of the most in-demand skills as a developer, so you&rsquo;d best get started earlier than later.</p></li>
+
+<li><p>Learn to present. Teach other coders what you&rsquo;ve learned. Give management an overview. If you ever want to get ahead in your career, presenting is a skill you need. Putting a presentation together is not that different than coding, in any case.</p></li>
+
+<li><p>Learn your tools. For the love of God, please learn command line, git and a text editor like vim or emacs. You&rsquo;re most likely going to have to self-learn on these, but they&rsquo;re well worth your time. The time you can save pays back the investment manyfold.</p></li>
+</ol>
+
+<p>All this is to say that your education as a programmer doesn&rsquo;t end with your CS degree or bootcamp. In fact, it&rsquo;s really just beginning. You can learn the rules pretty quickly, but to master the art takes a lifetime.</p>
+
 <h1 id="欢迎关注">欢迎关注</h1>
+
 <p>欢迎关注微信公众帐号：沉风网事(savewind)</p>
-<p><img src="/images/cfws.jpg" alt="沉风网事"></p>
+
+<p><img src="/images/cfws.jpg" alt="沉风网事" /></p>
 
         </div>
         <footer class="article-footer">
-    <a data-url="https://myself659.github.io/1/01/01/" data-id="eff62d7f39e4ff5766460db9b1ef51c3" class="article-share-link">
+    <a data-url="https://myself659.github.io/1/01/01/" data-id="9bfc51bc5a3e437acb30b6d1a1ddb250" class="article-share-link">
         <i class="fa fa-share"></i>
         Share
     </a>
@@ -670,6 +527,13 @@ mod tests {
 
     
 <nav id="article-nav">
+    
+    <a href="https://myself659.github.io/1/01/01/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">
+          Older
+      </strong>
+      <div class="article-nav-title"></div>
+    </a>
     
 
     
@@ -1320,6 +1184,208 @@ mod tests {
             <li class="category-list-item">
                 
                 <a class="category-list-link" href="https://myself659.github.io/tags/%E7%A0%94%E5%8F%91%E7%AE%A1%E7%90%86">
+                    研发管理
+                </a>
+                <span class="category-list-count">3</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://myself659.github.io/tags/%E7%BC%96%E7%A8%8B">
+                    编程
+                </a>
+                <span class="category-list-count">6</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://myself659.github.io/tags/%E8%81%8C%E5%9C%BA">
+                    职场
+                </a>
+                <span class="category-list-count">2</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://myself659.github.io/tags/%E9%97%B2%E8%B0%88%E4%B9%B1%E6%89%AF">
+                    闲谈乱扯
+                </a>
+                <span class="category-list-count">9</span>
+            </li>
+            
+        </ul>
+    </div>
+</div>
+
+
+
+
+    
+
+
+<div class="widget-wrap">
+    <h3 class="widget-title">
+        Tag cloud
+    </h3>
+    <div class="widget tagcloud">
+        
+        
+        <a href="https://myself659.github.io/tags/arch" style="font-size: 12px;">arch</a>
+        
+        
+        <a href="https://myself659.github.io/tags/bitcoin" style="font-size: 12px;">bitcoin</a>
+        
+        
+        <a href="https://myself659.github.io/tags/blockchain" style="font-size: 12px;">blockchain</a>
+        
+        
+        <a href="https://myself659.github.io/tags/btc" style="font-size: 12px;">btc</a>
+        
+        
+        <a href="https://myself659.github.io/tags/cryptography" style="font-size: 12px;">cryptography</a>
+        
+        
+        <a href="https://myself659.github.io/tags/data" style="font-size: 12px;">data</a>
+        
+        
+        <a href="https://myself659.github.io/tags/data-struct" style="font-size: 12px;">data-struct</a>
+        
+        
+        <a href="https://myself659.github.io/tags/distributed" style="font-size: 12px;">distributed</a>
+        
+        
+        <a href="https://myself659.github.io/tags/docker" style="font-size: 12px;">docker</a>
+        
+        
+        <a href="https://myself659.github.io/tags/economics" style="font-size: 12px;">economics</a>
+        
+        
+        <a href="https://myself659.github.io/tags/english" style="font-size: 12px;">english</a>
+        
+        
+        <a href="https://myself659.github.io/tags/ethereum" style="font-size: 12px;">ethereum</a>
+        
+        
+        <a href="https://myself659.github.io/tags/golang" style="font-size: 12px;">golang</a>
+        
+        
+        <a href="https://myself659.github.io/tags/internet" style="font-size: 12px;">internet</a>
+        
+        
+        <a href="https://myself659.github.io/tags/ipfs" style="font-size: 12px;">ipfs</a>
+        
+        
+        <a href="https://myself659.github.io/tags/kubernetes" style="font-size: 12px;">kubernetes</a>
+        
+        
+        <a href="https://myself659.github.io/tags/linux" style="font-size: 12px;">linux</a>
+        
+        
+        <a href="https://myself659.github.io/tags/nba" style="font-size: 12px;">nba</a>
+        
+        
+        <a href="https://myself659.github.io/tags/network" style="font-size: 12px;">network</a>
+        
+        
+        <a href="https://myself659.github.io/tags/nginx" style="font-size: 12px;">nginx</a>
+        
+        
+        <a href="https://myself659.github.io/tags/python" style="font-size: 12px;">python</a>
+        
+        
+        <a href="https://myself659.github.io/tags/rust" style="font-size: 12px;">rust</a>
+        
+        
+        <a href="https://myself659.github.io/tags/secure" style="font-size: 12px;">secure</a>
+        
+        
+        <a href="https://myself659.github.io/tags/smart-contract" style="font-size: 12px;">smart-contract</a>
+        
+        
+        <a href="https://myself659.github.io/tags/substrate" style="font-size: 12px;">substrate</a>
+        
+        
+        <a href="https://myself659.github.io/tags/web" style="font-size: 12px;">web</a>
+        
+        
+        <a href="https://myself659.github.io/tags/%E5%95%86%E4%B8%9A" style="font-size: 12px;">商业</a>
+        
+        
+        <a href="https://myself659.github.io/tags/%E6%88%90%E9%95%BF" style="font-size: 12px;">成长</a>
+        
+        
+        <a href="https://myself659.github.io/tags/%E6%8A%80%E6%9C%AF%E7%AE%A1%E7%90%86" style="font-size: 12px;">技术管理</a>
+        
+        
+        <a href="https://myself659.github.io/tags/%E7%A0%94%E5%8F%91%E7%AE%A1%E7%90%86" style="font-size: 12px;">研发管理</a>
+        
+        
+        <a href="https://myself659.github.io/tags/%E7%BC%96%E7%A8%8B" style="font-size: 12px;">编程</a>
+        
+        
+        <a href="https://myself659.github.io/tags/%E8%81%8C%E5%9C%BA" style="font-size: 12px;">职场</a>
+        
+        
+        <a href="https://myself659.github.io/tags/%E9%97%B2%E8%B0%88%E4%B9%B1%E6%89%AF" style="font-size: 12px;">闲谈乱扯</a>
+        
+    </div>
+</div>
+
+
+
+
+
+    <div id="toTop" class="fa fa-angle-up"></div>
+</aside>
+
+    
+	</div>
+</div>
+
+<footer id="footer">
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2020
+      copyright@沉风网事 <a href="http://www.beian.miit.gov.cn/">浙ICP备19035943号-2</a>
+    </div>
+  </div>
+</footer>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-144475213-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+<script src="https://myself659.github.io/fancybox/jquery.fancybox.pack.js"></script>
+<script src="https://myself659.github.io/js/script.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js"></script>
+
+
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']]}
+  });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+
+
+</body>
+</html>7%90%86">
                     研发管理
                 </a>
                 <span class="category-list-count">3</span>

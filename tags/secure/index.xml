@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Secure on 沉风网事</title>
@@ -20,7 +20,7 @@
       <description>什么是DoH DoH是DNS over HTTPS。
 传统DNS相当于DNS over UDP。
 DoH带来哪些好处？ 采用DoH对用户来说有如下好处：
- DoH协议不允许其他用户，服务提供商或第三方查看您访问的网站并收集数据，保护了用户的隐私 DoH协议有利于防止欺骗与钓鱼攻击，保护在线数据的安全和隐私 加速DNS解析，提高网页访问速度 对于天朝人民，还有另一个好处就是科学上网  DoH现在可以使用吗？ We&#39;ve enabled an experiment in Chrome 79 for a fraction of our users.Chrome 79版本对部分用户开启。
+ DoH协议不允许其他用户，服务提供商或第三方查看您访问的网站并收集数据，保护了用户的隐私 DoH协议有利于防止欺骗与钓鱼攻击，保护在线数据的安全和隐私 加速DNS解析，提高网页访问速度 对于天朝人民，还有另一个好处就是科学上网  DoH现在可以使用吗？ We&#39;ve enabled an experiment in Chrome 79 for a fraction of our users.  Chrome 79版本对部分用户开启。
 firefox 70版本已经支持DoH。
 如何使用DoH? 以firefox为例：
 在地址输入：about:preferences#general，找到Network Settings选项，点击Settings即可进入设置，具体如下：
@@ -33,7 +33,7 @@ firefox 70版本已经支持DoH。
       <pubDate>Thu, 30 May 2019 11:58:06 +0200</pubDate>
       
       <guid>https://myself659.github.io/2019/05/30/%E4%BA%BA%E7%94%9F%E4%B8%AD%E6%9C%80%E6%98%82%E8%B4%B5%E7%9A%84%E6%95%99%E8%AE%ADsim%E5%8D%A1%E8%BD%AC%E7%A7%BB%E6%94%BB%E5%87%BB%E7%9A%84%E7%BB%86%E8%8A%82%E8%AF%91%E6%96%87/</guid>
-      <description>上周三我损失了10万美元。它在24小时的时间内在“SIM转移攻击”中消失，耗尽了我的Coinbase帐户。事件已经过去了四天，我被摧毁了。我寝食难安;我充满了焦虑，懊悔和尴尬。
+      <description> 上周三我损失了10万美元。它在24小时的时间内在“SIM转移攻击”中消失，耗尽了我的Coinbase帐户。事件已经过去了四天，我被摧毁了。我寝食难安;我充满了焦虑，懊悔和尴尬。
 这是我生命中最昂贵的一课，我想与尽可能多的人分享我的经验与教训。我的目标是提高对这类攻击的认识，并促使大家提高在线身份的安全性。
 这仍然是非常原始的（我还没有告诉我的家人）；请大家保留对本文所述的天真安全措施的判断。
 攻击的细节 您可能会问自己，究竟什么是“SIM转移攻击”？为了描述攻击，我们来看一下典型的在线身份。对于大多数人来说，下图应该看起来很熟悉。
@@ -44,17 +44,20 @@ SIM转移攻击 但是，“SIM转移攻击”是由未经授权的来源（攻�
 花点时间检查一下单个Google帐户绑定的大量敏感信息：
  您的地址，出生日期和其他私人，个人身份信息 访问您（和/或您的合作伙伴）的潜在妥协照片 访问您的日历和即将到来的旅行日期 访问您的私人电子邮件，文档和搜索历史记录 访问您的个人联系人及其私人信息以及与您的关系 访问您的主电子邮件地址用作身份验证来源的所有其他在线服务  事件时间线 通过更好地掌握如何进行此类攻击以及所涉及的范围，让我们深入探讨此特定攻击的时间线。我想描绘一下攻击是如何被执行的，以及我是如何经历这些事件的，以及如果您遇到类似的症状，您可以做些什么来保护自己。
 时间线分为四个部分：
-  我所经历的：从我的观点来看所经历的事件。如果你遇到类似的事情，这些都是你可能受到攻击的明确指示。
-  攻击者正在做什么：黑客用来进入我的Coinbase帐户的基本策略。
-  我感知到的威胁级别：我在这些事件发生时将其归因于威胁级别。
-  我应该拥有的威胁级别：事后看来，我希望在这些事件发生时我会拥有的威胁级别。
+ 我所经历的：从我的观点来看所经历的事件。如果你遇到类似的事情，这些都是你可能受到攻击的明确指示。
+ 攻击者正在做什么：黑客用来进入我的Coinbase帐户的基本策略。
+ 我感知到的威胁级别：我在这些事件发生时将其归因于威胁级别。
+ 我应该拥有的威胁级别：事后看来，我希望在这些事件发生时我会拥有的威胁级别。
   经验教训+建议 这是我生命中最昂贵的一节课。我在24小时内失去了相当重要比例的净值资产; 并且是不可逆的。以下是我鼓励其他人用来更好地保护自己的在线安全的一些建议： 使用硬件钱包，以确保您的加密：将您的密码到硬件钱包 /离线存储/ 多SIG钱包，只要你不交易。不要将资金闲置在交易所或法定进场。我将Coinbase视为银行账户，并且在发生攻击时你绝对没有追索权。我比大多数人更了解风险，但从未想过这样的事情会发生在我身上。我非常后悔没有采取加密安全措施。
-  基于SMS的2FA还不够：无论您尝试在线保护的资产和/或身份如何，都要升级到基于硬件的安全性（即：攻击者为实施攻击而必须物理获取的物理内容）。虽然Google Authenticator和Authy可以将您的移动设备转变为基于硬件的安全性，但我建议您更进一步。拿起你实际控制的YubiKey，不能被欺骗。
-  减少您的在线足迹：减少不必要地在线分享个人身份信息（出生日期，位置，嵌入其中的地理位置数据的图片等）的冲动。在发生攻击时，所有这些准公开数据都可以针对您。 Google Voice 2FA：在某些情况下，在线服务不支持基于硬件的2FA（它们依赖于较弱的基于SMS的2FA）。在这些情况下，您最好创建一个Google语音电话号码（无法通过SIM卡转移）并使用具有2-Factor Auth恢复号码的电话号码。
-  创建辅助电子邮件地址：不是将所有内容绑定到单个电子邮件地址，而是为关键在线身份（银行帐户，社交媒体帐户，加密交换等）创建辅助地址。请勿将此电子邮件地址用于其他任何内容并将其保密。使用某种形式的基于硬件的2FA备份该地址。
-  离线密码管理器：使用密码管理器输入密码。更好的是，使用密码存储等脱机密码管理器。lrvick拥有各种密码管理器的优秀对比图表，以及针对更具技术倾向的审查建议。
+ 基于SMS的2FA还不够：无论您尝试在线保护的资产和/或身份如何，都要升级到基于硬件的安全性（即：攻击者为实施攻击而必须物理获取的物理内容）。虽然Google Authenticator和Authy可以将您的移动设备转变为基于硬件的安全性，但我建议您更进一步。拿起你实际控制的YubiKey，不能被欺骗。
+ 减少您的在线足迹：减少不必要地在线分享个人身份信息（出生日期，位置，嵌入其中的地理位置数据的图片等）的冲动。在发生攻击时，所有这些准公开数据都可以针对您。 Google Voice 2FA：在某些情况下，在线服务不支持基于硬件的2FA（它们依赖于较弱的基于SMS的2FA）。在这些情况下，您最好创建一个Google语音电话号码（无法通过SIM卡转移）并使用具有2-Factor Auth恢复号码的电话号码。
+ 创建辅助电子邮件地址：不是将所有内容绑定到单个电子邮件地址，而是为关键在线身份（银行帐户，社交媒体帐户，加密交换等）创建辅助地址。请勿将此电子邮件地址用于其他任何内容并将其保密。使用某种形式的基于硬件的2FA备份该地址。
+ 离线密码管理器：使用密码管理器输入密码。更好的是，使用密码存储等脱机密码管理器。lrvick拥有各种密码管理器的优秀对比图表，以及针对更具技术倾向的审查建议。
   关于读者的评论 我明白这一点：鉴于我天真的安全实践，我可能就应该注定被黑客攻击。这样做不会减少受到任何伤害，并且会削弱这个故事的主旨，即：
- 让别人知道受到伤害是多么容易 使用上述知识和建议来优先考虑您的在线身份的安全性  我禁不住想到我可以做的小而轻松的事情来保护自己。我的脑海中涌现各种假设。</description>
+ 让别人知道受到伤害是多么容易 使用上述知识和建议来优先考虑您的在线身份的安全性  我禁不住想到我可以做的小而轻松的事情来保护自己。我的脑海中涌现各种假设。
+然而，这些想法伴随懒惰和幸存者偏见。我从来没有认真对待我的在线安全，因为我从未经历过攻击。虽然我了解自己的风险状况，但是我就是太懒导致我没有用该有的严谨来保护我的资产。
+我恳请你们从这些错误中吸取教训。
+参考  The Most Expensive Lesson Of My Life: Details of SIM port hack  </description>
     </item>
     
     <item>
@@ -101,7 +104,7 @@ SIM转移攻击 但是，“SIM转移攻击”是由未经授权的来源（攻�
       
       <guid>https://myself659.github.io/2017/04/08/%E9%98%BF%E9%87%8C%E4%BA%91ecs%E5%9F%BA%E6%9C%AC%E5%AE%89%E5%85%A8%E6%A3%80%E6%9F%A5%E5%B0%8F%E7%BB%93/</guid>
       <description>背景 查看阿里云ECS服务器日志发现如下：
-type=USER_AUTH msg=audit(1491669519.156:15631): pid=22938 uid=0 auid=4294967295 ses=4294967295 msg=&#39;op=PAM:authentication acct=&amp;quot;deploy&amp;quot; exe=&amp;quot;/usr/sbin/sshd&amp;quot; hostname=123.57.245.163 addr=123.57.245.163 terminal=ssh res=failed&#39;type=USER_LOGIN msg=audit(1491669519.156:15632): pid=22938 uid=0 auid=4294967295 ses=4294967295 msg=&#39;op=login acct=28696E76616C6964207573657229 exe=&amp;quot;/usr/sbin/sshd&amp;quot; hostname=? addr=123.57.245.163 terminal=sshd res=failed&#39;type=USER_LOGIN msg=audit(1491669587.368:15634): pid=22940 uid=0 auid=4294967295 ses=4294967295 msg=&#39;op=login acct=28756E6B6E6F776E207573657229 exe=&amp;quot;/usr/sbin/sshd&amp;quot; hostname=? addr=123.57.245.163 terminal=sshd res=failed&#39;type=USER_LOGIN msg=audit(1491669587.368:15635): pid=22940 uid=0 auid=4294967295 ses=4294967295 msg=&#39;op=login acct=28696E76616C6964207573657229 exe=&amp;quot;/usr/sbin/sshd&amp;quot; hostname=? addr=123.57.245.163 terminal=sshd res=failed&#39;type=USER_AUTH msg=audit(1491669589.420:15636): pid=22940 uid=0 auid=4294967295 ses=4294967295 msg=&#39;op=PAM:authentication acct=&amp;quot;deploy&amp;quot; exe=&amp;quot;/usr/sbin/sshd&amp;quot; hostname=123.57.245.163 addr=123.57.245.163 terminal=ssh res=failed&#39;type=USER_LOGIN msg=audit(1491669589.420:15637): pid=22940 uid=0 auid=4294967295 ses=4294967295 msg=&#39;op=login acct=28696E76616C6964207573657229 exe=&amp;quot;/usr/sbin/sshd&amp;quot; hostname=?</description>
+type=USER_AUTH msg=audit(1491669519.156:15631): pid=22938 uid=0 auid=4294967295 ses=4294967295 msg=&#39;op=PAM:authentication acct=&amp;quot;deploy&amp;quot; exe=&amp;quot;/usr/sbin/sshd&amp;quot; hostname=123.57.245.163 addr=123.57.245.163 terminal=ssh res=failed&#39; type=USER_LOGIN msg=audit(1491669519.156:15632): pid=22938 uid=0 auid=4294967295 ses=4294967295 msg=&#39;op=login acct=28696E76616C6964207573657229 exe=&amp;quot;/usr/sbin/sshd&amp;quot; hostname=? addr=123.57.245.163 terminal=sshd res=failed&#39; type=USER_LOGIN msg=audit(1491669587.368:15634): pid=22940 uid=0 auid=4294967295 ses=4294967295 msg=&#39;op=login acct=28756E6B6E6F776E207573657229 exe=&amp;quot;/usr/sbin/sshd&amp;quot; hostname=? addr=123.57.245.163 terminal=sshd res=failed&#39; type=USER_LOGIN msg=audit(1491669587.368:15635): pid=22940 uid=0 auid=4294967295 ses=4294967295 msg=&#39;op=login acct=28696E76616C6964207573657229 exe=&amp;quot;/usr/sbin/sshd&amp;quot; hostname=? addr=123.57.245.163 terminal=sshd res=failed&#39; type=USER_AUTH msg=audit(1491669589.420:15636): pid=22940 uid=0 auid=4294967295 ses=4294967295 msg=&#39;op=PAM:authentication acct=&amp;quot;deploy&amp;quot; exe=&amp;quot;/usr/sbin/sshd&amp;quot; hostname=123.57.245.163 addr=123.57.245.163 terminal=ssh res=failed&#39; type=USER_LOGIN msg=audit(1491669589.420:15637): pid=22940 uid=0 auid=4294967295 ses=4294967295 msg=&#39;op=login acct=28696E76616C6964207573657229 exe=&amp;quot;/usr/sbin/sshd&amp;quot; hostname=?</description>
     </item>
     
   </channel>

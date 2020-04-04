@@ -2,7 +2,7 @@
 <html lang="zh-cn">
 <head>
     <title>Gorm小技巧: 如何优雅地创建多个相同的表 &middot; 沉风网事</title>
-    <meta name="generator" content="Hugo 0.68.3" />
+    <meta name="generator" content="Hugo 0.54.0" />
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta name="author" content="沉风">
@@ -23,56 +23,60 @@
     <meta property="og:title" content="Gorm小技巧: 如何优雅地创建多个相同的表" />
 <meta property="og:description" content="背景 因为需要bitfinex抓取各种历史交易信息。为了实现可扩展与便于数据管理，在数据架构设计方面满足下面的需求：
  不同的交易对的交易数据放到不同的表上。  方案 方案1 编写sql,通过多条sql语句创建多个不同名字的表。
-优点：
- 理解简单，最容易的方案  缺点：
-  如果修改表名称、调整表结构、调整索引，需要重新写sql，如果在线上部署，需要到多台机器上部署与执行，加大出错的概率
-  需要额外维护表名称
-  不利于docker部署，部署业务sql建立相应表
+优点： 1. 理解简单，最容易的方案
+缺点：
+ 如果修改表名称、调整表结构、调整索引，需要重新写sql，如果在线上部署，需要到多台机器上部署与执行，加大出错的概率
+ 需要额外维护表名称
+ 不利于docker部署，部署业务sql建立相应表
   总之，最容易的方案，确实最难维护的方案。
 方案2 方案1种种不足，让我这个懒人实在不感兴趣。要追求优雅的实现方案。所以就发现下面的方案。
-type User struct {Name stringPwd stringtableName string}func (u *User) TableName() string {return u.tableName}看完上面的代码，大家应该会立即明白：原来只需要对表结构对应的结构体定义一种方法 TableName(),就可以实现。
+type User struct { Name string Pwd string tableName string } func (u *User) TableName() string { return u.tableName }  看完上面的代码，大家应该会立即明白：原来只需要对表结构对应的结构体定义一种方法 TableName(),就可以实现。
 一个十分简单示例代码如下：
-package mainimport (&quot;fmt&quot;_ &quot;github.com/go-sql-driver/mysql&quot;&quot;github.com/jinzhu/gorm&quot;)type User struct {Name stringPwd stringtableName string}func (u *User) TableName() string {// custom table name, this is defaultreturn u." />
+package main import ( &quot;fmt&quot; _ &quot;github.com/go-sql-driver/mysql&quot; &quot;github.com/jinzhu/gorm&quot; ) type User struct { Name string Pwd string tableName string } func (u *User) TableName() string { // custom table name, this is default return u." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://myself659.github.io/2017/12/21/gorm%E5%B0%8F%E6%8A%80%E5%B7%A7-%E5%A6%82%E4%BD%95%E4%BC%98%E9%9B%85%E5%9C%B0%E5%88%9B%E5%BB%BA%E5%A4%9A%E4%B8%AA%E7%9B%B8%E5%90%8C%E7%9A%84%E8%A1%A8/" />
-<meta property="article:published_time" content="2017-12-21T11:58:06+02:00" />
-<meta property="article:modified_time" content="2017-12-21T11:58:06+02:00" />
+<meta property="article:published_time" content="2017-12-21T11:58:06&#43;02:00"/>
+<meta property="article:modified_time" content="2017-12-21T11:58:06&#43;02:00"/>
 
     
-    <meta itemprop="name" content="Gorm小技巧: 如何优雅地创建多个相同的表">
+    
+<meta itemprop="name" content="Gorm小技巧: 如何优雅地创建多个相同的表">
 <meta itemprop="description" content="背景 因为需要bitfinex抓取各种历史交易信息。为了实现可扩展与便于数据管理，在数据架构设计方面满足下面的需求：
  不同的交易对的交易数据放到不同的表上。  方案 方案1 编写sql,通过多条sql语句创建多个不同名字的表。
-优点：
- 理解简单，最容易的方案  缺点：
-  如果修改表名称、调整表结构、调整索引，需要重新写sql，如果在线上部署，需要到多台机器上部署与执行，加大出错的概率
-  需要额外维护表名称
-  不利于docker部署，部署业务sql建立相应表
+优点： 1. 理解简单，最容易的方案
+缺点：
+ 如果修改表名称、调整表结构、调整索引，需要重新写sql，如果在线上部署，需要到多台机器上部署与执行，加大出错的概率
+ 需要额外维护表名称
+ 不利于docker部署，部署业务sql建立相应表
   总之，最容易的方案，确实最难维护的方案。
 方案2 方案1种种不足，让我这个懒人实在不感兴趣。要追求优雅的实现方案。所以就发现下面的方案。
-type User struct {Name stringPwd stringtableName string}func (u *User) TableName() string {return u.tableName}看完上面的代码，大家应该会立即明白：原来只需要对表结构对应的结构体定义一种方法 TableName(),就可以实现。
+type User struct { Name string Pwd string tableName string } func (u *User) TableName() string { return u.tableName }  看完上面的代码，大家应该会立即明白：原来只需要对表结构对应的结构体定义一种方法 TableName(),就可以实现。
 一个十分简单示例代码如下：
-package mainimport (&quot;fmt&quot;_ &quot;github.com/go-sql-driver/mysql&quot;&quot;github.com/jinzhu/gorm&quot;)type User struct {Name stringPwd stringtableName string}func (u *User) TableName() string {// custom table name, this is defaultreturn u.">
+package main import ( &quot;fmt&quot; _ &quot;github.com/go-sql-driver/mysql&quot; &quot;github.com/jinzhu/gorm&quot; ) type User struct { Name string Pwd string tableName string } func (u *User) TableName() string { // custom table name, this is default return u.">
+
+
 <meta itemprop="datePublished" content="2017-12-21T11:58:06&#43;02:00" />
 <meta itemprop="dateModified" content="2017-12-21T11:58:06&#43;02:00" />
-<meta itemprop="wordCount" content="202">
+<meta itemprop="wordCount" content="203">
 
 
 
 <meta itemprop="keywords" content="Golang," />
+
     <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Gorm小技巧: 如何优雅地创建多个相同的表"/>
 <meta name="twitter:description" content="背景 因为需要bitfinex抓取各种历史交易信息。为了实现可扩展与便于数据管理，在数据架构设计方面满足下面的需求：
  不同的交易对的交易数据放到不同的表上。  方案 方案1 编写sql,通过多条sql语句创建多个不同名字的表。
-优点：
- 理解简单，最容易的方案  缺点：
-  如果修改表名称、调整表结构、调整索引，需要重新写sql，如果在线上部署，需要到多台机器上部署与执行，加大出错的概率
-  需要额外维护表名称
-  不利于docker部署，部署业务sql建立相应表
+优点： 1. 理解简单，最容易的方案
+缺点：
+ 如果修改表名称、调整表结构、调整索引，需要重新写sql，如果在线上部署，需要到多台机器上部署与执行，加大出错的概率
+ 需要额外维护表名称
+ 不利于docker部署，部署业务sql建立相应表
   总之，最容易的方案，确实最难维护的方案。
 方案2 方案1种种不足，让我这个懒人实在不感兴趣。要追求优雅的实现方案。所以就发现下面的方案。
-type User struct {Name stringPwd stringtableName string}func (u *User) TableName() string {return u.tableName}看完上面的代码，大家应该会立即明白：原来只需要对表结构对应的结构体定义一种方法 TableName(),就可以实现。
+type User struct { Name string Pwd string tableName string } func (u *User) TableName() string { return u.tableName }  看完上面的代码，大家应该会立即明白：原来只需要对表结构对应的结构体定义一种方法 TableName(),就可以实现。
 一个十分简单示例代码如下：
-package mainimport (&quot;fmt&quot;_ &quot;github.com/go-sql-driver/mysql&quot;&quot;github.com/jinzhu/gorm&quot;)type User struct {Name stringPwd stringtableName string}func (u *User) TableName() string {// custom table name, this is defaultreturn u."/>
+package main import ( &quot;fmt&quot; _ &quot;github.com/go-sql-driver/mysql&quot; &quot;github.com/jinzhu/gorm&quot; ) type User struct { Name string Pwd string tableName string } func (u *User) TableName() string { // custom table name, this is default return u."/>
 
     
 
@@ -327,7 +331,7 @@ package mainimport (&quot;fmt&quot;_ &quot;github.com/go-sql-driver/mysql&quo
             <i class="fa fa-calendar"></i>
             <time datetime="2017-12-21 11:58:06 &#43;0200 &#43;0200" itemprop="datePublished">2017-12-21</time>
             &middot;
-            202
+            203
             words
             &middot;
             1
@@ -365,33 +369,41 @@ package mainimport (&quot;fmt&quot;_ &quot;github.com/go-sql-driver/mysql&quo
 </header>
 
         <div class="article-entry" itemprop="articleBody">
-            <h3 id="背景">背景</h3>
+            
+
+<h3 id="背景">背景</h3>
+
 <p>因为需要bitfinex抓取各种历史交易信息。为了实现可扩展与便于数据管理，在数据架构设计方面满足下面的需求：</p>
+
 <ol>
 <li>不同的交易对的交易数据放到不同的表上。</li>
 </ol>
+
 <h3 id="方案">方案</h3>
+
 <h4 id="方案1">方案1</h4>
+
 <p>编写sql,通过多条sql语句创建多个不同名字的表。</p>
-<p>优点：</p>
-<ol>
-<li>理解简单，最容易的方案</li>
-</ol>
+
+<p>优点：
+1. 理解简单，最容易的方案</p>
+
 <p>缺点：</p>
+
 <ol>
-<li>
-<p>如果修改表名称、调整表结构、调整索引，需要重新写sql，如果在线上部署，需要到多台机器上部署与执行，加大出错的概率</p>
-</li>
-<li>
-<p>需要额外维护表名称</p>
-</li>
-<li>
-<p>不利于docker部署，部署业务sql建立相应表</p>
-</li>
+<li><p>如果修改表名称、调整表结构、调整索引，需要重新写sql，如果在线上部署，需要到多台机器上部署与执行，加大出错的概率</p></li>
+
+<li><p>需要额外维护表名称</p></li>
+
+<li><p>不利于docker部署，部署业务sql建立相应表</p></li>
 </ol>
+
 <p>总之，最容易的方案，确实最难维护的方案。</p>
+
 <h4 id="方案2">方案2</h4>
+
 <p>方案1种种不足，让我这个懒人实在不感兴趣。要追求优雅的实现方案。所以就发现下面的方案。</p>
+
 <pre><code>type User struct {
     Name      string
     Pwd       string
@@ -402,9 +414,13 @@ func (u *User) TableName() string {
     
     return u.tableName
 }
-</code></pre><p>看完上面的代码，大家应该会立即明白：原来只需要对表结构对应的结构体定义一种方法
+</code></pre>
+
+<p>看完上面的代码，大家应该会立即明白：原来只需要对表结构对应的结构体定义一种方法
 TableName(),就可以实现。</p>
+
 <p>一个十分简单示例代码如下：</p>
+
 <pre><code>package main
 
 import (
@@ -438,24 +454,28 @@ func main() {
     db.Create(&amp;User{tableName: &quot;user1&quot;, Name: &quot;n1&quot;, Pwd: &quot;p1&quot;})
     db.Create(&amp;User{tableName: &quot;user2&quot;, Name: &quot;n2&quot;, Pwd: &quot;p2&quot;})
 }
-</code></pre><p>优点：</p>
+</code></pre>
+
+<p>优点：</p>
+
 <ol>
-<li>
-<p>不需要写sql语句</p>
-</li>
-<li>
-<p>docker部署不依赖sql先执行</p>
-</li>
-<li>
-<p>调整表相关信息，只需要修改代表，重新部署即可</p>
-</li>
+<li><p>不需要写sql语句</p></li>
+
+<li><p>docker部署不依赖sql先执行</p></li>
+
+<li><p>调整表相关信息，只需要修改代表，重新部署即可</p></li>
 </ol>
+
 <p>缺点：</p>
+
 <ol>
 <li>暂时没有发现，你若发现请告诉我。</li>
 </ol>
+
 <h3 id="gorm实现代码">gorm实现代码</h3>
+
 <p>gorm中定义了针对表结构定义了接口TableName(),具体可以看<a href="https://sourcegraph.com/github.com/jinzhu/gorm/-/blob/scope.go#L307">gorm源码</a></p>
+
 <pre><code>type tabler interface {
     TableName() string
 }
@@ -463,7 +483,10 @@ func main() {
 type dbTabler interface {
     TableName(*DB) string
 }
-</code></pre><p>接口TableName()应用<a href="https://github.com/jinzhu/gorm/blob/e5432b14d2f28ad759d8d6262c1f8a167d517f73/model_struct.go#L52">代码</a>如下：</p>
+</code></pre>
+
+<p>接口TableName()应用<a href="https://github.com/jinzhu/gorm/blob/e5432b14d2f28ad759d8d6262c1f8a167d517f73/model_struct.go#L52">代码</a>如下：</p>
+
 <pre><code>// TableName get model's table name
 func (s *ModelStruct) TableName(db *DB) string {
     if s.defaultTableName == &quot;&quot; &amp;&amp; db != nil &amp;&amp; s.ModelType != nil {
@@ -482,8 +505,12 @@ func (s *ModelStruct) TableName(db *DB) string {
     return DefaultTableNameHandler(db, s.defaultTableName)
 }
 
-</code></pre><h3 id="说明">说明</h3>
+</code></pre>
+
+<h3 id="说明">说明</h3>
+
 <p>上面方案二，大概看一下，发现没有分享，所以写了下来，希望能够大家能够用上（小发现，还是太有用途）。</p>
+
 <p>（end）</p>
 
         </div>

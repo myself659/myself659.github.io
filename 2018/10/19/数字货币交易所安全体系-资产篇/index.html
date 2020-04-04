@@ -2,7 +2,7 @@
 <html lang="zh-cn">
 <head>
     <title>数字货币交易所安全体系-资产篇 &middot; 沉风网事</title>
-    <meta name="generator" content="Hugo 0.68.3" />
+    <meta name="generator" content="Hugo 0.54.0" />
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta name="author" content="沉风">
@@ -36,11 +36,12 @@
 欢迎关注 欢迎关注微信公众帐号：沉风网事(savewind)" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://myself659.github.io/2018/10/19/%E6%95%B0%E5%AD%97%E8%B4%A7%E5%B8%81%E4%BA%A4%E6%98%93%E6%89%80%E5%AE%89%E5%85%A8%E4%BD%93%E7%B3%BB-%E8%B5%84%E4%BA%A7%E7%AF%87/" />
-<meta property="article:published_time" content="2018-10-19T11:58:06+02:00" />
-<meta property="article:modified_time" content="2018-10-19T11:58:06+02:00" />
+<meta property="article:published_time" content="2018-10-19T11:58:06&#43;02:00"/>
+<meta property="article:modified_time" content="2018-10-19T11:58:06&#43;02:00"/>
 
     
-    <meta itemprop="name" content="数字货币交易所安全体系-资产篇">
+    
+<meta itemprop="name" content="数字货币交易所安全体系-资产篇">
 <meta itemprop="description" content="前面，简单介绍了数字货币交易所的安全体系，这一篇主要说说一下资产安全的一些要点。
 如果将一条公链比作一个银行的话，当然这个银行是去中心化银行，那个各个交易所的节点就相当于银行的网点。这个节点有以下功能：
  帐本数据同步 用户资产托管 充币与提币  资产安全主要分为以下几个方面展开说明，具体如下：
@@ -54,6 +55,8 @@
  对首次提币地址及用户监控 保证监控的高可靠性 充币与提币数据分析 大额充提币的监控及确认  差异化 对于不同类型的资产需要具体问题具体分析。 如以太坊专门对基于智能合约的数字资产进行审计与防范，具体参考ERC20，这里不展开。
 后记 对于资产安全，有什么新的想法与意见，欢迎交流！
 欢迎关注 欢迎关注微信公众帐号：沉风网事(savewind)">
+
+
 <meta itemprop="datePublished" content="2018-10-19T11:58:06&#43;02:00" />
 <meta itemprop="dateModified" content="2018-10-19T11:58:06&#43;02:00" />
 <meta itemprop="wordCount" content="45">
@@ -61,6 +64,7 @@
 
 
 <meta itemprop="keywords" content="BlockChain,Secure," />
+
     <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="数字货币交易所安全体系-资产篇"/>
 <meta name="twitter:description" content="前面，简单介绍了数字货币交易所的安全体系，这一篇主要说说一下资产安全的一些要点。
@@ -372,21 +376,33 @@
 </header>
 
         <div class="article-entry" itemprop="articleBody">
-            <p>前面，简单介绍了数字货币交易所的安全体系，这一篇主要说说一下资产安全的一些要点。</p>
+            
+
+<p>前面，简单介绍了数字货币交易所的安全体系，这一篇主要说说一下资产安全的一些要点。</p>
+
 <p>如果将一条公链比作一个银行的话，当然这个银行是去中心化银行，那个各个交易所的节点就相当于银行的网点。这个节点有以下功能：</p>
+
 <ol>
 <li>帐本数据同步</li>
 <li>用户资产托管</li>
 <li>充币与提币</li>
 </ol>
+
 <p>资产安全主要分为以下几个方面展开说明，具体如下：</p>
+
 <h2 id="意识">意识</h2>
+
 <p><strong>意识，意识，意识</strong>！其实意识就是一种天赋，只是我们没有注意到吧。</p>
+
 <p>有些区块链的项目居然不知道私钥是何物。很多人会说这是不是搞技术不知道而已。
 其实这是安全意识不到位。</p>
+
 <p>意识教育与培养一定要先行。</p>
+
 <h2 id="帐本数据同步">帐本数据同步</h2>
+
 <p>帐本数据主要是节点数据同步，具体关注点如下：</p>
+
 <ol>
 <li>节点连接节点的确认</li>
 <li>避免站错队</li>
@@ -396,38 +412,54 @@
 <li>网络分化</li>
 <li>帐本同步节点故障，多节点备份</li>
 </ol>
+
 <h2 id="资产托管">资产托管</h2>
+
 <p>资产托管的核心就是私钥，要点如下：</p>
+
 <ol>
 <li>采用冷钱包管理私钥</li>
 <li>热钱包管理策略（存活周期，资金金额控制，密钥管理）</li>
 <li>私钥存储管理（多人多份多地）</li>
 <li>多地址分散（不要把鸡蛋放在一个篮子里）</li>
 </ol>
+
 <h2 id="充币与提币">充币与提币</h2>
+
 <p>充币与提币都是有关托管资产的交易。</p>
+
 <ol>
 <li>合理的交易确认数</li>
 <li>充币提币的用户验证</li>
 <li>交易的不确定性处理办法如交易得不到确认</li>
 <li>分叉时关闭充提币功能</li>
 </ol>
+
 <h2 id="监控">监控</h2>
+
 <p>资金动向监控也是不可或缺的，要点如下：</p>
+
 <ol>
 <li>对首次提币地址及用户监控</li>
 <li>保证监控的高可靠性</li>
 <li>充币与提币数据分析</li>
 <li>大额充提币的监控及确认</li>
 </ol>
+
 <h2 id="差异化">差异化</h2>
+
 <p>对于不同类型的资产需要具体问题具体分析。
 如以太坊专门对基于智能合约的数字资产进行审计与防范，具体参考ERC20，这里不展开。</p>
+
 <h1 id="后记">后记</h1>
+
 <p>对于资产安全，有什么新的想法与意见，欢迎交流！</p>
+
 <h2 id="欢迎关注">欢迎关注</h2>
+
 <p>欢迎关注微信公众帐号：沉风网事(savewind)</p>
-<p><img src="/images/cfws.jpg" alt="沉风网事"></p>
+
+<p><img src="/images/cfws.jpg" alt="沉风网事" /></p>
 
         </div>
         <footer class="article-footer">

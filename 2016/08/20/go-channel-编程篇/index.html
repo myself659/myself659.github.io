@@ -2,7 +2,7 @@
 <html lang="zh-cn">
 <head>
     <title>Go channel 编程篇 &middot; 沉风网事</title>
-    <meta name="generator" content="Hugo 0.68.3" />
+    <meta name="generator" content="Hugo 0.54.0" />
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta name="author" content="沉风">
@@ -24,18 +24,21 @@
 <meta property="og:description" content="本篇以ChanBroker版本迭代过程，总结常见Channel编程问题
 简介 ChanBroker设计主要参考Kafka模型，主要提供进程内goroutine之间通信，实现以下功能：
  支持多个Publisher发布内容 支持Subscriber注册与去注册订阅 发布内容可以是任何形式 ChanBroker根据订阅情况完成内容推送  版本1 具体代码如下:
-package ChanBrokertype Content interface{}type Subscriber chan Contenttype ChanBroker struct {RegSub chan SubscriberUnRegSub chan SubscriberContents chan ContentStop chan boolSubscribers map[Subscriber]bool}func NewChanBroker() *ChanBroker {ChanBroker := new(ChanBroker)ChanBroker.RegSub = make(chan Subscriber)ChanBroker.UnRegSub = make(chan Subscriber)ChanBroker.Contents = make(chan Content)ChanBroker.Stop = make(chan bool)ChanBroker.Subscribers = make(map[Subscriber]bool)ChanBroker.run()return ChanBroker}func (self *ChanBroker) run() {go func() { // Broker goroutine for {select {case content := &lt;-self." />
+package ChanBroker type Content interface{} type Subscriber chan Content type ChanBroker struct { RegSub chan Subscriber UnRegSub chan Subscriber Contents chan Content Stop chan bool Subscribers map[Subscriber]bool } func NewChanBroker() *ChanBroker { ChanBroker := new(ChanBroker) ChanBroker.RegSub = make(chan Subscriber) ChanBroker.UnRegSub = make(chan Subscriber) ChanBroker.Contents = make(chan Content) ChanBroker.Stop = make(chan bool) ChanBroker.Subscribers = make(map[Subscriber]bool) ChanBroker.run() return ChanBroker } func (self *ChanBroker) run() { go func() { // Broker goroutine for { select { case content := &lt;-self." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://myself659.github.io/2016/08/20/go-channel-%E7%BC%96%E7%A8%8B%E7%AF%87/" />
-<meta property="article:published_time" content="2016-08-20T11:58:06+02:00" />
-<meta property="article:modified_time" content="2016-08-20T11:58:06+02:00" />
+<meta property="article:published_time" content="2016-08-20T11:58:06&#43;02:00"/>
+<meta property="article:modified_time" content="2016-08-20T11:58:06&#43;02:00"/>
 
     
-    <meta itemprop="name" content="Go channel 编程篇">
+    
+<meta itemprop="name" content="Go channel 编程篇">
 <meta itemprop="description" content="本篇以ChanBroker版本迭代过程，总结常见Channel编程问题
 简介 ChanBroker设计主要参考Kafka模型，主要提供进程内goroutine之间通信，实现以下功能：
  支持多个Publisher发布内容 支持Subscriber注册与去注册订阅 发布内容可以是任何形式 ChanBroker根据订阅情况完成内容推送  版本1 具体代码如下:
-package ChanBrokertype Content interface{}type Subscriber chan Contenttype ChanBroker struct {RegSub chan SubscriberUnRegSub chan SubscriberContents chan ContentStop chan boolSubscribers map[Subscriber]bool}func NewChanBroker() *ChanBroker {ChanBroker := new(ChanBroker)ChanBroker.RegSub = make(chan Subscriber)ChanBroker.UnRegSub = make(chan Subscriber)ChanBroker.Contents = make(chan Content)ChanBroker.Stop = make(chan bool)ChanBroker.Subscribers = make(map[Subscriber]bool)ChanBroker.run()return ChanBroker}func (self *ChanBroker) run() {go func() { // Broker goroutine for {select {case content := &lt;-self.">
+package ChanBroker type Content interface{} type Subscriber chan Content type ChanBroker struct { RegSub chan Subscriber UnRegSub chan Subscriber Contents chan Content Stop chan bool Subscribers map[Subscriber]bool } func NewChanBroker() *ChanBroker { ChanBroker := new(ChanBroker) ChanBroker.RegSub = make(chan Subscriber) ChanBroker.UnRegSub = make(chan Subscriber) ChanBroker.Contents = make(chan Content) ChanBroker.Stop = make(chan bool) ChanBroker.Subscribers = make(map[Subscriber]bool) ChanBroker.run() return ChanBroker } func (self *ChanBroker) run() { go func() { // Broker goroutine for { select { case content := &lt;-self.">
+
+
 <meta itemprop="datePublished" content="2016-08-20T11:58:06&#43;02:00" />
 <meta itemprop="dateModified" content="2016-08-20T11:58:06&#43;02:00" />
 <meta itemprop="wordCount" content="1775">
@@ -43,12 +46,13 @@ package ChanBrokertype Content interface{}type Subscriber chan Contenttype Ch
 
 
 <meta itemprop="keywords" content="golang," />
+
     <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Go channel 编程篇"/>
 <meta name="twitter:description" content="本篇以ChanBroker版本迭代过程，总结常见Channel编程问题
 简介 ChanBroker设计主要参考Kafka模型，主要提供进程内goroutine之间通信，实现以下功能：
  支持多个Publisher发布内容 支持Subscriber注册与去注册订阅 发布内容可以是任何形式 ChanBroker根据订阅情况完成内容推送  版本1 具体代码如下:
-package ChanBrokertype Content interface{}type Subscriber chan Contenttype ChanBroker struct {RegSub chan SubscriberUnRegSub chan SubscriberContents chan ContentStop chan boolSubscribers map[Subscriber]bool}func NewChanBroker() *ChanBroker {ChanBroker := new(ChanBroker)ChanBroker.RegSub = make(chan Subscriber)ChanBroker.UnRegSub = make(chan Subscriber)ChanBroker.Contents = make(chan Content)ChanBroker.Stop = make(chan bool)ChanBroker.Subscribers = make(map[Subscriber]bool)ChanBroker.run()return ChanBroker}func (self *ChanBroker) run() {go func() { // Broker goroutine for {select {case content := &lt;-self."/>
+package ChanBroker type Content interface{} type Subscriber chan Content type ChanBroker struct { RegSub chan Subscriber UnRegSub chan Subscriber Contents chan Content Stop chan bool Subscribers map[Subscriber]bool } func NewChanBroker() *ChanBroker { ChanBroker := new(ChanBroker) ChanBroker.RegSub = make(chan Subscriber) ChanBroker.UnRegSub = make(chan Subscriber) ChanBroker.Contents = make(chan Content) ChanBroker.Stop = make(chan bool) ChanBroker.Subscribers = make(map[Subscriber]bool) ChanBroker.run() return ChanBroker } func (self *ChanBroker) run() { go func() { // Broker goroutine for { select { case content := &lt;-self."/>
 
     
 
@@ -341,17 +345,25 @@ package ChanBrokertype Content interface{}type Subscriber chan Contenttype Ch
 </header>
 
         <div class="article-entry" itemprop="articleBody">
-            <p>本篇以<a href="https://github.com/myself659/ChanBroker">ChanBroker</a>版本迭代过程，总结常见Channel编程问题</p>
+            
+
+<p>本篇以<a href="https://github.com/myself659/ChanBroker">ChanBroker</a>版本迭代过程，总结常见Channel编程问题</p>
+
 <h3 id="简介">简介</h3>
+
 <p>ChanBroker设计主要参考Kafka模型，主要提供进程内goroutine之间通信，实现以下功能：</p>
+
 <ol>
 <li>支持多个Publisher发布内容</li>
 <li>支持Subscriber注册与去注册订阅</li>
 <li>发布内容可以是任何形式</li>
 <li>ChanBroker根据订阅情况完成内容推送</li>
 </ol>
+
 <h3 id="版本1">版本1</h3>
+
 <p>具体代码如下:</p>
+
 <pre><code>package ChanBroker
 
 type Content interface{}
@@ -420,35 +432,58 @@ func (self *ChanBroker) StopPublish() {
 func (self *ChanBroker) PubContent(c Content) {
     self.Contents &lt;- c
 }
-</code></pre><p>存在以下问题，具体如下：</p>
-<h4 id="问题1不支持扩展">问题1：不支持扩展</h4>
+</code></pre>
+
+<p>存在以下问题，具体如下：</p>
+
+<h4 id="问题1-不支持扩展">问题1：不支持扩展</h4>
+
 <p><strong>问题描述</strong>：</p>
+
 <p>在一个Broker goroutine内完成注册与去注册以及内容发布推送给Subscriber，无法控制Subscriber数量，且不支持扩展</p>
+
 <p><strong>解决思路</strong>：</p>
+
 <p>主要修改如下：</p>
+
 <ol>
 <li>增加Pusher goroutine，Pusher goroutine支持动态创建，由Pusher goroutine完成具体内容的推送</li>
 </ol>
+
 <h4 id="问题2-推送内容到subscriber存在deadlock风险">问题2： 推送内容到Subscriber存在Deadlock风险</h4>
+
 <p><strong>问题描述</strong>：</p>
+
 <p>例如一个Subscriber不能正确从通道接收订阅内容，那么Broker会阻塞在上述代码的34行，与此同时其他Subscriber都会阻塞，极有可能引起级联阻塞，影响恶劣</p>
+
 <p><strong>解决思路</strong>：</p>
+
 <p>主要修改如下：</p>
+
 <ol>
 <li>支持Subscriber可以定制订阅通道的大小，利用队列缓存内容</li>
 <li>增加Pusher goroutine，避免由于某个内容的推送导致整个内容推送的阻塞</li>
 <li>增加超时机制，避免在具体内容推送过程由于某一个Subscriber不正常工作影响其他的Subscriber</li>
 </ol>
-<h4 id="问题3-broker-goroutine退出后调用regsubscriberunregsubscriberstoppublishpubcontent函数存在deadlock风险">问题3： Broker goroutine退出后调用RegSubscriber，UnRegSubscriber，StopPublish，PubContent函数存在Deadlock风险</h4>
+
+<h4 id="问题3-broker-goroutine退出后调用regsubscriber-unregsubscriber-stoppublish-pubcontent函数存在deadlock风险">问题3： Broker goroutine退出后调用RegSubscriber，UnRegSubscriber，StopPublish，PubContent函数存在Deadlock风险</h4>
+
 <p><strong>问题描述</strong>：</p>
+
 <p>如题</p>
+
 <p><strong>解决思路</strong>：</p>
+
 <p>主要修改如下：</p>
+
 <ol>
 <li>ChanBroker增加退出状态描述，避免Broker goroutine退出之后上述函数向Broker goroutine 的channel发送信息</li>
 </ol>
+
 <h3 id="版本2">版本2</h3>
+
 <p>具体代码如下:</p>
+
 <pre><code>package ChanBroker
 
 import (
@@ -558,18 +593,29 @@ func (self *ChanBroker) PubContent(c Content) {
     self.Contents &lt;- c // maybe block
 }
 
-</code></pre><p>存在以下问题，具体如下：</p>
-<h4 id="问题1存在-panicclose-of-closed-channel的风险">问题1：存在 panic:close of closed channel的风险</h4>
+</code></pre>
+
+<p>存在以下问题，具体如下：</p>
+
+<h4 id="问题1-存在-panic-close-of-closed-channel的风险">问题1：存在 panic:close of closed channel的风险</h4>
+
 <p><strong>问题描述</strong>：</p>
+
 <p>如果Subscriber goroutine两次调用UnRegSubscriber，就会发生close of closed channel，导致panic</p>
+
 <p>相应代码如下：</p>
+
 <pre><code>  case sub := &lt;-self.UnRegSub:
                 self.lock.Lock()
                 delete(self.Subscribers, sub)
                 self.lock.Unlock()
                 close(sub) // may be close of closed channel
-</code></pre><p><strong>解决思路</strong>：</p>
+</code></pre>
+
+<p><strong>解决思路</strong>：</p>
+
 <p>很简单，关闭前检查Subscriber对应channel是否订阅map当中，代码如下：</p>
+
 <pre><code>case sub := &lt;-self.UnRegSub:
                 self.lock.Lock()
                 _, ok := self.Subscribers[sub]
@@ -578,10 +624,16 @@ func (self *ChanBroker) PubContent(c Content) {
                     close(sub)
                 }
                 self.lock.Unlock()
-</code></pre><h4 id="问题2不靠谱的exit标记">问题2：不靠谱的exit标记</h4>
+</code></pre>
+
+<h4 id="问题2-不靠谱的exit标记">问题2：不靠谱的exit标记</h4>
+
 <p><strong>问题描述</strong>：</p>
+
 <p>exit标记不能同步goroutines对Stop通道的写操作与关闭操作，具体分析如下：</p>
+
 <p>写操作代码如下：</p>
+
 <pre><code>func (self *ChanBroker) RegSubscriber(size uint) Subscriber {
     if self.exit == true {
         return nil
@@ -590,7 +642,10 @@ func (self *ChanBroker) PubContent(c Content) {
     self.RegSub &lt;- sub // maybe block
     return sub
 }
-</code></pre><p>关闭操作代码段如下：</p>
+</code></pre>
+
+<p>关闭操作代码段如下：</p>
+
 <pre><code> case &lt;-self.Stop:
                 if self.exit == false {
                     self.exit = true
@@ -604,7 +659,10 @@ func (self *ChanBroker) PubContent(c Content) {
 
                     return // exit goroutine
                 }
-</code></pre><p>在多核多个goroutine并发情况，极小概率会发生如下情况：</p>
+</code></pre>
+
+<p>在多核多个goroutine并发情况，极小概率会发生如下情况：</p>
+
 <ol>
 <li>某同一个时刻，CPU0 运行RegSubscriber goroutine检查exit标记为false，CPU0继续运行，CPU1运行到关闭操作代码段第1行，继续运行</li>
 <li>CPU0 继续运行RegSubscriber goroutine，直到阻塞在第6行, 切换运行其他goroutine，CPU 1 关闭Stop Channel,并退出broken goroutine</li>
@@ -613,15 +671,25 @@ func (self *ChanBroker) PubContent(c Content) {
 <li>CPU0 继续执行其他goroutine，RegSubscriber goroutine一直阻塞在第6行，,等待 broken goroutine 读Stop channel</li>
 <li>&hellip;</li>
 </ol>
+
 <p><strong>解决思路</strong>：</p>
+
 <p>不用exit标记了，将状态关联到Stop Channel状态上（这又掉到另一个坑里）</p>
-<h4 id="问题3不能保证subscribers有序的接收消息">问题3：不能保证Subscribers有序的接收消息</h4>
+
+<h4 id="问题3-不能保证subscribers有序的接收消息">问题3：不能保证Subscribers有序的接收消息</h4>
+
 <p><strong>问题描述</strong>：</p>
+
 <p>版本2中每接收一个Content都会启动一个Push goroutine,这些Push goroutine执行是无序执行的，有序的内容推送需求遇上了无序的goroutine，自然有问题了</p>
+
 <p><strong>解决思路</strong>：</p>
+
 <p>方案1：无序推送，由Content自身加上序号，同时由各个Subscriber处理逻辑根据序号保证有序处理Content</p>
+
 <p>方案2：每一个Subcriber有一个Content队列，保证有序推送，简化各个Subscriber处理逻辑，具体实现见版本5</p>
+
 <h3 id="版本3">版本3</h3>
+
 <pre><code>package ChanBroker
 
 import (
@@ -781,18 +849,28 @@ func (self *ChanBroker) PubContent(c Content) error {
     }
 
 }
-</code></pre><p>存在以下问题，具体如下：</p>
+</code></pre>
+
+<p>存在以下问题，具体如下：</p>
+
 <h4 id="问题1-读channel出现错误的竞争">问题1： 读channel出现错误的竞争</h4>
+
 <p><strong>问题描述</strong>：</p>
+
 <p>版本3的一个错误的方案选择，导致Stop Channel出现读竞争，导致不能停止发布，出现goroutine leak，分析如下：</p>
+
 <ol>
-<li>Stop Channel 只会写一次</li>
+<li>Stop Channel 只会写一次<br /></li>
 <li>Stop Channel 却有多个读goroutine</li>
 <li>基于上面有情况，并不能保证Broker goroutine 能收到停止发布的信息，如果被其他goroutine收到，导致Broker goroutine收不到结束消息，进而不能关闭所有Subscriber，导致所有Subscriber goroutine泄露</li>
 </ol>
+
 <p><strong>解决思路</strong>：</p>
+
 <p>版本3引入关闭状态是一个错误的设计，引入状态，也就引入对依赖状态的对象，增加了代码的复杂性，状态的维护容易导致bug，在设计与代码应当追求无状态设计（好处多多）, 这里采用超时来解决，如果超时用由调用者确定处理策略</p>
+
 <h3 id="版本4">版本4</h3>
+
 <pre><code>package ChanBroker
 
 import (
@@ -921,30 +999,44 @@ func (self *ChanBroker) PubContent(c Content) error {
     }
 
 }
-</code></pre><p>存在以下问题，具体如下：</p>
-<h4 id="问题1timeout问题">问题1：timeout问题</h4>
+</code></pre>
+
+<p>存在以下问题，具体如下：</p>
+
+<h4 id="问题1-timeout问题">问题1：timeout问题</h4>
+
 <p><strong>问题描述：</strong></p>
+
 <ol>
 <li>timeout 导致长时间持有读锁</li>
 <li>timeout 导致消息丢失，并没有推送成功</li>
 <li>上一个Subscriber超时影响后面Subscriber内容的实时性</li>
 </ol>
+
 <p><strong>解决方案：</strong></p>
+
 <ol>
 <li>采用select实现channel非阻塞写</li>
 <li>对于非阻塞写失败，加入Subscriber对应的链表</li>
 <li>非阻塞写保证避免Subscribers之间相互影响</li>
 </ol>
-<h4 id="问题2锁问题">问题2：锁问题</h4>
+
+<h4 id="问题2-锁问题">问题2：锁问题</h4>
+
 <p><strong>问题描述：</strong></p>
+
 <ol>
 <li>每个Pusher goroutine持有读锁，一定情况下会成为性能的瓶颈</li>
 </ol>
+
 <p><strong>解决方案：</strong></p>
+
 <ol>
 <li>在上面避免阻塞的基础上，只有一个goroutine来推送内容</li>
 </ol>
+
 <h3 id="版本5">版本5</h3>
+
 <pre><code>package ChanBroker
 
 import (
@@ -1139,16 +1231,25 @@ func (self *ChanBroker) PubContent(c Content) error {
     }
 
 }
-</code></pre><p>存在以下问题，具体如下：</p>
-<h4 id="问题1不支持扩展-1">问题1：不支持扩展</h4>
+</code></pre>
+
+<p>存在以下问题，具体如下：</p>
+
+<h4 id="问题1-不支持扩展-1">问题1：不支持扩展</h4>
+
 <p><strong>问题描述</strong>：</p>
+
 <p>在一个Broker goroutine内完成注册与去注册以及内容发布推送给Subscriber，无法控制Subscriber数量，且不支持扩展</p>
+
 <p><strong>解决思路</strong>：</p>
+
 <ol>
 <li>业务场景：chanbroker是进程内goroutines之间pub-sub通信方式一种实现方案，一个goroutine占用一个核来处理能满足绝太多数需求</li>
 <li>即使不能满足极个别需求，也可以选择创建多个ChanBroker来实现扩展</li>
 </ol>
+
 <h3 id="channel编程总结">channel编程总结</h3>
+
 <ol>
 <li>避免Panic，参考<a href="http://myself659.github.io/go-channel-feature/">Go channel 特点篇</a></li>
 <li>最大程度保证非阻塞</li>
@@ -1158,8 +1259,9 @@ func (self *ChanBroker) PubContent(c Content) error {
 <li>要有并发意识，由代码想到goroutine的运行</li>
 <li>禁止通道复用，避免复用带来的复杂性</li>
 <li>初期测试很重要，而且应作到充分测试</li>
-<li>Don&rsquo;t communicate by sharing memory, share memory by communicating</li>
+<li>Don&rsquo;t communicate by sharing memory, share memory by communicating<br /></li>
 </ol>
+
 <p>由于个人水平有限，有什么不足与错误，敬请指正！</p>
 
         </div>

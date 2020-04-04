@@ -2,7 +2,7 @@
 <html lang="zh-cn">
 <head>
     <title>USDT背后的技术原理 &middot; 沉风网事</title>
-    <meta name="generator" content="Hugo 0.68.3" />
+    <meta name="generator" content="Hugo 0.54.0" />
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta name="author" content="沉风">
@@ -26,45 +26,49 @@ OP_RETURN是比特币0.9版本引入支持一种新的操作符，目的是允�
 USDT USDT又名Tether，通过Tether提供1：1美元兑换服务，为法币与数字货币提供兑换服务。 国内交易所关闭后，国内玩币的人都知道，这里不过多介绍。
 架构 各层介绍如下：
 比特币区块链层，主要实现Tether分布式帐本功能。Tether交易信息通过OP_RETURN保存在比特币的分布式帐本中。
-Omni协议层，Omni协议层主要功能如下：
- 创建与销毁USDT 提供OmniApi 跟踪Tether流通，通过Omnichest.info提供区块链浏览器功能 支持用户交易与保存Tether(USDT)  Tether业务层，Tether业务层主要功能如下：
- 法币兑换Tether(USDT) Tether(USDT)兑换法币 监管流通中Tether(USDT)  流程 这里与普通交易所的流程类似。法币兑换USDT，发放相应USDT,USDT兑换法币，回收USDT。
+Omni协议层，Omni协议层主要功能如下： 1. 创建与销毁USDT 2. 提供OmniApi 3. 跟踪Tether流通，通过Omnichest.info提供区块链浏览器功能 4. 支持用户交易与保存Tether(USDT)
+Tether业务层，Tether业务层主要功能如下： 1. 法币兑换Tether(USDT) 2. Tether(USDT)兑换法币 3. 监管流通中Tether(USDT)
+流程 这里与普通交易所的流程类似。法币兑换USDT，发放相应USDT,USDT兑换法币，回收USDT。
 交易 具体看一个交易吧。
 先上图：
 主要看交易的输入与输出，这里关注点主要在输出，为什么输出有三个呢？ 第一个很容易理解，表示找零 第二个表示什么呢？表示转帐对方的地址，具体参考wiki 第三个OP_RETURN用于存储Tether部分转帐信息
 图中的0x155十六进对应十进制341，在染色币的体系中对应类型表示Tether，具体参考染色币列表。 转帐的数量在哪里体现呢？转帐数字为000002ba7def3000，占用8个字节。对应十进制数字结果为：
-&gt;&gt;&gt; int(&#39;0x000002ba7def3000&#39;,16)3000000000000L图中显示的Tether的交易的信息，这些交易信息来自比特币交易信息。
+&gt;&gt;&gt; int(&#39;0x000002ba7def3000&#39;,16) 3000000000000L  图中显示的Tether的交易的信息，这些交易信息来自比特币交易信息。
 omni封装OP_RETURN信息代码如下：
-UniValue omni_createpayload_simplesend(const UniValue&amp; params, bool fHelp){if (fHelp || params.size() != 2)throw runtime_error(&quot;omni_createpayload_simplesend propertyid \&quot;amount\&quot;\n&quot;&quot;\nCreate the payload for a simple send transaction.\n&quot;&quot;\nArguments:\n&quot;&quot;1. propertyid (number, required) the identifier of the tokens to send\n&quot;&quot;2." />
+UniValue omni_createpayload_simplesend(const UniValue&amp; params, bool fHelp) { if (fHelp || params.size() != 2) throw runtime_error( &quot;omni_createpayload_simplesend propertyid \&quot;amount\&quot;\n&quot; &quot;\nCreate the payload for a simple send transaction.\n&quot; &quot;\nArguments:\n&quot; &quot;1." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://myself659.github.io/2018/02/22/usdt%E8%83%8C%E5%90%8E%E7%9A%84%E6%8A%80%E6%9C%AF%E5%8E%9F%E7%90%86/" />
-<meta property="article:published_time" content="2018-02-22T11:58:06+02:00" />
-<meta property="article:modified_time" content="2018-02-22T11:58:06+02:00" />
+<meta property="article:published_time" content="2018-02-22T11:58:06&#43;02:00"/>
+<meta property="article:modified_time" content="2018-02-22T11:58:06&#43;02:00"/>
 
     
-    <meta itemprop="name" content="USDT背后的技术原理">
+    
+<meta itemprop="name" content="USDT背后的技术原理">
 <meta itemprop="description" content="OP_RETURN 在进入正题前，我们需要了解比特币脚本OP_RETURN。
 OP_RETURN是比特币0.9版本引入支持一种新的操作符，目的是允许开发者在交易上输出增加40个字节自定义的非交易数据。更多详细信息参考OP_RETURN wiki
 USDT USDT又名Tether，通过Tether提供1：1美元兑换服务，为法币与数字货币提供兑换服务。 国内交易所关闭后，国内玩币的人都知道，这里不过多介绍。
 架构 各层介绍如下：
 比特币区块链层，主要实现Tether分布式帐本功能。Tether交易信息通过OP_RETURN保存在比特币的分布式帐本中。
-Omni协议层，Omni协议层主要功能如下：
- 创建与销毁USDT 提供OmniApi 跟踪Tether流通，通过Omnichest.info提供区块链浏览器功能 支持用户交易与保存Tether(USDT)  Tether业务层，Tether业务层主要功能如下：
- 法币兑换Tether(USDT) Tether(USDT)兑换法币 监管流通中Tether(USDT)  流程 这里与普通交易所的流程类似。法币兑换USDT，发放相应USDT,USDT兑换法币，回收USDT。
+Omni协议层，Omni协议层主要功能如下： 1. 创建与销毁USDT 2. 提供OmniApi 3. 跟踪Tether流通，通过Omnichest.info提供区块链浏览器功能 4. 支持用户交易与保存Tether(USDT)
+Tether业务层，Tether业务层主要功能如下： 1. 法币兑换Tether(USDT) 2. Tether(USDT)兑换法币 3. 监管流通中Tether(USDT)
+流程 这里与普通交易所的流程类似。法币兑换USDT，发放相应USDT,USDT兑换法币，回收USDT。
 交易 具体看一个交易吧。
 先上图：
 主要看交易的输入与输出，这里关注点主要在输出，为什么输出有三个呢？ 第一个很容易理解，表示找零 第二个表示什么呢？表示转帐对方的地址，具体参考wiki 第三个OP_RETURN用于存储Tether部分转帐信息
 图中的0x155十六进对应十进制341，在染色币的体系中对应类型表示Tether，具体参考染色币列表。 转帐的数量在哪里体现呢？转帐数字为000002ba7def3000，占用8个字节。对应十进制数字结果为：
-&gt;&gt;&gt; int(&#39;0x000002ba7def3000&#39;,16)3000000000000L图中显示的Tether的交易的信息，这些交易信息来自比特币交易信息。
+&gt;&gt;&gt; int(&#39;0x000002ba7def3000&#39;,16) 3000000000000L  图中显示的Tether的交易的信息，这些交易信息来自比特币交易信息。
 omni封装OP_RETURN信息代码如下：
-UniValue omni_createpayload_simplesend(const UniValue&amp; params, bool fHelp){if (fHelp || params.size() != 2)throw runtime_error(&quot;omni_createpayload_simplesend propertyid \&quot;amount\&quot;\n&quot;&quot;\nCreate the payload for a simple send transaction.\n&quot;&quot;\nArguments:\n&quot;&quot;1. propertyid (number, required) the identifier of the tokens to send\n&quot;&quot;2.">
+UniValue omni_createpayload_simplesend(const UniValue&amp; params, bool fHelp) { if (fHelp || params.size() != 2) throw runtime_error( &quot;omni_createpayload_simplesend propertyid \&quot;amount\&quot;\n&quot; &quot;\nCreate the payload for a simple send transaction.\n&quot; &quot;\nArguments:\n&quot; &quot;1.">
+
+
 <meta itemprop="datePublished" content="2018-02-22T11:58:06&#43;02:00" />
 <meta itemprop="dateModified" content="2018-02-22T11:58:06&#43;02:00" />
-<meta itemprop="wordCount" content="174">
+<meta itemprop="wordCount" content="181">
 
 
 
 <meta itemprop="keywords" content="BlockChain," />
+
     <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="USDT背后的技术原理"/>
 <meta name="twitter:description" content="OP_RETURN 在进入正题前，我们需要了解比特币脚本OP_RETURN。
@@ -72,16 +76,16 @@ OP_RETURN是比特币0.9版本引入支持一种新的操作符，目的是允�
 USDT USDT又名Tether，通过Tether提供1：1美元兑换服务，为法币与数字货币提供兑换服务。 国内交易所关闭后，国内玩币的人都知道，这里不过多介绍。
 架构 各层介绍如下：
 比特币区块链层，主要实现Tether分布式帐本功能。Tether交易信息通过OP_RETURN保存在比特币的分布式帐本中。
-Omni协议层，Omni协议层主要功能如下：
- 创建与销毁USDT 提供OmniApi 跟踪Tether流通，通过Omnichest.info提供区块链浏览器功能 支持用户交易与保存Tether(USDT)  Tether业务层，Tether业务层主要功能如下：
- 法币兑换Tether(USDT) Tether(USDT)兑换法币 监管流通中Tether(USDT)  流程 这里与普通交易所的流程类似。法币兑换USDT，发放相应USDT,USDT兑换法币，回收USDT。
+Omni协议层，Omni协议层主要功能如下： 1. 创建与销毁USDT 2. 提供OmniApi 3. 跟踪Tether流通，通过Omnichest.info提供区块链浏览器功能 4. 支持用户交易与保存Tether(USDT)
+Tether业务层，Tether业务层主要功能如下： 1. 法币兑换Tether(USDT) 2. Tether(USDT)兑换法币 3. 监管流通中Tether(USDT)
+流程 这里与普通交易所的流程类似。法币兑换USDT，发放相应USDT,USDT兑换法币，回收USDT。
 交易 具体看一个交易吧。
 先上图：
 主要看交易的输入与输出，这里关注点主要在输出，为什么输出有三个呢？ 第一个很容易理解，表示找零 第二个表示什么呢？表示转帐对方的地址，具体参考wiki 第三个OP_RETURN用于存储Tether部分转帐信息
 图中的0x155十六进对应十进制341，在染色币的体系中对应类型表示Tether，具体参考染色币列表。 转帐的数量在哪里体现呢？转帐数字为000002ba7def3000，占用8个字节。对应十进制数字结果为：
-&gt;&gt;&gt; int(&#39;0x000002ba7def3000&#39;,16)3000000000000L图中显示的Tether的交易的信息，这些交易信息来自比特币交易信息。
+&gt;&gt;&gt; int(&#39;0x000002ba7def3000&#39;,16) 3000000000000L  图中显示的Tether的交易的信息，这些交易信息来自比特币交易信息。
 omni封装OP_RETURN信息代码如下：
-UniValue omni_createpayload_simplesend(const UniValue&amp; params, bool fHelp){if (fHelp || params.size() != 2)throw runtime_error(&quot;omni_createpayload_simplesend propertyid \&quot;amount\&quot;\n&quot;&quot;\nCreate the payload for a simple send transaction.\n&quot;&quot;\nArguments:\n&quot;&quot;1. propertyid (number, required) the identifier of the tokens to send\n&quot;&quot;2."/>
+UniValue omni_createpayload_simplesend(const UniValue&amp; params, bool fHelp) { if (fHelp || params.size() != 2) throw runtime_error( &quot;omni_createpayload_simplesend propertyid \&quot;amount\&quot;\n&quot; &quot;\nCreate the payload for a simple send transaction.\n&quot; &quot;\nArguments:\n&quot; &quot;1."/>
 
     
 
@@ -336,7 +340,7 @@ UniValue omni_createpayload_simplesend(const UniValue&amp; params, bool fHelp){
             <i class="fa fa-calendar"></i>
             <time datetime="2018-02-22 11:58:06 &#43;0200 &#43;0200" itemprop="datePublished">2018-02-22</time>
             &middot;
-            174
+            181
             words
             &middot;
             1
@@ -374,48 +378,71 @@ UniValue omni_createpayload_simplesend(const UniValue&amp; params, bool fHelp){
 </header>
 
         <div class="article-entry" itemprop="articleBody">
-            <h1 id="op_return">OP_RETURN</h1>
+            
+
+<h1 id="op-return">OP_RETURN</h1>
+
 <p>在进入正题前，我们需要了解比特币脚本OP_RETURN。</p>
+
 <p>OP_RETURN是比特币0.9版本引入支持一种新的操作符，目的是允许开发者在交易上输出增加40个字节自定义的非交易数据。更多详细信息参考<a href="https://en.bitcoin.it/wiki/OP_RETURN">OP_RETURN wiki</a></p>
+
 <h1 id="usdt">USDT</h1>
+
 <p>USDT又名Tether，通过Tether提供1：1美元兑换服务，为法币与数字货币提供兑换服务。
 国内交易所关闭后，国内玩币的人都知道，这里不过多介绍。</p>
+
 <h2 id="架构">架构</h2>
-<p><img src="/images/usdt-arch.png" alt="架构图"></p>
+
+<p><img src="/images/usdt-arch.png" alt="架构图" /></p>
+
 <p>各层介绍如下：</p>
+
 <p>比特币区块链层，主要实现Tether分布式帐本功能。Tether交易信息通过OP_RETURN保存在比特币的分布式帐本中。</p>
-<p>Omni协议层，Omni协议层主要功能如下：</p>
-<ol>
-<li>创建与销毁USDT</li>
-<li>提供OmniApi</li>
-<li>跟踪Tether流通，通过Omnichest.info提供区块链浏览器功能</li>
-<li>支持用户交易与保存Tether(USDT)</li>
-</ol>
-<p>Tether业务层，Tether业务层主要功能如下：</p>
-<ol>
-<li>法币兑换Tether(USDT)</li>
-<li>Tether(USDT)兑换法币</li>
-<li>监管流通中Tether(USDT)</li>
-</ol>
+
+<p>Omni协议层，Omni协议层主要功能如下：
+1. 创建与销毁USDT
+2. 提供OmniApi
+3. 跟踪Tether流通，通过Omnichest.info提供区块链浏览器功能
+4. 支持用户交易与保存Tether(USDT)</p>
+
+<p>Tether业务层，Tether业务层主要功能如下：
+1. 法币兑换Tether(USDT)
+2. Tether(USDT)兑换法币
+3. 监管流通中Tether(USDT)</p>
+
 <h2 id="流程">流程</h2>
-<p><img src="/images/usdt-flow.png" alt="流程图"></p>
+
+<p><img src="/images/usdt-flow.png" alt="流程图" /></p>
+
 <p>这里与普通交易所的流程类似。法币兑换USDT，发放相应USDT,USDT兑换法币，回收USDT。</p>
+
 <h2 id="交易">交易</h2>
+
 <p>具体看一个交易吧。</p>
+
 <p>先上图：</p>
-<p><img src="/images/usdt-bitcoin-1.png" alt="交易信息-1"></p>
+
+<p><img src="/images/usdt-bitcoin-1.png" alt="交易信息-1" /></p>
+
 <p>主要看交易的输入与输出，这里关注点主要在输出，为什么输出有三个呢？
 第一个很容易理解，表示找零
 第二个表示什么呢？表示转帐对方的地址，具体参考<a href="https://github.com/OmniLayer/omnicore/wiki/Why-do-I-need-bitcoin-to-create-Omni-transactions%3F">wiki</a>
 第三个OP_RETURN用于存储Tether部分转帐信息</p>
-<p><img src="/images/usdt-bitcoin-1.png" alt="交易信息-2"></p>
+
+<p><img src="/images/usdt-bitcoin-1.png" alt="交易信息-2" /></p>
+
 <p>图中的0x155十六进对应十进制341，在染色币的体系中对应类型表示Tether，具体参考<a href="https://www.omniwallet.org/explorer/assets">染色币列表</a>。
 转帐的数量在哪里体现呢？转帐数字为000002ba7def3000，占用8个字节。对应十进制数字结果为：</p>
+
 <pre><code>&gt;&gt;&gt; int('0x000002ba7def3000',16)
 3000000000000L
-</code></pre><p><img src="/images/usdt-bitcoin-3.png" alt="交易信息-3">
+</code></pre>
+
+<p><img src="/images/usdt-bitcoin-3.png" alt="交易信息-3" />
 图中显示的Tether的交易的信息，这些交易信息来自比特币交易信息。</p>
+
 <p>omni封装OP_RETURN信息代码如下：</p>
+
 <pre><code>UniValue omni_createpayload_simplesend(const UniValue&amp; params, bool fHelp)
 {
    if (fHelp || params.size() != 2)
@@ -444,7 +471,9 @@ UniValue omni_createpayload_simplesend(const UniValue&amp; params, bool fHelp){
 
     return HexStr(payload.begin(), payload.end());
 }
-</code></pre><pre><code>std::vector&lt;unsigned char&gt; CreatePayload_SimpleSend(uint32_t propertyId, uint64_t amount)
+</code></pre>
+
+<pre><code>std::vector&lt;unsigned char&gt; CreatePayload_SimpleSend(uint32_t propertyId, uint64_t amount)
 {
     std::vector&lt;unsigned char&gt; payload;
     uint16_t messageType = 0;
@@ -461,15 +490,21 @@ UniValue omni_createpayload_simplesend(const UniValue&amp; params, bool fHelp){
 
     return payload;
 }
-</code></pre><h3 id="小结">小结</h3>
+</code></pre>
+
+<h3 id="小结">小结</h3>
+
 <ol>
 <li>USDT并没有自己的公有链，而是在比特币交易交易中利用比特币OP_RETURN来保存USDT交易信息。</li>
 <li>逻辑上两条链，数据上一条链</li>
 <li>USDT钱包地址与比特币地址等同</li>
 <li>USDT转帐实际上bitcoin转帐（明白了在人民币与美元汇率为6.3情况下，为什么一个USDT的价格7元左右吧）</li>
 </ol>
+
 <p>（Ps：了解USDT的技术原理，后面会从经济与商业的角度分析一下USDT）</p>
+
 <h3 id="参考">参考</h3>
+
 <ol>
 <li><a href="https://coinmarketcap.com/currencies/tether/">tether</a></li>
 <li><a href="http://platform.tether.to/#create-new-transaction">Api</a></li>

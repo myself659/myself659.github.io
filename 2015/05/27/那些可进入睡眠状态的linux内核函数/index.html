@@ -2,7 +2,7 @@
 <html lang="zh-cn">
 <head>
     <title>那些可进入睡眠状态的Linux内核函数 &middot; 沉风网事</title>
-    <meta name="generator" content="Hugo 0.68.3" />
+    <meta name="generator" content="Hugo 0.54.0" />
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta name="author" content="沉风">
@@ -21,19 +21,22 @@
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400italic,400,600' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Source+Code+Pro' rel='stylesheet' type='text/css'>
     <meta property="og:title" content="那些可进入睡眠状态的Linux内核函数" />
-<meta property="og:description" content="在linux内核开发中断处理函数不能调用可能导致睡眠的函数，下面总结linux内核可能引起睡眠的函数如下：
-schedule函数    schedule_timeout schedule_timeout_uninterruptible schedule_timeout_interruptible cond_resched might_resched    sleep函数    msleep msleep_interruputible ssleep osal_usleep might_sleep    取信号量函数    down down_timeout down_read down_write down_interruptible wait_for_completion wait_for_completion_interruptible wait_for_completion_timeout wait_for_completion_interruptible_timeout    kmalloc相关函数含有标志GFP_KERNEL    kmalloc kzalloc krealloc kmem_cache_create kmem_cache_alloc kmem_cache_zalloc    取睡眠锁函数    mutex_lock mutex_lock_timeout mutex_lock_nested mutex_lock_interruptible mutex_lock_interruptible_nested    在中断处理函数不能使用睡眠函数原因 主要原因如下：
+<meta property="og:description" content=" 在linux内核开发中断处理函数不能调用可能导致睡眠的函数，下面总结linux内核可能引起睡眠的函数如下：
+schedule函数   schedule_timeout schedule_timeout_uninterruptible schedule_timeout_interruptible cond_resched might_resched   sleep函数   msleep msleep_interruputible ssleep osal_usleep might_sleep   取信号量函数   down down_timeout down_read down_write down_interruptible wait_for_completion wait_for_completion_interruptible wait_for_completion_timeout wait_for_completion_interruptible_timeout   kmalloc相关函数含有标志GFP_KERNEL   kmalloc kzalloc krealloc kmem_cache_create kmem_cache_alloc kmem_cache_zalloc   取睡眠锁函数   mutex_lock mutex_lock_timeout mutex_lock_nested mutex_lock_interruptible mutex_lock_interruptible_nested   在中断处理函数不能使用睡眠函数原因 主要原因如下：
  中断是一种紧急事务，中断处理函数要求快 linux是以进程为调度单位的，调度器只看到进程内核栈，而看不到中断栈，在独立中断栈的模式下，如果linux内核在中断处理函数内发生了调度或者睡眠，导致无法找到回家的路，未执行的中断处理代码再也无法获得执行机会（贪睡开小差是有代价哦）  " />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://myself659.github.io/2015/05/27/%E9%82%A3%E4%BA%9B%E5%8F%AF%E8%BF%9B%E5%85%A5%E7%9D%A1%E7%9C%A0%E7%8A%B6%E6%80%81%E7%9A%84linux%E5%86%85%E6%A0%B8%E5%87%BD%E6%95%B0/" />
-<meta property="article:published_time" content="2015-05-27T11:58:06+02:00" />
-<meta property="article:modified_time" content="2015-05-27T11:58:06+02:00" />
+<meta property="article:published_time" content="2015-05-27T11:58:06&#43;02:00"/>
+<meta property="article:modified_time" content="2015-05-27T11:58:06&#43;02:00"/>
 
     
-    <meta itemprop="name" content="那些可进入睡眠状态的Linux内核函数">
-<meta itemprop="description" content="在linux内核开发中断处理函数不能调用可能导致睡眠的函数，下面总结linux内核可能引起睡眠的函数如下：
-schedule函数    schedule_timeout schedule_timeout_uninterruptible schedule_timeout_interruptible cond_resched might_resched    sleep函数    msleep msleep_interruputible ssleep osal_usleep might_sleep    取信号量函数    down down_timeout down_read down_write down_interruptible wait_for_completion wait_for_completion_interruptible wait_for_completion_timeout wait_for_completion_interruptible_timeout    kmalloc相关函数含有标志GFP_KERNEL    kmalloc kzalloc krealloc kmem_cache_create kmem_cache_alloc kmem_cache_zalloc    取睡眠锁函数    mutex_lock mutex_lock_timeout mutex_lock_nested mutex_lock_interruptible mutex_lock_interruptible_nested    在中断处理函数不能使用睡眠函数原因 主要原因如下：
+    
+<meta itemprop="name" content="那些可进入睡眠状态的Linux内核函数">
+<meta itemprop="description" content=" 在linux内核开发中断处理函数不能调用可能导致睡眠的函数，下面总结linux内核可能引起睡眠的函数如下：
+schedule函数   schedule_timeout schedule_timeout_uninterruptible schedule_timeout_interruptible cond_resched might_resched   sleep函数   msleep msleep_interruputible ssleep osal_usleep might_sleep   取信号量函数   down down_timeout down_read down_write down_interruptible wait_for_completion wait_for_completion_interruptible wait_for_completion_timeout wait_for_completion_interruptible_timeout   kmalloc相关函数含有标志GFP_KERNEL   kmalloc kzalloc krealloc kmem_cache_create kmem_cache_alloc kmem_cache_zalloc   取睡眠锁函数   mutex_lock mutex_lock_timeout mutex_lock_nested mutex_lock_interruptible mutex_lock_interruptible_nested   在中断处理函数不能使用睡眠函数原因 主要原因如下：
  中断是一种紧急事务，中断处理函数要求快 linux是以进程为调度单位的，调度器只看到进程内核栈，而看不到中断栈，在独立中断栈的模式下，如果linux内核在中断处理函数内发生了调度或者睡眠，导致无法找到回家的路，未执行的中断处理代码再也无法获得执行机会（贪睡开小差是有代价哦）  ">
+
+
 <meta itemprop="datePublished" content="2015-05-27T11:58:06&#43;02:00" />
 <meta itemprop="dateModified" content="2015-05-27T11:58:06&#43;02:00" />
 <meta itemprop="wordCount" content="40">
@@ -41,10 +44,11 @@ schedule函数    schedule_timeout schedule_timeout_uninterruptible schedule_tim
 
 
 <meta itemprop="keywords" content="Linux," />
+
     <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="那些可进入睡眠状态的Linux内核函数"/>
-<meta name="twitter:description" content="在linux内核开发中断处理函数不能调用可能导致睡眠的函数，下面总结linux内核可能引起睡眠的函数如下：
-schedule函数    schedule_timeout schedule_timeout_uninterruptible schedule_timeout_interruptible cond_resched might_resched    sleep函数    msleep msleep_interruputible ssleep osal_usleep might_sleep    取信号量函数    down down_timeout down_read down_write down_interruptible wait_for_completion wait_for_completion_interruptible wait_for_completion_timeout wait_for_completion_interruptible_timeout    kmalloc相关函数含有标志GFP_KERNEL    kmalloc kzalloc krealloc kmem_cache_create kmem_cache_alloc kmem_cache_zalloc    取睡眠锁函数    mutex_lock mutex_lock_timeout mutex_lock_nested mutex_lock_interruptible mutex_lock_interruptible_nested    在中断处理函数不能使用睡眠函数原因 主要原因如下：
+<meta name="twitter:description" content=" 在linux内核开发中断处理函数不能调用可能导致睡眠的函数，下面总结linux内核可能引起睡眠的函数如下：
+schedule函数   schedule_timeout schedule_timeout_uninterruptible schedule_timeout_interruptible cond_resched might_resched   sleep函数   msleep msleep_interruputible ssleep osal_usleep might_sleep   取信号量函数   down down_timeout down_read down_write down_interruptible wait_for_completion wait_for_completion_interruptible wait_for_completion_timeout wait_for_completion_interruptible_timeout   kmalloc相关函数含有标志GFP_KERNEL   kmalloc kzalloc krealloc kmem_cache_create kmem_cache_alloc kmem_cache_zalloc   取睡眠锁函数   mutex_lock mutex_lock_timeout mutex_lock_nested mutex_lock_interruptible mutex_lock_interruptible_nested   在中断处理函数不能使用睡眠函数原因 主要原因如下：
  中断是一种紧急事务，中断处理函数要求快 linux是以进程为调度单位的，调度器只看到进程内核栈，而看不到中断栈，在独立中断栈的模式下，如果linux内核在中断处理函数内发生了调度或者睡眠，导致无法找到回家的路，未执行的中断处理代码再也无法获得执行机会（贪睡开小差是有代价哦）  "/>
 
     
@@ -338,10 +342,13 @@ schedule函数    schedule_timeout schedule_timeout_uninterruptible schedule_tim
 </header>
 
         <div class="article-entry" itemprop="articleBody">
-            <p>在linux内核开发中断处理函数不能调用可能导致睡眠的函数，下面总结linux内核可能引起睡眠的函数如下：</p>
+            
+
+<p>在linux内核开发中断处理函数不能调用可能导致睡眠的函数，下面总结linux内核可能引起睡眠的函数如下：</p>
+
 <h3 id="schedule函数">schedule函数</h3>
+
 <blockquote>
-</blockquote>
 <ol>
 <li>schedule_timeout</li>
 <li>schedule_timeout_uninterruptible</li>
@@ -349,11 +356,11 @@ schedule函数    schedule_timeout schedule_timeout_uninterruptible schedule_tim
 <li>cond_resched</li>
 <li>might_resched</li>
 </ol>
-<blockquote>
 </blockquote>
+
 <h3 id="sleep函数">sleep函数</h3>
+
 <blockquote>
-</blockquote>
 <ol>
 <li>msleep</li>
 <li>msleep_interruputible</li>
@@ -361,11 +368,11 @@ schedule函数    schedule_timeout schedule_timeout_uninterruptible schedule_tim
 <li>osal_usleep</li>
 <li>might_sleep</li>
 </ol>
-<blockquote>
 </blockquote>
+
 <h3 id="取信号量函数">取信号量函数</h3>
+
 <blockquote>
-</blockquote>
 <ol>
 <li>down</li>
 <li>down_timeout</li>
@@ -377,11 +384,11 @@ schedule函数    schedule_timeout schedule_timeout_uninterruptible schedule_tim
 <li>wait_for_completion_timeout</li>
 <li>wait_for_completion_interruptible_timeout</li>
 </ol>
-<blockquote>
 </blockquote>
-<h3 id="kmalloc相关函数含有标志gfp_kernel">kmalloc相关函数含有标志GFP_KERNEL</h3>
+
+<h3 id="kmalloc相关函数含有标志gfp-kernel">kmalloc相关函数含有标志GFP_KERNEL</h3>
+
 <blockquote>
-</blockquote>
 <ol>
 <li>kmalloc</li>
 <li>kzalloc</li>
@@ -390,11 +397,11 @@ schedule函数    schedule_timeout schedule_timeout_uninterruptible schedule_tim
 <li>kmem_cache_alloc</li>
 <li>kmem_cache_zalloc</li>
 </ol>
-<blockquote>
 </blockquote>
+
 <h3 id="取睡眠锁函数">取睡眠锁函数</h3>
+
 <blockquote>
-</blockquote>
 <ol>
 <li>mutex_lock</li>
 <li>mutex_lock_timeout</li>
@@ -402,10 +409,12 @@ schedule函数    schedule_timeout schedule_timeout_uninterruptible schedule_tim
 <li>mutex_lock_interruptible</li>
 <li>mutex_lock_interruptible_nested</li>
 </ol>
-<blockquote>
 </blockquote>
+
 <h3 id="在中断处理函数不能使用睡眠函数原因">在中断处理函数不能使用睡眠函数原因</h3>
+
 <p>主要原因如下：</p>
+
 <ol>
 <li>中断是一种紧急事务，中断处理函数要求快</li>
 <li>linux是以进程为调度单位的，调度器只看到进程内核栈，而看不到中断栈，在独立中断栈的模式下，如果linux内核在中断处理函数内发生了调度或者睡眠，导致无法找到回家的路，未执行的中断处理代码再也无法获得执行机会（贪睡开小差是有代价哦）</li>

@@ -2,7 +2,7 @@
 <html lang="zh-cn">
 <head>
     <title>array vs list &middot; 沉风网事</title>
-    <meta name="generator" content="Hugo 0.68.3" />
+    <meta name="generator" content="Hugo 0.54.0" />
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta name="author" content="沉风">
@@ -26,14 +26,17 @@ complexity space O(n)
 time write by index write by index: O(1)" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://myself659.github.io/2018/02/21/array-vs-list/" />
-<meta property="article:published_time" content="2018-02-21T11:58:06+02:00" />
-<meta property="article:modified_time" content="2018-02-21T11:58:06+02:00" />
+<meta property="article:published_time" content="2018-02-21T11:58:06&#43;02:00"/>
+<meta property="article:modified_time" content="2018-02-21T11:58:06&#43;02:00"/>
 
     
-    <meta itemprop="name" content="array vs list">
+    
+<meta itemprop="name" content="array vs list">
 <meta itemprop="description" content="array define An array is collection of items stored at contiguous memory locations. The idea is to store multiple items of same type together. This makes it easier to calculate the position of each element by simply adding an offset to a base value, i.e., the memory location of the first element of the array (generally denoted by the name of the array).
 complexity space O(n)
 time write by index write by index: O(1)">
+
+
 <meta itemprop="datePublished" content="2018-02-21T11:58:06&#43;02:00" />
 <meta itemprop="dateModified" content="2018-02-21T11:58:06&#43;02:00" />
 <meta itemprop="wordCount" content="403">
@@ -41,6 +44,7 @@ time write by index write by index: O(1)">
 
 
 <meta itemprop="keywords" content="Data Struct," />
+
     <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="array vs list"/>
 <meta name="twitter:description" content="array define An array is collection of items stored at contiguous memory locations. The idea is to store multiple items of same type together. This makes it easier to calculate the position of each element by simply adding an offset to a base value, i.e., the memory location of the first element of the array (generally denoted by the name of the array).
@@ -338,79 +342,130 @@ time write by index write by index: O(1)"/>
 </header>
 
         <div class="article-entry" itemprop="articleBody">
-            <h1 id="array">array</h1>
+            
+
+<h1 id="array">array</h1>
+
 <h2 id="define">define</h2>
-<p>An array is collection of items stored at contiguous memory locations. 
-The idea is to store multiple items of same type together. 
+
+<p>An array is collection of items stored at contiguous memory locations.
+The idea is to store multiple items of same type together.
 This makes it easier to calculate the position of each element by simply adding an offset to a base value, i.e., the memory location of the first element of the array (generally denoted by the name of the array).</p>
+
 <h2 id="complexity">complexity</h2>
+
 <h3 id="space">space</h3>
+
 <p>O(n)</p>
+
 <h3 id="time">time</h3>
+
 <h4 id="write-by-index">write by index</h4>
+
 <p>write by index: O(1)</p>
+
 <h4 id="read-by-index">read by index</h4>
+
 <p>read by index: O(1)</p>
+
 <h4 id="search">search</h4>
+
 <p>worst case: O(n)</p>
+
 <p>best case: O(1)</p>
+
 <p>average: O(n/2)</p>
+
 <h4 id="sort">sort</h4>
+
 <p>details in the below picture：</p>
+
 <h2 id="advantage">advantage</h2>
+
 <ol>
 <li>Arrays have better cache locality that can make a pretty big difference in performance.</li>
 <li>In addition memory utilization is inefficient in the array. Conversely, memory utilization is efficient in the linked list.</li>
 <li>The requirement of memory is less due to actual data being stored within the index in the array. As against, there is a need for more memory in Linked Lists due to storage of additional next and previous referencing elements.</li>
 <li>Accessing an element in an array is fast, while Linked list takes linear time, so it is quite a bit slower.</li>
 </ol>
+
 <h2 id="disadvantage">disadvantage</h2>
+
 <ol>
 <li>The size of the arrays is fixed.</li>
 <li>Inserting a new element in an array of elements is expensive. the same as delete a element.</li>
 <li>In addition memory utilization is inefficient in the array. Conversely, memory utilization is efficient in the linked list.</li>
 </ol>
+
 <h1 id="list">list</h1>
+
 <h2 id="define-1">define</h2>
+
 <p>a Linked list is a linear collection of data elements, whose order is not given by their physical placement in memory. Instead, each element points to the next one .</p>
+
 <p>a Linked list is a collection of some   link nodes, which are not contiguous im in memory like the array. Instead, each node points  to  the next.</p>
+
 <h3 id="space-1">space</h3>
+
 <p>O(n)</p>
+
 <h3 id="time-1">time</h3>
+
 <p>no index</p>
+
 <h4 id="add">add</h4>
+
 <p>add: O(1)</p>
+
 <h4 id="delete-by-list-node">delete by list node</h4>
+
 <p>O(1)</p>
+
 <h4 id="delete-by-value">delete by value：</h4>
+
 <p>worst case: O(n)</p>
+
 <p>best case: O(1)</p>
+
 <p>average: O(n/2)</p>
+
 <h4 id="search-1">search</h4>
+
 <p>worst case: O(n)</p>
+
 <p>best case: O(1)</p>
+
 <p>average: O(n/2)</p>
+
 <h2 id="advantage-1">advantage</h2>
+
 <ol>
 <li>Dynamic size.</li>
 <li>Ease of insertion/deletion.</li>
 </ol>
+
 <h2 id="disadvantage-1">disadvantage</h2>
+
 <ol>
 <li>Random access is not allowed. We have to access elements sequentially starting from the first node. So we cannot do a binary search with linked lists.</li>
 <li>Extra memory space for a pointer is required with each element of the list.</li>
 <li>Arrays have better cache locality that can make a pretty big difference in performance.</li>
 </ol>
+
 <h1 id="refence">refence</h1>
+
 <ol>
 <li><a href="https://www.geeksforgeeks.org/introduction-to-arrays/">Introduction to Arrays</a></li>
 <li><a href="https://en.wikipedia.org/wiki/Array_data_structure">Array data structure</a></li>
 <li><a href="https://www.geeksforgeeks.org/linked-list-vs-array/">Linked List vs Array</a></li>
 <li><a href="https://www.geeksforgeeks.org/binary-tree-data-structure/">Binary Tree Data Structure</a></li>
 </ol>
+
 <h1 id="欢迎关注">欢迎关注</h1>
+
 <p>欢迎关注微信公众帐号：沉风网事(savewind)</p>
-<p><img src="/images/cfws.jpg" alt="沉风网事"></p>
+
+<p><img src="/images/cfws.jpg" alt="沉风网事" /></p>
 
         </div>
         <footer class="article-footer">

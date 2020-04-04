@@ -2,7 +2,7 @@
 <html lang="zh-cn">
 <head>
     <title>实现无符号整型数的分解 &middot; 沉风网事</title>
-    <meta name="generator" content="Hugo 0.68.3" />
+    <meta name="generator" content="Hugo 0.54.0" />
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta name="author" content="沉风">
@@ -25,19 +25,22 @@
  N &gt;= M； N与M都是无符号整型数  求：一共有多少中拆分方法？
 分析 参考代码
 代码 代码实现计算拆分方法及打印拆分组合信息
-#include &lt;iostream&gt;#include &lt;stdint.h&gt;using namespace std;class CSolution{private:uint32_t uiM;uint32_t uiN;uint32_t uiCount;uint32_t *puiRecord;public:CSolution();CSolution(uint32_t uiM, uint32_t uiN);~CSolution();uint32_t GetCount() {return uiCount;}void PrintCombinations();uint32_t CountNum(uint32_t uiM, uint32_t uiN);	void GetCombination(uint32_t uiMin,uint32_t uiLeft, uint32_t uiGetNum, uint32_t uiTargetNum, uint32_t *puiRecord);};CSolution::CSolution(uint32_t uiM,uint32_t uiN){this-&gt;uiM = uiM;this-&gt;uiN = uiN;this-&gt;puiRecord = new unsigned int [uiM];this-&gt;uiCount = CountNum(uiM, uiN);return ;}CSolution::CSolution(){uiM = 1;uiN = 1;puiRecord = new unsigned int [uiM];uiCount = CountNum(uiM, uiN);return ;}CSolution::~CSolution(){delete [] puiRecord;return ;}uint32_t CSolution::CountNum(uint32_t uiM, uint32_t uiN){if((0 == uiM) || (0 == uiN) || ( 1 == uiM) || ( 1 == uiN)){return 1;}if(uiN &lt; uiM){return CountNum(uiN,uiN);}return CountNum(uiM - 1, uiN) &#43; CountNum(uiM, uiN - uiM);}	/*UINT uiMin 最小值UINT uiLeft 剩下值 UINT uiGetNum 已拆分元素个数 UINT uiTargetNum	需要拆分的个数UINT *puiCombination 拆分组合首地址 */void CSolution::GetCombination(uint32_t uiMin,uint32_t uiLeft, uint32_t uiGetNum, uint32_t uiTargetNum, uint32_t *puiRecord) {uint32_t i;uint32_t j;/*递归结束条件 */if(1 == uiTargetNum) {cout &lt;&lt; uiLeft&lt;&lt;endl;return ;}/* 将剩下值拆分为多个数,除了最后一个拆分值，其他的拆分数都应小于等于uiLeft/2 */for(i = uiMin; i &lt;= uiLeft / 2; i&#43;&#43;){puiRecord[uiGetNum] = i;uiGetNum&#43;&#43;;if(uiGetNum &#43; 1 == uiTargetNum){puiRecord[uiGetNum] = uiLeft - i; for(j = 0; j &lt; uiTargetNum; j&#43;&#43;){cout &lt;&lt;puiRecord[j]&lt;&lt; &quot; &quot;;} cout &lt;&lt; endl;}else{GetCombination(i, uiLeft - i, uiGetNum, uiTargetNum, puiRecord);}uiGetNum--;}return ;	}void CSolution::PrintCombinations(){uint32_t i;cout&lt;&lt;&quot;print combinations as follow:&quot;&lt;&lt;endl;for(i = 1; i &lt;= uiM; i&#43;&#43;){GetCombination(1, uiN, 0, i, puiRecord);	}cout&lt;&lt;&quot;The Total num is &quot;&lt;&lt; GetCount()&lt;&lt;endl;return ;}int main(void){CSolution test(7, 11);test." />
+ #include &lt;iostream&gt; #include &lt;stdint.h&gt; using namespace std; class CSolution { private: uint32_t uiM; uint32_t uiN; uint32_t uiCount; uint32_t *puiRecord; public: CSolution(); CSolution(uint32_t uiM, uint32_t uiN); ~CSolution(); uint32_t GetCount() {return uiCount;} void PrintCombinations(); uint32_t CountNum(uint32_t uiM, uint32_t uiN); void GetCombination(uint32_t uiMin, uint32_t uiLeft, uint32_t uiGetNum, uint32_t uiTargetNum, uint32_t *puiRecord); }; CSolution::CSolution(uint32_t uiM,uint32_t uiN){ this-&gt;uiM = uiM; this-&gt;uiN = uiN; this-&gt;puiRecord = new unsigned int [uiM]; this-&gt;uiCount = CountNum(uiM, uiN); return ; } CSolution::CSolution() { uiM = 1; uiN = 1; puiRecord = new unsigned int [uiM]; uiCount = CountNum(uiM, uiN); return ; } CSolution::~CSolution() { delete [] puiRecord; return ; } uint32_t CSolution::CountNum(uint32_t uiM, uint32_t uiN) { if((0 == uiM) || (0 == uiN) || ( 1 == uiM) || ( 1 == uiN)) { return 1; } if(uiN &lt; uiM) { return CountNum(uiN,uiN); } return CountNum(uiM - 1, uiN) &#43; CountNum(uiM, uiN - uiM); } /* UINT uiMin 最小值 UINT uiLeft 剩下值 UINT uiGetNum 已拆分元素个数 UINT uiTargetNum 需要拆分的个数 UINT *puiCombination 拆分组合首地址 */ void CSolution::GetCombination(uint32_t uiMin, uint32_t uiLeft, uint32_t uiGetNum, uint32_t uiTargetNum, uint32_t *puiRecord) { uint32_t i; uint32_t j; /*递归结束条件 */ if(1 == uiTargetNum) { cout &lt;&lt; uiLeft&lt;&lt;endl; return ; } /* 将剩下值拆分为多个数,除了最后一个拆分值，其他的拆分数都应小于等于uiLeft/2 */ for(i = uiMin; i &lt;= uiLeft / 2; i&#43;&#43;) { puiRecord[uiGetNum] = i; uiGetNum&#43;&#43;; if(uiGetNum &#43; 1 == uiTargetNum) { puiRecord[uiGetNum] = uiLeft - i; for(j = 0; j &lt; uiTargetNum; j&#43;&#43;) { cout &lt;&lt;puiRecord[j]&lt;&lt; &quot; &quot;; } cout &lt;&lt; endl; } else { GetCombination(i, uiLeft - i, uiGetNum, uiTargetNum, puiRecord); } uiGetNum--; } return ; } void CSolution::PrintCombinations() { uint32_t i; cout&lt;&lt;&quot;print combinations as follow:&quot;&lt;&lt;endl; for(i = 1; i &lt;= uiM; i&#43;&#43;) { GetCombination(1, uiN, 0, i, puiRecord); } cout&lt;&lt;&quot;The Total num is &quot;&lt;&lt; GetCount()&lt;&lt;endl; return ; } int main(void) { CSolution test(7, 11); test." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://myself659.github.io/2015/06/14/%E5%AE%9E%E7%8E%B0%E6%97%A0%E7%AC%A6%E5%8F%B7%E6%95%B4%E5%9E%8B%E6%95%B0%E7%9A%84%E5%88%86%E8%A7%A3/" />
-<meta property="article:published_time" content="2015-06-14T11:58:06+02:00" />
-<meta property="article:modified_time" content="2015-06-14T11:58:06+02:00" />
+<meta property="article:published_time" content="2015-06-14T11:58:06&#43;02:00"/>
+<meta property="article:modified_time" content="2015-06-14T11:58:06&#43;02:00"/>
 
     
-    <meta itemprop="name" content="实现无符号整型数的分解">
+    
+<meta itemprop="name" content="实现无符号整型数的分解">
 <meta itemprop="description" content="题目 将一个无符号数N拆分为不多于M个数，使拆分的数之和等于N,条件：
  N &gt;= M； N与M都是无符号整型数  求：一共有多少中拆分方法？
 分析 参考代码
 代码 代码实现计算拆分方法及打印拆分组合信息
-#include &lt;iostream&gt;#include &lt;stdint.h&gt;using namespace std;class CSolution{private:uint32_t uiM;uint32_t uiN;uint32_t uiCount;uint32_t *puiRecord;public:CSolution();CSolution(uint32_t uiM, uint32_t uiN);~CSolution();uint32_t GetCount() {return uiCount;}void PrintCombinations();uint32_t CountNum(uint32_t uiM, uint32_t uiN);	void GetCombination(uint32_t uiMin,uint32_t uiLeft, uint32_t uiGetNum, uint32_t uiTargetNum, uint32_t *puiRecord);};CSolution::CSolution(uint32_t uiM,uint32_t uiN){this-&gt;uiM = uiM;this-&gt;uiN = uiN;this-&gt;puiRecord = new unsigned int [uiM];this-&gt;uiCount = CountNum(uiM, uiN);return ;}CSolution::CSolution(){uiM = 1;uiN = 1;puiRecord = new unsigned int [uiM];uiCount = CountNum(uiM, uiN);return ;}CSolution::~CSolution(){delete [] puiRecord;return ;}uint32_t CSolution::CountNum(uint32_t uiM, uint32_t uiN){if((0 == uiM) || (0 == uiN) || ( 1 == uiM) || ( 1 == uiN)){return 1;}if(uiN &lt; uiM){return CountNum(uiN,uiN);}return CountNum(uiM - 1, uiN) &#43; CountNum(uiM, uiN - uiM);}	/*UINT uiMin 最小值UINT uiLeft 剩下值 UINT uiGetNum 已拆分元素个数 UINT uiTargetNum	需要拆分的个数UINT *puiCombination 拆分组合首地址 */void CSolution::GetCombination(uint32_t uiMin,uint32_t uiLeft, uint32_t uiGetNum, uint32_t uiTargetNum, uint32_t *puiRecord) {uint32_t i;uint32_t j;/*递归结束条件 */if(1 == uiTargetNum) {cout &lt;&lt; uiLeft&lt;&lt;endl;return ;}/* 将剩下值拆分为多个数,除了最后一个拆分值，其他的拆分数都应小于等于uiLeft/2 */for(i = uiMin; i &lt;= uiLeft / 2; i&#43;&#43;){puiRecord[uiGetNum] = i;uiGetNum&#43;&#43;;if(uiGetNum &#43; 1 == uiTargetNum){puiRecord[uiGetNum] = uiLeft - i; for(j = 0; j &lt; uiTargetNum; j&#43;&#43;){cout &lt;&lt;puiRecord[j]&lt;&lt; &quot; &quot;;} cout &lt;&lt; endl;}else{GetCombination(i, uiLeft - i, uiGetNum, uiTargetNum, puiRecord);}uiGetNum--;}return ;	}void CSolution::PrintCombinations(){uint32_t i;cout&lt;&lt;&quot;print combinations as follow:&quot;&lt;&lt;endl;for(i = 1; i &lt;= uiM; i&#43;&#43;){GetCombination(1, uiN, 0, i, puiRecord);	}cout&lt;&lt;&quot;The Total num is &quot;&lt;&lt; GetCount()&lt;&lt;endl;return ;}int main(void){CSolution test(7, 11);test.">
+ #include &lt;iostream&gt; #include &lt;stdint.h&gt; using namespace std; class CSolution { private: uint32_t uiM; uint32_t uiN; uint32_t uiCount; uint32_t *puiRecord; public: CSolution(); CSolution(uint32_t uiM, uint32_t uiN); ~CSolution(); uint32_t GetCount() {return uiCount;} void PrintCombinations(); uint32_t CountNum(uint32_t uiM, uint32_t uiN); void GetCombination(uint32_t uiMin, uint32_t uiLeft, uint32_t uiGetNum, uint32_t uiTargetNum, uint32_t *puiRecord); }; CSolution::CSolution(uint32_t uiM,uint32_t uiN){ this-&gt;uiM = uiM; this-&gt;uiN = uiN; this-&gt;puiRecord = new unsigned int [uiM]; this-&gt;uiCount = CountNum(uiM, uiN); return ; } CSolution::CSolution() { uiM = 1; uiN = 1; puiRecord = new unsigned int [uiM]; uiCount = CountNum(uiM, uiN); return ; } CSolution::~CSolution() { delete [] puiRecord; return ; } uint32_t CSolution::CountNum(uint32_t uiM, uint32_t uiN) { if((0 == uiM) || (0 == uiN) || ( 1 == uiM) || ( 1 == uiN)) { return 1; } if(uiN &lt; uiM) { return CountNum(uiN,uiN); } return CountNum(uiM - 1, uiN) &#43; CountNum(uiM, uiN - uiM); } /* UINT uiMin 最小值 UINT uiLeft 剩下值 UINT uiGetNum 已拆分元素个数 UINT uiTargetNum 需要拆分的个数 UINT *puiCombination 拆分组合首地址 */ void CSolution::GetCombination(uint32_t uiMin, uint32_t uiLeft, uint32_t uiGetNum, uint32_t uiTargetNum, uint32_t *puiRecord) { uint32_t i; uint32_t j; /*递归结束条件 */ if(1 == uiTargetNum) { cout &lt;&lt; uiLeft&lt;&lt;endl; return ; } /* 将剩下值拆分为多个数,除了最后一个拆分值，其他的拆分数都应小于等于uiLeft/2 */ for(i = uiMin; i &lt;= uiLeft / 2; i&#43;&#43;) { puiRecord[uiGetNum] = i; uiGetNum&#43;&#43;; if(uiGetNum &#43; 1 == uiTargetNum) { puiRecord[uiGetNum] = uiLeft - i; for(j = 0; j &lt; uiTargetNum; j&#43;&#43;) { cout &lt;&lt;puiRecord[j]&lt;&lt; &quot; &quot;; } cout &lt;&lt; endl; } else { GetCombination(i, uiLeft - i, uiGetNum, uiTargetNum, puiRecord); } uiGetNum--; } return ; } void CSolution::PrintCombinations() { uint32_t i; cout&lt;&lt;&quot;print combinations as follow:&quot;&lt;&lt;endl; for(i = 1; i &lt;= uiM; i&#43;&#43;) { GetCombination(1, uiN, 0, i, puiRecord); } cout&lt;&lt;&quot;The Total num is &quot;&lt;&lt; GetCount()&lt;&lt;endl; return ; } int main(void) { CSolution test(7, 11); test.">
+
+
 <meta itemprop="datePublished" content="2015-06-14T11:58:06&#43;02:00" />
 <meta itemprop="dateModified" content="2015-06-14T11:58:06&#43;02:00" />
 <meta itemprop="wordCount" content="528">
@@ -45,13 +48,14 @@
 
 
 <meta itemprop="keywords" content="编程," />
+
     <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="实现无符号整型数的分解"/>
 <meta name="twitter:description" content="题目 将一个无符号数N拆分为不多于M个数，使拆分的数之和等于N,条件：
  N &gt;= M； N与M都是无符号整型数  求：一共有多少中拆分方法？
 分析 参考代码
 代码 代码实现计算拆分方法及打印拆分组合信息
-#include &lt;iostream&gt;#include &lt;stdint.h&gt;using namespace std;class CSolution{private:uint32_t uiM;uint32_t uiN;uint32_t uiCount;uint32_t *puiRecord;public:CSolution();CSolution(uint32_t uiM, uint32_t uiN);~CSolution();uint32_t GetCount() {return uiCount;}void PrintCombinations();uint32_t CountNum(uint32_t uiM, uint32_t uiN);	void GetCombination(uint32_t uiMin,uint32_t uiLeft, uint32_t uiGetNum, uint32_t uiTargetNum, uint32_t *puiRecord);};CSolution::CSolution(uint32_t uiM,uint32_t uiN){this-&gt;uiM = uiM;this-&gt;uiN = uiN;this-&gt;puiRecord = new unsigned int [uiM];this-&gt;uiCount = CountNum(uiM, uiN);return ;}CSolution::CSolution(){uiM = 1;uiN = 1;puiRecord = new unsigned int [uiM];uiCount = CountNum(uiM, uiN);return ;}CSolution::~CSolution(){delete [] puiRecord;return ;}uint32_t CSolution::CountNum(uint32_t uiM, uint32_t uiN){if((0 == uiM) || (0 == uiN) || ( 1 == uiM) || ( 1 == uiN)){return 1;}if(uiN &lt; uiM){return CountNum(uiN,uiN);}return CountNum(uiM - 1, uiN) &#43; CountNum(uiM, uiN - uiM);}	/*UINT uiMin 最小值UINT uiLeft 剩下值 UINT uiGetNum 已拆分元素个数 UINT uiTargetNum	需要拆分的个数UINT *puiCombination 拆分组合首地址 */void CSolution::GetCombination(uint32_t uiMin,uint32_t uiLeft, uint32_t uiGetNum, uint32_t uiTargetNum, uint32_t *puiRecord) {uint32_t i;uint32_t j;/*递归结束条件 */if(1 == uiTargetNum) {cout &lt;&lt; uiLeft&lt;&lt;endl;return ;}/* 将剩下值拆分为多个数,除了最后一个拆分值，其他的拆分数都应小于等于uiLeft/2 */for(i = uiMin; i &lt;= uiLeft / 2; i&#43;&#43;){puiRecord[uiGetNum] = i;uiGetNum&#43;&#43;;if(uiGetNum &#43; 1 == uiTargetNum){puiRecord[uiGetNum] = uiLeft - i; for(j = 0; j &lt; uiTargetNum; j&#43;&#43;){cout &lt;&lt;puiRecord[j]&lt;&lt; &quot; &quot;;} cout &lt;&lt; endl;}else{GetCombination(i, uiLeft - i, uiGetNum, uiTargetNum, puiRecord);}uiGetNum--;}return ;	}void CSolution::PrintCombinations(){uint32_t i;cout&lt;&lt;&quot;print combinations as follow:&quot;&lt;&lt;endl;for(i = 1; i &lt;= uiM; i&#43;&#43;){GetCombination(1, uiN, 0, i, puiRecord);	}cout&lt;&lt;&quot;The Total num is &quot;&lt;&lt; GetCount()&lt;&lt;endl;return ;}int main(void){CSolution test(7, 11);test."/>
+ #include &lt;iostream&gt; #include &lt;stdint.h&gt; using namespace std; class CSolution { private: uint32_t uiM; uint32_t uiN; uint32_t uiCount; uint32_t *puiRecord; public: CSolution(); CSolution(uint32_t uiM, uint32_t uiN); ~CSolution(); uint32_t GetCount() {return uiCount;} void PrintCombinations(); uint32_t CountNum(uint32_t uiM, uint32_t uiN); void GetCombination(uint32_t uiMin, uint32_t uiLeft, uint32_t uiGetNum, uint32_t uiTargetNum, uint32_t *puiRecord); }; CSolution::CSolution(uint32_t uiM,uint32_t uiN){ this-&gt;uiM = uiM; this-&gt;uiN = uiN; this-&gt;puiRecord = new unsigned int [uiM]; this-&gt;uiCount = CountNum(uiM, uiN); return ; } CSolution::CSolution() { uiM = 1; uiN = 1; puiRecord = new unsigned int [uiM]; uiCount = CountNum(uiM, uiN); return ; } CSolution::~CSolution() { delete [] puiRecord; return ; } uint32_t CSolution::CountNum(uint32_t uiM, uint32_t uiN) { if((0 == uiM) || (0 == uiN) || ( 1 == uiM) || ( 1 == uiN)) { return 1; } if(uiN &lt; uiM) { return CountNum(uiN,uiN); } return CountNum(uiM - 1, uiN) &#43; CountNum(uiM, uiN - uiM); } /* UINT uiMin 最小值 UINT uiLeft 剩下值 UINT uiGetNum 已拆分元素个数 UINT uiTargetNum 需要拆分的个数 UINT *puiCombination 拆分组合首地址 */ void CSolution::GetCombination(uint32_t uiMin, uint32_t uiLeft, uint32_t uiGetNum, uint32_t uiTargetNum, uint32_t *puiRecord) { uint32_t i; uint32_t j; /*递归结束条件 */ if(1 == uiTargetNum) { cout &lt;&lt; uiLeft&lt;&lt;endl; return ; } /* 将剩下值拆分为多个数,除了最后一个拆分值，其他的拆分数都应小于等于uiLeft/2 */ for(i = uiMin; i &lt;= uiLeft / 2; i&#43;&#43;) { puiRecord[uiGetNum] = i; uiGetNum&#43;&#43;; if(uiGetNum &#43; 1 == uiTargetNum) { puiRecord[uiGetNum] = uiLeft - i; for(j = 0; j &lt; uiTargetNum; j&#43;&#43;) { cout &lt;&lt;puiRecord[j]&lt;&lt; &quot; &quot;; } cout &lt;&lt; endl; } else { GetCombination(i, uiLeft - i, uiGetNum, uiTargetNum, puiRecord); } uiGetNum--; } return ; } void CSolution::PrintCombinations() { uint32_t i; cout&lt;&lt;&quot;print combinations as follow:&quot;&lt;&lt;endl; for(i = 1; i &lt;= uiM; i&#43;&#43;) { GetCombination(1, uiN, 0, i, puiRecord); } cout&lt;&lt;&quot;The Total num is &quot;&lt;&lt; GetCount()&lt;&lt;endl; return ; } int main(void) { CSolution test(7, 11); test."/>
 
     
 
@@ -344,17 +348,27 @@
 </header>
 
         <div class="article-entry" itemprop="articleBody">
-            <h3 id="题目">题目</h3>
+            
+
+<h3 id="题目">题目</h3>
+
 <p>将一个无符号数N拆分为不多于M个数，使拆分的数之和等于N,条件：</p>
+
 <ol>
 <li>N &gt;= M；</li>
 <li>N与M都是无符号整型数</li>
 </ol>
+
 <p>求：一共有多少中拆分方法？</p>
+
 <h3 id="分析">分析</h3>
+
 <p>参考代码</p>
+
 <h3 id="代码">代码</h3>
+
 <p>代码实现计算拆分方法及打印拆分组合信息</p>
+
 <pre><code>
 #include &lt;iostream&gt;
 #include &lt;stdint.h&gt;
@@ -364,50 +378,50 @@ using namespace std;
 
 class CSolution
 {
-	private:
-		uint32_t uiM;
-		uint32_t uiN;
-		uint32_t uiCount;
-		uint32_t *puiRecord;
-	public:
-		CSolution();
-		CSolution(uint32_t uiM, uint32_t uiN);
-		~CSolution();
-		uint32_t GetCount()  {return uiCount;}
-		void PrintCombinations();
-	
-		uint32_t CountNum(uint32_t uiM, uint32_t uiN);	
-		void GetCombination(uint32_t uiMin,
-							uint32_t uiLeft,  
-							uint32_t uiGetNum,   
-							uint32_t uiTargetNum,  
-							uint32_t *puiRecord);
+    private:
+        uint32_t uiM;
+        uint32_t uiN;
+        uint32_t uiCount;
+        uint32_t *puiRecord;
+    public:
+        CSolution();
+        CSolution(uint32_t uiM, uint32_t uiN);
+        ~CSolution();
+        uint32_t GetCount()  {return uiCount;}
+        void PrintCombinations();
+    
+        uint32_t CountNum(uint32_t uiM, uint32_t uiN);  
+        void GetCombination(uint32_t uiMin,
+                            uint32_t uiLeft,  
+                            uint32_t uiGetNum,   
+                            uint32_t uiTargetNum,  
+                            uint32_t *puiRecord);
 };
 
 
 CSolution::CSolution(uint32_t uiM,uint32_t uiN){
-	this-&gt;uiM = uiM;
-	this-&gt;uiN = uiN;
-	this-&gt;puiRecord = new unsigned int [uiM];
-	this-&gt;uiCount =  CountNum(uiM, uiN);
-	return ;
+    this-&gt;uiM = uiM;
+    this-&gt;uiN = uiN;
+    this-&gt;puiRecord = new unsigned int [uiM];
+    this-&gt;uiCount =  CountNum(uiM, uiN);
+    return ;
 }
 
 
 CSolution::CSolution()
 {
-	uiM = 1;
-	uiN = 1;
-	puiRecord = new unsigned int [uiM];
-	uiCount =  CountNum(uiM, uiN);
+    uiM = 1;
+    uiN = 1;
+    puiRecord = new unsigned int [uiM];
+    uiCount =  CountNum(uiM, uiN);
 
-	return  ;
+    return  ;
 }
 
 CSolution::~CSolution()
 {
-	delete [] puiRecord;
-	return ;
+    delete [] puiRecord;
+    return ;
 }
 
 
@@ -415,96 +429,99 @@ CSolution::~CSolution()
 uint32_t CSolution::CountNum(uint32_t uiM, uint32_t uiN)
 {
 
-	if((0 == uiM) || (0 == uiN) || ( 1 == uiM) || ( 1 == uiN))
-	{
-		return 1;
-	}
+    if((0 == uiM) || (0 == uiN) || ( 1 == uiM) || ( 1 == uiN))
+    {
+        return 1;
+    }
 
 
-	if(uiN &lt; uiM)
-	{
-		return CountNum(uiN,uiN);
-	}
-	
-	return CountNum(uiM - 1, uiN) + CountNum(uiM, uiN - uiM);
-}	
+    if(uiN &lt; uiM)
+    {
+        return CountNum(uiN,uiN);
+    }
+    
+    return CountNum(uiM - 1, uiN) + CountNum(uiM, uiN - uiM);
+}   
 
 /*
-UINT uiMin    			最小值
-UINT uiLeft     		剩下值 
-UINT uiGetNum      		已拆分元素个数 
-UINT uiTargetNum	 	需要拆分的个数
-UINT *puiCombination  	拆分组合首地址 
+UINT uiMin              最小值
+UINT uiLeft             剩下值 
+UINT uiGetNum           已拆分元素个数 
+UINT uiTargetNum        需要拆分的个数
+UINT *puiCombination    拆分组合首地址 
 */
 void CSolution::GetCombination(uint32_t uiMin,
-							  uint32_t uiLeft,  
-							  uint32_t uiGetNum,   
-							  uint32_t uiTargetNum,  
-							  uint32_t *puiRecord) 
+                              uint32_t uiLeft,  
+                              uint32_t uiGetNum,   
+                              uint32_t uiTargetNum,  
+                              uint32_t *puiRecord) 
 {
-	uint32_t i;
-	uint32_t j;
+    uint32_t i;
+    uint32_t j;
 
-	/*递归结束条件  */
-	if(1 == uiTargetNum) 
-	{
-		cout &lt;&lt; uiLeft&lt;&lt;endl;
-		return ;
-	}
+    /*递归结束条件  */
+    if(1 == uiTargetNum) 
+    {
+        cout &lt;&lt; uiLeft&lt;&lt;endl;
+        return ;
+    }
 
-	/* 将剩下值拆分为多个数,除了最后一个拆分值，其他的拆分数都应小于等于uiLeft/2 */
-	for(i = uiMin; i &lt;= uiLeft / 2; i++)
-	{
-		puiRecord[uiGetNum] = i;
-		uiGetNum++;
-		if(uiGetNum + 1 == uiTargetNum)
-		{
-			puiRecord[uiGetNum] = uiLeft - i; 
-			for(j = 0; j  &lt; uiTargetNum; j++)
-			{
-				cout &lt;&lt;puiRecord[j]&lt;&lt; &quot; &quot;;
-			} 
-			cout &lt;&lt; endl;
-		}
-		else
-		{
-			GetCombination(i, uiLeft - i, uiGetNum, uiTargetNum, puiRecord);
-		}
-		
-		uiGetNum--;
-	}
-		
-	return  ;				
+    /* 将剩下值拆分为多个数,除了最后一个拆分值，其他的拆分数都应小于等于uiLeft/2 */
+    for(i = uiMin; i &lt;= uiLeft / 2; i++)
+    {
+        puiRecord[uiGetNum] = i;
+        uiGetNum++;
+        if(uiGetNum + 1 == uiTargetNum)
+        {
+            puiRecord[uiGetNum] = uiLeft - i; 
+            for(j = 0; j  &lt; uiTargetNum; j++)
+            {
+                cout &lt;&lt;puiRecord[j]&lt;&lt; &quot; &quot;;
+            } 
+            cout &lt;&lt; endl;
+        }
+        else
+        {
+            GetCombination(i, uiLeft - i, uiGetNum, uiTargetNum, puiRecord);
+        }
+        
+        uiGetNum--;
+    }
+        
+    return  ;               
 }
 
 
 void  CSolution::PrintCombinations()
 {
-	uint32_t i;
-	
-	cout&lt;&lt;&quot;print combinations as follow:&quot;&lt;&lt;endl;
-	
-	for(i = 1; i  &lt;=  uiM; i++)
-	{
-		GetCombination(1, uiN, 0, i, puiRecord);	
-	}
-	cout&lt;&lt;&quot;The Total num is &quot;&lt;&lt; GetCount()&lt;&lt;endl;
-	
-	return ;
+    uint32_t i;
+    
+    cout&lt;&lt;&quot;print combinations as follow:&quot;&lt;&lt;endl;
+    
+    for(i = 1; i  &lt;=  uiM; i++)
+    {
+        GetCombination(1, uiN, 0, i, puiRecord);    
+    }
+    cout&lt;&lt;&quot;The Total num is &quot;&lt;&lt; GetCount()&lt;&lt;endl;
+    
+    return ;
 }
 
 
 
 int main(void)
 {
-	CSolution test(7, 11);
+    CSolution test(7, 11);
 
-	
-	test.PrintCombinations();
+    
+    test.PrintCombinations();
 
-	return 0;
+    return 0;
 }
-</code></pre><h3 id="运行结果">运行结果</h3>
+</code></pre>
+
+<h3 id="运行结果">运行结果</h3>
+
 <pre><code>[root@localhost cpp]# ./numdecom
 print combinations as follow:
 11
@@ -558,6 +575,7 @@ print combinations as follow:
 1 1 1 2 2 2 2 
 The Total num is 49
 </code></pre>
+
         </div>
         <footer class="article-footer">
     <a data-url="https://myself659.github.io/2015/06/14/%E5%AE%9E%E7%8E%B0%E6%97%A0%E7%AC%A6%E5%8F%B7%E6%95%B4%E5%9E%8B%E6%95%B0%E7%9A%84%E5%88%86%E8%A7%A3/" data-id="2ff362e4e3ba3929d2f67e4326965eb4" class="article-share-link">

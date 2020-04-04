@@ -2,7 +2,7 @@
 <html lang="zh-cn">
 <head>
     <title>Rust crate加速 &middot; 沉风网事</title>
-    <meta name="generator" content="Hugo 0.68.3" />
+    <meta name="generator" content="Hugo 0.54.0" />
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta name="author" content="沉风">
@@ -24,22 +24,25 @@
 <meta property="og:description" content="由于墙的原因，导致cargo build，cargo run都会出现概率性失败，并且整个过程十分缓慢。
 下面是解决方案：
 方案1 在 ~/.cargo/config文件（如果没有创建一个）下添加如下内容：
-[source.crates-io]replace-with = &quot;rustcc&quot;[source.rustcc]registry = &quot;https://code.aliyun.com/rustcc/crates.io-index.git&quot;方案1现在还是实验阶段，充满变数与不确定性。不适用于CI/CD。
+[source.crates-io] replace-with = &quot;rustcc&quot; [source.rustcc] registry = &quot;https://code.aliyun.com/rustcc/crates.io-index.git&quot;  方案1现在还是实验阶段，充满变数与不确定性。不适用于CI/CD。
 方案2 在阿里云，aws上申请一个香港地区云主机，将build工作交给云主机
 欢迎关注 欢迎关注微信公众帐号：沉风网事(savewind)" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://myself659.github.io/2019/08/11/rust-crate%E5%8A%A0%E9%80%9F/" />
-<meta property="article:published_time" content="2019-08-11T11:58:06+02:00" />
-<meta property="article:modified_time" content="2019-08-11T11:58:06+02:00" />
+<meta property="article:published_time" content="2019-08-11T11:58:06&#43;02:00"/>
+<meta property="article:modified_time" content="2019-08-11T11:58:06&#43;02:00"/>
 
     
-    <meta itemprop="name" content="Rust crate加速">
+    
+<meta itemprop="name" content="Rust crate加速">
 <meta itemprop="description" content="由于墙的原因，导致cargo build，cargo run都会出现概率性失败，并且整个过程十分缓慢。
 下面是解决方案：
 方案1 在 ~/.cargo/config文件（如果没有创建一个）下添加如下内容：
-[source.crates-io]replace-with = &quot;rustcc&quot;[source.rustcc]registry = &quot;https://code.aliyun.com/rustcc/crates.io-index.git&quot;方案1现在还是实验阶段，充满变数与不确定性。不适用于CI/CD。
+[source.crates-io] replace-with = &quot;rustcc&quot; [source.rustcc] registry = &quot;https://code.aliyun.com/rustcc/crates.io-index.git&quot;  方案1现在还是实验阶段，充满变数与不确定性。不适用于CI/CD。
 方案2 在阿里云，aws上申请一个香港地区云主机，将build工作交给云主机
 欢迎关注 欢迎关注微信公众帐号：沉风网事(savewind)">
+
+
 <meta itemprop="datePublished" content="2019-08-11T11:58:06&#43;02:00" />
 <meta itemprop="dateModified" content="2019-08-11T11:58:06&#43;02:00" />
 <meta itemprop="wordCount" content="20">
@@ -47,12 +50,13 @@
 
 
 <meta itemprop="keywords" content="Rust," />
+
     <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Rust crate加速"/>
 <meta name="twitter:description" content="由于墙的原因，导致cargo build，cargo run都会出现概率性失败，并且整个过程十分缓慢。
 下面是解决方案：
 方案1 在 ~/.cargo/config文件（如果没有创建一个）下添加如下内容：
-[source.crates-io]replace-with = &quot;rustcc&quot;[source.rustcc]registry = &quot;https://code.aliyun.com/rustcc/crates.io-index.git&quot;方案1现在还是实验阶段，充满变数与不确定性。不适用于CI/CD。
+[source.crates-io] replace-with = &quot;rustcc&quot; [source.rustcc] registry = &quot;https://code.aliyun.com/rustcc/crates.io-index.git&quot;  方案1现在还是实验阶段，充满变数与不确定性。不适用于CI/CD。
 方案2 在阿里云，aws上申请一个香港地区云主机，将build工作交给云主机
 欢迎关注 欢迎关注微信公众帐号：沉风网事(savewind)"/>
 
@@ -347,21 +351,34 @@
 </header>
 
         <div class="article-entry" itemprop="articleBody">
-            <p>由于墙的原因，导致cargo build，cargo run都会出现概率性失败，并且整个过程十分缓慢。</p>
+            
+
+<p>由于墙的原因，导致cargo build，cargo run都会出现概率性失败，并且整个过程十分缓慢。</p>
+
 <p>下面是解决方案：</p>
+
 <h2 id="方案1">方案1</h2>
+
 <p>在 ~/.cargo/config文件（如果没有创建一个）下添加如下内容：</p>
+
 <pre><code>[source.crates-io]
 replace-with = &quot;rustcc&quot;
 
 [source.rustcc]
 registry = &quot;https://code.aliyun.com/rustcc/crates.io-index.git&quot;
-</code></pre><p>方案1现在还是实验阶段，充满变数与不确定性。不适用于CI/CD。</p>
+</code></pre>
+
+<p>方案1现在还是实验阶段，充满变数与不确定性。不适用于CI/CD。</p>
+
 <h2 id="方案2">方案2</h2>
+
 <p>在阿里云，aws上申请一个香港地区云主机，将build工作交给云主机</p>
+
 <h1 id="欢迎关注">欢迎关注</h1>
+
 <p>欢迎关注微信公众帐号：沉风网事(savewind)</p>
-<p><img src="/images/cfws.jpg" alt="沉风网事"></p>
+
+<p><img src="/images/cfws.jpg" alt="沉风网事" /></p>
 
         </div>
         <footer class="article-footer">

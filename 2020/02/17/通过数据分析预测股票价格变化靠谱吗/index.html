@@ -2,7 +2,7 @@
 <html lang="zh-cn">
 <head>
     <title>通过数据分析预测股票价格变化靠谱吗？ &middot; 沉风网事</title>
-    <meta name="generator" content="Hugo 0.68.3" />
+    <meta name="generator" content="Hugo 0.54.0" />
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta name="author" content="沉风">
@@ -24,20 +24,23 @@
 <meta property="og:description" content="前言 在投资美股，先从数据分析开始这篇文章解决两个问题：
  从哪里找数据？ 如何得到这些数据？  在此基础这篇主要解决一个问题：以特斯拉为例说明如何利用这些数据预测股票价格的变化。同时关注一个问题：投入成本进行预测股票价格是否靠谱与必要？
 步骤 获取数据 直接调用api如下：
-import yfinance as yf tlsa_df = yf.download(&#39;TSLA&#39;, start=&#39;2015-01-01&#39;, end=&#39;2020-02-16&#39;, progress=False)tlsa_df.head()绘制价格变化图 #plot %matplotlib notebook from IPython.core.interactiveshell import InteractiveShellInteractiveShell.ast_node_interactivity = &quot;all&quot; plt.figure(figsize=(10,6))plt.grid(True)plt.xlabel(&#39;Dates&#39;)plt.ylabel(&#39;Close Prices&#39;)plt.plot(tlsa_df[&#39;Close&#39;])plt.title(&#39;Tesla Close Price&#39;)plt.show()得到从2015年起telsa收盘价格变化图：
-分析数据的统计特征信息 tsla_df_close = tlsa_df[&#39;Close&#39;]df_log = np.log(tsla_df_close)moving_avg = df_log.rolling(12).mean()std_dev = df_log.rolling(12).std()plt.title(&#39;Moving Average&#39;)plt.plot(std_dev, color =&quot;black&quot;, label = &quot;Standard Deviation&quot;)plt.plot(moving_avg, color=&quot;red&quot;, label = &quot;Mean&quot;)plt." />
+import yfinance as yf tlsa_df = yf.download(&#39;TSLA&#39;, start=&#39;2015-01-01&#39;, end=&#39;2020-02-16&#39;, progress=False) tlsa_df.head()  绘制价格变化图 #plot %matplotlib notebook from IPython.core.interactiveshell import InteractiveShell InteractiveShell.ast_node_interactivity = &quot;all&quot; plt.figure(figsize=(10,6)) plt.grid(True) plt.xlabel(&#39;Dates&#39;) plt.ylabel(&#39;Close Prices&#39;) plt.plot(tlsa_df[&#39;Close&#39;]) plt.title(&#39;Tesla Close Price&#39;) plt.show()  得到从2015年起telsa收盘价格变化图：
+分析数据的统计特征信息 tsla_df_close = tlsa_df[&#39;Close&#39;] df_log = np.log(tsla_df_close) moving_avg = df_log.rolling(12).mean() std_dev = df_log.rolling(12).std() plt.title(&#39;Moving Average&#39;) plt.plot(std_dev, color =&quot;black&quot;, label = &quot;Standard Deviation&quot;) plt.plot(moving_avg, color=&quot;red&quot;, label = &quot;Mean&quot;) plt." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://myself659.github.io/2020/02/17/%E9%80%9A%E8%BF%87%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E9%A2%84%E6%B5%8B%E8%82%A1%E7%A5%A8%E4%BB%B7%E6%A0%BC%E5%8F%98%E5%8C%96%E9%9D%A0%E8%B0%B1%E5%90%97/" />
-<meta property="article:published_time" content="2020-02-17T11:58:06+02:00" />
-<meta property="article:modified_time" content="2020-02-17T11:58:06+02:00" />
+<meta property="article:published_time" content="2020-02-17T11:58:06&#43;02:00"/>
+<meta property="article:modified_time" content="2020-02-17T11:58:06&#43;02:00"/>
 
     
-    <meta itemprop="name" content="通过数据分析预测股票价格变化靠谱吗？">
+    
+<meta itemprop="name" content="通过数据分析预测股票价格变化靠谱吗？">
 <meta itemprop="description" content="前言 在投资美股，先从数据分析开始这篇文章解决两个问题：
  从哪里找数据？ 如何得到这些数据？  在此基础这篇主要解决一个问题：以特斯拉为例说明如何利用这些数据预测股票价格的变化。同时关注一个问题：投入成本进行预测股票价格是否靠谱与必要？
 步骤 获取数据 直接调用api如下：
-import yfinance as yf tlsa_df = yf.download(&#39;TSLA&#39;, start=&#39;2015-01-01&#39;, end=&#39;2020-02-16&#39;, progress=False)tlsa_df.head()绘制价格变化图 #plot %matplotlib notebook from IPython.core.interactiveshell import InteractiveShellInteractiveShell.ast_node_interactivity = &quot;all&quot; plt.figure(figsize=(10,6))plt.grid(True)plt.xlabel(&#39;Dates&#39;)plt.ylabel(&#39;Close Prices&#39;)plt.plot(tlsa_df[&#39;Close&#39;])plt.title(&#39;Tesla Close Price&#39;)plt.show()得到从2015年起telsa收盘价格变化图：
-分析数据的统计特征信息 tsla_df_close = tlsa_df[&#39;Close&#39;]df_log = np.log(tsla_df_close)moving_avg = df_log.rolling(12).mean()std_dev = df_log.rolling(12).std()plt.title(&#39;Moving Average&#39;)plt.plot(std_dev, color =&quot;black&quot;, label = &quot;Standard Deviation&quot;)plt.plot(moving_avg, color=&quot;red&quot;, label = &quot;Mean&quot;)plt.">
+import yfinance as yf tlsa_df = yf.download(&#39;TSLA&#39;, start=&#39;2015-01-01&#39;, end=&#39;2020-02-16&#39;, progress=False) tlsa_df.head()  绘制价格变化图 #plot %matplotlib notebook from IPython.core.interactiveshell import InteractiveShell InteractiveShell.ast_node_interactivity = &quot;all&quot; plt.figure(figsize=(10,6)) plt.grid(True) plt.xlabel(&#39;Dates&#39;) plt.ylabel(&#39;Close Prices&#39;) plt.plot(tlsa_df[&#39;Close&#39;]) plt.title(&#39;Tesla Close Price&#39;) plt.show()  得到从2015年起telsa收盘价格变化图：
+分析数据的统计特征信息 tsla_df_close = tlsa_df[&#39;Close&#39;] df_log = np.log(tsla_df_close) moving_avg = df_log.rolling(12).mean() std_dev = df_log.rolling(12).std() plt.title(&#39;Moving Average&#39;) plt.plot(std_dev, color =&quot;black&quot;, label = &quot;Standard Deviation&quot;) plt.plot(moving_avg, color=&quot;red&quot;, label = &quot;Mean&quot;) plt.">
+
+
 <meta itemprop="datePublished" content="2020-02-17T11:58:06&#43;02:00" />
 <meta itemprop="dateModified" content="2020-02-17T11:58:06&#43;02:00" />
 <meta itemprop="wordCount" content="530">
@@ -45,13 +48,14 @@ import yfinance as yf tlsa_df = yf.download(&#39;TSLA&#39;, start=&#39;2015-01-0
 
 
 <meta itemprop="keywords" content="Data," />
+
     <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="通过数据分析预测股票价格变化靠谱吗？"/>
 <meta name="twitter:description" content="前言 在投资美股，先从数据分析开始这篇文章解决两个问题：
  从哪里找数据？ 如何得到这些数据？  在此基础这篇主要解决一个问题：以特斯拉为例说明如何利用这些数据预测股票价格的变化。同时关注一个问题：投入成本进行预测股票价格是否靠谱与必要？
 步骤 获取数据 直接调用api如下：
-import yfinance as yf tlsa_df = yf.download(&#39;TSLA&#39;, start=&#39;2015-01-01&#39;, end=&#39;2020-02-16&#39;, progress=False)tlsa_df.head()绘制价格变化图 #plot %matplotlib notebook from IPython.core.interactiveshell import InteractiveShellInteractiveShell.ast_node_interactivity = &quot;all&quot; plt.figure(figsize=(10,6))plt.grid(True)plt.xlabel(&#39;Dates&#39;)plt.ylabel(&#39;Close Prices&#39;)plt.plot(tlsa_df[&#39;Close&#39;])plt.title(&#39;Tesla Close Price&#39;)plt.show()得到从2015年起telsa收盘价格变化图：
-分析数据的统计特征信息 tsla_df_close = tlsa_df[&#39;Close&#39;]df_log = np.log(tsla_df_close)moving_avg = df_log.rolling(12).mean()std_dev = df_log.rolling(12).std()plt.title(&#39;Moving Average&#39;)plt.plot(std_dev, color =&quot;black&quot;, label = &quot;Standard Deviation&quot;)plt.plot(moving_avg, color=&quot;red&quot;, label = &quot;Mean&quot;)plt."/>
+import yfinance as yf tlsa_df = yf.download(&#39;TSLA&#39;, start=&#39;2015-01-01&#39;, end=&#39;2020-02-16&#39;, progress=False) tlsa_df.head()  绘制价格变化图 #plot %matplotlib notebook from IPython.core.interactiveshell import InteractiveShell InteractiveShell.ast_node_interactivity = &quot;all&quot; plt.figure(figsize=(10,6)) plt.grid(True) plt.xlabel(&#39;Dates&#39;) plt.ylabel(&#39;Close Prices&#39;) plt.plot(tlsa_df[&#39;Close&#39;]) plt.title(&#39;Tesla Close Price&#39;) plt.show()  得到从2015年起telsa收盘价格变化图：
+分析数据的统计特征信息 tsla_df_close = tlsa_df[&#39;Close&#39;] df_log = np.log(tsla_df_close) moving_avg = df_log.rolling(12).mean() std_dev = df_log.rolling(12).std() plt.title(&#39;Moving Average&#39;) plt.plot(std_dev, color =&quot;black&quot;, label = &quot;Standard Deviation&quot;) plt.plot(moving_avg, color=&quot;red&quot;, label = &quot;Mean&quot;) plt."/>
 
     
 
@@ -344,23 +348,35 @@ import yfinance as yf tlsa_df = yf.download(&#39;TSLA&#39;, start=&#39;2015-01-0
 </header>
 
         <div class="article-entry" itemprop="articleBody">
-            <h1 id="前言">前言</h1>
+            
+
+<h1 id="前言">前言</h1>
+
 <p>在<a href="https://mp.weixin.qq.com/s/t8LAkhXEY0zkKZ_dhIXHdA">投资美股，先从数据分析开始</a>这篇文章解决两个问题：</p>
+
 <ol>
 <li>从哪里找数据？</li>
 <li>如何得到这些数据？</li>
 </ol>
+
 <p>在此基础这篇主要解决一个问题：以特斯拉为例说明如何利用这些数据预测股票价格的变化。同时关注一个问题：投入成本进行预测股票价格是否靠谱与必要？</p>
+
 <h1 id="步骤">步骤</h1>
+
 <h2 id="获取数据">获取数据</h2>
+
 <p>直接调用api如下：</p>
+
 <pre><code>import yfinance as yf 
 tlsa_df =  yf.download('TSLA', 
                       start='2015-01-01', 
                       end='2020-02-16', 
                       progress=False)
 tlsa_df.head()
-</code></pre><h2 id="绘制价格变化图">绘制价格变化图</h2>
+</code></pre>
+
+<h2 id="绘制价格变化图">绘制价格变化图</h2>
+
 <pre><code>#plot  
 %matplotlib notebook 
 from IPython.core.interactiveshell import InteractiveShell
@@ -372,9 +388,14 @@ plt.ylabel('Close Prices')
 plt.plot(tlsa_df['Close'])
 plt.title('Tesla Close Price')
 plt.show()
-</code></pre><p>得到从2015年起telsa收盘价格变化图：</p>
-<p><img src="/images/economy/stock-telsa-2015.png" alt=""></p>
+</code></pre>
+
+<p>得到从2015年起telsa收盘价格变化图：</p>
+
+<p><img src="/images/economy/stock-telsa-2015.png" alt="" /></p>
+
 <h2 id="分析数据的统计特征信息">分析数据的统计特征信息</h2>
+
 <pre><code>tsla_df_close = tlsa_df['Close']
 df_log = np.log(tsla_df_close)
 moving_avg = df_log.rolling(12).mean()
@@ -384,10 +405,16 @@ plt.title('Moving Average')
 plt.plot(std_dev, color =&quot;black&quot;, label = &quot;Standard Deviation&quot;)
 plt.plot(moving_avg, color=&quot;red&quot;, label = &quot;Mean&quot;)
 plt.show()
-</code></pre><p>具体如下：</p>
-<p><img src="/images/economy/stock-telsa-mean.png" alt=""></p>
+</code></pre>
+
+<p>具体如下：</p>
+
+<p><img src="/images/economy/stock-telsa-mean.png" alt="" /></p>
+
 <h2 id="处理数据">处理数据</h2>
+
 <p>处理数据是为了满足模型的数据输入的要求。</p>
+
 <pre><code>train_data, test_data = df_log[3:int(len(df_log)*0.9)], df_log[int(len(df_log)*0.9):]
 plt.figure(figsize=(10,6))
 plt.grid(True)
@@ -396,9 +423,14 @@ plt.ylabel('Closing Prices')
 plt.plot(df_log, 'green', label='Train data')
 plt.plot(test_data, 'blue', label='Test data')
 plt.legend()
-</code></pre><p>这里将原始数据分为训练数据和测试数据。</p>
-<p><img src="/images/economy/stock-telsa-traintest.png" alt=""></p>
+</code></pre>
+
+<p>这里将原始数据分为训练数据和测试数据。</p>
+
+<p><img src="/images/economy/stock-telsa-traintest.png" alt="" /></p>
+
 <h2 id="建立模型">建立模型</h2>
+
 <pre><code>import os 
 import numpy as np
 import pandas as pd
@@ -425,7 +457,10 @@ model_autoARIMA = auto_arima(train_data,
                       suppress_warnings=True, 
                       stepwise=True)
 print(model_autoARIMA.summary())
-</code></pre><p>得到模型参数如下：</p>
+</code></pre>
+
+<p>得到模型参数如下：</p>
+
 <pre><code>Performing stepwise search to minimize aic
 Fit ARIMA: (0, 1, 0)x(0, 0, 0, 0) (constant=True); AIC=-4980.147, BIC=-4970.040, Time=2.357 seconds
 Fit ARIMA: (1, 1, 0)x(0, 0, 0, 0) (constant=True); AIC=-4978.315, BIC=-4963.154, Time=0.297 seconds
@@ -452,14 +487,21 @@ Prob(Q):                              0.34   Prob(JB):                         0
 Heteroskedasticity (H):               1.84   Skew:                            -0.13
 Prob(H) (two-sided):                  0.00   Kurtosis:                         7.31
 ===============================================================================
-</code></pre><h2 id="对模型诊断">对模型诊断</h2>
+</code></pre>
+
+<h2 id="对模型诊断">对模型诊断</h2>
+
 <p>在进行预测之前先进行模型诊断。</p>
+
 <pre><code>model_autoARIMA.plot_diagnostics(figsize=(15,8))
 plt.show()
 model = ARIMA(train_data, order=(3, 1, 2))  
 fitted = model.fit(disp=-1)  
 print(fitted.summary())
-</code></pre><p>结果如下：</p>
+</code></pre>
+
+<p>结果如下：</p>
+
 <pre><code>   ARIMA Model Results                              
 ==============================================================================
 Dep. Variable:                D.Close   No. Observations:                 1157
@@ -488,7 +530,10 @@ AR.3           86.4971           +0.0000j           86.4971            0.0000
 MA.1            1.0000           +0.0000j            1.0000            0.0000
 MA.2           -1.2033           +0.0000j            1.2033            0.5000
 -----------------------------------------------------------------------------
-</code></pre><h2 id="利用模型进行预测">利用模型进行预测</h2>
+</code></pre>
+
+<h2 id="利用模型进行预测">利用模型进行预测</h2>
+
 <pre><code>fc, se, conf = fitted.forecast(129, alpha=0.05)  
 fc_series = pd.Series(fc, index=test_data.index)
 lower_series = pd.Series(conf[:, 0], index=test_data.index)
@@ -504,26 +549,42 @@ plt.xlabel('Time')
 plt.ylabel('Tesla Stock  Price')
 plt.legend(loc='upper left', fontsize=8)
 plt.show()
-</code></pre><p>得到预测结果如下：</p>
-<p><img src="/images/economy/stock-telsa-predict.png" alt=""></p>
+</code></pre>
+
+<p>得到预测结果如下：</p>
+
+<p><img src="/images/economy/stock-telsa-predict.png" alt="" /></p>
+
 <h2 id="分析预测结果">分析预测结果</h2>
+
 <p>从上面预测结果可以看出：</p>
+
 <ol>
 <li>预测结果与实际股票的上涨趋势相同，但是其中的路径还是相差很多，直接说明不适合指导具体交易，只能做为长期趋势判断的参考</li>
 <li>这个模型还需要大量进行测试，如调整数据，调整模型参数</li>
 </ol>
+
 <h1 id="总结">总结</h1>
+
 <p>这里是简单介绍一下利用numpy与pmdarima来预测股票变化趋势。实际上应用过程上需要充分的测试与验证，还需要大量的工作。像这上面这样的方式来预测股票价格是不靠谱的。有靠谱的模型也需要自己大量投入时间与大量的数据以及不断的验证与调整才可以的（别人靠谱的模型是不会免费分享的）。对于个人来说，投入这个成本是否值得又是另一个问题。对于大部分人来说没有必要投入这个成本通过机器学习来预测股票价格变化。这个进入门槛比较高（预测股票价格与预报天气是两回事），从中获得收益的门槛更高。</p>
+
 <p>下一篇会具体讨论一下预测股票变化的数学原理。再根据这些数学原理如何优化模型。</p>
+
 <p>说明：</p>
+
 <ol>
 <li>本文只是进行一个过程展示</li>
 <li>本文中的模型只供参考，不能用于实际的股票投资与交易。股市有风险，入市当小心。</li>
 </ol>
+
 <h1 id="欢迎关注">欢迎关注</h1>
+
 <p>欢迎关注微信公众帐号：沉风网事(savewind)</p>
-<p><img src="/images/cfws.jpg" alt="沉风网事"></p>
+
+<p><img src="/images/cfws.jpg" alt="沉风网事" /></p>
+
 <h1 id="参考">参考</h1>
+
 <ol>
 <li><a href="https://pypi.org/project/pmdarima/">pmdarima</a></li>
 </ol>
