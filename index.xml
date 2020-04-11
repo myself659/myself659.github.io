@@ -484,7 +484,7 @@ go1.12.1版本实现
       
       <guid>https://myself659.github.io/2019/08/08/install-python37/</guid>
       <description>说明 完全是为了记录自己的操作记录，换一台新机器真是免不了要装python。记录下来，便于以后操作。
-apt-get安装 apt update apt install software-properties-common add-apt-repository ppa:deadsnakes/ppa apt install python3.7  源码安装 sudo apt update sudo apt install build-essential zlib1g-dev libncurses5-dev libgdbm-dev libnss3-dev libssl-dev libreadline-dev libffi-dev wget wget https://www.python.org/ftp/python/3.7.3/Python-3.7.3.tar.xz tar -xf Python-3.7.3.tar.xz cd Python-3.7.3 ./configure --enable-optimizations make make altinstall  install pip apt-get install python3-pip  install virutalenv pip3 install virtualenv  install jupyter python3 -m pip install --upgrade pip python3 -m pip install jupyter  参考  Managing Multiple Versions of Python on Ubuntu  欢迎关注 欢迎关注微信公众帐号：沉风网事(savewind)</description>
+apt-get安装 apt update apt install software-properties-common add-apt-repository ppa:deadsnakes/ppa apt install python3.7  源码安装 sudo apt update sudo apt install build-essential zlib1g-dev libncurses5-dev libgdbm-dev libnss3-dev libssl-dev libreadline-dev libffi-dev wget wget https://www.python.org/ftp/python/3.7.3/Python-3.7.3.tar.xz tar -xf Python-3.7.3.tar.xz cd Python-3.7.3 ./configure --enable-optimizations make make altinstall  install pip apt-get install python3-pip  install virutalenv pip3 install virtualenv  install jupyter python3 -m pip install --upgrade pip python3 -m pip install jupyter  pip basic 查看包状态 pip show pkgname  更新包 pip install -U pkgname  参考  Managing Multiple Versions of Python on Ubuntu  欢迎关注 欢迎关注微信公众帐号：沉风网事(savewind)</description>
     </item>
     
     <item>
@@ -887,10 +887,10 @@ Why Golang  个人及其团队主要成员都有Golang经验 Golang在区块链�
     
     <item>
       <title>区块链开启游戏的新时代</title>
-      <link>https://myself659.github.io/2018/07/21/%E5%8C%BA%E5%9D%97%E9%93%BE%E5%BC%80%E5%90%AF%E6%B8%B8%E6%88%8F%E7%9A%84%E6%96%B0%E6%97%B6%E4%BB%A3/</link>
+      <link>https://myself659.github.io/2018/07/21/blockchain-new-game-time/</link>
       <pubDate>Sat, 21 Jul 2018 11:58:06 +0200</pubDate>
       
-      <guid>https://myself659.github.io/2018/07/21/%E5%8C%BA%E5%9D%97%E9%93%BE%E5%BC%80%E5%90%AF%E6%B8%B8%E6%88%8F%E7%9A%84%E6%96%B0%E6%97%B6%E4%BB%A3/</guid>
+      <guid>https://myself659.github.io/2018/07/21/blockchain-new-game-time/</guid>
       <description>自2008年比特币诞生以来，其代表的区链技术的发展程度令人兴奋，区块链很快就成为日常生活中的流行语。特别是对于游戏行业，区块链能够带来新的游戏互动和体验方式，这种互动和体验方式有如下三个特点：
  玩家成为利益相关者 公正透明 大规模协作  下面对这三个特点分别说明：
 玩家成为利益的创造者与参与者 Play2Live平台是互动功能和货币化工具的独特组合。这项针对视频广播游戏和网络体育内容的服务允许每个参与者赚取收益，包括流媒体服务商和普通观众。
@@ -2140,6 +2140,15 @@ min = b ^ ((a ^ b) &amp;amp;-(a&amp;lt;b));  分两种情况分析如下：
       <description>每周完成一个ARTS： 1.Algorithm：每周至少做一个 leetcode 的算法题 2.Review：阅读并点评至少一篇英文技术文章 3.Tip：学习至少一个技术技巧 4.Share：分享一篇有观点和思考的技术文章 +++ banner = &amp;ldquo;&amp;rdquo; categories = [&amp;ldquo;DataStruct&amp;rdquo;] date = &amp;ldquo;2019-03-08T11:58:06+02:00&amp;rdquo; description = &amp;ldquo;&amp;rdquo; images = [] menu = &amp;ldquo;&amp;rdquo; tags = [&amp;ldquo;DataStruct&amp;rdquo;] title = &amp;ldquo;作恶的矿工们&amp;rdquo; draft = true +++
  Algorithm leetcode-42 42. Trapping Rain Water
 Desc Given n non-negative integers representing an elevation map where the width of each bar is 1, compute how much water it is able to trap after raining.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://myself659.github.io/1/01/01/blockchain-coronavirus/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://myself659.github.io/1/01/01/blockchain-coronavirus/</guid>
+      <description> 参考  Token Economies in times of Covid-19  </description>
     </item>
     
     <item>

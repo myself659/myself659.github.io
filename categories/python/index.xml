@@ -18,7 +18,7 @@
       
       <guid>https://myself659.github.io/2019/08/08/install-python37/</guid>
       <description>说明 完全是为了记录自己的操作记录，换一台新机器真是免不了要装python。记录下来，便于以后操作。
-apt-get安装 apt update apt install software-properties-common add-apt-repository ppa:deadsnakes/ppa apt install python3.7  源码安装 sudo apt update sudo apt install build-essential zlib1g-dev libncurses5-dev libgdbm-dev libnss3-dev libssl-dev libreadline-dev libffi-dev wget wget https://www.python.org/ftp/python/3.7.3/Python-3.7.3.tar.xz tar -xf Python-3.7.3.tar.xz cd Python-3.7.3 ./configure --enable-optimizations make make altinstall  install pip apt-get install python3-pip  install virutalenv pip3 install virtualenv  install jupyter python3 -m pip install --upgrade pip python3 -m pip install jupyter  参考  Managing Multiple Versions of Python on Ubuntu  欢迎关注 欢迎关注微信公众帐号：沉风网事(savewind)</description>
+apt-get安装 apt update apt install software-properties-common add-apt-repository ppa:deadsnakes/ppa apt install python3.7  源码安装 sudo apt update sudo apt install build-essential zlib1g-dev libncurses5-dev libgdbm-dev libnss3-dev libssl-dev libreadline-dev libffi-dev wget wget https://www.python.org/ftp/python/3.7.3/Python-3.7.3.tar.xz tar -xf Python-3.7.3.tar.xz cd Python-3.7.3 ./configure --enable-optimizations make make altinstall  install pip apt-get install python3-pip  install virutalenv pip3 install virtualenv  install jupyter python3 -m pip install --upgrade pip python3 -m pip install jupyter  pip basic 查看包状态 pip show pkgname  更新包 pip install -U pkgname  参考  Managing Multiple Versions of Python on Ubuntu  欢迎关注 欢迎关注微信公众帐号：沉风网事(savewind)</description>
     </item>
     
   </channel>
