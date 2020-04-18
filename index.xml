@@ -6,10 +6,33 @@
     <description>Recent content on 沉风网事</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sat, 11 Apr 2020 11:58:06 +0200</lastBuildDate>
+    <lastBuildDate>Fri, 17 Apr 2020 11:58:06 +0200</lastBuildDate>
     
 	<atom:link href="https://myself659.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>libra的妥协与机会</title>
+      <link>https://myself659.github.io/2020/04/17/libra2-basic/</link>
+      <pubDate>Fri, 17 Apr 2020 11:58:06 +0200</pubDate>
+      
+      <guid>https://myself659.github.io/2020/04/17/libra2-basic/</guid>
+      <description>2019年6月libra横空出世。我写了一篇关于libra的文章：Facebook libra是昙花一现还是星星之火。
+文章的提到：
+ 对，Libra最大的问题就是监管。由于Facebook是一个全球化公司，涉及不同的国家，这些国家的法律与政策也不尽相同。这对于Libra就是一个巨大的挑战。至于很多人担心Libra会不会是昙花一现，直接被扼杀在摇篮？前面有USDT的先例。答案是不会的，美帝的民主制度，都会有一番流程与讨论，估计过程并不会一帆风顺。有了美帝的放行，在其他的国家开展也就铺平了道路。
+如果Libra coin要挑战美元，那么美元就是Libra的最大竞争对手，这个挑战很大，近期应该不会出现。
+ 想想小扎与libra的总负责人Mr Marcus在国会受虐。libra在监管方面却不是一帆风顺，可以说是饱经折磨。
+libra在新发布的白皮书，放弃挑战美元，相反而是走上与美元相互成就的道路。说一句话题外话：人民币要加油！（人民币只有开启自由兑换，人民币的国际化才算开始。）
+建立一套简单的、无国界的货币和为数十亿人服 务的金融基础设施 组成三大块： 1. 它建立在安全、可扩展和可靠的区块链基础上； 2. 它以赋予其内在价值的资产储备为后盾； 3. 它由独立的 Libra 协会治理，该协会的任务是促进此金融生态系统的发展。 -- 妥协 libra在新版白皮书做了以下妥协：
+ 提供单币种稳定币如美元与欧元 放弃未来向无许可公链的发展目标 加强合规，提高系统的安全性  总之，面对各国政府强监管的要求，libra选择断臂求生，主动拥抱美元，从挑战所有的法币，转而帮助美元维护霸权。
+机会 加入libra生态 加入libra生态有以几种选择：
+1、指定经销商； 2、在金融行动特别工作组（FATF）成员司法管辖区中注册或获得许可的虚拟资产服务提供商（VASP，包括交易所和托管钱包），或是在FATF成员管辖区中注册或获得许可、并且根据此类许可或注册执行虚拟资产服务提供商活动（受监管的虚拟资产服务提供商）的虚拟资产服务提供商； 3、已完成由 Libra 协会批准的认证程序的虚拟资产服务提供商（认证的虚拟资产服务提供商）； 4、寻求通过 Libra 网络（无托管钱包）进行交易或提供服务的其他个人和实体。
+基本任何人都可以选择第四方式，这种方式基本上无资质门槛。
+参与基础设施建设 基础设施先行。参与基础设施如成为验证节点，验证节点是否有经济激励暂不可知，但是有很多信息优势与先发优势。
+技术先行 如果感兴趣可以学习一下rust。最重要是学习move，libra上线后基于move的智能合约有一个爆发的过程。
+研究集成libra的平台 libra是facebook主导，相信facebook旗下的app都会集成libra。这些app如instagram，whatapp， messager，facebook都是10亿级用户。各种新机会参考支付宝与微信支付。机会肯定不少。以太坊的一些成功应用都值得借鉴。
+欢迎关注 欢迎关注微信公众帐号：沉风网事(savewind)</description>
+    </item>
     
     <item>
       <title>我是如何学会冥想的</title>
@@ -1661,7 +1684,7 @@ type=USER_AUTH msg=audit(1491669519.156:15631): pid=22938 uid=0 auid=4294967295 
       <pubDate>Sat, 18 Mar 2017 21:49:20 +0200</pubDate>
       
       <guid>https://myself659.github.io/2017/03/18/leetcode/</guid>
-      <description></description>
+      <description>数据结构与算法实践</description>
     </item>
     
     <item>
