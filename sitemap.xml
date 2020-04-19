@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://myself659.github.io/2020/04/19/coronavirus-change/</loc>
+    <lastmod>2020-04-19T11:58:06+02:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://myself659.github.io/2020/04/17/libra2-basic/</loc>
     <lastmod>2020-04-17T11:58:06+02:00</lastmod>
   </url>
@@ -710,6 +715,18 @@
   </url>
   
   <url>
+    <loc>https://myself659.github.io/tags/economy/</loc>
+    <lastmod>2020-04-19T11:58:06+02:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://myself659.github.io/categories/economy/</loc>
+    <lastmod>2020-04-19T11:58:06+02:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://myself659.github.io/tags/english/</loc>
     <lastmod>2018-01-25T11:58:06+02:00</lastmod>
     <priority>0</priority>
@@ -837,7 +854,7 @@
   
   <url>
     <loc>https://myself659.github.io/post/</loc>
-    <lastmod>2020-04-17T11:58:06+02:00</lastmod>
+    <lastmod>2020-04-19T11:58:06+02:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -951,7 +968,7 @@
   
   <url>
     <loc>https://myself659.github.io/</loc>
-    <lastmod>2020-04-17T11:58:06+02:00</lastmod>
+    <lastmod>2020-04-19T11:58:06+02:00</lastmod>
     <priority>0</priority>
   </url>
   
