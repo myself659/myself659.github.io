@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="zh-cn">
 <head>
-    <title>投资美股，先从数据分析开始 &middot; 沉风网事</title>
+    <title>谈谈数字货币反脆弱性 &middot; 沉风网事</title>
     <meta name="generator" content="Hugo 0.54.0" />
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -10,7 +10,7 @@
       <meta name="description" content="沉风网事，以人为本，尊重事实与原理，立足现实，以科技与金融为驱动，中西结合，虚实相应，主要关注互联网，系统架构，区块链，安全，经济，数据等领域">
     
     
-    <link rel="canonical" href="https://myself659.github.io/2020/02/06/stock-us-data/"/>
+    <link rel="canonical" href="https://myself659.github.io/2018/09/08/cryptocurrency_antifrangible/"/>
     <link rel="icon" href="https://myself659.github.io/favicon.ico">
     <link rel="apple-touch-icon" href="https://myself659.github.io/apple-touch-icon.png"/>
     <link rel="stylesheet" href="https://myself659.github.io/css/style.css">
@@ -20,63 +20,75 @@
     
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400italic,400,600' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Source+Code+Pro' rel='stylesheet' type='text/css'>
-    <meta property="og:title" content="投资美股，先从数据分析开始" />
-<meta property="og:description" content="背景 川大爷，常在twitter上吆喝美股多次创造历史高点。美股确实是一个资产配置的重要选项。
-在进入市场之前，研究先行，作好功课。
-获取数据 对于一个公司的股票的研究与分析有多个方面。这里只看股票的数据情况。 既然是分析数据，那么如何获取获取呢？
-这个问题可以拆为以下问题：
- 从哪里找数据？ 如何得到这些数据？  先从第一个问题开始：从哪里找数据？美股的数据来源来很多，这里我直接选择了yahoo财经数据。 主要原因如下：
- yahoo财经数据详细 yahoo财经可以直接通过api获取，使用方便 最重要地一点，yahoo财经的api没有被墙，如果被墙了，也支持代理 yahoo财经数据实时性也不错，除了交易日当天的数据无法获取，其他的都可以获取  下面我们就看如何调用api获取数据。不多说了，直接上代码。
-import pandas as pd import yfinance as yf tsla_df = yf.download(&#39;TSLA&#39;, start=&#39;2020-01-01&#39;, end=&#39;2020-02-06&#39;, progress=False) tsla_df.tail()  具体结果如下：
-获取ticker数据：
-%matplotlib notebook ticker = yf.Ticker(&#39;TSLA&#39;) tsla_df = ticker.history(period=&quot;max&quot;) tsla_df.head() tsla_df[&#39;Close&#39;].plot(title=&quot;Telsa&#39;s stock price&quot;)  具体结果如下：
-这些数据都可以股票软件都可以看到。 对的，下面说一下通过api获取原始数据的好处。
-灵活地获取ticker数据：
-%matplotlib notebook tsla_df = yf.download(&quot;TSLA&quot;, start=&quot;2020-02-01&quot;, end=&quot;2020-02-06&quot;, interval = &quot;15m&quot;) tsla_df[&#39;Close&#39;].plot(title=&quot;TSLA FROM 2020-02-01 TO 2020-02-06 &quot;)  具体结果如下： 股票对比分析：" />
+    <meta property="og:title" content="谈谈数字货币反脆弱性" />
+<meta property="og:description" content="定义 首先我们来看一下反脆弱性的定义。这里直接借用：
+ 有些事情能从冲击中受益，当暴露在波动性、随机性、混乱和压力、风险和不确定性下时，它们反而能茁壮成长和壮大。不过，尽管这一现象无处不在，我们还没有一个词来形容脆弱性的对立面。所以，不妨叫它反脆弱性（antifragile）吧。
+ 接下来我们来探究一下数字货币反脆弱性体现在哪些方面？需要说明说明这里的数字货币是指比特币和以太坊。
+具体如下：
+ 构建在坚实的科学基础之上
+ 强大的抗打击能力 去中心化组织 保持开放性 开拓独特性并保持领先
+  构建在坚实的科学基础之上 比特币与以太坊都是构建在数学、密码学、计算机科学等基础之上。以比特币为例，比特币的技术由密码学、分布式帐本、PoW共识、P2P等组成。这些技术都得到无数次实践证明或者简单可靠。正是因为有这些科学基础，整个比特币系统一直可靠运行，没有出现一笔交易错误。
+强大的抗打击能力 以比特币为例，比特币具有很强的抗打击能力。比特币曾被媒体宣布死亡近400次，被部分政府定义为非法，打击比特币交易，自身生态也遭受到交易所被盗、比特币分叉之争等重大事故，但是到了现在，比特币的链上交易依然活跃，始终稳居加密货币王座，同时也是每个月开发更新最多最频繁的加密货币。
+去中心化组织 比特币节点网络是一个去中心化组织，类似于海星，具有极强的生命力：
+ 海星这种生物是没有头的，它的智能控制分布在肢体的各个部分，砍掉海星的一条手臂，这个手臂可以演化成另一个海星。海星就是一个去中心化的组织系统。
+ 比特币网络由千千万万的节点（矿工）组成，这些节点维护网络安全和共识账本，即使一部分节点掉线甚至退出，也不影响比特币整个网络的运行，整个网络具有极强的高可用性。同时这种多个节点运行的模式，也有利于对抗攻击。
+保持开放性 无论是比特币还是以太坊都有很好的开放性，其开放性体现如下：
+ 节点自由加入与退出 代码开源 社区开放，支持各种BIP与EIP，促进比特币与以太坊不断进化  开拓独特性并保持领先 独特性意味着不可替代性，并且会拥有独特性带来的先发优势。
+比特币是数字加密货币的鼻祖，同时也是第一个抗通胀的数字资产，是当之无愧的数字黄金，从诞生开始一直保持市值第一，在整个熊市过程中比特币的所占的市值份额是增长趋势。
+以太坊首先实现智能合约，并一直保持最大智能合约平台。
+后记 说明一下，虽然数字货币价格波动范围较大，但是从一个货币的角度来看数字货币具有很强的反脆弱性。个人投资由于价格波动大而出局，体现了数字货币系统的遍历性。" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://myself659.github.io/2020/02/06/stock-us-data/" />
-<meta property="article:published_time" content="2020-02-06T11:58:06&#43;02:00"/>
-<meta property="article:modified_time" content="2020-02-06T11:58:06&#43;02:00"/>
+<meta property="og:url" content="https://myself659.github.io/2018/09/08/cryptocurrency_antifrangible/" />
+<meta property="article:published_time" content="2018-09-08T11:58:06&#43;02:00"/>
+<meta property="article:modified_time" content="2018-09-08T11:58:06&#43;02:00"/>
 
     
     
-<meta itemprop="name" content="投资美股，先从数据分析开始">
-<meta itemprop="description" content="背景 川大爷，常在twitter上吆喝美股多次创造历史高点。美股确实是一个资产配置的重要选项。
-在进入市场之前，研究先行，作好功课。
-获取数据 对于一个公司的股票的研究与分析有多个方面。这里只看股票的数据情况。 既然是分析数据，那么如何获取获取呢？
-这个问题可以拆为以下问题：
- 从哪里找数据？ 如何得到这些数据？  先从第一个问题开始：从哪里找数据？美股的数据来源来很多，这里我直接选择了yahoo财经数据。 主要原因如下：
- yahoo财经数据详细 yahoo财经可以直接通过api获取，使用方便 最重要地一点，yahoo财经的api没有被墙，如果被墙了，也支持代理 yahoo财经数据实时性也不错，除了交易日当天的数据无法获取，其他的都可以获取  下面我们就看如何调用api获取数据。不多说了，直接上代码。
-import pandas as pd import yfinance as yf tsla_df = yf.download(&#39;TSLA&#39;, start=&#39;2020-01-01&#39;, end=&#39;2020-02-06&#39;, progress=False) tsla_df.tail()  具体结果如下：
-获取ticker数据：
-%matplotlib notebook ticker = yf.Ticker(&#39;TSLA&#39;) tsla_df = ticker.history(period=&quot;max&quot;) tsla_df.head() tsla_df[&#39;Close&#39;].plot(title=&quot;Telsa&#39;s stock price&quot;)  具体结果如下：
-这些数据都可以股票软件都可以看到。 对的，下面说一下通过api获取原始数据的好处。
-灵活地获取ticker数据：
-%matplotlib notebook tsla_df = yf.download(&quot;TSLA&quot;, start=&quot;2020-02-01&quot;, end=&quot;2020-02-06&quot;, interval = &quot;15m&quot;) tsla_df[&#39;Close&#39;].plot(title=&quot;TSLA FROM 2020-02-01 TO 2020-02-06 &quot;)  具体结果如下： 股票对比分析：">
+<meta itemprop="name" content="谈谈数字货币反脆弱性">
+<meta itemprop="description" content="定义 首先我们来看一下反脆弱性的定义。这里直接借用：
+ 有些事情能从冲击中受益，当暴露在波动性、随机性、混乱和压力、风险和不确定性下时，它们反而能茁壮成长和壮大。不过，尽管这一现象无处不在，我们还没有一个词来形容脆弱性的对立面。所以，不妨叫它反脆弱性（antifragile）吧。
+ 接下来我们来探究一下数字货币反脆弱性体现在哪些方面？需要说明说明这里的数字货币是指比特币和以太坊。
+具体如下：
+ 构建在坚实的科学基础之上
+ 强大的抗打击能力 去中心化组织 保持开放性 开拓独特性并保持领先
+  构建在坚实的科学基础之上 比特币与以太坊都是构建在数学、密码学、计算机科学等基础之上。以比特币为例，比特币的技术由密码学、分布式帐本、PoW共识、P2P等组成。这些技术都得到无数次实践证明或者简单可靠。正是因为有这些科学基础，整个比特币系统一直可靠运行，没有出现一笔交易错误。
+强大的抗打击能力 以比特币为例，比特币具有很强的抗打击能力。比特币曾被媒体宣布死亡近400次，被部分政府定义为非法，打击比特币交易，自身生态也遭受到交易所被盗、比特币分叉之争等重大事故，但是到了现在，比特币的链上交易依然活跃，始终稳居加密货币王座，同时也是每个月开发更新最多最频繁的加密货币。
+去中心化组织 比特币节点网络是一个去中心化组织，类似于海星，具有极强的生命力：
+ 海星这种生物是没有头的，它的智能控制分布在肢体的各个部分，砍掉海星的一条手臂，这个手臂可以演化成另一个海星。海星就是一个去中心化的组织系统。
+ 比特币网络由千千万万的节点（矿工）组成，这些节点维护网络安全和共识账本，即使一部分节点掉线甚至退出，也不影响比特币整个网络的运行，整个网络具有极强的高可用性。同时这种多个节点运行的模式，也有利于对抗攻击。
+保持开放性 无论是比特币还是以太坊都有很好的开放性，其开放性体现如下：
+ 节点自由加入与退出 代码开源 社区开放，支持各种BIP与EIP，促进比特币与以太坊不断进化  开拓独特性并保持领先 独特性意味着不可替代性，并且会拥有独特性带来的先发优势。
+比特币是数字加密货币的鼻祖，同时也是第一个抗通胀的数字资产，是当之无愧的数字黄金，从诞生开始一直保持市值第一，在整个熊市过程中比特币的所占的市值份额是增长趋势。
+以太坊首先实现智能合约，并一直保持最大智能合约平台。
+后记 说明一下，虽然数字货币价格波动范围较大，但是从一个货币的角度来看数字货币具有很强的反脆弱性。个人投资由于价格波动大而出局，体现了数字货币系统的遍历性。">
 
 
-<meta itemprop="datePublished" content="2020-02-06T11:58:06&#43;02:00" />
-<meta itemprop="dateModified" content="2020-02-06T11:58:06&#43;02:00" />
-<meta itemprop="wordCount" content="240">
+<meta itemprop="datePublished" content="2018-09-08T11:58:06&#43;02:00" />
+<meta itemprop="dateModified" content="2018-09-08T11:58:06&#43;02:00" />
+<meta itemprop="wordCount" content="29">
 
 
 
-<meta itemprop="keywords" content="Data," />
+<meta itemprop="keywords" content="BlockChain," />
 
     <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="投资美股，先从数据分析开始"/>
-<meta name="twitter:description" content="背景 川大爷，常在twitter上吆喝美股多次创造历史高点。美股确实是一个资产配置的重要选项。
-在进入市场之前，研究先行，作好功课。
-获取数据 对于一个公司的股票的研究与分析有多个方面。这里只看股票的数据情况。 既然是分析数据，那么如何获取获取呢？
-这个问题可以拆为以下问题：
- 从哪里找数据？ 如何得到这些数据？  先从第一个问题开始：从哪里找数据？美股的数据来源来很多，这里我直接选择了yahoo财经数据。 主要原因如下：
- yahoo财经数据详细 yahoo财经可以直接通过api获取，使用方便 最重要地一点，yahoo财经的api没有被墙，如果被墙了，也支持代理 yahoo财经数据实时性也不错，除了交易日当天的数据无法获取，其他的都可以获取  下面我们就看如何调用api获取数据。不多说了，直接上代码。
-import pandas as pd import yfinance as yf tsla_df = yf.download(&#39;TSLA&#39;, start=&#39;2020-01-01&#39;, end=&#39;2020-02-06&#39;, progress=False) tsla_df.tail()  具体结果如下：
-获取ticker数据：
-%matplotlib notebook ticker = yf.Ticker(&#39;TSLA&#39;) tsla_df = ticker.history(period=&quot;max&quot;) tsla_df.head() tsla_df[&#39;Close&#39;].plot(title=&quot;Telsa&#39;s stock price&quot;)  具体结果如下：
-这些数据都可以股票软件都可以看到。 对的，下面说一下通过api获取原始数据的好处。
-灵活地获取ticker数据：
-%matplotlib notebook tsla_df = yf.download(&quot;TSLA&quot;, start=&quot;2020-02-01&quot;, end=&quot;2020-02-06&quot;, interval = &quot;15m&quot;) tsla_df[&#39;Close&#39;].plot(title=&quot;TSLA FROM 2020-02-01 TO 2020-02-06 &quot;)  具体结果如下： 股票对比分析："/>
+<meta name="twitter:title" content="谈谈数字货币反脆弱性"/>
+<meta name="twitter:description" content="定义 首先我们来看一下反脆弱性的定义。这里直接借用：
+ 有些事情能从冲击中受益，当暴露在波动性、随机性、混乱和压力、风险和不确定性下时，它们反而能茁壮成长和壮大。不过，尽管这一现象无处不在，我们还没有一个词来形容脆弱性的对立面。所以，不妨叫它反脆弱性（antifragile）吧。
+ 接下来我们来探究一下数字货币反脆弱性体现在哪些方面？需要说明说明这里的数字货币是指比特币和以太坊。
+具体如下：
+ 构建在坚实的科学基础之上
+ 强大的抗打击能力 去中心化组织 保持开放性 开拓独特性并保持领先
+  构建在坚实的科学基础之上 比特币与以太坊都是构建在数学、密码学、计算机科学等基础之上。以比特币为例，比特币的技术由密码学、分布式帐本、PoW共识、P2P等组成。这些技术都得到无数次实践证明或者简单可靠。正是因为有这些科学基础，整个比特币系统一直可靠运行，没有出现一笔交易错误。
+强大的抗打击能力 以比特币为例，比特币具有很强的抗打击能力。比特币曾被媒体宣布死亡近400次，被部分政府定义为非法，打击比特币交易，自身生态也遭受到交易所被盗、比特币分叉之争等重大事故，但是到了现在，比特币的链上交易依然活跃，始终稳居加密货币王座，同时也是每个月开发更新最多最频繁的加密货币。
+去中心化组织 比特币节点网络是一个去中心化组织，类似于海星，具有极强的生命力：
+ 海星这种生物是没有头的，它的智能控制分布在肢体的各个部分，砍掉海星的一条手臂，这个手臂可以演化成另一个海星。海星就是一个去中心化的组织系统。
+ 比特币网络由千千万万的节点（矿工）组成，这些节点维护网络安全和共识账本，即使一部分节点掉线甚至退出，也不影响比特币整个网络的运行，整个网络具有极强的高可用性。同时这种多个节点运行的模式，也有利于对抗攻击。
+保持开放性 无论是比特币还是以太坊都有很好的开放性，其开放性体现如下：
+ 节点自由加入与退出 代码开源 社区开放，支持各种BIP与EIP，促进比特币与以太坊不断进化  开拓独特性并保持领先 独特性意味着不可替代性，并且会拥有独特性带来的先发优势。
+比特币是数字加密货币的鼻祖，同时也是第一个抗通胀的数字资产，是当之无愧的数字黄金，从诞生开始一直保持市值第一，在整个熊市过程中比特币的所占的市值份额是增长趋势。
+以太坊首先实现智能合约，并一直保持最大智能合约平台。
+后记 说明一下，虽然数字货币价格波动范围较大，但是从一个货币的角度来看数字货币具有很强的反脆弱性。个人投资由于价格波动大而出局，体现了数字货币系统的遍历性。"/>
 
     
 
@@ -319,9 +331,9 @@ import pandas as pd import yfinance as yf tsla_df = yf.download(&#39;TSLA&#39;, 
         
 
         <header class="article-header">
-    <a href="https://myself659.github.io/2020/02/06/stock-us-data/">
+    <a href="https://myself659.github.io/2018/09/08/cryptocurrency_antifrangible/">
     <h1 class="article-title" itemprop="name">
-        投资美股，先从数据分析开始
+        谈谈数字货币反脆弱性
     </h1>
     </a>
     <div class="article-meta">
@@ -329,12 +341,12 @@ import pandas as pd import yfinance as yf tsla_df = yf.download(&#39;TSLA&#39;, 
         
         <div class="article-date">
             <i class="fa fa-calendar"></i>
-            <time datetime="2020-02-06 11:58:06 &#43;0200 &#43;0200" itemprop="datePublished">2020-02-06</time>
+            <time datetime="2018-09-08 11:58:06 &#43;0200 &#43;0200" itemprop="datePublished">2018-09-08</time>
             &middot;
-            240
+            29
             words
             &middot;
-            2
+            1
             minute read
         </div>
         
@@ -345,7 +357,7 @@ import pandas as pd import yfinance as yf tsla_df = yf.download(&#39;TSLA&#39;, 
                 <i class="fa fa-folder"></i>
                 
                 
-                <a class="article-category-link" href="https://myself659.github.io/categories/data">Data</a>
+                <a class="article-category-link" href="https://myself659.github.io/categories/blockchain">BlockChain</a>
                 
                 
             </div>
@@ -359,7 +371,7 @@ import pandas as pd import yfinance as yf tsla_df = yf.download(&#39;TSLA&#39;, 
                 <i class="fa fa-tags"></i>
                 
                 
-                <a class="article-category-link" href="https://myself659.github.io/tags/data">Data</a>
+                <a class="article-category-link" href="https://myself659.github.io/tags/blockchain">BlockChain</a>
                 
                 
             </div>
@@ -371,176 +383,92 @@ import pandas as pd import yfinance as yf tsla_df = yf.download(&#39;TSLA&#39;, 
         <div class="article-entry" itemprop="articleBody">
             
 
-<!-- TELSA股票数据分析  -->
+<h1 id="定义">定义</h1>
 
-<h1 id="背景">背景</h1>
+<p>首先我们来看一下反脆弱性的定义。这里直接借用：</p>
 
-<p>川大爷，常在twitter上吆喝美股多次创造历史高点。美股确实是一个资产配置的重要选项。</p>
+<blockquote>
+<p>有些事情能从冲击中受益，当暴露在波动性、随机性、混乱和压力、风险和不确定性下时，它们反而能茁壮成长和壮大。不过，尽管这一现象无处不在，我们还没有一个词来形容脆弱性的对立面。所以，不妨叫它反脆弱性（antifragile）吧。</p>
+</blockquote>
 
-<p>在进入市场之前，研究先行，作好功课。</p>
+<p>接下来我们来探究一下数字货币反脆弱性体现在哪些方面？需要说明说明这里的数字货币是指比特币和以太坊。</p>
 
-<h1 id="获取数据">获取数据</h1>
-
-<p>对于一个公司的股票的研究与分析有多个方面。这里只看股票的数据情况。 既然是分析数据，那么如何获取获取呢？</p>
-
-<p>这个问题可以拆为以下问题：</p>
+<p>具体如下：</p>
 
 <ol>
-<li>从哪里找数据？</li>
-<li>如何得到这些数据？</li>
+<li>构建在坚实的科学基础之上<br /></li>
+<li>强大的抗打击能力</li>
+<li>去中心化组织</li>
+<li>保持开放性</li>
+<li>开拓独特性并保持领先<br /></li>
 </ol>
 
-<p>先从第一个问题开始：从哪里找数据？美股的数据来源来很多，这里我直接选择了yahoo财经数据。
-主要原因如下：</p>
+<h1 id="构建在坚实的科学基础之上">构建在坚实的科学基础之上</h1>
+
+<p>比特币与以太坊都是构建在数学、密码学、计算机科学等基础之上。以比特币为例，比特币的技术由密码学、分布式帐本、PoW共识、P2P等组成。这些技术都得到无数次实践证明或者简单可靠。正是因为有这些科学基础，整个比特币系统一直可靠运行，没有出现一笔交易错误。</p>
+
+<h1 id="强大的抗打击能力">强大的抗打击能力</h1>
+
+<p>以比特币为例，比特币具有很强的抗打击能力。比特币曾被媒体宣布死亡近400次，被部分政府定义为非法，打击比特币交易，自身生态也遭受到交易所被盗、比特币分叉之争等重大事故，但是到了现在，比特币的链上交易依然活跃，始终稳居加密货币王座，同时也是每个月开发更新最多最频繁的加密货币。</p>
+
+<h1 id="去中心化组织">去中心化组织</h1>
+
+<p>比特币节点网络是一个去中心化组织，类似于海星，具有极强的生命力：</p>
+
+<blockquote>
+<p>海星这种生物是没有头的，它的智能控制分布在肢体的各个部分，砍掉海星的一条手臂，这个手臂可以演化成另一个海星。海星就是一个去中心化的组织系统。</p>
+</blockquote>
+
+<p>比特币网络由千千万万的节点（矿工）组成，这些节点维护网络安全和共识账本，即使一部分节点掉线甚至退出，也不影响比特币整个网络的运行，整个网络具有极强的高可用性。同时这种多个节点运行的模式，也有利于对抗攻击。</p>
+
+<!-- 去中心化共识。
+海星的组织。
+
+
+精英主导。
+
+动乱情况下
+
+自治。 -->
+
+<h1 id="保持开放性">保持开放性</h1>
+
+<!-- 节点开放。
+对于未来开放，各种各样的BIP提案。
+比特币代码开源。
+比特币精神内核是开放性。 -->
+
+<p>无论是比特币还是以太坊都有很好的开放性，其开放性体现如下：</p>
 
 <ol>
-<li>yahoo财经数据详细</li>
-<li>yahoo财经可以直接通过api获取，使用方便</li>
-<li>最重要地一点，yahoo财经的api没有被墙，如果被墙了，也支持代理</li>
-<li>yahoo财经数据实时性也不错，除了交易日当天的数据无法获取，其他的都可以获取</li>
+<li>节点自由加入与退出</li>
+<li>代码开源</li>
+<li>社区开放，支持各种BIP与EIP，促进比特币与以太坊不断进化</li>
 </ol>
 
-<p>下面我们就看如何调用api获取数据。不多说了，直接上代码。</p>
+<h1 id="开拓独特性并保持领先">开拓独特性并保持领先</h1>
 
-<pre><code>import pandas as pd
-import yfinance as yf
+<p>独特性意味着不可替代性，并且会拥有独特性带来的先发优势。</p>
 
-tsla_df = yf.download('TSLA', 
-                      start='2020-01-01', 
-                      end='2020-02-06', 
-                      progress=False)
+<p>比特币是数字加密货币的鼻祖，同时也是第一个抗通胀的数字资产，是当之无愧的数字黄金，从诞生开始一直保持市值第一，在整个熊市过程中比特币的所占的市值份额是增长趋势。</p>
 
-tsla_df.tail()
-</code></pre>
-
-<p>具体结果如下：</p>
-
-<p><img src="/images/economy/stock-telsa1.png" alt="" /></p>
-
-<p>获取ticker数据：</p>
-
-<pre><code>%matplotlib notebook
-ticker = yf.Ticker('TSLA')
-
-tsla_df = ticker.history(period=&quot;max&quot;)
-tsla_df.head()
-tsla_df['Close'].plot(title=&quot;Telsa's stock price&quot;)
-</code></pre>
-
-<p>具体结果如下：</p>
-
-<p><img src="/images/economy/stock-telsa-max.png" alt="" /></p>
-
-<p>这些数据都可以股票软件都可以看到。
-对的，下面说一下通过api获取原始数据的好处。</p>
-
-<p>灵活地获取ticker数据：</p>
-
-<pre><code>%matplotlib notebook
-tsla_df = yf.download(&quot;TSLA&quot;, start=&quot;2020-02-01&quot;, end=&quot;2020-02-06&quot;, interval = &quot;15m&quot;)
-tsla_df['Close'].plot(title=&quot;TSLA FROM  2020-02-01 TO 2020-02-06 &quot;)
-</code></pre>
-
-<p>具体结果如下：
-<img src="/images/economy/stock-telsa-timerange.png" alt="" /></p>
-
-<p>股票对比分析：</p>
-
-<pre><code>
-from plotly.offline import download_plotlyjs, init_notebook_mode, iplot
-
-import numpy as np
-import cufflinks as cf
-
-data_tam = yf.download(  # or pdr.get_data_yahoo(...
-        # tickers list or string as well
-        tickers = &quot;TSLA AAPL MSFT&quot;,
-
-        # use &quot;period&quot; instead of start/end
-        # valid periods: 1d,5d,1mo,3mo,6mo,1y,2y,5y,10y,ytd,max
-        # (optional, default is '1mo')
-        period = &quot;5y&quot;,
-
-        # fetch data by interval (including intraday if period &lt; 60 days)
-        # valid intervals: 1m,2m,5m,15m,30m,60m,90m,1h,1d,5d,1wk,1mo,3mo
-        # (optional, default is '1d')
-        interval = &quot;1wk&quot;,
-
-        # group by ticker (to access via data['SPY'])
-        # (optional, default is 'column')
-        group_by = 'ticker',
-
-        # adjust all OHLC automatically
-        # (optional, default is False)
-        auto_adjust = True,
-
-        # download pre/post regular market hours data
-        # (optional, default is False)
-        prepost = True,
-
-        # use threads for mass downloading? (True/False/Integer)
-        # (optional, default is True)
-        threads = True,
-
-        # proxy URL scheme use use when downloading?
-        # (optional, default is None)
-        proxy = None
-    )
-
-data_tam_close = data_tam.iloc[:, [3, 8, 13]]
-data_tam_close = data_tam_close.dropna()
-
-iplot(data_tam_close.iplot(asFigure=True, kind='line', title='TSLA VS MS VS APPLE', dimensions=(800,500)))
-
-</code></pre>
-
-<p>具体结果如下：</p>
-
-<p><img src="/images/economy/stock-telsa-ms-apple.png" alt="" /></p>
-
-<p>一眼可以看出在2020年前任何一个时间点买入telsa并持有是一个正确的选择，投资收益远超过了苹果与微软。</p>
+<p>以太坊首先实现智能合约，并一直保持最大智能合约平台。</p>
 
 <h1 id="后记">后记</h1>
 
-<p>本文主要解决了如何获取美股交易数据的问题，对于这些数据的分析及预测后面再展开。</p>
-
-<h1 id="欢迎关注">欢迎关注</h1>
-
-<p>欢迎关注微信公众帐号：沉风网事(savewind)</p>
-
-<p><img src="/images/cfws.jpg" alt="沉风网事" /></p>
+<p>说明一下，虽然数字货币价格波动范围较大，但是从一个货币的角度来看数字货币具有很强的反脆弱性。个人投资由于价格波动大而出局，体现了数字货币系统的遍历性。</p>
 
 <!-- 
 # 参考 
 
-1. [Web Scraping Yahoo Finance](https://towardsdatascience.com/web-scraping-yahoo-finance-477fe3daa852)
-2. [How to Invest like a Data Scientist - Towards Data Science
-](https://towardsdatascience.com/how-to-invest-like-a-data-scientist-bada78787d57)
-3. [A comprehensive guide to downloading stock prices in Python](https://towardsdatascience.com/a-comprehensive-guide-to-downloading-stock-prices-in-python-2cd93ff821d4)
-4. [How to download the public companies’ earnings calendar in Python](https://towardsdatascience.com/how-to-download-the-public-companies-earnings-calendar-with-python-9241dd3d15d)
-4. [yfinance](https://github.com/ranaroussi/yfinance)
-5. [Tesla’s Stock Is Up 36% in Two Days. What’s Going On?](https://www.nytimes.com/2020/02/04/business/tesla-stock-price.html)
-6. [
-Creating Plotly Charts Directly from Pandas Data Frame](https://nbviewer.jupyter.org/github/pybokeh/jupyter_notebooks/blob/master/plotly/plotly_with_pandas.html)
-
-7. [Best 6 free and paid stock market APIs for 2020](https://towardsdatascience.com/best-free-and-paid-stock-market-apis-for-2020-11adb98e7023)
-8. [tencent quote](https://sg.finance.yahoo.com/quote/0700.HK/)
-9. [360 quoto](https://sg.finance.yahoo.com/quote/601360.SS) 
-10. [finnhub api](https://finnhub.io/docs/api#company-metrics)
-11. [Comparing the best free financial market data APIs](https://towardsdatascience.com/comparing-the-best-free-financial-market-data-apis-158ae73c16ba)
-12. [Impact of Coronavirus on Stock Prices](https://towardsdatascience.com/impact-of-coronavirus-on-stock-prices-41c108c1ec65)
-13. [Free Stock Data for Python Using Yahoo Finance API](https://towardsdatascience.com/free-stock-data-for-python-using-yahoo-finance-api-9dafd96cad2e)
-14. [Build an Algorithmic Trading System](https://towardsdatascience.com/build-an-algorithmic-trading-system-a5b54de5379)
-15. [Finding High Dividend Stocks with Python](https://medium.com/swlh/finding-high-dividend-stocks-with-python-c28e02c14e14)
-16. [How to Easily Fetch Binance Historical Trades Using Python](https://medium.com/@thiago.gcandido/how-to-easily-fetch-your-binance-historical-trades-using-python-174a6569cebd)
-17. [The (Unofficial) Yahoo Finance API](https://towardsdatascience.com/the-unofficial-yahoo-finance-api-32dcf5d53df)
-18. [Best 5 free stock market APIs in 2020](https://towardsdatascience.com/best-5-free-stock-market-apis-in-2019-ad91dddec984)
+1. [反脆弱：在不确定世界的高阶生存之道](https://mp.weixin.qq.com/s/I6Gqe_9c6DsJhFrdZbjJCw)
+2. [总结篇：面对不确定世界的六个关键](https://mp.weixin.qq.com/s/8ViEaBtZyrc5w1qJUfm8BQ) 
 
 -->
 
         </div>
         <footer class="article-footer">
-    <a data-url="https://myself659.github.io/2020/02/06/stock-us-data/" data-id="2270fb7832b3b2cc2b4ffcfa2de7b6c5" class="article-share-link">
+    <a data-url="https://myself659.github.io/2018/09/08/cryptocurrency_antifrangible/" data-id="2c21c94b93e50669f92facf9b1c983b6" class="article-share-link">
         <i class="fa fa-share"></i>
         Share
     </a>
@@ -617,20 +545,20 @@ Creating Plotly Charts Directly from Pandas Data Frame](https://nbviewer.jupyter
     
 <nav id="article-nav">
     
-    <a href="https://myself659.github.io/2020/01/30/kobe/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="https://myself659.github.io/2018/09/05/tech-stack-explain/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">
           Older
       </strong>
-      <div class="article-nav-title">说说我眼中的科比</div>
+      <div class="article-nav-title">关于技术选型的思考</div>
     </a>
     
 
     
-    <a href="https://myself659.github.io/2020/02/17/stock-us-analysis/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="https://myself659.github.io/2018/10/15/exchage-safe-arch/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">
           Newer
       </strong>
-      <div class="article-nav-title">通过数据分析预测股票价格变化靠谱吗？</div>
+      <div class="article-nav-title">数字货币交易所安全防护体系介绍</div>
     </a>
     
 </nav>

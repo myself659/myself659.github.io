@@ -17,12 +17,13 @@
       <pubDate>Sun, 24 May 2020 11:58:06 +0200</pubDate>
       
       <guid>https://myself659.github.io/2020/05/24/covid-19-symptom/</guid>
-      <description>新型冠状病毒（Covid-19）在全球的传播与感染速度有一定的控制，但是并没有结束。全世界累计确诊已经超过了500万，累计死亡人数超过了30万。新型冠状病毒是数十年来最危险，最棘手的新型病毒性之一。它可以攻击体内几乎所有器官，并可能造成毁灭性的伤害。
+      <description> 新型冠状病毒（Covid-19）在全球的传播与感染速度有一定的控制，但是并没有结束。全世界累计确诊已经超过了500万，累计死亡人数超过了30万。新型冠状病毒是数十年来最危险，最棘手的新型病毒性之一。它可以攻击体内几乎所有器官，并可能造成毁灭性的伤害。
 下面我们看一下美国发布的新型冠状病毒的症状有哪些？
-上面这张图并没有包括中国前一段时间发出新型冠状病毒可能攻击男性的生殖系统。
+上面这张图并没有包括中国前一段时间发布新型冠状病毒可能攻击男性的生殖系统的内容。
 这些导致这些器官的症状的原因并没有完全的科学解释，医疗界还在研究中。新型冠状病毒是一个新型的病毒，人体是一个复杂的系统，在短短几个月弄清楚其中的原理也是不太现实。
 关于美国发布的这个新型冠状病毒的症状，个人认为还是具有很大的参考价值：
- 美国的感染人数超过了160万，全球第一，有大量的数据和案例提供研究，大量的样本保证其可靠性 这个新型冠状病毒的症状出自美国顶级大学与科研机构之手（当然也是世界顶级，要承认事实） 美国开放性的言论与研究环境  另外全球疫情在全球经济落后，医疗不发达的国家和地区更是难以应对，这会是全球的防控疫情最大的不确定，典型的例子就是巴西，巴西确诊数已经仅次于美国，居于世界第二。</description>
+ 美国的感染人数超过了160万，全球第一，有大量的数据和案例提供研究，大量的样本保证其可靠性 这个新型冠状病毒的症状出自美国顶级大学与科研机构之手（当然也是世界顶级，要承认事实） 美国开放性的言论与研究环境  另外全球疫情在全球经济落后，医疗不发达的国家和地区更是难以应对，这会是全球的防控疫情最大的不确定，典型的例子就是巴西，巴西确诊数已经仅次于美国，居于世界第二。
+参考  Coronavirus May Be a Blood Vessel Disease, Which Explains Everything  </description>
     </item>
     
     <item>
@@ -1024,6 +1025,30 @@ package main import ( &amp;quot;fmt&amp;quot; &amp;quot;net/http&amp;quot; ) fun
     </item>
     
     <item>
+      <title>谈谈数字货币反脆弱性</title>
+      <link>https://myself659.github.io/2018/09/08/cryptocurrency_antifrangible/</link>
+      <pubDate>Sat, 08 Sep 2018 11:58:06 +0200</pubDate>
+      
+      <guid>https://myself659.github.io/2018/09/08/cryptocurrency_antifrangible/</guid>
+      <description>定义 首先我们来看一下反脆弱性的定义。这里直接借用：
+ 有些事情能从冲击中受益，当暴露在波动性、随机性、混乱和压力、风险和不确定性下时，它们反而能茁壮成长和壮大。不过，尽管这一现象无处不在，我们还没有一个词来形容脆弱性的对立面。所以，不妨叫它反脆弱性（antifragile）吧。
+ 接下来我们来探究一下数字货币反脆弱性体现在哪些方面？需要说明说明这里的数字货币是指比特币和以太坊。
+具体如下：
+ 构建在坚实的科学基础之上
+ 强大的抗打击能力 去中心化组织 保持开放性 开拓独特性并保持领先
+  构建在坚实的科学基础之上 比特币与以太坊都是构建在数学、密码学、计算机科学等基础之上。以比特币为例，比特币的技术由密码学、分布式帐本、PoW共识、P2P等组成。这些技术都得到无数次实践证明或者简单可靠。正是因为有这些科学基础，整个比特币系统一直可靠运行，没有出现一笔交易错误。
+强大的抗打击能力 以比特币为例，比特币具有很强的抗打击能力。比特币曾被媒体宣布死亡近400次，被部分政府定义为非法，打击比特币交易，自身生态也遭受到交易所被盗、比特币分叉之争等重大事故，但是到了现在，比特币的链上交易依然活跃，始终稳居加密货币王座，同时也是每个月开发更新最多最频繁的加密货币。
+去中心化组织 比特币节点网络是一个去中心化组织，类似于海星，具有极强的生命力：
+ 海星这种生物是没有头的，它的智能控制分布在肢体的各个部分，砍掉海星的一条手臂，这个手臂可以演化成另一个海星。海星就是一个去中心化的组织系统。
+ 比特币网络由千千万万的节点（矿工）组成，这些节点维护网络安全和共识账本，即使一部分节点掉线甚至退出，也不影响比特币整个网络的运行，整个网络具有极强的高可用性。同时这种多个节点运行的模式，也有利于对抗攻击。
+保持开放性 无论是比特币还是以太坊都有很好的开放性，其开放性体现如下：
+ 节点自由加入与退出 代码开源 社区开放，支持各种BIP与EIP，促进比特币与以太坊不断进化  开拓独特性并保持领先 独特性意味着不可替代性，并且会拥有独特性带来的先发优势。
+比特币是数字加密货币的鼻祖，同时也是第一个抗通胀的数字资产，是当之无愧的数字黄金，从诞生开始一直保持市值第一，在整个熊市过程中比特币的所占的市值份额是增长趋势。
+以太坊首先实现智能合约，并一直保持最大智能合约平台。
+后记 说明一下，虽然数字货币价格波动范围较大，但是从一个货币的角度来看数字货币具有很强的反脆弱性。个人投资由于价格波动大而出局，体现了数字货币系统的遍历性。</description>
+    </item>
+    
+    <item>
       <title>关于技术选型的思考</title>
       <link>https://myself659.github.io/2018/09/05/tech-stack-explain/</link>
       <pubDate>Wed, 05 Sep 2018 11:58:06 +0200</pubDate>
@@ -1156,7 +1181,8 @@ Golang最工程化的语言。
       
       <guid>https://myself659.github.io/2018/06/21/ipfs%E4%B8%93%E9%A2%98/</guid>
       <description> 前言 IPFS（包括filecoin）无论从技术视角还是商业视角都有很多有意思的内容（关键是自己很看好这个技术），所以要准备搞一个IPFS专题。
-文章  IPFS与下一代网络安全 下一代互联网基础：IPFS.pdf  动态  Filecoin 2017 Q4 Update Filecoin 2018 Q1 &amp;amp; Q2 Update Filecoin 2019 Q2 &amp;amp; Q3 Update Filecoin Roadmap Update Q4 2019 IPFS 0.5.0 is here! Our largest upgrade to IPFS yet  参考  ipfs filecoin  </description>
+文章  IPFS与下一代网络安全 下一代互联网基础：IPFS.pdf  动态  Filecoin 2017 Q4 Update Filecoin 2018 Q1 &amp;amp; Q2 Update Filecoin 2019 Q2 &amp;amp; Q3 Update Filecoin Roadmap Update Q4 2019 IPFS 0.5.0 is here! Our largest upgrade to IPFS yet  IPFS和filecoin之间的关系 IPFS是技术，filecoin是商业化。 IPFS+filecoin在一起完成技术商业化，从1到1000。。。
+参考  ipfs filecoin  </description>
     </item>
     
     <item>
@@ -1204,11 +1230,12 @@ Golang最工程化的语言。
       <pubDate>Sat, 05 May 2018 11:58:06 +0200</pubDate>
       
       <guid>https://myself659.github.io/2018/05/05/rd-leadship/</guid>
-      <description>前言 优秀的技术人员与技术管理人员会一直紧缺。一个好的技术管理人员应该有自己的管理及领导指导原则。（Ps：最近在读《原则》这本书，深受其影响，虽然已经有很多人在推荐，这里再推荐一下，这本书真的值得一读。） 结合个人的工作经历与思考，提出自己对研发管理与技术领导的一些原则性思考。
+      <description> 前言 优秀的技术人员与技术管理人员会一直紧缺。一个好的技术管理人员应该有自己的管理及领导指导原则。（Ps：最近在读《原则》这本书，深受其影响，虽然已经有很多人在推荐，这里再推荐一下，这本书真的值得一读。） 结合个人的工作经历与思考，提出自己对研发管理与技术领导的一些原则性思考。
 基本原则 具体如下图所示：
 以业务为中心，从文化，团队，代码，架构四个方面进行出发思考。用一句简单总结一下就是：在先进的文化氛围下，精英团队在科学的架构指导以业务为中心开展各项代码工作（需求，设计，开发，测试，部署，升级）。
 这是一个前进的方向及指导的框架，至于具体的落地需要按阶段与范围的践行。（Ps：中国改革开放40年在遵循一个中心，两个基本点的指导原则下，使中国经济发展取得翻天覆地的巨大变化。）
-欢迎关注 欢迎关注微信公众帐号：沉风网事(savewind)</description>
+欢迎关注 欢迎关注微信公众帐号：沉风网事(savewind)
+参考  Supercell，一家人均贡献超过3600万的公司，如何定义管理？  </description>
     </item>
     
     <item>
@@ -1605,7 +1632,7 @@ C/C++方面  《C与指针》 ☆☆☆☆☆，五星 入门推荐，不要上�
       <pubDate>Mon, 02 Oct 2017 21:49:20 +0200</pubDate>
       
       <guid>https://myself659.github.io/2017/10/02/share-post/</guid>
-      <description>科普  图解计算机科学 Why does time pass? | The Economist A MUST SEE!!! The Most Eye Opening 10 Minutes Of Your Life | Dr. Bruce Lipton Why Do Computers Use 1s and 0s? Binary and Transistors Explained. See How a CPU Works How do computers read code? 100 Amazing How-To Sites to Teach Yourself Anything  数学  The Map of Mathematics  经济  经济机器是怎样运行的(文字版) 经济机器是怎样运行的 (时长30分钟) Ray Dalio  工具 VS Code  VS Code Top-Ten Pro Tips VS Code: The Last Editor You&amp;rsquo;ll Ever Need  chrome  vimium Google Translate Plus   信息 搜索  15 Ways to Search Google 96% of People Don’t Know About  网站  10 Useful Websites You Wish You Knew Earlier!</description>
+      <description>科普  图解计算机科学 Why does time pass? | The Economist A MUST SEE!!! The Most Eye Opening 10 Minutes Of Your Life | Dr. Bruce Lipton Why Do Computers Use 1s and 0s? Binary and Transistors Explained. See How a CPU Works How do computers read code? 100 Amazing How-To Sites to Teach Yourself Anything  数学  The Map of Mathematics The Essence of Calculus, Chapter 1  经济  经济机器是怎样运行的(文字版) 经济机器是怎样运行的 (时长30分钟) Ray Dalio  工具 VS Code  VS Code Top-Ten Pro Tips VS Code: The Last Editor You&amp;rsquo;ll Ever Need  chrome  vimium Google Translate Plus   信息 搜索  15 Ways to Search Google 96% of People Don’t Know About  网站  10 Useful Websites You Wish You Knew Earlier!</description>
     </item>
     
     <item>
