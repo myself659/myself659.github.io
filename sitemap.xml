@@ -632,13 +632,13 @@
   </url>
   
   <url>
-    <loc>https://myself659.github.io/categories/arch/</loc>
+    <loc>https://myself659.github.io/tags/arch/</loc>
     <lastmod>2017-04-08T11:58:06+02:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://myself659.github.io/tags/arch/</loc>
+    <loc>https://myself659.github.io/categories/arch/</loc>
     <lastmod>2017-04-08T11:58:06+02:00</lastmod>
     <priority>0</priority>
   </url>
@@ -650,13 +650,13 @@
   </url>
   
   <url>
-    <loc>https://myself659.github.io/categories/blockchain/</loc>
+    <loc>https://myself659.github.io/tags/blockchain/</loc>
     <lastmod>2020-05-31T11:58:06+02:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://myself659.github.io/tags/blockchain/</loc>
+    <loc>https://myself659.github.io/categories/blockchain/</loc>
     <lastmod>2020-05-31T11:58:06+02:00</lastmod>
     <priority>0</priority>
   </url>
@@ -674,20 +674,14 @@
   </url>
   
   <url>
-    <loc>https://myself659.github.io/categories/cryptography/</loc>
-    <lastmod>2018-10-21T11:58:06+02:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://myself659.github.io/tags/cryptography/</loc>
     <lastmod>2018-10-21T11:58:06+02:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://myself659.github.io/categories/data/</loc>
-    <lastmod>2020-02-17T11:58:06+02:00</lastmod>
+    <loc>https://myself659.github.io/categories/cryptography/</loc>
+    <lastmod>2018-10-21T11:58:06+02:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -698,8 +692,8 @@
   </url>
   
   <url>
-    <loc>https://myself659.github.io/categories/data-struct/</loc>
-    <lastmod>2018-02-21T11:58:06+02:00</lastmod>
+    <loc>https://myself659.github.io/categories/data/</loc>
+    <lastmod>2020-02-17T11:58:06+02:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -710,8 +704,8 @@
   </url>
   
   <url>
-    <loc>https://myself659.github.io/categories/distributed/</loc>
-    <lastmod>2018-12-11T11:58:06+02:00</lastmod>
+    <loc>https://myself659.github.io/categories/data-struct/</loc>
+    <lastmod>2018-02-21T11:58:06+02:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -722,14 +716,14 @@
   </url>
   
   <url>
-    <loc>https://myself659.github.io/tags/docker/</loc>
-    <lastmod>2019-03-09T11:58:06+02:00</lastmod>
+    <loc>https://myself659.github.io/categories/distributed/</loc>
+    <lastmod>2018-12-11T11:58:06+02:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://myself659.github.io/categories/economy/</loc>
-    <lastmod>2020-04-19T11:58:06+02:00</lastmod>
+    <loc>https://myself659.github.io/tags/docker/</loc>
+    <lastmod>2019-03-09T11:58:06+02:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -740,8 +734,8 @@
   </url>
   
   <url>
-    <loc>https://myself659.github.io/categories/english/</loc>
-    <lastmod>2018-01-25T11:58:06+02:00</lastmod>
+    <loc>https://myself659.github.io/categories/economy/</loc>
+    <lastmod>2020-04-19T11:58:06+02:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -752,8 +746,8 @@
   </url>
   
   <url>
-    <loc>https://myself659.github.io/categories/ethereum/</loc>
-    <lastmod>2018-05-15T11:58:06+02:00</lastmod>
+    <loc>https://myself659.github.io/categories/english/</loc>
+    <lastmod>2018-01-25T11:58:06+02:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -764,8 +758,8 @@
   </url>
   
   <url>
-    <loc>https://myself659.github.io/categories/golang/</loc>
-    <lastmod>2019-09-06T11:58:06+02:00</lastmod>
+    <loc>https://myself659.github.io/categories/ethereum/</loc>
+    <lastmod>2018-05-15T11:58:06+02:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -776,8 +770,8 @@
   </url>
   
   <url>
-    <loc>https://myself659.github.io/categories/internet/</loc>
-    <lastmod>2020-03-22T11:58:06+02:00</lastmod>
+    <loc>https://myself659.github.io/categories/golang/</loc>
+    <lastmod>2019-09-06T11:58:06+02:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -788,8 +782,8 @@
   </url>
   
   <url>
-    <loc>https://myself659.github.io/categories/ipfs/</loc>
-    <lastmod>2018-06-21T11:58:06+02:00</lastmod>
+    <loc>https://myself659.github.io/categories/internet/</loc>
+    <lastmod>2020-03-22T11:58:06+02:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -800,8 +794,8 @@
   </url>
   
   <url>
-    <loc>https://myself659.github.io/categories/kubernetes/</loc>
-    <lastmod>2019-03-09T11:58:06+02:00</lastmod>
+    <loc>https://myself659.github.io/categories/ipfs/</loc>
+    <lastmod>2018-06-21T11:58:06+02:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -812,8 +806,8 @@
   </url>
   
   <url>
-    <loc>https://myself659.github.io/categories/life/</loc>
-    <lastmod>2020-05-24T11:58:06+02:00</lastmod>
+    <loc>https://myself659.github.io/categories/kubernetes/</loc>
+    <lastmod>2019-03-09T11:58:06+02:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -824,13 +818,19 @@
   </url>
   
   <url>
-    <loc>https://myself659.github.io/categories/linux/</loc>
-    <lastmod>2017-05-10T11:58:06+02:00</lastmod>
+    <loc>https://myself659.github.io/categories/life/</loc>
+    <lastmod>2020-05-24T11:58:06+02:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://myself659.github.io/tags/linux/</loc>
+    <lastmod>2017-05-10T11:58:06+02:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://myself659.github.io/categories/linux/</loc>
     <lastmod>2017-05-10T11:58:06+02:00</lastmod>
     <priority>0</priority>
   </url>
@@ -842,25 +842,25 @@
   </url>
   
   <url>
-    <loc>https://myself659.github.io/categories/network/</loc>
-    <lastmod>2017-11-03T11:58:06+02:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://myself659.github.io/tags/network/</loc>
     <lastmod>2017-11-03T11:58:06+02:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://myself659.github.io/categories/nginx/</loc>
-    <lastmod>2015-08-08T11:58:06+02:00</lastmod>
+    <loc>https://myself659.github.io/categories/network/</loc>
+    <lastmod>2017-11-03T11:58:06+02:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://myself659.github.io/tags/nginx/</loc>
+    <lastmod>2015-08-08T11:58:06+02:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://myself659.github.io/categories/nginx/</loc>
     <lastmod>2015-08-08T11:58:06+02:00</lastmod>
     <priority>0</priority>
   </url>
@@ -872,20 +872,14 @@
   </url>
   
   <url>
-    <loc>https://myself659.github.io/categories/python/</loc>
-    <lastmod>2019-08-08T11:58:06+02:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://myself659.github.io/tags/python/</loc>
     <lastmod>2019-08-08T11:58:06+02:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://myself659.github.io/categories/read/</loc>
-    <lastmod>2020-05-08T11:58:06+02:00</lastmod>
+    <loc>https://myself659.github.io/categories/python/</loc>
+    <lastmod>2019-08-08T11:58:06+02:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -896,8 +890,8 @@
   </url>
   
   <url>
-    <loc>https://myself659.github.io/categories/rust/</loc>
-    <lastmod>2019-08-11T11:58:06+02:00</lastmod>
+    <loc>https://myself659.github.io/categories/read/</loc>
+    <lastmod>2020-05-08T11:58:06+02:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -908,13 +902,19 @@
   </url>
   
   <url>
-    <loc>https://myself659.github.io/categories/secure/</loc>
-    <lastmod>2019-11-08T11:58:06+02:00</lastmod>
+    <loc>https://myself659.github.io/categories/rust/</loc>
+    <lastmod>2019-08-11T11:58:06+02:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://myself659.github.io/tags/secure/</loc>
+    <lastmod>2019-11-08T11:58:06+02:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://myself659.github.io/categories/secure/</loc>
     <lastmod>2019-11-08T11:58:06+02:00</lastmod>
     <priority>0</priority>
   </url>
@@ -926,13 +926,13 @@
   </url>
   
   <url>
-    <loc>https://myself659.github.io/categories/substrate/</loc>
+    <loc>https://myself659.github.io/tags/substrate/</loc>
     <lastmod>2019-09-18T11:58:06+02:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://myself659.github.io/tags/substrate/</loc>
+    <loc>https://myself659.github.io/categories/substrate/</loc>
     <lastmod>2019-09-18T11:58:06+02:00</lastmod>
     <priority>0</priority>
   </url>
@@ -944,25 +944,25 @@
   </url>
   
   <url>
-    <loc>https://myself659.github.io/categories/web/</loc>
-    <lastmod>2017-10-27T11:58:06+02:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://myself659.github.io/tags/web/</loc>
     <lastmod>2017-10-27T11:58:06+02:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://myself659.github.io/categories/%E5%95%86%E4%B8%9A/</loc>
-    <lastmod>2020-01-16T11:58:06+02:00</lastmod>
+    <loc>https://myself659.github.io/categories/web/</loc>
+    <lastmod>2017-10-27T11:58:06+02:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://myself659.github.io/tags/%E5%95%86%E4%B8%9A/</loc>
+    <lastmod>2020-01-16T11:58:06+02:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://myself659.github.io/categories/%E5%95%86%E4%B8%9A/</loc>
     <lastmod>2020-01-16T11:58:06+02:00</lastmod>
     <priority>0</priority>
   </url>
@@ -974,13 +974,13 @@
   </url>
   
   <url>
-    <loc>https://myself659.github.io/categories/%E6%88%90%E9%95%BF/</loc>
+    <loc>https://myself659.github.io/tags/%E6%88%90%E9%95%BF/</loc>
     <lastmod>2020-06-26T11:58:06+02:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://myself659.github.io/tags/%E6%88%90%E9%95%BF/</loc>
+    <loc>https://myself659.github.io/categories/%E6%88%90%E9%95%BF/</loc>
     <lastmod>2020-06-26T11:58:06+02:00</lastmod>
     <priority>0</priority>
   </url>
@@ -992,25 +992,25 @@
   </url>
   
   <url>
-    <loc>https://myself659.github.io/categories/%E7%A0%94%E5%8F%91%E7%AE%A1%E7%90%86/</loc>
-    <lastmod>2020-03-08T11:58:06+02:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://myself659.github.io/tags/%E7%A0%94%E5%8F%91%E7%AE%A1%E7%90%86/</loc>
     <lastmod>2020-03-08T11:58:06+02:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://myself659.github.io/categories/%E7%BC%96%E7%A8%8B/</loc>
-    <lastmod>2020-03-29T11:58:06+02:00</lastmod>
+    <loc>https://myself659.github.io/categories/%E7%A0%94%E5%8F%91%E7%AE%A1%E7%90%86/</loc>
+    <lastmod>2020-03-08T11:58:06+02:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://myself659.github.io/tags/%E7%BC%96%E7%A8%8B/</loc>
+    <lastmod>2020-03-29T11:58:06+02:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://myself659.github.io/categories/%E7%BC%96%E7%A8%8B/</loc>
     <lastmod>2020-03-29T11:58:06+02:00</lastmod>
     <priority>0</priority>
   </url>
@@ -1022,13 +1022,13 @@
   </url>
   
   <url>
-    <loc>https://myself659.github.io/categories/%E9%97%B2%E8%B0%88%E4%B9%B1%E6%89%AF/</loc>
+    <loc>https://myself659.github.io/tags/%E9%97%B2%E8%B0%88%E4%B9%B1%E6%89%AF/</loc>
     <lastmod>2020-01-30T11:58:06+02:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://myself659.github.io/tags/%E9%97%B2%E8%B0%88%E4%B9%B1%E6%89%AF/</loc>
+    <loc>https://myself659.github.io/categories/%E9%97%B2%E8%B0%88%E4%B9%B1%E6%89%AF/</loc>
     <lastmod>2020-01-30T11:58:06+02:00</lastmod>
     <priority>0</priority>
   </url>
