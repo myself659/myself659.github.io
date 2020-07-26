@@ -1,53 +1,42 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Kubernetes on 沉风网事</title>
-    <link>https://myself659.github.io/tags/kubernetes/</link>
+    <link>http://myself659.github.io/tags/kubernetes/</link>
     <description>Recent content in Kubernetes on 沉风网事</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
+    <copyright>沉风网事</copyright>
     <lastBuildDate>Sat, 09 Mar 2019 11:58:06 +0200</lastBuildDate>
     
-	<atom:link href="https://myself659.github.io/tags/kubernetes/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://myself659.github.io/tags/kubernetes/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>利用Kube Eagle监控Kubernetes集群资源</title>
-      <link>https://myself659.github.io/2019/03/09/k8s-kubeagle/</link>
+      <link>http://myself659.github.io/post/k8s-kubeagle/</link>
       <pubDate>Sat, 09 Mar 2019 11:58:06 +0200</pubDate>
       
-      <guid>https://myself659.github.io/2019/03/09/k8s-kubeagle/</guid>
-      <description>安装helm helm是Kubernetes集群的npm。
-下载脚本add_helm.sh 脚本内容如下：
-#!/usr/bin/env bash echo &amp;quot;install helm&amp;quot; # installs helm with bash commands for easier command line integration curl https://raw.githubusercontent.com/kubernetes/helm/master/scripts/get | bash # add a service account within a namespace to segregate tiller kubectl --namespace kube-system create sa tiller # create a cluster role binding for tiller kubectl create clusterrolebinding tiller \ --clusterrole cluster-admin \ --serviceaccount=kube-system:tiller echo &amp;quot;initialize helm&amp;quot; # initialized helm within the tiller service account helm init --service-account tiller # updates the repos for Helm repo integration helm repo update echo &amp;quot;verify helm&amp;quot; # verify that helm is installed in the cluster kubectl get deploy,svc tiller-deploy -n kube-system  执行脚本安装helm sh add_helm.</description>
+      <guid>http://myself659.github.io/post/k8s-kubeagle/</guid>
+      <description>安装helm helm是Kubernetes集群的npm。 下载脚本add_helm.sh 脚本内容如下： 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20</description>
     </item>
     
     <item>
       <title>安装与应用Prometheus监控Kubernetes集群</title>
-      <link>https://myself659.github.io/2018/10/17/k8s-monitor/</link>
+      <link>http://myself659.github.io/post/k8s-monitor/</link>
       <pubDate>Wed, 17 Oct 2018 11:58:06 +0200</pubDate>
       
-      <guid>https://myself659.github.io/2018/10/17/k8s-monitor/</guid>
-      <description>安装Prometheus RBAC设置,获取创建集群角色权限 ACCOUNT=$(gcloud info --format=&#39;value(config.account)&#39;) kubectl create clusterrolebinding owner-cluster-admin-binding \ --clusterrole cluster-admin \ --user $ACCOUNT  注意：如果集群部署在google cloud上需要先执行这一步。
-创建Namespace kubectl create namespace monitoring  创建角色 脚本内容如下：
-apiVersion: rbac.authorization.k8s.io/v1beta1 kind: ClusterRole metadata: name: prometheus rules: - apiGroups: [&amp;quot;&amp;quot;] resources: - nodes - nodes/proxy - services - endpoints - pods verbs: [&amp;quot;get&amp;quot;, &amp;quot;list&amp;quot;, &amp;quot;watch&amp;quot;] - apiGroups: - extensions resources: - ingresses verbs: [&amp;quot;get&amp;quot;, &amp;quot;list&amp;quot;, &amp;quot;watch&amp;quot;] - nonResourceURLs: [&amp;quot;/metrics&amp;quot;] verbs: [&amp;quot;get&amp;quot;] --- apiVersion: rbac.</description>
+      <guid>http://myself659.github.io/post/k8s-monitor/</guid>
+      <description>安装Prometheus RBAC设置,获取创建集群角色权限 1 2 3 4 ACCOUNT=$(gcloud info --format=&amp;#39;value(config.account)&amp;#39;) kubectl create clusterrolebinding owner-cluster-admin-binding \ --clusterrole cluster-admin \ --user $ACCOUNT 注意：如果集群部署在google cloud上需要</description>
     </item>
     
     <item>
       <title>基于Gitlab&#43;Kubernetes实现CI/CD</title>
-      <link>https://myself659.github.io/2018/10/16/k8s-cicd/</link>
+      <link>http://myself659.github.io/post/k8s-cicd/</link>
       <pubDate>Tue, 16 Oct 2018 11:58:06 +0200</pubDate>
       
-      <guid>https://myself659.github.io/2018/10/16/k8s-cicd/</guid>
-      <description>要求 基本技术栈要求如下：
- Golang Docker GitLab Kubernetes  具体原因参考关于技术选型的思考
-步骤 创建Kubernetes集群 自己搭建集群也可以，但是投入生产不建议使用。这里直接使用google cloud(调研几家发现G家这方面技术积累最深，生态完整)。
-创建帐号设置gitlab操作帐号，用于后面的CI/CD操作。
-kubectl apply -f gitlab-admin-service-account.yaml  kubectl -n kube-system describe secret $(kubectl -n kube-system get secret | grep gitlab-admin | awk &#39;{print $1}&#39;)  具体参考Adding and creating a new GKE cluster via GitLab
-创建DockerHub帐号 主要操作是在DockerHub创建帐号。 其他的云计算服务的镜像服务也可以。
-创建gitlab项目 正常创建代码仓库操作。
-准备代码 准备一个简单的web服务器。
-package main import ( &amp;quot;fmt&amp;quot; &amp;quot;net/http&amp;quot; ) func main() { http.HandleFunc(&amp;quot;/&amp;quot;, func(w http.ResponseWriter, r *http.Request) { fmt.</description>
+      <guid>http://myself659.github.io/post/k8s-cicd/</guid>
+      <description>要求 基本技术栈要求如下： Golang Docker GitLab Kubernetes 具体原因参考关于技术选型的思考 步骤 创建Kubernetes集群 自己搭建集群也可以，但是投入生产不建议使用。这</description>
     </item>
     
   </channel>

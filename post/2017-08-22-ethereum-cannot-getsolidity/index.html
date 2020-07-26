@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>以太坊开发环境问题记录 - 沉风网事</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="沉风网事" /><meta name="description" content="说明 主要记录以太坊开发环境过程出现的问题 getCompilers返回失败 问题描述 在搭建以太坊开发环境过程中，出现下面的错误信息： 1 2 3 4 5 6" /><meta name="keywords" content="沉风网事, 沉风, 区块链" />
+
+
+<meta name="baidu-site-verification" content="9LmlOuIblt" />
+
+
+
+<meta name="generator" content="Hugo 0.68.3 with theme even" />
+
+
+<link rel="canonical" href="http://myself659.github.io/post/2017-08-22-ethereum-cannot-getsolidity/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.8c3cbcb0324c2bb4875ceccba4007cbad4b4ac8377f33af9953c3e7684534a50.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="以太坊开发环境问题记录" />
+<meta property="og:description" content="说明 主要记录以太坊开发环境过程出现的问题 getCompilers返回失败 问题描述 在搭建以太坊开发环境过程中，出现下面的错误信息： 1 2 3 4 5 6" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://myself659.github.io/post/2017-08-22-ethereum-cannot-getsolidity/" />
+<meta property="article:published_time" content="2017-08-22T11:58:06+02:00" />
+<meta property="article:modified_time" content="2017-08-22T11:58:06+02:00" />
+<meta itemprop="name" content="以太坊开发环境问题记录">
+<meta itemprop="description" content="说明 主要记录以太坊开发环境过程出现的问题 getCompilers返回失败 问题描述 在搭建以太坊开发环境过程中，出现下面的错误信息： 1 2 3 4 5 6">
+<meta itemprop="datePublished" content="2017-08-22T11:58:06&#43;02:00" />
+<meta itemprop="dateModified" content="2017-08-22T11:58:06&#43;02:00" />
+<meta itemprop="wordCount" content="531">
+
+
+
+<meta itemprop="keywords" content="blockchain," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="以太坊开发环境问题记录"/>
+<meta name="twitter:description" content="说明 主要记录以太坊开发环境过程出现的问题 getCompilers返回失败 问题描述 在搭建以太坊开发环境过程中，出现下面的错误信息： 1 2 3 4 5 6"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">沉风</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a><a href="/post/leetcode/">
+        <li class="mobile-menu-item">LeetCode</li>
+      </a><a href="/post/read-post/">
+        <li class="mobile-menu-item">Read</li>
+      </a><a href="/post/share-post/">
+        <li class="mobile-menu-item">Share</li>
+      </a><a href="/post/slide-post/">
+        <li class="mobile-menu-item">Slide</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">沉风</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/leetcode/">LeetCode</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/read-post/">Read</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/share-post/">Share</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/slide-post/">Slide</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">以太坊开发环境问题记录</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2017-08-22 </span>
+        <div class="post-category">
+            <a href="/categories/blockchain/"> blockchain </a>
+            </div>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#问题描述">问题描述</a></li>
+    <li><a href="#问题原因">问题原因</a></li>
+    <li><a href="#解决方法">解决方法</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#问题描述-1">问题描述</a></li>
+    <li><a href="#问题原因-1">问题原因</a></li>
+    <li><a href="#解决方案">解决方案</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#问题描述-2">问题描述</a></li>
+    <li><a href="#问题原因-2">问题原因</a></li>
+    <li><a href="#解决方案-1">解决方案</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#问题描述-3">问题描述</a></li>
+    <li><a href="#问题原因-3">问题原因</a></li>
+    <li><a href="#解决方法-1">解决方法</a></li>
+  </ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <h1 id="说明">说明</h1>
+<p>主要记录以太坊开发环境过程出现的问题</p>
+<h1 id="getcompilers返回失败">getCompilers返回失败</h1>
+<h2 id="问题描述">问题描述</h2>
+<p>在搭建以太坊开发环境过程中，出现下面的错误信息：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">Welcome to the Geth JavaScript console!
+
+instance: Geth/v1.6.7-stable-ab5646c5/darwin-amd64/go1.8.3
+ modules: admin:1.0 debug:1.0 eth:1.0 miner:1.0 net:1.0 personal:1.0 rpc:1.0 shh:1.0 txpool:1.0 web3:1.0
+
+&gt; web3.eth.getCompilers() 
+Error: The method eth_getCompilers does not exist/is not available
+    at web3.js:3104:20
+    at web3.js:6191:15
+    at web3.js:5004:36
+    at &lt;anonymous&gt;:1:1
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="问题原因">问题原因</h2>
+<p>geth版本编译不在gopath目录下编译</p>
+<h2 id="解决方法">解决方法</h2>
+<p>在gopath目录重新编译即可</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">Michaels-iMac:wallet eric$ geth  attach    ipc://Users/eric/wallet/privchain/geth.ipc  
+Welcome to the Geth JavaScript console!
+
+instance: Geth/v1.5.9-stable-a07539fb/darwin/go1.8.3
+ modules: admin:1.0 debug:1.0 eth:1.0 miner:1.0 net:1.0 personal:1.0 rpc:1.0 shh:1.0 txpool:1.0 web3:1.0
+
+&gt; web3.eth.getCompilers()
+[&#34;Solidity&#34;]
+&gt; 
+</code></pre></td></tr></table>
+</div>
+</div><h1 id="parity启动失败">parity启动失败</h1>
+<h2 id="问题描述-1">问题描述</h2>
+<p>搭建测试环境中出现以下问题：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">root@ia:~#parity --chain=kovan --jsonrpc-hosts=all 
+parity: /usr/lib/x86_64-linux-gnu/libstdc++.so.6: version `CXXABI_1.3.8&#39; not found (required by parity)
+parity: /usr/lib/x86_64-linux-gnu/libstdc++.so.6: version `GLIBCXX_3.4.20&#39; not found (required by parity)
+parity: /usr/lib/x86_64-linux-gnu/libstdc++.so.6: version `GLIBCXX_3.4.21&#39; not found (required by parity)
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="问题原因-1">问题原因</h2>
+<p>gcc/g++版本是4.8版本</p>
+<h2 id="解决方案">解决方案</h2>
+<p>升级gcc/g++</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">sudo add-apt-repository ppa:ubuntu-toolchain-r/test
+sudo apt-get update
+sudo apt-get install gcc-4.9 g++-4.9
+sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-4.9 60 --slave /usr/bin/g++ g++ /usr/bin/g++-4.9
+</code></pre></td></tr></table>
+</div>
+</div><h1 id="parity访问出现bad-gateway问题">parity访问出现bad gateway问题</h1>
+<h2 id="问题描述-2">问题描述</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback"> curl   -X POST  http://localhost:8545  -H &#34;Content-Type: application/json&#34;  -d  &#39;{&#34;jsonrpc&#34;:&#34;2.0&#34;,&#34;method&#34;:&#34;eth_getBlockByNumber&#34;,&#34;params&#34;:[&#34;0x1b4&#34;, true],&#34;id&#34;:1}&#39;
+</code></pre></td></tr></table>
+</div>
+</div><p>本地访问ok</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">curl   -X POST  http://47.96.45.67:8545  -H &#34;Content-Type: application/json&#34;  -d  &#39;{&#34;jsonrpc&#34;:&#34;2.0&#34;,&#34;method&#34;:&#34;eth_getBlockByNumber&#34;,&#34;params&#34;:[&#34;0x1b4&#34;, true],&#34;id&#34;:1}&#39;    
+</code></pre></td></tr></table>
+</div>
+</div><p>远程访问返回失败</p>
+<h2 id="问题原因-2">问题原因</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">parity --chain=kovan --jsonrpc-hosts=all
+</code></pre></td></tr></table>
+</div>
+</div><p>上面命令限定侦听端口为本机接口</p>
+<h2 id="解决方案-1">解决方案</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">parity --chain=kovan   --jsonrpc-interface=0.0.0.0  --jsonrpc-hosts=all
+</code></pre></td></tr></table>
+</div>
+</div><p>以上述命令启动parity打开侦听限制</p>
+<h1 id="没有eth无法在kovan上部署智能合约">没有eth无法在kovan上部署智能合约</h1>
+<h2 id="问题描述-3">问题描述</h2>
+<p>没有eth无法部署成功部署智能合约</p>
+<h2 id="问题原因-3">问题原因</h2>
+<p>天下没有免费的午餐</p>
+<h2 id="解决方法-1">解决方法</h2>
+<p>参考<a href="https://github.com/kovan-testnet/faucet">Kovan Faucet</a>,四种方式选择其中一个即可，Github Gist Faucet方式参考<a href="https://gist.github.com/myself659/5c803a89aa725a64206fb775e00a0815">这里</a></p>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">沉风网事</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+        2017-08-22
+        
+    </span>
+  </p>
+  
+  
+</div>
+<footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/blockchain/">blockchain</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/post/2017-08-24-ethereum-start/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">以太坊私链智能合约实践</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        <a class="next" href="/post/2017-07-28-slice-trap/">
+            <span class="next-text nav-default">slice复用的陷阱</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    (function() {
+      
+      
+      if (window.location.hostname === 'localhost') return;
+
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      var disqus_shortname = 'ipds-top';
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+  
+
+  
+    <script src="https://utteranc.es/client.js"
+            repo="myself659/myself659/ipds-public"
+            issue-term="pathname"
+            theme="github-light"
+            crossorigin="anonymous"
+            async>
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://github.com/utterance">comments powered by utterances.</a></noscript>
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/8.3.1/mermaid.min.js"></script>
+<div class="social-links">
+      <a href="mailto:myself659@163.com" class="iconfont icon-email" title="email"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-stack-overflow" title="stack-overflow"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-twitter" title="twitter"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-facebook" title="facebook"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-linkedin" title="linkedin"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-google" title="google"></a>
+      <a href="https://github.com/myself659" class="iconfont icon-github" title="github"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-weibo" title="weibo"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-zhihu" title="zhihu"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-douban" title="douban"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-pocket" title="pocket"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-tumblr" title="tumblr"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-instagram" title="instagram"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-gitlab" title="gitlab"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-bilibili" title="bilibili"></a>
+  <a href="http://myself659.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/myself659/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2017 - 
+    2020
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">沉风网事</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+
+
+
+<script type="text/javascript" src="/js/main.min.d7b7ada643c9c1a983026e177f141f7363b4640d619caf01d8831a6718cd44ea.js"></script>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-144475213-1', 'auto');
+	ga('set', 'anonymizeIp', true);
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+
+
+
+
+</body>
+</html>

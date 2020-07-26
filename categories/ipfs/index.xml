@@ -1,77 +1,42 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Ipfs on 沉风网事</title>
-    <link>https://myself659.github.io/categories/ipfs/</link>
-    <description>Recent content in Ipfs on 沉风网事</description>
+    <title>ipfs on 沉风网事</title>
+    <link>http://myself659.github.io/categories/ipfs/</link>
+    <description>Recent content in ipfs on 沉风网事</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
+    <copyright>沉风网事</copyright>
     <lastBuildDate>Thu, 21 Jun 2018 11:58:06 +0200</lastBuildDate>
     
-	<atom:link href="https://myself659.github.io/categories/ipfs/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://myself659.github.io/categories/ipfs/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>IPFS专题</title>
-      <link>https://myself659.github.io/2018/06/21/ipfs%E4%B8%93%E9%A2%98/</link>
+      <link>http://myself659.github.io/post/ipfs%E4%B8%93%E9%A2%98/</link>
       <pubDate>Thu, 21 Jun 2018 11:58:06 +0200</pubDate>
       
-      <guid>https://myself659.github.io/2018/06/21/ipfs%E4%B8%93%E9%A2%98/</guid>
-      <description> 前言 IPFS（包括filecoin）无论从技术视角还是商业视角都有很多有意思的内容（关键是自己很看好这个技术），所以要准备搞一个IPFS专题。
-文章  IPFS与下一代网络安全 下一代互联网基础：IPFS.pdf  动态  Filecoin 2017 Q4 Update Filecoin 2018 Q1 &amp;amp; Q2 Update Filecoin 2019 Q2 &amp;amp; Q3 Update Filecoin Roadmap Update Q4 2019 IPFS 0.5.0 is here! Our largest upgrade to IPFS yet A Guide to Filecoin Storage Mining  IPFS和filecoin之间的关系 IPFS是技术，filecoin是技术的商业化。 IPFS+filecoin在一起完成技术商业化，从1到1000。。。
-生态  ANNOUNCING COLLABORATION WITH FILECOIN - BIG INTEGRATIONS COMING 累计资助150万美元，上线前夕的Filecoin生态项目都有啥？  参考  ipfs filecoin  </description>
+      <guid>http://myself659.github.io/post/ipfs%E4%B8%93%E9%A2%98/</guid>
+      <description>前言 IPFS（包括filecoin）无论从技术视角还是商业视角都有很多有意思的内容（关键是自己很看好这个技术），所以要准备搞一个IPFS专题</description>
     </item>
     
     <item>
       <title>IPFS与下一代网络安全</title>
-      <link>https://myself659.github.io/2017/09/21/2017-09-21-ipfs-sec/</link>
+      <link>http://myself659.github.io/post/2017-09-21-ipfs-sec/</link>
       <pubDate>Thu, 21 Sep 2017 11:58:06 +0200</pubDate>
       
-      <guid>https://myself659.github.io/2017/09/21/2017-09-21-ipfs-sec/</guid>
-      <description>IPFS 先简单说一下IPFS。 IPFS是点对点协议InterPlanetary File System的简称，它是一个面向全球的、点对点的分布式版本文件系统，试图将所有具有相同文件系统的计算设备连接在一起。它用基于内容的地址替代基于域名的地址，也就是用户寻找的不是某个地址而是储存在某个地方的内容，不需要验证发送者的身份，而只需要验证内容的哈希，通过这样可以让网页的速度更快、更安全、更健壮、更持久。IPFS目标是未来将替代HTTP。
-IPFS主要技术，用下面这张图说明：
-IPFS与安全 整个IPFS涉及很多方面的内容，这部分具体看一下IPFS对网络安全的影响。首先从DDOS防攻击展开，IPFS应对DDOS攻击主要如下： 1. 道哥在弹性安全网络中表达过DDOS存在的原因就是现在互联网严重依赖存在三大问题的DNS系统,而在IPFS中通过内容寻址方式绕开了DNS 2. IPFS底层网络是基于DHT，拥有大量节点的P2P网络，天生适合内容的分布式读写（PS：P2P网络安全需要另行考虑） 3. 内容签名，通过加密加大攻击的难度与成本
-上面的这些作法，很符合经济原理。DDOS存在主要经济学原因是DDOS获得的收益远大于DDOS的投资；IPFS的上述特点直接提高DDOS的成本。
-比较 上一篇分析了道哥的提出的弹性安全网络设想。那么，就在这里搞事情，对比一下两者。
- 道哥和Juan Benet都是杰出的技术人员及创业者，富有远见 作为安全出身的道哥的出发点解决网络安全问题主要是DDOS安全攻击问题，而IPFS目标如下：We believe the internet has become humanity&#39;s most important technology. We build protocols, systems, and tools to improve how it works. Today, we are focused on how we store, locate, and move information.
- IPFS是一种去中心化技术，而弹性安全网络接入技术可以是一种大规模的云计算技术（中心化技术）。
- IPFS没有网络访问控制功能，自由开放；弹性安全网络有网络访问控制能力，方便监管与控制
- IPFS是从数据角度来解决问题（解决数据分布，版本，访问，权限控制等）,弹性安全网络从网络安全的角度来解决问题
- IPFS开放源码，弹性安全网络没有开源，开源的IPFS体现了去中心化技术的态度
- IPFS现网运行，弹性安全网络在游戏盾中得到应用与实践，两者都有很长的路需要走
- IPFS目标是取代HTTP,同时兼容HTTP，弹性安全网络将应用场景定位在非域名类的IP网络
- IPFS对现有应用冲击很大，因为去中心化应用及基础设施（如去中心数据库）还在起步阶段；弹性安全网络考虑基于现有云计算（大规模中心化技术）应用作为出发点一种网络安全的解决方案，能够兼容云计算应用。
- IPFS支持端对端加解密，保证数据的隐私。弹性安全网络不涉及这方面内容。</description>
+      <guid>http://myself659.github.io/post/2017-09-21-ipfs-sec/</guid>
+      <description>IPFS 先简单说一下IPFS。 IPFS是点对点协议InterPlanetary File System的简称，它是一个面向全球的、点对点的分布式版本文件系统</description>
     </item>
     
     <item>
       <title>关于弹性安全网络一点思考</title>
-      <link>https://myself659.github.io/2017/09/20/2017-09-20-next-network/</link>
+      <link>http://myself659.github.io/post/2017-09-20-next-network/</link>
       <pubDate>Wed, 20 Sep 2017 11:58:06 +0200</pubDate>
       
-      <guid>https://myself659.github.io/2017/09/20/2017-09-20-next-network/</guid>
-      <description> 作为网络研发出身的我，从事网络研发时间也最长，一直也关注道哥的微信公众号。
-下面就对道哥的提出弹性安全网络一些总结与思考。
-弹性安全网络 具体从以下几个方面解读弹性安全网络。
-来源 弹性安全网络这个设想来自阿里云游戏盾这个产品，而这个产品解决的问题就是如何解决DDOS问题。
-以前解决DDOS问题，很多厂商就是以暴制暴，准备大量带宽，抗住攻击流量，这种方式有以下问题：
- 流量成本高 万一没有抗住，服务会中断 业务局限于一个数据中心，目标明显，容易受攻击（将鸡蛋放到同一个篮子）
-  而在游戏盾产品采用另一种方式来解决问题，主要要点如下：
- 首先，业务访问支持多IP解析，分散流量（狡免三窟） 第二就是应对攻击，支持业务地址迁移，地址迁移难点就是如何快速通知到各个用户（你打我，我就闪）  定义  弹性安全网络是将DDoS防御前置到网络边缘处。但是，未来真正要做的事情是通过端到端的连接，通过风险控制技术，重新构建一个干净的、安全的互联网
- 目标  弹性安全网络真正想要去做的，是替换掉整个互联网最核心的心脏，替换掉DNS，从而让网络变得有弹性，能够快速调度资源，形成一个全新的网络架构。
-弹性安全网络技术，不是为某一个客户设计的，它是为整个互联网设计的。
- DNS三个问题  DNS是互联网的心脏
-第一个，是DNS完全解析的时间过长，这是整个DNS使用中遇到的一个非常大的痛点。
-第二个问题是今天DNS Server软件中的解析数遇到了瓶颈，没有办法一个名字解析到几千个、甚至上万个，甚至未来十几万个不同地址。一个名字可能最多也就解析到十几个或几十个地址就不能再扩大了。这种瓶颈限制了我们的一些能力拓展。
-第三个就是，原本可以基于DNS去实现的一些安全机制，比如风险控制，并没有建立起来。其实也比较好理解，在互联网1.0时代并没有如今天这般强大的数据能力和计算能力。
- 实现 文中并没有提及具体的实现，主要要点是： 1. 基于大数据的足迹库 2. 基于人工智能的快速识别能力
-3. 分布式的统一网络访问入口，取代DNS，具体细节未知
-未来  主要机会就是在IoT和移动互联网，因为这两者实际上是没有DNS的需求的
- 总结 道哥的弹性安全网络，是一个伟大的构思。
-弹性安全网络出发点主要是解决DDOS问题。
-主要目标应用于IOT和移动互联网。
-弹性安全网络思考主要出发点是如何应对网络攻击，主要从两个角度出发： 1. 如何快速应对攻击 2. 如何利用技术（大数据，人工智能等）识别攻击
-参考  弹性安全网络 &amp;ndash; 构建下一代安全的互联网 IPFS与下一代网络安全  </description>
+      <guid>http://myself659.github.io/post/2017-09-20-next-network/</guid>
+      <description>作为网络研发出身的我，从事网络研发时间也最长，一直也关注道哥的微信公众号。 下面就对道哥的提出弹性安全网络一些总结与思考。 弹性安全网络 具体从以</description>
     </item>
     
   </channel>

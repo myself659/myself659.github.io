@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>大型系统软件Comware研发总结 - 沉风网事</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="沉风网事" /><meta name="description" content="前言 前几个月写一篇关于研发管理的文章。在那篇文章提出一个简单的思考框架，并没有实际案例的分享及深度分析。所以在这里以华三Comware研发为" /><meta name="keywords" content="沉风网事, 沉风, 区块链" />
+
+
+<meta name="baidu-site-verification" content="9LmlOuIblt" />
+
+
+
+<meta name="generator" content="Hugo 0.68.3 with theme even" />
+
+
+<link rel="canonical" href="http://myself659.github.io/post/comware-rd/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.8c3cbcb0324c2bb4875ceccba4007cbad4b4ac8377f33af9953c3e7684534a50.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="大型系统软件Comware研发总结" />
+<meta property="og:description" content="前言 前几个月写一篇关于研发管理的文章。在那篇文章提出一个简单的思考框架，并没有实际案例的分享及深度分析。所以在这里以华三Comware研发为" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://myself659.github.io/post/comware-rd/" />
+<meta property="article:published_time" content="2018-12-05T11:58:06+02:00" />
+<meta property="article:modified_time" content="2018-12-05T11:58:06+02:00" />
+<meta itemprop="name" content="大型系统软件Comware研发总结">
+<meta itemprop="description" content="前言 前几个月写一篇关于研发管理的文章。在那篇文章提出一个简单的思考框架，并没有实际案例的分享及深度分析。所以在这里以华三Comware研发为">
+<meta itemprop="datePublished" content="2018-12-05T11:58:06&#43;02:00" />
+<meta itemprop="dateModified" content="2018-12-05T11:58:06&#43;02:00" />
+<meta itemprop="wordCount" content="2909">
+
+
+
+<meta itemprop="keywords" content="闲谈乱扯,研发管理," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="大型系统软件Comware研发总结"/>
+<meta name="twitter:description" content="前言 前几个月写一篇关于研发管理的文章。在那篇文章提出一个简单的思考框架，并没有实际案例的分享及深度分析。所以在这里以华三Comware研发为"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">沉风</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a><a href="/post/leetcode/">
+        <li class="mobile-menu-item">LeetCode</li>
+      </a><a href="/post/read-post/">
+        <li class="mobile-menu-item">Read</li>
+      </a><a href="/post/share-post/">
+        <li class="mobile-menu-item">Share</li>
+      </a><a href="/post/slide-post/">
+        <li class="mobile-menu-item">Slide</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">沉风</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/leetcode/">LeetCode</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/read-post/">Read</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/share-post/">Share</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/slide-post/">Slide</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">大型系统软件Comware研发总结</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2018-12-05 </span>
+        <div class="post-category">
+            <a href="/categories/%E9%97%B2%E8%B0%88%E4%B9%B1%E6%89%AF/"> 闲谈乱扯 </a>
+            </div>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#选择开源拥抱开源不要重复造轮子">选择开源，拥抱开源，不要重复造轮子</a></li>
+    <li><a href="#合法合规">合法合规</a></li>
+    <li><a href="#kiss原则">KISS原则</a></li>
+    <li><a href="#开放性">开放性</a></li>
+    <li><a href="#分层与分解">分层与分解</a></li>
+    <li><a href="#测试独立性">测试独立性</a></li>
+    <li><a href="#软件工程">软件工程</a></li>
+    <li><a href="#工具与效率">工具与效率</a></li>
+    <li><a href="#资源统一管理">资源统一管理</a></li>
+    <li><a href="#控制集中式处理分布式">控制集中式，处理分布式</a></li>
+    <li><a href="#方案评审">方案评审</a></li>
+    <li><a href="#预研">预研</a></li>
+    <li><a href="#度量不可少">度量不可少</a></li>
+    <li><a href="#减少对人的依赖">减少对人的依赖</a></li>
+    <li><a href="#文档">文档</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#版本化">版本化</a></li>
+    <li><a href="#设计先行">设计先行</a></li>
+    <li><a href="#代码规范是行动准则">代码规范是行动准则</a></li>
+    <li><a href="#必不可少的单元测试">必不可少的单元测试</a></li>
+    <li><a href="#不止代码review还有代码鉴定">不止代码review，还有代码鉴定</a></li>
+    <li><a href="#注重初始代码质量">注重初始代码质量</a></li>
+    <li><a href="#接口优先接口先行">接口优先，接口先行</a></li>
+    <li><a href="#避免以忙治乱">避免以忙治乱</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#欢迎关注">欢迎关注</a></li>
+  </ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <h1 id="前言">前言</h1>
+<p>前几个月写一篇关于研发管理的文章。在那篇文章提出一个简单的思考框架，并没有实际案例的分享及深度分析。所以在这里以华三Comware研发为例，结合思考框架谈谈自己的一些理解与想法。</p>
+<p><img src="/images/rd-quater.jpg" alt="研发管理的一个中心四个基本点"></p>
+<h1 id="comware">Comware</h1>
+<p>开始之前，先介绍一下<a href="http://www.h3c.com/cn/Products___Technology/Technology/ComwareV7/">Comware</a>。其主要要点如下：</p>
+<ol>
+<li>整个系统代码量超过了1000万行（开源代码除外）</li>
+<li>巅峰时期开发人员1000左右</li>
+<li>支持设备类型超过100多种，同时支持各种丰富的网络特性</li>
+<li>性能与可用性要求高，需要满足欧美高端市场（金融，国防等）要求及互联网大流量的冲击</li>
+<li>作为公司的中台，支撑公司绝大部分产业线（安全，路由，交换，云计算等）</li>
+</ol>
+<p>下面我们就一一展开说明。</p>
+<h1 id="业务">业务</h1>
+<p>以业务中心。Comware作为一个网络操作系统，主要要求如下：</p>
+<ol>
+<li>充当网络设备的大脑</li>
+<li>承载各种网络业务，并动态满足不同网络业务的要求及变化</li>
+<li>保证整个系统 <strong>高可用性，高性能，可维护性，可扩展性，安全性</strong>等</li>
+</ol>
+<h1 id="文化">文化</h1>
+<p>由于历史上的原因，整个研发文化总体上源于华为，稍有调整。具体要点如下：</p>
+<ol>
+<li>质量为上</li>
+<li>结果导向</li>
+<li>研发三权分立</li>
+<li>追求效率</li>
+<li>鼓励创新</li>
+<li>公开</li>
+</ol>
+<p>关于科技公司的文化，推荐<a href="https://github.com/myself659/myself659.github.io/blob/master/slides/Netflix%E6%96%87%E5%8C%96%E8%87%AA%E7%94%B1%E4%B8%8E%E8%B4%A3%E4%BB%BB.pptx">Netflix文化:自由与责任</a></p>
+<h1 id="团队">团队</h1>
+<p>团队是从人的视角出发。要以人为本啊。</p>
+<p>团队梯队合理清楚，按技术水平划分具体如下：</p>
+<ol>
+<li>开发上岗人员</li>
+<li>维护上岗人员</li>
+<li>开发负责人</li>
+<li>系统扩展组</li>
+<li>系统组</li>
+<li>架构组</li>
+</ol>
+<p>团队组织划分以业务导向，按照不同的业务划分不同大组，独立进行代码管理。在各个大组一般分为开发与维护两个方面进行人员动态调配。</p>
+<p>团队建设主要是大组每周定期培训，鼓励分享，除此之外针对不同岗位有专项培训，如项目管理，代码管理。</p>
+<h1 id="架构">架构</h1>
+<p>架构不是我们常说的架构，这里的架导指导代码的工作（架构从事的角度出发）。</p>
+<h2 id="选择开源拥抱开源不要重复造轮子">选择开源，拥抱开源，不要重复造轮子</h2>
+<p>不得不说2008年开始预研下一代网络操作系统，当时的团队放弃vxwork，选择了开源linux，而且作到取自开源，高于开源，只使用linux基本组件（文件管理系统，内存管理系统，进程调度等），重新移植与修改协议栈，实现分布式网络协议，扩张SOCKET类型。采用Linux好处多多，具体如下：</p>
+<ol>
+<li>充分吸引Linux开源精华</li>
+<li>Linux开源发展路径，决定Linux便于改造与优化</li>
+<li>与Linux一起升级，如内核2.6升级到4.x版本</li>
+<li>方便开源引入支持，如移植wireshark， python</li>
+<li>Linux在服务器大量应用，业界有大量人才</li>
+</ol>
+<h2 id="合法合规">合法合规</h2>
+<p>合法就不用多说了。注意的是要考虑到不同的国家与地区的差异。
+合规方法最近的例子就是2017年百度要求内部全面停止使用React/React Native。利用开源的Linux作为基础开发商业操作系统，就不得不遵守开源协议。</p>
+<h2 id="kiss原则">KISS原则</h2>
+<p>关于KISS原则，架构设计通用原则，有太多说明，这里不展开。</p>
+<h2 id="开放性">开放性</h2>
+<p>对外开放接口，如OAA（Open Application Architecture，开放应用架构），这样有以下好处：</p>
+<ol>
+<li>对公司内部来说，降低了耦合</li>
+<li>对外部合作方来说，方便不同厂商系统集成</li>
+<li>对客户来说，提供了更多的选择以及DIY能力</li>
+<li>开放与释放了平台的能力</li>
+</ol>
+<h2 id="分层与分解">分层与分解</h2>
+<p>整个系统采用分层设计有如下优点：</p>
+<ol>
+<li>可以分离系统不同方面的设计关注点，使得同一时刻设计者可以集中精力考虑较少的相于因素，封装和分解了相关的复杂性，增加了系统设计上的清晰度；</li>
+<li>减少了系统的耦合和依赖，提高了内聚性，增加了潜在的代码重用性，提高了低层的代码重用度</li>
+<li>层与层之间需要清晰的接口，有利于实现面向接口编程，而不是面向实现编程</li>
+<li>一些层的实现可以被替换或扩展，对整体的架构影响很小</li>
+<li>层次清晰，有利于多个小组并行开发</li>
+</ol>
+<p>分解主要体现是模块化，有如下优点：</p>
+<ol>
+<li>为整体架构提供最小单元</li>
+<li>带来了模块化管理，模块化提供交付件（cli插件，daemon等），方便模块化升级，模块定制，模块化诊断</li>
+<li>模块化隔离，如实现进程间隔离</li>
+<li>统一模块间依赖管理</li>
+<li>便于将一些基础组件及功能模块化</li>
+<li>方便问题定位，如内核定位踩内存问题</li>
+<li>便于模块信息聚合</li>
+</ol>
+<h2 id="测试独立性">测试独立性</h2>
+<p>个人一直以为一个好的测试人员具有以下素质：</p>
+<ol>
+<li>业务方面做到熟悉，并能不断深入</li>
+<li>细心保证执行方面到位</li>
+<li>独立性，测试并不是帮助开发，而验证开发成果与补充开发的不足</li>
+<li>发散测试，保证测试的完整性，避免漏测，守好产品最后一道门</li>
+</ol>
+<p>需要在一个公司层面将测试的独立性体现出来，所以新增一个鉴定测试部门。</p>
+<h2 id="软件工程">软件工程</h2>
+<p>作为大型系统软件，离不开软件工程的指导，在整个过程必须科学践行软件工程。</p>
+<h2 id="工具与效率">工具与效率</h2>
+<p>基础设施投入，如引入高性能服务器提高编译速度（1000万行c语言速度慢真的要半天），这里说一下越高频越重要。每一次修改代码都需要编译。
+开发代码review工具，方便协作。</p>
+<h2 id="资源统一管理">资源统一管理</h2>
+<p>主要体现以下几个方面：</p>
+<ol>
+<li>系统资源（如LIPC端口）统一分配与管理</li>
+<li>模块进程统一管理</li>
+<li>大块内存申请统一管理</li>
+<li>统一错误码</li>
+</ol>
+<h2 id="控制集中式处理分布式">控制集中式，处理分布式</h2>
+<p>在分布式架构上，采用控制集中式，处理分布式，并不追求用复杂的分布式协议来实现，够用就好。整个模型简单，大大降低了开发难度，提高系统可靠性。</p>
+<h2 id="方案评审">方案评审</h2>
+<p>公开评审，鼓励技术方案PK。</p>
+<h2 id="预研">预研</h2>
+<p>预研由market部门负责，由市场来定义未来需求与方向。</p>
+<h2 id="度量不可少">度量不可少</h2>
+<p>建立度量体系。大的方面分为以下几个方面：</p>
+<ol>
+<li>市场度量</li>
+<li>团队度量</li>
+<li>个人度量</li>
+<li>项目度量</li>
+<li>代码度量</li>
+</ol>
+<h2 id="减少对人的依赖">减少对人的依赖</h2>
+<ol>
+<li>加强流程建设</li>
+<li>不断用机器及工具代替人</li>
+<li>团队人员互备</li>
+</ol>
+<h2 id="文档">文档</h2>
+<ol>
+<li>重视文档，无论对外还是内部文档，文档就是沟通，文档就是协作（需求文档化，架构文档化，设计文档化，项目流程文档化，交付文档化）</li>
+</ol>
+<h1 id="代码">代码</h1>
+<p><strong>代码是研发最终交付的核心，是架构的实体，是业务的载体，是测试的对象，是公司的核心资产</strong>。</p>
+<h2 id="版本化">版本化</h2>
+<p>这个是老生常谈的问题，但是很基础，很重要。</p>
+<h2 id="设计先行">设计先行</h2>
+<p>代码之前，设计先行。正如以前说过一句话：<strong>从长远看，选择比努力重要，数据比算法重要，架构比实现重要</strong>。</p>
+<h2 id="代码规范是行动准则">代码规范是行动准则</h2>
+<p>这是很好的一份代码规规范。还是一个保证得到执行的规范。很多公司都
+倡导编程规范。但是实际并不能落地，这里有各种各样的原因。</p>
+<p>这里分享一下有利于编程规范得到真正落地的建议：</p>
+<ol>
+<li>规范意识培训</li>
+<li>提供规范检查的工具(这个最重要)</li>
+<li>将规范执行纳入考核(需要建立一套对应体系)</li>
+<li>代码review，review内容包括是否符合代码规范</li>
+</ol>
+<h2 id="必不可少的单元测试">必不可少的单元测试</h2>
+<p>交付系统在逻辑上由一个个函数构成，以函数为单元开展测试。</p>
+<h2 id="不止代码review还有代码鉴定">不止代码review，还有代码鉴定</h2>
+<p>对代码进行鉴定，估计国内就此一家吧。在保证代码鉴定团队的权威下，不仅要求是bug free，而且要求代码信雅达。</p>
+<p>关于代码review的关注点，以前写过一篇文章：<a href="https://myself659.github.io/c-codereivew/">C语言代码 review的总结</a></p>
+<h2 id="注重初始代码质量">注重初始代码质量</h2>
+<p>这是开发顺序决定的，由少数核心开发人员完成，完成基础模型的开发。这样的好处，开始代码质量高，不要让系统输在起点上，同时优秀的代码作为后面的大量项目开发的参考与标杆。</p>
+<h2 id="接口优先接口先行">接口优先，接口先行</h2>
+<p>接口（API）比实现更重要。在编码之前，接口完成设计并通过评审。</p>
+<h2 id="避免以忙治乱">避免以忙治乱</h2>
+<p>工作总有人喜欢用了自己的勤劳来掩盖自己的愚蠢。</p>
+<h1 id="说明">说明</h1>
+<p>在不同的公司，不同行业，不同阶段研发管理都要针对性调整，不求多高大上，但求实用，只有管理规定能够落实，才能真正提高效率，增强团队的战斗力，解决具体业务的问题，满足业务的需求。</p>
+<h1 id="参考">参考</h1>
+<ol>
+<li>[如何看待百度要求内部全面停止使用 React / React Native](如何看待百度要求内部全面停止使用 React / React Native?)</li>
+</ol>
+<h2 id="欢迎关注">欢迎关注</h2>
+<p>欢迎关注微信公众帐号：沉风网事(savewind)</p>
+<p><img src="/images/cfws.jpg" alt="沉风网事"></p>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">沉风网事</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+        2018-12-05
+        
+    </span>
+  </p>
+  
+  
+</div>
+<footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/%E9%97%B2%E8%B0%88%E4%B9%B1%E6%89%AF/">闲谈乱扯</a>
+          <a href="/tags/%E7%A0%94%E5%8F%91%E7%AE%A1%E7%90%86/">研发管理</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/post/distributed-theory/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">谈谈对分布式系统的一些思考</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        <a class="next" href="/post/%E8%AF%B4%E8%AF%B4%E5%9C%A8%E4%B8%8D%E5%90%8C%E8%A1%8C%E4%B8%9A%E7%9A%84%E7%BC%96%E7%A8%8B%E4%BD%93%E9%AA%8C/">
+            <span class="next-text nav-default">说说在不同行业的编程体验</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    (function() {
+      
+      
+      if (window.location.hostname === 'localhost') return;
+
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      var disqus_shortname = 'ipds-top';
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+  
+
+  
+    <script src="https://utteranc.es/client.js"
+            repo="myself659/myself659/ipds-public"
+            issue-term="pathname"
+            theme="github-light"
+            crossorigin="anonymous"
+            async>
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://github.com/utterance">comments powered by utterances.</a></noscript>
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/8.3.1/mermaid.min.js"></script>
+<div class="social-links">
+      <a href="mailto:myself659@163.com" class="iconfont icon-email" title="email"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-stack-overflow" title="stack-overflow"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-twitter" title="twitter"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-facebook" title="facebook"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-linkedin" title="linkedin"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-google" title="google"></a>
+      <a href="https://github.com/myself659" class="iconfont icon-github" title="github"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-weibo" title="weibo"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-zhihu" title="zhihu"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-douban" title="douban"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-pocket" title="pocket"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-tumblr" title="tumblr"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-instagram" title="instagram"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-gitlab" title="gitlab"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-bilibili" title="bilibili"></a>
+  <a href="http://myself659.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/myself659/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2017 - 
+    2020
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">沉风网事</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+
+
+
+<script type="text/javascript" src="/js/main.min.d7b7ada643c9c1a983026e177f141f7363b4640d619caf01d8831a6718cd44ea.js"></script>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-144475213-1', 'auto');
+	ga('set', 'anonymizeIp', true);
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+
+
+
+
+</body>
+</html>

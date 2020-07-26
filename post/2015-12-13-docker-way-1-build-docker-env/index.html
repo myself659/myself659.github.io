@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>升级Linux内核，搭建docker环境 - 沉风网事</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="沉风网事" /><meta name="description" content="docker可以说是去年最热的技术，也是业界大谈特谈的技术，到了今年有很多公司已经将docker应用于自己的生产环境。Docker已经从一个" /><meta name="keywords" content="沉风网事, 沉风, 区块链" />
+
+
+<meta name="baidu-site-verification" content="9LmlOuIblt" />
+
+
+
+<meta name="generator" content="Hugo 0.68.3 with theme even" />
+
+
+<link rel="canonical" href="http://myself659.github.io/post/2015-12-13-docker-way-1-build-docker-env/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.8c3cbcb0324c2bb4875ceccba4007cbad4b4ac8377f33af9953c3e7684534a50.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="升级Linux内核，搭建docker环境" />
+<meta property="og:description" content="docker可以说是去年最热的技术，也是业界大谈特谈的技术，到了今年有很多公司已经将docker应用于自己的生产环境。Docker已经从一个" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://myself659.github.io/post/2015-12-13-docker-way-1-build-docker-env/" />
+<meta property="article:published_time" content="2015-12-13T11:58:06+02:00" />
+<meta property="article:modified_time" content="2015-12-13T11:58:06+02:00" />
+<meta itemprop="name" content="升级Linux内核，搭建docker环境">
+<meta itemprop="description" content="docker可以说是去年最热的技术，也是业界大谈特谈的技术，到了今年有很多公司已经将docker应用于自己的生产环境。Docker已经从一个">
+<meta itemprop="datePublished" content="2015-12-13T11:58:06&#43;02:00" />
+<meta itemprop="dateModified" content="2015-12-13T11:58:06&#43;02:00" />
+<meta itemprop="wordCount" content="798">
+
+
+
+<meta itemprop="keywords" content="Linux," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="升级Linux内核，搭建docker环境"/>
+<meta name="twitter:description" content="docker可以说是去年最热的技术，也是业界大谈特谈的技术，到了今年有很多公司已经将docker应用于自己的生产环境。Docker已经从一个"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">沉风</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a><a href="/post/leetcode/">
+        <li class="mobile-menu-item">LeetCode</li>
+      </a><a href="/post/read-post/">
+        <li class="mobile-menu-item">Read</li>
+      </a><a href="/post/share-post/">
+        <li class="mobile-menu-item">Share</li>
+      </a><a href="/post/slide-post/">
+        <li class="mobile-menu-item">Slide</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">沉风</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/leetcode/">LeetCode</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/read-post/">Read</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/share-post/">Share</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/slide-post/">Slide</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">升级Linux内核，搭建docker环境</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2015-12-13 </span>
+        <div class="post-category">
+            <a href="/categories/linux/"> Linux </a>
+            </div>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#升级内核">升级内核</a></li>
+        <li><a href="#安装device-mapper">安装device-mapper</a></li>
+        <li><a href="#安装docker">安装docker</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <p>docker可以说是去年最热的技术，也是业界大谈特谈的技术，到了今年有很多公司已经将docker应用于自己的生产环境。Docker已经从一个工具转化成平台，小生态圈。作为一名程序员应该与时俱进，学习新技术，不断地提高自己。</p>
+<h3 id="升级内核">升级内核</h3>
+<p>docker要求linux内核版本3.12以上，作为常用linux2.26.32版本，虽然也可以安装docker，但是有一些特性不支持，所以第一步就是升级内核。个人选择最新的长期维护版本升级linux4.13,内核升级最关键的一件事情就是配置内核，关于内核支持docker的内核配置文件，如果不想自己动手配置内核，可以参考<a href="https://github.com/myself659/docker-way/blob/master/env/linux-4.1.3-configfordocker">Linux-4.13-configfordocker</a>;</p>
+<p>在未正确配置linux内核会出现以下一些错误：</p>
+<ol>
+<li>docker启动过程中iptables命令执行失败，原因是 iptables模块没有配置</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">[root@localhost ~]# docker -d
+INFO[0000] Listening for HTTP on unix (/var/run/docker.sock) 
+INFO[0000] [graphdriver] using prior storage driver &#34;devicemapper&#34; 
+FATA[0000] Error starting daemon: Error initializing network controller: Error creating default &#34;bridge&#34; network: Failed to Setup IP tables: Unable to enable NAT rule: iptables failed: iptables -t nat -I POSTROUTING -s 172.17.42.1/16 ! -o docker0 -j MASQUERADE: iptables v1.4.7: can&#39;t initialize iptables table `nat&#39;: Table does not exist (do you need to insmod?)
+Perhaps iptables or your kernel needs to be upgraded.
+ (exit status 3) 
+You have new mail in /var/spool/mail/root
+[root@localhost ~]# 
+</code></pre></td></tr></table>
+</div>
+</div><ol start="2">
+<li>cgroup创建失败，具体参考<a href="http://stackoverflow.com/questions/25183063/docker-on-rhel-6-cgroup-mounting-failing">stackoverflow</a></li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">[root@localhost ~]# service docker start 
+Starting cgconfig service: Error: cannot mount memory to /cgroup/memory: No such file or directory
+/sbin/cgconfigparser; error loading /etc/cgconfig.conf: Cgroup mounting failed
+Failed to parse /etc/cgconfig.conf or /etc/cgconfig.d[FAILED]
+</code></pre></td></tr></table>
+</div>
+</div><p>具体内核升级过程参考如下：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">[root@localhost linux-4.1.13]# cp /share/github/docker-way/env/linux-4.1.3-configfordocker   .config 
+[root@localhost linux-4.1.13]# sh  -c   &#39;yes  &#34;&#34; | make oldconfig&#39;
+[root@localhost linux-4.1.13]# make   -j2 bzImage 
+[root@localhost linux-4.1.13]# make   -j2  modules 
+[root@localhost linux-4.1.13]# make   -j2   modules_install  
+[root@localhost linux-4.1.13]# make install
+
+</code></pre></td></tr></table>
+</div>
+</div><p>检查grub配置，修改并将linux-4.13作为默认启动项，重启系统，系统启动成功后，查看内核版本：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">[root@localhost ~]# uname   -a
+Linux localhost.localdomain 4.1.13 #1 SMP Sat Dec 5 11:17:50 CST 2015 x86_64 x86_64 x86_64 GNU/Linux
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="安装device-mapper">安装device-mapper</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">[root@localhost ~]#yum install -y device-mapper
+
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="安装docker">安装docker</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">[root@localhost ~]# yum   -y   install docker-io  
+</code></pre></td></tr></table>
+</div>
+</div><p>安装完成后，检查docker是否能够正确启动</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">[root@localhost ~]# docker  -d
+INFO[0000] [graphdriver] using prior storage driver &#34;devicemapper&#34; 
+INFO[0000] Listening for HTTP on unix (/var/run/docker.sock) 
+WARN[0000] Your kernel does not support swap memory limit. 
+INFO[0000] Loading containers: start.                   
+
+INFO[0000] Loading containers: done.                    
+INFO[0000] Daemon has completed initialization          
+INFO[0000] Docker daemon                                 commit=786b29d execdriver=native-0.2 graphdriver=devicemapper version=1.7.1
+</code></pre></td></tr></table>
+</div>
+</div><p>没有错误，接下来可以开启一段docker学习之旅了!</p>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">沉风网事</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+        2015-12-13
+        
+    </span>
+  </p>
+  
+  
+</div>
+<footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/linux/">Linux</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/post/2016-01-28-docker-cmd-pratice/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">docker image命令实践</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        <a class="next" href="/post/2015-08-28-gdb-command-example/">
+            <span class="next-text nav-default">gdb自定义断点操作</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    (function() {
+      
+      
+      if (window.location.hostname === 'localhost') return;
+
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      var disqus_shortname = 'ipds-top';
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+  
+
+  
+    <script src="https://utteranc.es/client.js"
+            repo="myself659/myself659/ipds-public"
+            issue-term="pathname"
+            theme="github-light"
+            crossorigin="anonymous"
+            async>
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://github.com/utterance">comments powered by utterances.</a></noscript>
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/8.3.1/mermaid.min.js"></script>
+<div class="social-links">
+      <a href="mailto:myself659@163.com" class="iconfont icon-email" title="email"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-stack-overflow" title="stack-overflow"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-twitter" title="twitter"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-facebook" title="facebook"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-linkedin" title="linkedin"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-google" title="google"></a>
+      <a href="https://github.com/myself659" class="iconfont icon-github" title="github"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-weibo" title="weibo"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-zhihu" title="zhihu"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-douban" title="douban"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-pocket" title="pocket"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-tumblr" title="tumblr"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-instagram" title="instagram"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-gitlab" title="gitlab"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-bilibili" title="bilibili"></a>
+  <a href="http://myself659.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/myself659/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2017 - 
+    2020
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">沉风网事</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+
+
+
+<script type="text/javascript" src="/js/main.min.d7b7ada643c9c1a983026e177f141f7363b4640d619caf01d8831a6718cd44ea.js"></script>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-144475213-1', 'auto');
+	ga('set', 'anonymizeIp', true);
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+
+
+
+
+</body>
+</html>

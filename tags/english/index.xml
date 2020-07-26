@@ -1,23 +1,24 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>English on 沉风网事</title>
-    <link>https://myself659.github.io/tags/english/</link>
+    <link>http://myself659.github.io/tags/english/</link>
     <description>Recent content in English on 沉风网事</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
+    <copyright>沉风网事</copyright>
     <lastBuildDate>Thu, 25 Jan 2018 11:58:06 +0200</lastBuildDate>
     
-	<atom:link href="https://myself659.github.io/tags/english/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://myself659.github.io/tags/english/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>英文学习材料</title>
-      <link>https://myself659.github.io/2018/01/25/tech-english-collection/</link>
+      <link>http://myself659.github.io/post/tech-english-collection/</link>
       <pubDate>Thu, 25 Jan 2018 11:58:06 +0200</pubDate>
       
-      <guid>https://myself659.github.io/2018/01/25/tech-english-collection/</guid>
-      <description> Golang  Let&amp;rsquo;s Talk Locks! Maintaining the Go Crypto Libraries  Blockchain  CoinTalk  Arch  Life of a Packet through Istio Algorithms behind Modern Storage Systems Aurora Serverless: The Good, the Bad and the Scalable  rust  How Rust Views Tradeoffs Rust&amp;rsquo;s Journey to Async/await  More  infoq Presentations  </description>
+      <guid>http://myself659.github.io/post/tech-english-collection/</guid>
+      <description>Golang Let&amp;rsquo;s Talk Locks! Maintaining the Go Crypto Libraries Blockchain CoinTalk Arch Life of a Packet through Istio Algorithms behind Modern Storage Systems Aurora Serverless: The Good, the Bad and the Scalable rust How Rust Views Tradeoffs Rust&amp;rsquo;s Journey to Async/await More infoq Presentations</description>
     </item>
     
   </channel>

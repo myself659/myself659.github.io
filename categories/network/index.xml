@@ -1,60 +1,42 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Network on 沉风网事</title>
-    <link>https://myself659.github.io/categories/network/</link>
+    <link>http://myself659.github.io/categories/network/</link>
     <description>Recent content in Network on 沉风网事</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
+    <copyright>沉风网事</copyright>
     <lastBuildDate>Fri, 03 Nov 2017 11:58:06 +0200</lastBuildDate>
     
-	<atom:link href="https://myself659.github.io/categories/network/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://myself659.github.io/categories/network/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>MacOS上设置终端代理</title>
-      <link>https://myself659.github.io/2017/11/03/2017-11-03-mac-tem-proxy/</link>
+      <link>http://myself659.github.io/post/2017-11-03-mac-tem-proxy/</link>
       <pubDate>Fri, 03 Nov 2017 11:58:06 +0200</pubDate>
       
-      <guid>https://myself659.github.io/2017/11/03/2017-11-03-mac-tem-proxy/</guid>
-      <description>由于20-1大的原因，各种梯子损失惨重。自己也只好自己动手搭建VPS。关于如何搭建梯子这里暂不描述。
-说明 下面的操作是建立在成功搭建VPS基础上
-步骤 查看代理端口 代理客户端使用Shadowsocks-NG-R8,它解决了一个长久以来的痛点，Shadowsocks没有HTTP代理，导致需要使用polipo等软件进行协议转换。
-第一步：选择HTTP代理设置 第二步：点击查看 设置代理命令 vim打开vim ~/.bash_profile 在尾部添加如下内容： alias proxy-on=&#39;export http_proxy=127.0.0.1:1087;export https_proxy=$http_proxy&#39; alias proxy-off=&#39;unset http_proxy;unset https_proxy&#39;  修改立即生效: source ~/.bash_profile 测试 Michaels-iMac:~ eric$ proxy-on Michaels-iMac:~ eric$ go get -u google.golang.org/grpc package golang.org/x/net/context: golang.org/x/net is a custom import path for https://go.googlesource.com/net, but /Users/eric/go/src/golang.org/x/net is checked out from https://github.com/golang/net package golang.org/x/net/http2: golang.org/x/net is a custom import path for https://go.googlesource.com/net, but /Users/eric/go/src/golang.org/x/net is checked out from https://github.com/golang/net package golang.</description>
+      <guid>http://myself659.github.io/post/2017-11-03-mac-tem-proxy/</guid>
+      <description>由于20-1大的原因，各种梯子损失惨重。自己也只好自己动手搭建VPS。关于如何搭建梯子这里暂不描述。 说明 下面的操作是建立在成功搭建VPS基础</description>
     </item>
     
     <item>
       <title>TCP连接下载文件失败，也许该看看这篇文章</title>
-      <link>https://myself659.github.io/2017/02/16/2017-02-16-tcp-slow-down/</link>
+      <link>http://myself659.github.io/post/2017-02-16-tcp-slow-down/</link>
       <pubDate>Thu, 16 Feb 2017 11:58:06 +0200</pubDate>
       
-      <guid>https://myself659.github.io/2017/02/16/2017-02-16-tcp-slow-down/</guid>
-      <description>体验一下标题党，现在自媒体横行，容我也放肆一回（多了我也不行，替自己码字能力捉急）！
-另起一行，到此为止，进入正题
-缘起 最近通过uc浏览器下载apk的时候，偶尔出现下载apk，下载了60%左右卡住，想到以前看到这篇文章：The curious case of slow downloads（PS：毕竟这个问题不是常出现，就算一次下载失败，反正可以重新下载，总能下载成功的）
-说明 由于本人英文水平有限，翻译水平更是不足，就不具体翻译上面的文章，仅作简单说明，更深的理解请阅读The curious case of slow downloads
-问题描述 Cloudflare是美国一家CDN厂商，他们的工程师发现下面的问题： &amp;gt;一些下载速度很慢的连接被突然关闭，导致用户下载失败
- 这些连接不是客户端主动关闭，而是服务端主动关闭的
- 问题原因 原文有具体解决这个问题详细过程，还是值得一看，这里不作描述。
-在满足如下条件情况下会出现下载失败：
- socket发送缓冲区可用空间低于缓冲区总大小的三分之一 用户下载速度不能达到在60秒内使该socket发送缓冲区可用空间超过缓冲区总大小的三分之一
- nginx配置项send_timeout对应值为60秒  当满足上述条件，当60秒超时后，nginx会关闭该连接
-这里大家可能有一个问题，网速慢也会不断发送，怎么会超时出现关闭连接？
-这里有一个普遍的误解：认为send像recv那样，每发送成功一个都上报epoll事件（以linux为例）,而实际send上报epoll事件条件如下：
- send buffer有可用发送空间
- 进入发送队列的数据一定要低于LOWAT的设置值（注意：linux 内核2.6版本没有这个限制，linux 内核4.5版本以上有此条件，其他版本情况未知） 发送缓存区的可用空间一定要超过大于发送空间的已使用的空间的二分之一  其中第三个条件对应内核代码如下：
-unsigned int tcp_poll(struct file *file, struct socket *sock, poll_table *wait) { unsigned int mask; struct sock *sk = sock-&amp;gt;sk; struct tcp_sock *tp = tcp_sk(sk); sock_poll_wait(file, sk-&amp;gt;sk_sleep, wait); if (sk-&amp;gt;sk_state == TCP_LISTEN) // 侦听状态，进入listen poll，即检查侦听socket的accpet队列是否为空 return inet_csk_listen_poll(sk); /* Socket is not locked.</description>
+      <guid>http://myself659.github.io/post/2017-02-16-tcp-slow-down/</guid>
+      <description>体验一下标题党，现在自媒体横行，容我也放肆一回（多了我也不行，替自己码字能力捉急）！ 另起一行，到此为止，进入正题 缘起 最近通过uc浏览器下载a</description>
     </item>
     
     <item>
       <title>ping不通常见原因总结</title>
-      <link>https://myself659.github.io/2015/05/27/2015-05-27-ping-error/</link>
+      <link>http://myself659.github.io/post/2015-05-27-ping-error/</link>
       <pubDate>Wed, 27 May 2015 11:58:06 +0200</pubDate>
       
-      <guid>https://myself659.github.io/2015/05/27/2015-05-27-ping-error/</guid>
-      <description>ping不通从ping的流程分为两大类：请求报文没有到达对端与应答报文未收到
-请求报文没有到达对端的可能原因 1. 发送端发送流程出错 2. 源端,转发设备没有目的地址的路由 2. ttl 小于转发跳数 3. 分片丢包 4. MTU限制 5. 转发丢包 6. 报文错误 7. 防火墙规则不允许该类型报文通过 8. 中间进行nat转换等处理出错 8. 目的地址不存在 9. 接收端收包流程出错
-应答报文未收到的可能原因 1. 发送端发送流程出错 2. MTU限制 3. 目的端禁止应答 4. 接收报文错误 5. 防火墙规则不允许该类型报文通过 6. 接收到了报文，但是超出等待时间 7. 接收报文错误，ping 应答检查失败 8. 转发丢包</description>
+      <guid>http://myself659.github.io/post/2015-05-27-ping-error/</guid>
+      <description>ping不通从ping的流程分为两大类：请求报文没有到达对端与应答报文未收到</description>
     </item>
     
   </channel>

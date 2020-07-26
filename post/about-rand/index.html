@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>浅谈随机 - 沉风网事</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="沉风网事" /><meta name="description" content="随机是一个十分有意思的问题。 随机是一种选择方式 生活中最常见的例子就有这些： 抽签 抽奖 抛硬币 随机是一种隐藏方式 同样拿抽奖为例，将少量的中奖者隐藏" /><meta name="keywords" content="沉风网事, 沉风, 区块链" />
+
+
+<meta name="baidu-site-verification" content="9LmlOuIblt" />
+
+
+
+<meta name="generator" content="Hugo 0.68.3 with theme even" />
+
+
+<link rel="canonical" href="http://myself659.github.io/post/about-rand/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.8c3cbcb0324c2bb4875ceccba4007cbad4b4ac8377f33af9953c3e7684534a50.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="浅谈随机" />
+<meta property="og:description" content="随机是一个十分有意思的问题。 随机是一种选择方式 生活中最常见的例子就有这些： 抽签 抽奖 抛硬币 随机是一种隐藏方式 同样拿抽奖为例，将少量的中奖者隐藏" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://myself659.github.io/post/about-rand/" />
+<meta property="article:published_time" content="2018-06-08T11:58:06+02:00" />
+<meta property="article:modified_time" content="2018-06-08T11:58:06+02:00" />
+<meta itemprop="name" content="浅谈随机">
+<meta itemprop="description" content="随机是一个十分有意思的问题。 随机是一种选择方式 生活中最常见的例子就有这些： 抽签 抽奖 抛硬币 随机是一种隐藏方式 同样拿抽奖为例，将少量的中奖者隐藏">
+<meta itemprop="datePublished" content="2018-06-08T11:58:06&#43;02:00" />
+<meta itemprop="dateModified" content="2018-06-08T11:58:06&#43;02:00" />
+<meta itemprop="wordCount" content="610">
+
+
+
+<meta itemprop="keywords" content="闲谈乱扯," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="浅谈随机"/>
+<meta name="twitter:description" content="随机是一个十分有意思的问题。 随机是一种选择方式 生活中最常见的例子就有这些： 抽签 抽奖 抛硬币 随机是一种隐藏方式 同样拿抽奖为例，将少量的中奖者隐藏"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">沉风</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a><a href="/post/leetcode/">
+        <li class="mobile-menu-item">LeetCode</li>
+      </a><a href="/post/read-post/">
+        <li class="mobile-menu-item">Read</li>
+      </a><a href="/post/share-post/">
+        <li class="mobile-menu-item">Share</li>
+      </a><a href="/post/slide-post/">
+        <li class="mobile-menu-item">Slide</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">沉风</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/leetcode/">LeetCode</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/read-post/">Read</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/share-post/">Share</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/slide-post/">Slide</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">浅谈随机</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2018-06-08 </span>
+        <div class="post-category">
+            <a href="/categories/%E9%97%B2%E8%B0%88%E4%B9%B1%E6%89%AF/"> 闲谈乱扯 </a>
+            </div>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#欢迎关注">欢迎关注</a></li>
+  </ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <p>随机是一个十分有意思的问题。</p>
+<h1 id="随机是一种选择方式">随机是一种选择方式</h1>
+<p>生活中最常见的例子就有这些：</p>
+<ol>
+<li>抽签</li>
+<li>抽奖</li>
+<li>抛硬币</li>
+</ol>
+<h1 id="随机是一种隐藏方式">随机是一种隐藏方式</h1>
+<p>同样拿抽奖为例，将少量的中奖者隐藏在抽奖参与者中。从概率论的角度上看就是将分子隐藏分母当中。</p>
+<h1 id="随机是一种分散方式">随机是一种分散方式</h1>
+<p>典型的例子就是随机数，避免产生的数据集中；除此之外Markov链实现一种离散时间随机过程。</p>
+<h1 id="随机是一种达成共识的方式">随机是一种达成共识的方式</h1>
+<p>还拿抽签为例，这种方式是我们达成共识的一种重要的低成本且公平的共识方式，具体如下：</p>
+<ol>
+<li>比赛过程中通过抽签解决出场顺序</li>
+<li>家里贫穷时，有多个读书的，通过抽签来决定的</li>
+</ol>
+<h1 id="随机是一种降低冲突的方式">随机是一种降低冲突的方式</h1>
+<p>随机带来的分散性，可以帮助解决冲突，例如raft协议在选leader过程中通过随机来避免多个候选者同时竞争leader的情况出现。</p>
+<h1 id="随机是一种保护与安全方式">随机是一种保护与安全方式</h1>
+<p>一滴水只有放进大海才永远不会干涸。在Algorand中通过VRF保护记账节点，将记帐节点隐藏在于众多节点当中。在数字货币钱包利用随机性生产私钥来保护私钥；除了这些以外，更多随机数在在区块链有许多利用随机来保证公链安全的应用，可以参考这篇文章<a href="https://mp.weixin.qq.com/s/-yrmyEsKjZiCUxgY1CMuKQ">区块链中的随机数</a></p>
+<h1 id="随机是一种需求">随机是一种需求</h1>
+<p>小道消息的抽奖助手将随机这一需求产品化。</p>
+<h1 id="小结">小结</h1>
+<p>总之，随机在生活中无处不在。随机以上用途来自随机的不确定性。<strong>随机的本质是不确性</strong>。 随机当中还有很多可以挖掘的认识与理解。</p>
+<h1 id="参考">参考</h1>
+<ol>
+<li><a href="https://zh.wikipedia.org/wiki/%E9%9A%8F%E6%9C%BA%E6%80%A7">随机性</a></li>
+<li><a href="https://www.cnblogs.com/skyme/p/4651331.html">一文搞懂HMM（隐马尔可夫模型）</a></li>
+<li><a href="https://medium.com/mixbytes/random-numbers-and-decentralized-networks-implementation-d269be538e0c">Random numbers and decentralized networks: implementation</a></li>
+<li><a href="https://medium.com/mixbytes/random-numbers-and-decentralized-networks-practical-application-ce416d90976b">Random numbers and decentralized networks: practical application</a></li>
+</ol>
+<h2 id="欢迎关注">欢迎关注</h2>
+<p>欢迎关注微信公众帐号：沉风网事(savewind)</p>
+<p><img src="/images/cfws.jpg" alt="沉风网事"></p>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">沉风网事</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+        2018-06-08
+        
+    </span>
+  </p>
+  
+  
+</div>
+<footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/%E9%97%B2%E8%B0%88%E4%B9%B1%E6%89%AF/">闲谈乱扯</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/post/ms-github/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">关于微软收购github几点看法</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        <a class="next" href="/post/eth-txpool/">
+            <span class="next-text nav-default">以太坊交易池分析</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    (function() {
+      
+      
+      if (window.location.hostname === 'localhost') return;
+
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      var disqus_shortname = 'ipds-top';
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+  
+
+  
+    <script src="https://utteranc.es/client.js"
+            repo="myself659/myself659/ipds-public"
+            issue-term="pathname"
+            theme="github-light"
+            crossorigin="anonymous"
+            async>
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://github.com/utterance">comments powered by utterances.</a></noscript>
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/8.3.1/mermaid.min.js"></script>
+<div class="social-links">
+      <a href="mailto:myself659@163.com" class="iconfont icon-email" title="email"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-stack-overflow" title="stack-overflow"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-twitter" title="twitter"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-facebook" title="facebook"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-linkedin" title="linkedin"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-google" title="google"></a>
+      <a href="https://github.com/myself659" class="iconfont icon-github" title="github"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-weibo" title="weibo"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-zhihu" title="zhihu"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-douban" title="douban"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-pocket" title="pocket"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-tumblr" title="tumblr"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-instagram" title="instagram"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-gitlab" title="gitlab"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-bilibili" title="bilibili"></a>
+  <a href="http://myself659.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/myself659/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2017 - 
+    2020
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">沉风网事</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+
+
+
+<script type="text/javascript" src="/js/main.min.d7b7ada643c9c1a983026e177f141f7363b4640d619caf01d8831a6718cd44ea.js"></script>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-144475213-1', 'auto');
+	ga('set', 'anonymizeIp', true);
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>IM后端系统设计总结(1) - 沉风网事</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="沉风网事" /><meta name="description" content="定义IM 为用户提供即时消息服务，这里面有三个关键词：用户，消息，服务；下面根据三个关键词来展开总结，先从消息开始。 消息 消息分类 对消息分类，很" /><meta name="keywords" content="沉风网事, 沉风, 区块链" />
+
+
+<meta name="baidu-site-verification" content="9LmlOuIblt" />
+
+
+
+<meta name="generator" content="Hugo 0.68.3 with theme even" />
+
+
+<link rel="canonical" href="http://myself659.github.io/post/2016-07-29-im-message/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.8c3cbcb0324c2bb4875ceccba4007cbad4b4ac8377f33af9953c3e7684534a50.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="IM后端系统设计总结(1)" />
+<meta property="og:description" content="定义IM 为用户提供即时消息服务，这里面有三个关键词：用户，消息，服务；下面根据三个关键词来展开总结，先从消息开始。 消息 消息分类 对消息分类，很" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://myself659.github.io/post/2016-07-29-im-message/" />
+<meta property="article:published_time" content="2016-07-29T11:58:06+02:00" />
+<meta property="article:modified_time" content="2016-07-29T11:58:06+02:00" />
+<meta itemprop="name" content="IM后端系统设计总结(1)">
+<meta itemprop="description" content="定义IM 为用户提供即时消息服务，这里面有三个关键词：用户，消息，服务；下面根据三个关键词来展开总结，先从消息开始。 消息 消息分类 对消息分类，很">
+<meta itemprop="datePublished" content="2016-07-29T11:58:06&#43;02:00" />
+<meta itemprop="dateModified" content="2016-07-29T11:58:06&#43;02:00" />
+<meta itemprop="wordCount" content="1228">
+
+
+
+<meta itemprop="keywords" content="Arch," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="IM后端系统设计总结(1)"/>
+<meta name="twitter:description" content="定义IM 为用户提供即时消息服务，这里面有三个关键词：用户，消息，服务；下面根据三个关键词来展开总结，先从消息开始。 消息 消息分类 对消息分类，很"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">沉风</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a><a href="/post/leetcode/">
+        <li class="mobile-menu-item">LeetCode</li>
+      </a><a href="/post/read-post/">
+        <li class="mobile-menu-item">Read</li>
+      </a><a href="/post/share-post/">
+        <li class="mobile-menu-item">Share</li>
+      </a><a href="/post/slide-post/">
+        <li class="mobile-menu-item">Slide</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">沉风</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/leetcode/">LeetCode</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/read-post/">Read</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/share-post/">Share</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/slide-post/">Slide</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">IM后端系统设计总结(1)</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2016-07-29 </span>
+        <div class="post-category">
+            <a href="/categories/arch/"> Arch </a>
+            </div>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#定义im">定义IM</a></li>
+        <li><a href="#消息">消息</a></li>
+        <li><a href="#消息描述">消息描述</a></li>
+        <li><a href="#后记">后记</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <h3 id="定义im">定义IM</h3>
+<p>为用户提供即时消息服务，这里面有三个关键词：用户，消息，服务；下面根据三个关键词来展开总结，先从消息开始。</p>
+<h3 id="消息">消息</h3>
+<h4 id="消息分类">消息分类</h4>
+<p>对消息分类，很简单但是重要，方便后面业务的拆分。</p>
+<ol>
+<li>注册</li>
+<li>登录</li>
+<li>用户信息</li>
+<li>聊天消息</li>
+<li>群组</li>
+<li>好友</li>
+<li>文件</li>
+<li>版本</li>
+<li>内部服务器之间消息</li>
+<li>客户端诊断</li>
+<li>其他业务消息</li>
+</ol>
+<h4 id="信息语义描述">信息语义描述</h4>
+<p>在互联网和移动互联网时代常见有以下几种方式：</p>
+<ol>
+<li>XML</li>
+<li>文本</li>
+<li>MQTT</li>
+<li>自定义二进制（这里一般默认为google protobuf）</li>
+</ol>
+<p>这四种类型比较如下表所示：</p>
+<table>
+<thead>
+<tr>
+<th>比较项</th>
+<th align="center">XML</th>
+<th align="right">文本</th>
+<th align="center">MQTT</th>
+<th align="right">自定义二进制</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>可读性</td>
+<td align="center">好</td>
+<td align="right">好</td>
+<td align="center">差</td>
+<td align="right">差</td>
+</tr>
+<tr>
+<td>通用性</td>
+<td align="center">标准协议，易通用</td>
+<td align="right">支持通用http协议，也可自定义</td>
+<td align="center">通用标准协议</td>
+<td align="right">私有协议，无法通用</td>
+</tr>
+<tr>
+<td>扩展性</td>
+<td align="center">易扩展，支持第三方</td>
+<td align="right">易扩展</td>
+<td align="center">可扩展</td>
+<td align="right">仅协议可扩展，不支持第三方</td>
+</tr>
+<tr>
+<td>流量消耗</td>
+<td align="center">极大</td>
+<td align="right">大</td>
+<td align="center">小</td>
+<td align="right">小</td>
+</tr>
+<tr>
+<td>处理效率</td>
+<td align="center">低</td>
+<td align="right">一般</td>
+<td align="center">高</td>
+<td align="right">高</td>
+</tr>
+<tr>
+<td>网络适应性</td>
+<td align="center">差</td>
+<td align="right">一般</td>
+<td align="center">较好</td>
+<td align="right">较好</td>
+</tr>
+<tr>
+<td>业内应用</td>
+<td align="center">新浪微博/GTalk</td>
+<td align="right">MSN</td>
+<td align="center">facebook messenger</td>
+<td align="right">QQ/weixin</td>
+</tr>
+</tbody>
+</table>
+<p>再补充说一点，采用二进制协议，在网络带宽及消息存储方面可以节约成本，特别用户量达到千万级以上</p>
+<p>参考业内应用和移动互联网需求，二进制协议应该是不二选择。这里强烈推荐google protobuf，理由如下：</p>
+<ol>
+<li>亲爹是google</li>
+<li>支持多种编程语言(C++, JAVA, PYTHON, GO，PHP,C#)，支持多种平台</li>
+<li>自定义且灵活</li>
+<li>支持数据压缩</li>
+<li>完整的技术生态，以及多年的应用实践</li>
+</ol>
+<h4 id="消息可扩展性">消息可扩展性</h4>
+<p>自定义二进制消息（google protobuf）可扩展性方面的一些经验：</p>
+<ol>
+<li>采用T(ype)L(ength)V(alue)</li>
+<li>数据结构中的成员不要使用变长数据类型，例如long，在32位系统中占4Bytes，在64位系统占用8Bytes</li>
+<li>不删除消息体的数据成员</li>
+<li>消息类型递增，不删除消息类型，即使不再使用也保留</li>
+<li>消息头带上版本号，客户端无需要关心版本变化，由服务器完成不同版本的兼容适配处理</li>
+<li>消息头与消息体的设计统一管理，不允许任何人私自修改</li>
+<li>除非确定，protobuf消息字段尽量使用optional，由代码逻辑确定是否需要相应字段</li>
+<li>考虑业务需求与变化，为未来留有应对变化的空间，同时保证消息的简洁</li>
+</ol>
+<h4 id="消息存储">消息存储</h4>
+<ol>
+<li>初期简单点，采用mysql，同时利用mysql主备部署解决单点故障问题，分布式存储后面再说了，针对大量的消息存储后面考虑</li>
+<li>对用户之间的聊天消息分表</li>
+<li>对群信息等利用redis缓存</li>
+<li>对于热点数据可以直接加载到内存</li>
+</ol>
+<h4 id="消息转发">消息转发</h4>
+<ol>
+<li>消息从用户到用户（单播）</li>
+<li>消息从用户到服务器 （单播）</li>
+<li>消息从用户到群组 （组播）</li>
+<li>消息从服务器到用户（单播）</li>
+<li>消息从服务器到群组（组播）</li>
+</ol>
+<h4 id="消息传输">消息传输</h4>
+<p>相对于PC互联网情况下，移动互联网情况下，丢包概率高，传输延迟大，问题自然就比较多，这方面优化请参考<a href="http://www.infoq.com/cn/presentations/the-road-of-mobile-qq-mobile-network-practice">手机QQ的移动网络实践之路</a></p>
+<h4 id="消息安全">消息安全</h4>
+<ol>
+<li>防修改   消息检查或校验</li>
+<li>防窃听   消息加密</li>
+<li>防泄漏   系统防入侵，系统加固</li>
+<li>防丢失   消息请求与回应机制，消息重传与幂等性</li>
+<li>防损坏   多副本，分布式存储</li>
+<li>防伪装   身份验证，签名</li>
+</ol>
+<h3 id="消息描述">消息描述</h3>
+<p>消息由消息头和消息体组成，消息头参考如下：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">
+#pragma pack(1)
+typedef struct {
+    uint16_t    type;         // msg type 
+    uint16_t    length;       // the whole pdu length
+    uint32_t    version;      // pdu version number
+    uint32_t    magic;        // magic number
+    uint32_t    reserve;
+    //后面为消息体
+} UserPduHeader_t;
+#pragma pack()
+
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="后记">后记</h3>
+<p>由于个人水平有限，有什么不足与错误，敬请指正！</p>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">沉风网事</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+        2016-07-29
+        
+    </span>
+  </p>
+  
+  
+</div>
+<footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/arch/">Arch</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/post/2016-08-05-im-user-state/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">IM后端系统设计总结(2)</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        <a class="next" href="/post/2016-07-26-go-channel-feature/">
+            <span class="next-text nav-default">Go channel 特点篇</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    (function() {
+      
+      
+      if (window.location.hostname === 'localhost') return;
+
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      var disqus_shortname = 'ipds-top';
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+  
+
+  
+    <script src="https://utteranc.es/client.js"
+            repo="myself659/myself659/ipds-public"
+            issue-term="pathname"
+            theme="github-light"
+            crossorigin="anonymous"
+            async>
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://github.com/utterance">comments powered by utterances.</a></noscript>
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/8.3.1/mermaid.min.js"></script>
+<div class="social-links">
+      <a href="mailto:myself659@163.com" class="iconfont icon-email" title="email"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-stack-overflow" title="stack-overflow"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-twitter" title="twitter"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-facebook" title="facebook"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-linkedin" title="linkedin"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-google" title="google"></a>
+      <a href="https://github.com/myself659" class="iconfont icon-github" title="github"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-weibo" title="weibo"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-zhihu" title="zhihu"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-douban" title="douban"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-pocket" title="pocket"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-tumblr" title="tumblr"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-instagram" title="instagram"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-gitlab" title="gitlab"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-bilibili" title="bilibili"></a>
+  <a href="http://myself659.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/myself659/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2017 - 
+    2020
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">沉风网事</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+
+
+
+<script type="text/javascript" src="/js/main.min.d7b7ada643c9c1a983026e177f141f7363b4640d619caf01d8831a6718cd44ea.js"></script>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-144475213-1', 'auto');
+	ga('set', 'anonymizeIp', true);
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,940 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>以太坊私链智能合约实践 - 沉风网事</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="沉风网事" /><meta name="description" content="环境说明 操作系统: macos.10.12.1 geth版本：1.5.9 solc版本：0.4.15 实践 1. 启动本地geth节点 1 Michaels-iMac:wallet eric$ geth --rpc --rpcaddr 127.0.0.1 --rpcport 8545 --dev --datadir myethchain 如上操作后，geth" /><meta name="keywords" content="沉风网事, 沉风, 区块链" />
+
+
+<meta name="baidu-site-verification" content="9LmlOuIblt" />
+
+
+
+<meta name="generator" content="Hugo 0.68.3 with theme even" />
+
+
+<link rel="canonical" href="http://myself659.github.io/post/2017-08-24-ethereum-start/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.8c3cbcb0324c2bb4875ceccba4007cbad4b4ac8377f33af9953c3e7684534a50.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="以太坊私链智能合约实践" />
+<meta property="og:description" content="环境说明 操作系统: macos.10.12.1 geth版本：1.5.9 solc版本：0.4.15 实践 1. 启动本地geth节点 1 Michaels-iMac:wallet eric$ geth --rpc --rpcaddr 127.0.0.1 --rpcport 8545 --dev --datadir myethchain 如上操作后，geth" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://myself659.github.io/post/2017-08-24-ethereum-start/" />
+<meta property="article:published_time" content="2017-08-24T11:58:06+02:00" />
+<meta property="article:modified_time" content="2017-08-24T11:58:06+02:00" />
+<meta itemprop="name" content="以太坊私链智能合约实践">
+<meta itemprop="description" content="环境说明 操作系统: macos.10.12.1 geth版本：1.5.9 solc版本：0.4.15 实践 1. 启动本地geth节点 1 Michaels-iMac:wallet eric$ geth --rpc --rpcaddr 127.0.0.1 --rpcport 8545 --dev --datadir myethchain 如上操作后，geth">
+<meta itemprop="datePublished" content="2017-08-24T11:58:06&#43;02:00" />
+<meta itemprop="dateModified" content="2017-08-24T11:58:06&#43;02:00" />
+<meta itemprop="wordCount" content="1187">
+
+
+
+<meta itemprop="keywords" content="blockchain," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="以太坊私链智能合约实践"/>
+<meta name="twitter:description" content="环境说明 操作系统: macos.10.12.1 geth版本：1.5.9 solc版本：0.4.15 实践 1. 启动本地geth节点 1 Michaels-iMac:wallet eric$ geth --rpc --rpcaddr 127.0.0.1 --rpcport 8545 --dev --datadir myethchain 如上操作后，geth"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">沉风</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a><a href="/post/leetcode/">
+        <li class="mobile-menu-item">LeetCode</li>
+      </a><a href="/post/read-post/">
+        <li class="mobile-menu-item">Read</li>
+      </a><a href="/post/share-post/">
+        <li class="mobile-menu-item">Share</li>
+      </a><a href="/post/slide-post/">
+        <li class="mobile-menu-item">Slide</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">沉风</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/leetcode/">LeetCode</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/read-post/">Read</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/share-post/">Share</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/slide-post/">Slide</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">以太坊私链智能合约实践</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2017-08-24 </span>
+        <div class="post-category">
+            <a href="/categories/blockchain/"> blockchain </a>
+            </div>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#1-启动本地geth节点">1. 启动本地geth节点</a></li>
+    <li><a href="#2-连接geth节点">2. 连接geth节点</a></li>
+    <li><a href="#3-确保solidity编译器安装正确">3. 确保solidity编译器安装正确</a></li>
+    <li><a href="#4-查看帐户列表">4. 查看帐户列表</a></li>
+    <li><a href="#5-创建帐户">5. 创建帐户</a></li>
+    <li><a href="#6-查看帐户列表">6. 查看帐户列表</a></li>
+    <li><a href="#7-查看coibase地址">7. 查看coibase地址</a></li>
+    <li><a href="#8-准备智能合约">8. 准备智能合约</a></li>
+    <li><a href="#9-编译智能合约">9. 编译智能合约</a>
+      <ul>
+        <li><a href="#10-根据abi创建合约对象">10. 根据ABI创建合约对象</a></li>
+      </ul>
+    </li>
+    <li><a href="#11-挖矿">11. 挖矿</a></li>
+    <li><a href="#12-解锁帐户">12. 解锁帐户</a></li>
+    <li><a href="#13-初始化智能合约">13. 初始化智能合约</a></li>
+    <li><a href="#14-部署智能合约">14. 部署智能合约</a></li>
+    <li><a href="#14-重新挖矿">14. 重新挖矿</a></li>
+    <li><a href="#15-切换-console">15. 切换 console</a></li>
+    <li><a href="#16-检查合约安装是否成功">16. 检查合约安装是否成功</a></li>
+    <li><a href="#17-调用合约函数">17. 调用合约函数</a></li>
+  </ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <h1 id="环境说明">环境说明</h1>
+<ul>
+<li>操作系统: macos.10.12.1</li>
+<li>geth版本：1.5.9</li>
+<li>solc版本：0.4.15</li>
+</ul>
+<h1 id="实践">实践</h1>
+<h2 id="1-启动本地geth节点">1. 启动本地geth节点</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">Michaels-iMac:wallet eric$ geth   --rpc --rpcaddr 127.0.0.1 --rpcport 8545 --dev --datadir myethchain  
+</code></pre></td></tr></table>
+</div>
+</div><p>如上操作后，geth  console输出如下：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">I0824 17:28:57.448455 p2p/server.go:340] Starting Server
+I0824 17:28:59.554115 p2p/discover/udp.go:227] Listening, enode://04697f62537244ee34aea28e613530a1f46a64de75d8174d963c9ca0c2e6b96d4aa756ef7a33e269de1b7c088163835b72dda8f4dea712cf39569db4e8d8e43a@[::]:54798
+I0824 17:28:59.554264 p2p/server.go:608] Listening on [::]:58245
+I0824 17:28:59.554324 whisper/whisperv2/whisper.go:176] Whisper started
+I0824 17:28:59.570668 node/node.go:341] IPC endpoint opened: /Users/eric/wallet/myethchain/geth.ipc
+I0824 17:28:59.581423 node/node.go:411] HTTP endpoint opened: http://127.0.0.1:8545
+</code></pre></td></tr></table>
+</div>
+</div><p>同时也创建在当前目录创建目录myethchain，其结构如下：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">Michaels-iMac:wallet eric$ tree  myethchain/
+myethchain/
+├── geth
+│   ├── LOCK
+│   ├── chaindata
+│   │   ├── 000002.log
+│   │   ├── CURRENT
+│   │   ├── LOCK
+│   │   ├── LOG
+│   │   └── MANIFEST-000003
+│   ├── nodekey
+│   └── nodes
+│       ├── 000001.log
+│       ├── CURRENT
+│       ├── LOCK
+│       ├── LOG
+│       └── MANIFEST-000000
+├── geth.ipc
+└── keystore
+
+4 directories, 13 files
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="2-连接geth节点">2. 连接geth节点</h2>
+<p>在另外一个终端里连接geth节点。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">Michaels-iMac:wallet eric$ geth  attach   ipc://Users/eric/wallet/myethchain/geth.ipc  
+Welcome to the Geth JavaScript console!
+
+instance: Geth/v1.5.9-stable-a07539fb/darwin/go1.8.3
+ modules: admin:1.0 debug:1.0 eth:1.0 miner:1.0 net:1.0 personal:1.0 rpc:1.0 shh:1.0 txpool:1.0 web3:1.0
+
+&gt; 
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="3-确保solidity编译器安装正确">3. 确保solidity编译器安装正确</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">&gt; web3.eth.getCompilers()
+[&#34;Solidity&#34;]
+&gt; 
+</code></pre></td></tr></table>
+</div>
+</div><p>如果出错或者获取为空，请检查solc安装情况。</p>
+<h2 id="4-查看帐户列表">4. 查看帐户列表</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">&gt; personal.listAccounts
+null
+&gt; 
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="5-创建帐户">5. 创建帐户</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">&gt; personal.newAccount(&#39;pw1234&#39;)
+&#34;0xaf3139393f2ecb2455cbc2c7639ce111017fb90b&#34;
+&gt; 
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="6-查看帐户列表">6. 查看帐户列表</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">&gt; personal.listAccounts
+[&#34;0xaf3139393f2ecb2455cbc2c7639ce111017fb90b&#34;]
+&gt; 
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="7-查看coibase地址">7. 查看coibase地址</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">&gt; web3.eth.coinbase 
+&#34;0xaf3139393f2ecb2455cbc2c7639ce111017fb90b&#34;
+</code></pre></td></tr></table>
+</div>
+</div><p>与上面地址一致，默认取第一个创建帐户的地址，作为挖矿的收益打入该地址</p>
+<h2 id="8-准备智能合约">8. 准备智能合约</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">&gt; source = &#34;contract hello { function multen(uint a) returns(uint d){return a * 10;}}&#34;
+&#34;contract hello { function multen(uint a) returns(uint d){return a * 10;}}&#34;
+&gt; 
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="9-编译智能合约">9. 编译智能合约</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">&gt; code = web3.eth.compile.solidity(source)
+{
+  &lt;stdin&gt;:hello: {
+    code: &#34;0x60606040523415600e57600080fd5b5b60978061001d6000396000f300606060405263ffffffff7c0100000000000000000000000000000000000000000000000000000000600035041663e847973c8114603c575b600080fd5b3415604657600080fd5b604f6004356061565b60405190815260200160405180910390f35b600a81025b9190505600a165627a7a72305820395c2030cb020d0b4f79ac0803f1aa28b97082d962a13f37a914f7950e1de5ec0029&#34;,
+    info: {
+      abiDefinition: [{...}],
+      compilerOptions: &#34;--combined-json bin,abi,userdoc,devdoc --add-std --optimize&#34;,
+      compilerVersion: &#34;0.4.15&#34;,
+      developerDoc: {
+        methods: {}
+      },
+      language: &#34;Solidity&#34;,
+      languageVersion: &#34;0.4.15&#34;,
+      source: &#34;contract hello { function multen(uint a) returns(uint d){return a * 10;}}&#34;,
+      userDoc: {
+        methods: {}
+      }
+    }
+  }
+}
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="10-根据abi创建合约对象">10. 根据ABI创建合约对象</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span><span class="lnt">57
+</span><span class="lnt">58
+</span><span class="lnt">59
+</span><span class="lnt">60
+</span><span class="lnt">61
+</span><span class="lnt">62
+</span><span class="lnt">63
+</span><span class="lnt">64
+</span><span class="lnt">65
+</span><span class="lnt">66
+</span><span class="lnt">67
+</span><span class="lnt">68
+</span><span class="lnt">69
+</span><span class="lnt">70
+</span><span class="lnt">71
+</span><span class="lnt">72
+</span><span class="lnt">73
+</span><span class="lnt">74
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">&gt; MyContract = web3.eth.contract(code[&#34;&lt;stdin&gt;:hello&#34;].info.abiDefinition)
+{
+  abi: [{
+      constant: false,
+      inputs: [{...}],
+      name: &#34;multen&#34;,
+      outputs: [{...}],
+      payable: false,
+      type: &#34;function&#34;
+  }],
+  eth: {
+    accounts: [&#34;0xaf3139393f2ecb2455cbc2c7639ce111017fb90b&#34;],
+    blockNumber: 0,
+    coinbase: &#34;0xaf3139393f2ecb2455cbc2c7639ce111017fb90b&#34;,
+    compile: {
+      lll: function(),
+      serpent: function(),
+      solidity: function()
+    },
+    defaultAccount: undefined,
+    defaultBlock: &#34;latest&#34;,
+    gasPrice: 21782200000,
+    hashrate: 0,
+    mining: false,
+    pendingTransactions: [],
+    protocolVersion: &#34;0x3f&#34;,
+    syncing: false,
+    call: function(),
+    contract: function(abi),
+    estimateGas: function(),
+    filter: function(fil, callback),
+    getAccounts: function(callback),
+    getBalance: function(),
+    getBlock: function(),
+    getBlockNumber: function(callback),
+    getBlockTransactionCount: function(),
+    getBlockUncleCount: function(),
+    getCode: function(),
+    getCoinbase: function(callback),
+    getCompilers: function(),
+    getGasPrice: function(callback),
+    getHashrate: function(callback),
+    getMining: function(callback),
+    getPendingTransactions: function(callback),
+    getProtocolVersion: function(callback),
+    getRawTransaction: function(),
+    getRawTransactionFromBlock: function(),
+    getStorageAt: function(),
+    getSyncing: function(callback),
+    getTransaction: function(),
+    getTransactionCount: function(),
+    getTransactionFromBlock: function(),
+    getTransactionReceipt: function(),
+    getUncle: function(),
+    getWork: function(),
+    iban: function(iban),
+    icapNamereg: function(),
+    isSyncing: function(callback),
+    namereg: function(),
+    resend: function(),
+    sendIBANTransaction: function(),
+    sendRawTransaction: function(),
+    sendTransaction: function(),
+    sign: function(),
+    signTransaction: function(),
+    submitTransaction: function(),
+    submitWork: function()
+  },
+  at: function(address, callback),
+  getData: function(),
+  new: function()
+}
+&gt; 
+
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="11-挖矿">11. 挖矿</h2>
+<p>第一步：获取帐户地址</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">&gt; account1 = web3.eth.coinbase
+&#34;0xaf3139393f2ecb2455cbc2c7639ce111017fb90b&#34;
+&gt; 
+</code></pre></td></tr></table>
+</div>
+</div><p>第二步：查看balance</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">&gt; web3.eth.getBalance(account1)
+0
+&gt; 
+</code></pre></td></tr></table>
+</div>
+</div><p>第三步：启动挖矿</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">&gt; miner.start() 
+true
+</code></pre></td></tr></table>
+</div>
+</div><p>第四步：查看balance</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">&gt; web3.eth.getBalance(account1)
+424531250000000000000
+</code></pre></td></tr></table>
+</div>
+</div><p>第五步: 停止挖矿</p>
+<p>钱差不多就够了。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">&gt; miner.stop()
+true
+&gt; 
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="12-解锁帐户">12. 解锁帐户</h2>
+<p>目的是为了发送交易</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">&gt; personal.unlockAccount(account1, &#39;pw1234&#39;)
+true
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="13-初始化智能合约">13. 初始化智能合约</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">&gt; bytecode = code[&#34;&lt;stdin&gt;:hello&#34;].code
+&#34;0x60606040523415600e57600080fd5b5b60978061001d6000396000f300606060405263ffffffff7c0100000000000000000000000000000000000000000000000000000000600035041663e847973c8114603c575b600080fd5b3415604657600080fd5b604f6004356061565b60405190815260200160405180910390f35b600a81025b9190505600a165627a7a72305820395c2030cb020d0b4f79ac0803f1aa28b97082d962a13f37a914f7950e1de5ec0029&#34;
+&gt; 
+</code></pre></td></tr></table>
+</div>
+</div><p>获取部署合约的gas费用开销</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">&gt; web3.eth.estimateGas({data: bytecode})
+30886
+&gt; 
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="14-部署智能合约">14. 部署智能合约</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">contractInstance = MyContract.new({data: bytecode gas: 1000000, from: account1}, function(e, contract){if(!e){if(!contract.address){console.log(&#34;Contract transaction send: Transaction Hash: &#34;+contract.transactionHash+&#34; waiting to be mined...&#34;);}else{console.log(&#34;Contract mined! Address: &#34;+contract.address);console.log(contract);}}else{console.log(e)}})  
+Contract transaction send: Transaction Hash: 0xeeac0f028e559d469b94805b986b1d9a0bd0d30289e3285487310ca426dae034 waiting to be mined...
+{
+  abi: [{
+      constant: false,
+      inputs: [{...}],
+      name: &#34;multen&#34;,
+      outputs: [{...}],
+      payable: false,
+      type: &#34;function&#34;
+  }],
+  address: undefined,
+  transactionHash: &#34;0xeeac0f028e559d469b94805b986b1d9a0bd0d30289e3285487310ca426dae034&#34;
+}
+</code></pre></td></tr></table>
+</div>
+</div><p>如果出现以下错误：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">&gt; contractInstance = MyContract.new({data: bytecode gas: 1000000, from: account1}, function(e, contract){if(!e){if(!contract.address){console.log(&#34;Contract transaction send: Transaction Hash: &#34;+contract.transactionHash+&#34; waiting to be mined...&#34;);}else{console.log(&#34;Contract mined! Address: &#34;+contract.address);console.log(contract);}}else{console.log(e)}})
+Error: authentication needed: password or unlock
+{
+  abi: [{
+      constant: false,
+      inputs: [{...}],
+      name: &#34;multen&#34;,
+      outputs: [{...}],
+      payable: false,
+      type: &#34;function&#34;
+  }],
+  address: undefined,
+  transactionHash: null
+}
+</code></pre></td></tr></table>
+</div>
+</div><p>重新解锁用户即可</p>
+<h2 id="14-重新挖矿">14. 重新挖矿</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">&gt; miner.start() 
+true
+&gt; Contract mined! Address: 0x58dba5bddccde639cef014c1766561abbc46c13f
+[object Object]
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="15-切换-console">15. 切换 console</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">&gt; Contract mined! Address: 0x58dba5bddccde639cef014c1766561abbc46c13f
+[object Object]
+^C
+&gt;
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="16-检查合约安装是否成功">16. 检查合约安装是否成功</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">&gt; eth.getCode(contractInstance.address)
+&#34;0x606060405263ffffffff7c0100000000000000000000000000000000000000000000000000000000600035041663e847973c8114603c575b600080fd5b3415604657600080fd5b604f6004356061565b60405190815260200160405180910390f35b600a81025b9190505600a165627a7a72305820395c2030cb020d0b4f79ac0803f1aa28b97082d962a13f37a914f7950e1de5ec0029&#34;
+&gt; 
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="17-调用合约函数">17. 调用合约函数</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">&gt; contractInstance.multen.call(9)  
+90
+</code></pre></td></tr></table>
+</div>
+</div><p>(end)</p>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">沉风网事</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+        2017-08-24
+        
+    </span>
+  </p>
+  
+  
+</div>
+<footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/blockchain/">blockchain</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/post/2017-09-20-next-network/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">关于弹性安全网络一点思考</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        <a class="next" href="/post/2017-08-22-ethereum-cannot-getsolidity/">
+            <span class="next-text nav-default">以太坊开发环境问题记录</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    (function() {
+      
+      
+      if (window.location.hostname === 'localhost') return;
+
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      var disqus_shortname = 'ipds-top';
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+  
+
+  
+    <script src="https://utteranc.es/client.js"
+            repo="myself659/myself659/ipds-public"
+            issue-term="pathname"
+            theme="github-light"
+            crossorigin="anonymous"
+            async>
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://github.com/utterance">comments powered by utterances.</a></noscript>
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/8.3.1/mermaid.min.js"></script>
+<div class="social-links">
+      <a href="mailto:myself659@163.com" class="iconfont icon-email" title="email"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-stack-overflow" title="stack-overflow"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-twitter" title="twitter"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-facebook" title="facebook"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-linkedin" title="linkedin"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-google" title="google"></a>
+      <a href="https://github.com/myself659" class="iconfont icon-github" title="github"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-weibo" title="weibo"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-zhihu" title="zhihu"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-douban" title="douban"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-pocket" title="pocket"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-tumblr" title="tumblr"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-instagram" title="instagram"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-gitlab" title="gitlab"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-bilibili" title="bilibili"></a>
+  <a href="http://myself659.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/myself659/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2017 - 
+    2020
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">沉风网事</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+
+
+
+<script type="text/javascript" src="/js/main.min.d7b7ada643c9c1a983026e177f141f7363b4640d619caf01d8831a6718cd44ea.js"></script>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-144475213-1', 'auto');
+	ga('set', 'anonymizeIp', true);
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+
+
+
+
+</body>
+</html>

@@ -1,103 +1,51 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Internet on 沉风网事</title>
-    <link>https://myself659.github.io/categories/internet/</link>
+    <link>http://myself659.github.io/categories/internet/</link>
     <description>Recent content in Internet on 沉风网事</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
+    <copyright>沉风网事</copyright>
     <lastBuildDate>Sun, 22 Mar 2020 11:58:06 +0200</lastBuildDate>
     
-	<atom:link href="https://myself659.github.io/categories/internet/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://myself659.github.io/categories/internet/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>提高个人隐私数据安全的几点建议</title>
-      <link>https://myself659.github.io/2020/03/22/data-avoid-leak/</link>
+      <link>http://myself659.github.io/post/data-avoid-leak/</link>
       <pubDate>Sun, 22 Mar 2020 11:58:06 +0200</pubDate>
       
-      <guid>https://myself659.github.io/2020/03/22/data-avoid-leak/</guid>
-      <description>最近，爆出了新浪微博用户数据泄漏的事件。虽然微博的安全技术总监罗某某拒不承认存在安全问题，但是想想李文亮医生的经历，这个事情真不能忽略。 李彦宏说过：“中国人更愿意用隐私换便利”。这也验证一句话：互联网上无隐私。 虽然互联网上无秘密，但是个人不能放弃保护自己的个人隐私，该行动一下，还得行动一下。不要放弃抵抗。
-下面是个人一些建议：
-最小授权原则 个人隐私数据属于个人。
-但是现在所有互联网应用都在收集个人数据来实现商业的目标如更好地销售广告。
-以个人为例，我注册一个人新浪微博，就只用一个邮箱。大部分也做不了大 V和网红，不需要将个人其他的信息爆露给微博。
-一些应用与网站直接使用微信与qq授权，不要去注册新账号。
-手机app申请权限的时候，根据最小授权原则，满足基本应用即可，不轻易给录音，像机，访问存储的权限。
-远离不靠谱的应用与平台 如果我们将信息交给一些不靠谱的应用与平台，这些应用与平台保护用户信息能力不足，那么它被黑客攻击，内部泄漏的可能性会更大很多。
-举一个例子，疫情期间，各个省市分别推出自己的健康码App，如皖事通，宁归来等等。这些app背后开发能力从其用户体验也看得出来十分堪忧。由于无法避免需要健康码，建议直接用微信与支付宝上面的健康码功能。
-不乱点击URL。 远离无HTTPS加密的网站。
-使用chrome浏览器，帮你识别一些网站的风险。
-不要使得一些缺少安全保护或者安全保护能力弱的邮箱平台。如自建的个人邮箱。
-不要使用一些小厂商的VPN产品。
-保护密码 第一点：不要使用同一个密码，使用同一个密码，如果其中一个网站泄漏，往往其他的所有网站都受到安全的威胁。
-第二点：密码分级管理。重要应用的密码与资金密码要重点保护。
-第三点：不要使用简单的密码，如123456等常见的密码
-第四点：开启two-factor authentication
-第五点：拥有一个自己的密码生成公式或者规则
-利用工具 有条件的情况，密码管理可以1password。
-使用chrome浏览器，并安装HTTPS Everywhere，GHOSTERY，GOOGLE PASSWORD CHECKUP等等。
-安装杀毒软件和开启防火墙。
-手机 如果可以推荐使用苹果手机。Android手机各种app安装的时候要各种权限，管理难度高，用户体验差，应用的审核也没苹果应用商店的标准高。相反苹果应用商店上的app会守规矩多了。
-在一个较高安全系数的环境中，使用应用的安全系数也会提高很多。
-保护好的手机，如手机与sim卡绑定，避免sim卡转移攻击，具体参考人生中最昂贵的教训：SIM卡转移攻击的细节。
-加强学习与增加安全意识 学习一些基础的安全知识，了解一下用户数据泄漏的一些案例，增加对不靠谱应用的识别能力。学习会增加安全意识，安全意识增加可以提前发现问题，并能及时防范。
-后记 虽然互联网无秘密，但是个人加强防范，有利于提高获取个人隐私数据的门槛，避免成为第一批数据泄漏的受害者。相反，如果你比一般人更好的保护你的隐私数据，别人数据泄漏的事件相当是你的吹哨人。
-欢迎关注 欢迎关注微信公众帐号：沉风网事(savewind)</description>
+      <guid>http://myself659.github.io/post/data-avoid-leak/</guid>
+      <description>最近，爆出了新浪微博用户数据泄漏的事件。虽然微博的安全技术总监罗某某拒不承认存在安全问题，但是想想李文亮医生的经历，这个事情真不能忽略。 李彦</description>
     </item>
     
     <item>
       <title>苹果微软亚马逊谷歌Facebook五大科技巨头是如何赚钱的</title>
-      <link>https://myself659.github.io/2019/11/21/tech-giant-income/</link>
+      <link>http://myself659.github.io/post/tech-giant-income/</link>
       <pubDate>Thu, 21 Nov 2019 11:58:06 +0200</pubDate>
       
-      <guid>https://myself659.github.io/2019/11/21/tech-giant-income/</guid>
-      <description>苹果微软亚马逊谷歌Facebook这五大科技巨头在2018年的收入总和超过了8000亿美元。 如果这五大科技巨头保证30%的增长率，这五大科技巨头在2019年的收入总和会超过10000亿美元。
-下面具体看看每个公司的收入结构：
-苹果 从上图可知：
-总收入： 2656亿美元，排名第一
-净利润： 595亿美元，排名第一
-业务收入结构：
- iPhone占比为62.8％ Mac电脑占比为9.6％ iPad占比为7.1％ 其他Apple产品和服务（包括Apple Watch，Apple TV，Beats设备，Apple Pay和AppleCare）占比为20.6％  区域收入结构：
- 美洲区占比为42% 欧洲区占比为24% 大中华区占比为20% 日本占比为7% 亚太区（不包括中国与日本）占比为7%  思考 居然没有非洲的统计，非洲也太惨。苹果未来增长区域会是非洲吗？ 手机取代电脑，成为第一终端。
-亚马逊 从上图可知：
-总收入： 2329亿美元，排名第二
-净利润： 101亿美元，排名第五
-业务收入结构：
- 在线零售占比为52.8% 第三卖家服务占比为18.4% AWS占比为11.0% 线下实体零售占比为7.4% Amazon Prime占比为6.1% 其他收入占比为4.3%  区域收入结构：
- 美国占比为69% 英国占比为6% 德国占比为9% 日本占比为6% 其他国家和地区占比为11%  amazon线下实体2018年增长率为197%，利益于amazon go快速增长
-Alphabet 说明一下，Alphabet是Google的母公司。
-从上图可知：
-总收入： 1368亿美元，排名第三
-净利润： 307亿美元，排名第二
-业务收入结构：
- 广告(来自Google搜索, YouTube, GooglePlay, gmail, Google Map等)占比为70.</description>
+      <guid>http://myself659.github.io/post/tech-giant-income/</guid>
+      <description>苹果微软亚马逊谷歌Facebook这五大科技巨头在2018年的收入总和超过了8000亿美元。 如果这五大科技巨头保证30%的增长率，这五大科技</description>
     </item>
     
     <item>
       <title>社交网络摆脱不了的周期</title>
-      <link>https://myself659.github.io/2018/05/05/socialnetowrk-cannot-cycle/</link>
+      <link>http://myself659.github.io/post/socialnetowrk-cannot-cycle/</link>
       <pubDate>Sat, 05 May 2018 11:58:06 +0200</pubDate>
       
-      <guid>https://myself659.github.io/2018/05/05/socialnetowrk-cannot-cycle/</guid>
-      <description>没有什么是不可改变的。
-Facebook有22亿用户。
-MySpace曾经是世界之王。现在人们都已经遗忘了。
-QQ还是让位微信，活跃度下降，用户时长下降。
-问题来了，在哪些情况下周期会到了？个人认为以下三种情况大概率会发生。
- 变得讨厌，用户会逐渐抛弃，人人网就是一个例子 有更好的替代品的时候，如MySpace被facebook取代 技术变革，犹如地球进入冰川时代，巨无霸的恐龙都灭绝了，典型的例子是进入移动互联网时代，微信取代了QQ  那么问题又来了，微信的周期什么时候会到？这个意淫一下，回答如下：
- 当穿戴时代到来的时候，手机被抛弃的时候，这个未来十年应该不会发生的 当微信的社交关系由于数据库维护，变成了由生物特征维护的时候，这个主要是冲击是用户同用户之间建立连接的方式变了  这只是个人的胡乱猜想，微信的未来我是看好，微信也是不断的进化，微信现在已经变成一个有10亿用户的生活操作系统。Windows都用了40多年，现在还是大量(PC并没有被淘汰)使用中，相信微信也不会例外。但是手机的操作却不是Windows，未来充满变化与不确定性。</description>
+      <guid>http://myself659.github.io/post/socialnetowrk-cannot-cycle/</guid>
+      <description>没有什么是不可改变的。 Facebook有22亿用户。 MySpace曾经是世界之王。现在人们都已经遗忘了。 QQ还是让位微信，活跃度下降，用户时</description>
     </item>
     
     <item>
       <title>对中国互联网产品的一些建议</title>
-      <link>https://myself659.github.io/2018/02/05/suggests-for-chinese-internet-productions/</link>
+      <link>http://myself659.github.io/post/suggests-for-chinese-internet-productions/</link>
       <pubDate>Mon, 05 Feb 2018 11:58:06 +0200</pubDate>
       
-      <guid>https://myself659.github.io/2018/02/05/suggests-for-chinese-internet-productions/</guid>
-      <description>具体以公司及产品划分。
-腾讯  打通帐号系统，如qq与微信在其他腾讯产品的功能不一致  微信  整理未读信息，而不是让用户去找哪条信息未读，特别是存在大量的会话的情况 公众帐号平台写作支持从本地导入markdown功能 公众帐号与小程序帐号能否统一
-  微信读书  搞一个微信读书版的kiddle吧  腾讯云  优化一下linux包下载速度，直接走内部镜像 增加golang的api   微博  支持像twitter那样截图直接上传功能 继续像twitter学习，让用户来决定关注什么 (Tips: 建议用户遇到这种情况，直接将被动主动帐号屏蔽)  百度 hao123  让hao123回到它最初的形式  搜索  收录网站体验太差了，与google，bing比较这方面相差10倍以上 贴吧广告太多，自作死，支持内容电商也比插入广告要好  字节跳动 今日头条  希望推荐算法不止是迎合用户还有引导用户  飞聊  飞聊应该与今日头条打通，让头条号作者与读者之间更高层次的互动  lark  网络优化：打开在线文档的速度要优化 文档功能：向腾讯文档靠齐  网易 网易云音乐  ios版本闪退问题需要加快解决，概率达到百分之一吧 支持opus格式  (未完，持续更新)</description>
+      <guid>http://myself659.github.io/post/suggests-for-chinese-internet-productions/</guid>
+      <description>具体以公司及产品划分。 腾讯 打通帐号系统，如qq与微信在其他腾讯产品的功能不一致 微信 整理未读信息，而不是让用户去找哪条信息未读，特别是存在大量</description>
     </item>
     
   </channel>

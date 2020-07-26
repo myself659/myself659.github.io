@@ -1,0 +1,939 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>深入分析Golang sync.pool - 沉风网事</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="沉风网事" /><meta name="description" content="定义 sync.Pool是一个可以存或取的临时对象池。对外提供New、Get、Put等API，利用mutex支持多线程并发。 目标 sync.Po" /><meta name="keywords" content="沉风网事, 沉风, 区块链" />
+
+
+<meta name="baidu-site-verification" content="9LmlOuIblt" />
+
+
+
+<meta name="generator" content="Hugo 0.68.3 with theme even" />
+
+
+<link rel="canonical" href="http://myself659.github.io/post/golang-sync-pool-1/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.8c3cbcb0324c2bb4875ceccba4007cbad4b4ac8377f33af9953c3e7684534a50.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="深入分析Golang sync.pool" />
+<meta property="og:description" content="定义 sync.Pool是一个可以存或取的临时对象池。对外提供New、Get、Put等API，利用mutex支持多线程并发。 目标 sync.Po" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://myself659.github.io/post/golang-sync-pool-1/" />
+<meta property="article:published_time" content="2019-06-10T11:58:06+02:00" />
+<meta property="article:modified_time" content="2019-06-10T11:58:06+02:00" />
+<meta itemprop="name" content="深入分析Golang sync.pool">
+<meta itemprop="description" content="定义 sync.Pool是一个可以存或取的临时对象池。对外提供New、Get、Put等API，利用mutex支持多线程并发。 目标 sync.Po">
+<meta itemprop="datePublished" content="2019-06-10T11:58:06&#43;02:00" />
+<meta itemprop="dateModified" content="2019-06-10T11:58:06&#43;02:00" />
+<meta itemprop="wordCount" content="3085">
+
+
+
+<meta itemprop="keywords" content="Golang," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="深入分析Golang sync.pool"/>
+<meta name="twitter:description" content="定义 sync.Pool是一个可以存或取的临时对象池。对外提供New、Get、Put等API，利用mutex支持多线程并发。 目标 sync.Po"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">沉风</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a><a href="/post/leetcode/">
+        <li class="mobile-menu-item">LeetCode</li>
+      </a><a href="/post/read-post/">
+        <li class="mobile-menu-item">Read</li>
+      </a><a href="/post/share-post/">
+        <li class="mobile-menu-item">Share</li>
+      </a><a href="/post/slide-post/">
+        <li class="mobile-menu-item">Slide</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">沉风</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/leetcode/">LeetCode</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/read-post/">Read</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/share-post/">Share</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/slide-post/">Slide</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">深入分析Golang sync.pool</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2019-06-10 </span>
+        <div class="post-category">
+            <a href="/categories/golang/"> Golang </a>
+            </div>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#描述">描述</a></li>
+    <li><a href="#操作">操作</a>
+      <ul>
+        <li><a href="#new">New</a></li>
+        <li><a href="#get">Get</a></li>
+        <li><a href="#put">Put</a></li>
+        <li><a href="#cleanup">CleanUp</a></li>
+      </ul>
+    </li>
+    <li><a href="#总结">总结</a></li>
+  </ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <h1 id="定义">定义</h1>
+<p>sync.Pool是一个可以存或取的临时对象池。对外提供New、Get、Put等API，利用mutex支持多线程并发。</p>
+<h1 id="目标">目标</h1>
+<p>sync.Pool解决以下问题：</p>
+<ol>
+<li>增加临时对象的用复用率，减少GC负担</li>
+<li>通过对象的复用，减少内存申请开销，有利于提高一部分性能</li>
+</ol>
+<h1 id="实现">实现</h1>
+<p>这一部分回答如何实现的问题。</p>
+<p>关于了解实现，最好的办法就是看代码。</p>
+<h2 id="描述">描述</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">type Pool struct {
+    noCopy noCopy
+
+    local     unsafe.Pointer // local fixed-size per-P pool, actual type is [P]poolLocal
+    localSize uintptr        // size of the local array
+
+    // New optionally specifies a function to generate
+    // a value when Get would otherwise return nil.
+    // It may not be changed concurrently with calls to Get.
+    New func() interface{}
+}
+</code></pre></td></tr></table>
+</div>
+</div><p>各个成员含义如下：</p>
+<p>noCopy： 防止sync.Pool被复制</p>
+<p>local： poolLocal数组的指针</p>
+<p>localSize： poolLocal数组大小</p>
+<p>New： 函数指针申请具体的对象，便于用户定制各种类型的对象</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">// Local per-P Pool appendix.
+type poolLocalInternal struct {
+    private interface{}   // Can be used only by the respective P.
+    shared  []interface{} // Can be used by any P.
+    Mutex                 // Protects shared.
+}
+
+type poolLocal struct {
+    poolLocalInternal
+
+    // Prevents false sharing on widespread platforms with
+    // 128 mod (cache line size) = 0 .
+    pad [128 - unsafe.Sizeof(poolLocalInternal{})%128]byte
+}
+</code></pre></td></tr></table>
+</div>
+</div><p>private：private私有池，只能被对应P使用（说明：P是指goroutine执行所占用的处理器，下同）</p>
+<p>shared： shared共享池，能被任何P使用</p>
+<p>Mutex： 保护shared共享池</p>
+<p>pad：poolLocal结构体中特别增加了pad成员，这是为了防止false sharing。</p>
+<h2 id="操作">操作</h2>
+<p>操作分为四种类型：</p>
+<ol>
+<li>New</li>
+<li>Get</li>
+<li>Put</li>
+<li>CleanUp</li>
+</ol>
+<h3 id="new">New</h3>
+<p>这部分主要解决问题：如何创建一个具体对象池？</p>
+<p>具体参考代码如下：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">// Object Object
+type Object struct {
+    a int
+    b int
+}
+
+var pool = sync.Pool{
+    New: func() interface{} { return new(Object) },
+}
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="get">Get</h3>
+<p>Get解决了如何从具体sync.Pool中获取对象的问题。</p>
+<p>获取对象有三个来源：</p>
+<ol>
+<li>private池</li>
+<li>shared池</li>
+<li>系统的Heap内存</li>
+</ol>
+<p>获取对象顺序是先从private池获取，如果不成功则从shared池获取，如果继续不成功，则从Heap中申请一个对象。这是不是有熟悉的味道？在两级cache的情况下，CPU获取数据，先从L1 cache开始，再是L2 cache， 是内存。</p>
+<p>具体代码实现如下：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span><span class="lnt">57
+</span><span class="lnt">58
+</span><span class="lnt">59
+</span><span class="lnt">60
+</span><span class="lnt">61
+</span><span class="lnt">62
+</span><span class="lnt">63
+</span><span class="lnt">64
+</span><span class="lnt">65
+</span><span class="lnt">66
+</span><span class="lnt">67
+</span><span class="lnt">68
+</span><span class="lnt">69
+</span><span class="lnt">70
+</span><span class="lnt">71
+</span><span class="lnt">72
+</span><span class="lnt">73
+</span><span class="lnt">74
+</span><span class="lnt">75
+</span><span class="lnt">76
+</span><span class="lnt">77
+</span><span class="lnt">78
+</span><span class="lnt">79
+</span><span class="lnt">80
+</span><span class="lnt">81
+</span><span class="lnt">82
+</span><span class="lnt">83
+</span><span class="lnt">84
+</span><span class="lnt">85
+</span><span class="lnt">86
+</span><span class="lnt">87
+</span><span class="lnt">88
+</span><span class="lnt">89
+</span><span class="lnt">90
+</span><span class="lnt">91
+</span><span class="lnt">92
+</span><span class="lnt">93
+</span><span class="lnt">94
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">func (p *Pool) Get() interface{} {
+    if race.Enabled {
+        race.Disable()
+    }
+    l := p.pin() // 绑定private池和P
+    x := l.private
+    l.private = nil
+    runtime_procUnpin() // 去绑定private池和P
+    if x == nil { //  private池获取失败
+        l.Lock()
+        last := len(l.shared) - 1
+        if last &gt;= 0 {
+            x = l.shared[last] // 从shared池获取最后一个对象 
+            l.shared = l.shared[:last] // 从shared池删除最后一个对象
+        }
+        l.Unlock()
+        if x == nil { 
+            x = p.getSlow() // pid对应poolLocal没有获取成功，开始遍历整个poolLocal数组
+        }
+    }
+    if race.Enabled {
+        race.Enable()
+        if x != nil {
+            race.Acquire(poolRaceAddr(x))
+        }
+    }
+    if x == nil &amp;&amp; p.New != nil {
+        x = p.New() // 从heap申请对象
+    }
+    return x
+}
+
+func (p *Pool) getSlow() (x interface{}) {
+    // See the comment in pin regarding ordering of the loads.
+    size := atomic.LoadUintptr(&amp;p.localSize) // load-acquire
+    local := p.local                         // load-consume
+    // Try to steal one element from other procs.
+    pid := runtime_procPin()
+    runtime_procUnpin()
+    for i := 0; i &lt; int(size); i++ { // 遍历poolLocal数组
+        l := indexLocal(local, (pid+i+1)%int(size)) // 注意pid+i+1 这样可以从pid+1位置开始整个遍历
+        l.Lock()
+        last := len(l.shared) - 1
+        if last &gt;= 0 {
+            x = l.shared[last]
+            l.shared = l.shared[:last]
+            l.Unlock()
+            break
+        }
+        l.Unlock()
+    }
+    return x
+}
+
+// pin pins the current goroutine to P, disables preemption and returns poolLocal pool for the P.
+// Caller must call runtime_procUnpin() when done with the pool.
+func (p *Pool) pin() *poolLocal {
+    pid := runtime_procPin()
+    // In pinSlow we store to localSize and then to local, here we load in opposite order.
+    // Since we&#39;ve disabled preemption, GC cannot happen in between.
+    // Thus here we must observe local at least as large localSize.
+    // We can observe a newer/larger local, it is fine (we must observe its zero-initialized-ness).
+    s := atomic.LoadUintptr(&amp;p.localSize) // load-acquire
+    l := p.local                          // load-consume
+    if uintptr(pid) &lt; s {
+        return indexLocal(l, pid)
+    }
+    return p.pinSlow() // 没有对应poolLocal，进入慢路径处理
+}
+
+func (p *Pool) pinSlow() *poolLocal {
+    // Retry under the mutex.
+    // Can not lock the mutex while pinned.
+    runtime_procUnpin()
+    allPoolsMu.Lock()
+    defer allPoolsMu.Unlock()
+    pid := runtime_procPin()
+    // poolCleanup won&#39;t be called while we are pinned.
+    s := p.localSize
+    l := p.local
+    if uintptr(pid) &lt; s { // 根据pid获取poolLocal
+        return indexLocal(l, pid) 
+    }
+    if p.local == nil {
+        allPools = append(allPools, p)
+    }
+    // If GOMAXPROCS changes between GCs, we re-allocate the array and lose the old one.
+    size := runtime.GOMAXPROCS(0)
+    local := make([]poolLocal, size) // 重新分配poolLocal
+    atomic.StorePointer(&amp;p.local, unsafe.Pointer(&amp;local[0])) // store-release
+    atomic.StoreUintptr(&amp;p.localSize, uintptr(size))         // store-release
+    return &amp;local[pid] // 返回新的poolLocal
+}
+
+</code></pre></td></tr></table>
+</div>
+</div><p>总结Get主要要点如下：</p>
+<ol>
+<li>先从本P绑定的poolLocal获取对象：先从本poolLocal的private池获取对象，再从本poolLocal的shared池获取对象</li>
+<li>上一步没有成功获取对象，再从其他P的shared池获取对象</li>
+<li>上一步没有成功获取对象，则从Heap申请对象</li>
+</ol>
+<h3 id="put">Put</h3>
+<p>Put完成将对象放回对象池。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">// Put adds x to the pool.
+func (p *Pool) Put(x interface{}) {
+    if x == nil {
+        return
+    }
+    if race.Enabled {
+        if fastrand()%4 == 0 {
+            // Randomly drop x on floor.
+            return
+        }
+        race.ReleaseMerge(poolRaceAddr(x))
+        race.Disable()
+    }
+    l := p.pin() // 绑定private池和P
+    if l.private == nil {
+        l.private = x   // 放回private池中
+        x = nil
+    }
+    runtime_procUnpin() // 去绑定private池和P
+    if x != nil {
+        l.Lock()
+        l.shared = append(l.shared, x)  // 放回shared池
+        l.Unlock()
+    }
+    if race.Enabled {
+        race.Enable()
+    }
+}
+</code></pre></td></tr></table>
+</div>
+</div><p>上面的代码总结如下：</p>
+<ol>
+<li>如果poolLocalInternal的private为空，则将回收的对象放到private池中</li>
+<li>如果poolLocalInternal的private非空，则将回收的对象放到shared池中</li>
+</ol>
+<h3 id="cleanup">CleanUp</h3>
+<h4 id="cleanup实现">CleanUp实现</h4>
+<p>注册poolCleanup函数。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">func init() {
+   runtime_registerPoolCleanup(poolCleanup)
+}
+
+</code></pre></td></tr></table>
+</div>
+</div><p>poolCleanup函数具体实现，</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">func poolCleanup() {
+    // This function is called with the world stopped, at the beginning of a garbage collection.
+    // It must not allocate and probably should not call any runtime functions.
+    // Defensively zero out everything, 2 reasons:
+    // 1. To prevent false retention of whole Pools.
+    // 2. If GC happens while a goroutine works with l.shared in Put/Get,
+    //    it will retain whole Pool. So next cycle memory consumption would be doubled.
+    for i, p := range allPools {
+        allPools[i] = nil
+        for i := 0; i &lt; int(p.localSize); i++ {
+            l := indexLocal(p.local, i)
+            l.private = nil
+            for j := range l.shared {
+                l.shared[j] = nil
+            }
+            l.shared = nil
+        }
+        p.local = nil
+        p.localSize = 0
+    }
+    allPools = []*Pool{}
+}
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="cleanup时机">CleanUp时机</h4>
+<p>什么时候进行CleanUp回收对象池？在gc开始前。</p>
+<p>具体代码(代码文件为runtime/mgc.go)如下：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">func gcStart(trigger gcTrigger) {
+    ... 
+    // clearpools before we start the GC. If we wait they memory will not be
+    // reclaimed until the next GC cycle.
+    clearpools() // 在这里清理sync.Pool
+
+    work.cycles++
+
+    gcController.startCycle()
+    work.heapGoal = memstats.next_gc
+
+    // In STW mode, disable scheduling of user Gs. This may also
+    // disable scheduling of this goroutine, so it may block as
+    // soon as we start the world again.
+    if mode != gcBackgroundMode {
+        schedEnableUser(false)
+    }
+    ...
+}
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">func clearpools() {
+    // clear sync.Pools
+    if poolcleanup != nil {
+        poolcleanup() // 如果poolcleanup不为空，调用poolcleanup函数
+    }
+
+    // Clear central sudog cache.
+    // Leave per-P caches alone, they have strictly bounded size.
+    // Disconnect cached list before dropping it on the floor,
+    // so that a dangling ref to one entry does not pin all of them.
+    lock(&amp;sched.sudoglock)
+    var sg, sgnext *sudog
+    for sg = sched.sudogcache; sg != nil; sg = sgnext {
+        sgnext = sg.next
+        sg.next = nil
+    }
+    sched.sudogcache = nil
+    unlock(&amp;sched.sudoglock)
+
+    // Clear central defer pools.
+    // Leave per-P pools alone, they have strictly bounded size.
+    lock(&amp;sched.deferlock)
+    for i := range sched.deferpool {
+        // disconnect cached list before dropping it on the floor,
+        // so that a dangling ref to one entry does not pin all of them.
+        var d, dlink *_defer
+        for d = sched.deferpool[i]; d != nil; d = dlink {
+            dlink = d.link
+            d.link = nil
+        }
+        sched.deferpool[i] = nil
+    }
+    unlock(&amp;sched.deferlock)
+}
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="总结">总结</h2>
+<p>总结一下sync.Pool的实现，要点如下：</p>
+<ol>
+<li>提供New定义实现用户自定义对象</li>
+<li>需要使用对象调用Get从对象池获取临时对象，Get优先级首先是本P绑定的poolLocal, 其次是其他P绑定的poolLocal，最后是Heap内存</li>
+<li>对象使用完毕调用Put将临时对象放回对象池</li>
+<li>未被使用的对象会定时GC回收</li>
+<li>对象没有类似于linux cache object对应的free函数</li>
+</ol>
+<h1 id="应用">应用</h1>
+<p>sync.Pool并不是万能药。要根据具体情境而定是否使用sync.Pool。</p>
+<p>总结不适合使用sync.Pool的情境，具体如下：</p>
+<ol>
+<li>对象中分配的系统资源如socket，buffer</li>
+<li>对象需要进行异步处理</li>
+<li>对象是组合对象，如存在指针指向其他的对象</li>
+<li>批量对象需要并发处理</li>
+<li>复用对象大小存在的波动，如对象结构成员存在slice</li>
+</ol>
+<p>在排除上面情境下，适合使用的sync.Pool应满足以下条件，具体如下：</p>
+<ol>
+<li>对象是buffer或非组合类型如buffer reader, json decode, bufio writer</li>
+<li>对象内存可以重复使用</li>
+</ol>
+<p>同时在使用应该注意问题：</p>
+<ol>
+<li>Put对象之前完成初始化，避免数据污染带来问题, 这可能带来各种各样的问题</li>
+<li>写代码时要满足one Get， one Put的要求</li>
+<li>注意获取对象后是否存在修改对象内存存局的代码</li>
+<li>关注应用场景是否容易出现Pool竞争的情况</li>
+<li>sync.Pool不是万能药，不要拿着锤子，看什么都是钉子</li>
+</ol>
+<p>(Ps: 个人能力不足，若有错误不足，欢迎指正！)</p>
+<h1 id="参考">参考</h1>
+<ol>
+<li><a href="https://github.com/golang/go/issues/23199">sync: Pool example suggests incorrect usage</a></li>
+</ol>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">沉风网事</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+        2019-06-10
+        
+    </span>
+  </p>
+  
+  
+</div>
+<footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/golang/">Golang</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/post/facebook-libra/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">Facebook libra是昙花一现还是星星之火</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        <a class="next" href="/post/sim-port-attack/">
+            <span class="next-text nav-default">人生中最昂贵的教训：SIM卡转移攻击的细节(译文)</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    (function() {
+      
+      
+      if (window.location.hostname === 'localhost') return;
+
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      var disqus_shortname = 'ipds-top';
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+  
+
+  
+    <script src="https://utteranc.es/client.js"
+            repo="myself659/myself659/ipds-public"
+            issue-term="pathname"
+            theme="github-light"
+            crossorigin="anonymous"
+            async>
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://github.com/utterance">comments powered by utterances.</a></noscript>
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/8.3.1/mermaid.min.js"></script>
+<div class="social-links">
+      <a href="mailto:myself659@163.com" class="iconfont icon-email" title="email"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-stack-overflow" title="stack-overflow"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-twitter" title="twitter"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-facebook" title="facebook"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-linkedin" title="linkedin"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-google" title="google"></a>
+      <a href="https://github.com/myself659" class="iconfont icon-github" title="github"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-weibo" title="weibo"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-zhihu" title="zhihu"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-douban" title="douban"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-pocket" title="pocket"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-tumblr" title="tumblr"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-instagram" title="instagram"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-gitlab" title="gitlab"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-bilibili" title="bilibili"></a>
+  <a href="http://myself659.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/myself659/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2017 - 
+    2020
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">沉风网事</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+
+
+
+<script type="text/javascript" src="/js/main.min.d7b7ada643c9c1a983026e177f141f7363b4640d619caf01d8831a6718cd44ea.js"></script>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-144475213-1', 'auto');
+	ga('set', 'anonymizeIp', true);
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+
+
+
+
+</body>
+</html>

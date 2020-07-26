@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>关于区块链共识的一些思考 - 沉风网事</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="沉风网事" /><meta name="description" content="说明 前面写一篇关于分布式系统的文章，但是没有考虑拜占庭问题，所以聊聊区块链共识技术，在这个过程看看比特币是如何解决拜占庭问题和共识问题。 定义" /><meta name="keywords" content="沉风网事, 沉风, 区块链" />
+
+
+<meta name="baidu-site-verification" content="9LmlOuIblt" />
+
+
+
+<meta name="generator" content="Hugo 0.68.3 with theme even" />
+
+
+<link rel="canonical" href="http://myself659.github.io/post/%E5%85%B3%E4%BA%8E%E5%8C%BA%E5%9D%97%E9%93%BE%E5%85%B1%E8%AF%86%E7%9A%84%E4%B8%80%E4%BA%9B%E6%80%9D%E8%80%83/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.8c3cbcb0324c2bb4875ceccba4007cbad4b4ac8377f33af9953c3e7684534a50.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="关于区块链共识的一些思考" />
+<meta property="og:description" content="说明 前面写一篇关于分布式系统的文章，但是没有考虑拜占庭问题，所以聊聊区块链共识技术，在这个过程看看比特币是如何解决拜占庭问题和共识问题。 定义" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://myself659.github.io/post/%E5%85%B3%E4%BA%8E%E5%8C%BA%E5%9D%97%E9%93%BE%E5%85%B1%E8%AF%86%E7%9A%84%E4%B8%80%E4%BA%9B%E6%80%9D%E8%80%83/" />
+<meta property="article:published_time" content="2018-12-24T11:58:06+02:00" />
+<meta property="article:modified_time" content="2018-12-24T11:58:06+02:00" />
+<meta itemprop="name" content="关于区块链共识的一些思考">
+<meta itemprop="description" content="说明 前面写一篇关于分布式系统的文章，但是没有考虑拜占庭问题，所以聊聊区块链共识技术，在这个过程看看比特币是如何解决拜占庭问题和共识问题。 定义">
+<meta itemprop="datePublished" content="2018-12-24T11:58:06&#43;02:00" />
+<meta itemprop="dateModified" content="2018-12-24T11:58:06&#43;02:00" />
+<meta itemprop="wordCount" content="2238">
+
+
+
+<meta itemprop="keywords" content="Distributed,BlockChain," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="关于区块链共识的一些思考"/>
+<meta name="twitter:description" content="说明 前面写一篇关于分布式系统的文章，但是没有考虑拜占庭问题，所以聊聊区块链共识技术，在这个过程看看比特币是如何解决拜占庭问题和共识问题。 定义"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">沉风</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a><a href="/post/leetcode/">
+        <li class="mobile-menu-item">LeetCode</li>
+      </a><a href="/post/read-post/">
+        <li class="mobile-menu-item">Read</li>
+      </a><a href="/post/share-post/">
+        <li class="mobile-menu-item">Share</li>
+      </a><a href="/post/slide-post/">
+        <li class="mobile-menu-item">Slide</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">沉风</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/leetcode/">LeetCode</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/read-post/">Read</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/share-post/">Share</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/slide-post/">Slide</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">关于区块链共识的一些思考</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2018-12-24 </span>
+        <div class="post-category">
+            <a href="/categories/blockchain/"> BlockChain </a>
+            </div>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#环境">环境</a></li>
+    <li><a href="#节点">节点</a>
+      <ul>
+        <li><a href="#节点准入方面">节点准入方面</a></li>
+        <li><a href="#节点角色">节点角色</a></li>
+        <li><a href="#节点数量">节点数量</a></li>
+        <li><a href="#节点可信">节点可信</a></li>
+        <li><a href="#节点配置">节点配置</a></li>
+        <li><a href="#节点经济原则">节点经济原则</a></li>
+      </ul>
+    </li>
+    <li><a href="#共识算法">共识算法</a>
+      <ul>
+        <li><a href="#属性">属性</a></li>
+      </ul>
+    </li>
+    <li><a href="#业务">业务</a></li>
+    <li><a href="#容错要求">容错要求</a>
+      <ul>
+        <li><a href="#dcs定理">DCS定理</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <h1 id="说明">说明</h1>
+<p>前面写一篇关于分布式系统的文章，但是没有考虑拜占庭问题，所以聊聊区块链共识技术，在这个过程看看比特币是如何解决拜占庭问题和共识问题。</p>
+<h1 id="定义">定义</h1>
+<p>区块链是什么？这个问题有太多的回答。</p>
+<blockquote>
+<p>区块链是一个由全体联网节点共同维护并持有同一账本的分布式数据库，它通过算法来达成共识，在无需信任的各节点中构建一个无单一故障点或控制点的去中心化可信系统</p>
+</blockquote>
+<p>所以在技术上区块链的本质是分布式帐本技术(DLT)。</p>
+<h1 id="重要性">重要性</h1>
+<p><a href="https://medium.com/s/story/why-decentralization-matters-5e3f79f7638e">Why Decentralization Matters</a>这篇文章从互联网发展历程与面临问题说明去中心化重要性。</p>
+<p>去中心化重要性来自去中心化带来的影响与作用，具体如下：</p>
+<ol>
+<li>去中心化可以降低垄断的可能性，是一种对抗垄断的重要方式</li>
+<li>去中心化提供高可用性</li>
+<li>去中心化对抗DDos</li>
+<li>去中心化可以让人人参与，权力下放</li>
+<li>去中心化是让数据归还用户，保护隐私的重要技术手段之一</li>
+<li>去中心化消除中间环节，提高效率</li>
+<li>去中心化与中心化并不是对立，可以相互补充</li>
+<li>去中心化能够解决中心化无法解决的问题，如微信流控算法，并没有采用全局，而由节点根据延迟参数调整，另外是5G带来的高速传输与海量数据需要去中心化来来解决</li>
+</ol>
+<h1 id="去中心化解决问题">去中心化解决问题</h1>
+<ol>
+<li>提供全球开放的分布式数据</li>
+<li>提供不可更改的数据库</li>
+<li>提供trustless的基础设施</li>
+<li>基于以上三点的业务的需求</li>
+</ol>
+<h1 id="思考模型">思考模型</h1>
+<p>如同前面的分布式系统一样，对于公链（去中心化系统）问题，也可以分为以下几个子问题：</p>
+<ol>
+<li>在什么环境下？</li>
+<li>有哪些节点参与？</li>
+<li>通过什么样的共识算法？</li>
+<li>使什么业务？</li>
+<li>达成什么样的容错要求？</li>
+</ol>
+<p>总结一句话：<strong>在什么环境下，有哪些节点参与，通过什么样的共识算法，使什么业务达成什么样的容错要求</strong>。</p>
+<p>下面就这五个问题展开说明。</p>
+<h2 id="环境">环境</h2>
+<p>大部分去中心化系统的环境要点如下：</p>
+<ol>
+<li>异步网络模型</li>
+<li>网络结构是P2P网络</li>
+<li>网络传输是不可靠的</li>
+<li>系统异常是常态</li>
+<li>并发</li>
+<li>缺少全局时钟</li>
+</ol>
+<p>(Ps:这里不展开说明了，<a href="https://blog.ipds.top/2018/12/11/%E8%B0%88%E8%B0%88%E5%AF%B9%E5%88%86%E5%B8%83%E5%BC%8F%E7%B3%BB%E7%BB%9F%E7%9A%84%E4%B8%80%E4%BA%9B%E6%80%9D%E8%80%83/">谈谈对分布式系统的一些思考</a>)</p>
+<h2 id="节点">节点</h2>
+<h3 id="节点准入方面">节点准入方面</h3>
+<ol>
+<li>节点自由加入与退出</li>
+<li>节点需要通过PoW测试才能加入</li>
+<li>节点需要PoS持仓才能加入</li>
+<li>节点需要质押才能加入</li>
+</ol>
+<h3 id="节点角色">节点角色</h3>
+<ol>
+<li>节点平等，无角色任何差异如比特币</li>
+<li>节点分为超级节点，见证节点如EOS</li>
+</ol>
+<h3 id="节点数量">节点数量</h3>
+<ol>
+<li>不限数量，如比特币，以太坊</li>
+<li>指定数量，如EOS指定为21，steemit指定数量为11</li>
+</ol>
+<h3 id="节点可信">节点可信</h3>
+<ol>
+<li>存在不可信的作恶节点</li>
+<li>可信节点（算力）一定多于作恶节点（算力）</li>
+</ol>
+<h3 id="节点配置">节点配置</h3>
+<ol>
+<li>机器性能波动大</li>
+<li>网络带宽波动大</li>
+<li>节点分布在全球各地</li>
+<li>节点配置不受控</li>
+<li>节点之间差异大如算力，POS投票权重</li>
+</ol>
+<h3 id="节点经济原则">节点经济原则</h3>
+<ol>
+<li>99.99%以上节点是趋利</li>
+<li>节点受激励引导</li>
+<li>节点受惩罚限制</li>
+<li>节点之间存在博弈与竞争</li>
+<li>节点不会作出投入成本大于产出收益的选择</li>
+</ol>
+<h2 id="共识算法">共识算法</h2>
+<p>一定要摆脱传统分布式思想的限制。要在经济，竞争，博弈，协议等多方面有效结合。</p>
+<p><img src="/images/blockchain/blockchain-consensus-overview.jpeg" alt="共识"></p>
+<p>从上图可以看出，传统分布式共识算法在整个共识里面只占很小一部分。
+共识算法是区块链技术上的核心。</p>
+<p>不得不说，PoW是另一种形式实现拜占庭容错，是比特币最大的亮点。</p>
+<h3 id="属性">属性</h3>
+<p>一个科学共识算法必须同时满足以下四个属性：</p>
+<ol>
+<li>Agreement</li>
+<li>Validity</li>
+<li>Integrity</li>
+<li>Termination</li>
+</ol>
+<p>这四个属性从四个方面规范共识算法的要求，也为我们提供分析共识算法四个不同的视角。</p>
+<h4 id="agreement">Agreement</h4>
+<blockquote>
+<p>Every correct process must agree on the same value.</p>
+</blockquote>
+<p>这是实现一致性必须要做到的要求：每个节点必须达成一致。
+bitcoin通过以下几点实现该属性，具体如下：</p>
+<ol>
+<li>在选主方面选择最强算力原则，保证具体高度的区块的一致性（以最快算出的为准）</li>
+<li>在链分叉情况下选择最长链，解决网络分化等原因可能出现的分叉问题</li>
+</ol>
+<h4 id="validity">Validity</h4>
+<blockquote>
+<p>If all the correct processes proposed the same value v, then any correct process must decide v.</p>
+</blockquote>
+<p>Validity是为了防止这种情况的出现：一些节点无论提议什么值，本节点一直提交NULL。在bitcoin这种行为可以理解为自私挖矿行为。</p>
+<p>bitcoin通过以下几点实现该属性，具体如下：</p>
+<ol>
+<li>算力不可复制</li>
+<li>随机性加大自私挖矿的成本</li>
+<li>最长链确认由各节点自行确认</li>
+<li>时间戳确认</li>
+</ol>
+<h4 id="integrity">Integrity</h4>
+<blockquote>
+<p>No Node decides twice.</p>
+</blockquote>
+<p>保证共识得到一致性不可逆，不可被修改。那么在这成共识过程中有许多操作需要进行限制。
+bitcoin通过以下几点实现该属性，具体如下：</p>
+<ol>
+<li>链式结构</li>
+<li>算力要求</li>
+<li>难度提升</li>
+<li>多节点竞争</li>
+</ol>
+<h4 id="termination">Termination</h4>
+<blockquote>
+<p>Eventually, every correct process decides some value.</p>
+</blockquote>
+<p>Termination是一个liveness属性，bitcoin通过以下几点实现该属性，具体如下：</p>
+<ol>
+<li>通过激励吸引大量节点参与，保证有节点来完成出块</li>
+<li>出块时间周期设置10分钟</li>
+</ol>
+<h2 id="业务">业务</h2>
+<p>去中心化带来业务的形态的变化，现列举部分业务如下：</p>
+<ol>
+<li>去中心化交易所</li>
+<li>去中心化网络平台</li>
+<li>去中心化计算平台</li>
+<li>去中心化存储</li>
+<li>去中心化CDN</li>
+<li>去中心化数字货币</li>
+<li>去中心化协议</li>
+<li>去中心化跨链</li>
+<li>去中心化金融科技DeFi</li>
+<li>去中心化通信</li>
+</ol>
+<h2 id="容错要求">容错要求</h2>
+<p>对于去中心化系统，对应的容错要求是DCS定理。</p>
+<h3 id="dcs定理">DCS定理</h3>
+<p>如同CAP定理一样，DCS定理是指在一个公有链系统中不可能同时满足以下三个条件：去中心化（Decentralized）、一致性（Consistency）和可扩展性（Scale）。</p>
+<p><img src="/images/DCS.png" alt="DCS定理"></p>
+<h4 id="去中心化">去中心化</h4>
+<p>去中心化是指任意节点可以加入与退出，整个网络不受任何人控制。</p>
+<h4 id="一致性">一致性</h4>
+<p>与上面CAP的一致性类似，不过应用中更加偏重安全如防范双花攻击。</p>
+<h4 id="可扩展性">可扩展性</h4>
+<p>可扩展性是指TPS能够实现提高。</p>
+<p>关于DCS这三者之间的tradeoff，更多参考<a href="https://blog.bigchaindb.com/the-dcs-triangle-5ce0e9e0f1dc">The DCS Triangle</a></p>
+<h1 id="小结">小结</h1>
+<p>区块链的共识现在还处于探索阶段，并不像分布式系统共识（不考虑拜占庭问题）已经成熟。区块链的共识在不断探索与发展中，未来会有更多的新型共识出来。</p>
+<h1 id="参考">参考</h1>
+<ol>
+<li><a href="https://medium.com/s/story/why-decentralization-matters-5e3f79f7638e">Why Decentralization Matters</a></li>
+<li><a href="https://blog.bigchaindb.com/the-dcs-triangle-5ce0e9e0f1dc">The DCS Triangle</a></li>
+<li><a href="https://blog.acolyer.org/2018/02/12/sok-consensus-in-the-age-of-blockchains/">SoK: Consensus in the age of blockchains</a></li>
+<li><a href="https://mp.weixin.qq.com/s/t9M56GGwDGtoj-yufSw9Tg">DAGOR：微信微服务过载控制系统</a></li>
+<li><a href="https://www.the-paper-trail.org/post/2008-08-13-a-brief-tour-of-flp-impossibility/">A Brief Tour of FLP Impossibility</a></li>
+<li><a href="https://eprint.iacr.org/2018/400.pdf">Agreement with Satoshi – On the Formalization of Nakamoto Consensus</a></li>
+<li><a href="https://www.ted.com/talks/yuval_noah_harari_why_fascism_is_so_tempting_and_how_your_data_could_power_it?language=en#t-309440">Yuval Noah Harari: Why fascism is so tempting and how your data could power it | TED Talk</a></li>
+<li><a href="https://medium.com/the-new-york-times/tech-c-e-o-s-are-in-love-with-their-principal-doomsayer-2500f8a63fc7">Tech C.E.O.s Are in Love With Their Principal Doomsayer</a></li>
+<li><a href="https://blog.ipds.top/2018/12/11/%E8%B0%88%E8%B0%88%E5%AF%B9%E5%88%86%E5%B8%83%E5%BC%8F%E7%B3%BB%E7%BB%9F%E7%9A%84%E4%B8%80%E4%BA%9B%E6%80%9D%E8%80%83/">谈谈对分布式系统的一些思考</a></li>
+<li><a href="https://medium.com/algorand/algorands-instant-consensus-protocol-e66ac5807e37">Algorand’s Instant Consensus Protocol</a></li>
+<li><a href="https://mp.weixin.qq.com/s/p-vWDOJEWLk5KKal4CJgJA">区块链到底有什么了不起</a></li>
+<li><a href="https://en.wikipedia.org/wiki/BitTorrent">BitTorrent</a></li>
+<li><a href="https://mp.weixin.qq.com/s/MWGM3Nci20_4sXMe7fpcsA">公有链的基本挑战</a></li>
+<li><a href="https://hackernoon.com/blockchains-dont-scale-not-today-at-least-but-there-s-hope-2cb43946551a">Blockchains don’t scale. Not today, at least. But there’s hope.</a></li>
+<li><a href="https://medium.com/@wahabjawed/consensus-protocol-of-distributed-ledger-technology-c61526490e60">Consensus Protocols of Distributed Ledger Technology</a></li>
+</ol>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">沉风网事</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+        2018-12-24
+        
+    </span>
+  </p>
+  
+  
+</div>
+<footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/distributed/">Distributed</a>
+          <a href="/tags/blockchain/">BlockChain</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/post/pow-is-out/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">PoW过时了吗？</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        <a class="next" href="/post/distributed-theory/">
+            <span class="next-text nav-default">谈谈对分布式系统的一些思考</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    (function() {
+      
+      
+      if (window.location.hostname === 'localhost') return;
+
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      var disqus_shortname = 'ipds-top';
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+  
+
+  
+    <script src="https://utteranc.es/client.js"
+            repo="myself659/myself659/ipds-public"
+            issue-term="pathname"
+            theme="github-light"
+            crossorigin="anonymous"
+            async>
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://github.com/utterance">comments powered by utterances.</a></noscript>
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/8.3.1/mermaid.min.js"></script>
+<div class="social-links">
+      <a href="mailto:myself659@163.com" class="iconfont icon-email" title="email"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-stack-overflow" title="stack-overflow"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-twitter" title="twitter"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-facebook" title="facebook"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-linkedin" title="linkedin"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-google" title="google"></a>
+      <a href="https://github.com/myself659" class="iconfont icon-github" title="github"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-weibo" title="weibo"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-zhihu" title="zhihu"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-douban" title="douban"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-pocket" title="pocket"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-tumblr" title="tumblr"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-instagram" title="instagram"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-gitlab" title="gitlab"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-bilibili" title="bilibili"></a>
+  <a href="http://myself659.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/myself659/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2017 - 
+    2020
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">沉风网事</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+
+
+
+<script type="text/javascript" src="/js/main.min.d7b7ada643c9c1a983026e177f141f7363b4640d619caf01d8831a6718cd44ea.js"></script>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-144475213-1', 'auto');
+	ga('set', 'anonymizeIp', true);
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+
+
+
+
+</body>
+</html>

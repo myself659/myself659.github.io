@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>通过数据分析预测股票价格变化靠谱吗？ - 沉风网事</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="沉风网事" /><meta name="description" content="前言 在投资美股，先从数据分析开始这篇文章解决两个问题： 从哪里找数据？ 如何得到这些数据？ 在此基础这篇主要解决一个问题：以特斯拉为例说明如何利用" /><meta name="keywords" content="沉风网事, 沉风, 区块链" />
+
+
+<meta name="baidu-site-verification" content="9LmlOuIblt" />
+
+
+
+<meta name="generator" content="Hugo 0.68.3 with theme even" />
+
+
+<link rel="canonical" href="http://myself659.github.io/post/stock-us-analysis/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.8c3cbcb0324c2bb4875ceccba4007cbad4b4ac8377f33af9953c3e7684534a50.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="通过数据分析预测股票价格变化靠谱吗？" />
+<meta property="og:description" content="前言 在投资美股，先从数据分析开始这篇文章解决两个问题： 从哪里找数据？ 如何得到这些数据？ 在此基础这篇主要解决一个问题：以特斯拉为例说明如何利用" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://myself659.github.io/post/stock-us-analysis/" />
+<meta property="article:published_time" content="2020-02-17T11:58:06+02:00" />
+<meta property="article:modified_time" content="2020-02-17T11:58:06+02:00" />
+<meta itemprop="name" content="通过数据分析预测股票价格变化靠谱吗？">
+<meta itemprop="description" content="前言 在投资美股，先从数据分析开始这篇文章解决两个问题： 从哪里找数据？ 如何得到这些数据？ 在此基础这篇主要解决一个问题：以特斯拉为例说明如何利用">
+<meta itemprop="datePublished" content="2020-02-17T11:58:06&#43;02:00" />
+<meta itemprop="dateModified" content="2020-02-17T11:58:06&#43;02:00" />
+<meta itemprop="wordCount" content="1387">
+
+
+
+<meta itemprop="keywords" content="Data," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="通过数据分析预测股票价格变化靠谱吗？"/>
+<meta name="twitter:description" content="前言 在投资美股，先从数据分析开始这篇文章解决两个问题： 从哪里找数据？ 如何得到这些数据？ 在此基础这篇主要解决一个问题：以特斯拉为例说明如何利用"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">沉风</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a><a href="/post/leetcode/">
+        <li class="mobile-menu-item">LeetCode</li>
+      </a><a href="/post/read-post/">
+        <li class="mobile-menu-item">Read</li>
+      </a><a href="/post/share-post/">
+        <li class="mobile-menu-item">Share</li>
+      </a><a href="/post/slide-post/">
+        <li class="mobile-menu-item">Slide</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">沉风</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/leetcode/">LeetCode</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/read-post/">Read</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/share-post/">Share</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/slide-post/">Slide</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">通过数据分析预测股票价格变化靠谱吗？</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2020-02-17 </span>
+        <div class="post-category">
+            <a href="/categories/data/"> Data </a>
+            </div>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#获取数据">获取数据</a></li>
+    <li><a href="#绘制价格变化图">绘制价格变化图</a></li>
+    <li><a href="#分析数据的统计特征信息">分析数据的统计特征信息</a></li>
+    <li><a href="#处理数据">处理数据</a></li>
+    <li><a href="#建立模型">建立模型</a></li>
+    <li><a href="#对模型诊断">对模型诊断</a></li>
+    <li><a href="#利用模型进行预测">利用模型进行预测</a></li>
+    <li><a href="#分析预测结果">分析预测结果</a></li>
+  </ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <h1 id="前言">前言</h1>
+<p>在<a href="https://mp.weixin.qq.com/s/t8LAkhXEY0zkKZ_dhIXHdA">投资美股，先从数据分析开始</a>这篇文章解决两个问题：</p>
+<ol>
+<li>从哪里找数据？</li>
+<li>如何得到这些数据？</li>
+</ol>
+<p>在此基础这篇主要解决一个问题：以特斯拉为例说明如何利用这些数据预测股票价格的变化。同时关注一个问题：投入成本进行预测股票价格是否靠谱与必要？</p>
+<h1 id="步骤">步骤</h1>
+<h2 id="获取数据">获取数据</h2>
+<p>直接调用api如下：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">import yfinance as yf 
+tlsa_df =  yf.download(&#39;TSLA&#39;, 
+                      start=&#39;2015-01-01&#39;, 
+                      end=&#39;2020-02-16&#39;, 
+                      progress=False)
+tlsa_df.head()
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="绘制价格变化图">绘制价格变化图</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">#plot  
+%matplotlib notebook 
+from IPython.core.interactiveshell import InteractiveShell
+InteractiveShell.ast_node_interactivity = &#34;all&#34; 
+plt.figure(figsize=(10,6))
+plt.grid(True)
+plt.xlabel(&#39;Dates&#39;)
+plt.ylabel(&#39;Close Prices&#39;)
+plt.plot(tlsa_df[&#39;Close&#39;])
+plt.title(&#39;Tesla Close Price&#39;)
+plt.show()
+</code></pre></td></tr></table>
+</div>
+</div><p>得到从2015年起telsa收盘价格变化图：</p>
+<p><img src="/images/economy/stock-telsa-2015.png" alt=""></p>
+<h2 id="分析数据的统计特征信息">分析数据的统计特征信息</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">tsla_df_close = tlsa_df[&#39;Close&#39;]
+df_log = np.log(tsla_df_close)
+moving_avg = df_log.rolling(12).mean()
+std_dev = df_log.rolling(12).std()
+
+plt.title(&#39;Moving Average&#39;)
+plt.plot(std_dev, color =&#34;black&#34;, label = &#34;Standard Deviation&#34;)
+plt.plot(moving_avg, color=&#34;red&#34;, label = &#34;Mean&#34;)
+plt.show()
+</code></pre></td></tr></table>
+</div>
+</div><p>具体如下：</p>
+<p><img src="/images/economy/stock-telsa-mean.png" alt=""></p>
+<h2 id="处理数据">处理数据</h2>
+<p>处理数据是为了满足模型的数据输入的要求。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">train_data, test_data = df_log[3:int(len(df_log)*0.9)], df_log[int(len(df_log)*0.9):]
+plt.figure(figsize=(10,6))
+plt.grid(True)
+plt.xlabel(&#39;Dates&#39;)
+plt.ylabel(&#39;Closing Prices&#39;)
+plt.plot(df_log, &#39;green&#39;, label=&#39;Train data&#39;)
+plt.plot(test_data, &#39;blue&#39;, label=&#39;Test data&#39;)
+plt.legend()
+</code></pre></td></tr></table>
+</div>
+</div><p>这里将原始数据分为训练数据和测试数据。</p>
+<p><img src="/images/economy/stock-telsa-traintest.png" alt=""></p>
+<h2 id="建立模型">建立模型</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">import os 
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+from statsmodels.tsa.stattools import adfuller
+from statsmodels.tsa.seasonal import seasonal_decompose
+from statsmodels.tsa.arima_model import ARIMA
+from pmdarima.arima import auto_arima
+from sklearn.metrics import mean_squared_error, mean_absolute_error
+import math
+
+model_autoARIMA = auto_arima(train_data, 
+                             start_p=0, 
+                             start_q=0,
+                      test=&#39;adf&#39;,       # use adftest to find             optimal &#39;d&#39;
+                      max_p=3, max_q=3, # maximum p and q
+                      m=1,              # frequency of series
+                      d=None,           # let model determine &#39;d&#39;
+                      seasonal=False,   # No Seasonality
+                      start_P=0, 
+                      D=0, 
+                      trace=True,
+                      error_action=&#39;ignore&#39;,  
+                      suppress_warnings=True, 
+                      stepwise=True)
+print(model_autoARIMA.summary())
+</code></pre></td></tr></table>
+</div>
+</div><p>得到模型参数如下：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">Performing stepwise search to minimize aic
+Fit ARIMA: (0, 1, 0)x(0, 0, 0, 0) (constant=True); AIC=-4980.147, BIC=-4970.040, Time=2.357 seconds
+Fit ARIMA: (1, 1, 0)x(0, 0, 0, 0) (constant=True); AIC=-4978.315, BIC=-4963.154, Time=0.297 seconds
+Fit ARIMA: (0, 1, 1)x(0, 0, 0, 0) (constant=True); AIC=-4978.308, BIC=-4963.147, Time=0.475 seconds
+Fit ARIMA: (0, 1, 0)x(0, 0, 0, 0) (constant=False); AIC=-4982.140, BIC=-4977.087, Time=0.189 seconds
+Fit ARIMA: (1, 1, 1)x(0, 0, 0, 0) (constant=True); AIC=-4976.958, BIC=-4956.743, Time=0.493 seconds
+Total fit time: 5.619 seconds
+                               SARIMAX Results                                
+==============================================================================
+Dep. Variable:                      y   No. Observations:                 1158
+Model:               SARIMAX(0, 1, 0)   Log Likelihood                2492.070
+Date:                Mon, 17 Feb 2020   AIC                          -4982.140
+Time:                        20:29:52   BIC                          -4977.087
+Sample:                             0   HQIC                         -4980.233
+                               - 1158                                         
+Covariance Type:                  opg                                         
+==============================================================================
+                 coef    std err          z      P&gt;|z|      [0.025      0.975]
+------------------------------------------------------------------------------
+sigma2         0.0008   1.84e-05     42.731      0.000       0.001       0.001
+===============================================================================
+Ljung-Box (Q):                       43.17   Jarque-Bera (JB):               898.42
+Prob(Q):                              0.34   Prob(JB):                         0.00
+Heteroskedasticity (H):               1.84   Skew:                            -0.13
+Prob(H) (two-sided):                  0.00   Kurtosis:                         7.31
+===============================================================================
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="对模型诊断">对模型诊断</h2>
+<p>在进行预测之前先进行模型诊断。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">model_autoARIMA.plot_diagnostics(figsize=(15,8))
+plt.show()
+model = ARIMA(train_data, order=(3, 1, 2))  
+fitted = model.fit(disp=-1)  
+print(fitted.summary())
+</code></pre></td></tr></table>
+</div>
+</div><p>结果如下：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">   ARIMA Model Results                              
+==============================================================================
+Dep. Variable:                D.Close   No. Observations:                 1157
+Model:                 ARIMA(3, 1, 2)   Log Likelihood                2494.608
+Method:                       css-mle   S.D. of innovations              0.028
+Date:                Mon, 17 Feb 2020   AIC                          -4975.215
+Time:                        20:30:59   BIC                          -4939.840
+Sample:                             1   HQIC                         -4961.866
+                                                                              
+=================================================================================
+                    coef    std err          z      P&gt;|z|      [0.025      0.975]
+---------------------------------------------------------------------------------
+const             0.0002      0.000      1.274      0.203      -0.000       0.001
+ar.L1.D.Close     0.1523      0.251      0.607      0.544      -0.339       0.644
+ar.L2.D.Close     0.8380      0.235      3.562      0.000       0.377       1.299
+ar.L3.D.Close    -0.0097      0.032     -0.305      0.760      -0.072       0.053
+ma.L1.D.Close    -0.1689      0.249     -0.678      0.498      -0.657       0.320
+ma.L2.D.Close    -0.8311      0.249     -3.334      0.001      -1.320      -0.343
+                                    Roots                                    
+=============================================================================
+                  Real          Imaginary           Modulus         Frequency
+-----------------------------------------------------------------------------
+AR.1            1.0107           +0.0000j            1.0107            0.0000
+AR.2           -1.1784           +0.0000j            1.1784            0.5000
+AR.3           86.4971           +0.0000j           86.4971            0.0000
+MA.1            1.0000           +0.0000j            1.0000            0.0000
+MA.2           -1.2033           +0.0000j            1.2033            0.5000
+-----------------------------------------------------------------------------
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="利用模型进行预测">利用模型进行预测</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">fc, se, conf = fitted.forecast(129, alpha=0.05)  
+fc_series = pd.Series(fc, index=test_data.index)
+lower_series = pd.Series(conf[:, 0], index=test_data.index)
+upper_series = pd.Series(conf[:, 1], index=test_data.index)
+plt.figure(figsize=(12,5), dpi=100)
+plt.plot(train_data, label=&#39;training&#39;)
+plt.plot(test_data, color = &#39;blue&#39;, label=&#39;Actual Stock Price&#39;)
+plt.plot(fc_series, color = &#39;orange&#39;,label=&#39;Predicted Stock Price&#39;)
+plt.fill_between(lower_series.index, lower_series, upper_series, 
+                 color=&#39;k&#39;, alpha=.10)
+plt.title(&#39;Tesla Stock Price Prediction&#39;)
+plt.xlabel(&#39;Time&#39;)
+plt.ylabel(&#39;Tesla Stock  Price&#39;)
+plt.legend(loc=&#39;upper left&#39;, fontsize=8)
+plt.show()
+</code></pre></td></tr></table>
+</div>
+</div><p>得到预测结果如下：</p>
+<p><img src="/images/economy/stock-telsa-predict.png" alt=""></p>
+<h2 id="分析预测结果">分析预测结果</h2>
+<p>从上面预测结果可以看出：</p>
+<ol>
+<li>预测结果与实际股票的上涨趋势相同，但是其中的路径还是相差很多，直接说明不适合指导具体交易，只能做为长期趋势判断的参考</li>
+<li>这个模型还需要大量进行测试，如调整数据，调整模型参数</li>
+</ol>
+<h1 id="总结">总结</h1>
+<p>这里是简单介绍一下利用numpy与pmdarima来预测股票变化趋势。实际上应用过程上需要充分的测试与验证，还需要大量的工作。像这上面这样的方式来预测股票价格是不靠谱的。有靠谱的模型也需要自己大量投入时间与大量的数据以及不断的验证与调整才可以的（别人靠谱的模型是不会免费分享的）。对于个人来说，投入这个成本是否值得又是另一个问题。对于大部分人来说没有必要投入这个成本通过机器学习来预测股票价格变化。这个进入门槛比较高（预测股票价格与预报天气是两回事），从中获得收益的门槛更高。</p>
+<p>下一篇会具体讨论一下预测股票变化的数学原理。再根据这些数学原理如何优化模型。</p>
+<p>说明：</p>
+<ol>
+<li>本文只是进行一个过程展示</li>
+<li>本文中的模型只供参考，不能用于实际的股票投资与交易。股市有风险，入市当小心。</li>
+</ol>
+<h1 id="欢迎关注">欢迎关注</h1>
+<p>欢迎关注微信公众帐号：沉风网事(savewind)</p>
+<p><img src="/images/cfws.jpg" alt="沉风网事"></p>
+<h1 id="参考">参考</h1>
+<ol>
+<li><a href="https://pypi.org/project/pmdarima/">pmdarima</a></li>
+<li><a href="https://medium.com/swlh/the-stock-market-is-currently-facing-the-iceberg-illusion-ad67493c4b8d">股市目前正面临冰山幻象</a></li>
+<li><a href="https://medium.com/the-post-grad-survival-guide/its-surprisingly-easy-to-make-money-in-the-stock-market-here-s-how-19e9cf711b23">A Surprisingly Easy Strategy to Make Money in the Stock Market</a></li>
+</ol>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">沉风网事</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+        2020-02-17
+        
+    </span>
+  </p>
+  
+  
+</div>
+<footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/data/">Data</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/post/weimeng-del-data/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">微盟删库事件复盘与思考</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        <a class="next" href="/post/stock-us-data/">
+            <span class="next-text nav-default">投资美股，先从数据分析开始</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    (function() {
+      
+      
+      if (window.location.hostname === 'localhost') return;
+
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      var disqus_shortname = 'ipds-top';
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+  
+
+  
+    <script src="https://utteranc.es/client.js"
+            repo="myself659/myself659/ipds-public"
+            issue-term="pathname"
+            theme="github-light"
+            crossorigin="anonymous"
+            async>
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://github.com/utterance">comments powered by utterances.</a></noscript>
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/8.3.1/mermaid.min.js"></script>
+<div class="social-links">
+      <a href="mailto:myself659@163.com" class="iconfont icon-email" title="email"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-stack-overflow" title="stack-overflow"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-twitter" title="twitter"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-facebook" title="facebook"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-linkedin" title="linkedin"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-google" title="google"></a>
+      <a href="https://github.com/myself659" class="iconfont icon-github" title="github"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-weibo" title="weibo"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-zhihu" title="zhihu"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-douban" title="douban"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-pocket" title="pocket"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-tumblr" title="tumblr"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-instagram" title="instagram"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-gitlab" title="gitlab"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-bilibili" title="bilibili"></a>
+  <a href="http://myself659.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/myself659/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2017 - 
+    2020
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">沉风网事</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+
+
+
+<script type="text/javascript" src="/js/main.min.d7b7ada643c9c1a983026e177f141f7363b4640d619caf01d8831a6718cd44ea.js"></script>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-144475213-1', 'auto');
+	ga('set', 'anonymizeIp', true);
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+
+
+
+
+</body>
+</html>

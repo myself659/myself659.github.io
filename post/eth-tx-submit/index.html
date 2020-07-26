@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>以太坊提交交易流程分析 - 沉风网事</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="沉风网事" /><meta name="description" content="说明 代码基于go-ethereum，版本v1.8.10。 RPC代码入口 SendTransaction 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 // SendTransaction will create a transaction from the given arguments and // tries to sign it with" /><meta name="keywords" content="沉风网事, 沉风, 区块链" />
+
+
+<meta name="baidu-site-verification" content="9LmlOuIblt" />
+
+
+
+<meta name="generator" content="Hugo 0.68.3 with theme even" />
+
+
+<link rel="canonical" href="http://myself659.github.io/post/eth-tx-submit/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.8c3cbcb0324c2bb4875ceccba4007cbad4b4ac8377f33af9953c3e7684534a50.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="以太坊提交交易流程分析" />
+<meta property="og:description" content="说明 代码基于go-ethereum，版本v1.8.10。 RPC代码入口 SendTransaction 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 // SendTransaction will create a transaction from the given arguments and // tries to sign it with" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://myself659.github.io/post/eth-tx-submit/" />
+<meta property="article:published_time" content="2018-05-05T11:58:06+02:00" />
+<meta property="article:modified_time" content="2018-05-05T11:58:06+02:00" />
+<meta itemprop="name" content="以太坊提交交易流程分析">
+<meta itemprop="description" content="说明 代码基于go-ethereum，版本v1.8.10。 RPC代码入口 SendTransaction 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 // SendTransaction will create a transaction from the given arguments and // tries to sign it with">
+<meta itemprop="datePublished" content="2018-05-05T11:58:06&#43;02:00" />
+<meta itemprop="dateModified" content="2018-05-05T11:58:06&#43;02:00" />
+<meta itemprop="wordCount" content="1319">
+
+
+
+<meta itemprop="keywords" content="BlockChain,ethereum," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="以太坊提交交易流程分析"/>
+<meta name="twitter:description" content="说明 代码基于go-ethereum，版本v1.8.10。 RPC代码入口 SendTransaction 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 // SendTransaction will create a transaction from the given arguments and // tries to sign it with"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">沉风</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a><a href="/post/leetcode/">
+        <li class="mobile-menu-item">LeetCode</li>
+      </a><a href="/post/read-post/">
+        <li class="mobile-menu-item">Read</li>
+      </a><a href="/post/share-post/">
+        <li class="mobile-menu-item">Share</li>
+      </a><a href="/post/slide-post/">
+        <li class="mobile-menu-item">Slide</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">沉风</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/leetcode/">LeetCode</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/read-post/">Read</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/share-post/">Share</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/slide-post/">Slide</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">以太坊提交交易流程分析</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2018-05-05 </span>
+        <div class="post-category">
+            <a href="/categories/ethereum/"> ethereum </a>
+            </div>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#rpc代码入口">RPC代码入口</a></li>
+    <li><a href="#查找钱包">查找钱包</a></li>
+    <li><a href="#设置参数">设置参数</a></li>
+    <li><a href="#创建交易">创建交易</a></li>
+    <li><a href="#获取chainid">获取ChainId</a></li>
+    <li><a href="#签名">签名</a></li>
+    <li><a href="#提交交易">提交交易</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#欢迎关注">欢迎关注</a></li>
+  </ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <h1 id="说明">说明</h1>
+<p>代码基于go-ethereum，版本v1.8.10。</p>
+<h2 id="rpc代码入口">RPC代码入口</h2>
+<p><a href="https://github.com/myself659/go-ethereum/blob/eae63c511ceafab14b92e274c1b18bf1700e2d3d/internal/ethapi/api.go#L365">SendTransaction</a></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">// SendTransaction will create a transaction from the given arguments and
+// tries to sign it with the key associated with args.To. If the given passwd isn&#39;t
+// able to decrypt the key it fails.
+func (s *PrivateAccountAPI) SendTransaction(ctx context.Context, args SendTxArgs, passwd string) (common.Hash, error) {
+    if args.Nonce == nil {
+        // Hold the addresse&#39;s mutex around signing to prevent concurrent assignment of
+        // the same nonce to multiple accounts.
+        s.nonceLock.LockAddr(args.From)
+        defer s.nonceLock.UnlockAddr(args.From)
+    }
+    signed, err := s.signTransaction(ctx, args, passwd)
+    if err != nil {
+        return common.Hash{}, err
+    }
+    return submitTransaction(ctx, s.b, signed)
+}
+
+</code></pre></td></tr></table>
+</div>
+</div><p><a href="https://github.com/myself659/go-ethereum/blob/eae63c511ceafab14b92e274c1b18bf1700e2d3d/internal/ethapi/api.go#L1105:6">SendTxArgs</a>的数据结构如下：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">type SendTxArgs struct {
+    From     common.Address  `json:&#34;from&#34;`
+    To       *common.Address `json:&#34;to&#34;`
+    Gas      *hexutil.Uint64 `json:&#34;gas&#34;`
+    GasPrice *hexutil.Big    `json:&#34;gasPrice&#34;`
+    Value    *hexutil.Big    `json:&#34;value&#34;`
+    Nonce    *hexutil.Uint64 `json:&#34;nonce&#34;`
+    // We accept &#34;data&#34; and &#34;input&#34; for backwards-compatibility reasons. &#34;input&#34; is the
+    // newer name and should be preferred by clients.
+    Data  *hexutil.Bytes `json:&#34;data&#34;`
+    Input *hexutil.Bytes `json:&#34;input&#34;`
+}
+</code></pre></td></tr></table>
+</div>
+</div><p>新增加Input字段。用于替换原来Data字段，为了兼容保留Data字段。</p>
+<h2 id="查找钱包">查找钱包</h2>
+<p>根据from地址信息查找钱包。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">    // Look up the wallet containing the requested signer
+    account := accounts.Account{Address: args.From}
+    wallet, err := s.am.Find(account)
+    if err != nil {
+        return nil, err
+    }
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="设置参数">设置参数</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">// setDefaults is a helper function that fills in default values for unspecified tx fields.
+func (args *SendTxArgs) setDefaults(ctx context.Context, b Backend) error {
+    if args.Gas == nil {
+        args.Gas = new(hexutil.Uint64)
+        *(*uint64)(args.Gas) = 90000
+    }
+    if args.GasPrice == nil {
+        price, err := b.SuggestPrice(ctx)
+        if err != nil {
+            return err
+        }
+        args.GasPrice = (*hexutil.Big)(price)
+    }
+    if args.Value == nil {
+        args.Value = new(hexutil.Big)
+    }
+    if args.Nonce == nil {
+        nonce, err := b.GetPoolNonce(ctx, args.From)
+        if err != nil {
+            return err
+        }
+        args.Nonce = (*hexutil.Uint64)(&amp;nonce)
+    }
+    if args.Data != nil &amp;&amp; args.Input != nil &amp;&amp; !bytes.Equal(*args.Data, *args.Input) {
+        return errors.New(`Both &#34;data&#34; and &#34;input&#34; are set and not equal. Please use &#34;input&#34; to pass transaction call data.`)
+    }
+    if args.To == nil {
+        // Contract creation
+        var input []byte
+        if args.Data != nil {
+            input = *args.Data
+        } else if args.Input != nil {
+            input = *args.Input
+        }
+        if len(input) == 0 {
+            return errors.New(`contract creation without any data provided`)
+        }
+    }
+    return nil
+}
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="创建交易">创建交易</h2>
+<p>根据交易参数创建交易。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">func (args *SendTxArgs) toTransaction() *types.Transaction {
+    var input []byte
+    if args.Data != nil {
+        input = *args.Data
+    } else if args.Input != nil {
+        input = *args.Input
+    }
+    if args.To == nil {
+        return types.NewContractCreation(uint64(*args.Nonce), (*big.Int)(args.Value), uint64(*args.Gas), (*big.Int)(args.GasPrice), input)
+    }
+    return types.NewTransaction(uint64(*args.Nonce), *args.To, (*big.Int)(args.Value), uint64(*args.Gas), (*big.Int)(args.GasPrice), input)
+}
+</code></pre></td></tr></table>
+</div>
+</div><p>相关数据结构如下：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">type Transaction struct {
+    data txdata
+    // caches
+    hash atomic.Value
+    size atomic.Value
+    from atomic.Value
+}
+
+type txdata struct {
+    AccountNonce uint64          `json:&#34;nonce&#34;    gencodec:&#34;required&#34;`
+    Price        *big.Int        `json:&#34;gasPrice&#34; gencodec:&#34;required&#34;`
+    GasLimit     uint64          `json:&#34;gas&#34;      gencodec:&#34;required&#34;`
+    Recipient    *common.Address `json:&#34;to&#34;       rlp:&#34;nil&#34;` // nil means contract creation
+    Amount       *big.Int        `json:&#34;value&#34;    gencodec:&#34;required&#34;`
+    Payload      []byte          `json:&#34;input&#34;    gencodec:&#34;required&#34;`
+
+    // Signature values
+    V *big.Int `json:&#34;v&#34; gencodec:&#34;required&#34;`
+    R *big.Int `json:&#34;r&#34; gencodec:&#34;required&#34;`
+    S *big.Int `json:&#34;s&#34; gencodec:&#34;required&#34;`
+
+    // This is only used when marshaling to JSON.
+    Hash *common.Hash `json:&#34;hash&#34; rlp:&#34;-&#34;`
+}
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="获取chainid">获取ChainId</h2>
+<p>为了防止重放攻击，获得了chainID（EIP155之后才支持），用于签名。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">    var chainID *big.Int
+    if config := s.b.ChainConfig(); config.IsEIP155(s.b.CurrentBlock().Number()) {
+        chainID = config.ChainId
+    }
+</code></pre></td></tr></table>
+</div>
+</div><p>chainID是如何使用的？简单说就是：以一系列数学运算将chainID保存到签名信息中。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">func NewEIP155Signer(chainId *big.Int) EIP155Signer {
+    if chainId == nil {
+        chainId = new(big.Int)
+    }
+    return EIP155Signer{
+        chainId:    chainId,
+        chainIdMul: new(big.Int).Mul(chainId, big.NewInt(2)),
+    }
+}
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">// WithSignature returns a new transaction with the given signature. This signature
+// needs to be in the [R || S || V] format where V is 0 or 1.
+func (s EIP155Signer) SignatureValues(tx *Transaction, sig []byte) (R, S, V *big.Int, err error) {
+    R, S, V, err = HomesteadSigner{}.SignatureValues(tx, sig)
+    if err != nil {
+        return nil, nil, nil, err
+    }
+    if s.chainId.Sign() != 0 {
+        V = big.NewInt(int64(sig[64] + 35))
+        V.Add(V, s.chainIdMul)
+    }
+    return R, S, V, nil
+}
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="签名">签名</h2>
+<p>从keystore获取私钥用于签名交易。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">// SignHashWithPassphrase signs hash if the private key matching the given address
+// can be decrypted with the given passphrase. The produced signature is in the
+// [R || S || V] format where V is 0 or 1.
+func (ks *KeyStore) SignHashWithPassphrase(a accounts.Account, passphrase string, hash []byte) (signature []byte, err error) {
+    _, key, err := ks.getDecryptedKey(a, passphrase)
+    if err != nil {
+        return nil, err
+    }
+    defer zeroKey(key.PrivateKey)
+    return crypto.Sign(hash, key.PrivateKey)
+}
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="提交交易">提交交易</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">// submitTransaction is a helper function that submits tx to txPool and logs a message.
+func submitTransaction(ctx context.Context, b Backend, tx *types.Transaction) (common.Hash, error) {
+    if err := b.SendTx(ctx, tx); err != nil {
+        return common.Hash{}, err
+    }
+    if tx.To() == nil {
+        signer := types.MakeSigner(b.ChainConfig(), b.CurrentBlock().Number())
+        from, err := types.Sender(signer, tx)
+        if err != nil {
+            return common.Hash{}, err
+        }
+        addr := crypto.CreateAddress(from, tx.Nonce())
+        log.Info(&#34;Submitted contract creation&#34;, &#34;fullhash&#34;, tx.Hash().Hex(), &#34;contract&#34;, addr.Hex())
+    } else {
+        log.Info(&#34;Submitted transaction&#34;, &#34;fullhash&#34;, tx.Hash().Hex(), &#34;recipient&#34;, tx.To())
+    }
+    return tx.Hash(), nil
+}
+</code></pre></td></tr></table>
+</div>
+</div><p>添加交易到本地交易池。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">func (b *EthAPIBackend) SendTx(ctx context.Context, signedTx *types.Transaction) error {
+    return b.eth.txPool.AddLocal(signedTx)
+}
+</code></pre></td></tr></table>
+</div>
+</div><h1 id="小结">小结</h1>
+<p>到此为止，交易已经提交到交易池。这才是整个交易完成过程中第一步，后面还有广播、检查、打包、确认等流程。</p>
+<p>这是节点钱包提交交易的过程。轻钱包提交交易与此有一些不同，是通过rpc调用提交到钱包服务的节点钱包。</p>
+<h2 id="欢迎关注">欢迎关注</h2>
+<p>欢迎关注微信公众帐号：沉风网事(savewind)</p>
+<p><img src="/images/cfws.jpg" alt="沉风网事"></p>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">沉风网事</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+        2018-05-05
+        
+    </span>
+  </p>
+  
+  
+</div>
+<footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/blockchain/">BlockChain</a>
+          <a href="/tags/ethereum/">ethereum</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/post/rd-leadship/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">乱扯研发管理与领导</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        <a class="next" href="/post/socialnetowrk-cannot-cycle/">
+            <span class="next-text nav-default">社交网络摆脱不了的周期</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    (function() {
+      
+      
+      if (window.location.hostname === 'localhost') return;
+
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      var disqus_shortname = 'ipds-top';
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+  
+
+  
+    <script src="https://utteranc.es/client.js"
+            repo="myself659/myself659/ipds-public"
+            issue-term="pathname"
+            theme="github-light"
+            crossorigin="anonymous"
+            async>
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://github.com/utterance">comments powered by utterances.</a></noscript>
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/8.3.1/mermaid.min.js"></script>
+<div class="social-links">
+      <a href="mailto:myself659@163.com" class="iconfont icon-email" title="email"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-stack-overflow" title="stack-overflow"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-twitter" title="twitter"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-facebook" title="facebook"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-linkedin" title="linkedin"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-google" title="google"></a>
+      <a href="https://github.com/myself659" class="iconfont icon-github" title="github"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-weibo" title="weibo"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-zhihu" title="zhihu"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-douban" title="douban"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-pocket" title="pocket"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-tumblr" title="tumblr"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-instagram" title="instagram"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-gitlab" title="gitlab"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-bilibili" title="bilibili"></a>
+  <a href="http://myself659.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/myself659/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2017 - 
+    2020
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">沉风网事</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+
+
+
+<script type="text/javascript" src="/js/main.min.d7b7ada643c9c1a983026e177f141f7363b4640d619caf01d8831a6718cd44ea.js"></script>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-144475213-1', 'auto');
+	ga('set', 'anonymizeIp', true);
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+
+
+
+
+</body>
+</html>

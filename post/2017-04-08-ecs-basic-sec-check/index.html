@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>阿里云ECS基本安全检查小结 - 沉风网事</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="沉风网事" /><meta name="description" content="背景 查看阿里云ECS服务器日志发现如下： 1 2 3 4 5 6 7 type=USER_AUTH msg=audit(1491669519.156:15631): pid=22938 uid=0 auid=4294967295 ses=4294967295 msg=&amp;#39;op=PAM:authentication acct=&amp;#34;deploy&amp;#34; exe=&amp;#34;/usr/sbin/sshd&amp;#34; hostname=123.57.245.163 addr=123.57.245.163 terminal=ssh res=failed&amp;#39; type=USER_LOGIN msg=audit(1491669519.156:15632): pid=22938 uid=0 auid=4294967295 ses=4294967295 msg=&amp;#39;op=login acct=28696E76616C6964207573657229 exe=&amp;#34;/usr/sbin/sshd&amp;#34; hostname=? addr=123.57.245.163 terminal=sshd res=failed&amp;#39; type=USER_LOGIN msg=audit(1491669587.368:15634): pid=22940 uid=0 auid=4294967295 ses=4294967295 msg=&amp;#39;op=login acct=28756E6B6E6F776E207573657229 exe=&amp;#34;/usr/sbin/sshd&amp;#34; hostname=? addr=123.57.245.163 terminal=sshd res=failed&amp;#39; type=USER_LOGIN msg=audit(1491669587.368:15635): pid=22940 uid=0" /><meta name="keywords" content="沉风网事, 沉风, 区块链" />
+
+
+<meta name="baidu-site-verification" content="9LmlOuIblt" />
+
+
+
+<meta name="generator" content="Hugo 0.68.3 with theme even" />
+
+
+<link rel="canonical" href="http://myself659.github.io/post/2017-04-08-ecs-basic-sec-check/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.8c3cbcb0324c2bb4875ceccba4007cbad4b4ac8377f33af9953c3e7684534a50.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="阿里云ECS基本安全检查小结" />
+<meta property="og:description" content="背景 查看阿里云ECS服务器日志发现如下： 1 2 3 4 5 6 7 type=USER_AUTH msg=audit(1491669519.156:15631): pid=22938 uid=0 auid=4294967295 ses=4294967295 msg=&#39;op=PAM:authentication acct=&#34;deploy&#34; exe=&#34;/usr/sbin/sshd&#34; hostname=123.57.245.163 addr=123.57.245.163 terminal=ssh res=failed&#39; type=USER_LOGIN msg=audit(1491669519.156:15632): pid=22938 uid=0 auid=4294967295 ses=4294967295 msg=&#39;op=login acct=28696E76616C6964207573657229 exe=&#34;/usr/sbin/sshd&#34; hostname=? addr=123.57.245.163 terminal=sshd res=failed&#39; type=USER_LOGIN msg=audit(1491669587.368:15634): pid=22940 uid=0 auid=4294967295 ses=4294967295 msg=&#39;op=login acct=28756E6B6E6F776E207573657229 exe=&#34;/usr/sbin/sshd&#34; hostname=? addr=123.57.245.163 terminal=sshd res=failed&#39; type=USER_LOGIN msg=audit(1491669587.368:15635): pid=22940 uid=0" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://myself659.github.io/post/2017-04-08-ecs-basic-sec-check/" />
+<meta property="article:published_time" content="2017-04-08T11:58:06+02:00" />
+<meta property="article:modified_time" content="2017-04-08T11:58:06+02:00" />
+<meta itemprop="name" content="阿里云ECS基本安全检查小结">
+<meta itemprop="description" content="背景 查看阿里云ECS服务器日志发现如下： 1 2 3 4 5 6 7 type=USER_AUTH msg=audit(1491669519.156:15631): pid=22938 uid=0 auid=4294967295 ses=4294967295 msg=&#39;op=PAM:authentication acct=&#34;deploy&#34; exe=&#34;/usr/sbin/sshd&#34; hostname=123.57.245.163 addr=123.57.245.163 terminal=ssh res=failed&#39; type=USER_LOGIN msg=audit(1491669519.156:15632): pid=22938 uid=0 auid=4294967295 ses=4294967295 msg=&#39;op=login acct=28696E76616C6964207573657229 exe=&#34;/usr/sbin/sshd&#34; hostname=? addr=123.57.245.163 terminal=sshd res=failed&#39; type=USER_LOGIN msg=audit(1491669587.368:15634): pid=22940 uid=0 auid=4294967295 ses=4294967295 msg=&#39;op=login acct=28756E6B6E6F776E207573657229 exe=&#34;/usr/sbin/sshd&#34; hostname=? addr=123.57.245.163 terminal=sshd res=failed&#39; type=USER_LOGIN msg=audit(1491669587.368:15635): pid=22940 uid=0">
+<meta itemprop="datePublished" content="2017-04-08T11:58:06&#43;02:00" />
+<meta itemprop="dateModified" content="2017-04-08T11:58:06&#43;02:00" />
+<meta itemprop="wordCount" content="1940">
+
+
+
+<meta itemprop="keywords" content="Secure," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="阿里云ECS基本安全检查小结"/>
+<meta name="twitter:description" content="背景 查看阿里云ECS服务器日志发现如下： 1 2 3 4 5 6 7 type=USER_AUTH msg=audit(1491669519.156:15631): pid=22938 uid=0 auid=4294967295 ses=4294967295 msg=&#39;op=PAM:authentication acct=&#34;deploy&#34; exe=&#34;/usr/sbin/sshd&#34; hostname=123.57.245.163 addr=123.57.245.163 terminal=ssh res=failed&#39; type=USER_LOGIN msg=audit(1491669519.156:15632): pid=22938 uid=0 auid=4294967295 ses=4294967295 msg=&#39;op=login acct=28696E76616C6964207573657229 exe=&#34;/usr/sbin/sshd&#34; hostname=? addr=123.57.245.163 terminal=sshd res=failed&#39; type=USER_LOGIN msg=audit(1491669587.368:15634): pid=22940 uid=0 auid=4294967295 ses=4294967295 msg=&#39;op=login acct=28756E6B6E6F776E207573657229 exe=&#34;/usr/sbin/sshd&#34; hostname=? addr=123.57.245.163 terminal=sshd res=failed&#39; type=USER_LOGIN msg=audit(1491669587.368:15635): pid=22940 uid=0"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">沉风</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a><a href="/post/leetcode/">
+        <li class="mobile-menu-item">LeetCode</li>
+      </a><a href="/post/read-post/">
+        <li class="mobile-menu-item">Read</li>
+      </a><a href="/post/share-post/">
+        <li class="mobile-menu-item">Share</li>
+      </a><a href="/post/slide-post/">
+        <li class="mobile-menu-item">Slide</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">沉风</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/leetcode/">LeetCode</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/read-post/">Read</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/share-post/">Share</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/slide-post/">Slide</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">阿里云ECS基本安全检查小结</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2017-04-08 </span>
+        <div class="post-category">
+            <a href="/categories/secure/"> Secure </a>
+            </div>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#背景">背景</a></li>
+      </ul>
+    </li>
+    <li><a href="#检查用户">检查用户</a>
+      <ul>
+        <li><a href="#查看当前在线用户">查看当前在线用户</a></li>
+        <li><a href="#查看当前ssh连接情况">查看当前ssh连接情况</a></li>
+        <li><a href="#查看新增用户">查看新增用户</a></li>
+        <li><a href="#查看当前用户">查看当前用户</a></li>
+        <li><a href="#检查是否存在特权用户">检查是否存在特权用户</a></li>
+        <li><a href="#检查用户口令是否为空">检查用户口令是否为空</a></li>
+      </ul>
+    </li>
+    <li><a href="#检查用户会干什么">检查用户会干什么</a>
+      <ul>
+        <li><a href="#top查看内存与内存使用情况">top查看内存与内存使用情况</a></li>
+        <li><a href="#查看任务计划">查看任务计划</a></li>
+        <li><a href="#查看网络连接情况">查看网络连接情况</a></li>
+        <li><a href="#检查隐藏进程">检查隐藏进程</a></li>
+        <li><a href="#检查rcxd">检查rcx.d</a></li>
+      </ul>
+    </li>
+    <li><a href="#检查用户干过什么">检查用户干过什么</a>
+      <ul>
+        <li><a href="#用last--d-查看登录情况">用last -d 查看登录情况</a></li>
+        <li><a href="#用last---x-查看机器重启情况">用last  -x 查看机器重启情况</a></li>
+        <li><a href="#查看audit的log信息">查看audit的log信息</a></li>
+        <li><a href="#查看历史命令">查看历史命令</a></li>
+        <li><a href="#安全文件检查">安全文件检查</a></li>
+      </ul>
+    </li>
+    <li><a href="#环境">环境</a>
+      <ul>
+        <li><a href="#网络隔离性">网络隔离性</a></li>
+      </ul>
+    </li>
+    <li><a href="#总结">总结</a>
+      <ul>
+        <li><a href="#参考">参考</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <h3 id="背景">背景</h3>
+<p>查看阿里云ECS服务器日志发现如下：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">type=USER_AUTH msg=audit(1491669519.156:15631): pid=22938 uid=0 auid=4294967295 ses=4294967295 msg=&#39;op=PAM:authentication acct=&#34;deploy&#34; exe=&#34;/usr/sbin/sshd&#34; hostname=123.57.245.163 addr=123.57.245.163 terminal=ssh res=failed&#39;
+type=USER_LOGIN msg=audit(1491669519.156:15632): pid=22938 uid=0 auid=4294967295 ses=4294967295 msg=&#39;op=login acct=28696E76616C6964207573657229 exe=&#34;/usr/sbin/sshd&#34; hostname=? addr=123.57.245.163 terminal=sshd res=failed&#39;
+type=USER_LOGIN msg=audit(1491669587.368:15634): pid=22940 uid=0 auid=4294967295 ses=4294967295 msg=&#39;op=login acct=28756E6B6E6F776E207573657229 exe=&#34;/usr/sbin/sshd&#34; hostname=? addr=123.57.245.163 terminal=sshd res=failed&#39;
+type=USER_LOGIN msg=audit(1491669587.368:15635): pid=22940 uid=0 auid=4294967295 ses=4294967295 msg=&#39;op=login acct=28696E76616C6964207573657229 exe=&#34;/usr/sbin/sshd&#34; hostname=? addr=123.57.245.163 terminal=sshd res=failed&#39;
+type=USER_AUTH msg=audit(1491669589.420:15636): pid=22940 uid=0 auid=4294967295 ses=4294967295 msg=&#39;op=PAM:authentication acct=&#34;deploy&#34; exe=&#34;/usr/sbin/sshd&#34; hostname=123.57.245.163 addr=123.57.245.163 terminal=ssh res=failed&#39;
+type=USER_LOGIN msg=audit(1491669589.420:15637): pid=22940 uid=0 auid=4294967295 ses=4294967295 msg=&#39;op=login acct=28696E76616C6964207573657229 exe=&#34;/usr/sbin/sshd&#34; hostname=? addr=123.57.245.163 terminal=sshd res=failed&#39;
+type=USER_LOGIN msg=audit(1491669658.624:15639): pid=22948 uid=0 auid=4294967295 ses=4294967295 msg=&#39;op=login acct=28756E6B6E6F776E207573657229 exe=&#34;/usr/sbin/sshd&#34; hostname=? addr=123.57.245.163 terminal=sshd res=failed&#39;
+</code></pre></td></tr></table>
+</div>
+</div><p>百度一下这个ip地址，如下图所示：
+![记下这个IP,留下证据](/images/attck ip.png)</p>
+<p>这是有人在阿里云ECS写脚本要暴力破解云主机的密码。这个引起我的注意，赶紧检查一下自己的ECS是否被破解。</p>
+<p>说点题外话：记得去年帮人弄一个网站的时候，后面的她的云主机密码泄漏了，人家第一反应过来就是怀疑我，还得花心思给她解释有多种情况会导致密码泄漏与破解，伤不起啊。</p>
+<p>整个检查大体如下，分为以下几个部分：</p>
+<ol>
+<li>检查有哪些用户？</li>
+<li>用户会干什么？</li>
+<li>用户干过什么？</li>
+<li>处于什么样的环境？</li>
+</ol>
+<h2 id="检查用户">检查用户</h2>
+<h3 id="查看当前在线用户">查看当前在线用户</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">root@ecs-1:~# who 
+</code></pre></td></tr></table>
+</div>
+</div><p>为了确定是否当前就有不明用户登录，如果有不明用户登录，那么得赶紧修改密码。</p>
+<h3 id="查看当前ssh连接情况">查看当前ssh连接情况</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">root@ecs-1:~# ss  -t   sport = :22   
+</code></pre></td></tr></table>
+</div>
+</div><p>查看用户的ssh连接情况，进行对比确认</p>
+<h3 id="查看新增用户">查看新增用户</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">root@ecs-1:~# awk -F&#39;:&#39; &#39;{ print $1}&#39; /etc/passwd
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="查看当前用户">查看当前用户</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">root@ecs-1:~# awk -F&#39;:&#39; &#39;{ print $1}&#39; /etc/passwd
+</code></pre></td></tr></table>
+</div>
+</div><p>主要是确定是否存在可疑用户，是否有可疑用户加入</p>
+<h3 id="检查是否存在特权用户">检查是否存在特权用户</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">root@ecs-1:~# awk -F: &#39;$3==0 {print $1}&#39; /etc/passwd
+root
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="检查用户口令是否为空">检查用户口令是否为空</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">root@ecs-1:~# awk -F: &#39;length($2)==0 {print $1}&#39; /etc/shadow
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="检查用户会干什么">检查用户会干什么</h2>
+<h3 id="top查看内存与内存使用情况">top查看内存与内存使用情况</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">root@ecs-1:~# top  
+</code></pre></td></tr></table>
+</div>
+</div><p>关注高cpu使用率与高内存占用程序，例如比特币的矿机一般会占用大量的cpu资源</p>
+<h3 id="查看任务计划">查看任务计划</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">root@ecs-1:~# crontab   -l
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="查看网络连接情况">查看网络连接情况</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">root@ecs-1:~# netstat   -natp  
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="检查隐藏进程">检查隐藏进程</h3>
+<p>检查隐藏进程，三步走：</p>
+<p>第一步：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">root@ecs-1:~# ps  -ef    | awk   &#39;{print $2}&#39;  | sort  -n    |  uniq   &gt; pid1
+</code></pre></td></tr></table>
+</div>
+</div><p>第二步：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">root@ecs-1:~# ls   /proc  | grep -E &#39;[0-9]{1,}&#39; | sort   -n    | uniq   &gt; pid2  
+</code></pre></td></tr></table>
+</div>
+</div><p>第三步：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">root@ecs-1:~# diff pid1 pid2  
+1d0
+&lt; PID
+&lt; 29592
+&lt; 29593
+&lt; 29594
+&lt; 29595
+---
+&gt; 29588
+&gt; 29589
+&gt; 29590
+&gt; 29591
+</code></pre></td></tr></table>
+</div>
+</div><p>结果说明： 第一步有4个不同的进程表示这条命令对应的进程，第二步同样的，所以这里没有发现隐藏的进程</p>
+<h3 id="检查rcxd">检查rcx.d</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">root@ecs-1:~# ls /etc/rc3.d
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="检查用户干过什么">检查用户干过什么</h2>
+<p>重点检查以下情况：</p>
+<ol>
+<li>用户登录</li>
+<li>机器重启情况</li>
+<li>安全日志</li>
+<li>历史操作</li>
+<li>安全文件检查</li>
+</ol>
+<h3 id="用last--d-查看登录情况">用last -d 查看登录情况</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">root@ecs-1:~# last   -d  
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="用last---x-查看机器重启情况">用last  -x 查看机器重启情况</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">root@ecs-1:~# last   -x reboot  
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="查看audit的log信息">查看audit的log信息</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">root@ecs-1:~# cat   /var/log/audit/audit.log  
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="查看历史命令">查看历史命令</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="nx">root</span><span class="err">@</span><span class="nx">ecs</span><span class="o">-</span><span class="mi">1</span><span class="p">:</span><span class="err">~#</span> <span class="nx">history</span>    
+  <span class="mi">271</span>  <span class="nx">iptables</span>   <span class="o">-</span><span class="nx">L</span>
+  <span class="mi">272</span>  <span class="kn">package</span> <span class="nx">main</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="安全文件检查">安全文件检查</h3>
+<ol>
+<li>检查授权的ssh key，查看是否有未知的ssh key添加</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">root@ecs-1:~#  cat   ~/.ssh/authorized_keys       
+</code></pre></td></tr></table>
+</div>
+</div><ol start="2">
+<li>检查bashrc</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">root@ecs-1:~#  cat   ~/.bashrc      
+</code></pre></td></tr></table>
+</div>
+</div><ol start="3">
+<li>检查密码最后修改时间</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">root@ecs-1:~# ls -l /etc/passwd
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="环境">环境</h2>
+<h3 id="网络隔离性">网络隔离性</h3>
+<p>网络采用了VPC网络模式，检测结果如下：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">root@ecs-1#  nmap -v -sT 172.17.11.0/28   --open
+
+Starting Nmap 6.40 ( http://nmap.org ) at 2017-03-14 10:23 CST
+Initiating ARP Ping Scan at 10:23
+Scanning 16 hosts [1 port/host]
+Completed ARP Ping Scan at 10:23, 0.41s elapsed (16 total hosts)
+Initiating Parallel DNS resolution of 16 hosts. at 10:23
+Completed Parallel DNS resolution of 16 hosts. at 10:24, 13.00s elapsed
+Initiating Connect Scan at 10:24
+Scanning 16 hosts [1000 ports/host]
+Connect Scan Timing: About 2.42% done; ETC: 10:45 (0:20:49 remaining)
+Connect Scan Timing: About 11.94% done; ETC: 10:46 (0:19:40 remaining)
+Connect Scan Timing: About 16.72% done; ETC: 10:46 (0:18:31 remaining)
+Connect Scan Timing: About 21.57% done; ETC: 10:46 (0:17:20 remaining)
+Connect Scan Timing: About 26.57% done; ETC: 10:46 (0:16:13 remaining)
+Connect Scan Timing: About 31.72% done; ETC: 10:46 (0:15:06 remaining)
+Connect Scan Timing: About 37.01% done; ETC: 10:46 (0:13:59 remaining)
+Connect Scan Timing: About 41.86% done; ETC: 10:46 (0:12:52 remaining)
+Connect Scan Timing: About 47.34% done; ETC: 10:46 (0:11:45 remaining)
+Connect Scan Timing: About 52.56% done; ETC: 10:46 (0:10:37 remaining)
+Connect Scan Timing: About 57.65% done; ETC: 10:46 (0:09:27 remaining)
+Connect Scan Timing: About 62.67% done; ETC: 10:46 (0:08:19 remaining)
+Connect Scan Timing: About 67.69% done; ETC: 10:46 (0:07:11 remaining)
+Connect Scan Timing: About 72.92% done; ETC: 10:46 (0:06:01 remaining)
+Connect Scan Timing: About 78.18% done; ETC: 10:46 (0:04:51 remaining)
+Connect Scan Timing: About 83.26% done; ETC: 10:46 (0:03:43 remaining)
+Connect Scan Timing: About 88.35% done; ETC: 10:46 (0:02:35 remaining)
+Connect Scan Timing: About 93.58% done; ETC: 10:46 (0:01:25 remaining)
+Completed Connect Scan against 172.17.11.14 in 1276.55s (15 hosts left)
+Completed Connect Scan against 172.17.11.7 in 1279.69s (14 hosts left)
+Completed Connect Scan against 172.17.11.1 in 1280.09s (13 hosts left)
+Completed Connect Scan against 172.17.11.10 in 1291.35s (12 hosts left)
+Completed Connect Scan against 172.17.11.12 in 1291.68s (11 hosts left)
+Completed Connect Scan against 172.17.11.5 in 1322.08s (10 hosts left)
+Completed Connect Scan against 172.17.11.4 in 1322.13s (9 hosts left)
+Completed Connect Scan against 172.17.11.15 in 1325.48s (8 hosts left)
+Completed Connect Scan against 172.17.11.3 in 1328.10s (7 hosts left)
+Completed Connect Scan against 172.17.11.9 in 1329.43s (6 hosts left)
+Completed Connect Scan against 172.17.11.11 in 1331.76s (5 hosts left)
+Completed Connect Scan against 172.17.11.2 in 1335.78s (4 hosts left))
+
+Completed Connect Scan against 172.17.11.0 in 1336.84s (3 hosts leftCompleted Connect Scan against 172.17.11.6 in 1337.46s (2 hosts left)
+Completed Connect Scan against 172.17.11.8 in 1338.91s (1 host left)
+Completed Connect Scan at 10:46, 1342.34s elapsed (16000 total ports)
+Read data files from: /usr/bin/../share/nmap
+Nmap done: 16 IP addresses (16 hosts up) scanned in 1355.80 seconds
+           Raw packets sent: 16 (448B) | Rcvd: 16 (448B)
+</code></pre></td></tr></table>
+</div>
+</div><p>如果网络没有隔离，各个VM同一个局域网内，会发现同一个网段的开放的端口，检查结果如下：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">root@centos# nmap   -v -sT  192.168.20.0/24 --open 
+
+Discovered open port 80/tcp on 192.168.20.10
+Discovered open port 3389/tcp on 192.168.20.63
+Discovered open port 80/tcp on 192.168.20.38
+Discovered open port 135/tcp on 192.168.20.49
+Discovered open port 3389/tcp on 192.168.20.52
+Discovered open port 80/tcp on 192.168.20.49
+Discovered open port 80/tcp on 192.168.20.34
+Discovered open port 445/tcp on 192.168.20.37
+Discovered open port 445/tcp on 192.168.20.36
+Discovered open port 135/tcp on 192.168.20.14
+Discovered open port 3389/tcp on 192.168.20.38
+Discovered open port 135/tcp on 192.168.20.50
+</code></pre></td></tr></table>
+</div>
+</div><p>通过对比可知，采用VPC隔离的ECS不能发现同一个网段开放的网络端口，这样安全性也大大增加，好在阿里云ECS已经支持上VPC,这样就不担心来自同一个网段的攻击了（堡垒更容易从内部攻破）</p>
+<h2 id="总结">总结</h2>
+<ol>
+<li>安全首先是一个意识问题，需要保证足够的敏锐</li>
+<li>阿里云的ip基本是一个大段范围，这么多IP对应的ECS肯定有些用户是安全小白用户，这样攻击者的成本也不会很高，写一个脚本遍历这个大的ip池，就可以获取一些小白用户的ECS</li>
+<li>密码一定不要用12345678之类或者那些常用的密码，另外注意定时更换密码</li>
+<li>对阿里云一个建议：对于暴力破解ssh密码，增加功能实现同一个ip地址多次尝试ssh的限制</li>
+<li>这篇主要写一些基本检查操作，有空的时候再写一篇加强基础安全防护的文章</li>
+</ol>
+<p>不足与建议，欢迎指正与交流。</p>
+<p>（end）</p>
+<h3 id="参考">参考</h3>
+<ol>
+<li><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/6/html/Security_Guide/sec-Understanding_Audit_Log_Files.html">Understanding Audit Log Files</a></li>
+<li>linux man</li>
+<li><a href="https://sysdig.com/blog/hiding-linux-processes-for-fun-and-profit/">Hiding Linux Processes For Fun And Profit</a></li>
+<li><a href="https://www.cyberciti.biz/faq/linux-hide-processes-from-other-users/">Linux: Hide Processes From Other Users</a></li>
+<li><a href="http://www.linuxjournal.com/article/1274">Understanding Red Hat Run Levels</a></li>
+</ol>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">沉风网事</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+        2017-04-08
+        
+    </span>
+  </p>
+  
+  
+</div>
+<footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/secure/">Secure</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/post/2017-04-29-about-system-design/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">对于系统设计的一些想法</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        <a class="next" href="/post/2017-03-27-help-internet-available-more-people/">
+            <span class="next-text nav-default">不要忘记那些正在追赶互联网潮流的用户</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    (function() {
+      
+      
+      if (window.location.hostname === 'localhost') return;
+
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      var disqus_shortname = 'ipds-top';
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+  
+
+  
+    <script src="https://utteranc.es/client.js"
+            repo="myself659/myself659/ipds-public"
+            issue-term="pathname"
+            theme="github-light"
+            crossorigin="anonymous"
+            async>
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://github.com/utterance">comments powered by utterances.</a></noscript>
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/8.3.1/mermaid.min.js"></script>
+<div class="social-links">
+      <a href="mailto:myself659@163.com" class="iconfont icon-email" title="email"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-stack-overflow" title="stack-overflow"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-twitter" title="twitter"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-facebook" title="facebook"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-linkedin" title="linkedin"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-google" title="google"></a>
+      <a href="https://github.com/myself659" class="iconfont icon-github" title="github"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-weibo" title="weibo"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-zhihu" title="zhihu"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-douban" title="douban"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-pocket" title="pocket"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-tumblr" title="tumblr"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-instagram" title="instagram"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-gitlab" title="gitlab"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-bilibili" title="bilibili"></a>
+  <a href="http://myself659.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/myself659/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2017 - 
+    2020
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">沉风网事</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+
+
+
+<script type="text/javascript" src="/js/main.min.d7b7ada643c9c1a983026e177f141f7363b4640d619caf01d8831a6718cd44ea.js"></script>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-144475213-1', 'auto');
+	ga('set', 'anonymizeIp', true);
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+
+
+
+
+</body>
+</html>

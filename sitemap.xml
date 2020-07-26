@@ -1,1041 +1,1363 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+<?xml-stylesheet type="text/xsl" href="http://myself659.github.io/sitemap.xsl"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://myself659.github.io/2020/06/26/think-outof-box/</loc>
+    <loc>http://myself659.github.io/categories/</loc>
+    <lastmod>2020-07-08T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://myself659.github.io/post/mermaid-demo/</loc>
+    <lastmod>2020-07-08T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://myself659.github.io/post/</loc>
+    <lastmod>2020-07-08T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://myself659.github.io/tags/rust/</loc>
+    <lastmod>2020-07-08T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://myself659.github.io/categories/rust/</loc>
+    <lastmod>2020-07-08T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://myself659.github.io/tags/</loc>
+    <lastmod>2020-07-08T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://myself659.github.io/</loc>
+    <lastmod>2020-07-08T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://myself659.github.io/tags/%E6%88%90%E9%95%BF/</loc>
     <lastmod>2020-06-26T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://myself659.github.io/2020/05/31/cryptocurrency_antifrangible/</loc>
+    <loc>http://myself659.github.io/categories/%E6%88%90%E9%95%BF/</loc>
+    <lastmod>2020-06-26T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://myself659.github.io/post/think-outof-box/</loc>
+    <lastmod>2020-06-26T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://myself659.github.io/tags/blockchain/</loc>
     <lastmod>2020-05-31T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://myself659.github.io/2020/05/24/covid-19-symptom/</loc>
+    <loc>http://myself659.github.io/categories/blockchain/</loc>
+    <lastmod>2020-05-31T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://myself659.github.io/post/cryptocurrency_antifrangible/</loc>
+    <lastmod>2020-05-31T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://myself659.github.io/tags/life/</loc>
     <lastmod>2020-05-24T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://myself659.github.io/2020/05/08/book-skin-in-the-game-how/</loc>
+    <loc>http://myself659.github.io/categories/life/</loc>
+    <lastmod>2020-05-24T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://myself659.github.io/post/covid-19-symptom/</loc>
+    <lastmod>2020-05-24T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://myself659.github.io/tags/read/</loc>
     <lastmod>2020-05-08T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://myself659.github.io/2020/04/26/how-to-learn-fast/</loc>
+    <loc>http://myself659.github.io/categories/read/</loc>
+    <lastmod>2020-05-08T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://myself659.github.io/post/book-skin-in-the-game-how/</loc>
+    <lastmod>2020-05-08T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://myself659.github.io/post/how-to-learn-fast/</loc>
     <lastmod>2020-04-26T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://myself659.github.io/2020/04/19/covid-19-change/</loc>
+    <loc>http://myself659.github.io/tags/%E5%AD%A6%E4%B9%A0/</loc>
+    <lastmod>2020-04-26T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://myself659.github.io/tags/economy/</loc>
     <lastmod>2020-04-19T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://myself659.github.io/2020/04/19/coronavirus-change/</loc>
+    <loc>http://myself659.github.io/categories/economy/</loc>
     <lastmod>2020-04-19T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://myself659.github.io/2020/04/17/libra2-basic/</loc>
+    <loc>http://myself659.github.io/post/coronavirus-change/</loc>
+    <lastmod>2020-04-19T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://myself659.github.io/post/libra2-basic/</loc>
     <lastmod>2020-04-17T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://myself659.github.io/2020/04/11/meditation-start/</loc>
+    <loc>http://myself659.github.io/post/meditation-start/</loc>
     <lastmod>2020-04-11T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://myself659.github.io/2020/04/03/about-invest/</loc>
+    <loc>http://myself659.github.io/post/about-invest/</loc>
     <lastmod>2020-04-03T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://myself659.github.io/2020/03/29/github-hack/</loc>
+    <loc>http://myself659.github.io/post/github-hack/</loc>
     <lastmod>2020-03-29T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://myself659.github.io/2020/03/22/data-avoid-leak/</loc>
+    <loc>http://myself659.github.io/tags/%E7%BC%96%E7%A8%8B/</loc>
+    <lastmod>2020-03-29T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://myself659.github.io/categories/%E7%BC%96%E7%A8%8B/</loc>
+    <lastmod>2020-03-29T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://myself659.github.io/tags/internet/</loc>
     <lastmod>2020-03-22T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://myself659.github.io/2020/03/15/howmuch-us-stock-willfall/</loc>
+    <loc>http://myself659.github.io/categories/internet/</loc>
+    <lastmod>2020-03-22T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://myself659.github.io/post/data-avoid-leak/</loc>
+    <lastmod>2020-03-22T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://myself659.github.io/post/howmuch-us-stock-willfall/</loc>
     <lastmod>2020-03-15T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://myself659.github.io/2020/03/08/find-what-todo/</loc>
+    <loc>http://myself659.github.io/post/find-what-todo/</loc>
     <lastmod>2020-03-08T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://myself659.github.io/2020/03/08/weimeng-del-data/</loc>
+    <loc>http://myself659.github.io/post/weimeng-del-data/</loc>
     <lastmod>2020-03-08T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://myself659.github.io/2020/02/17/stock-us-analysis/</loc>
+    <loc>http://myself659.github.io/tags/%E7%A0%94%E5%8F%91%E7%AE%A1%E7%90%86/</loc>
+    <lastmod>2020-03-08T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://myself659.github.io/categories/%E7%A0%94%E5%8F%91%E7%AE%A1%E7%90%86/</loc>
+    <lastmod>2020-03-08T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://myself659.github.io/tags/data/</loc>
     <lastmod>2020-02-17T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://myself659.github.io/2020/02/06/stock-us-data/</loc>
+    <loc>http://myself659.github.io/categories/data/</loc>
+    <lastmod>2020-02-17T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://myself659.github.io/post/stock-us-analysis/</loc>
+    <lastmod>2020-02-17T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://myself659.github.io/post/stock-us-data/</loc>
     <lastmod>2020-02-06T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://myself659.github.io/2020/01/30/kobe/</loc>
+    <loc>http://myself659.github.io/tags/nba/</loc>
     <lastmod>2020-01-30T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://myself659.github.io/2020/01/22/why-btc-is-dominated/</loc>
+    <loc>http://myself659.github.io/post/kobe/</loc>
+    <lastmod>2020-01-30T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://myself659.github.io/tags/%E9%97%B2%E8%B0%88%E4%B9%B1%E6%89%AF/</loc>
+    <lastmod>2020-01-30T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://myself659.github.io/categories/%E9%97%B2%E8%B0%88%E4%B9%B1%E6%89%AF/</loc>
+    <lastmod>2020-01-30T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://myself659.github.io/post/why-btc-is-dominated/</loc>
     <lastmod>2020-01-22T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://myself659.github.io/2020/01/16/wechat-payment-read/</loc>
+    <loc>http://myself659.github.io/tags/btc/</loc>
+    <lastmod>2020-01-22T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://myself659.github.io/tags/%E5%95%86%E4%B8%9A/</loc>
     <lastmod>2020-01-16T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://myself659.github.io/2020/01/08/blockchain-2020/</loc>
+    <loc>http://myself659.github.io/categories/%E5%95%86%E4%B8%9A/</loc>
+    <lastmod>2020-01-16T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://myself659.github.io/post/wechat-payment-read/</loc>
+    <lastmod>2020-01-16T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://myself659.github.io/post/blockchain-2020/</loc>
     <lastmod>2020-01-08T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://myself659.github.io/2020/01/02/programer-book-list/</loc>
+    <loc>http://myself659.github.io/post/programer-book-list/</loc>
     <lastmod>2020-01-02T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://myself659.github.io/2019/11/21/tech-giant-income/</loc>
+    <loc>http://myself659.github.io/post/tech-giant-income/</loc>
     <lastmod>2019-11-21T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://myself659.github.io/2019/11/08/about-doh/</loc>
+    <loc>http://myself659.github.io/post/about-doh/</loc>
     <lastmod>2019-11-08T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://myself659.github.io/2019/09/18/substrate-cloud-node/</loc>
+    <loc>http://myself659.github.io/tags/secure/</loc>
+    <lastmod>2019-11-08T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://myself659.github.io/categories/secure/</loc>
+    <lastmod>2019-11-08T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://myself659.github.io/tags/substrate/</loc>
     <lastmod>2019-09-18T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://myself659.github.io/2019/09/06/golang-sync-pool-2/</loc>
+    <loc>http://myself659.github.io/categories/substrate/</loc>
+    <lastmod>2019-09-18T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://myself659.github.io/post/substrate-cloud-node/</loc>
+    <lastmod>2019-09-18T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://myself659.github.io/tags/golang/</loc>
     <lastmod>2019-09-06T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://myself659.github.io/2019/08/18/risk-of-vesting-china/</loc>
+    <loc>http://myself659.github.io/categories/golang/</loc>
+    <lastmod>2019-09-06T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://myself659.github.io/post/golang-sync-pool-2/</loc>
+    <lastmod>2019-09-06T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://myself659.github.io/post/risk-of-vesting-china/</loc>
     <lastmod>2019-08-18T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://myself659.github.io/2019/08/11/rust-crate-speedup/</loc>
+    <loc>http://myself659.github.io/post/rust-crate-speedup/</loc>
     <lastmod>2019-08-11T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://myself659.github.io/2019/08/08/install-python37/</loc>
+    <loc>http://myself659.github.io/tags/python/</loc>
     <lastmod>2019-08-08T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://myself659.github.io/2019/06/26/facebook-libra/</loc>
+    <loc>http://myself659.github.io/categories/python/</loc>
+    <lastmod>2019-08-08T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://myself659.github.io/post/install-python37/</loc>
+    <lastmod>2019-08-08T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://myself659.github.io/post/facebook-libra/</loc>
     <lastmod>2019-06-26T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://myself659.github.io/2019/06/10/golang-sync-pool-1/</loc>
+    <loc>http://myself659.github.io/post/golang-sync-pool-1/</loc>
     <lastmod>2019-06-10T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://myself659.github.io/2019/05/30/sim-port-attack/</loc>
+    <loc>http://myself659.github.io/post/sim-port-attack/</loc>
     <lastmod>2019-05-30T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://myself659.github.io/2019/04/28/about-zoom/</loc>
+    <loc>http://myself659.github.io/post/about-zoom/</loc>
     <lastmod>2019-04-28T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://myself659.github.io/2019/03/10/it-frame/</loc>
+    <loc>http://myself659.github.io/post/it-frame/</loc>
     <lastmod>2019-03-10T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://myself659.github.io/2019/03/09/k8s-kubeagle/</loc>
+    <loc>http://myself659.github.io/tags/docker/</loc>
     <lastmod>2019-03-09T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://myself659.github.io/2019/01/23/principle-of-work/</loc>
+    <loc>http://myself659.github.io/tags/kubernetes/</loc>
+    <lastmod>2019-03-09T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://myself659.github.io/categories/kubernetes/</loc>
+    <lastmod>2019-03-09T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://myself659.github.io/post/k8s-kubeagle/</loc>
+    <lastmod>2019-03-09T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://myself659.github.io/tags/%E8%81%8C%E5%9C%BA/</loc>
     <lastmod>2019-01-23T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://myself659.github.io/2019/01/12/pow-is-out/</loc>
+    <loc>http://myself659.github.io/post/principle-of-work/</loc>
+    <lastmod>2019-01-23T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://myself659.github.io/post/pow-is-out/</loc>
     <lastmod>2019-01-12T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://myself659.github.io/2018/12/24/%E5%85%B3%E4%BA%8E%E5%8C%BA%E5%9D%97%E9%93%BE%E5%85%B1%E8%AF%86%E7%9A%84%E4%B8%80%E4%BA%9B%E6%80%9D%E8%80%83/</loc>
+    <loc>http://myself659.github.io/tags/distributed/</loc>
     <lastmod>2018-12-24T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://myself659.github.io/2018/12/11/distributed-theory/</loc>
+    <loc>http://myself659.github.io/post/%E5%85%B3%E4%BA%8E%E5%8C%BA%E5%9D%97%E9%93%BE%E5%85%B1%E8%AF%86%E7%9A%84%E4%B8%80%E4%BA%9B%E6%80%9D%E8%80%83/</loc>
+    <lastmod>2018-12-24T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://myself659.github.io/categories/distributed/</loc>
     <lastmod>2018-12-11T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://myself659.github.io/2018/12/05/comware-rd/</loc>
+    <loc>http://myself659.github.io/post/distributed-theory/</loc>
+    <lastmod>2018-12-11T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://myself659.github.io/post/comware-rd/</loc>
     <lastmod>2018-12-05T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://myself659.github.io/2018/12/02/%E8%AF%B4%E8%AF%B4%E5%9C%A8%E4%B8%8D%E5%90%8C%E8%A1%8C%E4%B8%9A%E7%9A%84%E7%BC%96%E7%A8%8B%E4%BD%93%E9%AA%8C/</loc>
+    <loc>http://myself659.github.io/post/%E8%AF%B4%E8%AF%B4%E5%9C%A8%E4%B8%8D%E5%90%8C%E8%A1%8C%E4%B8%9A%E7%9A%84%E7%BC%96%E7%A8%8B%E4%BD%93%E9%AA%8C/</loc>
     <lastmod>2018-12-02T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://myself659.github.io/2018/12/01/about-weixin-miniprogram/</loc>
+    <loc>http://myself659.github.io/post/about-weixin-miniprogram/</loc>
     <lastmod>2018-12-01T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://myself659.github.io/2018/10/21/secret-sharing/</loc>
+    <loc>http://myself659.github.io/tags/cryptography/</loc>
     <lastmod>2018-10-21T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://myself659.github.io/2018/10/19/exchage-safe-asset/</loc>
+    <loc>http://myself659.github.io/categories/cryptography/</loc>
+    <lastmod>2018-10-21T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://myself659.github.io/post/secret-sharing/</loc>
+    <lastmod>2018-10-21T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://myself659.github.io/post/exchage-safe-asset/</loc>
     <lastmod>2018-10-19T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://myself659.github.io/2018/10/17/k8s-monitor/</loc>
+    <loc>http://myself659.github.io/post/k8s-monitor/</loc>
     <lastmod>2018-10-17T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://myself659.github.io/2018/10/16/k8s-cicd/</loc>
+    <loc>http://myself659.github.io/post/k8s-cicd/</loc>
     <lastmod>2018-10-16T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://myself659.github.io/2018/10/15/exchage-safe-arch/</loc>
+    <loc>http://myself659.github.io/post/exchage-safe-arch/</loc>
     <lastmod>2018-10-15T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://myself659.github.io/2018/09/05/tech-stack-explain/</loc>
+    <loc>http://myself659.github.io/post/tech-stack-explain/</loc>
     <lastmod>2018-09-05T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://myself659.github.io/2018/07/29/pdd-thought/</loc>
+    <loc>http://myself659.github.io/post/pdd-thought/</loc>
     <lastmod>2018-07-29T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://myself659.github.io/2018/07/21/blockchain-new-game-time/</loc>
+    <loc>http://myself659.github.io/post/blockchain-new-game-time/</loc>
     <lastmod>2018-07-21T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://myself659.github.io/2018/07/05/ecomony-machine/</loc>
+    <loc>http://myself659.github.io/post/ecomony-machine/</loc>
     <lastmod>2018-07-05T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://myself659.github.io/2018/07/03/golang-eng/</loc>
+    <loc>http://myself659.github.io/post/golang-eng/</loc>
     <lastmod>2018-07-03T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://myself659.github.io/2018/06/21/ipfs%E4%B8%93%E9%A2%98/</loc>
+    <loc>http://myself659.github.io/tags/ipfs/</loc>
     <lastmod>2018-06-21T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://myself659.github.io/2018/06/10/ms-github/</loc>
+    <loc>http://myself659.github.io/categories/ipfs/</loc>
+    <lastmod>2018-06-21T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://myself659.github.io/post/ipfs%E4%B8%93%E9%A2%98/</loc>
+    <lastmod>2018-06-21T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://myself659.github.io/post/ms-github/</loc>
     <lastmod>2018-06-10T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://myself659.github.io/2018/06/08/about-rand/</loc>
+    <loc>http://myself659.github.io/post/about-rand/</loc>
     <lastmod>2018-06-08T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://myself659.github.io/2018/05/15/eth-txpool/</loc>
+    <loc>http://myself659.github.io/tags/ethereum/</loc>
     <lastmod>2018-05-15T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://myself659.github.io/2018/05/05/rd-leadship/</loc>
+    <loc>http://myself659.github.io/categories/ethereum/</loc>
+    <lastmod>2018-05-15T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://myself659.github.io/post/eth-txpool/</loc>
+    <lastmod>2018-05-15T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://myself659.github.io/post/rd-leadship/</loc>
     <lastmod>2018-05-05T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://myself659.github.io/2018/05/05/eth-tx-submit/</loc>
+    <loc>http://myself659.github.io/post/eth-tx-submit/</loc>
     <lastmod>2018-05-05T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://myself659.github.io/2018/05/05/socialnetowrk-cannot-cycle/</loc>
+    <loc>http://myself659.github.io/post/socialnetowrk-cannot-cycle/</loc>
     <lastmod>2018-05-05T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://myself659.github.io/2018/03/23/distributed-bft/</loc>
+    <loc>http://myself659.github.io/post/distributed-bft/</loc>
     <lastmod>2018-03-23T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://myself659.github.io/2018/03/08/%E7%9F%BF%E5%B7%A5%E4%BA%94%E5%AE%97%E7%BD%AA/</loc>
+    <loc>http://myself659.github.io/tags/bitcoin/</loc>
     <lastmod>2018-03-08T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://myself659.github.io/2018/03/04/blockchain-pain-happy-itchy/</loc>
+    <loc>http://myself659.github.io/post/%E7%9F%BF%E5%B7%A5%E4%BA%94%E5%AE%97%E7%BD%AA/</loc>
+    <lastmod>2018-03-08T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://myself659.github.io/post/blockchain-pain-happy-itchy/</loc>
     <lastmod>2018-03-04T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://myself659.github.io/2018/02/25/usdt-faq/</loc>
+    <loc>http://myself659.github.io/post/usdt-faq/</loc>
     <lastmod>2018-02-25T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://myself659.github.io/2018/02/22/usdt%E6%8A%80%E6%9C%AF%E5%8E%9F%E7%90%86/</loc>
+    <loc>http://myself659.github.io/post/usdt%E6%8A%80%E6%9C%AF%E5%8E%9F%E7%90%86/</loc>
     <lastmod>2018-02-22T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://myself659.github.io/2018/02/21/array-vs-list/</loc>
+    <loc>http://myself659.github.io/post/array-vs-list/</loc>
     <lastmod>2018-02-21T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://myself659.github.io/2018/02/21/blockchain-strategy/</loc>
+    <loc>http://myself659.github.io/tags/data-struct/</loc>
     <lastmod>2018-02-21T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://myself659.github.io/2018/02/21/blockchain-digit-wallet/</loc>
+    <loc>http://myself659.github.io/categories/data-struct/</loc>
     <lastmod>2018-02-21T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://myself659.github.io/2018/02/05/%E4%BB%8E%E8%B4%A7%E5%B8%81%E8%A7%92%E5%BA%A6%E7%9C%8B%E6%AF%94%E7%89%B9%E5%B8%81/</loc>
+    <loc>http://myself659.github.io/post/blockchain-strategy/</loc>
+    <lastmod>2018-02-21T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://myself659.github.io/post/blockchain-digit-wallet/</loc>
+    <lastmod>2018-02-21T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://myself659.github.io/post/%E4%BB%8E%E8%B4%A7%E5%B8%81%E8%A7%92%E5%BA%A6%E7%9C%8B%E6%AF%94%E7%89%B9%E5%B8%81/</loc>
     <lastmod>2018-02-05T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://myself659.github.io/2018/02/05/suggests-for-chinese-internet-productions/</loc>
+    <loc>http://myself659.github.io/post/suggests-for-chinese-internet-productions/</loc>
     <lastmod>2018-02-05T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://myself659.github.io/2018/01/25/tech-english-collection/</loc>
+    <loc>http://myself659.github.io/tags/english/</loc>
     <lastmod>2018-01-25T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://myself659.github.io/2017/12/22/blockchain-dex/</loc>
+    <loc>http://myself659.github.io/categories/english/</loc>
+    <lastmod>2018-01-25T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://myself659.github.io/post/tech-english-collection/</loc>
+    <lastmod>2018-01-25T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://myself659.github.io/post/blockchain-dex/</loc>
     <lastmod>2017-12-22T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://myself659.github.io/2017/12/21/golang-gorm/</loc>
+    <loc>http://myself659.github.io/post/golang-gorm/</loc>
     <lastmod>2017-12-21T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://myself659.github.io/2017/12/21/%E6%95%B0%E6%8D%AE%E7%AE%A1%E7%90%86%E6%96%B9%E5%BC%8F%E6%AF%94%E8%BE%83/</loc>
+    <loc>http://myself659.github.io/post/%E6%95%B0%E6%8D%AE%E7%AE%A1%E7%90%86%E6%96%B9%E5%BC%8F%E6%AF%94%E8%BE%83/</loc>
     <lastmod>2017-12-21T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://myself659.github.io/2017/11/06/%E6%AF%94%E7%89%B9%E5%B8%81%E5%8F%8A%E8%8E%B1%E7%89%B9%E5%B8%81%E8%8A%82%E7%82%B9%E8%BF%9E%E6%8E%A5%E5%A4%B1%E8%B4%A5%E5%A4%84%E7%90%86/</loc>
+    <loc>http://myself659.github.io/post/%E6%AF%94%E7%89%B9%E5%B8%81%E5%8F%8A%E8%8E%B1%E7%89%B9%E5%B8%81%E8%8A%82%E7%82%B9%E8%BF%9E%E6%8E%A5%E5%A4%B1%E8%B4%A5%E5%A4%84%E7%90%86/</loc>
     <lastmod>2017-11-06T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://myself659.github.io/2017/11/03/2017-11-03-mac-tem-proxy/</loc>
+    <loc>http://myself659.github.io/post/2017-11-03-mac-tem-proxy/</loc>
     <lastmod>2017-11-03T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://myself659.github.io/2017/11/01/about-smartcontract/</loc>
+    <loc>http://myself659.github.io/tags/network/</loc>
+    <lastmod>2017-11-03T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://myself659.github.io/categories/network/</loc>
+    <lastmod>2017-11-03T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://myself659.github.io/tags/smart-contract/</loc>
     <lastmod>2017-11-01T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://myself659.github.io/2017/10/27/website-fast-build/</loc>
+    <loc>http://myself659.github.io/post/about-smartcontract/</loc>
+    <lastmod>2017-11-01T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://myself659.github.io/tags/web/</loc>
     <lastmod>2017-10-27T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://myself659.github.io/2017/10/21/blockchain-ethernum/</loc>
+    <loc>http://myself659.github.io/categories/web/</loc>
+    <lastmod>2017-10-27T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://myself659.github.io/post/website-fast-build/</loc>
+    <lastmod>2017-10-27T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://myself659.github.io/post/blockchain-ethernum/</loc>
     <lastmod>2017-10-21T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://myself659.github.io/2017/10/20/blockchain-btc/</loc>
+    <loc>http://myself659.github.io/post/blockchain-btc/</loc>
     <lastmod>2017-10-20T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://myself659.github.io/2017/10/02/read-post/</loc>
+    <loc>http://myself659.github.io/post/read-post/</loc>
     <lastmod>2017-10-02T21:49:20+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://myself659.github.io/2017/10/02/share-post/</loc>
+    <loc>http://myself659.github.io/post/share-post/</loc>
     <lastmod>2017-10-02T21:49:20+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://myself659.github.io/2017/10/02/slide-post/</loc>
+    <loc>http://myself659.github.io/post/slide-post/</loc>
     <lastmod>2017-10-02T21:49:20+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://myself659.github.io/2017/09/21/2017-09-21-ipfs-sec/</loc>
+    <loc>http://myself659.github.io/post/2017-09-21-ipfs-sec/</loc>
     <lastmod>2017-09-21T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://myself659.github.io/2017/09/20/2017-09-20-next-network/</loc>
+    <loc>http://myself659.github.io/post/2017-09-20-next-network/</loc>
     <lastmod>2017-09-20T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://myself659.github.io/2017/08/24/2017-08-24-ethereum-start/</loc>
+    <loc>http://myself659.github.io/post/2017-08-24-ethereum-start/</loc>
     <lastmod>2017-08-24T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://myself659.github.io/2017/08/22/2017-08-22-ethereum-cannot-getsolidity/</loc>
+    <loc>http://myself659.github.io/post/2017-08-22-ethereum-cannot-getsolidity/</loc>
     <lastmod>2017-08-22T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://myself659.github.io/2017/07/28/2017-07-28-slice-trap/</loc>
+    <loc>http://myself659.github.io/post/2017-07-28-slice-trap/</loc>
     <lastmod>2017-07-28T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://myself659.github.io/about/</loc>
+    <loc>http://myself659.github.io/about/</loc>
     <lastmod>2017-05-19T21:49:20+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://myself659.github.io/2017/05/10/2017-05-10-linux-process-diagnose/</loc>
+    <loc>http://myself659.github.io/tags/linux/</loc>
     <lastmod>2017-05-10T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://myself659.github.io/2017/05/10/2017-05-10-golang-present/</loc>
+    <loc>http://myself659.github.io/categories/linux/</loc>
     <lastmod>2017-05-10T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://myself659.github.io/2017/04/08/2017-04-29-about-system-design/</loc>
+    <loc>http://myself659.github.io/post/2017-05-10-linux-process-diagnose/</loc>
+    <lastmod>2017-05-10T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://myself659.github.io/post/2017-05-10-golang-present/</loc>
+    <lastmod>2017-05-10T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://myself659.github.io/tags/arch/</loc>
     <lastmod>2017-04-08T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://myself659.github.io/2017/04/08/2017-04-08-ecs-basic-sec-check/</loc>
+    <loc>http://myself659.github.io/categories/arch/</loc>
     <lastmod>2017-04-08T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://myself659.github.io/2017/03/27/2017-03-27-help-internet-available-more-people/</loc>
+    <loc>http://myself659.github.io/post/2017-04-29-about-system-design/</loc>
+    <lastmod>2017-04-08T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://myself659.github.io/post/2017-04-08-ecs-basic-sec-check/</loc>
+    <lastmod>2017-04-08T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://myself659.github.io/post/2017-03-27-help-internet-available-more-people/</loc>
     <lastmod>2017-03-27T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://myself659.github.io/2017/03/18/leetcode/</loc>
+    <loc>http://myself659.github.io/post/leetcode/</loc>
     <lastmod>2017-03-18T21:49:20+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://myself659.github.io/2017/02/20/2017-02-20-go-case-1-my-shadeofgo/</loc>
+    <loc>http://myself659.github.io/post/2017-02-20-go-case-1-my-shadeofgo/</loc>
     <lastmod>2017-02-20T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://myself659.github.io/2017/02/16/2017-02-16-tcp-slow-down/</loc>
+    <loc>http://myself659.github.io/post/2017-02-16-tcp-slow-down/</loc>
     <lastmod>2017-02-16T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://myself659.github.io/2017/02/03/2017-02-03-coutry-internet-user/</loc>
+    <loc>http://myself659.github.io/post/2017-02-03-coutry-internet-user/</loc>
     <lastmod>2017-02-03T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://myself659.github.io/2017/02/02/2017-02-02-coutry-internet-infra/</loc>
+    <loc>http://myself659.github.io/post/2017-02-02-coutry-internet-infra/</loc>
     <lastmod>2017-02-02T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://myself659.github.io/2016/09/10/2016-09-10-from-cepoll-to-go-net/</loc>
+    <loc>http://myself659.github.io/post/2016-09-10-from-cepoll-to-go-net/</loc>
     <lastmod>2016-09-10T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://myself659.github.io/2016/08/20/2016-08-20-go-channel-program-demo/</loc>
+    <loc>http://myself659.github.io/post/2016-08-20-go-channel-program-demo/</loc>
     <lastmod>2016-08-20T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://myself659.github.io/2016/08/05/2016-08-05-im-user-state/</loc>
+    <loc>http://myself659.github.io/post/2016-08-05-im-user-state/</loc>
     <lastmod>2016-08-05T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://myself659.github.io/2016/07/29/2016-07-29-im-message/</loc>
+    <loc>http://myself659.github.io/post/2016-07-29-im-message/</loc>
     <lastmod>2016-07-29T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://myself659.github.io/2016/07/26/2016-07-26-go-channel-feature/</loc>
+    <loc>http://myself659.github.io/post/2016-07-26-go-channel-feature/</loc>
     <lastmod>2016-07-26T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://myself659.github.io/2016/06/02/2016-06-02-10-lessons-from-10-years-of-amazon-web-services/</loc>
+    <loc>http://myself659.github.io/post/2016-06-02-10-lessons-from-10-years-of-amazon-web-services/</loc>
     <lastmod>2016-06-02T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://myself659.github.io/2016/05/27/2016-05-27-facebook-live-detail/</loc>
+    <loc>http://myself659.github.io/post/2016-05-27-facebook-live-detail/</loc>
     <lastmod>2016-05-27T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://myself659.github.io/2016/05/21/2016-05-21-git-cmd/</loc>
+    <loc>http://myself659.github.io/post/2016-05-21-git-cmd/</loc>
     <lastmod>2016-05-21T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://myself659.github.io/2016/04/17/2016-04-17-linux-kernel-crashs/</loc>
+    <loc>http://myself659.github.io/post/2016-04-17-linux-kernel-crashs/</loc>
     <lastmod>2016-04-17T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://myself659.github.io/2016/03/09/2016-03-09-x86-64-call-stack/</loc>
+    <loc>http://myself659.github.io/post/2016-03-09-x86-64-call-stack/</loc>
     <lastmod>2016-03-09T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://myself659.github.io/2016/03/05/2016-03-05-do-more-than-coding/</loc>
+    <loc>http://myself659.github.io/post/2016-03-05-do-more-than-coding/</loc>
     <lastmod>2016-03-05T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://myself659.github.io/2016/01/28/2016-01-28-docker-cmd-pratice/</loc>
+    <loc>http://myself659.github.io/post/2016-01-28-docker-cmd-pratice/</loc>
     <lastmod>2016-01-28T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://myself659.github.io/2015/12/13/2015-12-13-docker-way-1-build-docker-env/</loc>
+    <loc>http://myself659.github.io/post/2015-12-13-docker-way-1-build-docker-env/</loc>
     <lastmod>2015-12-13T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://myself659.github.io/2015/08/28/2015-08-28-gdb-command-example/</loc>
+    <loc>http://myself659.github.io/post/2015-08-28-gdb-command-example/</loc>
     <lastmod>2015-08-28T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://myself659.github.io/2015/08/08/2015-08-08-nginx-pratice-1-add-hello-module/</loc>
+    <loc>http://myself659.github.io/tags/nginx/</loc>
     <lastmod>2015-08-08T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://myself659.github.io/2015/07/28/2015-07-28-linux-netstat/</loc>
+    <loc>http://myself659.github.io/categories/nginx/</loc>
+    <lastmod>2015-08-08T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://myself659.github.io/post/2015-08-08-nginx-pratice-1-add-hello-module/</loc>
+    <lastmod>2015-08-08T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://myself659.github.io/post/2015-07-28-linux-netstat/</loc>
     <lastmod>2015-07-28T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://myself659.github.io/2015/07/03/2015-07-03-thought-about-zero-to-one/</loc>
+    <loc>http://myself659.github.io/post/2015-07-03-thought-about-zero-to-one/</loc>
     <lastmod>2015-07-03T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://myself659.github.io/2015/06/14/2015-06-14-number-divide/</loc>
+    <loc>http://myself659.github.io/post/2015-06-14-number-divide/</loc>
     <lastmod>2015-06-14T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://myself659.github.io/2015/05/27/2015-05-27-ping-error/</loc>
+    <loc>http://myself659.github.io/post/2015-05-27-ping-error/</loc>
     <lastmod>2015-05-27T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://myself659.github.io/2015/05/27/2015-06-01-linux-may-sleep-function/</loc>
+    <loc>http://myself659.github.io/post/2015-06-01-linux-may-sleep-function/</loc>
     <lastmod>2015-05-27T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://myself659.github.io/2015/05/24/2015-05-24-c-codereivew/</loc>
+    <loc>http://myself659.github.io/post/2015-05-24-c-codereivew/</loc>
     <lastmod>2015-05-24T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://myself659.github.io/2015/05/24/2015-05-24-linux-perf-thought/</loc>
+    <loc>http://myself659.github.io/post/2015-05-24-linux-perf-thought/</loc>
     <lastmod>2015-05-24T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://myself659.github.io/2015/05/24/2015-05-24-linux-perf-droppacket/</loc>
+    <loc>http://myself659.github.io/post/2015-05-24-linux-perf-droppacket/</loc>
     <lastmod>2015-05-24T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://myself659.github.io/2015/05/24/2015-05-24-linux-perf-tips-nobranchmiss/</loc>
+    <loc>http://myself659.github.io/post/2015-05-24-linux-perf-tips-nobranchmiss/</loc>
     <lastmod>2015-05-24T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://myself659.github.io/1/01/01/2017-02-04-coutry-internet-music/</loc>
+    <loc>http://myself659.github.io/post/2017-02-04-coutry-internet-music/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://myself659.github.io/1/01/01/2017-05-09-web-server-perf-and-design/</loc>
+    <loc>http://myself659.github.io/post/2017-05-09-web-server-perf-and-design/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://myself659.github.io/1/01/01/week-3/</loc>
+    <loc>http://myself659.github.io/post/arts/week-3/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://myself659.github.io/1/01/01/blockchain-coronavirus/</loc>
+    <loc>http://myself659.github.io/post/blockchain-coronavirus/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://myself659.github.io/1/01/01/economic-recession/</loc>
+    <loc>http://myself659.github.io/post/economic-recession/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://myself659.github.io/1/01/01/substrate-runtime/</loc>
-  </url>
-  
-  <url>
-    <loc>https://myself659.github.io/tags/arch/</loc>
-    <lastmod>2017-04-08T11:58:06+02:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://myself659.github.io/categories/arch/</loc>
-    <lastmod>2017-04-08T11:58:06+02:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://myself659.github.io/tags/bitcoin/</loc>
-    <lastmod>2018-03-08T11:58:06+02:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://myself659.github.io/tags/blockchain/</loc>
-    <lastmod>2020-05-31T11:58:06+02:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://myself659.github.io/categories/blockchain/</loc>
-    <lastmod>2020-05-31T11:58:06+02:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://myself659.github.io/tags/btc/</loc>
-    <lastmod>2020-01-22T11:58:06+02:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://myself659.github.io/categories/</loc>
-    <lastmod>2017-04-08T11:58:06+02:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://myself659.github.io/tags/cryptography/</loc>
-    <lastmod>2018-10-21T11:58:06+02:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://myself659.github.io/categories/cryptography/</loc>
-    <lastmod>2018-10-21T11:58:06+02:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://myself659.github.io/tags/data/</loc>
-    <lastmod>2020-02-17T11:58:06+02:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://myself659.github.io/categories/data/</loc>
-    <lastmod>2020-02-17T11:58:06+02:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://myself659.github.io/tags/data-struct/</loc>
-    <lastmod>2018-02-21T11:58:06+02:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://myself659.github.io/categories/data-struct/</loc>
-    <lastmod>2018-02-21T11:58:06+02:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://myself659.github.io/tags/distributed/</loc>
-    <lastmod>2018-12-24T11:58:06+02:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://myself659.github.io/categories/distributed/</loc>
-    <lastmod>2018-12-11T11:58:06+02:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://myself659.github.io/tags/docker/</loc>
-    <lastmod>2019-03-09T11:58:06+02:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://myself659.github.io/tags/economy/</loc>
-    <lastmod>2020-04-19T11:58:06+02:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://myself659.github.io/categories/economy/</loc>
-    <lastmod>2020-04-19T11:58:06+02:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://myself659.github.io/tags/english/</loc>
-    <lastmod>2018-01-25T11:58:06+02:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://myself659.github.io/categories/english/</loc>
-    <lastmod>2018-01-25T11:58:06+02:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://myself659.github.io/tags/ethereum/</loc>
-    <lastmod>2018-05-15T11:58:06+02:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://myself659.github.io/categories/ethereum/</loc>
-    <lastmod>2018-05-15T11:58:06+02:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://myself659.github.io/tags/golang/</loc>
-    <lastmod>2019-09-06T11:58:06+02:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://myself659.github.io/categories/golang/</loc>
-    <lastmod>2019-09-06T11:58:06+02:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://myself659.github.io/tags/internet/</loc>
-    <lastmod>2020-03-22T11:58:06+02:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://myself659.github.io/categories/internet/</loc>
-    <lastmod>2020-03-22T11:58:06+02:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://myself659.github.io/tags/ipfs/</loc>
-    <lastmod>2018-06-21T11:58:06+02:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://myself659.github.io/categories/ipfs/</loc>
-    <lastmod>2018-06-21T11:58:06+02:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://myself659.github.io/tags/kubernetes/</loc>
-    <lastmod>2019-03-09T11:58:06+02:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://myself659.github.io/categories/kubernetes/</loc>
-    <lastmod>2019-03-09T11:58:06+02:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://myself659.github.io/tags/life/</loc>
-    <lastmod>2020-05-24T11:58:06+02:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://myself659.github.io/categories/life/</loc>
-    <lastmod>2020-05-24T11:58:06+02:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://myself659.github.io/tags/linux/</loc>
-    <lastmod>2017-05-10T11:58:06+02:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://myself659.github.io/categories/linux/</loc>
-    <lastmod>2017-05-10T11:58:06+02:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://myself659.github.io/tags/nba/</loc>
-    <lastmod>2020-01-30T11:58:06+02:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://myself659.github.io/tags/network/</loc>
-    <lastmod>2017-11-03T11:58:06+02:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://myself659.github.io/categories/network/</loc>
-    <lastmod>2017-11-03T11:58:06+02:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://myself659.github.io/tags/nginx/</loc>
-    <lastmod>2015-08-08T11:58:06+02:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://myself659.github.io/categories/nginx/</loc>
-    <lastmod>2015-08-08T11:58:06+02:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://myself659.github.io/post/</loc>
-    <lastmod>2020-06-26T11:58:06+02:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://myself659.github.io/tags/python/</loc>
-    <lastmod>2019-08-08T11:58:06+02:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://myself659.github.io/categories/python/</loc>
-    <lastmod>2019-08-08T11:58:06+02:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://myself659.github.io/tags/read/</loc>
-    <lastmod>2020-05-08T11:58:06+02:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://myself659.github.io/categories/read/</loc>
-    <lastmod>2020-05-08T11:58:06+02:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://myself659.github.io/tags/rust/</loc>
-    <lastmod>2019-08-11T11:58:06+02:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://myself659.github.io/categories/rust/</loc>
-    <lastmod>2019-08-11T11:58:06+02:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://myself659.github.io/tags/secure/</loc>
-    <lastmod>2019-11-08T11:58:06+02:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://myself659.github.io/categories/secure/</loc>
-    <lastmod>2019-11-08T11:58:06+02:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://myself659.github.io/tags/smart-contract/</loc>
-    <lastmod>2017-11-01T11:58:06+02:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://myself659.github.io/tags/substrate/</loc>
-    <lastmod>2019-09-18T11:58:06+02:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://myself659.github.io/categories/substrate/</loc>
-    <lastmod>2019-09-18T11:58:06+02:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://myself659.github.io/tags/</loc>
-    <lastmod>2017-04-08T11:58:06+02:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://myself659.github.io/tags/web/</loc>
-    <lastmod>2017-10-27T11:58:06+02:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://myself659.github.io/categories/web/</loc>
-    <lastmod>2017-10-27T11:58:06+02:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://myself659.github.io/tags/%E5%95%86%E4%B8%9A/</loc>
-    <lastmod>2020-01-16T11:58:06+02:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://myself659.github.io/categories/%E5%95%86%E4%B8%9A/</loc>
-    <lastmod>2020-01-16T11:58:06+02:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://myself659.github.io/tags/%E5%AD%A6%E4%B9%A0/</loc>
-    <lastmod>2020-04-26T11:58:06+02:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://myself659.github.io/tags/%E6%88%90%E9%95%BF/</loc>
-    <lastmod>2020-06-26T11:58:06+02:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://myself659.github.io/categories/%E6%88%90%E9%95%BF/</loc>
-    <lastmod>2020-06-26T11:58:06+02:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://myself659.github.io/</loc>
-    <lastmod>2020-06-26T11:58:06+02:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://myself659.github.io/tags/%E7%A0%94%E5%8F%91%E7%AE%A1%E7%90%86/</loc>
-    <lastmod>2020-03-08T11:58:06+02:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://myself659.github.io/categories/%E7%A0%94%E5%8F%91%E7%AE%A1%E7%90%86/</loc>
-    <lastmod>2020-03-08T11:58:06+02:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://myself659.github.io/tags/%E7%BC%96%E7%A8%8B/</loc>
-    <lastmod>2020-03-29T11:58:06+02:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://myself659.github.io/categories/%E7%BC%96%E7%A8%8B/</loc>
-    <lastmod>2020-03-29T11:58:06+02:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://myself659.github.io/tags/%E8%81%8C%E5%9C%BA/</loc>
-    <lastmod>2019-01-23T11:58:06+02:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://myself659.github.io/tags/%E9%97%B2%E8%B0%88%E4%B9%B1%E6%89%AF/</loc>
-    <lastmod>2020-01-30T11:58:06+02:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://myself659.github.io/categories/%E9%97%B2%E8%B0%88%E4%B9%B1%E6%89%AF/</loc>
-    <lastmod>2020-01-30T11:58:06+02:00</lastmod>
-    <priority>0</priority>
+    <loc>http://myself659.github.io/post/substrate-runtime/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
 </urlset>

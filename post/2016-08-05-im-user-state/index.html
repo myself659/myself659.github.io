@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>IM后端系统设计总结(2) - 沉风网事</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="沉风网事" /><meta name="description" content="这篇具体写一下用户在线状态系统的具体设计。 后端架构 这个后端系统设计如下图： 很大众，国内基本都这么干，不多说 用户状态系统设计 初期设计 单IDC部" /><meta name="keywords" content="沉风网事, 沉风, 区块链" />
+
+
+<meta name="baidu-site-verification" content="9LmlOuIblt" />
+
+
+
+<meta name="generator" content="Hugo 0.68.3 with theme even" />
+
+
+<link rel="canonical" href="http://myself659.github.io/post/2016-08-05-im-user-state/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.8c3cbcb0324c2bb4875ceccba4007cbad4b4ac8377f33af9953c3e7684534a50.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="IM后端系统设计总结(2)" />
+<meta property="og:description" content="这篇具体写一下用户在线状态系统的具体设计。 后端架构 这个后端系统设计如下图： 很大众，国内基本都这么干，不多说 用户状态系统设计 初期设计 单IDC部" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://myself659.github.io/post/2016-08-05-im-user-state/" />
+<meta property="article:published_time" content="2016-08-05T11:58:06+02:00" />
+<meta property="article:modified_time" content="2016-08-05T11:58:06+02:00" />
+<meta itemprop="name" content="IM后端系统设计总结(2)">
+<meta itemprop="description" content="这篇具体写一下用户在线状态系统的具体设计。 后端架构 这个后端系统设计如下图： 很大众，国内基本都这么干，不多说 用户状态系统设计 初期设计 单IDC部">
+<meta itemprop="datePublished" content="2016-08-05T11:58:06&#43;02:00" />
+<meta itemprop="dateModified" content="2016-08-05T11:58:06&#43;02:00" />
+<meta itemprop="wordCount" content="1620">
+
+
+
+<meta itemprop="keywords" content="Arch," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="IM后端系统设计总结(2)"/>
+<meta name="twitter:description" content="这篇具体写一下用户在线状态系统的具体设计。 后端架构 这个后端系统设计如下图： 很大众，国内基本都这么干，不多说 用户状态系统设计 初期设计 单IDC部"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">沉风</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a><a href="/post/leetcode/">
+        <li class="mobile-menu-item">LeetCode</li>
+      </a><a href="/post/read-post/">
+        <li class="mobile-menu-item">Read</li>
+      </a><a href="/post/share-post/">
+        <li class="mobile-menu-item">Share</li>
+      </a><a href="/post/slide-post/">
+        <li class="mobile-menu-item">Slide</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">沉风</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/leetcode/">LeetCode</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/read-post/">Read</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/share-post/">Share</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/slide-post/">Slide</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">IM后端系统设计总结(2)</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2016-08-05 </span>
+        <div class="post-category">
+            <a href="/categories/arch/"> Arch </a>
+            </div>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#后端架构">后端架构</a></li>
+    <li><a href="#用户状态系统设计">用户状态系统设计</a>
+      <ul>
+        <li><a href="#初期设计">初期设计</a></li>
+        <li><a href="#支持多idc">支持多IDC</a></li>
+        <li><a href="#connrouter扩展">ConnRouter扩展</a></li>
+        <li><a href="#不足与应对">不足与应对</a></li>
+      </ul>
+    </li>
+    <li><a href="#后记">后记</a></li>
+  </ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <p>这篇具体写一下用户在线状态系统的具体设计。</p>
+<h2 id="后端架构">后端架构</h2>
+<p>这个后端系统设计如下图：</p>
+<p><img src="/images/im-arch.png" alt="基础架构"></p>
+<p>很大众，国内基本都这么干，不多说</p>
+<h2 id="用户状态系统设计">用户状态系统设计</h2>
+<h3 id="初期设计">初期设计</h3>
+<p>单IDC部署，设计如下:</p>
+<p><img src="/images/user-state-flow-1.png" alt="用户状态系统设计-1"></p>
+<h4 id="相关说明">相关说明</h4>
+<ol>
+<li>AG：接入网关，负责用户的连接</li>
+<li>ConnRouter：连接路由服务器，主要提供以下功能：</li>
+</ol>
+<ul>
+<li>所有用户状态的维护</li>
+<li>用户状态查询</li>
+<li>用户状态推送</li>
+<li>用户状态同步</li>
+<li>异步消息路由与转发</li>
+</ul>
+<ol start="3">
+<li>状态通知流: 用户登录成功或者下线状态通知</li>
+<li>状态同步流：ConnRouter服务器之间用户状态的同步，不需要推送给订阅者</li>
+<li>用户消息流: 异步发送给用户的消息在服务器内部的传输</li>
+</ol>
+<h4 id="设计要点">设计要点</h4>
+<ol>
+<li>参考Kafka的模型，将用户状态改变作为事件，将事件描述为消息，将消息队列化成消息队列</li>
+<li>AG对应Kafka中的Producer角色，主要原因是<strong>用户状态是用户连接的影子</strong>，AG能真实快速感知用户状态</li>
+<li>ConnRouter对应Kafka中的Broker</li>
+<li>UserStat（用户统计与分析）与StateNotify（用户状态通知）对应Kafka中的Consumer</li>
+<li>减少耦合，以异步发送消息到用户为例，整个流程三步走：</li>
+</ol>
+<ul>
+<li>第一步：生成发送消息，发送到ConnRouter</li>
+<li>第二步：根据目的用户ID，查找到出口AG，将消息转发到出口AG</li>
+<li>第三步：出口AG查找用户连接，通过连接发送到目的用户</li>
+</ul>
+<h4 id="connrouter设计">ConnRouter设计</h4>
+<h5 id="用户状态数据存储设计">用户状态数据存储设计</h5>
+<p>用户状态数据存储设计，如下图所示：</p>
+<p><img src="/images/user-state-router-data.png" alt="用户状态数据存储设计"></p>
+<ol>
+<li>内存消耗 
+主要内存消耗来自用户状态数组（与ConnRouter连接都是长连接，可以忽略不计）
+每种客户端类型下每个用户占用一个1Byte，那么1G内存可以存1073741824个用户的状态，超过了10亿，支持亿级用户内存不是瓶颈</li>
+<li>查找用户所在AG与状态O(1)</li>
+</ol>
+<h5 id="高可用性">高可用性</h5>
+<ol>
+<li>服务器级Master-Master模式</li>
+<li>根据用户ID选择ConnRouter Master实现用户级Master-Standby模式</li>
+</ol>
+<h5 id="高性能">高性能</h5>
+<ol>
+<li>epoll事件驱动</li>
+<li>无锁数据访问</li>
+<li>流程无阻塞</li>
+<li>O(1)查找</li>
+<li>多核并发</li>
+<li>支持批量处理</li>
+</ol>
+<h5 id="支持failover方便升级">支持Failover，方便升级</h5>
+<ol>
+<li>当ConnRouter宕机或者主动升级重启时，各AG重新建立连接时，将自身的用户状态同步到ConnRouter，完成用户状态数据恢复</li>
+</ol>
+<h5 id="无状态与单点自治">无状态与单点自治</h5>
+<ol>
+<li>ConnRouter用户状态数据是各个AG的同步，真正用户状态保存在AG网关</li>
+<li>单点可以独立工作</li>
+</ol>
+<h5 id="数据冲突处理">数据冲突处理</h5>
+<p>主要是一个数据优先级的原则（根据数据源，从高到低）：</p>
+<ol>
+<li>状态数据来自AG</li>
+<li>状态数据来自ConnRouter-Master</li>
+<li>状态数据来自ConnRouter-Standby</li>
+<li>状态数据来自RouterProxy</li>
+</ol>
+<h3 id="支持多idc">支持多IDC</h3>
+<p>保证更高可用性，需要支持多机房部署，实现两城三中心甚至更多节点异地多活，具体设计如下图：</p>
+<p><img src="/images/user-state-flow-2.png" alt="用户状态系统设计-2"></p>
+<p>这里主要是引入了RouterProxy，将跨IDC ConnRouter连接起来，其中RouterProxy主要功能如下：</p>
+<ol>
+<li>作为Producer同步状态通知到其他IDC RouterProxy</li>
+<li>作为Comsumer接收同步状态发布到本IDC的ConnRouter</li>
+<li>作为IDC间消息转发的网关</li>
+</ol>
+<h3 id="connrouter扩展">ConnRouter扩展</h3>
+<p>随着用户量增长，ConnRouter转发消息量，状态通知量，消息转发量都会不断增长，当然可以简单采用更好机器来scale up;下面是考虑进行业务拆分方式进行scale out，具体设计如下图：
+<img src="/images/user-state-flow-3.png" alt="用户状态系统设计-3"></p>
+<p>从上图可知主要方案：</p>
+<ol>
+<li>将异步消息转发业务拆分出来由Forward服务器来完成</li>
+<li>将RouterProxy跨IDC消息转发业务拆分出来，由ForwardProxy服务器来完成</li>
+</ol>
+<h3 id="不足与应对">不足与应对</h3>
+<ol>
+<li>需要优化跨IDC间消息同步与转发流量</li>
+<li>在大量用户且系统中存在多个状态维护服务器，这样会有大量的状态同步通信，服务器的网络与CPU易成为瓶颈</li>
+<li>这时候就考虑将用户状态进行拆分，不将用户状态放到同一个服务器上维护，采用以下方式进行用户状态数据划分：</li>
+</ol>
+<ul>
+<li>哈希方式</li>
+<li>用户ID范围</li>
+<li>按用户量划分</li>
+<li>一致性hash</li>
+</ul>
+<h2 id="后记">后记</h2>
+<p>方案可以有很多种，觉得引入直接引入Kafka是一个很好的选择，以后再研究。</p>
+<p>由于个人水平有限，有什么不足与错误，敬请指正！</p>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">沉风网事</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+        2016-08-05
+        
+    </span>
+  </p>
+  
+  
+</div>
+<footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/arch/">Arch</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/post/2016-08-20-go-channel-program-demo/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">Go channel 编程篇</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        <a class="next" href="/post/2016-07-29-im-message/">
+            <span class="next-text nav-default">IM后端系统设计总结(1)</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    (function() {
+      
+      
+      if (window.location.hostname === 'localhost') return;
+
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      var disqus_shortname = 'ipds-top';
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+  
+
+  
+    <script src="https://utteranc.es/client.js"
+            repo="myself659/myself659/ipds-public"
+            issue-term="pathname"
+            theme="github-light"
+            crossorigin="anonymous"
+            async>
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://github.com/utterance">comments powered by utterances.</a></noscript>
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/8.3.1/mermaid.min.js"></script>
+<div class="social-links">
+      <a href="mailto:myself659@163.com" class="iconfont icon-email" title="email"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-stack-overflow" title="stack-overflow"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-twitter" title="twitter"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-facebook" title="facebook"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-linkedin" title="linkedin"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-google" title="google"></a>
+      <a href="https://github.com/myself659" class="iconfont icon-github" title="github"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-weibo" title="weibo"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-zhihu" title="zhihu"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-douban" title="douban"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-pocket" title="pocket"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-tumblr" title="tumblr"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-instagram" title="instagram"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-gitlab" title="gitlab"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-bilibili" title="bilibili"></a>
+  <a href="http://myself659.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/myself659/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2017 - 
+    2020
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">沉风网事</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+
+
+
+<script type="text/javascript" src="/js/main.min.d7b7ada643c9c1a983026e177f141f7363b4640d619caf01d8831a6718cd44ea.js"></script>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-144475213-1', 'auto');
+	ga('set', 'anonymizeIp', true);
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+
+
+
+
+</body>
+</html>

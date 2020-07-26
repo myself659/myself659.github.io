@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>这也许是最快的搭建博客网站的方式 - 沉风网事</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="沉风网事" /><meta name="description" content="前言 搭建个人博客有很多方式，如wordpress，jekii, hexo，个人DIY; 本文主要介绍另一种方案: hugo&#43;caddy 建一个网站要要做哪些事情 这里分" /><meta name="keywords" content="沉风网事, 沉风, 区块链" />
+
+
+<meta name="baidu-site-verification" content="9LmlOuIblt" />
+
+
+
+<meta name="generator" content="Hugo 0.68.3 with theme even" />
+
+
+<link rel="canonical" href="http://myself659.github.io/post/website-fast-build/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.8c3cbcb0324c2bb4875ceccba4007cbad4b4ac8377f33af9953c3e7684534a50.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="这也许是最快的搭建博客网站的方式" />
+<meta property="og:description" content="前言 搭建个人博客有很多方式，如wordpress，jekii, hexo，个人DIY; 本文主要介绍另一种方案: hugo&#43;caddy 建一个网站要要做哪些事情 这里分" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://myself659.github.io/post/website-fast-build/" />
+<meta property="article:published_time" content="2017-10-27T11:58:06+02:00" />
+<meta property="article:modified_time" content="2017-10-27T11:58:06+02:00" />
+<meta itemprop="name" content="这也许是最快的搭建博客网站的方式">
+<meta itemprop="description" content="前言 搭建个人博客有很多方式，如wordpress，jekii, hexo，个人DIY; 本文主要介绍另一种方案: hugo&#43;caddy 建一个网站要要做哪些事情 这里分">
+<meta itemprop="datePublished" content="2017-10-27T11:58:06&#43;02:00" />
+<meta itemprop="dateModified" content="2017-10-27T11:58:06&#43;02:00" />
+<meta itemprop="wordCount" content="1234">
+
+
+
+<meta itemprop="keywords" content="Web," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="这也许是最快的搭建博客网站的方式"/>
+<meta name="twitter:description" content="前言 搭建个人博客有很多方式，如wordpress，jekii, hexo，个人DIY; 本文主要介绍另一种方案: hugo&#43;caddy 建一个网站要要做哪些事情 这里分"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">沉风</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a><a href="/post/leetcode/">
+        <li class="mobile-menu-item">LeetCode</li>
+      </a><a href="/post/read-post/">
+        <li class="mobile-menu-item">Read</li>
+      </a><a href="/post/share-post/">
+        <li class="mobile-menu-item">Share</li>
+      </a><a href="/post/slide-post/">
+        <li class="mobile-menu-item">Slide</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">沉风</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/leetcode/">LeetCode</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/read-post/">Read</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/share-post/">Share</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/slide-post/">Slide</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">这也许是最快的搭建博客网站的方式</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2017-10-27 </span>
+        <div class="post-category">
+            <a href="/categories/web/"> Web </a>
+            </div>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#前言">前言</a></li>
+    <li><a href="#建一个网站要要做哪些事情">建一个网站要要做哪些事情</a></li>
+    <li><a href="#网站前端">网站前端</a></li>
+    <li><a href="#网站后端">网站后端</a>
+      <ul>
+        <li><a href="#版本问题">版本问题</a></li>
+        <li><a href="#参数">参数</a></li>
+      </ul>
+    </li>
+    <li><a href="#小结">小结</a></li>
+    <li><a href="#域名">域名</a></li>
+    <li><a href="#主机">主机</a></li>
+    <li><a href="#部署">部署</a>
+      <ul>
+        <li><a href="#反向代理">反向代理</a></li>
+        <li><a href="#如何支持https">如何支持https</a></li>
+        <li><a href="#caddy配置">caddy配置</a></li>
+        <li><a href="#监控">监控</a></li>
+      </ul>
+    </li>
+    <li><a href="#更新">更新</a>
+      <ul>
+        <li><a href="#rync">rync</a></li>
+        <li><a href="#github">github</a></li>
+      </ul>
+    </li>
+    <li><a href="#其他">其他</a></li>
+    <li><a href="#参考">参考</a></li>
+  </ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <h2 id="前言">前言</h2>
+<p>搭建个人博客有很多方式，如wordpress，jekii, hexo，个人DIY;</p>
+<p>本文主要介绍另一种方案: hugo+caddy</p>
+<h2 id="建一个网站要要做哪些事情">建一个网站要要做哪些事情</h2>
+<p>这里分解如下：</p>
+<ol>
+<li>网站前端</li>
+<li>网站后端</li>
+<li>域名</li>
+<li>主机</li>
+<li>部署</li>
+<li>维护</li>
+</ol>
+<p>下面就这些方面以自己搭建ipds.top网站为例说明。</p>
+<h2 id="网站前端">网站前端</h2>
+<p>对于前端，个人能力与经历有限，缺少DIY能力，那就是找主题模板，经济有效。
+就<a href="https://ipds.top">IPDS</a>
+由于对golang的热爱，后端选择hugo。那么主题有以下选择：</p>
+<ol>
+<li>直接从<a href="https://themes.gohugo.io/">gohugo</a> 中查找</li>
+<li>github中查找</li>
+</ol>
+<p>个人采用的主题是<a href="https://github.com/digitalcraftsman/hugo-icarus-theme">icarus</a></p>
+<h2 id="网站后端">网站后端</h2>
+<p>如上面所说，后端选择hugo。</p>
+<p>这里讲一下主要碰到问题。</p>
+<h3 id="版本问题">版本问题</h3>
+<ol>
+<li>hugo版本不要使用apt-get命令直接的，防止hugo版本过低</li>
+<li>个人使用版本如下</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">root@BC:~# hugo version
+Hugo Static Site Generator v0.31.1 linux/amd64 BuildDate: 2017-10-14T22:10:38+08:00
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="参数">参数</h3>
+<p>常见的参数配置如下：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">hugo server --baseUrl=https://blog.ipds.top/ --appendPort=false
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="小结">小结</h2>
+<p>这里要宣传一下hugo，采用hugo具有如下优点：</p>
+<ol>
+<li>有不错可用的主题</li>
+<li>简单好用</li>
+<li>社区不断更新与发展</li>
+<li>内容可以保存到内存，访问速度快</li>
+</ol>
+<h2 id="域名">域名</h2>
+<p>从阿里云注册一个top域名。
+这里要吐槽一下阿里云，注册域名不提示域名一定要认证后才能用。（因为我的ECS买的是香港的，买完测试后也确认可用，过几天一看居然不能用）</p>
+<h2 id="主机">主机</h2>
+<p>主机采用阿里云ECS，地点在香港。
+在香港最大的好处就是解决了墙的问题。</p>
+<h2 id="部署">部署</h2>
+<h3 id="反向代理">反向代理</h3>
+<p>方案1： 大家熟知的nginx</p>
+<p>方案2： caddy</p>
+<p>这里选择了caddy，理由参考后面提到的caddy的优点。</p>
+<h3 id="如何支持https">如何支持https</h3>
+<p>方案1： <a href="https://coolshell.cn/articles/18094.html">Let’s Encrypt</a>
+方案2：caddy</p>
+<p>由于反向代理选择了caddy，这里也就天然支持https</p>
+<h3 id="caddy配置">caddy配置</h3>
+<p>首先说一下caddy的优点：</p>
+<ul>
+<li>部署方便，由于是Go开发的，所以，只需要一个可执行文件，就可以运行Caddy Server了</li>
+<li>跨平台，也是因为是由Go开发的，好处不言而喻，可以交叉编译并运行在多个平台</li>
+<li>Graceful Reload： 修改配置文件后，支持无downtime的配置文件重新加载和读取，不影响现有业务的运行</li>
+<li>配置简单，这也是感觉比较方便的，比起Nginx，配置文件真的是非常简洁</li>
+<li>丰富的插件系统，支持多种扩展插件，通过不同的插件，实现相当多的扩展功能</li>
+<li>多核支持，分利用多核性能，这其实也就是golang的优势</li>
+<li>天生的HTTPS支持，能把证书申请和配置一系列繁琐的事情简化到极致，用caddy即可支持https</li>
+</ul>
+<p>以IPDS网站为例，具体的配置如下：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">ipds.top {
+   proxy / localhost:1314 {
+        transparent   
+   }
+   gzip
+}
+
+blog.ipds.top {
+   proxy / localhost:1313 {
+        transparent
+   }
+   gzip
+}
+
+slides.ipds.top {
+   proxy / localhost:3999 {
+        transparent
+   }
+   gzip
+}
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="监控">监控</h3>
+<p>利用pm2来实现进程监控，提高可用性。</p>
+<h2 id="更新">更新</h2>
+<p>有以下方案，具体如下：</p>
+<h3 id="rync">rync</h3>
+<p>通过sync同步本地内容到云主机，实现更新。</p>
+<h3 id="github">github</h3>
+<p>通过将内容保存到github，github再更新到ECS方式进行。好处就是git流操作，同时也实现了对文章与内容的备份，历史记录等功能。</p>
+<p>本人采用是这种方式，推荐使用这种方式。</p>
+<h2 id="其他">其他</h2>
+<p>底层技术出身，在web技术方面个人水平有限，如有不足，敬请指正。</p>
+<h2 id="参考">参考</h2>
+<ol>
+<li><a href="https://www.golangnote.com/topic/216.html">Caddy、 SSLDocker、Nginx 性能比较及使用体验</a></li>
+<li><a href="https://coolshell.cn/articles/18094.html">如何免费的让网站启用HTTPS</a></li>
+<li><a href="https://medium.com/swlh/everything-you-ever-wanted-to-know-about-making-a-freelance-website-c83156628dcd">Everything You Ever Wanted to Know About Making a Freelance Website</a></li>
+</ol>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">沉风网事</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+        2017-10-27
+        
+    </span>
+  </p>
+  
+  
+</div>
+<footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/web/">Web</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/post/about-smartcontract/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">说说智能合约</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        <a class="next" href="/post/blockchain-ethernum/">
+            <span class="next-text nav-default">区块链项目点评2-以太坊</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    (function() {
+      
+      
+      if (window.location.hostname === 'localhost') return;
+
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      var disqus_shortname = 'ipds-top';
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+  
+
+  
+    <script src="https://utteranc.es/client.js"
+            repo="myself659/myself659/ipds-public"
+            issue-term="pathname"
+            theme="github-light"
+            crossorigin="anonymous"
+            async>
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://github.com/utterance">comments powered by utterances.</a></noscript>
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/8.3.1/mermaid.min.js"></script>
+<div class="social-links">
+      <a href="mailto:myself659@163.com" class="iconfont icon-email" title="email"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-stack-overflow" title="stack-overflow"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-twitter" title="twitter"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-facebook" title="facebook"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-linkedin" title="linkedin"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-google" title="google"></a>
+      <a href="https://github.com/myself659" class="iconfont icon-github" title="github"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-weibo" title="weibo"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-zhihu" title="zhihu"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-douban" title="douban"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-pocket" title="pocket"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-tumblr" title="tumblr"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-instagram" title="instagram"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-gitlab" title="gitlab"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-bilibili" title="bilibili"></a>
+  <a href="http://myself659.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/myself659/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2017 - 
+    2020
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">沉风网事</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+
+
+
+<script type="text/javascript" src="/js/main.min.d7b7ada643c9c1a983026e177f141f7363b4640d619caf01d8831a6718cd44ea.js"></script>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-144475213-1', 'auto');
+	ga('set', 'anonymizeIp', true);
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+
+
+
+
+</body>
+</html>

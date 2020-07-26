@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>关于技术选型的思考 - 沉风网事</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="沉风网事" /><meta name="description" content="技术选型内容 技术选型从组成要素的角度分为两大类： 实现业务的代码 业务依赖的服务 本文围绕代码这一核心进行技术选型，对此分解以下五个问题： 怎么管理" /><meta name="keywords" content="沉风网事, 沉风, 区块链" />
+
+
+<meta name="baidu-site-verification" content="9LmlOuIblt" />
+
+
+
+<meta name="generator" content="Hugo 0.68.3 with theme even" />
+
+
+<link rel="canonical" href="http://myself659.github.io/post/tech-stack-explain/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.8c3cbcb0324c2bb4875ceccba4007cbad4b4ac8377f33af9953c3e7684534a50.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="关于技术选型的思考" />
+<meta property="og:description" content="技术选型内容 技术选型从组成要素的角度分为两大类： 实现业务的代码 业务依赖的服务 本文围绕代码这一核心进行技术选型，对此分解以下五个问题： 怎么管理" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://myself659.github.io/post/tech-stack-explain/" />
+<meta property="article:published_time" content="2018-09-05T11:58:06+02:00" />
+<meta property="article:modified_time" content="2018-09-05T11:58:06+02:00" />
+<meta itemprop="name" content="关于技术选型的思考">
+<meta itemprop="description" content="技术选型内容 技术选型从组成要素的角度分为两大类： 实现业务的代码 业务依赖的服务 本文围绕代码这一核心进行技术选型，对此分解以下五个问题： 怎么管理">
+<meta itemprop="datePublished" content="2018-09-05T11:58:06&#43;02:00" />
+<meta itemprop="dateModified" content="2018-09-05T11:58:06&#43;02:00" />
+<meta itemprop="wordCount" content="1189">
+
+
+
+<meta itemprop="keywords" content="研发管理," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="关于技术选型的思考"/>
+<meta name="twitter:description" content="技术选型内容 技术选型从组成要素的角度分为两大类： 实现业务的代码 业务依赖的服务 本文围绕代码这一核心进行技术选型，对此分解以下五个问题： 怎么管理"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">沉风</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a><a href="/post/leetcode/">
+        <li class="mobile-menu-item">LeetCode</li>
+      </a><a href="/post/read-post/">
+        <li class="mobile-menu-item">Read</li>
+      </a><a href="/post/share-post/">
+        <li class="mobile-menu-item">Share</li>
+      </a><a href="/post/slide-post/">
+        <li class="mobile-menu-item">Slide</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">沉风</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/leetcode/">LeetCode</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/read-post/">Read</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/share-post/">Share</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/slide-post/">Slide</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">关于技术选型的思考</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2018-09-05 </span>
+        <div class="post-category">
+            <a href="/categories/%E7%A0%94%E5%8F%91%E7%AE%A1%E7%90%86/"> 研发管理 </a>
+            </div>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#why-golang">Why Golang</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#why-docker">Why Docker</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#why-kubernetes">why Kubernetes</a></li>
+    <li><a href="#欢迎关注">欢迎关注</a></li>
+  </ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <h1 id="技术选型内容">技术选型内容</h1>
+<p>技术选型从组成要素的角度分为两大类：</p>
+<ol>
+<li>实现业务的代码</li>
+<li>业务依赖的服务</li>
+</ol>
+<p>本文围绕代码这一核心进行技术选型，对此分解以下五个问题：</p>
+<ol>
+<li>怎么管理代码？</li>
+<li>用什么语言写代码？</li>
+<li>怎么运行代码？</li>
+<li>在哪里运行代码？</li>
+<li>怎么大规模运维代码？</li>
+</ol>
+<h1 id="技术选型原则">技术选型原则</h1>
+<p>先看一下技术选型应该考虑些什么呢？</p>
+<ol>
+<li>业务的特点与需求</li>
+<li>资源和经验</li>
+<li>可扩展性</li>
+<li>可维护性</li>
+<li>安全</li>
+<li>成本（投入时间，人力，资源。。。）</li>
+</ol>
+<p>简单总结为以下几点：</p>
+<ol>
+<li><strong>稳定优先，善用为上</strong></li>
+<li><strong>立足现状，着眼未来</strong></li>
+<li><strong>验证先行，应用在后</strong></li>
+<li><strong>业务导向，实践驱动</strong></li>
+</ol>
+<p>下面就根据这些原则一一回答上面五个问题，但是不会涉及具体的问题如消息队列是选RabbitMQ还是Kafka。</p>
+<h1 id="代码管理">代码管理</h1>
+<p>对应上面的怎么管理代码的问题。首先是工具，现在大家都清一色的git。在git没有出来之前有以下这些工具：</p>
+<ol>
+<li>clearcase</li>
+<li>svn</li>
+<li>TortoiseCVS</li>
+</ol>
+<p>再次就是选择平台。有以下选项</p>
+<ol>
+<li>github</li>
+<li>gitlab</li>
+<li>gitee</li>
+<li>gitbucket</li>
+<li>自建gitlab</li>
+</ol>
+<p>选择自建gitlab。主要考虑如下：</p>
+<ol>
+<li>历史原因</li>
+<li>Gitlab自带CI</li>
+<li>代码安全考虑</li>
+<li>自建gitlab带来的自主控制，有利于后续的发展</li>
+</ol>
+<h1 id="编程语言">编程语言</h1>
+<p>以Golang为主，其他语言为辅助。</p>
+<h2 id="why-golang">Why Golang</h2>
+<ol>
+<li>个人及其团队主要成员都有Golang经验</li>
+<li>Golang在区块链项目中会占主导地位</li>
+<li>更多理由见：<a href="https://blog.ipds.top/2018/07/03/golang%E6%9C%80%E5%B7%A5%E7%A8%8B%E5%8C%96%E7%9A%84%E8%AF%AD%E8%A8%80/">Golang最工程化的语言</a></li>
+</ol>
+<h1 id="运行环境">运行环境</h1>
+<p>运行环境分为以下几种：</p>
+<ol>
+<li>物理主机</li>
+<li>虚拟机</li>
+<li>Docker</li>
+</ol>
+<p>除了一些特殊的场景，现在流行的作法当然是Docker。</p>
+<h2 id="why-docker">Why Docker</h2>
+<p>Docker是容器的事实上标准。
+使用Docker带来新部署方式：build-&gt;ship-&gt;run，有以下好处：</p>
+<ol>
+<li>可移植性：容器与操作系统分离，基本上保证可以在不同的机器及环境的主机上运行，容器也可以在不同机器上迁移</li>
+<li>模块化：利用容器隔离属性可以划分模块，合理拆分服务，同时容器化的一致性便于模块的复用</li>
+<li>安全性：容器隔离属性增加了应用程序的安全性</li>
+<li>弹性伸缩：容器化方便在负载增加扩容，在负载下降时缩容，有利于提高资源利用效率</li>
+<li>一致性：容器为应用程序提供了一致性的运行环境。</li>
+</ol>
+<h1 id="运行平台">运行平台</h1>
+<p>上云现在已经成为大众共识。AWS，azure, google cloud, aliyun及腾讯云都是选项内容。</p>
+<h1 id="大规模运维">大规模运维</h1>
+<p>容器化带来以上不少好处，但是也带来容器编排的问题。容器编排哪家强？Github找Kubernetes啊。</p>
+<p>对于小企业采用Kubernetes将高可用性完全交给云平台，自身解决正确科学应用Kubernetes问题，当然这个慢慢来，先调研，再实验。大企业需要深入Kubernetes细节与生态，要有修改与定制的能力。</p>
+<h2 id="why-kubernetes">why Kubernetes</h2>
+<p>首先Kubernetes成为实际上容器编排的标准。其次使用Kubernetes带来分工的变化：应用开发工程师可以专注于构建应用程序，而基础架构工程师可以专注于如何自动构建和部署，从而提高了工程效率，更快地交付了应用程序并简化了基础架构。除此之外Kubernetes提供了工具提高应用程序的高可用性，同时也可以灵活的切换云服务商。</p>
+<p>(end)</p>
+<h2 id="欢迎关注">欢迎关注</h2>
+<p>欢迎关注微信公众帐号：沉风网事(savewind)</p>
+<p><img src="/images/cfws.jpg" alt="沉风网事"></p>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">沉风网事</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+        2018-09-05
+        
+    </span>
+  </p>
+  
+  
+</div>
+<footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/%E7%A0%94%E5%8F%91%E7%AE%A1%E7%90%86/">研发管理</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/post/exchage-safe-arch/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">数字货币交易所安全防护体系介绍</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        <a class="next" href="/post/pdd-thought/">
+            <span class="next-text nav-default">关于拼多多几点看法</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    (function() {
+      
+      
+      if (window.location.hostname === 'localhost') return;
+
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      var disqus_shortname = 'ipds-top';
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+  
+
+  
+    <script src="https://utteranc.es/client.js"
+            repo="myself659/myself659/ipds-public"
+            issue-term="pathname"
+            theme="github-light"
+            crossorigin="anonymous"
+            async>
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://github.com/utterance">comments powered by utterances.</a></noscript>
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/8.3.1/mermaid.min.js"></script>
+<div class="social-links">
+      <a href="mailto:myself659@163.com" class="iconfont icon-email" title="email"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-stack-overflow" title="stack-overflow"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-twitter" title="twitter"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-facebook" title="facebook"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-linkedin" title="linkedin"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-google" title="google"></a>
+      <a href="https://github.com/myself659" class="iconfont icon-github" title="github"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-weibo" title="weibo"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-zhihu" title="zhihu"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-douban" title="douban"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-pocket" title="pocket"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-tumblr" title="tumblr"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-instagram" title="instagram"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-gitlab" title="gitlab"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-bilibili" title="bilibili"></a>
+  <a href="http://myself659.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/myself659/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2017 - 
+    2020
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">沉风网事</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+
+
+
+<script type="text/javascript" src="/js/main.min.d7b7ada643c9c1a983026e177f141f7363b4640d619caf01d8831a6718cd44ea.js"></script>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-144475213-1', 'auto');
+	ga('set', 'anonymizeIp', true);
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+
+
+
+
+</body>
+</html>

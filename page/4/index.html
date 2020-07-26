@@ -1,0 +1,856 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>沉风网事</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="沉风网事" /><meta name="description" content="沉风网事，以人为本，尊重事实与原理，立足现实，以科技与金融为驱动，中西结合，虚实相应，主要关注互联网，系统架构，区块链，安全，经济，数据等领域" /><meta name="keywords" content="沉风网事, 沉风, 区块链" />
+
+
+<meta name="baidu-site-verification" content="9LmlOuIblt" />
+
+
+
+<meta name="generator" content="Hugo 0.68.3 with theme even" />
+
+
+<link rel="canonical" href="http://myself659.github.io/" />
+  <link href="http://myself659.github.io/index.xml" rel="alternate" type="application/rss+xml" title="沉风网事" />
+  <link href="http://myself659.github.io/index.xml" rel="feed" type="application/rss+xml" title="沉风网事" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.8c3cbcb0324c2bb4875ceccba4007cbad4b4ac8377f33af9953c3e7684534a50.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="沉风网事" />
+<meta property="og:description" content="沉风网事，以人为本，尊重事实与原理，立足现实，以科技与金融为驱动，中西结合，虚实相应，主要关注互联网，系统架构，区块链，安全，经济，数据等领域" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="http://myself659.github.io/" />
+<meta property="og:updated_time" content="2020-07-08T11:58:06+02:00" />
+<meta itemprop="name" content="沉风网事">
+<meta itemprop="description" content="沉风网事，以人为本，尊重事实与原理，立足现实，以科技与金融为驱动，中西结合，虚实相应，主要关注互联网，系统架构，区块链，安全，经济，数据等领域"><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="沉风网事"/>
+<meta name="twitter:description" content="沉风网事，以人为本，尊重事实与原理，立足现实，以科技与金融为驱动，中西结合，虚实相应，主要关注互联网，系统架构，区块链，安全，经济，数据等领域"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">沉风</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a><a href="/post/leetcode/">
+        <li class="mobile-menu-item">LeetCode</li>
+      </a><a href="/post/read-post/">
+        <li class="mobile-menu-item">Read</li>
+      </a><a href="/post/share-post/">
+        <li class="mobile-menu-item">Share</li>
+      </a><a href="/post/slide-post/">
+        <li class="mobile-menu-item">Slide</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">沉风</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/leetcode/">LeetCode</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/read-post/">Read</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/share-post/">Share</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/slide-post/">Slide</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <section id="posts" class="posts">
+    <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/post/2017-04-08-ecs-basic-sec-check/">阿里云ECS基本安全检查小结</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2017-04-08 </span>
+      <div class="post-category">
+          <a href="/categories/secure/"> Secure </a>
+          </div>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      背景 查看阿里云ECS服务器日志发现如下： 1 2 3 4 5 6 7 type=USER_AUTH msg=audit(1491669519.156:15631): pid=22938 uid=0 auid=4294967295 ses=4294967295 msg=&#39;op=PAM:authentication acct=&#34;deploy&#34; exe=&#34;/usr/sbin/sshd&#34; hostname=123.57.245.163 addr=123.57.245.163 terminal=ssh res=failed&#39; type=USER_LOGIN msg=audit(1491669519.156:15632): pid=22938 uid=0 auid=4294967295 ses=4294967295 msg=&#39;op=login acct=28696E76616C6964207573657229 exe=&#34;/usr/sbin/sshd&#34; hostname=? addr=123.57.245.163 terminal=sshd res=failed&#39; type=USER_LOGIN msg=audit(1491669587.368:15634): pid=22940 uid=0 auid=4294967295 ses=4294967295 msg=&#39;op=login acct=28756E6B6E6F776E207573657229 exe=&#34;/usr/sbin/sshd&#34; hostname=? addr=123.57.245.163 terminal=sshd res=failed&#39; type=USER_LOGIN msg=audit(1491669587.368:15635): pid=22940 uid=0
+    </div>
+    <div class="read-more">
+      <a href="/post/2017-04-08-ecs-basic-sec-check/" class="read-more-link">阅读更多</a>
+    </div>
+  </div>
+</article>
+
+    <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/post/2017-03-27-help-internet-available-more-people/">不要忘记那些正在追赶互联网潮流的用户</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2017-03-27 </span>
+      <div class="post-category">
+          <a href="/categories/%E9%97%B2%E8%B0%88%E4%B9%B1%E6%89%AF/"> 闲谈乱扯 </a>
+          </div>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      引子 在一家推拿店里，排队等叫号，遇到一个五十多数大叔，下面是我们之间的对话： 大叔： 小伙子，帮我看一下怎么连接wifi？ 我： 好的。 （他把手机给
+    </div>
+    <div class="read-more">
+      <a href="/post/2017-03-27-help-internet-available-more-people/" class="read-more-link">阅读更多</a>
+    </div>
+  </div>
+</article>
+
+    <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/post/leetcode/">LeetCode</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2017-03-18 </span>
+      
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      数据结构与算法实践
+    </div>
+    <div class="read-more">
+      <a href="/post/leetcode/" class="read-more-link">阅读更多</a>
+    </div>
+  </div>
+</article>
+
+    <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/post/2017-02-20-go-case-1-my-shadeofgo/">Go的50度灰补充--http response只能读一次</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2017-02-20 </span>
+      <div class="post-category">
+          <a href="/categories/golang/"> golang </a>
+          </div>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      问题 还是从代码开始吧 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 func fetch(url string) { tlsConfig := &amp;tls.Config{ InsecureSkipVerify: true, }
+    </div>
+    <div class="read-more">
+      <a href="/post/2017-02-20-go-case-1-my-shadeofgo/" class="read-more-link">阅读更多</a>
+    </div>
+  </div>
+</article>
+
+    <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/post/2017-02-16-tcp-slow-down/">TCP连接下载文件失败，也许该看看这篇文章</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2017-02-16 </span>
+      <div class="post-category">
+          <a href="/categories/network/"> Network </a>
+          </div>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      体验一下标题党，现在自媒体横行，容我也放肆一回（多了我也不行，替自己码字能力捉急）！ 另起一行，到此为止，进入正题 缘起 最近通过uc浏览器下载a
+    </div>
+    <div class="read-more">
+      <a href="/post/2017-02-16-tcp-slow-down/" class="read-more-link">阅读更多</a>
+    </div>
+  </div>
+</article>
+
+    <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/post/2017-02-03-coutry-internet-user/">互联网在农村-用户</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2017-02-03 </span>
+      <div class="post-category">
+          <a href="/categories/%E9%97%B2%E8%B0%88%E4%B9%B1%E6%89%AF/"> 闲谈乱扯 </a>
+          </div>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      上一篇从电和物理网络两个方面说明自己所看到的农村互联网基础设施情况。这一篇就看看在农村的互联网用户的一些情况。 根据对app使用情况分为以下几
+    </div>
+    <div class="read-more">
+      <a href="/post/2017-02-03-coutry-internet-user/" class="read-more-link">阅读更多</a>
+    </div>
+  </div>
+</article>
+
+    <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/post/2017-02-02-coutry-internet-infra/">互联网在农村-基础设施</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2017-02-02 </span>
+      <div class="post-category">
+          <a href="/categories/%E9%97%B2%E8%B0%88%E4%B9%B1%E6%89%AF/"> 闲谈乱扯 </a>
+          </div>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      说明 老家在安徽省安庆市的一个小山村里，作为一名互联网从业人员，这次回家特地花了一点心思来观察家乡的互联网应用情况。 这是第一篇，先看农村互联网
+    </div>
+    <div class="read-more">
+      <a href="/post/2017-02-02-coutry-internet-infra/" class="read-more-link">阅读更多</a>
+    </div>
+  </div>
+</article>
+
+    <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/post/2016-09-10-from-cepoll-to-go-net/">从C语言epoll编程到go net实现分析</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2016-09-10 </span>
+      <div class="post-category">
+          <a href="/categories/golang/"> golang </a>
+          </div>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      说明 go源码版本：1.7 go源码运行环境：Linux epoll在c语言编程示例 先看一下大家比较熟悉的epoll在c语言中应用，代码取自rtm
+    </div>
+    <div class="read-more">
+      <a href="/post/2016-09-10-from-cepoll-to-go-net/" class="read-more-link">阅读更多</a>
+    </div>
+  </div>
+</article>
+
+    <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/post/2016-08-20-go-channel-program-demo/">Go channel 编程篇</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2016-08-20 </span>
+      <div class="post-category">
+          <a href="/categories/golang/"> golang </a>
+          </div>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      本篇以ChanBroker版本迭代过程，总结常见Channel编程问题 简介 ChanBroker设计主要参考Kafka模型，主要提供进程内go
+    </div>
+    <div class="read-more">
+      <a href="/post/2016-08-20-go-channel-program-demo/" class="read-more-link">阅读更多</a>
+    </div>
+  </div>
+</article>
+
+    <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/post/2016-08-05-im-user-state/">IM后端系统设计总结(2)</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2016-08-05 </span>
+      <div class="post-category">
+          <a href="/categories/arch/"> Arch </a>
+          </div>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      这篇具体写一下用户在线状态系统的具体设计。 后端架构 这个后端系统设计如下图： 很大众，国内基本都这么干，不多说 用户状态系统设计 初期设计 单IDC部
+    </div>
+    <div class="read-more">
+      <a href="/post/2016-08-05-im-user-state/" class="read-more-link">阅读更多</a>
+    </div>
+  </div>
+</article>
+
+    <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/post/2016-07-29-im-message/">IM后端系统设计总结(1)</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2016-07-29 </span>
+      <div class="post-category">
+          <a href="/categories/arch/"> Arch </a>
+          </div>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      定义IM 为用户提供即时消息服务，这里面有三个关键词：用户，消息，服务；下面根据三个关键词来展开总结，先从消息开始。 消息 消息分类 对消息分类，很
+    </div>
+    <div class="read-more">
+      <a href="/post/2016-07-29-im-message/" class="read-more-link">阅读更多</a>
+    </div>
+  </div>
+</article>
+
+    <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/post/2016-07-26-go-channel-feature/">Go channel 特点篇</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2016-07-26 </span>
+      <div class="post-category">
+          <a href="/categories/golang/"> golang </a>
+          </div>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      channel模式 根据同步方式不同，channel有两种模式： 1、同步模式,形式如下： 1 ch := make(chan int) 2、队列模式，形式如下： 1 ch := make(chan int, 10) 根据数据
+    </div>
+    <div class="read-more">
+      <a href="/post/2016-07-26-go-channel-feature/" class="read-more-link">阅读更多</a>
+    </div>
+  </div>
+</article>
+
+    <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/post/2016-06-02-10-lessons-from-10-years-of-amazon-web-services/">10 Lessons from 10 Years of Amazon Web Services（译文）</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2016-06-02 </span>
+      <div class="post-category">
+          <a href="/categories/arch/"> Arch </a>
+          </div>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      前言 亚马逊在2006年3月14日发布AWS，到现在差不多10年了。回首过去的10年里，我们在构建 安全，高可用性，可扩展性，低成本的服务方面积
+    </div>
+    <div class="read-more">
+      <a href="/post/2016-06-02-10-lessons-from-10-years-of-amazon-web-services/" class="read-more-link">阅读更多</a>
+    </div>
+  </div>
+</article>
+
+    <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/post/2016-05-27-facebook-live-detail/">Facebook live一些技术细节</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2016-05-27 </span>
+      <div class="post-category">
+          <a href="/categories/arch/"> Arch </a>
+          </div>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      协议选择 最初选择HLS,后面切换为RTMP，切换为RTMP主要为了降低延迟，提供更好直播用户体验。 解决并发问题 分发架构 采用Live stream serv
+    </div>
+    <div class="read-more">
+      <a href="/post/2016-05-27-facebook-live-detail/" class="read-more-link">阅读更多</a>
+    </div>
+  </div>
+</article>
+
+    <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/post/2016-05-21-git-cmd/">git常用命令总结</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2016-05-21 </span>
+      <div class="post-category">
+          <a href="/categories/linux/"> Linux </a>
+          </div>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      git仓库 初始化一个版本仓库 1 git init clone远程版本库 1 git clone git@github.com:myself659/FFmpeg.git 添加远程版本库origin 1 git remote add origin git@github.com:myself659/rtmpserver_demo.git 查看远程仓库信息 1 git remote -v 删除远程仓库 1 git
+    </div>
+    <div class="read-more">
+      <a href="/post/2016-05-21-git-cmd/" class="read-more-link">阅读更多</a>
+    </div>
+  </div>
+</article>
+
+    <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/post/2016-04-17-linux-kernel-crashs/">Linux内核常见crash原因</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2016-04-17 </span>
+      <div class="post-category">
+          <a href="/categories/linux/"> Linux </a>
+          </div>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      前言 与前同事交流，发现以前的技术经历与解决的问题，现在接触不多，但是想想还是很有意思，虽然很多细节现在已经不能表达出来或展示出来，但是还得写
+    </div>
+    <div class="read-more">
+      <a href="/post/2016-04-17-linux-kernel-crashs/" class="read-more-link">阅读更多</a>
+    </div>
+  </div>
+</article>
+
+    <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/post/2016-03-09-x86-64-call-stack/">Linux x86-64 函数调用栈实例分析</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2016-03-09 </span>
+      <div class="post-category">
+          <a href="/categories/linux/"> Linux </a>
+          </div>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      前言 动手实践并写文章花5倍的时间一次性把事情做到90分，好过读别人文章只能做到60分，后面还需要花时间继续深入学习。本文目的希望通过分析一个
+    </div>
+    <div class="read-more">
+      <a href="/post/2016-03-09-x86-64-call-stack/" class="read-more-link">阅读更多</a>
+    </div>
+  </div>
+</article>
+
+    <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/post/2016-03-05-do-more-than-coding/">代码是核心，但不仅仅是代码</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2016-03-05 </span>
+      <div class="post-category">
+          <a href="/categories/%E9%97%B2%E8%B0%88%E4%B9%B1%E6%89%AF/"> 闲谈乱扯 </a>
+          </div>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      其实以前也有类似的想法，但是决定写这篇文章是由下面一件事情引起的。 引子 同事自已造轮子要实现一个rtmp协议，在调试过程由于有一个问题有没有解
+    </div>
+    <div class="read-more">
+      <a href="/post/2016-03-05-do-more-than-coding/" class="read-more-link">阅读更多</a>
+    </div>
+  </div>
+</article>
+
+    <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/post/2016-01-28-docker-cmd-pratice/">docker image命令实践</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2016-01-28 </span>
+      <div class="post-category">
+          <a href="/categories/linux/"> Linux </a>
+          </div>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      搭建了docker环境，就来体验一下Docker，常用docker image命令如下： 1. 搜索docker image 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17
+    </div>
+    <div class="read-more">
+      <a href="/post/2016-01-28-docker-cmd-pratice/" class="read-more-link">阅读更多</a>
+    </div>
+  </div>
+</article>
+
+    <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/post/2015-12-13-docker-way-1-build-docker-env/">升级Linux内核，搭建docker环境</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2015-12-13 </span>
+      <div class="post-category">
+          <a href="/categories/linux/"> Linux </a>
+          </div>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      docker可以说是去年最热的技术，也是业界大谈特谈的技术，到了今年有很多公司已经将docker应用于自己的生产环境。Docker已经从一个
+    </div>
+    <div class="read-more">
+      <a href="/post/2015-12-13-docker-way-1-build-docker-env/" class="read-more-link">阅读更多</a>
+    </div>
+  </div>
+</article>
+
+    <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/post/2015-08-28-gdb-command-example/">gdb自定义断点操作</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2015-08-28 </span>
+      <div class="post-category">
+          <a href="/categories/linux/"> Linux </a>
+          </div>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      gdb是c/c++上调试利器，有很多技巧能让调试程序与解决问题更加方便与高效，下面关于command 命令的使用一个实例，具体如下： 1. 设置断点
+    </div>
+    <div class="read-more">
+      <a href="/post/2015-08-28-gdb-command-example/" class="read-more-link">阅读更多</a>
+    </div>
+  </div>
+</article>
+
+    <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/post/2015-08-08-nginx-pratice-1-add-hello-module/">nginx实践-添加自定义模块hello</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2015-08-08 </span>
+      <div class="post-category">
+          <a href="/categories/nginx/"> nginx </a>
+          </div>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      nginx是一个值得学习与研究的开源代码，写这篇文章主要目的是让自己能够能够从最简单的任务开始，通过写作促进自己一步一步地深入学习与分析ng
+    </div>
+    <div class="read-more">
+      <a href="/post/2015-08-08-nginx-pratice-1-add-hello-module/" class="read-more-link">阅读更多</a>
+    </div>
+  </div>
+</article>
+
+    <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/post/2015-07-28-linux-netstat/">Linux netstat 应用示例</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2015-07-28 </span>
+      <div class="post-category">
+          <a href="/categories/linux/"> Linux </a>
+          </div>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      关于netstat netstat 命令用于显示各种网络相关信息，如网络连接，路由表，接口状态 (Interface Statistics)，masquerade 连接，多播成员 (Multicast
+    </div>
+    <div class="read-more">
+      <a href="/post/2015-07-28-linux-netstat/" class="read-more-link">阅读更多</a>
+    </div>
+  </div>
+</article>
+
+    <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/post/2015-07-03-thought-about-zero-to-one/">读书笔记：《从0到1---开启商业与未来的秘密》</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2015-07-03 </span>
+      <div class="post-category">
+          <a href="/categories/%E9%97%B2%E8%B0%88%E4%B9%B1%E6%89%AF/"> 闲谈乱扯 </a>
+          </div>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      启发思考 在什么重要问题上你与其他有不同的看法？ 除了书中讲到参考模式:太多数人相信X，但是事实却是X的对立面；世界是多样的，我们应当追求正确的
+    </div>
+    <div class="read-more">
+      <a href="/post/2015-07-03-thought-about-zero-to-one/" class="read-more-link">阅读更多</a>
+    </div>
+  </div>
+</article>
+
+    <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/post/2015-06-14-number-divide/">实现无符号整型数的分解</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2015-06-14 </span>
+      <div class="post-category">
+          <a href="/categories/%E7%BC%96%E7%A8%8B/"> 编程 </a>
+          </div>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      题目 将一个无符号数N拆分为不多于M个数，使拆分的数之和等于N,条件： N &gt;= M； N与M都是无符号整型数 求：一共有多少中拆分方法？ 分析 参考代码 代码
+    </div>
+    <div class="read-more">
+      <a href="/post/2015-06-14-number-divide/" class="read-more-link">阅读更多</a>
+    </div>
+  </div>
+</article>
+
+    <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/post/2015-05-27-ping-error/">ping不通常见原因总结</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2015-05-27 </span>
+      <div class="post-category">
+          <a href="/categories/network/"> Network </a>
+          </div>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      ping不通从ping的流程分为两大类：请求报文没有到达对端与应答报文未收到
+    </div>
+    <div class="read-more">
+      <a href="/post/2015-05-27-ping-error/" class="read-more-link">阅读更多</a>
+    </div>
+  </div>
+</article>
+
+    <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/post/2015-06-01-linux-may-sleep-function/">那些可进入睡眠状态的Linux内核函数</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2015-05-27 </span>
+      <div class="post-category">
+          <a href="/categories/linux/"> Linux </a>
+          </div>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      在linux内核开发中断处理函数不能调用可能导致睡眠的函数，下面总结linux内核可能引起睡眠的函数如下： schedule函数 schedule_timeout schedule_timeout_uninterruptible schedule_timeout_interruptible cond_resched might_resched sl
+    </div>
+    <div class="read-more">
+      <a href="/post/2015-06-01-linux-may-sleep-function/" class="read-more-link">阅读更多</a>
+    </div>
+  </div>
+</article>
+
+    <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/post/2015-05-24-c-codereivew/">C语言代码 review的总结</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2015-05-24 </span>
+      <div class="post-category">
+          <a href="/categories/%E7%BC%96%E7%A8%8B/"> 编程 </a>
+          </div>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      代码review是保证代码质量在项目开发及代码修改中一项重要的环节，下面就代码reiew的一些总结，总结一些代码的review的关注点，提高
+    </div>
+    <div class="read-more">
+      <a href="/post/2015-05-24-c-codereivew/" class="read-more-link">阅读更多</a>
+    </div>
+  </div>
+</article>
+
+    <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/post/2015-05-24-linux-perf-thought/">Linux性能优化杂谈</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2015-05-24 </span>
+      <div class="post-category">
+          <a href="/categories/linux/"> Linux </a>
+          </div>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      少资源 高吞吐 低延迟 在具体网络转发性能优化过程中对性能优化有以下几点体会与总结： 软硬结合 软件灵活，硬件高效，软硬结合就像双剑合壁，威力巨大；具
+    </div>
+    <div class="read-more">
+      <a href="/post/2015-05-24-linux-perf-thought/" class="read-more-link">阅读更多</a>
+    </div>
+  </div>
+</article>
+
+    <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/post/2015-05-24-linux-perf-droppacket/">一个linux网络丢包问题分析</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2015-05-24 </span>
+      <div class="post-category">
+          <a href="/categories/%E7%BC%96%E7%A8%8B/"> 编程 </a>
+          </div>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      丢包问题是十分常见一类问题，下面总结的一个网络丢包问题的分析过程。 问题描述 组网： TC-PORT1&mdash;&mdash;-VSR-eth1 TC-PORT2&mdash;&mdash;-VSR-eth2 打流： 报文从TC-Port1打入VSR-eth1，再从V
+    </div>
+    <div class="read-more">
+      <a href="/post/2015-05-24-linux-perf-droppacket/" class="read-more-link">阅读更多</a>
+    </div>
+  </div>
+</article>
+
+    </section>
+  
+  <nav class="pagination">
+    <a class="prev" href="/page/3/">
+        <i class="iconfont icon-left"></i>
+        <span class="prev-text">上一页</span>
+      </a>
+    <a class="next" href="/page/5/">
+        <span class="next-text">下一页</span>
+        <i class="iconfont icon-right"></i>
+      </a>
+  </nav>
+        </div>
+        
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/8.3.1/mermaid.min.js"></script>
+<div class="social-links">
+      <a href="mailto:myself659@163.com" class="iconfont icon-email" title="email"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-stack-overflow" title="stack-overflow"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-twitter" title="twitter"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-facebook" title="facebook"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-linkedin" title="linkedin"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-google" title="google"></a>
+      <a href="https://github.com/myself659" class="iconfont icon-github" title="github"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-weibo" title="weibo"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-zhihu" title="zhihu"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-douban" title="douban"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-pocket" title="pocket"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-tumblr" title="tumblr"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-instagram" title="instagram"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-gitlab" title="gitlab"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-bilibili" title="bilibili"></a>
+  <a href="http://myself659.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/myself659/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2017 - 
+    2020
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">沉风网事</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+
+
+
+<script type="text/javascript" src="/js/main.min.d7b7ada643c9c1a983026e177f141f7363b4640d619caf01d8831a6718cd44ea.js"></script>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-144475213-1', 'auto');
+	ga('set', 'anonymizeIp', true);
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+
+
+
+
+</body>
+</html>

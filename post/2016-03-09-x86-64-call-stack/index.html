@@ -1,0 +1,1322 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Linux x86-64 函数调用栈实例分析 - 沉风网事</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="沉风网事" /><meta name="description" content="前言 动手实践并写文章花5倍的时间一次性把事情做到90分，好过读别人文章只能做到60分，后面还需要花时间继续深入学习。本文目的希望通过分析一个" /><meta name="keywords" content="沉风网事, 沉风, 区块链" />
+
+
+<meta name="baidu-site-verification" content="9LmlOuIblt" />
+
+
+
+<meta name="generator" content="Hugo 0.68.3 with theme even" />
+
+
+<link rel="canonical" href="http://myself659.github.io/post/2016-03-09-x86-64-call-stack/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.8c3cbcb0324c2bb4875ceccba4007cbad4b4ac8377f33af9953c3e7684534a50.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="Linux x86-64 函数调用栈实例分析" />
+<meta property="og:description" content="前言 动手实践并写文章花5倍的时间一次性把事情做到90分，好过读别人文章只能做到60分，后面还需要花时间继续深入学习。本文目的希望通过分析一个" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://myself659.github.io/post/2016-03-09-x86-64-call-stack/" />
+<meta property="article:published_time" content="2016-03-09T11:58:06+02:00" />
+<meta property="article:modified_time" content="2016-03-09T11:58:06+02:00" />
+<meta itemprop="name" content="Linux x86-64 函数调用栈实例分析">
+<meta itemprop="description" content="前言 动手实践并写文章花5倍的时间一次性把事情做到90分，好过读别人文章只能做到60分，后面还需要花时间继续深入学习。本文目的希望通过分析一个">
+<meta itemprop="datePublished" content="2016-03-09T11:58:06&#43;02:00" />
+<meta itemprop="dateModified" content="2016-03-09T11:58:06&#43;02:00" />
+<meta itemprop="wordCount" content="3112">
+
+
+
+<meta itemprop="keywords" content="Linux," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Linux x86-64 函数调用栈实例分析"/>
+<meta name="twitter:description" content="前言 动手实践并写文章花5倍的时间一次性把事情做到90分，好过读别人文章只能做到60分，后面还需要花时间继续深入学习。本文目的希望通过分析一个"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">沉风</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a><a href="/post/leetcode/">
+        <li class="mobile-menu-item">LeetCode</li>
+      </a><a href="/post/read-post/">
+        <li class="mobile-menu-item">Read</li>
+      </a><a href="/post/share-post/">
+        <li class="mobile-menu-item">Share</li>
+      </a><a href="/post/slide-post/">
+        <li class="mobile-menu-item">Slide</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">沉风</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/leetcode/">LeetCode</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/read-post/">Read</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/share-post/">Share</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/slide-post/">Slide</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">Linux x86-64 函数调用栈实例分析</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2016-03-09 </span>
+        <div class="post-category">
+            <a href="/categories/linux/"> Linux </a>
+            </div>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#前言">前言</a></li>
+        <li><a href="#环境">环境</a></li>
+        <li><a href="#gdb-分析调用栈">GDB 分析调用栈</a></li>
+        <li><a href="#x86-64寄存器说明">x86-64寄存器说明</a></li>
+        <li><a href="#参考">参考</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <h3 id="前言">前言</h3>
+<p>动手实践并写文章花5倍的时间一次性把事情做到90分，好过读别人文章只能做到60分，后面还需要花时间继续深入学习。本文目的希望通过分析一个简单的函数调用加深对x86-64寄存器及栈帧的结构的认识，以便在定位问题需要的时候能够熟练运用。</p>
+<h3 id="环境">环境</h3>
+<p>1.操作系统和内核</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">[root@localhost ~]# cat /proc/version 
+Linux version 3.10.0-229.4.2.el7.x86_64 (builder@kbuilder.dev.centos.org) (gcc version 4.8.2 20140120 (Red Hat 4.8.2-16) (GCC) ) #1 SMP Wed May 13 10:06:09 UTC 2015
+</code></pre></td></tr></table>
+</div>
+</div><p>2.GCC版本</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">[root@localhost ~]# gcc  -v
+Using built-in specs.
+COLLECT_GCC=gcc
+COLLECT_LTO_WRAPPER=/usr/libexec/gcc/x86_64-redhat-linux/4.8.3/lto-wrapper
+Target: x86_64-redhat-linux
+Configured with: ../configure --prefix=/usr --mandir=/usr/share/man --infodir=/usr/share/info --with-bugurl=http://bugzilla.redhat.com/bugzilla --enable-bootstrap --enable-shared --enable-threads=posix --enable-checking=release --with-system-zlib --enable-__cxa_atexit --disable-libunwind-exceptions --enable-gnu-unique-object --enable-linker-build-id --with-linker-hash-style=gnu --enable-languages=c,c++,objc,obj-c++,java,fortran,ada,go,lto --enable-plugin --enable-initfini-array --disable-libgcj --with-isl=/builddir/build/BUILD/gcc-4.8.3-20140911/obj-x86_64-redhat-linux/isl-install --with-cloog=/builddir/build/BUILD/gcc-4.8.3-20140911/obj-x86_64-redhat-linux/cloog-install --enable-gnu-indirect-function --with-tune=generic --with-arch_32=x86-64 --build=x86_64-redhat-linux
+Thread model: posix
+gcc version 4.8.3 20140911 (Red Hat 4.8.3-9) (GCC) 
+</code></pre></td></tr></table>
+</div>
+</div><p>3.GDB版本</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">[root@localhost ~]# gdb --version
+GNU gdb (GDB) Red Hat Enterprise Linux 7.6.1-64.el7
+Copyright (C) 2013 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later &lt;http://gnu.org/licenses/gpl.html&gt;
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type &#34;show copying&#34;
+and &#34;show warranty&#34; for details.
+This GDB was configured as &#34;x86_64-redhat-linux-gnu&#34;.
+For bug reporting instructions, please see:
+&lt;http://www.gnu.org/software/gdb/bugs/&gt;.
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="gdb-分析调用栈">GDB 分析调用栈</h3>
+<h4 id="1-准备代码">1. 准备代码</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-c" data-lang="c"><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp">
+</span><span class="cp"></span>
+<span class="kt">int</span> <span class="nf">sum</span><span class="p">(</span><span class="kt">int</span> <span class="n">a1</span><span class="p">,</span> <span class="kt">int</span> <span class="n">a2</span><span class="p">,</span> <span class="kt">int</span> <span class="n">a3</span><span class="p">,</span> <span class="kt">int</span> <span class="n">a4</span><span class="p">,</span> <span class="kt">int</span> <span class="n">a5</span><span class="p">,</span> 
+        <span class="kt">int</span> <span class="n">a6</span><span class="p">,</span> <span class="kt">int</span> <span class="n">a7</span><span class="p">,</span> <span class="kt">int</span> <span class="n">a8</span><span class="p">,</span> <span class="kt">int</span> <span class="n">a9</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="kt">int</span> <span class="n">s</span> <span class="o">=</span> <span class="mh">0xaaaa</span><span class="p">;</span>
+    <span class="n">s</span> <span class="o">=</span> <span class="n">a1</span><span class="o">+</span><span class="n">a2</span><span class="o">+</span><span class="n">a3</span><span class="o">+</span><span class="n">a4</span><span class="o">+</span><span class="n">a5</span><span class="o">+</span><span class="n">a6</span><span class="o">+</span><span class="n">a7</span><span class="o">+</span><span class="n">a8</span><span class="o">+</span><span class="n">a9</span><span class="p">;</span>
+
+    <span class="k">return</span> <span class="n">s</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">void</span>  <span class="nf">caller</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="kt">int</span> <span class="n">iRet</span> <span class="o">=</span> <span class="mh">0x0</span><span class="p">;</span>
+
+    <span class="n">iRet</span> <span class="o">=</span> <span class="n">sum</span><span class="p">(</span><span class="mh">0x11</span><span class="p">,</span> <span class="mh">0x22</span><span class="p">,</span> <span class="mh">0x33</span><span class="p">,</span> <span class="mh">0x44</span><span class="p">,</span> <span class="mh">0x55</span><span class="p">,</span> <span class="mh">0x66</span><span class="p">,</span> <span class="mh">0x77</span><span class="p">,</span> <span class="mh">0x88</span><span class="p">,</span> <span class="mh">0x99</span><span class="p">);</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">&#34;sum: %x</span><span class="se">\r\n</span><span class="s">&#34;</span><span class="p">,</span> <span class="n">iRet</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">caller</span><span class="p">();</span>
+
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="2-生成可执行文件">2. 生成可执行文件</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">[root@localhost cpp]# gcc  -g  stackexample.c  -o stackexample
+[root@localhost cpp]# ./stackexample
+sum: 2FD
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="3-分析调用栈">3. 分析调用栈</h4>
+<p>主要通过gdb分析调用栈变化情况</p>
+<h4 id="31-初始化">3.1 初始化</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">Breakpoint 1, main () at stackexample.c:22
+warning: Source file is more recent than executable.
+22              caller();
+Missing separate debuginfos, use: debuginfo-install glibc-2.17-78.el7.x86_64
+(gdb) info  registers 
+rax            0x4005e6 4195814
+rbx            0x0      0
+rcx            0x400600 4195840
+rdx            0x7fffffffe518   140737488348440
+rsi            0x7fffffffe508   140737488348424
+rdi            0x1      1
+rbp            0x7fffffffe420   0x7fffffffe420
+rsp            0x7fffffffe420   0x7fffffffe420
+r8             0x7ffff7dd5e80   140737351868032
+r9             0x0      0
+r10            0x7fffffffe270   140737488347760
+r11            0x7ffff7a3ba00   140737348090368
+r12            0x400440 4195392
+r13            0x7fffffffe500   140737488348416
+r14            0x0      0
+r15            0x0      0
+rip            0x4005ea 0x4005ea &lt;main+4&gt;
+eflags         0x246    [ PF ZF IF ]
+cs             0x33     51
+ss             0x2b     43
+ds             0x0      0
+es             0x0      0
+fs             0x0      0
+---Type &lt;return&gt; to continue, or q &lt;return&gt; to quit--- 
+gs             0x0      0
+(gdb) 
+</code></pre></td></tr></table>
+</div>
+</div><p>栈内存（堆栈向下生长）:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">rbp            0x7fffffffe420   0x7fffffffe420
+rsp            0x7fffffffe420   0x7fffffffe420
+
+         0x7fffffffe428 +------------------+
+                        |                  |
+    rbp-&gt;0x7fffffffe420 +------------------+  &lt;-rsp
+                        |                  |
+         0x7fffffffe218 +------------------+
+                        |                  |
+         0x7fffffffe210 +------------------+
+                        |                  |
+         0x7fffffffe208 +------------------+
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="32-调用caller">3.2 调用caller</h4>
+<p>寄存器信息：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">(gdb) s
+caller () at stackexample.c:14
+14              int iRet = 0x0;
+(gdb) info registers 
+rax            0x4005e6 4195814
+rbx            0x0      0
+rcx            0x400600 4195840
+rdx            0x7fffffffe518   140737488348440
+rsi            0x7fffffffe508   140737488348424
+rdi            0x1      1
+rbp            0x7fffffffe410   0x7fffffffe410
+rsp            0x7fffffffe3e0   0x7fffffffe3e0
+r8             0x7ffff7dd5e80   140737351868032
+r9             0x0      0
+r10            0x7fffffffe270   140737488347760
+r11            0x7ffff7a3ba00   140737348090368
+r12            0x400440 4195392
+r13            0x7fffffffe500   140737488348416
+r14            0x0      0
+r15            0x0      0
+rip            0x40058a 0x40058a &lt;caller+8&gt;
+eflags         0x202    [ IF ]
+cs             0x33     51
+ss             0x2b     43
+ds             0x0      0
+es             0x0      0
+fs             0x0      0
+---Type &lt;return&gt; to continue, or q &lt;return&gt; to quit---
+gs             0x0      0
+(gdb) x /6gx  0x7fffffffe3e0
+0x7fffffffe3e0: 0x0000000000000001      0x000000000040064d
+0x7fffffffe3f0: 0x0000000000000000      0x0000000000000000
+0x7fffffffe400: 0x0000000000400600      0x0000000000400440
+(gdb)
+(gdb) x /12gx  0x7fffffffe3e0
+0x7fffffffe3e0: 0x0000000000000001      0x000000000040064d
+0x7fffffffe3f0: 0x0000000000000000      0x0000000000000000
+0x7fffffffe400: 0x0000000000400600      0x0000000000400440 #小端系统，前8位存储iRet的值
+0x7fffffffe410: 0x00007fffffffe420      0x00000000004005ef
+0x7fffffffe420: 0x0000000000000000      0x00007ffff7a3baf5
+0x7fffffffe430: 0x0000002000000000      0x00007fffffffe508
+(gdb) 
+(gdb) p iRet
+$3 = 0
+(gdb) p &amp;iRet
+$4 = (int *) 0x7fffffffe40c #局部变量在堆栈的位置
+</code></pre></td></tr></table>
+</div>
+</div><p>栈内存（堆栈向下生长）：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">rbp            0x7fffffffe410   0x7fffffffe410
+rsp            0x7fffffffe3e0   0x7fffffffe3e0
+
+        0x7fffffffe428 +------------------+
+                       |                  |
+        0x7fffffffe420 +------------------+
+                       |0x00000000004005ef| #保存返回main的指令地址,参考汇编代码
+        0x7fffffffe418 +------------------+
+                       |0x00007fffffffe420| #保存main函数对应rbp
+ rbp --&gt;0x7fffffffe410 +------------------+
+                       |                  |
+        0x7fffffffe408 +------------------+
+                       |                  |
+        0x7fffffffe400 +------------------+
+                       |                  |
+        0x7fffffffe3f8 +------------------+
+                       |                  |
+        0x7fffffffe3f0 +------------------+
+                       |                  |
+        0x7fffffffe3e8 +------------------+
+                       |                  |
+ rsp --&gt;0x7fffffffe3e0 +------------------+        
+</code></pre></td></tr></table>
+</div>
+</div><p>main函数的汇编代码如下：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">(gdb) disassemble  /m main
+Dump of assembler code for function main:
+21      {
+   0x00000000004005e6 &lt;+0&gt;:     push   %rbp
+   0x00000000004005e7 &lt;+1&gt;:     mov    %rsp,%rbp
+
+22              caller();
+   0x00000000004005ea &lt;+4&gt;:     callq  0x400582 &lt;caller&gt;
+
+23
+24              return 0;
+   0x00000000004005ef &lt;+9&gt;:     mov    $0x0,%eax  #调用caller返回后执行的指令地址
+
+25      }
+   0x00000000004005f4 &lt;+14&gt;:    pop    %rbp
+   0x00000000004005f5 &lt;+15&gt;:    retq   
+
+End of assembler dump.
+(gdb) 
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="33调用sum">3.3调用sum</h4>
+<p>寄存器信息：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">Breakpoint 2, sum (a1=17, a2=34, a3=51, a4=68, a5=85, a6=102, a7=119, a8=136, 
+    a9=153) at stackexample.c:6
+6               int s = 0x0;
+(gdb) info  registers 
+rax            0x4005e6 4195814
+rbx            0x0      0
+rcx            0x44     68                             #第四个参数
+rdx            0x33     51                             #第三个参数
+rsi            0x22     34                             #第二个参数
+rdi            0x11     17                             #第一个参数 
+rbp            0x7fffffffe3d0   0x7fffffffe3d0
+rsp            0x7fffffffe3d0   0x7fffffffe3d0
+r8             0x55     85                             #第五个参数 
+r9             0x66     102                            #第六个参数 
+r10            0x7fffffffe270   140737488347760
+r11            0x7ffff7a3ba00   140737348090368
+r12            0x400440 4195392
+r13            0x7fffffffe500   140737488348416
+r14            0x0      0
+r15            0x0      0
+rip            0x400548 0x400548 &lt;sum+24&gt;
+eflags         0x202    [ IF ]
+cs             0x33     51
+ss             0x2b     43
+ds             0x0      0
+es             0x0      0
+fs             0x0      0
+---Type &lt;return&gt; to continue, or q &lt;return&gt; to quit--- 
+gs             0x0      0
+(gdb) 
+
+</code></pre></td></tr></table>
+</div>
+</div><p>caller对应汇编代码：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">(gdb) disassemble   /m caller
+Dump of assembler code for function caller:
+13      {
+   0x0000000000400582 &lt;+0&gt;:     push   %rbp  #保存调用函数main的rbp
+   0x0000000000400583 &lt;+1&gt;:     mov    %rsp,%rbp #将上一个栈顶指针作为本函数的栈底（设置当前函数的栈基址）
+   0x0000000000400586 &lt;+4&gt;:     sub    $0x30,%rsp #分配栈空间
+
+14              int iRet = 0x0;
+   0x000000000040058a &lt;+8&gt;:     movl   $0x0,-0x4(%rbp)
+
+15
+16              iRet = sum(0x11, 0x22, 0x33, 0x44, 0x55, 0x66, 0x77, 0x88, 0x99);
+   0x0000000000400591 &lt;+15&gt;:    movl   $0x99,0x10(%rsp)   #第9个参数
+   0x0000000000400599 &lt;+23&gt;:    movl   $0x88,0x8(%rsp)    #第8个参考 
+   0x00000000004005a1 &lt;+31&gt;:    movl   $0x77,(%rsp)       #第7个参数
+   0x00000000004005a8 &lt;+38&gt;:    mov    $0x66,%r9d         #第6个参数 
+   0x00000000004005ae &lt;+44&gt;:    mov    $0x55,%r8d         #第5个参数 
+   0x00000000004005b4 &lt;+50&gt;:    mov    $0x44,%ecx         #第4个参数
+   0x00000000004005b9 &lt;+55&gt;:    mov    $0x33,%edx         #第3个参数 
+   0x00000000004005be &lt;+60&gt;:    mov    $0x22,%esi         #第2个参数
+   0x00000000004005c3 &lt;+65&gt;:    mov    $0x11,%edi         #第1个参数 
+   0x00000000004005c8 &lt;+70&gt;:    callq  0x400530 &lt;sum&gt;     #调用函数sum
+   0x00000000004005cd &lt;+75&gt;:    mov    %eax,-0x4(%rbp)    #取返回值
+---Type &lt;return&gt; to continue, or q &lt;return&gt; to quit---
+
+17              printf(&#34;sum: %X\r\n&#34;, iRet);
+   0x00000000004005d0 &lt;+78&gt;:    mov    -0x4(%rbp),%eax
+   0x00000000004005d3 &lt;+81&gt;:    mov    %eax,%esi
+   0x00000000004005d5 &lt;+83&gt;:    mov    $0x400690,%edi
+   0x00000000004005da &lt;+88&gt;:    mov    $0x0,%eax
+   0x00000000004005df &lt;+93&gt;:    callq  0x400410 &lt;printf@plt&gt;
+
+18      }
+   0x00000000004005e4 &lt;+98&gt;:    leaveq                   #出栈处理
+   0x00000000004005e5 &lt;+99&gt;:    retq   
+
+End of assembler dump.
+(gdb) 
+</code></pre></td></tr></table>
+</div>
+</div><p>通过上面汇编与寄存器信息，可以了解到函数调用的参数一般先通过寄存器传递。但是可用于传递函数的参数有限，超出的参数怎么传递呢？入调用函数的栈空间，具体如下：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">(gdb) x  /12gx  $rsp
+0x7fffffffe3d0: 0x00007fffffffe410      0x00000000004005cd   #main函数栈底，返回指令
+0x7fffffffe3e0: 0x0000000000000077      0x0000000000000088   #第七个参数  第八个参数
+0x7fffffffe3f0: 0x0000000000000099      0x0000000000000000   #第九个参数
+0x7fffffffe400: 0x0000000000400600      0x0000000000400440   #这两个内容是什么
+0x7fffffffe410: 0x00007fffffffe420      0x00000000004005ef
+0x7fffffffe420: 0x0000000000000000      0x00007ffff7a3baf5
+(gdb) 
+
+</code></pre></td></tr></table>
+</div>
+</div><p>栈内存（栈向下生长）：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">rbp            0x7fffffffe3d0   0x7fffffffe3d0
+rsp            0x7fffffffe3d0   0x7fffffffe3d0
+
+        0x7fffffffe428 +------------------+
+                       |                  |
+        0x7fffffffe420 +------------------+
+                       |0x00000000004005ef| #保存返回main的地址
+        0x7fffffffe418 +------------------+
+                       |0x00007fffffffe420| #保存main函数对应rbp
+        0x7fffffffe410 +------------------+
+                       |                  |
+        0x7fffffffe408 +------------------+
+                       |                  |
+        0x7fffffffe400 +------------------+
+                       |                  |
+        0x7fffffffe3f8 +------------------+
+                       |  0x99            |
+        0x7fffffffe3f0 +------------------+
+                       |  0x88            |
+        0x7fffffffe3e8 +------------------+
+                       |  0x77            |
+        0x7fffffffe3e0 +------------------+    
+                       |0x00000000004005cd| #保存调用caller返回的指令地址
+        0x7fffffffe3e0 +------------------+ 
+                       |0x00007fffffffe410| #保存caller函数对应的rbp
+ rsp --&gt;0x7fffffffe3e0 +------------------+ 
+    
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="34-sum获取参数">3.4 sum获取参数</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">(gdb) x  /16gx $rsp-0x28
+0x7fffffffe3a8: 0x0000005500000066      0x0000003300000044
+0x7fffffffe3b8: 0x0000001100000022      0x0000000000000006
+0x7fffffffe3c8: 0x00000000f7ab9646      0x00007fffffffe410
+0x7fffffffe3d8: 0x00000000004005cd      0x0000000000000077
+0x7fffffffe3e8: 0x0000000000000088      0x0000000000000099
+0x7fffffffe3f8: 0x0000000000000000      0x0000000000400600
+0x7fffffffe408: 0x0000000000400440      0x00007fffffffe420
+0x7fffffffe418: 0x00000000004005ef      0x0000000000000000
+</code></pre></td></tr></table>
+</div>
+</div><p>栈内存（栈向下生长）：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">rbp            0x7fffffffe3e0   0x7fffffffe3e0
+rsp            0x7fffffffe3e0   0x7fffffffe3e0
+
+        0x7fffffffe428 +------------------+
+                       |                  |
+        0x7fffffffe420 +------------------+
+                       |0x00000000004005ef| #保存返回main的地址
+        0x7fffffffe418 +------------------+
+                       |0x00007fffffffe420| #保存main函数对应rbp
+        0x7fffffffe410 +------------------+
+                       |                  |
+        0x7fffffffe408 +------------------+
+                       |                  |
+        0x7fffffffe400 +------------------+
+                       |                  |
+        0x7fffffffe3f8 +------------------+
+                       |  0x99            |
+        0x7fffffffe3f0 +------------------+
+                       |  0x88            |
+        0x7fffffffe3e8 +------------------+
+                       |  0x77            |
+        0x7fffffffe3e0 +------------------+    
+                       |0x00000000004005cd| #保存返回caller的指令地址
+        0x7fffffffe3e0 +------------------+ 
+                       |0x00007fffffffe410| #保存caller函数对应的rbp
+ rsp --&gt;0x7fffffffe3e0 +------------------+  
+                       |                  |
+        0x7fffffffe3d8 +------------------+  
+                       |                  |
+        0x7fffffffe3d0 +------------------+
+                       |                  |
+        0x7fffffffe3e8 +------------------+
+                       |                  |
+        0x7fffffffe3e0 +------------------+ 
+                       |                  |
+        0x7fffffffe3c8 +------------------+  
+                       |                  |
+        0x7fffffffe3c0 +------------------+
+                       |0x0000001100000022|
+        0x7fffffffe3b8 +------------------+
+                       |0x0000005500000066|
+        0x7fffffffe3b0 +------------------+                                    
+                       |0x0000003300000044|
+        0x7fffffffe3a8 +------------------+
+                       |                  |
+        0x7fffffffe3a0 +------------------+    
+
+</code></pre></td></tr></table>
+</div>
+</div><p>sum函数对应汇编如下：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">(gdb) disassemble  /m sum 
+Dump of assembler code for function sum:
+5       {
+   0x0000000000400530 &lt;+0&gt;:     push   %rbp
+   0x0000000000400531 &lt;+1&gt;:     mov    %rsp,%rbp
+   0x0000000000400534 &lt;+4&gt;:     mov    %edi,-0x14(%rbp)  #获取函数参数，顺序为从左到右 
+   0x0000000000400537 &lt;+7&gt;:     mov    %esi,-0x18(%rbp)
+   0x000000000040053a &lt;+10&gt;:    mov    %edx,-0x1c(%rbp)
+   0x000000000040053d &lt;+13&gt;:    mov    %ecx,-0x20(%rbp)
+   0x0000000000400540 &lt;+16&gt;:    mov    %r8d,-0x24(%rbp)
+   0x0000000000400544 &lt;+20&gt;:    mov    %r9d,-0x28(%rbp)
+
+6               int s = 0x0;
+   0x0000000000400548 &lt;+24&gt;:    movl   $0x0,-0x4(%rbp)
+
+7               s = a1+a2+a3+a4+a5+a6+a7+a8+a9;
+=&gt; 0x000000000040054f &lt;+31&gt;:    mov    -0x18(%rbp),%eax
+   0x0000000000400552 &lt;+34&gt;:    mov    -0x14(%rbp),%edx
+   0x0000000000400555 &lt;+37&gt;:    add    %eax,%edx
+   0x0000000000400557 &lt;+39&gt;:    mov    -0x1c(%rbp),%eax
+   0x000000000040055a &lt;+42&gt;:    add    %eax,%edx
+   0x000000000040055c &lt;+44&gt;:    mov    -0x20(%rbp),%eax
+   0x000000000040055f &lt;+47&gt;:    add    %eax,%edx
+   0x0000000000400561 &lt;+49&gt;:    mov    -0x24(%rbp),%eax
+---Type &lt;return&gt; to continue, or q &lt;return&gt; to quit---
+   0x0000000000400564 &lt;+52&gt;:    add    %eax,%edx
+   0x0000000000400566 &lt;+54&gt;:    mov    -0x28(%rbp),%eax
+   0x0000000000400569 &lt;+57&gt;:    add    %eax,%edx
+   0x000000000040056b &lt;+59&gt;:    mov    0x10(%rbp),%eax #取参数a7 = 0x77
+   0x000000000040056e &lt;+62&gt;:    add    %eax,%edx
+   0x0000000000400570 &lt;+64&gt;:    mov    0x18(%rbp),%eax #取参数a8 = 0x88 
+   0x0000000000400573 &lt;+67&gt;:    add    %eax,%edx
+   0x0000000000400575 &lt;+69&gt;:    mov    0x20(%rbp),%eax #取参数a9 = 0x99
+   0x0000000000400578 &lt;+72&gt;:    add    %edx,%eax
+   0x000000000040057a &lt;+74&gt;:    mov    %eax,-0x4(%rbp)
+
+8
+9               return s;
+   0x000000000040057d &lt;+77&gt;:    mov    -0x4(%rbp),%eax #计算结果通过eax寄存器返回
+
+10      }
+   0x0000000000400580 &lt;+80&gt;:    pop    %rbp
+   0x0000000000400581 &lt;+81&gt;:    retq   
+
+End of assembler dump.
+(gdb) 
+</code></pre></td></tr></table>
+</div>
+</div><p>注意的是调用sum的时候并没有分配栈空间？主要原因是sum函数内没有调用其他函数，sum就只能被别的函数调用，sum的局部变量直接由rsp向下生长，调用结束后，直接恢复调用者的栈，这样的好处有两个：</p>
+<ol>
+<li>少一个指令，提高执行效率</li>
+<li>编译的时候并不需要计算需要开辟多少栈空间</li>
+</ol>
+<p>为什么需要将值从寄存器取出？直接利用寄存器取值不可以吗？
+传递参数的寄存器在函数执行指令的时候有其他用处，调用函数需要将参数从寄存器取出到栈内存中（在一定的情况下即调用函数的指令不需要占用传递参数的寄存器，如果加大编译的优化级别，是否不会从参数寄存器取出参数到函数的栈内存中而是直接使用寄存器？）另外可以从这里看出，从代码层面优化性能可以考虑减少函数调用以及优化一些不必要的参数传递，尽管只能尽一丝绵薄之力。</p>
+<h4 id="35-sum返回值">3.5 sum返回值</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">(gdb) n
+caller () at stackexample.c:17
+17              printf(&#34;sum: %X\r\n&#34;, iRet);
+(gdb) info registers 
+rax            0x2fd    765  #返回值 
+rbx            0x0      0
+rcx            0x44     68
+rdx            0x264    612
+rsi            0x22     34
+rdi            0x11     17
+rbp            0x7fffffffe410   0x7fffffffe410
+rsp            0x7fffffffe3e0   0x7fffffffe3e0
+r8             0x55     85
+r9             0x66     102
+r10            0x7fffffffe270   140737488347760
+r11            0x7ffff7a3ba00   140737348090368
+r12            0x400440 4195392
+r13            0x7fffffffe500   140737488348416
+r14            0x0      0
+r15            0x0      0
+rip            0x4005d0 0x4005d0 &lt;caller+78&gt;
+eflags         0x202    [ IF ]
+cs             0x33     51
+ss             0x2b     43
+ds             0x0      0
+es             0x0      0
+fs             0x0      0
+---Type &lt;return&gt; to continue, or q &lt;return&gt; to quit---
+gs             0x0      0
+(gdb) 
+(gdb) x /16gx 0x7fffffffe3c0 
+0x7fffffffe3c0: 0x0000000000000006      0x000002fdf7ab9646  #返回值0x2fd
+0x7fffffffe3d0: 0x00007fffffffe410      0x00000000004005cd
+0x7fffffffe3e0: 0x0000000000000077      0x0000000000000088
+0x7fffffffe3f0: 0x0000000000000099      0x0000000000000000
+0x7fffffffe400: 0x0000000000400600      0x000002fd00400440
+0x7fffffffe410: 0x00007fffffffe420      0x00000000004005ef
+0x7fffffffe420: 0x0000000000000000      0x00007ffff7a3baf5
+0x7fffffffe430: 0x0000002000000000      0x00007fffffffe508
+(gdb) 
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="x86-64寄存器说明">x86-64寄存器说明</h3>
+<ol>
+<li>rsp：对应32位esp寄存器，保存当前堆栈栈顶指针的寄存器</li>
+<li>rbp：对应32位ebp寄存器，保存了当前堆栈基地址指针的寄存器</li>
+<li>rax: 临时寄存器，当我们调用系统调用的时候，rax保外系统调用号</li>
+<li>rdx：传递第3个参数到函数</li>
+<li>rdi：传递第1个参数到函数</li>
+<li>rsi：传递第2个参数到函数</li>
+<li>rip: 下一个执行指令地址</li>
+</ol>
+<h3 id="参考">参考</h3>
+<ol>
+<li><a href="https://en.wikipedia.org/wiki/Calling_convention#x86">Calling_convention</a></li>
+<li><a href="http://sourceware.org/gdb/news/reversible.html">GDB and Reverse Debugging</a></li>
+<li><a href="http://0xax.blogspot.sg/p/assembly-x8664-programming-for-linux.html">Assembly x86_64 programming for Linux</a></li>
+</ol>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">沉风网事</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+        2016-03-09
+        
+    </span>
+  </p>
+  
+  
+</div>
+<footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/linux/">Linux</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/post/2016-04-17-linux-kernel-crashs/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">Linux内核常见crash原因</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        <a class="next" href="/post/2016-03-05-do-more-than-coding/">
+            <span class="next-text nav-default">代码是核心，但不仅仅是代码</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    (function() {
+      
+      
+      if (window.location.hostname === 'localhost') return;
+
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      var disqus_shortname = 'ipds-top';
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+  
+
+  
+    <script src="https://utteranc.es/client.js"
+            repo="myself659/myself659/ipds-public"
+            issue-term="pathname"
+            theme="github-light"
+            crossorigin="anonymous"
+            async>
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://github.com/utterance">comments powered by utterances.</a></noscript>
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/8.3.1/mermaid.min.js"></script>
+<div class="social-links">
+      <a href="mailto:myself659@163.com" class="iconfont icon-email" title="email"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-stack-overflow" title="stack-overflow"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-twitter" title="twitter"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-facebook" title="facebook"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-linkedin" title="linkedin"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-google" title="google"></a>
+      <a href="https://github.com/myself659" class="iconfont icon-github" title="github"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-weibo" title="weibo"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-zhihu" title="zhihu"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-douban" title="douban"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-pocket" title="pocket"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-tumblr" title="tumblr"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-instagram" title="instagram"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-gitlab" title="gitlab"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-bilibili" title="bilibili"></a>
+  <a href="http://myself659.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/myself659/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2017 - 
+    2020
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">沉风网事</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+
+
+
+<script type="text/javascript" src="/js/main.min.d7b7ada643c9c1a983026e177f141f7363b4640d619caf01d8831a6718cd44ea.js"></script>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-144475213-1', 'auto');
+	ga('set', 'anonymizeIp', true);
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Linux性能优化杂谈 - 沉风网事</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="沉风网事" /><meta name="description" content="少资源 高吞吐 低延迟 在具体网络转发性能优化过程中对性能优化有以下几点体会与总结： 软硬结合 软件灵活，硬件高效，软硬结合就像双剑合壁，威力巨大；具" /><meta name="keywords" content="沉风网事, 沉风, 区块链" />
+
+
+<meta name="baidu-site-verification" content="9LmlOuIblt" />
+
+
+
+<meta name="generator" content="Hugo 0.68.3 with theme even" />
+
+
+<link rel="canonical" href="http://myself659.github.io/post/2015-05-24-linux-perf-thought/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.8c3cbcb0324c2bb4875ceccba4007cbad4b4ac8377f33af9953c3e7684534a50.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="Linux性能优化杂谈" />
+<meta property="og:description" content="少资源 高吞吐 低延迟 在具体网络转发性能优化过程中对性能优化有以下几点体会与总结： 软硬结合 软件灵活，硬件高效，软硬结合就像双剑合壁，威力巨大；具" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://myself659.github.io/post/2015-05-24-linux-perf-thought/" />
+<meta property="article:published_time" content="2015-05-24T11:58:06+02:00" />
+<meta property="article:modified_time" content="2015-05-24T11:58:06+02:00" />
+<meta itemprop="name" content="Linux性能优化杂谈">
+<meta itemprop="description" content="少资源 高吞吐 低延迟 在具体网络转发性能优化过程中对性能优化有以下几点体会与总结： 软硬结合 软件灵活，硬件高效，软硬结合就像双剑合壁，威力巨大；具">
+<meta itemprop="datePublished" content="2015-05-24T11:58:06&#43;02:00" />
+<meta itemprop="dateModified" content="2015-05-24T11:58:06&#43;02:00" />
+<meta itemprop="wordCount" content="1302">
+
+
+
+<meta itemprop="keywords" content="Linux," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Linux性能优化杂谈"/>
+<meta name="twitter:description" content="少资源 高吞吐 低延迟 在具体网络转发性能优化过程中对性能优化有以下几点体会与总结： 软硬结合 软件灵活，硬件高效，软硬结合就像双剑合壁，威力巨大；具"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">沉风</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a><a href="/post/leetcode/">
+        <li class="mobile-menu-item">LeetCode</li>
+      </a><a href="/post/read-post/">
+        <li class="mobile-menu-item">Read</li>
+      </a><a href="/post/share-post/">
+        <li class="mobile-menu-item">Share</li>
+      </a><a href="/post/slide-post/">
+        <li class="mobile-menu-item">Slide</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">沉风</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/leetcode/">LeetCode</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/read-post/">Read</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/share-post/">Share</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/slide-post/">Slide</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">Linux性能优化杂谈</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2015-05-24 </span>
+        <div class="post-category">
+            <a href="/categories/linux/"> Linux </a>
+            </div>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#软硬结合">软硬结合</a></li>
+        <li><a href="#分离与分解">分离与分解</a></li>
+        <li><a href="#针对性优化">针对性优化</a></li>
+        <li><a href="#快慢结合先慢后快">快慢结合，先慢后快</a></li>
+        <li><a href="#缓存">缓存</a></li>
+        <li><a href="#do-more-with-less">do more with less</a></li>
+        <li><a href="#预处理">预处理</a></li>
+        <li><a href="#二八原则">二八原则</a></li>
+        <li><a href="#无profile不优化">无profile，不优化</a></li>
+        <li><a href="#避免过度优化">避免过度优化</a></li>
+        <li><a href="#减少状态的改变">减少状态的改变</a></li>
+        <li><a href="#避免代码的黑盒">避免代码的黑盒</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <!-- raw HTML omitted -->
+<ul>
+<li>少资源</li>
+<li>高吞吐</li>
+<li>低延迟</li>
+</ul>
+<p>在具体网络转发性能优化过程中对性能优化有以下几点体会与总结：</p>
+<h3 id="软硬结合">软硬结合</h3>
+<p>软件灵活，硬件高效，软硬结合就像双剑合壁，威力巨大；具体在网络设备中交换机就是一个很好的例子：通常由CPU完成协议的处理，下发转发表项到芯片，由芯片完成报文的转发，在这种思路下才会cisco，H3C，Huawei的大容量的交换机；如果完全交给CPU来处理成本很高，而且在现有技术下很难完成那么大的交换容量（1T以上）。在这种情况对于软件上来说基本不需要优化，本文后面的优化是针对软转的优化；</p>
+<h3 id="分离与分解">分离与分解</h3>
+<p>控制与转发分离 由控制平面维护转发表项，转发平面根据表项完成转发</p>
+<h3 id="针对性优化">针对性优化</h3>
+<p>性能优化一定要指定优化场景，例如对于收包优化针对不同的接入方式，不同报文类型；</p>
+<h3 id="快慢结合先慢后快">快慢结合，先慢后快</h3>
+<p>对于交换机与路由机这种网络转发设备，通过首包建流，后续报文匹配流实现快慢结合提高报文转发效率；</p>
+<h3 id="缓存">缓存</h3>
+<p>缓存大法好，在现在各种系统与应用中缓存无处不在，硬件上看，有硬盘缓存，RAID卡缓存，存储缓存，主存，NUMA特性，CPU cache；软件架构上看，有全局数据缓存，私有数据缓存，连接池，应用服务器缓存，WEB服务器缓存，CDN缓存，客户端文件缓存，客户端内存缓存等等。</p>
+<h3 id="do-more-with-less">do more with less</h3>
+<p>性能优化大体就是开源与节流，do more with less需要考虑如何提高cpu，存储，网络的利用效率</p>
+<h3 id="预处理">预处理</h3>
+<p>兵马未动粮草先行 例如在报文发送针对不同流准备相应的链路层头，避免发送报文再逐字段填充，作到一次性完成报文贴头处理；其实很多应用系统的线程池，内存池，连接池等也是类似思想</p>
+<h3 id="二八原则">二八原则</h3>
+<p>主要体现如下:</p>
+<ol>
+<li>对于优化的代码，集中精力优化是关键20%的代码</li>
+<li>在具体的系统性能优化过程刚开始投入20%可以使取得整个优化成果的80%，而最后的20%需要花费80%的时间来完成，而且涉及的挑战会更多，更有难度，所以优化过程越到后面越难，需要良好的心态与意志</li>
+</ol>
+<h3 id="无profile不优化">无profile，不优化</h3>
+<p>If you can&rsquo;t measure it, you can&rsquo;t improve it。若无度量，则无提高。优化一定要有一套profile方法，profile以下几个方面的作用：</p>
+<ol>
+<li>profile建立一个性能基线，有利于优化过程中比较与参考</li>
+<li>profile查找系统的瓶颈，在一个大型的系统查找到性能瓶颈是一件很有挑战的事情,通过profile有利于快速定位瓶颈</li>
+<li>profile评估优化结果，对每一个优化点有一个数字化清晰的记录</li>
+<li>profile指导优化的方向</li>
+</ol>
+<h3 id="避免过度优化">避免过度优化</h3>
+<p>在性能优化过程中切忌一味追求性能，忽略了业务，没有关注优化对系统带来的哪些不好影响，例如：</p>
+<ol>
+<li>优化使系统变得更复杂，不利于维护</li>
+<li>优化影响了其他业务</li>
+<li>优化忽略了业务功能（功能正确性，功能可扩展性等等）</li>
+<li>优化只是特定环境下数据提升并不适用具体应用</li>
+</ol>
+<h3 id="减少状态的改变">减少状态的改变</h3>
+<p>在报文处理与协议处理过程中设计更精简的状态机，避免过多的状态变化处理的开销。</p>
+<h3 id="避免代码的黑盒">避免代码的黑盒</h3>
+<p>避免代码的黑盒，主要有下面几点：</p>
+<p>1.优化过程忽略部分代码，导致这一部分代码未能出现优化对象中</p>
+<p>2.虽然考虑了所有该关注的代码，但是没有理解代码，特别这一部分代码涉及跨团队，个人经验：这一部分代码需要重点关注，往往有意想不到的收获</p>
+<p>总之，性能优化需要充分理解业务，根据数据，实现硬件，系统，业务三者最佳协同。</p>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">沉风网事</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+        2015-05-24
+        
+    </span>
+  </p>
+  
+  
+</div>
+<footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/linux/">Linux</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/post/2015-05-24-c-codereivew/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">C语言代码 review的总结</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        <a class="next" href="/post/2015-05-24-linux-perf-droppacket/">
+            <span class="next-text nav-default">一个linux网络丢包问题分析</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    (function() {
+      
+      
+      if (window.location.hostname === 'localhost') return;
+
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      var disqus_shortname = 'ipds-top';
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+  
+
+  
+    <script src="https://utteranc.es/client.js"
+            repo="myself659/myself659/ipds-public"
+            issue-term="pathname"
+            theme="github-light"
+            crossorigin="anonymous"
+            async>
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://github.com/utterance">comments powered by utterances.</a></noscript>
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/8.3.1/mermaid.min.js"></script>
+<div class="social-links">
+      <a href="mailto:myself659@163.com" class="iconfont icon-email" title="email"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-stack-overflow" title="stack-overflow"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-twitter" title="twitter"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-facebook" title="facebook"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-linkedin" title="linkedin"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-google" title="google"></a>
+      <a href="https://github.com/myself659" class="iconfont icon-github" title="github"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-weibo" title="weibo"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-zhihu" title="zhihu"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-douban" title="douban"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-pocket" title="pocket"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-tumblr" title="tumblr"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-instagram" title="instagram"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-gitlab" title="gitlab"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-bilibili" title="bilibili"></a>
+  <a href="http://myself659.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/myself659/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2017 - 
+    2020
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">沉风网事</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+
+
+
+<script type="text/javascript" src="/js/main.min.d7b7ada643c9c1a983026e177f141f7363b4640d619caf01d8831a6718cd44ea.js"></script>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-144475213-1', 'auto');
+	ga('set', 'anonymizeIp', true);
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+
+
+
+
+</body>
+</html>

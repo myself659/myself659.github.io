@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>代码是核心，但不仅仅是代码 - 沉风网事</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="沉风网事" /><meta name="description" content="其实以前也有类似的想法，但是决定写这篇文章是由下面一件事情引起的。 引子 同事自已造轮子要实现一个rtmp协议，在调试过程由于有一个问题有没有解" /><meta name="keywords" content="沉风网事, 沉风, 区块链" />
+
+
+<meta name="baidu-site-verification" content="9LmlOuIblt" />
+
+
+
+<meta name="generator" content="Hugo 0.68.3 with theme even" />
+
+
+<link rel="canonical" href="http://myself659.github.io/post/2016-03-05-do-more-than-coding/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.8c3cbcb0324c2bb4875ceccba4007cbad4b4ac8377f33af9953c3e7684534a50.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="代码是核心，但不仅仅是代码" />
+<meta property="og:description" content="其实以前也有类似的想法，但是决定写这篇文章是由下面一件事情引起的。 引子 同事自已造轮子要实现一个rtmp协议，在调试过程由于有一个问题有没有解" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://myself659.github.io/post/2016-03-05-do-more-than-coding/" />
+<meta property="article:published_time" content="2016-03-05T11:58:06+02:00" />
+<meta property="article:modified_time" content="2016-03-05T11:58:06+02:00" />
+<meta itemprop="name" content="代码是核心，但不仅仅是代码">
+<meta itemprop="description" content="其实以前也有类似的想法，但是决定写这篇文章是由下面一件事情引起的。 引子 同事自已造轮子要实现一个rtmp协议，在调试过程由于有一个问题有没有解">
+<meta itemprop="datePublished" content="2016-03-05T11:58:06&#43;02:00" />
+<meta itemprop="dateModified" content="2016-03-05T11:58:06&#43;02:00" />
+<meta itemprop="wordCount" content="1296">
+
+
+
+<meta itemprop="keywords" content="闲谈乱扯," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="代码是核心，但不仅仅是代码"/>
+<meta name="twitter:description" content="其实以前也有类似的想法，但是决定写这篇文章是由下面一件事情引起的。 引子 同事自已造轮子要实现一个rtmp协议，在调试过程由于有一个问题有没有解"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">沉风</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a><a href="/post/leetcode/">
+        <li class="mobile-menu-item">LeetCode</li>
+      </a><a href="/post/read-post/">
+        <li class="mobile-menu-item">Read</li>
+      </a><a href="/post/share-post/">
+        <li class="mobile-menu-item">Share</li>
+      </a><a href="/post/slide-post/">
+        <li class="mobile-menu-item">Slide</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">沉风</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/leetcode/">LeetCode</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/read-post/">Read</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/share-post/">Share</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/slide-post/">Slide</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">代码是核心，但不仅仅是代码</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2016-03-05 </span>
+        <div class="post-category">
+            <a href="/categories/%E9%97%B2%E8%B0%88%E4%B9%B1%E6%89%AF/"> 闲谈乱扯 </a>
+            </div>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#引子">引子</a></li>
+        <li><a href="#反思">反思</a></li>
+        <li><a href="#后记">后记</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <p>其实以前也有类似的想法，但是决定写这篇文章是由下面一件事情引起的。</p>
+<h3 id="引子">引子</h3>
+<p>同事自已造轮子要实现一个rtmp协议，在调试过程由于有一个问题有没有解决，影响团队的联调，对于他造主动造轮子，我是不支持的。重复实现一个完整的rtmp协议，会走很多坑的，需要花费较多的时间，而开源的librtmp已经实现完整的rtmp协议功能，我决定将librtmp协议移植到现在系统。</p>
+<p>接着就自己开始干，了解librtmp实现，动手写一个利用librtmp支持epoll的rtmpserver。
+在调试过程出现rtmp握手失败的问题，初看定位无果的情况下，我修改了makefile，生成调试的符号表，同时打开调试开关。这些弄好之后，试了一下，没有我期待的符号表与调试信息。</p>
+<p>于是我怀疑自己对makefile是否正确。重新学习makefile与编译的一些知识还是无果，觉得makefile修改是正确的。这时候灵光一现，看看进程加载的是哪些lib</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">(gdb) info sharedlibrary 
+From                To                  Syms Read   Shared Object Library
+0x0000003a74600b00  0x0000003a746198db  Yes (*)     /lib64/ld-linux-x86-64.so.2
+0x00007ffff7dd57e0  0x00007ffff7de4358  Yes (*)     /usr/local/lib/librtmp.so.1  #加载的librtmp库
+0x0000003c39a18340  0x0000003c39a53558  Yes (*)     /usr/lib64/libssl.so.10
+0x0000003c39669cc0  0x0000003c3975dbe8  Yes (*)     /usr/lib64/libcrypto.so.10
+0x0000003a76602120  0x0000003a7660d3a8  Yes (*)     /lib64/libz.so.1
+0x0000003a74a1ea20  0x0000003a74b3f76c  Yes (*)     /lib64/libc.so.6
+0x0000003a8260ac30  0x0000003a82638728  Yes (*)     /lib64/libgssapi_krb5.so.2
+0x0000003a8161b430  0x0000003a81694a78  Yes (*)     /lib64/libkrb5.so.3
+0x0000003a806013f0  0x0000003a80601fc8  Yes (*)     /lib64/libcom_err.so.2
+0x0000003a812043d0  0x0000003a8121d5a8  Yes (*)     /lib64/libk5crypto.so.3
+0x0000003a74e00de0  0x0000003a74e01998  Yes (*)     /lib64/libdl.so.2
+0x0000003a80a02a40  0x0000003a80a080c8  Yes (*)     /lib64/libkrb5support.so.0
+0x0000003a80e00bf0  0x0000003a80e011d8  Yes (*)     /lib64/libkeyutils.so.1
+0x0000003a76a03930  0x0000003a76a12938  Yes (*)     /lib64/libresolv.so.2
+0x0000003a75205660  0x0000003a75210eb8  Yes (*)     /lib64/libpthread.so.0
+0x0000003a76205850  0x0000003a76215cc8  Yes (*)     /lib64/libselinux.so.1
+(*): Shared library is missing debugging information.
+(gdb)
+</code></pre></td></tr></table>
+</div>
+</div><p>看到上面的一幕，犯了这样的错误：改对了代码，却没有更新lib</p>
+<h3 id="反思">反思</h3>
+<p>在现实的开发过程中常常碰到下面的情行：</p>
+<p>场景1：
+“我修改了代码，代码也改好，怎么还是这样的？”</p>
+<p>场景2：
+“在我的环境下，测试ok，怎么在你的环境就不行了呢？”</p>
+<p>场景3：
+“前几天运行都ok的，怎么现在不对了？”</p>
+<p>场景4：
+“以前上线都没事，这次同样的操作却没有成功”</p>
+<p>场景5：
+&ldquo;原来从业务角度出发，可以设计，确实不要那么麻烦&rdquo;</p>
+<p>以上这些问题，很大一部分因素我们只考虑到代码本身而已，还没有考虑代码的深层次问题，也没有考虑代码与业务的关联，在实际系统中很多问题一部分原因也是因为深层上没有了解代码的本质或者没有吃透业务对代码的要求。</p>
+<p>代码是核心，但不仅仅是代码，还有下面几个方面需要考虑：</p>
+<ol>
+<li>代码的本质</li>
+<li>测试验证</li>
+<li>系统设计</li>
+<li>业务需求</li>
+<li>部署需求</li>
+<li>监控需求</li>
+<li>升级问题</li>
+<li>团队合作</li>
+<li>安全问题</li>
+</ol>
+<p>对此，个人大胆划分四个层次：</p>
+<ol>
+<li>
+<p>码农，以码为主，停留在代码上，关注代码与算法（如果有足够的天赋研究像人工智能这样的顶级算法，请继续深入研究）</p>
+</li>
+<li>
+<p>工程师，以解决具体业务为主，代码作为业务的实现，关注的业务与需求，能够实现技术持续性满足小范围内的业务需求</p>
+</li>
+<li>
+<p>架构师，考虑上述各个方面，从需求，设计，实现，部署，演进等各个阶段满足具体一个产品的技术需求，除此之外，主动思考技术对业务的发展的支撑</p>
+</li>
+<li>
+<p>技术总监，CXO，创始人，这一层次就不YY了</p>
+</li>
+</ol>
+<h3 id="后记">后记</h3>
+<p>需要强调的一点：作为程序员写好代码是第一要务，本文强调写好代码的基础上，要从深度与广度角度思考代码与审视代码，这样让自己不停留在代码层面，让自己不仅能技术上取得进步，更能让技术上的进步转化为业务上的价值</p>
+<p>自己接下来的重点，除了继续提高自已技术能力，另一个重点加强对业务的学习与研究，用技术更快，更好地满足业务需求</p>
+<p>(PS：起了标题，希望后面能够有更深的感悟，写得更具体一些)</p>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">沉风网事</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+        2016-03-05
+        
+    </span>
+  </p>
+  
+  
+</div>
+<footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/%E9%97%B2%E8%B0%88%E4%B9%B1%E6%89%AF/">闲谈乱扯</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/post/2016-03-09-x86-64-call-stack/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">Linux x86-64 函数调用栈实例分析</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        <a class="next" href="/post/2016-01-28-docker-cmd-pratice/">
+            <span class="next-text nav-default">docker image命令实践</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    (function() {
+      
+      
+      if (window.location.hostname === 'localhost') return;
+
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      var disqus_shortname = 'ipds-top';
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+  
+
+  
+    <script src="https://utteranc.es/client.js"
+            repo="myself659/myself659/ipds-public"
+            issue-term="pathname"
+            theme="github-light"
+            crossorigin="anonymous"
+            async>
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://github.com/utterance">comments powered by utterances.</a></noscript>
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/8.3.1/mermaid.min.js"></script>
+<div class="social-links">
+      <a href="mailto:myself659@163.com" class="iconfont icon-email" title="email"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-stack-overflow" title="stack-overflow"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-twitter" title="twitter"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-facebook" title="facebook"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-linkedin" title="linkedin"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-google" title="google"></a>
+      <a href="https://github.com/myself659" class="iconfont icon-github" title="github"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-weibo" title="weibo"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-zhihu" title="zhihu"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-douban" title="douban"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-pocket" title="pocket"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-tumblr" title="tumblr"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-instagram" title="instagram"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-gitlab" title="gitlab"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-bilibili" title="bilibili"></a>
+  <a href="http://myself659.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/myself659/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2017 - 
+    2020
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">沉风网事</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+
+
+
+<script type="text/javascript" src="/js/main.min.d7b7ada643c9c1a983026e177f141f7363b4640d619caf01d8831a6718cd44ea.js"></script>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-144475213-1', 'auto');
+	ga('set', 'anonymizeIp', true);
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+
+
+
+
+</body>
+</html>

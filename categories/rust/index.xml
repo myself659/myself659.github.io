@@ -1,28 +1,33 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Rust on 沉风网事</title>
-    <link>https://myself659.github.io/categories/rust/</link>
+    <link>http://myself659.github.io/categories/rust/</link>
     <description>Recent content in Rust on 沉风网事</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sun, 11 Aug 2019 11:58:06 +0200</lastBuildDate>
+    <copyright>沉风网事</copyright>
+    <lastBuildDate>Wed, 08 Jul 2020 11:58:06 +0200</lastBuildDate>
     
-	<atom:link href="https://myself659.github.io/categories/rust/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://myself659.github.io/categories/rust/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>mermaid demo</title>
+      <link>http://myself659.github.io/post/mermaid-demo/</link>
+      <pubDate>Wed, 08 Jul 2020 11:58:06 +0200</pubDate>
+      
+      <guid>http://myself659.github.io/post/mermaid-demo/</guid>
+      <description>TD sequenceDiagram participant Alice participant Bob Alice-John: Hello John, how are you? loop Healthcheck John-John: Fight against hypochondria end Note right of John: Rational thoughts prevail... John--Alice: Great! John-Bob: How about you? Bob--John: Jolly good! 欢迎关注 欢迎关注微信公众帐号：沉风网事(savewind)</description>
+    </item>
+    
+    <item>
       <title>Rust crate加速</title>
-      <link>https://myself659.github.io/2019/08/11/rust-crate-speedup/</link>
+      <link>http://myself659.github.io/post/rust-crate-speedup/</link>
       <pubDate>Sun, 11 Aug 2019 11:58:06 +0200</pubDate>
       
-      <guid>https://myself659.github.io/2019/08/11/rust-crate-speedup/</guid>
-      <description>由于墙的原因，导致cargo build，cargo run都会出现概率性失败，并且整个过程十分缓慢。
-下面是解决方案：
-方案1 在 ~/.cargo/config文件（如果没有创建一个）下添加如下内容：
-[source.crates-io] replace-with = &amp;quot;rustcc&amp;quot; [source.rustcc] registry = &amp;quot;https://code.aliyun.com/rustcc/crates.io-index.git&amp;quot;  方案1现在还是实验阶段，充满变数与不确定性。不适用于CI/CD。
-方案2 在阿里云，aws上申请一个香港地区云主机，将build工作交给云主机
-欢迎关注 欢迎关注微信公众帐号：沉风网事(savewind)</description>
+      <guid>http://myself659.github.io/post/rust-crate-speedup/</guid>
+      <description>由于墙的原因，导致cargo build，cargo run都会出现概率性失败，并且整个过程十分缓慢。 下面是解决方案： 方案1 在 ~/.cargo/</description>
     </item>
     
   </channel>

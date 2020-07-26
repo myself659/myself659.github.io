@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>USDT背后的技术原理 - 沉风网事</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="沉风网事" /><meta name="description" content="OP_RETURN 在进入正题前，我们需要了解比特币脚本OP_RETURN。 OP_RETURN是比特币0.9版本引入支持一种新的操作符，目的是允许开发者在交易" /><meta name="keywords" content="沉风网事, 沉风, 区块链" />
+
+
+<meta name="baidu-site-verification" content="9LmlOuIblt" />
+
+
+
+<meta name="generator" content="Hugo 0.68.3 with theme even" />
+
+
+<link rel="canonical" href="http://myself659.github.io/post/usdt%E6%8A%80%E6%9C%AF%E5%8E%9F%E7%90%86/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.8c3cbcb0324c2bb4875ceccba4007cbad4b4ac8377f33af9953c3e7684534a50.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="USDT背后的技术原理" />
+<meta property="og:description" content="OP_RETURN 在进入正题前，我们需要了解比特币脚本OP_RETURN。 OP_RETURN是比特币0.9版本引入支持一种新的操作符，目的是允许开发者在交易" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://myself659.github.io/post/usdt%E6%8A%80%E6%9C%AF%E5%8E%9F%E7%90%86/" />
+<meta property="article:published_time" content="2018-02-22T11:58:06+02:00" />
+<meta property="article:modified_time" content="2018-02-22T11:58:06+02:00" />
+<meta itemprop="name" content="USDT背后的技术原理">
+<meta itemprop="description" content="OP_RETURN 在进入正题前，我们需要了解比特币脚本OP_RETURN。 OP_RETURN是比特币0.9版本引入支持一种新的操作符，目的是允许开发者在交易">
+<meta itemprop="datePublished" content="2018-02-22T11:58:06&#43;02:00" />
+<meta itemprop="dateModified" content="2018-02-22T11:58:06&#43;02:00" />
+<meta itemprop="wordCount" content="1149">
+
+
+
+<meta itemprop="keywords" content="BlockChain," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="USDT背后的技术原理"/>
+<meta name="twitter:description" content="OP_RETURN 在进入正题前，我们需要了解比特币脚本OP_RETURN。 OP_RETURN是比特币0.9版本引入支持一种新的操作符，目的是允许开发者在交易"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">沉风</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a><a href="/post/leetcode/">
+        <li class="mobile-menu-item">LeetCode</li>
+      </a><a href="/post/read-post/">
+        <li class="mobile-menu-item">Read</li>
+      </a><a href="/post/share-post/">
+        <li class="mobile-menu-item">Share</li>
+      </a><a href="/post/slide-post/">
+        <li class="mobile-menu-item">Slide</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">沉风</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/leetcode/">LeetCode</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/read-post/">Read</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/share-post/">Share</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/slide-post/">Slide</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">USDT背后的技术原理</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2018-02-22 </span>
+        <div class="post-category">
+            <a href="/categories/blockchain/"> BlockChain </a>
+            </div>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#架构">架构</a></li>
+    <li><a href="#流程">流程</a></li>
+    <li><a href="#交易">交易</a>
+      <ul>
+        <li><a href="#小结">小结</a></li>
+        <li><a href="#参考">参考</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <h1 id="op_return">OP_RETURN</h1>
+<p>在进入正题前，我们需要了解比特币脚本OP_RETURN。</p>
+<p>OP_RETURN是比特币0.9版本引入支持一种新的操作符，目的是允许开发者在交易上输出增加40个字节自定义的非交易数据。更多详细信息参考<a href="https://en.bitcoin.it/wiki/OP_RETURN">OP_RETURN wiki</a></p>
+<h1 id="usdt">USDT</h1>
+<p>USDT又名Tether，通过Tether提供1：1美元兑换服务，为法币与数字货币提供兑换服务。
+国内交易所关闭后，国内玩币的人都知道，这里不过多介绍。</p>
+<h2 id="架构">架构</h2>
+<p><img src="/images/usdt-arch.png" alt="架构图"></p>
+<p>各层介绍如下：</p>
+<p>比特币区块链层，主要实现Tether分布式帐本功能。Tether交易信息通过OP_RETURN保存在比特币的分布式帐本中。</p>
+<p>Omni协议层，Omni协议层主要功能如下：</p>
+<ol>
+<li>创建与销毁USDT</li>
+<li>提供OmniApi</li>
+<li>跟踪Tether流通，通过Omnichest.info提供区块链浏览器功能</li>
+<li>支持用户交易与保存Tether(USDT)</li>
+</ol>
+<p>Tether业务层，Tether业务层主要功能如下：</p>
+<ol>
+<li>法币兑换Tether(USDT)</li>
+<li>Tether(USDT)兑换法币</li>
+<li>监管流通中Tether(USDT)</li>
+</ol>
+<h2 id="流程">流程</h2>
+<p><img src="/images/usdt-flow.png" alt="流程图"></p>
+<p>这里与普通交易所的流程类似。法币兑换USDT，发放相应USDT,USDT兑换法币，回收USDT。</p>
+<h2 id="交易">交易</h2>
+<p>具体看一个交易吧。</p>
+<p>先上图：</p>
+<p><img src="/images/usdt-bitcoin-1.png" alt="交易信息-1"></p>
+<p>主要看交易的输入与输出，这里关注点主要在输出，为什么输出有三个呢？
+第一个很容易理解，表示找零
+第二个表示什么呢？表示转帐对方的地址，具体参考<a href="https://github.com/OmniLayer/omnicore/wiki/Why-do-I-need-bitcoin-to-create-Omni-transactions%3F">wiki</a>
+第三个OP_RETURN用于存储Tether部分转帐信息</p>
+<p><img src="/images/usdt-bitcoin-1.png" alt="交易信息-2"></p>
+<p>图中的0x155十六进对应十进制341，在染色币的体系中对应类型表示Tether，具体参考<a href="https://www.omniwallet.org/explorer/assets">染色币列表</a>。
+转帐的数量在哪里体现呢？转帐数字为000002ba7def3000，占用8个字节。对应十进制数字结果为：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">&gt;&gt;&gt; int(&#39;0x000002ba7def3000&#39;,16)
+3000000000000L
+</code></pre></td></tr></table>
+</div>
+</div><p><img src="/images/usdt-bitcoin-3.png" alt="交易信息-3">
+图中显示的Tether的交易的信息，这些交易信息来自比特币交易信息。</p>
+<p>omni封装OP_RETURN信息代码如下：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">UniValue omni_createpayload_simplesend(const UniValue&amp; params, bool fHelp)
+{
+   if (fHelp || params.size() != 2)
+        throw runtime_error(
+            &#34;omni_createpayload_simplesend propertyid \&#34;amount\&#34;\n&#34;
+
+            &#34;\nCreate the payload for a simple send transaction.\n&#34;
+
+            &#34;\nArguments:\n&#34;
+            &#34;1. propertyid           (number, required) the identifier of the tokens to send\n&#34;
+            &#34;2. amount               (string, required) the amount to send\n&#34;
+
+            &#34;\nResult:\n&#34;
+            &#34;\&#34;payload\&#34;             (string) the hex-encoded payload\n&#34;
+
+            &#34;\nExamples:\n&#34;
+            + HelpExampleCli(&#34;omni_createpayload_simplesend&#34;, &#34;1 \&#34;100.0\&#34;&#34;)
+            + HelpExampleRpc(&#34;omni_createpayload_simplesend&#34;, &#34;1, \&#34;100.0\&#34;&#34;)
+        );
+
+    uint32_t propertyId = ParsePropertyId(params[0]);
+    RequireExistingProperty(propertyId);
+    int64_t amount = ParseAmount(params[1], isPropertyDivisible(propertyId));
+
+    std::vector&lt;unsigned char&gt; payload = CreatePayload_SimpleSend(propertyId, amount);
+
+    return HexStr(payload.begin(), payload.end());
+}
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">std::vector&lt;unsigned char&gt; CreatePayload_SimpleSend(uint32_t propertyId, uint64_t amount)
+{
+    std::vector&lt;unsigned char&gt; payload;
+    uint16_t messageType = 0;
+    uint16_t messageVer = 0;
+    mastercore::swapByteOrder16(messageType);
+    mastercore::swapByteOrder16(messageVer);
+    mastercore::swapByteOrder32(propertyId);
+    mastercore::swapByteOrder64(amount);
+
+    PUSH_BACK_BYTES(payload, messageVer);
+    PUSH_BACK_BYTES(payload, messageType);
+    PUSH_BACK_BYTES(payload, propertyId);
+    PUSH_BACK_BYTES(payload, amount);
+
+    return payload;
+}
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="小结">小结</h3>
+<ol>
+<li>USDT并没有自己的公有链，而是在比特币交易交易中利用比特币OP_RETURN来保存USDT交易信息。</li>
+<li>逻辑上两条链，数据上一条链</li>
+<li>USDT钱包地址与比特币地址等同</li>
+<li>USDT转帐实际上bitcoin转帐（明白了在人民币与美元汇率为6.3情况下，为什么一个USDT的价格7元左右吧）</li>
+</ol>
+<p>（Ps：了解USDT的技术原理，后面会从经济与商业的角度分析一下USDT）</p>
+<h3 id="参考">参考</h3>
+<ol>
+<li><a href="https://coinmarketcap.com/currencies/tether/">tether</a></li>
+<li><a href="http://platform.tether.to/#create-new-transaction">Api</a></li>
+<li><a href="https://tether.to/wp-content/uploads/2016/06/TetherWhitePaper.pdf">TetherWhitePaper</a></li>
+<li><a href="https://github.com/tetherto/omnicore/">omnicore</a></li>
+<li><a href="https://en.bitcoin.it/wiki/OP_RETURN">OP_RETURN</a></li>
+<li><a href="https://www.blocktrail.com/BTC/tx/8d1447abe44d0dd7e0fdeb1cb130d4f15f2a50dde93068dfe07ed7a7331ca530#tx_messages">比特币浏览器</a></li>
+<li><a href="https://omniexplorer.info/lookuptx.aspx?txid=8d1447abe44d0dd7e0fdeb1cb130d4f15f2a50dde93068dfe07ed7a7331ca530">Tether浏览器</a></li>
+<li><a href="http://www.8btc.com/op_return-bitcoin">OP_RETURN是区块链可扩展性的克星</a></li>
+<li><a href="http://www.omnilayer.org/">omnilayer</a></li>
+<li><a href="https://sourcegraph.com/github.com/tetherto/omnicore/-/blob/src/omnicore/rpc.cpp#L1690:26">omni_gettransaction</a></li>
+<li><a href="https://blockchain.info/tx/8d1447abe44d0dd7e0fdeb1cb130d4f15f2a50dde93068dfe07ed7a7331ca530">比特币浏览器</a></li>
+<li><a href="https://sourcegraph.com/github.com/tetherto/omnicore/-/blob/src/omnicore/rpctxobject.cpp#L59:5">populateRPCTransactionObject</a></li>
+<li><a href="https://github.com/OmniLayer/spec/blob/master/AssetIssuanceStandard.md">Proposed Standard for Bitcoin Assets</a></li>
+</ol>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">沉风网事</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+        2018-02-22
+        
+    </span>
+  </p>
+  
+  
+</div>
+<footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/blockchain/">BlockChain</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/post/usdt-faq/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">USDT FAQ</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        <a class="next" href="/post/array-vs-list/">
+            <span class="next-text nav-default">array vs list</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    (function() {
+      
+      
+      if (window.location.hostname === 'localhost') return;
+
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      var disqus_shortname = 'ipds-top';
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+  
+
+  
+    <script src="https://utteranc.es/client.js"
+            repo="myself659/myself659/ipds-public"
+            issue-term="pathname"
+            theme="github-light"
+            crossorigin="anonymous"
+            async>
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://github.com/utterance">comments powered by utterances.</a></noscript>
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/8.3.1/mermaid.min.js"></script>
+<div class="social-links">
+      <a href="mailto:myself659@163.com" class="iconfont icon-email" title="email"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-stack-overflow" title="stack-overflow"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-twitter" title="twitter"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-facebook" title="facebook"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-linkedin" title="linkedin"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-google" title="google"></a>
+      <a href="https://github.com/myself659" class="iconfont icon-github" title="github"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-weibo" title="weibo"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-zhihu" title="zhihu"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-douban" title="douban"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-pocket" title="pocket"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-tumblr" title="tumblr"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-instagram" title="instagram"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-gitlab" title="gitlab"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-bilibili" title="bilibili"></a>
+  <a href="http://myself659.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/myself659/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2017 - 
+    2020
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">沉风网事</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+
+
+
+<script type="text/javascript" src="/js/main.min.d7b7ada643c9c1a983026e177f141f7363b4640d619caf01d8831a6718cd44ea.js"></script>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-144475213-1', 'auto');
+	ga('set', 'anonymizeIp', true);
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+
+
+
+
+</body>
+</html>

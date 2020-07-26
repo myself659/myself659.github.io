@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>谈谈跳出框架思考 - 沉风网事</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="沉风网事" /><meta name="description" content="引子 先看一下这道数学题： 画直线经过下图中九个点，并且做到不重复经过任何一个点。 这里不是出题给大家做，只是引出话题。 下面是这个问题的答案： 这个" /><meta name="keywords" content="沉风网事, 沉风, 区块链" />
+
+
+<meta name="baidu-site-verification" content="9LmlOuIblt" />
+
+
+
+<meta name="generator" content="Hugo 0.68.3 with theme even" />
+
+
+<link rel="canonical" href="http://myself659.github.io/post/think-outof-box/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.8c3cbcb0324c2bb4875ceccba4007cbad4b4ac8377f33af9953c3e7684534a50.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="谈谈跳出框架思考" />
+<meta property="og:description" content="引子 先看一下这道数学题： 画直线经过下图中九个点，并且做到不重复经过任何一个点。 这里不是出题给大家做，只是引出话题。 下面是这个问题的答案： 这个" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://myself659.github.io/post/think-outof-box/" />
+<meta property="article:published_time" content="2020-06-26T11:58:06+02:00" />
+<meta property="article:modified_time" content="2020-06-26T11:58:06+02:00" />
+<meta itemprop="name" content="谈谈跳出框架思考">
+<meta itemprop="description" content="引子 先看一下这道数学题： 画直线经过下图中九个点，并且做到不重复经过任何一个点。 这里不是出题给大家做，只是引出话题。 下面是这个问题的答案： 这个">
+<meta itemprop="datePublished" content="2020-06-26T11:58:06&#43;02:00" />
+<meta itemprop="dateModified" content="2020-06-26T11:58:06&#43;02:00" />
+<meta itemprop="wordCount" content="1579">
+
+
+
+<meta itemprop="keywords" content="成长," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="谈谈跳出框架思考"/>
+<meta name="twitter:description" content="引子 先看一下这道数学题： 画直线经过下图中九个点，并且做到不重复经过任何一个点。 这里不是出题给大家做，只是引出话题。 下面是这个问题的答案： 这个"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">沉风</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a><a href="/post/leetcode/">
+        <li class="mobile-menu-item">LeetCode</li>
+      </a><a href="/post/read-post/">
+        <li class="mobile-menu-item">Read</li>
+      </a><a href="/post/share-post/">
+        <li class="mobile-menu-item">Share</li>
+      </a><a href="/post/slide-post/">
+        <li class="mobile-menu-item">Slide</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">沉风</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/leetcode/">LeetCode</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/read-post/">Read</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/share-post/">Share</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/slide-post/">Slide</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">谈谈跳出框架思考</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2020-06-26 </span>
+        <div class="post-category">
+            <a href="/categories/%E6%88%90%E9%95%BF/"> 成长 </a>
+            </div>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#摆脱限制">摆脱限制</a></li>
+    <li><a href="#广泛阅读与学习并且多尝试与实践">广泛阅读与学习，并且多尝试与实践</a></li>
+    <li><a href="#5w1h替换法">5W1H替换法</a></li>
+    <li><a href="#培养同理心">培养同理心</a></li>
+  </ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <h1 id="引子">引子</h1>
+<p>先看一下这道数学题：</p>
+<p>画直线经过下图中九个点，并且做到不重复经过任何一个点。</p>
+<p><img src="/images/think/9-dot-question.png" alt=""></p>
+<p>这里不是出题给大家做，只是引出话题。</p>
+<p>下面是这个问题的答案：</p>
+<p><img src="/images/think/9-dot-answer.png" alt=""></p>
+<p>这个答案并没有局限在题目中要求9个点，扩大到面的范围，由9个点范围扩大到16个点范围。如果一直在考虑9个点的范围这个题目你是不会找到正确的答案。解题的关键是：think outside of the box。在上面这道题主要打破只有9个点的限制，也就是跳出只有9个点的框框。</p>
+<p>至此，关键话题来了： think outside of the box，这里我将其翻译为跳出框架思考。</p>
+<h1 id="定义">定义</h1>
+<p>跳出框架思考是要尽可能地消除约束，从更多的视角或层次思考，发现更多的选项和方案。</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<p>我们还是具体看几个例子吧。</p>
+<p>作为一名多年的码农，先从技术研发开始吧。跳出框架思考是指研发不要局限于技术，要多关注业务。具体看几个例子：</p>
+<p>实例1：以前看一个科技电影，大概是两个黑客比赛，谁先攻破系统，则对应灯亮作为获胜；其中黑客A紧急投入攻破系统，而黑客B却在电影需要下，轻淡幽闲地装B，带上主角光环的他其实心里早有准备，采用直接攻击灯控系统，降低攻击难度，同时利用规则的漏洞。这里黑客B看到规则里另一种含义：谁的灯先亮，谁就获胜，跳出一般人理解先攻破系统，再亮灯的习惯性思维。</p>
+<p>实例2：早期的阿里云CDN系统需要定位ip地址的地理位置，阿里云的工程师想到根据淘宝用户的收货地址来定位地理位置。</p>
+<p>实例3：互联网安全方面：如果微信账号被盗，可以通过社交关系找回；淘宝帐号找回，需要通过最近购物的测试；这些都是从多个维度确认帐号对应是用户是原来的用户，而不是仅仅通过密码和手机还确认用户。</p>
+<p>实例3：互联网安全方面：如果微信账号被盗，可以通过社交关系找回；淘宝帐号找回，需要通过最近购物的测试；这些都是从多个维度确认帐号对应是用户是原来的用户，而不是仅仅通过密码和手机还确认用户。</p>
+<p>在工作方面，跳出框架思考要点之一就是员工要跳出员工的视角，学会站在老板或者上级的角度来思考问题。这里分享一个职场的技巧：</p>
+<blockquote>
+<p>在任何领域，众所周知，要让老板支持你的想法，最容易的方法就是让他认为这个想法是他的。 ​​​​</p>
+</blockquote>
+<p>在交易领域，对冲基金的操作手法也体现了跳出框架思考，如跨市场交易，跨地区交易。</p>
+<p>下面这个例子让我是佩服不已。
+<img src="/images/think/smart-fire.png" alt=""></p>
+<p>从上面例子可知，tk教主的朋友跳出员工与公司的二元框架，在二元框架下一般只有三种选项：</p>
+<ol>
+<li>不作处理，等其主动离职（水货一般都是没有水平，要想让他主动离开时间长，概率小）</li>
+<li>逼他主动离职（需要爽手段，双方关系可能弄僵）</li>
+<li>通过赔偿主动解雇（需要花钱）</li>
+</ol>
+<p>tk教主的朋友从员工，公司，人才市场的三元框架下思考，通过上面的方法，达到不止双赢，而是三赢：</p>
+<ol>
+<li>公司摆脱了水货，并且将水货送到竞争对手的公司，去祸害竞争对手，算是打击了竞争对手</li>
+<li>水货员工得到加薪</li>
+<li>猎头成交一笔大单，获得丰厚的报酬</li>
+</ol>
+<p>跳出框架思考是如此充满威力，那如何培养自己的跳出框架思考的能力呢？</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<h1 id="如何培养跳出框架思考的能力">如何培养跳出框架思考的能力</h1>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<h2 id="摆脱限制">摆脱限制</h2>
+<p>跳出框架思考最重要的一步是摆脱限制，在思考方面不要给自己设限。</p>
+<h2 id="广泛阅读与学习并且多尝试与实践">广泛阅读与学习，并且多尝试与实践</h2>
+<p>平时要广泛阅读与学习，扩大信息源，广泛涉猎各个领域的知识，以技术领域为例，比特币技术综合了P2P技术，PoW共识，密码学，区块链等多种技术，同时结合经济学的知识，将数字货币与计算机技术紧密地结合在一起。</p>
+<h2 id="5w1h替换法">5W1H替换法</h2>
+<p>从原因（何因Why）、对象（何事What）、地点（何地Where）、时间（何时When）、人员（何人Who）、方法（何法How）等六个方面提出问题进行思考，在此基础上对这6个要素进行替换，并尝试找到更多的替换选项。</p>
+<h2 id="培养同理心">培养同理心</h2>
+<p>同理心能够让我们站在他人的角度来思考，有利于提供更多的视角。很多时候，我们不能跳出框架，是因为我们缺少视角。</p>
+<h1 id="后记">后记</h1>
+<p>”不识庐山真面目，只缘身在此山中“。
+”当局者迷，旁观者清“。
+学会跳出框架思考，会给我们带来更多的视角，看见不同的世界，提高我们的视野与格局。
+<img src="/images/think/lushang.png" alt=""></p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<blockquote>
+</blockquote>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">沉风网事</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+        2020-06-26
+        
+    </span>
+  </p>
+  
+  
+</div>
+<footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/%E6%88%90%E9%95%BF/">成长</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/post/mermaid-demo/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">mermaid demo</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        <a class="next" href="/post/cryptocurrency_antifrangible/">
+            <span class="next-text nav-default">谈谈数字货币的反脆弱性</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    (function() {
+      
+      
+      if (window.location.hostname === 'localhost') return;
+
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      var disqus_shortname = 'ipds-top';
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+  
+
+  
+    <script src="https://utteranc.es/client.js"
+            repo="myself659/myself659/ipds-public"
+            issue-term="pathname"
+            theme="github-light"
+            crossorigin="anonymous"
+            async>
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://github.com/utterance">comments powered by utterances.</a></noscript>
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/8.3.1/mermaid.min.js"></script>
+<div class="social-links">
+      <a href="mailto:myself659@163.com" class="iconfont icon-email" title="email"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-stack-overflow" title="stack-overflow"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-twitter" title="twitter"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-facebook" title="facebook"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-linkedin" title="linkedin"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-google" title="google"></a>
+      <a href="https://github.com/myself659" class="iconfont icon-github" title="github"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-weibo" title="weibo"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-zhihu" title="zhihu"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-douban" title="douban"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-pocket" title="pocket"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-tumblr" title="tumblr"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-instagram" title="instagram"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-gitlab" title="gitlab"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-bilibili" title="bilibili"></a>
+  <a href="http://myself659.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/myself659/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2017 - 
+    2020
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">沉风网事</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+
+
+
+<script type="text/javascript" src="/js/main.min.d7b7ada643c9c1a983026e177f141f7363b4640d619caf01d8831a6718cd44ea.js"></script>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-144475213-1', 'auto');
+	ga('set', 'anonymizeIp', true);
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+
+
+
+
+</body>
+</html>

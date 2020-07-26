@@ -1,27 +1,24 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Nginx on 沉风网事</title>
-    <link>https://myself659.github.io/categories/nginx/</link>
-    <description>Recent content in Nginx on 沉风网事</description>
+    <title>nginx on 沉风网事</title>
+    <link>http://myself659.github.io/categories/nginx/</link>
+    <description>Recent content in nginx on 沉风网事</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
+    <copyright>沉风网事</copyright>
     <lastBuildDate>Sat, 08 Aug 2015 11:58:06 +0200</lastBuildDate>
     
-	<atom:link href="https://myself659.github.io/categories/nginx/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://myself659.github.io/categories/nginx/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>nginx实践-添加自定义模块hello</title>
-      <link>https://myself659.github.io/2015/08/08/2015-08-08-nginx-pratice-1-add-hello-module/</link>
+      <link>http://myself659.github.io/post/2015-08-08-nginx-pratice-1-add-hello-module/</link>
       <pubDate>Sat, 08 Aug 2015 11:58:06 +0200</pubDate>
       
-      <guid>https://myself659.github.io/2015/08/08/2015-08-08-nginx-pratice-1-add-hello-module/</guid>
-      <description>nginx是一个值得学习与研究的开源代码，写这篇文章主要目的是让自己能够能够从最简单的任务开始，通过写作促进自己一步一步地深入学习与分析nginx。本文是这个系列的第一篇，主要是记录自己实现一个自定义的模块hello的过程。
-1. 下载源码 下载nginx 1.8.0 源代码
-root@localhost github]# wget http://nginx.org/download/nginx-1.8.0.tar.gz root@localhost github]# tar zxf  2. 准备文件与代码 在nginx解压目录下，添加如下文件：
-[root@localhost nginx-1.8.0]# tree | more . |-- **addon** | `-- **hello** | |-- **config** | `-- **ngx_http_hello_module.c** |-- auto | |-- cc | | |-- acc | | |-- bcc  新增文件分析参考nginx-hello
-[root@localhost nginx-1.8.0]# grep -r ngx_addon_name /share/github/nginx-1.8.0 /share/github/nginx-1.8.0/auto/modules: echo &amp;quot; + $ngx_addon_name was configured&amp;quot; /share/github/nginx-1.8.0/addon/hello/config:ngx_addon_name=ngx_http_hello_module [root@localhost nginx-1.8.0]# [root@localhost nginx-1.8.0]# grep -r add-module /share/github/nginx-1.</description>
+      <guid>http://myself659.github.io/post/2015-08-08-nginx-pratice-1-add-hello-module/</guid>
+      <description>nginx是一个值得学习与研究的开源代码，写这篇文章主要目的是让自己能够能够从最简单的任务开始，通过写作促进自己一步一步地深入学习与分析ng</description>
     </item>
     
   </channel>

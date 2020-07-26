@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Golang最工程化的语言 - 沉风网事</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="沉风网事" /><meta name="description" content="Golang是什么语言 PHP是最好的语言。 Haskell最难学的语言。 Golang最工程化的语言。 下面分别从语言层面及软件工程两个方面进行说" /><meta name="keywords" content="沉风网事, 沉风, 区块链" />
+
+
+<meta name="baidu-site-verification" content="9LmlOuIblt" />
+
+
+
+<meta name="generator" content="Hugo 0.68.3 with theme even" />
+
+
+<link rel="canonical" href="http://myself659.github.io/post/golang-eng/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.8c3cbcb0324c2bb4875ceccba4007cbad4b4ac8377f33af9953c3e7684534a50.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="Golang最工程化的语言" />
+<meta property="og:description" content="Golang是什么语言 PHP是最好的语言。 Haskell最难学的语言。 Golang最工程化的语言。 下面分别从语言层面及软件工程两个方面进行说" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://myself659.github.io/post/golang-eng/" />
+<meta property="article:published_time" content="2018-07-03T11:58:06+02:00" />
+<meta property="article:modified_time" content="2018-07-03T11:58:06+02:00" />
+<meta itemprop="name" content="Golang最工程化的语言">
+<meta itemprop="description" content="Golang是什么语言 PHP是最好的语言。 Haskell最难学的语言。 Golang最工程化的语言。 下面分别从语言层面及软件工程两个方面进行说">
+<meta itemprop="datePublished" content="2018-07-03T11:58:06&#43;02:00" />
+<meta itemprop="dateModified" content="2018-07-03T11:58:06&#43;02:00" />
+<meta itemprop="wordCount" content="1100">
+
+
+
+<meta itemprop="keywords" content="Golang," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Golang最工程化的语言"/>
+<meta name="twitter:description" content="Golang是什么语言 PHP是最好的语言。 Haskell最难学的语言。 Golang最工程化的语言。 下面分别从语言层面及软件工程两个方面进行说"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">沉风</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a><a href="/post/leetcode/">
+        <li class="mobile-menu-item">LeetCode</li>
+      </a><a href="/post/read-post/">
+        <li class="mobile-menu-item">Read</li>
+      </a><a href="/post/share-post/">
+        <li class="mobile-menu-item">Share</li>
+      </a><a href="/post/slide-post/">
+        <li class="mobile-menu-item">Slide</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">沉风</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/leetcode/">LeetCode</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/read-post/">Read</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/share-post/">Share</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/slide-post/">Slide</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">Golang最工程化的语言</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2018-07-03 </span>
+        <div class="post-category">
+            <a href="/categories/golang/"> Golang </a>
+            </div>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#安全性">安全性</a></li>
+    <li><a href="#并发与扩展">并发与扩展</a></li>
+    <li><a href="#简单">简单</a></li>
+    <li><a href="#可维护性">可维护性</a></li>
+    <li><a href="#打包一切">打包一切</a></li>
+    <li><a href="#可移植">可移植</a></li>
+    <li><a href="#高效率">高效率</a></li>
+    <li><a href="#生态成长">生态成长</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#流程">流程</a></li>
+    <li><a href="#大规模协作">大规模协作</a></li>
+    <li><a href="#编程友好">编程友好</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#欢迎关注">欢迎关注</a></li>
+  </ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <h1 id="golang是什么语言">Golang是什么语言</h1>
+<p>PHP是最好的语言。</p>
+<p>Haskell最难学的语言。</p>
+<p><strong>Golang最工程化的语言</strong>。</p>
+<p>下面分别从语言层面及软件工程两个方面进行说明。</p>
+<h1 id="语言">语言</h1>
+<h2 id="安全性">安全性</h2>
+<p>相比较于C/C++，golang不支持指针操作，不支持隐式类型转换，支持内存溢出与越界检查。</p>
+<h2 id="并发与扩展">并发与扩展</h2>
+<p>通过goroutine，Golang从语言层面上解决了并发与扩展的问题，而不像C/C++, JAVA通过框架来解决这个问题。Golang自适应多核运行。</p>
+<h2 id="简单">简单</h2>
+<p>语法简单，代码不涉及内存管理，上手容易。新人学习几天就可以上手写代码。</p>
+<h2 id="可维护性">可维护性</h2>
+<p>自带godoc统一代码格式。
+一个文件夹对应一个包有利于代码模块化。</p>
+<h2 id="打包一切">打包一切</h2>
+<p>相比较于C/C++，动态库和静态库的依赖，Golang将所有编译成一个二进制文件。
+解决依赖带来高度耦合问题，这样十分有利于交付与部署。</p>
+<h2 id="可移植">可移植</h2>
+<p>支持多种体系架构与不同的操作系统以及跨平台编译。</p>
+<h2 id="高效率">高效率</h2>
+<p>Golang实现了程序员开发高效率与机器运行高效率两者的有效结合，进而实现经济上高效率。</p>
+<p><img src="/images/golang/perfect-go.jpg" alt="主流语言开发效率与运行效率"></p>
+<p>相比较于C/C++，Golang编译速度更快了。特别是大型项目，以前用C语言的时候，在刀片服务器上时编译一个测试版本都要半个小时左右。</p>
+<h2 id="生态成长">生态成长</h2>
+<p>背靠Google，从09年发布已来，已经在云生态占据绝对主导地位。有不少明星开源项目。如Docker、Kubernetes、Prometheus、Hyperleder、Ethereum、Etcd等。随着云时代不断发展，Golang生态一定会越来越强大与丰富。</p>
+<h1 id="软件工程">软件工程</h1>
+<h2 id="流程">流程</h2>
+<p>一般软件工程流程分为规划、需求、设计、编码、测试、发布、维护等几个阶段。除了规划与需求阶段，Golang对其他阶段在语言层面都有强力特性支持。举例如下：</p>
+<ol>
+<li>设计阶段：利用interface可以进行protype编程，可以实现代码及文档。</li>
+<li>编码阶段：go fmt统一代码格式</li>
+<li>测试阶段：自带go test便于测试，不像C/C++依赖gtest</li>
+<li>发布阶段：上面说到可移植及打包一切，便于交付，发布，部署</li>
+<li>维护阶段：Golang天然支持CPU扩展及其上面所说的便于交付，发布，部署</li>
+</ol>
+<h2 id="大规模协作">大规模协作</h2>
+<p>Golang引入interface特性，实际在语言层面支持SOLID设计原则中依赖倒置原则。再加上包的独立性，有利于大规模系统的大团队协作开发。</p>
+<h2 id="编程友好">编程友好</h2>
+<p>软件工程是人是关键因素。编码是核心阶段。Golang以下特性释放了程序员的生产力：</p>
+<ol>
+<li>还算丰富的基础库</li>
+<li>避免内存管理</li>
+<li>天然支持并发</li>
+</ol>
+<h1 id="后记">后记</h1>
+<p>当然Golang也有自己的缺点，如GC问题，延时大等。但是用一个语言的策略就应该扬长避短，当然熟练应用Golang的特性得深入学习与实践。</p>
+<p>(End)</p>
+<h2 id="欢迎关注">欢迎关注</h2>
+<p>欢迎关注微信公众帐号：沉风网事(savewind)</p>
+<p><img src="/images/cfws.jpg" alt="沉风网事"></p>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">沉风网事</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+        2018-07-03
+        
+    </span>
+  </p>
+  
+  
+</div>
+<footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/golang/">Golang</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/post/ecomony-machine/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">《原则》作者瑞·达利欧烧脑大作(1): 经济机器是怎样运行的</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        <a class="next" href="/post/ipfs%E4%B8%93%E9%A2%98/">
+            <span class="next-text nav-default">IPFS专题</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    (function() {
+      
+      
+      if (window.location.hostname === 'localhost') return;
+
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      var disqus_shortname = 'ipds-top';
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+  
+
+  
+    <script src="https://utteranc.es/client.js"
+            repo="myself659/myself659/ipds-public"
+            issue-term="pathname"
+            theme="github-light"
+            crossorigin="anonymous"
+            async>
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://github.com/utterance">comments powered by utterances.</a></noscript>
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/8.3.1/mermaid.min.js"></script>
+<div class="social-links">
+      <a href="mailto:myself659@163.com" class="iconfont icon-email" title="email"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-stack-overflow" title="stack-overflow"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-twitter" title="twitter"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-facebook" title="facebook"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-linkedin" title="linkedin"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-google" title="google"></a>
+      <a href="https://github.com/myself659" class="iconfont icon-github" title="github"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-weibo" title="weibo"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-zhihu" title="zhihu"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-douban" title="douban"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-pocket" title="pocket"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-tumblr" title="tumblr"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-instagram" title="instagram"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-gitlab" title="gitlab"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-bilibili" title="bilibili"></a>
+  <a href="http://myself659.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/myself659/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2017 - 
+    2020
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">沉风网事</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+
+
+
+<script type="text/javascript" src="/js/main.min.d7b7ada643c9c1a983026e177f141f7363b4640d619caf01d8831a6718cd44ea.js"></script>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-144475213-1', 'auto');
+	ga('set', 'anonymizeIp', true);
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+
+
+
+
+</body>
+</html>

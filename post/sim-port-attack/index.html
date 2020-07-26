@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>人生中最昂贵的教训：SIM卡转移攻击的细节(译文) - 沉风网事</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="沉风网事" /><meta name="description" content="上周三我损失了10万美元。它在24小时的时间内在“SIM转移攻击”中消失，耗尽了我的Coinbase帐户。事件已经过去了四天，我被摧毁了。我" /><meta name="keywords" content="沉风网事, 沉风, 区块链" />
+
+
+<meta name="baidu-site-verification" content="9LmlOuIblt" />
+
+
+
+<meta name="generator" content="Hugo 0.68.3 with theme even" />
+
+
+<link rel="canonical" href="http://myself659.github.io/post/sim-port-attack/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.8c3cbcb0324c2bb4875ceccba4007cbad4b4ac8377f33af9953c3e7684534a50.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="人生中最昂贵的教训：SIM卡转移攻击的细节(译文)" />
+<meta property="og:description" content="上周三我损失了10万美元。它在24小时的时间内在“SIM转移攻击”中消失，耗尽了我的Coinbase帐户。事件已经过去了四天，我被摧毁了。我" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://myself659.github.io/post/sim-port-attack/" />
+<meta property="article:published_time" content="2019-05-30T11:58:06+02:00" />
+<meta property="article:modified_time" content="2019-05-30T11:58:06+02:00" />
+<meta itemprop="name" content="人生中最昂贵的教训：SIM卡转移攻击的细节(译文)">
+<meta itemprop="description" content="上周三我损失了10万美元。它在24小时的时间内在“SIM转移攻击”中消失，耗尽了我的Coinbase帐户。事件已经过去了四天，我被摧毁了。我">
+<meta itemprop="datePublished" content="2019-05-30T11:58:06&#43;02:00" />
+<meta itemprop="dateModified" content="2019-05-30T11:58:06&#43;02:00" />
+<meta itemprop="wordCount" content="2119">
+
+
+
+<meta itemprop="keywords" content="BlockChain,Secure," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="人生中最昂贵的教训：SIM卡转移攻击的细节(译文)"/>
+<meta name="twitter:description" content="上周三我损失了10万美元。它在24小时的时间内在“SIM转移攻击”中消失，耗尽了我的Coinbase帐户。事件已经过去了四天，我被摧毁了。我"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">沉风</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a><a href="/post/leetcode/">
+        <li class="mobile-menu-item">LeetCode</li>
+      </a><a href="/post/read-post/">
+        <li class="mobile-menu-item">Read</li>
+      </a><a href="/post/share-post/">
+        <li class="mobile-menu-item">Share</li>
+      </a><a href="/post/slide-post/">
+        <li class="mobile-menu-item">Slide</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">沉风</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/leetcode/">LeetCode</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/read-post/">Read</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/share-post/">Share</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/slide-post/">Slide</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">人生中最昂贵的教训：SIM卡转移攻击的细节(译文)</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2019-05-30 </span>
+        <div class="post-category">
+            <a href="/categories/blockchain/"> BlockChain </a>
+            </div>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#授权的sim转移">授权的SIM转移</a></li>
+    <li><a href="#sim转移攻击">SIM转移攻击</a></li>
+  </ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <p>上周三我损失了10万美元。它在24小时的时间内在“SIM转移攻击”中消失，耗尽了我的Coinbase帐户。事件已经过去了四天，我被摧毁了。我寝食难安;我充满了焦虑，懊悔和尴尬。</p>
+<p>这是我生命中最昂贵的一课，我想与尽可能多的人分享我的经验与教训。我的目标是提高对这类攻击的认识，并促使大家提高在线身份的安全性。</p>
+<p>这仍然是非常原始的（我还没有告诉我的家人）；请大家保留对本文所述的天真安全措施的判断。</p>
+<h1 id="攻击的细节">攻击的细节</h1>
+<p>您可能会问自己，究竟什么是“SIM转移攻击”？为了描述攻击，我们来看一下典型的在线身份。对于大多数人来说，下图应该看起来很熟悉。</p>
+<p><img src="/images/sec/sim-port-1.png" alt=""></p>
+<p>我们大多数人都有一个主电子邮件帐户，该帐户与很多其他在线帐户相关联。我们大多数人还有一个移动设备，如果你忘了密码，可以用这个移动设备来恢复您的电子邮件密码。</p>
+<h2 id="授权的sim转移">授权的SIM转移</h2>
+<p>将SIM卡转移到另一台设备是移动运营商为其客户提供的服务。它允许客户将他们的电话号码转移到新设备。在大多数情况下，这是完全合法的要求;当我们升级到新手机，切换移动运营商等时会发生这种情况。</p>
+<h2 id="sim转移攻击">SIM转移攻击</h2>
+<p>但是，“SIM转移攻击”是由未经授权的来源（攻击者）执行的恶意转移。攻击者将您的 SIM卡转移到他们控制的手机上。然后，攻击者在您的电子邮件帐户上启动密码重置流程。验证码会从您的电子邮件提供商发送到您的电话号码。 攻击者会截获该电话号码，因为他们现在控制您的SIM卡。下图逐步概括了攻击过程。</p>
+<p><img src="/images/sec/sim-port-2.png" alt=""></p>
+<p>一旦攻击者控制了您的主电子邮件帐户，他们就会开始绕过您通过该电子邮件地址（银行帐户，社交媒体帐户等）管理并支配您的任何在线服务及其资产。如果他们非常恶意，他们甚至可以锁定你的帐户而你却几乎无法收回它们。</p>
+<p>花点时间检查一下单个Google帐户绑定的大量敏感信息：</p>
+<ul>
+<li>您的地址，出生日期和其他私人，个人身份信息</li>
+<li>访问您（和/或您的合作伙伴）的潜在妥协照片</li>
+<li>访问您的日历和即将到来的旅行日期</li>
+<li>访问您的私人电子邮件，文档和搜索历史记录</li>
+<li>访问您的个人联系人及其私人信息以及与您的关系</li>
+<li>访问您的主电子邮件地址用作身份验证来源的所有其他在线服务</li>
+</ul>
+<h1 id="事件时间线">事件时间线</h1>
+<p>通过更好地掌握如何进行此类攻击以及所涉及的范围，让我们深入探讨此特定攻击的时间线。我想描绘一下攻击是如何被执行的，以及我是如何经历这些事件的，以及如果您遇到类似的症状，您可以做些什么来保护自己。</p>
+<p>时间线分为四个部分：</p>
+<ul>
+<li>
+<p><strong>我所经历的</strong>：从我的观点来看所经历的事件。如果你遇到类似的事情，这些都是你可能受到攻击的明确指示。</p>
+</li>
+<li>
+<p><strong>攻击者正在做什么</strong>：黑客用来进入我的Coinbase帐户的基本策略。</p>
+</li>
+<li>
+<p><strong>我感知到的威胁级别</strong>：我在这些事件发生时将其归因于威胁级别。</p>
+</li>
+<li>
+<p><strong>我应该拥有的威胁级别</strong>：事后看来，我希望在这些事件发生时我会拥有的威胁级别。</p>
+</li>
+</ul>
+<p><img src="/images/sec/sim-port-3.png" alt=""></p>
+<h1 id="经验教训建议">经验教训+建议</h1>
+<p>这是我生命中最昂贵的一节课。我在24小时内失去了相当重要比例的净值资产; 并且是不可逆的。以下是我鼓励其他人用来更好地保护自己的在线安全的一些建议：
+使用硬件钱包，以确保您的加密：将您的密码到硬件钱包 /离线存储/ 多SIG钱包，只要你不交易。不要将资金闲置在交易所或法定进场。我将Coinbase视为银行账户，并且在发生攻击时你绝对没有追索权。我比大多数人更了解风险，但从未想过这样的事情会发生在我身上。我非常后悔没有采取加密安全措施。</p>
+<ul>
+<li>
+<p>基于SMS的2FA还不够：无论您尝试在线保护的资产和/或身份如何，都要升级到基于硬件的安全性（即：攻击者为实施攻击而必须物理获取的物理内容）。虽然Google Authenticator和Authy可以将您的移动设备转变为基于硬件的安全性，但我建议您更进一步。拿起你实际控制的YubiKey，不能被欺骗。</p>
+</li>
+<li>
+<p>减少您的在线足迹：减少不必要地在线分享个人身份信息（出生日期，位置，嵌入其中的地理位置数据的图片等）的冲动。在发生攻击时，所有这些准公开数据都可以针对您。
+Google Voice 2FA：在某些情况下，在线服务不支持基于硬件的2FA（它们依赖于较弱的基于SMS的2FA）。在这些情况下，您最好创建一个Google语音电话号码（无法通过SIM卡转移）并使用具有2-Factor Auth恢复号码的电话号码。</p>
+</li>
+<li>
+<p>创建辅助电子邮件地址：不是将所有内容绑定到单个电子邮件地址，而是为关键在线身份（银行帐户，社交媒体帐户，加密交换等）创建辅助地址。请勿将此电子邮件地址用于其他任何内容并将其保密。使用某种形式的基于硬件的2FA备份该地址。</p>
+</li>
+<li>
+<p>离线密码管理器：使用密码管理器输入密码。更好的是，使用密码存储等脱机密码管理器。lrvick拥有各种密码管理器的优秀对比图表，以及针对更具技术倾向的审查建议。</p>
+</li>
+</ul>
+<h1 id="关于读者的评论">关于读者的评论</h1>
+<p>我明白这一点：鉴于我天真的安全实践，我可能就应该注定被黑客攻击。这样做不会减少受到任何伤害，并且会削弱这个故事的主旨，即：</p>
+<ul>
+<li>让别人知道受到伤害是多么容易</li>
+<li>使用上述知识和建议来优先考虑您的在线身份的安全性</li>
+</ul>
+<p>我禁不住想到我可以做的小而轻松的事情来保护自己。我的脑海中涌现各种假设。</p>
+<p>然而，这些想法伴随懒惰和幸存者偏见。我从来没有认真对待我的在线安全，因为我从未经历过攻击。虽然我了解自己的风险状况，但是我就是太懒导致我没有用该有的严谨来保护我的资产。</p>
+<p>我恳请你们从这些错误中吸取教训。</p>
+<h1 id="参考">参考</h1>
+<ol>
+<li><a href="https://medium.com/coinmonks/the-most-expensive-lesson-of-my-life-details-of-sim-port-hack-35de11517124">The Most Expensive Lesson Of My Life: Details of SIM port hack</a></li>
+</ol>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">沉风网事</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+        2019-05-30
+        
+    </span>
+  </p>
+  
+  
+</div>
+<footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/blockchain/">BlockChain</a>
+          <a href="/tags/secure/">Secure</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/post/golang-sync-pool-1/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">深入分析Golang sync.pool</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        <a class="next" href="/post/about-zoom/">
+            <span class="next-text nav-default">关于zoom的一些思考与看法</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    (function() {
+      
+      
+      if (window.location.hostname === 'localhost') return;
+
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      var disqus_shortname = 'ipds-top';
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+  
+
+  
+    <script src="https://utteranc.es/client.js"
+            repo="myself659/myself659/ipds-public"
+            issue-term="pathname"
+            theme="github-light"
+            crossorigin="anonymous"
+            async>
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://github.com/utterance">comments powered by utterances.</a></noscript>
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/8.3.1/mermaid.min.js"></script>
+<div class="social-links">
+      <a href="mailto:myself659@163.com" class="iconfont icon-email" title="email"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-stack-overflow" title="stack-overflow"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-twitter" title="twitter"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-facebook" title="facebook"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-linkedin" title="linkedin"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-google" title="google"></a>
+      <a href="https://github.com/myself659" class="iconfont icon-github" title="github"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-weibo" title="weibo"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-zhihu" title="zhihu"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-douban" title="douban"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-pocket" title="pocket"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-tumblr" title="tumblr"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-instagram" title="instagram"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-gitlab" title="gitlab"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-bilibili" title="bilibili"></a>
+  <a href="http://myself659.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/myself659/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2017 - 
+    2020
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">沉风网事</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+
+
+
+<script type="text/javascript" src="/js/main.min.d7b7ada643c9c1a983026e177f141f7363b4640d619caf01d8831a6718cd44ea.js"></script>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-144475213-1', 'auto');
+	ga('set', 'anonymizeIp', true);
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+
+
+
+
+</body>
+</html>

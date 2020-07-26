@@ -1,163 +1,105 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Golang on 沉风网事</title>
-    <link>https://myself659.github.io/categories/golang/</link>
-    <description>Recent content in Golang on 沉风网事</description>
+    <title>golang on 沉风网事</title>
+    <link>http://myself659.github.io/categories/golang/</link>
+    <description>Recent content in golang on 沉风网事</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
+    <copyright>沉风网事</copyright>
     <lastBuildDate>Fri, 06 Sep 2019 11:58:06 +0200</lastBuildDate>
     
-	<atom:link href="https://myself659.github.io/categories/golang/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://myself659.github.io/categories/golang/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>深入分析Golang sync.pool优化</title>
-      <link>https://myself659.github.io/2019/09/06/golang-sync-pool-2/</link>
+      <link>http://myself659.github.io/post/golang-sync-pool-2/</link>
       <pubDate>Fri, 06 Sep 2019 11:58:06 +0200</pubDate>
       
-      <guid>https://myself659.github.io/2019/09/06/golang-sync-pool-2/</guid>
-      <description>前言 最近golang的1.13版本发布了，有很多新特性与改进合入。这里主要分析sync.pool的优化。
-本文主要解答以下几个问题：
- sync.pool优化体现在哪里？ 优化是如何实现？ 优化的好处有哪些？  优化 具体优化项如下：
- 无锁化 GC策略  无锁化 sync.pool实现了无锁化，具体如下：
-go1.12.1版本实现
-// Local per-P Pool appendix. type poolLocalInternal struct { private interface{} // Can be used only by the respective P. shared []interface{} // Can be used by any P. Mutex // Protects shared. }  go1.13版本
-// Local per-P Pool appendix. type poolLocalInternal struct { private interface{} // Can be used only by the respective P.</description>
+      <guid>http://myself659.github.io/post/golang-sync-pool-2/</guid>
+      <description>前言 最近golang的1.13版本发布了，有很多新特性与改进合入。这里主要分析sync.pool的优化。 本文主要解答以下几个问题： sync.</description>
     </item>
     
     <item>
       <title>深入分析Golang sync.pool</title>
-      <link>https://myself659.github.io/2019/06/10/golang-sync-pool-1/</link>
+      <link>http://myself659.github.io/post/golang-sync-pool-1/</link>
       <pubDate>Mon, 10 Jun 2019 11:58:06 +0200</pubDate>
       
-      <guid>https://myself659.github.io/2019/06/10/golang-sync-pool-1/</guid>
-      <description>定义 sync.Pool是一个可以存或取的临时对象池。对外提供New、Get、Put等API，利用mutex支持多线程并发。
-目标 sync.Pool解决以下问题：
- 增加临时对象的用复用率，减少GC负担 通过对象的复用，减少内存申请开销，有利于提高一部分性能  实现 这一部分回答如何实现的问题。
-关于了解实现，最好的办法就是看代码。
-描述 type Pool struct { noCopy noCopy local unsafe.Pointer // local fixed-size per-P pool, actual type is [P]poolLocal localSize uintptr // size of the local array // New optionally specifies a function to generate // a value when Get would otherwise return nil. // It may not be changed concurrently with calls to Get. New func() interface{} }  各个成员含义如下：</description>
+      <guid>http://myself659.github.io/post/golang-sync-pool-1/</guid>
+      <description>定义 sync.Pool是一个可以存或取的临时对象池。对外提供New、Get、Put等API，利用mutex支持多线程并发。 目标 sync.Po</description>
     </item>
     
     <item>
       <title>Golang最工程化的语言</title>
-      <link>https://myself659.github.io/2018/07/03/golang-eng/</link>
+      <link>http://myself659.github.io/post/golang-eng/</link>
       <pubDate>Tue, 03 Jul 2018 11:58:06 +0200</pubDate>
       
-      <guid>https://myself659.github.io/2018/07/03/golang-eng/</guid>
-      <description>Golang是什么语言 PHP是最好的语言。
-Haskell最难学的语言。
-Golang最工程化的语言。
-下面分别从语言层面及软件工程两个方面进行说明。
-语言 安全性 相比较于C/C++，golang不支持指针操作，不支持隐式类型转换，支持内存溢出与越界检查。
-并发与扩展 通过goroutine，Golang从语言层面上解决了并发与扩展的问题，而不像C/C++, JAVA通过框架来解决这个问题。Golang自适应多核运行。
-简单 语法简单，代码不涉及内存管理，上手容易。新人学习几天就可以上手写代码。
-可维护性 自带godoc统一代码格式。 一个文件夹对应一个包有利于代码模块化。
-打包一切 相比较于C/C++，动态库和静态库的依赖，Golang将所有编译成一个二进制文件。 解决依赖带来高度耦合问题，这样十分有利于交付与部署。
-可移植 支持多种体系架构与不同的操作系统以及跨平台编译。
-高效率 Golang实现了程序员开发高效率与机器运行高效率两者的有效结合，进而实现经济上高效率。
-相比较于C/C++，Golang编译速度更快了。特别是大型项目，以前用C语言的时候，在刀片服务器上时编译一个测试版本都要半个小时左右。
-生态成长 背靠Google，从09年发布已来，已经在云生态占据绝对主导地位。有不少明星开源项目。如Docker、Kubernetes、Prometheus、Hyperleder、Ethereum、Etcd等。随着云时代不断发展，Golang生态一定会越来越强大与丰富。
-软件工程 流程 一般软件工程流程分为规划、需求、设计、编码、测试、发布、维护等几个阶段。除了规划与需求阶段，Golang对其他阶段在语言层面都有强力特性支持。举例如下：
- 设计阶段：利用interface可以进行protype编程，可以实现代码及文档。 编码阶段：go fmt统一代码格式 测试阶段：自带go test便于测试，不像C/C++依赖gtest 发布阶段：上面说到可移植及打包一切，便于交付，发布，部署 维护阶段：Golang天然支持CPU扩展及其上面所说的便于交付，发布，部署  大规模协作 Golang引入interface特性，实际在语言层面支持SOLID设计原则中依赖倒置原则。再加上包的独立性，有利于大规模系统的大团队协作开发。
-编程友好 软件工程是人是关键因素。编码是核心阶段。Golang以下特性释放了程序员的生产力：
- 还算丰富的基础库 避免内存管理 天然支持并发  后记 当然Golang也有自己的缺点，如GC问题，延时大等。但是用一个语言的策略就应该扬长避短，当然熟练应用Golang的特性得深入学习与实践。
-(End)
-欢迎关注 欢迎关注微信公众帐号：沉风网事(savewind)</description>
+      <guid>http://myself659.github.io/post/golang-eng/</guid>
+      <description>Golang是什么语言 PHP是最好的语言。 Haskell最难学的语言。 Golang最工程化的语言。 下面分别从语言层面及软件工程两个方面进行说</description>
     </item>
     
     <item>
       <title>Gorm小技巧: 如何优雅地创建多个相同的表</title>
-      <link>https://myself659.github.io/2017/12/21/golang-gorm/</link>
+      <link>http://myself659.github.io/post/golang-gorm/</link>
       <pubDate>Thu, 21 Dec 2017 11:58:06 +0200</pubDate>
       
-      <guid>https://myself659.github.io/2017/12/21/golang-gorm/</guid>
-      <description>背景 因为需要bitfinex抓取各种历史交易信息。为了实现可扩展与便于数据管理，在数据架构设计方面满足下面的需求：
- 不同的交易对的交易数据放到不同的表上。  方案 方案1 编写sql,通过多条sql语句创建多个不同名字的表。
-优点： 1. 理解简单，最容易的方案
-缺点：
- 如果修改表名称、调整表结构、调整索引，需要重新写sql，如果在线上部署，需要到多台机器上部署与执行，加大出错的概率
- 需要额外维护表名称
- 不利于docker部署，部署业务sql建立相应表
-  总之，最容易的方案，确实最难维护的方案。
-方案2 方案1种种不足，让我这个懒人实在不感兴趣。要追求优雅的实现方案。所以就发现下面的方案。
-type User struct { Name string Pwd string tableName string } func (u *User) TableName() string { return u.tableName }  看完上面的代码，大家应该会立即明白：原来只需要对表结构对应的结构体定义一种方法 TableName(),就可以实现。
-一个十分简单示例代码如下：
-package main import ( &amp;quot;fmt&amp;quot; _ &amp;quot;github.com/go-sql-driver/mysql&amp;quot; &amp;quot;github.com/jinzhu/gorm&amp;quot; ) type User struct { Name string Pwd string tableName string } func (u *User) TableName() string { // custom table name, this is default return u.</description>
+      <guid>http://myself659.github.io/post/golang-gorm/</guid>
+      <description>背景 因为需要bitfinex抓取各种历史交易信息。为了实现可扩展与便于数据管理，在数据架构设计方面满足下面的需求： 不同的交易对的交易数据放到</description>
     </item>
     
     <item>
       <title>slice复用的陷阱</title>
-      <link>https://myself659.github.io/2017/07/28/2017-07-28-slice-trap/</link>
+      <link>http://myself659.github.io/post/2017-07-28-slice-trap/</link>
       <pubDate>Fri, 28 Jul 2017 11:58:06 +0200</pubDate>
       
-      <guid>https://myself659.github.io/2017/07/28/2017-07-28-slice-trap/</guid>
-      <description>前言 先下结论：slice复用得当心，引用不当深埋雷。如若复用请分叉，分叉之后再使用。
-问题 先看一下代码吧
-package main import ( &amp;quot;fmt&amp;quot; ) func a() { x := []int{} x = append(x, 0) x = append(x, 1) // commonTags := labelsToTags(app.Labels) y := append(x, 2) // Tags: append(commonTags, labelsToTags(d.Labels)...) z := append(x, 3) // Tags: append(commonTags, labelsToTags(d.Labels)...) fmt.Println(y, z) } func b() { x := []int{} x = append(x, 0) x = append(x, 1) x = append(x, 2) // commonTags := labelsToTags(app.Labels) y := append(x, 3) // Tags: append(commonTags, labelsToTags(d.</description>
+      <guid>http://myself659.github.io/post/2017-07-28-slice-trap/</guid>
+      <description>前言 先下结论：slice复用得当心，引用不当深埋雷。如若复用请分叉，分叉之后再使用。 问题 先看一下代码吧 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19</description>
     </item>
     
     <item>
       <title>使用golang present工具制作presentation</title>
-      <link>https://myself659.github.io/2017/05/10/2017-05-10-golang-present/</link>
+      <link>http://myself659.github.io/post/2017-05-10-golang-present/</link>
       <pubDate>Wed, 10 May 2017 11:58:06 +0200</pubDate>
       
-      <guid>https://myself659.github.io/2017/05/10/2017-05-10-golang-present/</guid>
-      <description>依赖  依赖golang的开发环境  安装 present工具在golang.org/x/tools中，依赖golang.org/x/net包,安装过程如下：
-root@ia-VirtualBox:~# go get golang.org/x/net root@ia-VirtualBox:~# go get golang.org/x/tools root@ia-VirtualBox:~# go install golang.org/x/tools/cmd/present  安装结束后查看present位置
-root@ia-VirtualBox:~# which present /usr/local/go/bin/present  slide文件语法 具体参考准官方文档
-生成slide root@ia-VirtualBox:/share/gocode/src/github.com/pcrawfor# present golanguk/talk.slide 2017/05/09 23:53:15 Open your web browser and visit http://127.0.0.1:3999 2017/05/09 23:57:19 accepting connection from: 127.0.0.1:50852  共享slide 通过http选项指定外部访问地址
-root@ia-VirtualBox:/share/gocode/src/github.com/pcrawfor# present -http=&amp;quot;192.168.56.5:3999&amp;quot; golanguk/talk.slide 2017/05/10 00:02:47 WARNING! WARNING! WARNING! The present server appears to be listening on an address that is not localhost.</description>
+      <guid>http://myself659.github.io/post/2017-05-10-golang-present/</guid>
+      <description>依赖 依赖golang的开发环境 安装 present工具在golang.org/x/tools中，依赖golang.org/x/net包,安装过</description>
     </item>
     
     <item>
       <title>Go的50度灰补充--http response只能读一次</title>
-      <link>https://myself659.github.io/2017/02/20/2017-02-20-go-case-1-my-shadeofgo/</link>
+      <link>http://myself659.github.io/post/2017-02-20-go-case-1-my-shadeofgo/</link>
       <pubDate>Mon, 20 Feb 2017 11:58:06 +0200</pubDate>
       
-      <guid>https://myself659.github.io/2017/02/20/2017-02-20-go-case-1-my-shadeofgo/</guid>
-      <description>问题 还是从代码开始吧
-func fetch(url string) { tlsConfig := &amp;amp;tls.Config{ InsecureSkipVerify: true, } transport := &amp;amp;http.Transport{ TLSClientConfig: tlsConfig, } client := http.Client{Transport: transport} resp, err := client.Get(url) if err != nil { fmt.Println(err) &amp;lt;-time.After(300 * time.Second) go fetch(url) return } buf, err := ioutil.ReadAll(resp.Body) if err != nil { fmt.Println(&amp;quot;fetchyh:&amp;quot;, err) return } save(buf) //保存html到文件 defer resp.Body.Close() // http to doc doc, err := goquery.NewDocumentFromResponse(resp) if err != nil { fmt.</description>
+      <guid>http://myself659.github.io/post/2017-02-20-go-case-1-my-shadeofgo/</guid>
+      <description>问题 还是从代码开始吧 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 func fetch(url string) { tlsConfig := &amp;amp;tls.Config{ InsecureSkipVerify: true, }</description>
     </item>
     
     <item>
       <title>从C语言epoll编程到go net实现分析</title>
-      <link>https://myself659.github.io/2016/09/10/2016-09-10-from-cepoll-to-go-net/</link>
+      <link>http://myself659.github.io/post/2016-09-10-from-cepoll-to-go-net/</link>
       <pubDate>Sat, 10 Sep 2016 11:58:06 +0200</pubDate>
       
-      <guid>https://myself659.github.io/2016/09/10/2016-09-10-from-cepoll-to-go-net/</guid>
-      <description>说明  go源码版本：1.7 go源码运行环境：Linux  epoll在c语言编程示例 先看一下大家比较熟悉的epoll在c语言中应用，代码取自rtmpserver_demo中的文件rtmpepollsrv.c
-int RtmpSessionHandle(int iFd, int iEvent, void *pContext) { int iRet; RTMP_SESSION *pSession = (RTMP_SESSION *)pContext; if(iEvent&amp;amp;EPOLLIN ) { if(0 == pSession-&amp;gt;handshake) { iRet = RtmpSessionHandshake(pSession); if(0 != iRet) { RtmpSessionHandleFin(pSession); } } else { iRet = RtmpPktHandle(pSession); } } if(iEvent &amp;amp; (EPOLLERR |EPOLLHUP) ) { RtmpSessionHandleFin(pSession); } return iRet; } int ListenHandle(int iFd, int iEvent, void *pContext) { int iNewFd; int iRet = 0; struct sockaddr tmpAddr; memset(&amp;amp;tmpAddr, 0, sizeof(tmpAddr)); int iSocketSize = sizeof(tmpAddr); EPOLL_CTX *pCtx; RTMP_SESSION *pServer; if(iEvent|EPOLLIN) { iNewFd = accept(iFd, &amp;amp;tmpAddr, (socklen_t *)&amp;amp;iSocketSize); if(RTMP_EPOLLSRV_INVALIDFD &amp;lt; iNewFd) { pServer = (RTMP_SESSION *)malloc(sizeof(RTMP_SESSION)); if(NULL == pServer) { return -1; } pServer-&amp;gt;handshake = 0; pCtx = (EPOLL_CTX *)malloc(sizeof(EPOLL_CTX)); if(NULL == pCtx) { free(pServer); return -1; } pServer-&amp;gt;socket = iNewFd; pCtx-&amp;gt;iFd = iNewFd; pCtx-&amp;gt;pContext = pServer; pCtx-&amp;gt;pfHandle = RtmpSessionHandle; /* 加入epoll */ iRet = epoll_op(g_iEpollFd, EPOLL_CTL_ADD, iNewFd, EPOLLIN|EPOLLERR|EPOLLHUP, pCtx); } else { printf(&amp;quot;accept errno:%s&amp;quot;,strerror(errno)); } } return iRet; } int epoll_op(int iEpollFd, int iOp, int iFd, int iEvent, EPOLL_CTX *pCtx) { int iRet; struct epoll_event ev; ev.</description>
+      <guid>http://myself659.github.io/post/2016-09-10-from-cepoll-to-go-net/</guid>
+      <description>说明 go源码版本：1.7 go源码运行环境：Linux epoll在c语言编程示例 先看一下大家比较熟悉的epoll在c语言中应用，代码取自rtm</description>
     </item>
     
     <item>
       <title>Go channel 编程篇</title>
-      <link>https://myself659.github.io/2016/08/20/2016-08-20-go-channel-program-demo/</link>
+      <link>http://myself659.github.io/post/2016-08-20-go-channel-program-demo/</link>
       <pubDate>Sat, 20 Aug 2016 11:58:06 +0200</pubDate>
       
-      <guid>https://myself659.github.io/2016/08/20/2016-08-20-go-channel-program-demo/</guid>
-      <description>本篇以ChanBroker版本迭代过程，总结常见Channel编程问题
-简介 ChanBroker设计主要参考Kafka模型，主要提供进程内goroutine之间通信，实现以下功能：
- 支持多个Publisher发布内容 支持Subscriber注册与去注册订阅 发布内容可以是任何形式 ChanBroker根据订阅情况完成内容推送  版本1 具体代码如下:
-package ChanBroker type Content interface{} type Subscriber chan Content type ChanBroker struct { RegSub chan Subscriber UnRegSub chan Subscriber Contents chan Content Stop chan bool Subscribers map[Subscriber]bool } func NewChanBroker() *ChanBroker { ChanBroker := new(ChanBroker) ChanBroker.RegSub = make(chan Subscriber) ChanBroker.UnRegSub = make(chan Subscriber) ChanBroker.Contents = make(chan Content) ChanBroker.Stop = make(chan bool) ChanBroker.Subscribers = make(map[Subscriber]bool) ChanBroker.run() return ChanBroker } func (self *ChanBroker) run() { go func() { // Broker goroutine for { select { case content := &amp;lt;-self.</description>
+      <guid>http://myself659.github.io/post/2016-08-20-go-channel-program-demo/</guid>
+      <description>本篇以ChanBroker版本迭代过程，总结常见Channel编程问题 简介 ChanBroker设计主要参考Kafka模型，主要提供进程内go</description>
     </item>
     
     <item>
       <title>Go channel 特点篇</title>
-      <link>https://myself659.github.io/2016/07/26/2016-07-26-go-channel-feature/</link>
+      <link>http://myself659.github.io/post/2016-07-26-go-channel-feature/</link>
       <pubDate>Tue, 26 Jul 2016 11:58:06 +0200</pubDate>
       
-      <guid>https://myself659.github.io/2016/07/26/2016-07-26-go-channel-feature/</guid>
-      <description>channel模式 根据同步方式不同，channel有两种模式：
-1、同步模式,形式如下：
-ch := make(chan int)  2、队列模式，形式如下：
-ch := make(chan int, 10)  根据数据方向流不同，channel类型可以有以下三种模式：
- 写操作模式（只发送） 读操作模式（只接收） 读写操作模式（不限发送与接收）  channel操作 channel有以下操作：
- 创建 关闭 写(发送)操作 读(接收)操作
-  这些操作都是原子操作
-channel状态 根据模式与操作，channel有以下状态：
- 同步写阻塞 同步读阻塞 关闭状态
- 队列写阻塞 队列读阻塞 队列可读写 nil状态  channel状态与操作之间关系    状态/操作 写操作 读操作 关闭 创建     nil状态 写阻塞 写阻塞 产生panic(close of nil channel) -   同步写阻塞 写阻塞 成功读取数据 进入关闭状态，产生panic -   同步读阻塞 成功写入数据 读阻塞 进入关闭状态 -   关闭状态 产生panic 立即返回(nil，false) 产生panic -   队列写阻塞 写阻塞 成功读取队列中数据 进入关闭状态，成功写入队列的数据可读 -   队列读阻塞 成功写入数据 读阻塞 进入关闭状态 -   队列可读写 成功写入数据 成功读取数据 进入关闭状态，成功写入队列的数据可读 -    由于个人水平有限，有什么不足与错误，敬请指正！</description>
+      <guid>http://myself659.github.io/post/2016-07-26-go-channel-feature/</guid>
+      <description>channel模式 根据同步方式不同，channel有两种模式： 1、同步模式,形式如下： 1 ch := make(chan int) 2、队列模式，形式如下： 1 ch := make(chan int, 10) 根据数据</description>
     </item>
     
   </channel>

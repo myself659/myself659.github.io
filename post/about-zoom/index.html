@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>关于zoom的一些思考与看法 - 沉风网事</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="沉风网事" /><meta name="description" content="前言 最近zoom上市，作为一名华人创业公司自然大受关注。下面从以下几个方面谈谈自己的一些思考与看法： 技术 领导 产品 商业 技术 对于视频面试会议，技" /><meta name="keywords" content="沉风网事, 沉风, 区块链" />
+
+
+<meta name="baidu-site-verification" content="9LmlOuIblt" />
+
+
+
+<meta name="generator" content="Hugo 0.68.3 with theme even" />
+
+
+<link rel="canonical" href="http://myself659.github.io/post/about-zoom/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.8c3cbcb0324c2bb4875ceccba4007cbad4b4ac8377f33af9953c3e7684534a50.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="关于zoom的一些思考与看法" />
+<meta property="og:description" content="前言 最近zoom上市，作为一名华人创业公司自然大受关注。下面从以下几个方面谈谈自己的一些思考与看法： 技术 领导 产品 商业 技术 对于视频面试会议，技" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://myself659.github.io/post/about-zoom/" />
+<meta property="article:published_time" content="2019-04-28T11:58:06+02:00" />
+<meta property="article:modified_time" content="2019-04-28T11:58:06+02:00" />
+<meta itemprop="name" content="关于zoom的一些思考与看法">
+<meta itemprop="description" content="前言 最近zoom上市，作为一名华人创业公司自然大受关注。下面从以下几个方面谈谈自己的一些思考与看法： 技术 领导 产品 商业 技术 对于视频面试会议，技">
+<meta itemprop="datePublished" content="2019-04-28T11:58:06&#43;02:00" />
+<meta itemprop="dateModified" content="2019-04-28T11:58:06&#43;02:00" />
+<meta itemprop="wordCount" content="1362">
+
+
+
+<meta itemprop="keywords" content="商业,Internet," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="关于zoom的一些思考与看法"/>
+<meta name="twitter:description" content="前言 最近zoom上市，作为一名华人创业公司自然大受关注。下面从以下几个方面谈谈自己的一些思考与看法： 技术 领导 产品 商业 技术 对于视频面试会议，技"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">沉风</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a><a href="/post/leetcode/">
+        <li class="mobile-menu-item">LeetCode</li>
+      </a><a href="/post/read-post/">
+        <li class="mobile-menu-item">Read</li>
+      </a><a href="/post/share-post/">
+        <li class="mobile-menu-item">Share</li>
+      </a><a href="/post/slide-post/">
+        <li class="mobile-menu-item">Slide</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">沉风</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/leetcode/">LeetCode</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/read-post/">Read</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/share-post/">Share</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/slide-post/">Slide</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">关于zoom的一些思考与看法</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2019-04-28 </span>
+        <div class="post-category">
+            <a href="/categories/%E5%95%86%E4%B8%9A/"> 商业 </a>
+            </div>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#技术">技术</a></li>
+    <li><a href="#领导">领导</a></li>
+    <li><a href="#产品">产品</a></li>
+    <li><a href="#商业">商业</a></li>
+  </ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <h1 id="前言">前言</h1>
+<p>最近zoom上市，作为一名华人创业公司自然大受关注。下面从以下几个方面谈谈自己的一些思考与看法：</p>
+<ol>
+<li>技术</li>
+<li>领导</li>
+<li>产品</li>
+<li>商业</li>
+</ol>
+<h2 id="技术">技术</h2>
+<p>对于视频面试会议，技术核心分为以下三大块：</p>
+<ol>
+<li>基础设施架构</li>
+<li>网络传输技术</li>
+<li>音视频技术</li>
+</ol>
+<h2 id="领导">领导</h2>
+<ol>
+<li>招聘方面重点在自我激励和学习，招聘有发展潜力的人</li>
+<li>2019年，Zoom还在全美最佳雇主公司排名中位居第二位，也是一个非常让员工喜欢的创业公司。这个投票应该还是可以相信的，没有内幕</li>
+<li>信任来自开放。越开放，越信任。作为公司的领导要开放与底层员工的连接通道</li>
+<li>一个公司或者一个组织甚至一个国家，解决问题是第一要义是正视问题，而不是逃避问题，应该鼓励发现问题</li>
+</ol>
+<h2 id="产品">产品</h2>
+<p>先说对于zoom的评价，确实好用，个人从2016年就开始使用。</p>
+<ol>
+<li>永无止境，WebEx在当时的市场已经占有很大的市场，但是zoom创始人并没有停留在市场占用率上而是准确地看到WebEx背后的问题。</li>
+<li>欲速则不达。耐心地打磨产品，zoom在2011年成立，到2013年才首次发布产品Zoom Meetings，这放在国内是无法想像的，很多创业公司三个月就要出产品，结果创业公司还是每年死一大片，而zoom却从视频会议领域众多竞争对手中脱颖而出。</li>
+<li>套用一句话：从人民群众中来,到人民群众中去。从用户中来，到用户中去，需求从用户中来，真正地倾听用户的心声，产品与服务落实到用户，让用户享受实在的便利与好处</li>
+<li>直播改变生活，学习与工作；快手、抖音、zoom就是很好的说明</li>
+<li>视频大行其道，视频降低用户门槛，视频用户体验更好，视频中包含更多的信息</li>
+</ol>
+<h2 id="商业">商业</h2>
+<ol>
+<li>追求低成本，高效率，zoom将研发大部分放在中国内地，中国内地人均30W左右，在美国硅谷招一个软件工程师起薪差不多90W吧，这样从而整体上降低了zoom的成本。zoom上市就能营利，让其在股价方面表现十分出色。</li>
+<li>双赢的原则，zoom让员工开会不受地点限制，只要有网络就可以，同时也降低企业的运行成本。</li>
+<li>降低门槛，视频会议降低了会议的门槛，打破空间的限制，zoom易用性降低了使用门槛，只要手机和电脑再加上网络就可以进行一场会议。国内有不少企业还卖专门的视频会议硬件系统，这样一开始就输，研发成本需要投入，价格还高</li>
+<li>优势原则。市场竞争，优势劣汰。一定要建立优势如成本优势，用户体验优势，先发优势，差异化优势</li>
+<li>zoom有2000倍的市盈率。这说明什么？泡沫吗？从数字上看是这样的。但是股价体现是预期，这说明视频协作会是未来发展一个方向。视频协作现在应用率还是很低，未来还是有很大的增长空间，除了视频会议还有更多的应用场景，如远程医疗。</li>
+</ol>
+<h1 id="总结">总结</h1>
+<p>zoom创始人袁征从1997年WebEx一名程序员到2011年思科工程副总裁，负责WebEx产品。在这个阶段他完成了技术与领导大部分积累。从2011年开始创办zoom进行产品化与商业化，到2019年IPO上市，使产品化与商业化达到一个新的台阶。程序员在提高自己的技术能力的同时，要努力培养领导能力，产品能力，商业能力。</p>
+<h1 id="参考">参考</h1>
+<ol>
+<li><a href="https://mp.weixin.qq.com/s/NLfcR_QtlD_balxceGdPcw">Zoom成功上市：市值超160亿美元 华裔创始人走向人生巅峰</a></li>
+<li><a href="https://baijiahao.baidu.com/s?id=1593547558203254353&amp;wfr=spider&amp;for=pc">连续四年保持三位数增长，搞视频会议的 Zoom 有三大关键秘诀</a></li>
+<li><a href="http://tech.163.com/17/0330/16/CGPP771A00097U7R.html">扎克伯格：80%的企业文化由创始人决定</a></li>
+<li><a href="https://www.sohu.com/a/230841073_184202">《原则》读书笔记八 如何做到极度求真与极度透明</a></li>
+<li><a href="https://mp.weixin.qq.com/s/csDai16DkVOaDL0ayg1v7g">生活在一个十分钟就能走完的安逸小城，给生活做减法</a></li>
+<li><a href="https://onezero.medium.com/how-zoom-beat-the-tech-giants-80b4feb2988c">How Zoom Beat the Tech Giants</a></li>
+</ol>
+<h1 id="欢迎关注">欢迎关注</h1>
+<p>欢迎关注微信公众帐号：沉风网事(savewind)</p>
+<p><img src="/images/cfws.jpg" alt="沉风网事"></p>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">沉风网事</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+        2019-04-28
+        
+    </span>
+  </p>
+  
+  
+</div>
+<footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/%E5%95%86%E4%B8%9A/">商业</a>
+          <a href="/tags/internet/">Internet</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/post/sim-port-attack/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">人生中最昂贵的教训：SIM卡转移攻击的细节(译文)</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        <a class="next" href="/post/it-frame/">
+            <span class="next-text nav-default">分享一种分析信息技术发展的框架</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    (function() {
+      
+      
+      if (window.location.hostname === 'localhost') return;
+
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      var disqus_shortname = 'ipds-top';
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+  
+
+  
+    <script src="https://utteranc.es/client.js"
+            repo="myself659/myself659/ipds-public"
+            issue-term="pathname"
+            theme="github-light"
+            crossorigin="anonymous"
+            async>
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://github.com/utterance">comments powered by utterances.</a></noscript>
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/8.3.1/mermaid.min.js"></script>
+<div class="social-links">
+      <a href="mailto:myself659@163.com" class="iconfont icon-email" title="email"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-stack-overflow" title="stack-overflow"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-twitter" title="twitter"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-facebook" title="facebook"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-linkedin" title="linkedin"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-google" title="google"></a>
+      <a href="https://github.com/myself659" class="iconfont icon-github" title="github"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-weibo" title="weibo"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-zhihu" title="zhihu"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-douban" title="douban"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-pocket" title="pocket"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-tumblr" title="tumblr"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-instagram" title="instagram"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-gitlab" title="gitlab"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-bilibili" title="bilibili"></a>
+  <a href="http://myself659.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/myself659/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2017 - 
+    2020
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">沉风网事</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+
+
+
+<script type="text/javascript" src="/js/main.min.d7b7ada643c9c1a983026e177f141f7363b4640d619caf01d8831a6718cd44ea.js"></script>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-144475213-1', 'auto');
+	ga('set', 'anonymizeIp', true);
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+
+
+
+
+</body>
+</html>

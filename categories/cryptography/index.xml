@@ -1,39 +1,24 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Cryptography on 沉风网事</title>
-    <link>https://myself659.github.io/categories/cryptography/</link>
+    <link>http://myself659.github.io/categories/cryptography/</link>
     <description>Recent content in Cryptography on 沉风网事</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
+    <copyright>沉风网事</copyright>
     <lastBuildDate>Sun, 21 Oct 2018 11:58:06 +0200</lastBuildDate>
     
-	<atom:link href="https://myself659.github.io/categories/cryptography/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://myself659.github.io/categories/cryptography/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>说说私钥保护技术</title>
-      <link>https://myself659.github.io/2018/10/21/secret-sharing/</link>
+      <link>http://myself659.github.io/post/secret-sharing/</link>
       <pubDate>Sun, 21 Oct 2018 11:58:06 +0200</pubDate>
       
-      <guid>https://myself659.github.io/2018/10/21/secret-sharing/</guid>
-      <description>前言 私钥在区块链系统中代表是什么？私钥是钱。钱包的本质就是私钥。谁控制了私钥谁就控制对应钱包的数字资产，谁丢失了私钥也就相当于丢了对应钱包的数字资产。
-因此，在区块链系统中如何保护私钥一直都是重要的问题。
-保护私钥一直都要解决以下问题：
- 用户体验 私钥备份与存储 私钥安全（攻击、泄漏、盗取）  私钥助记词化 私钥数学本质是一串数字：
-用户体验极差，那么一长串数字怎么记，每次使用都是一个大麻烦。 所有就有只要玩过数字货币的人都清楚的助记词。这一部分改进如同汇编对二进指定的优化。
-私钥加密 对于私钥内容进行加密，最典型例子就是key-store。
-共用私钥 这里面的技术主要是BIP-44。在数字货币钱包里面得到应用， 避免每一个数字货币地址都要维护一个私钥。如果数字货币满足BIP-44规范， 就可以通过一个私钥来控制多个钱包。
-私钥隔离 用冷钱包来实现与网络隔离，避免私钥被盗取或泄漏。
-私钥分片 私钥分片主要采用Shamir&amp;rsquo;s Secret Sharing技术。其技术原理如同藏宝图分成好几分份,这是多少电影与电视剧中出现的情节。
-原理：
-一个数学公式：y*y = a*x*x + b * x + c
-其中，c为私钥，当然中实际过程可以认为是保密的数据。 a，b这两个参数作为具体分片规则的描述。
-由上面公式可知，该公式对应一个双曲线。如果知道这个双曲线三个点的坐标，通过解方程组得出a，b，c的值。
-该技术有以下优点：
- 该方案允许私钥拥有制定分片的规则。可以对同一个私钥采用不同的分片规则。拥有分片规则制定权，可以对分片对象加以管理，如添加分片，删除分片。 在没有不知道分片规则之下，通过任何一个分片都不能破解获取私钥。只有对应数量的分片在一起才能获取私钥和分片的规则。  具体应用如下：
- 私钥等敏感数据分割保护 多方验证 数据分享  参考  Shamir&amp;rsquo;s Secret Sharing
- Divide and Manage Secret Data Securely With Shamir&amp;rsquo;s Secret Sharing zeropass Threshold Signatures: The Future of Private Keys A beginner’s guide to Shamir’s Secret Sharing 私鑰分割 — Shamir’s Secret Sharing</description>
+      <guid>http://myself659.github.io/post/secret-sharing/</guid>
+      <description>前言 私钥在区块链系统中代表是什么？私钥是钱。钱包的本质就是私钥。谁控制了私钥谁就控制对应钱包的数字资产，谁丢失了私钥也就相当于丢了对应钱包的</description>
     </item>
     
   </channel>

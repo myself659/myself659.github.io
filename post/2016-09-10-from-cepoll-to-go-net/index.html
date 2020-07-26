@@ -1,0 +1,1368 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>从C语言epoll编程到go net实现分析 - 沉风网事</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="沉风网事" /><meta name="description" content="说明 go源码版本：1.7 go源码运行环境：Linux epoll在c语言编程示例 先看一下大家比较熟悉的epoll在c语言中应用，代码取自rtm" /><meta name="keywords" content="沉风网事, 沉风, 区块链" />
+
+
+<meta name="baidu-site-verification" content="9LmlOuIblt" />
+
+
+
+<meta name="generator" content="Hugo 0.68.3 with theme even" />
+
+
+<link rel="canonical" href="http://myself659.github.io/post/2016-09-10-from-cepoll-to-go-net/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.8c3cbcb0324c2bb4875ceccba4007cbad4b4ac8377f33af9953c3e7684534a50.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="从C语言epoll编程到go net实现分析" />
+<meta property="og:description" content="说明 go源码版本：1.7 go源码运行环境：Linux epoll在c语言编程示例 先看一下大家比较熟悉的epoll在c语言中应用，代码取自rtm" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://myself659.github.io/post/2016-09-10-from-cepoll-to-go-net/" />
+<meta property="article:published_time" content="2016-09-10T11:58:06+02:00" />
+<meta property="article:modified_time" content="2016-09-10T11:58:06+02:00" />
+<meta itemprop="name" content="从C语言epoll编程到go net实现分析">
+<meta itemprop="description" content="说明 go源码版本：1.7 go源码运行环境：Linux epoll在c语言编程示例 先看一下大家比较熟悉的epoll在c语言中应用，代码取自rtm">
+<meta itemprop="datePublished" content="2016-09-10T11:58:06&#43;02:00" />
+<meta itemprop="dateModified" content="2016-09-10T11:58:06&#43;02:00" />
+<meta itemprop="wordCount" content="3390">
+
+
+
+<meta itemprop="keywords" content="golang," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="从C语言epoll编程到go net实现分析"/>
+<meta name="twitter:description" content="说明 go源码版本：1.7 go源码运行环境：Linux epoll在c语言编程示例 先看一下大家比较熟悉的epoll在c语言中应用，代码取自rtm"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">沉风</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a><a href="/post/leetcode/">
+        <li class="mobile-menu-item">LeetCode</li>
+      </a><a href="/post/read-post/">
+        <li class="mobile-menu-item">Read</li>
+      </a><a href="/post/share-post/">
+        <li class="mobile-menu-item">Share</li>
+      </a><a href="/post/slide-post/">
+        <li class="mobile-menu-item">Slide</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">沉风</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/leetcode/">LeetCode</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/read-post/">Read</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/share-post/">Share</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/slide-post/">Slide</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">从C语言epoll编程到go net实现分析</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2016-09-10 </span>
+        <div class="post-category">
+            <a href="/categories/golang/"> golang </a>
+            </div>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#说明">说明</a></li>
+    <li><a href="#epoll在c语言编程示例">epoll在c语言编程示例</a>
+      <ul>
+        <li><a href="#功能">功能</a></li>
+        <li><a href="#实现分析">实现分析</a></li>
+      </ul>
+    </li>
+    <li><a href="#go-编程示例">go 编程示例</a></li>
+    <li><a href="#对比">对比</a></li>
+    <li><a href="#go-net实现分析">Go Net实现分析</a>
+      <ul>
+        <li><a href="#goroutine调度时机">goroutine调度时机</a></li>
+        <li><a href="#epoll使用">epoll使用</a></li>
+        <li><a href="#总结">总结</a></li>
+        <li><a href="#参考">参考</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <h2 id="说明">说明</h2>
+<ol>
+<li>go源码版本：1.7</li>
+<li>go源码运行环境：Linux</li>
+</ol>
+<h2 id="epoll在c语言编程示例">epoll在c语言编程示例</h2>
+<p>先看一下大家比较熟悉的epoll在c语言中应用，代码取自<a href="https://github.com/myself659/rtmpserver_demo">rtmpserver_demo</a>中的文件<a href="https://github.com/myself659/rtmpserver_demo/blob/master/rtmpepollsrv.c">rtmpepollsrv.c</a></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">  1
+</span><span class="lnt">  2
+</span><span class="lnt">  3
+</span><span class="lnt">  4
+</span><span class="lnt">  5
+</span><span class="lnt">  6
+</span><span class="lnt">  7
+</span><span class="lnt">  8
+</span><span class="lnt">  9
+</span><span class="lnt"> 10
+</span><span class="lnt"> 11
+</span><span class="lnt"> 12
+</span><span class="lnt"> 13
+</span><span class="lnt"> 14
+</span><span class="lnt"> 15
+</span><span class="lnt"> 16
+</span><span class="lnt"> 17
+</span><span class="lnt"> 18
+</span><span class="lnt"> 19
+</span><span class="lnt"> 20
+</span><span class="lnt"> 21
+</span><span class="lnt"> 22
+</span><span class="lnt"> 23
+</span><span class="lnt"> 24
+</span><span class="lnt"> 25
+</span><span class="lnt"> 26
+</span><span class="lnt"> 27
+</span><span class="lnt"> 28
+</span><span class="lnt"> 29
+</span><span class="lnt"> 30
+</span><span class="lnt"> 31
+</span><span class="lnt"> 32
+</span><span class="lnt"> 33
+</span><span class="lnt"> 34
+</span><span class="lnt"> 35
+</span><span class="lnt"> 36
+</span><span class="lnt"> 37
+</span><span class="lnt"> 38
+</span><span class="lnt"> 39
+</span><span class="lnt"> 40
+</span><span class="lnt"> 41
+</span><span class="lnt"> 42
+</span><span class="lnt"> 43
+</span><span class="lnt"> 44
+</span><span class="lnt"> 45
+</span><span class="lnt"> 46
+</span><span class="lnt"> 47
+</span><span class="lnt"> 48
+</span><span class="lnt"> 49
+</span><span class="lnt"> 50
+</span><span class="lnt"> 51
+</span><span class="lnt"> 52
+</span><span class="lnt"> 53
+</span><span class="lnt"> 54
+</span><span class="lnt"> 55
+</span><span class="lnt"> 56
+</span><span class="lnt"> 57
+</span><span class="lnt"> 58
+</span><span class="lnt"> 59
+</span><span class="lnt"> 60
+</span><span class="lnt"> 61
+</span><span class="lnt"> 62
+</span><span class="lnt"> 63
+</span><span class="lnt"> 64
+</span><span class="lnt"> 65
+</span><span class="lnt"> 66
+</span><span class="lnt"> 67
+</span><span class="lnt"> 68
+</span><span class="lnt"> 69
+</span><span class="lnt"> 70
+</span><span class="lnt"> 71
+</span><span class="lnt"> 72
+</span><span class="lnt"> 73
+</span><span class="lnt"> 74
+</span><span class="lnt"> 75
+</span><span class="lnt"> 76
+</span><span class="lnt"> 77
+</span><span class="lnt"> 78
+</span><span class="lnt"> 79
+</span><span class="lnt"> 80
+</span><span class="lnt"> 81
+</span><span class="lnt"> 82
+</span><span class="lnt"> 83
+</span><span class="lnt"> 84
+</span><span class="lnt"> 85
+</span><span class="lnt"> 86
+</span><span class="lnt"> 87
+</span><span class="lnt"> 88
+</span><span class="lnt"> 89
+</span><span class="lnt"> 90
+</span><span class="lnt"> 91
+</span><span class="lnt"> 92
+</span><span class="lnt"> 93
+</span><span class="lnt"> 94
+</span><span class="lnt"> 95
+</span><span class="lnt"> 96
+</span><span class="lnt"> 97
+</span><span class="lnt"> 98
+</span><span class="lnt"> 99
+</span><span class="lnt">100
+</span><span class="lnt">101
+</span><span class="lnt">102
+</span><span class="lnt">103
+</span><span class="lnt">104
+</span><span class="lnt">105
+</span><span class="lnt">106
+</span><span class="lnt">107
+</span><span class="lnt">108
+</span><span class="lnt">109
+</span><span class="lnt">110
+</span><span class="lnt">111
+</span><span class="lnt">112
+</span><span class="lnt">113
+</span><span class="lnt">114
+</span><span class="lnt">115
+</span><span class="lnt">116
+</span><span class="lnt">117
+</span><span class="lnt">118
+</span><span class="lnt">119
+</span><span class="lnt">120
+</span><span class="lnt">121
+</span><span class="lnt">122
+</span><span class="lnt">123
+</span><span class="lnt">124
+</span><span class="lnt">125
+</span><span class="lnt">126
+</span><span class="lnt">127
+</span><span class="lnt">128
+</span><span class="lnt">129
+</span><span class="lnt">130
+</span><span class="lnt">131
+</span><span class="lnt">132
+</span><span class="lnt">133
+</span><span class="lnt">134
+</span><span class="lnt">135
+</span><span class="lnt">136
+</span><span class="lnt">137
+</span><span class="lnt">138
+</span><span class="lnt">139
+</span><span class="lnt">140
+</span><span class="lnt">141
+</span><span class="lnt">142
+</span><span class="lnt">143
+</span><span class="lnt">144
+</span><span class="lnt">145
+</span><span class="lnt">146
+</span><span class="lnt">147
+</span><span class="lnt">148
+</span><span class="lnt">149
+</span><span class="lnt">150
+</span><span class="lnt">151
+</span><span class="lnt">152
+</span><span class="lnt">153
+</span><span class="lnt">154
+</span><span class="lnt">155
+</span><span class="lnt">156
+</span><span class="lnt">157
+</span><span class="lnt">158
+</span><span class="lnt">159
+</span><span class="lnt">160
+</span><span class="lnt">161
+</span><span class="lnt">162
+</span><span class="lnt">163
+</span><span class="lnt">164
+</span><span class="lnt">165
+</span><span class="lnt">166
+</span><span class="lnt">167
+</span><span class="lnt">168
+</span><span class="lnt">169
+</span><span class="lnt">170
+</span><span class="lnt">171
+</span><span class="lnt">172
+</span><span class="lnt">173
+</span><span class="lnt">174
+</span><span class="lnt">175
+</span><span class="lnt">176
+</span><span class="lnt">177
+</span><span class="lnt">178
+</span><span class="lnt">179
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">int RtmpSessionHandle(int iFd, int iEvent, void *pContext)
+{
+    int iRet;
+    RTMP_SESSION *pSession = (RTMP_SESSION *)pContext;
+    
+    if(iEvent&amp;EPOLLIN )
+    {
+        if(0 == pSession-&gt;handshake)
+        {
+            iRet = RtmpSessionHandshake(pSession);      
+            if(0 != iRet)
+            {
+                RtmpSessionHandleFin(pSession); 
+            }
+        }
+        else
+        {   
+            iRet =  RtmpPktHandle(pSession);
+        }
+    }
+    if(iEvent &amp; (EPOLLERR |EPOLLHUP) )
+    {
+        RtmpSessionHandleFin(pSession);
+    }
+        
+    return iRet;
+}
+
+
+
+
+int ListenHandle(int iFd, int iEvent, void *pContext)
+{
+    int iNewFd;
+    int iRet = 0;
+    struct sockaddr tmpAddr;
+    memset(&amp;tmpAddr, 0, sizeof(tmpAddr));
+    int iSocketSize = sizeof(tmpAddr);
+    EPOLL_CTX *pCtx; 
+    RTMP_SESSION *pServer;
+    
+    if(iEvent|EPOLLIN)
+    {
+        iNewFd = accept(iFd, &amp;tmpAddr, (socklen_t *)&amp;iSocketSize); 
+        if(RTMP_EPOLLSRV_INVALIDFD &lt; iNewFd)    
+        {
+            pServer = (RTMP_SESSION *)malloc(sizeof(RTMP_SESSION));
+            if(NULL == pServer)
+            {
+                return -1;
+            }
+            pServer-&gt;handshake  = 0; 
+            pCtx = (EPOLL_CTX *)malloc(sizeof(EPOLL_CTX));
+            if(NULL == pCtx)
+            {
+                free(pServer);
+                return -1;
+            }
+            pServer-&gt;socket = iNewFd;
+            pCtx-&gt;iFd = iNewFd;
+            pCtx-&gt;pContext = pServer;
+            pCtx-&gt;pfHandle = RtmpSessionHandle;
+            /* 加入epoll */
+            iRet = epoll_op(g_iEpollFd, EPOLL_CTL_ADD, iNewFd,  EPOLLIN|EPOLLERR|EPOLLHUP,  pCtx);
+            
+        }
+        else
+        {
+            printf(&#34;accept errno:%s&#34;,strerror(errno));
+        }
+    }
+
+    return iRet;
+}
+
+
+int epoll_op(int iEpollFd, int iOp, int iFd, int iEvent,  EPOLL_CTX *pCtx)
+{
+    int iRet;
+    struct epoll_event ev;
+
+    ev.events = iEvent;
+    ev.data.ptr = pCtx;
+    
+    iRet = epoll_ctl(iEpollFd, iOp, iFd, &amp;ev);
+    
+    return iRet;
+}
+
+
+int epoll_loop(int iEpollFd)
+{
+    int iNum;
+    struct epoll_event astEpEvent[RTMP_EPOLLSRV_MAXEPOLL];
+    int i;
+    EpollCallBack_PF pfHandle;
+    EPOLL_CTX *pCtx;
+    for( ;  ;)
+    {
+        iNum= epoll_wait(iEpollFd, &amp;astEpEvent[0],  RTMP_EPOLLSRV_MAXEPOLL, -1);
+        if( 0 &lt; iNum)
+        {
+            for(i = 0; i &lt; iNum; i++)
+            {
+                pCtx = (EPOLL_CTX *)astEpEvent[i].data.ptr;
+                pfHandle = pCtx-&gt;pfHandle;
+                (void)pfHandle(pCtx-&gt;iFd, astEpEvent[i].events, pCtx-&gt;pContext);
+            }
+        }
+        else
+        {
+            printf(&#34;epoll_wait failed\r\n&#34;);
+        }
+    }
+
+    return 0;
+}
+
+int main(void)
+{
+    int iFd;
+    struct sockaddr_in addr;
+    
+    printf(&#34;in the main\r\n&#34;);
+    /* 初始化epoll */
+    g_iEpollFd = epoll_create(200);
+    if(RTMP_EPOLLSRV_INVALIDFD &gt;= g_iEpollFd)
+    {
+        printf(&#34;create epoll failed\r\n&#34;);
+        return  -1;
+    }
+
+    
+    /* 创建侦听端口 */
+    iFd = socket(AF_INET, SOCK_STREAM, IPPROTO_TCP);
+    if(RTMP_EPOLLSRV_INVALIDFD &gt;= iFd)
+    {
+        printf(&#34;create listen socket failed\r\n&#34;);
+        return  -1;
+    }
+    addr.sin_family = AF_INET;
+    addr.sin_addr.s_addr = inet_addr(g_cRtmpSrvAddr);
+    addr.sin_port = htons(g_usRtmpSrvPort);
+
+    if( 0 != bind(iFd, (struct sockaddr *) &amp;addr, sizeof(struct sockaddr_in)))
+    {
+        return  -1;  
+    }
+
+
+    if( 0 != listen(iFd, 200))
+    {
+        return  -1;
+    }
+
+    EPOLL_CTX *pEpollCtx = (EPOLL_CTX *)malloc(sizeof(EPOLL_CTX));
+    if(NULL == pEpollCtx)
+    {
+        return -1;
+    }
+
+    pEpollCtx-&gt;iFd = iFd;
+    pEpollCtx-&gt;pfHandle = ListenHandle;
+    pEpollCtx-&gt;pContext = NULL;
+    /* 加入epoll */
+    if(0 != epoll_op(g_iEpollFd, EPOLL_CTL_ADD, iFd, EPOLLIN|EPOLLERR|EPOLLHUP, pEpollCtx))
+    {
+        return -1;
+    }
+
+    g_iListenFd = iFd;
+
+    epoll_loop(g_iEpollFd);
+    
+
+    
+    return  0;
+    
+}
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="功能">功能</h3>
+<p>上述代码代码主要通过epoll实现一个最基本的网络服务器（侦听一个端口，处理这个端口上连接）</p>
+<p>几个重要数据结构</p>
+<h3 id="实现分析">实现分析</h3>
+<p>简单说明如下：</p>
+<p>用下面的结构体EPOLL_CTX保存epoll的回调及异步处理的上下文</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">typedef struct 
+{
+    int iFd; 
+    EpollCallBack_PF pfHandle;
+    void  *pContext;
+}EPOLL_CTX;
+</code></pre></td></tr></table>
+</div>
+</div><p>从面向过程编程角度简单梳理一下epoll相关的代码</p>
+<ol>
+<li>创建epoll</li>
+<li>加入epoll</li>
+<li>进入epoll_loop,处理epoll事件</li>
+</ol>
+<h2 id="go-编程示例">go 编程示例</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="kn">package</span> <span class="nx">main</span>
+
+<span class="kn">import</span> <span class="p">(</span>
+    <span class="s">&#34;fmt&#34;</span>
+    <span class="s">&#34;net&#34;</span>
+    <span class="s">&#34;os&#34;</span>
+<span class="p">)</span>
+
+<span class="kd">const</span> <span class="p">(</span>
+    <span class="nx">CONN_HOST</span> <span class="p">=</span> <span class="s">&#34;localhost&#34;</span>
+    <span class="nx">CONN_PORT</span> <span class="p">=</span> <span class="s">&#34;3333&#34;</span>
+    <span class="nx">CONN_TYPE</span> <span class="p">=</span> <span class="s">&#34;tcp&#34;</span>
+<span class="p">)</span>
+
+<span class="kd">func</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="c1">// Listen for incoming connections.
+</span><span class="c1"></span>    <span class="nx">l</span><span class="p">,</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">net</span><span class="p">.</span><span class="nf">Listen</span><span class="p">(</span><span class="nx">CONN_TYPE</span><span class="p">,</span> <span class="nx">CONN_HOST</span><span class="o">+</span><span class="s">&#34;:&#34;</span><span class="o">+</span><span class="nx">CONN_PORT</span><span class="p">)</span>
+    <span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
+        <span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="s">&#34;Error listening:&#34;</span><span class="p">,</span> <span class="nx">err</span><span class="p">.</span><span class="nf">Error</span><span class="p">())</span>
+        <span class="nx">os</span><span class="p">.</span><span class="nf">Exit</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+    <span class="p">}</span>
+    <span class="c1">// Close the listener when the application closes.
+</span><span class="c1"></span>    <span class="k">defer</span> <span class="nx">l</span><span class="p">.</span><span class="nf">Close</span><span class="p">()</span>
+    <span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="s">&#34;Listening on &#34;</span> <span class="o">+</span> <span class="nx">CONN_HOST</span> <span class="o">+</span> <span class="s">&#34;:&#34;</span> <span class="o">+</span> <span class="nx">CONN_PORT</span><span class="p">)</span>
+    <span class="k">for</span> <span class="p">{</span>
+        <span class="c1">// Listen for an incoming connection.
+</span><span class="c1"></span>        <span class="nx">conn</span><span class="p">,</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">l</span><span class="p">.</span><span class="nf">Accept</span><span class="p">()</span>
+        <span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
+            <span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="s">&#34;Error accepting: &#34;</span><span class="p">,</span> <span class="nx">err</span><span class="p">.</span><span class="nf">Error</span><span class="p">())</span>
+            <span class="nx">os</span><span class="p">.</span><span class="nf">Exit</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+        <span class="p">}</span>
+        <span class="c1">// Handle connections in a new goroutine.
+</span><span class="c1"></span>        <span class="k">go</span> <span class="nf">handleRequest</span><span class="p">(</span><span class="nx">conn</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c1">// Handles incoming requests.
+</span><span class="c1"></span><span class="kd">func</span> <span class="nf">handleRequest</span><span class="p">(</span><span class="nx">conn</span> <span class="nx">net</span><span class="p">.</span><span class="nx">Conn</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// Make a buffer to hold incoming data.
+</span><span class="c1"></span>    <span class="nx">buf</span> <span class="o">:=</span> <span class="nb">make</span><span class="p">([]</span><span class="kt">byte</span><span class="p">,</span> <span class="mi">1024</span><span class="p">)</span>
+    <span class="c1">// Read the incoming connection into the buffer.
+</span><span class="c1"></span>    <span class="nx">reqLen</span><span class="p">,</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">conn</span><span class="p">.</span><span class="nf">Read</span><span class="p">(</span><span class="nx">buf</span><span class="p">)</span>
+    <span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
+        <span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="s">&#34;Error reading:&#34;</span><span class="p">,</span> <span class="nx">err</span><span class="p">.</span><span class="nf">Error</span><span class="p">())</span>
+        <span class="nx">conn</span><span class="p">.</span><span class="nf">Close</span><span class="p">()</span>
+        <span class="k">return</span>
+    <span class="p">}</span>
+    <span class="nx">fmt</span><span class="p">.</span><span class="nf">Printf</span><span class="p">(</span><span class="s">&#34;recv:%s, len=%d\n&#34;</span><span class="p">,</span> <span class="nb">string</span><span class="p">(</span><span class="nx">buf</span><span class="p">),</span> <span class="nx">reqLen</span><span class="p">)</span>
+    <span class="c1">// Send a response back to person contacting us.
+</span><span class="c1"></span>    <span class="nx">conn</span><span class="p">.</span><span class="nf">Write</span><span class="p">([]</span><span class="nb">byte</span><span class="p">(</span><span class="s">&#34;Message received.&#34;</span><span class="p">))</span>
+    <span class="c1">// Close the connection when you&#39;re done with it.
+</span><span class="c1"></span>    <span class="nx">conn</span><span class="p">.</span><span class="nf">Close</span><span class="p">()</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="对比">对比</h2>
+<ol>
+<li>handleRequest代码对应c语言版本epoll回调，但是这个代码与业务逻辑很搭，读取报文，进行处理，返回结果这些操作可以同一个函数内（也就是同一个逻辑上面）实现，没有异步回调就是爽啊</li>
+<li>go语言上编程上不需要看到epoll，也就没添加/删除epoll的操作</li>
+<li>编程模型方面无论是原生的回调还是reactor模型，go语言更符合业务的逻辑，而不需要考虑epoll相关处理</li>
+<li>够简洁明了，有着与c语言相当的性能，程序员们让我们一起go吧！</li>
+</ol>
+<h2 id="go-net实现分析">Go Net实现分析</h2>
+<p>通过以上对比，显而易见，go语言保证效率的情况，在易用性大大超过了c，那golang是如何实现的？下面具体分析golang的net库实现</p>
+<h3 id="goroutine调度时机">goroutine调度时机</h3>
+<p>一般在以下四种情况下进行goroutine调度：</p>
+<ol>
+<li>channel收发</li>
+<li>显示调用go函数</li>
+<li>阻塞的系统调用，如read,write</li>
+<li>GC</li>
+</ol>
+<h3 id="epoll使用">epoll使用</h3>
+<p>先简单看一下各个epoll操作代码实现，先找到他们，再分析如何利用这些操作来完成简洁的网络编程</p>
+<h4 id="epoll初始化">epoll初始化</h4>
+<p>对应c语言版本的epoll_create，go语言版本在初始化在下面的代码中完成:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">func netpollinit() {
+    epfd = epollcreate1(_EPOLL_CLOEXEC)
+    if epfd &gt;= 0 {
+        return
+    }
+    epfd = epollcreate(1024)
+    if epfd &gt;= 0 {
+        closeonexec(epfd)
+        return
+    }
+    println(&#34;netpollinit: failed to create epoll descriptor&#34;, -epfd)
+    throw(&#34;netpollinit: failed to create descriptor&#34;)
+}
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="将fd加入epoll">将fd加入epoll</h4>
+<p>对应c语言版本的epoll_op，go语言版本在初始化在下面的代码中完成:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">func netpollopen(fd uintptr, pd *pollDesc) int32 {
+    var ev epollevent
+    ev.events = _EPOLLIN | _EPOLLOUT | _EPOLLRDHUP | _EPOLLET
+    *(**pollDesc)(unsafe.Pointer(&amp;ev.data)) = pd
+    return -epollctl(epfd, _EPOLL_CTL_ADD, int32(fd), &amp;ev)
+}
+</code></pre></td></tr></table>
+</div>
+</div><p>注意这里采用的边沿触发</p>
+<h4 id="从epoll摘除fd">从epoll摘除fd</h4>
+<p>对应c语言版本的epoll_op，go语言版本在初始化在下面的代码中完成:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">func netpollclose(fd uintptr) int32 {
+    var ev epollevent
+    return -epollctl(epfd, _EPOLL_CTL_DEL, int32(fd), &amp;ev)
+}
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="数据结构-polldesc">数据结构 pollDesc</h4>
+<p>结构体pollDesc用于关联fd与epoll，具体结构如下：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">// Network poller descriptor.
+// 每个添加到epoll中的fd都对应了一个PollDesc结构实例
+type pollDesc struct {
+    // 指向下一个pollDesc
+    link *pollDesc // in pollcache, protected by pollcache.lock
+
+    // The lock protects pollOpen, pollSetDeadline, pollUnblock and deadlineimpl operations.
+    // This fully covers seq, rt and wt variables. fd is constant throughout the PollDesc lifetime.
+    // pollReset, pollWait, pollWaitCanceled and runtime·netpollready (IO readiness notification)
+    // proceed w/o taking the lock. So closing, rg, rd, wg and wd are manipulated
+    // in a lock-free way by all operations.
+    // NOTE(dvyukov): the following code uses uintptr to store *g (rg/wg),
+    // that will blow up when GC starts moving objects.
+    lock mutex // protects the following fields
+    // 系统为socket分配的fd
+    fd      uintptr
+    closing bool // 是否关闭
+    // 用于保护旧定时器和就绪的通知
+    seq uintptr // protects from stale timers and ready notifications
+    // 网络io读状态，分为三种: 网络io就绪， 进入等待状态， 等待状态，此时rg保存等待goroutine实例的指针
+    rg uintptr // pdReady, pdWait, G waiting for read or nil
+    rt timer   // read deadline timer (set if rt.f != nil)
+    // 读超时时间，单位为ns
+    rd int64 // read deadline
+    // 网络io写状态，分为三种: 网络io就绪， 进入等待状态， 等待状态，此时rg保存等待goroutine实例的指针
+    wg uintptr // pdReady, pdWait, G waiting for write or nil
+    // 写超时时间，单位为ns
+    wt   timer  // write deadline timer
+    wd   int64  // write deadline
+    user uint32 // user settable cookie
+}
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="epoll操作封装">epoll操作封装</h4>
+<p>以初始化epoll及加入epoll为例，在下面的函数中完成的</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">
+var serverInit sync.Once
+
+func (pd *pollDesc) init(fd *netFD) error {
+    serverInit.Do(runtime_pollServerInit)
+    ctx, errno := runtime_pollOpen(uintptr(fd.sysfd))
+    if errno != 0 {
+        return syscall.Errno(errno)
+    }
+    pd.runtimeCtx = ctx
+    return nil
+}
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">func (fd *netFD) accept() (netfd *netFD, err error) {
+    if err := fd.readLock(); err != nil {
+        return nil, err
+    }
+    defer fd.readUnlock()
+
+    var s int
+    var rsa syscall.Sockaddr
+    if err = fd.pd.prepareRead(); err != nil {
+        return nil, err
+    }
+    for {
+        s, rsa, err = accept(fd.sysfd)
+        if err != nil {
+            nerr, ok := err.(*os.SyscallError)
+            if !ok {
+                return nil, err
+            }
+            switch nerr.Err {
+            case syscall.EAGAIN:
+                if err = fd.pd.waitRead(); err == nil {
+                    continue
+                }
+            case syscall.ECONNABORTED:
+                // This means that a socket on the
+                // listen queue was closed before we
+                // Accept()ed it; it&#39;s a silly error,
+                // so try again.
+                continue
+            }
+            return nil, err
+        }
+        break
+    }
+
+    if netfd, err = newFD(s, fd.family, fd.sotype, fd.net); err != nil {
+        closeFunc(s)
+        return nil, err
+    }
+    // 调用上面函数加入epoll
+    if err = netfd.init(); err != nil {
+        fd.Close()
+        return nil, err
+    }
+    lsa, _ := syscall.Getsockname(netfd.sysfd)
+    netfd.setAddr(netfd.addrFunc()(lsa), netfd.addrFunc()(rsa))
+    return netfd, nil
+}
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="读处理">读处理</h4>
+<p>先从为Read代码开始</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">
+func (fd *netFD) Read(p []byte) (n int, err error) {
+    if err := fd.readLock(); err != nil {
+        return 0, err
+    }
+    defer fd.readUnlock()
+    if len(p) == 0 {
+        // If the caller wanted a zero byte read, return immediately
+        // without trying. (But after acquiring the readLock.) Otherwise
+        // syscall.Read returns 0, nil and eofError turns that into
+        // io.EOF.
+        // TODO(bradfitz): make it wait for readability? (Issue 15735)
+        return 0, nil
+    }
+    if err := fd.pd.prepareRead(); err != nil {
+        return 0, err
+    }
+    for {
+        n, err = syscall.Read(fd.sysfd, p)
+        if err != nil {
+            n = 0
+            if err == syscall.EAGAIN { // 没有可读数据，进行读等待处理
+                if err = fd.pd.waitRead(); err == nil {
+                    continue
+                }
+            }
+        }
+        err = fd.eofError(n, err)
+        break
+    }
+    if _, ok := err.(syscall.Errno); ok {
+        err = os.NewSyscallError(&#34;read&#34;, err)
+    }
+    return
+}
+
+</code></pre></td></tr></table>
+</div>
+</div><p>具体分析读等待处理,跳过封装，直接分析处理代码：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">//go:linkname net_runtime_pollWait net.runtime_pollWait
+// 进入pollwait状态进行goroutine调度
+func net_runtime_pollWait(pd *pollDesc, mode int) int {
+    err := netpollcheckerr(pd, int32(mode))
+    if err != 0 {
+        return err
+    }
+    // As for now only Solaris uses level-triggered IO.
+    if GOOS == &#34;solaris&#34; {
+        netpollarm(pd, mode)
+    }
+    // 
+    for !netpollblock(pd, int32(mode), false) {
+        err = netpollcheckerr(pd, int32(mode))
+        if err != 0 {
+            return err
+        }
+        // Can happen if timeout has fired and unblocked us,
+        // but before we had a chance to run, timeout has been reset.
+        // Pretend it has not happened and retry.
+    }
+    return 0
+}
+
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">// returns true if IO is ready, or false if timedout or closed
+// waitio - wait only for completed IO, ignore errors
+// 返回true表示IO就绪，返回false表示超时或者关闭
+// waitio 表示是否等待IO,超时时该参数为false
+func netpollblock(pd *pollDesc, mode int32, waitio bool) bool {
+    // 从pd.rg取指针
+    gpp := &amp;pd.rg
+    if mode == &#39;w&#39; {
+        gpp = &amp;pd.wg
+    }
+
+    // set the gpp semaphore to WAIT
+    for {
+        old := *gpp
+        if old == pdReady {
+            *gpp = 0
+            return true
+        }
+        if old != 0 {
+            throw(&#34;netpollblock: double wait&#34;)
+        }
+        // cas 设置读状态为pdWait状态
+        if atomic.Casuintptr(gpp, 0, pdWait) {
+            break
+        }
+    }
+
+    // need to recheck error states after setting gpp to WAIT
+    // this is necessary because runtime_pollUnblock/runtime_pollSetDeadline/deadlineimpl
+    // do the opposite: store to closing/rd/wd, membarrier, load of rg/wg
+    // 因为runtime_pollUnblock runtime_pollSetDeadline/deadlineimpl 将rg/wg状态修改为closing
+    if waitio || netpollcheckerr(pd, mode) == 0 {
+        gopark(netpollblockcommit, unsafe.Pointer(gpp), &#34;IO wait&#34;, traceEvGoBlockNet, 5)
+    }
+    // be careful to not lose concurrent READY notification
+    old := atomic.Xchguintptr(gpp, 0)
+    if old &gt; pdWait {
+        throw(&#34;netpollblock: corrupted state&#34;)
+    }
+    return old == pdReady
+}
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="总结">总结</h3>
+<ol>
+<li>net网络库的设计的精华,良好的封装与接口,提高简单可靠的接口</li>
+<li>充分利用goroutine机制</li>
+<li>同步编程，异步执行，这一点其实在内核也能找到，只是调度机制不一样</li>
+<li>多学习源码，这里面有精妙的设计，科学的框架</li>
+<li>很多问题深入一下就到底层了</li>
+<li>异步编程能够带来高性能，但是也是高要求，如果系统复杂，出现问题不好定位，同时代码的可读性也差</li>
+<li>代码在满足正确性的基础上，应先追求可读性，规范性，高性能往后排</li>
+</ol>
+<h3 id="参考">参考</h3>
+<ol>
+<li><a href="http://blog.nindalf.com/how-goroutines-work/">How Goroutines Work</a></li>
+</ol>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">沉风网事</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+        2016-09-10
+        
+    </span>
+  </p>
+  
+  
+</div>
+<footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/golang/">golang</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/post/2017-02-02-coutry-internet-infra/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">互联网在农村-基础设施</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        <a class="next" href="/post/2016-08-20-go-channel-program-demo/">
+            <span class="next-text nav-default">Go channel 编程篇</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    (function() {
+      
+      
+      if (window.location.hostname === 'localhost') return;
+
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      var disqus_shortname = 'ipds-top';
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+  
+
+  
+    <script src="https://utteranc.es/client.js"
+            repo="myself659/myself659/ipds-public"
+            issue-term="pathname"
+            theme="github-light"
+            crossorigin="anonymous"
+            async>
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://github.com/utterance">comments powered by utterances.</a></noscript>
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/8.3.1/mermaid.min.js"></script>
+<div class="social-links">
+      <a href="mailto:myself659@163.com" class="iconfont icon-email" title="email"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-stack-overflow" title="stack-overflow"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-twitter" title="twitter"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-facebook" title="facebook"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-linkedin" title="linkedin"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-google" title="google"></a>
+      <a href="https://github.com/myself659" class="iconfont icon-github" title="github"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-weibo" title="weibo"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-zhihu" title="zhihu"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-douban" title="douban"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-pocket" title="pocket"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-tumblr" title="tumblr"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-instagram" title="instagram"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-gitlab" title="gitlab"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-bilibili" title="bilibili"></a>
+  <a href="http://myself659.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/myself659/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2017 - 
+    2020
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">沉风网事</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+
+
+
+<script type="text/javascript" src="/js/main.min.d7b7ada643c9c1a983026e177f141f7363b4640d619caf01d8831a6718cd44ea.js"></script>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-144475213-1', 'auto');
+	ga('set', 'anonymizeIp', true);
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>谈谈数字货币的反脆弱性 - 沉风网事</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="沉风网事" /><meta name="description" content="定义 首先我们来看一下反脆弱性的定义。这里直接借用： 有些事情能从冲击中受益，当暴露在波动性、随机性、混乱和压力、风险和不确定性下时，它们反而能" /><meta name="keywords" content="沉风网事, 沉风, 区块链" />
+
+
+<meta name="baidu-site-verification" content="9LmlOuIblt" />
+
+
+
+<meta name="generator" content="Hugo 0.68.3 with theme even" />
+
+
+<link rel="canonical" href="http://myself659.github.io/post/cryptocurrency_antifrangible/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.8c3cbcb0324c2bb4875ceccba4007cbad4b4ac8377f33af9953c3e7684534a50.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="谈谈数字货币的反脆弱性" />
+<meta property="og:description" content="定义 首先我们来看一下反脆弱性的定义。这里直接借用： 有些事情能从冲击中受益，当暴露在波动性、随机性、混乱和压力、风险和不确定性下时，它们反而能" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://myself659.github.io/post/cryptocurrency_antifrangible/" />
+<meta property="article:published_time" content="2020-05-31T11:58:06+02:00" />
+<meta property="article:modified_time" content="2020-05-31T11:58:06+02:00" />
+<meta itemprop="name" content="谈谈数字货币的反脆弱性">
+<meta itemprop="description" content="定义 首先我们来看一下反脆弱性的定义。这里直接借用： 有些事情能从冲击中受益，当暴露在波动性、随机性、混乱和压力、风险和不确定性下时，它们反而能">
+<meta itemprop="datePublished" content="2020-05-31T11:58:06&#43;02:00" />
+<meta itemprop="dateModified" content="2020-05-31T11:58:06&#43;02:00" />
+<meta itemprop="wordCount" content="1185">
+
+
+
+<meta itemprop="keywords" content="BlockChain," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="谈谈数字货币的反脆弱性"/>
+<meta name="twitter:description" content="定义 首先我们来看一下反脆弱性的定义。这里直接借用： 有些事情能从冲击中受益，当暴露在波动性、随机性、混乱和压力、风险和不确定性下时，它们反而能"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">沉风</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a><a href="/post/leetcode/">
+        <li class="mobile-menu-item">LeetCode</li>
+      </a><a href="/post/read-post/">
+        <li class="mobile-menu-item">Read</li>
+      </a><a href="/post/share-post/">
+        <li class="mobile-menu-item">Share</li>
+      </a><a href="/post/slide-post/">
+        <li class="mobile-menu-item">Slide</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">沉风</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/leetcode/">LeetCode</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/read-post/">Read</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/share-post/">Share</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/slide-post/">Slide</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">谈谈数字货币的反脆弱性</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2020-05-31 </span>
+        <div class="post-category">
+            <a href="/categories/blockchain/"> BlockChain </a>
+            </div>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents"></nav>
+  </div>
+</div>
+    <div class="post-content">
+      <h1 id="定义">定义</h1>
+<p>首先我们来看一下反脆弱性的定义。这里直接借用：</p>
+<blockquote>
+<p>有些事情能从冲击中受益，当暴露在波动性、随机性、混乱和压力、风险和不确定性下时，它们反而能茁壮成长和壮大。不过，尽管这一现象无处不在，我们还没有一个词来形容脆弱性的对立面。所以，不妨叫它反脆弱性（antifragile）吧。</p>
+</blockquote>
+<p>接下来我们来探究一下数字货币反脆弱性体现在哪些方面？需要说明一下这里的数字货币是指比特币和以太坊。</p>
+<p>具体如下：</p>
+<ol>
+<li>构建在坚实的科学基础之上</li>
+<li>强大的抗打击能力</li>
+<li>去中心化组织</li>
+<li>保持开放性</li>
+<li>开拓独特性并保持领先</li>
+<li>超越主权资产配置</li>
+</ol>
+<h1 id="构建在坚实的科学基础之上">构建在坚实的科学基础之上</h1>
+<p>比特币与以太坊都是构建在数学、密码学、计算机科学等基础之上。以比特币为例，比特币的技术由密码学、分布式帐本、PoW共识、P2P等组成。这些技术都得到无数次实践证明或者简单可靠。正是因为有这些科学基础，整个比特币系统一直可靠运行，没有出现一笔交易错误。</p>
+<h1 id="强大的抗打击能力">强大的抗打击能力</h1>
+<p>以比特币为例，比特币具有很强的抗打击能力。比特币曾被媒体宣布死亡近400次，被部分政府定义为非法，打击比特币交易，自身生态也遭受到交易所被盗、比特币分叉之争等重大事故，但是到了现在，比特币的链上交易依然活跃，始终稳居加密货币王座，同时也是每个月开发更新最多最频繁的加密货币。</p>
+<h1 id="去中心化组织">去中心化组织</h1>
+<p>比特币节点网络是一个去中心化组织，类似于海星，具有极强的生命力：</p>
+<blockquote>
+<p>海星这种生物是没有头的，它的智能控制分布在肢体的各个部分，砍掉海星的一条手臂，这个手臂可以演化成另一个海星。海星就是一个去中心化的组织系统。</p>
+</blockquote>
+<p>比特币网络由千千万万的节点（矿工）组成，这些节点维护网络安全和共识账本，即使一部分节点掉线甚至退出，也不影响比特币整个网络的运行，整个网络具有极强的高可用性。同时这种多个节点运行的模式，也有利于对抗攻击。</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<h1 id="保持开放性">保持开放性</h1>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<p>无论是比特币还是以太坊都有很好的开放性，其开放性体现如下：</p>
+<ol>
+<li>节点自由加入与退出</li>
+<li>代码开源</li>
+<li>社区开放，支持各种BIP与EIP，促进比特币与以太坊不断进化</li>
+</ol>
+<h1 id="开拓独特性并保持领先">开拓独特性并保持领先</h1>
+<p>独特性意味着不可替代性，并且会拥有独特性带来的先发优势。</p>
+<p>比特币是数字加密货币的鼻祖，同时也是第一个抗通胀的数字资产，是当之无愧的数字黄金，从诞生开始一直保持市值第一，在整个熊市过程中比特币的所占的市值份额是增长趋势。</p>
+<p>以太坊首先实现智能合约，并一直保持最大智能合约平台。</p>
+<h1 id="超越主权资产配置">超越主权资产配置</h1>
+<p>现在国际形势变化多端，中美关系降温明显，世界经济这些年的发展离不了经济全球化。在政治上全球化协作倒退的今天，已经全球化的数字货币正好可以抢占这一倒退空出的空间。毕竟长期来看，经济全球化是不可逆的趋势。数字货币可以在全球范围内实现了货币自由（从另一个角度数字货币提供一种新的自由方式：货币自由）。</p>
+<h1 id="后记">后记</h1>
+<p>说明一下，虽然数字货币价格波动范围较大，但是从一个货币的角度来看数字货币具有很强的反脆弱性。个人投资由于价格波动大而出局，体现了数字货币系统的遍历性。</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">沉风网事</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+        2020-05-31
+        
+    </span>
+  </p>
+  
+  
+</div>
+<footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/blockchain/">BlockChain</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/post/think-outof-box/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">谈谈跳出框架思考</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        <a class="next" href="/post/covid-19-symptom/">
+            <span class="next-text nav-default">分享：一图了解新型冠状病毒的症状有哪些</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    (function() {
+      
+      
+      if (window.location.hostname === 'localhost') return;
+
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      var disqus_shortname = 'ipds-top';
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+  
+
+  
+    <script src="https://utteranc.es/client.js"
+            repo="myself659/myself659/ipds-public"
+            issue-term="pathname"
+            theme="github-light"
+            crossorigin="anonymous"
+            async>
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://github.com/utterance">comments powered by utterances.</a></noscript>
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/8.3.1/mermaid.min.js"></script>
+<div class="social-links">
+      <a href="mailto:myself659@163.com" class="iconfont icon-email" title="email"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-stack-overflow" title="stack-overflow"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-twitter" title="twitter"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-facebook" title="facebook"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-linkedin" title="linkedin"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-google" title="google"></a>
+      <a href="https://github.com/myself659" class="iconfont icon-github" title="github"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-weibo" title="weibo"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-zhihu" title="zhihu"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-douban" title="douban"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-pocket" title="pocket"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-tumblr" title="tumblr"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-instagram" title="instagram"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-gitlab" title="gitlab"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-bilibili" title="bilibili"></a>
+  <a href="http://myself659.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/myself659/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2017 - 
+    2020
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">沉风网事</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+
+
+
+<script type="text/javascript" src="/js/main.min.d7b7ada643c9c1a983026e177f141f7363b4640d619caf01d8831a6718cd44ea.js"></script>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-144475213-1', 'auto');
+	ga('set', 'anonymizeIp', true);
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+
+
+
+
+</body>
+</html>

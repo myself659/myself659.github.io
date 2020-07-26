@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>微盟删库事件复盘与思考 - 沉风网事</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="沉风网事" /><meta name="description" content="事故 先简单看一下整个事故的粗略时间线。 2月23日，微盟服务出现故障。商家商城、小程序均无法登录。 2月25日，微盟紧急恢复了核心业务的线上生产" /><meta name="keywords" content="沉风网事, 沉风, 区块链" />
+
+
+<meta name="baidu-site-verification" content="9LmlOuIblt" />
+
+
+
+<meta name="generator" content="Hugo 0.68.3 with theme even" />
+
+
+<link rel="canonical" href="http://myself659.github.io/post/weimeng-del-data/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.8c3cbcb0324c2bb4875ceccba4007cbad4b4ac8377f33af9953c3e7684534a50.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="微盟删库事件复盘与思考" />
+<meta property="og:description" content="事故 先简单看一下整个事故的粗略时间线。 2月23日，微盟服务出现故障。商家商城、小程序均无法登录。 2月25日，微盟紧急恢复了核心业务的线上生产" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://myself659.github.io/post/weimeng-del-data/" />
+<meta property="article:published_time" content="2020-03-08T11:58:06+02:00" />
+<meta property="article:modified_time" content="2020-03-08T11:58:06+02:00" />
+<meta itemprop="name" content="微盟删库事件复盘与思考">
+<meta itemprop="description" content="事故 先简单看一下整个事故的粗略时间线。 2月23日，微盟服务出现故障。商家商城、小程序均无法登录。 2月25日，微盟紧急恢复了核心业务的线上生产">
+<meta itemprop="datePublished" content="2020-03-08T11:58:06&#43;02:00" />
+<meta itemprop="dateModified" content="2020-03-08T11:58:06&#43;02:00" />
+<meta itemprop="wordCount" content="1844">
+
+
+
+<meta itemprop="keywords" content="研发管理," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="微盟删库事件复盘与思考"/>
+<meta name="twitter:description" content="事故 先简单看一下整个事故的粗略时间线。 2月23日，微盟服务出现故障。商家商城、小程序均无法登录。 2月25日，微盟紧急恢复了核心业务的线上生产"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">沉风</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a><a href="/post/leetcode/">
+        <li class="mobile-menu-item">LeetCode</li>
+      </a><a href="/post/read-post/">
+        <li class="mobile-menu-item">Read</li>
+      </a><a href="/post/share-post/">
+        <li class="mobile-menu-item">Share</li>
+      </a><a href="/post/slide-post/">
+        <li class="mobile-menu-item">Slide</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">沉风</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/leetcode/">LeetCode</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/read-post/">Read</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/share-post/">Share</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/slide-post/">Slide</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">微盟删库事件复盘与思考</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2020-03-08 </span>
+        <div class="post-category">
+            <a href="/categories/%E7%A0%94%E5%8F%91%E7%AE%A1%E7%90%86/"> 研发管理 </a>
+            </div>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents"></nav>
+  </div>
+</div>
+    <div class="post-content">
+      <!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<h1 id="事故">事故</h1>
+<p>先简单看一下整个事故的粗略时间线。</p>
+<p>2月23日，微盟服务出现故障。商家商城、小程序均无法登录。</p>
+<p>2月25日，微盟紧急恢复了核心业务的线上生产环境，新用户使用不受影响，并提供老用户临时过渡方案，确保商家在数据暂时没有恢复的情况下可以正常经营。</p>
+<p>2月28号，微盟表示已经恢复了微站产品的所有数据，并已导入到商户店铺，新老用户使用将不受影响。</p>
+<p>3月1号微盟表示数据已全面找回，并公布商家赔付计划。</p>
+<h1 id="影响">影响</h1>
+<p>首先看股市反应：数据丢失，微盟损失惨重。在2月25日正式披露数据丢失后，微盟的股价连续三日大幅下跌，从6.2下跌到4.8差不多跌了25%，整个市值蒸发20亿元以上。</p>
+<p>除此之外，本次事故对微盟的社会公信力有很大的影响，说明整个企业在运营、管理和技术安全上是有问题的，对企业的社会形象和商业业态都会遭受大家的质疑。</p>
+<p>由于微盟整个系统的宕机，导致商家与消费者都不正常运营，部分可能直接停业，对整个社会的经济系统也有一些冲击与影响。</p>
+<h1 id="问题">问题</h1>
+<p>作为一名局外人，对这次微盟删库事件，个人有以下问题：</p>
+<ol>
+<li>运维贺某是由于什么原因作出删库的事件？</li>
+<li>贺某删除了哪些数据？贺某删除整个生产环境的数据包括备份数据吗？</li>
+<li>微盟是数据架构是如何设计？让一个运维能够删除整个生产环境的数据？</li>
+<li>微盟的数据物理分布是如何设计的？</li>
+<li>微盟运维权限是如何管理？</li>
+<li>微盟离线备份数据是备份方式是怎么样？是增量还是快照方式？</li>
+<li>微盟离线备份数据为什么花了五天都不能够恢复？离线备份数据有多少？</li>
+<li>众多离线备份数据是如何恢复的？</li>
+<li>微盟离线备份数据是否完整？</li>
+<li>微盟离线备份数据恢复后如何验证？如何检查恢复数据与备份数据之间的一致性？</li>
+<li>微盟离线备份数据恢复是否相互依赖？</li>
+<li>微盟离线备份数据（毕竟微盟成立于2013年）是否兼容？如与应用程序兼容？</li>
+<li>微盟离线备份数据恢复的速度的瓶颈在哪里？网络带宽？硬盘IO? 数据不能并行恢复？验证困难？</li>
+<li>从备份数据到线上数据恢复，是恢复几份数据？如何保证这几个线上数据的一致性？</li>
+<li>如何防止误操作？</li>
+<li>如何量化赔偿商家的损失？</li>
+<li>如何快速检测运维违规操作并迅速报警？</li>
+<li>是否知道技术风险的存在，由于存在侥幸心理和事不关已，多一事不如少一事，放过这个潜在的风险？</li>
+</ol>
+<h1 id="经验教训">经验教训</h1>
+<p>微盟经过七天七夜的抢救，成功救回了全部数据，从结果上来看是一次成功的抢救。但是数据恢复的时间太长，服务高可用直接打到99%以下。</p>
+<p>事后微盟发布了改进计划，这些改进计划有针对性回答我上面一些问题。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">    措施一：数据安全管理机制全面加固与整改，加强运维平台治理
+
+　　1、完善数据安全管理制度（涵盖权限、监控、审计方面），严格执行授权审批制度；
+
+　　2、使用腾讯云CAM权限系统进行云资源管理，严格执行分级授权和最小集权限制度，对高危险动作执行二次授权制度；
+
+　　3、建立科学、高效、安全的网络策略，对开发环境、测试环境和生产环境进行严格隔离；使用腾讯云堡垒机替换自建堡垒机，进行细粒度权限分级和授权管理，同时严格审计堡垒机操作日志，发送安全审计报表；
+
+　　4、加强运维安全流程学习，职业道德学习，法律学习等。
+
+　　措施二：加强灾备体系的建设，做到多云异地冷备
+
+　　1、建立多云灾备体系，在北京、上海、南京等地区建立全备份的冷备系统架构；
+
+　　2、借助腾讯云的IAAS的底层服务能力，建立高可用的同城双活架构；
+
+　　3、云上所有的云主机，启用每天的快照策略，保证全量和增量备份；
+
+　　4、所有非结构化数据，使用腾讯COS对象存储系统进行归档保存，启用COS的多异地复制功能，数据存放多地，并且COS 冷存储，确保数据只增不减；
+
+　　5、建立月、季度级别的定期演练机制和制度 。
+
+　　措施三：基础设施全力上云
+
+　　1、借助腾讯云数据库MySQL的数据高可用和安全体系，逐步放弃自建数据库服务 ，迁移到腾讯云数据库（CDB），快速具备数据库跨可用区和异地灾备的能力；
+
+　　2、黑石1.0物理机全面升级黑石2.0，全面使用云主机。
+</code></pre></td></tr></table>
+</div>
+</div><p>上面这些总结很到位，个人帮微盟补充一些：</p>
+<ol>
+<li>学习netfix的企业文化中的第一条：招聘成年人。成年人不会作出对个人和公司双输的事件，成人有自己调整心态与控制情绪的能力。</li>
+<li>学习netfix的实践，应用混顿工程，主动拥抱故障，提前演练与操作。国内阿里双11每年都要进行演练。</li>
+<li>减少对人的依赖。在执行方面机器比人靠谱多了。</li>
+</ol>
+<h1 id="总结">总结</h1>
+<p>总之，微盟这次删库事故是技术债与管理债长期累积不解决的结果。欠债不还，一定会在某个时间被某个黑天鹅事件引爆。</p>
+<p>这次显露出来的技术问题的本质是数据高可用性技术的不足。</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<h1 id="欢迎关注">欢迎关注</h1>
+<p>欢迎关注微信公众帐号：沉风网事(savewind)</p>
+<p><img src="/images/cfws.jpg" alt="沉风网事"></p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">沉风网事</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+        2020-03-08
+        
+    </span>
+  </p>
+  
+  
+</div>
+<footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/%E7%A0%94%E5%8F%91%E7%AE%A1%E7%90%86/">研发管理</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/post/find-what-todo/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">在选择做什么之前，先问问自己这四个问题</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        <a class="next" href="/post/stock-us-analysis/">
+            <span class="next-text nav-default">通过数据分析预测股票价格变化靠谱吗？</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    (function() {
+      
+      
+      if (window.location.hostname === 'localhost') return;
+
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      var disqus_shortname = 'ipds-top';
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+  
+
+  
+    <script src="https://utteranc.es/client.js"
+            repo="myself659/myself659/ipds-public"
+            issue-term="pathname"
+            theme="github-light"
+            crossorigin="anonymous"
+            async>
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://github.com/utterance">comments powered by utterances.</a></noscript>
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/8.3.1/mermaid.min.js"></script>
+<div class="social-links">
+      <a href="mailto:myself659@163.com" class="iconfont icon-email" title="email"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-stack-overflow" title="stack-overflow"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-twitter" title="twitter"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-facebook" title="facebook"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-linkedin" title="linkedin"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-google" title="google"></a>
+      <a href="https://github.com/myself659" class="iconfont icon-github" title="github"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-weibo" title="weibo"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-zhihu" title="zhihu"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-douban" title="douban"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-pocket" title="pocket"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-tumblr" title="tumblr"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-instagram" title="instagram"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-gitlab" title="gitlab"></a>
+      <a href="http://myself659.github.io/" class="iconfont icon-bilibili" title="bilibili"></a>
+  <a href="http://myself659.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/myself659/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2017 - 
+    2020
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">沉风网事</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+
+
+
+<script type="text/javascript" src="/js/main.min.d7b7ada643c9c1a983026e177f141f7363b4640d619caf01d8831a6718cd44ea.js"></script>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-144475213-1', 'auto');
+	ga('set', 'anonymizeIp', true);
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+
+
+
+
+</body>
+</html>
