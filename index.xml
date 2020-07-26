@@ -7,19 +7,10 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>沉风网事</copyright>
-    <lastBuildDate>Wed, 08 Jul 2020 11:58:06 +0200</lastBuildDate>
+    <lastBuildDate>Fri, 26 Jun 2020 11:58:06 +0200</lastBuildDate>
     
 	<atom:link href="http://myself659.github.io/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>mermaid demo</title>
-      <link>http://myself659.github.io/post/mermaid-demo/</link>
-      <pubDate>Wed, 08 Jul 2020 11:58:06 +0200</pubDate>
-      
-      <guid>http://myself659.github.io/post/mermaid-demo/</guid>
-      <description>TD sequenceDiagram participant Alice participant Bob Alice-John: Hello John, how are you? loop Healthcheck John-John: Fight against hypochondria end Note right of John: Rational thoughts prevail... John--Alice: Great! John-Bob: How about you? Bob--John: Jolly good! 欢迎关注 欢迎关注微信公众帐号：沉风网事(savewind)</description>
-    </item>
     
     <item>
       <title>谈谈跳出框架思考</title>
@@ -99,7 +90,7 @@
       <pubDate>Fri, 03 Apr 2020 11:58:06 +0200</pubDate>
       
       <guid>http://myself659.github.io/post/about-invest/</guid>
-      <description>首先，吃一下瑞幸的瓜，表示对作空机构的敬意： 调研机构为了证明瑞幸咖啡造假，派出92个全职和1418个兼职调查员，在全国900多家门店蹲点，收</description>
+      <description>背景 首先，吃一下瑞幸的瓜，表示对作空机构的敬意： 调研机构为了证明瑞幸咖啡造假，派出92个全职和1418个兼职调查员，在全国900多家门店蹲点</description>
     </item>
     
     <item>
