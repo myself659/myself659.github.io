@@ -776,6 +776,52 @@ KISS原则 关于KISS原则，架构设计通用原则，有太多说明，这�
     	<aside id="sidebar">
 	
 
+
+
+<aside class="table-of-contents">
+    <details>
+    <summary>
+    <b>Table of Contents</b>
+    </summary><li><a href="/2018/12/05/comware-rd/#%e5%89%8d%e8%a8%80">前言</a></li>
+            <li><a href="/2018/12/05/comware-rd/#comware">Comware</a></li>
+            <li><a href="/2018/12/05/comware-rd/#%e4%b8%9a%e5%8a%a1">业务</a></li>
+            <li><a href="/2018/12/05/comware-rd/#%e6%96%87%e5%8c%96">文化</a></li>
+            <li><a href="/2018/12/05/comware-rd/#%e5%9b%a2%e9%98%9f">团队</a></li>
+            <li><a href="/2018/12/05/comware-rd/#%e6%9e%b6%e6%9e%84">架构</a></li>
+            
+                    <ul class="toc-h2"><li><a href="/2018/12/05/comware-rd/#%e9%80%89%e6%8b%a9%e5%bc%80%e6%ba%90-%e6%8b%a5%e6%8a%b1%e5%bc%80%e6%ba%90-%e4%b8%8d%e8%a6%81%e9%87%8d%e5%a4%8d%e9%80%a0%e8%bd%ae%e5%ad%90">选择开源，拥抱开源，不要重复造轮子</a></li>
+            <li><a href="/2018/12/05/comware-rd/#%e5%90%88%e6%b3%95%e5%90%88%e8%a7%84">合法合规</a></li>
+            <li><a href="/2018/12/05/comware-rd/#kiss%e5%8e%9f%e5%88%99">KISS原则</a></li>
+            <li><a href="/2018/12/05/comware-rd/#%e5%bc%80%e6%94%be%e6%80%a7">开放性</a></li>
+            <li><a href="/2018/12/05/comware-rd/#%e5%88%86%e5%b1%82%e4%b8%8e%e5%88%86%e8%a7%a3">分层与分解</a></li>
+            <li><a href="/2018/12/05/comware-rd/#%e6%b5%8b%e8%af%95%e7%8b%ac%e7%ab%8b%e6%80%a7">测试独立性</a></li>
+            <li><a href="/2018/12/05/comware-rd/#%e8%bd%af%e4%bb%b6%e5%b7%a5%e7%a8%8b">软件工程</a></li>
+            <li><a href="/2018/12/05/comware-rd/#%e5%b7%a5%e5%85%b7%e4%b8%8e%e6%95%88%e7%8e%87">工具与效率</a></li>
+            <li><a href="/2018/12/05/comware-rd/#%e8%b5%84%e6%ba%90%e7%bb%9f%e4%b8%80%e7%ae%a1%e7%90%86">资源统一管理</a></li>
+            <li><a href="/2018/12/05/comware-rd/#%e6%8e%a7%e5%88%b6%e9%9b%86%e4%b8%ad%e5%bc%8f-%e5%a4%84%e7%90%86%e5%88%86%e5%b8%83%e5%bc%8f">控制集中式，处理分布式</a></li>
+            <li><a href="/2018/12/05/comware-rd/#%e6%96%b9%e6%a1%88%e8%af%84%e5%ae%a1">方案评审</a></li>
+            <li><a href="/2018/12/05/comware-rd/#%e9%a2%84%e7%a0%94">预研</a></li>
+            <li><a href="/2018/12/05/comware-rd/#%e5%ba%a6%e9%87%8f%e4%b8%8d%e5%8f%af%e5%b0%91">度量不可少</a></li>
+            <li><a href="/2018/12/05/comware-rd/#%e5%87%8f%e5%b0%91%e5%af%b9%e4%ba%ba%e7%9a%84%e4%be%9d%e8%b5%96">减少对人的依赖</a></li>
+            <li><a href="/2018/12/05/comware-rd/#%e6%96%87%e6%a1%a3">文档</a></li>
+            
+                    </ul><li><a href="/2018/12/05/comware-rd/#%e4%bb%a3%e7%a0%81">代码</a></li>
+            
+                    <ul class="toc-h2"><li><a href="/2018/12/05/comware-rd/#%e7%89%88%e6%9c%ac%e5%8c%96">版本化</a></li>
+            <li><a href="/2018/12/05/comware-rd/#%e8%ae%be%e8%ae%a1%e5%85%88%e8%a1%8c">设计先行</a></li>
+            <li><a href="/2018/12/05/comware-rd/#%e4%bb%a3%e7%a0%81%e8%a7%84%e8%8c%83%e6%98%af%e8%a1%8c%e5%8a%a8%e5%87%86%e5%88%99">代码规范是行动准则</a></li>
+            <li><a href="/2018/12/05/comware-rd/#%e5%bf%85%e4%b8%8d%e5%8f%af%e5%b0%91%e7%9a%84%e5%8d%95%e5%85%83%e6%b5%8b%e8%af%95">必不可少的单元测试</a></li>
+            <li><a href="/2018/12/05/comware-rd/#%e4%b8%8d%e6%ad%a2%e4%bb%a3%e7%a0%81review-%e8%bf%98%e6%9c%89%e4%bb%a3%e7%a0%81%e9%89%b4%e5%ae%9a">不止代码review，还有代码鉴定</a></li>
+            <li><a href="/2018/12/05/comware-rd/#%e6%b3%a8%e9%87%8d%e5%88%9d%e5%a7%8b%e4%bb%a3%e7%a0%81%e8%b4%a8%e9%87%8f">注重初始代码质量</a></li>
+            <li><a href="/2018/12/05/comware-rd/#%e6%8e%a5%e5%8f%a3%e4%bc%98%e5%85%88-%e6%8e%a5%e5%8f%a3%e5%85%88%e8%a1%8c">接口优先，接口先行</a></li>
+            <li><a href="/2018/12/05/comware-rd/#%e9%81%bf%e5%85%8d%e4%bb%a5%e5%bf%99%e6%b2%bb%e4%b9%b1">避免以忙治乱</a></li>
+            
+                    </ul><li><a href="/2018/12/05/comware-rd/#%e8%af%b4%e6%98%8e">说明</a></li>
+            <li><a href="/2018/12/05/comware-rd/#%e5%8f%82%e8%80%83">参考</a></li>
+            
+                    <ul class="toc-h2"><li><a href="/2018/12/05/comware-rd/#%e6%ac%a2%e8%bf%8e%e5%85%b3%e6%b3%a8">欢迎关注</a></li>
+            </details>
+</aside>
     
 <div class="widget-wrap">
     <h3 class="widget-title">
@@ -917,244 +963,6 @@ KISS原则 关于KISS原则，架构设计通用原则，有太多说明，这�
         </ul>
     </div>
 </div>
-
-
-    
-
-
-<div class="widget-wrap">
-    <h3 class="widget-title">Categories</h3>
-    <div class="widget">
-        <ul class="category-list">
-            
-            <li class="category-list-item">
-                
-                <a class="category-list-link" href="https://myself659.github.io/categories/arch">
-                    arch
-                </a>
-                <span class="category-list-count">5</span>
-            </li>
-            
-            <li class="category-list-item">
-                
-                <a class="category-list-link" href="https://myself659.github.io/categories/blockchain">
-                    blockchain
-                </a>
-                <span class="category-list-count">27</span>
-            </li>
-            
-            <li class="category-list-item">
-                
-                <a class="category-list-link" href="https://myself659.github.io/categories/cryptography">
-                    cryptography
-                </a>
-                <span class="category-list-count">1</span>
-            </li>
-            
-            <li class="category-list-item">
-                
-                <a class="category-list-link" href="https://myself659.github.io/categories/data">
-                    data
-                </a>
-                <span class="category-list-count">2</span>
-            </li>
-            
-            <li class="category-list-item">
-                
-                <a class="category-list-link" href="https://myself659.github.io/categories/data-struct">
-                    data-struct
-                </a>
-                <span class="category-list-count">1</span>
-            </li>
-            
-            <li class="category-list-item">
-                
-                <a class="category-list-link" href="https://myself659.github.io/categories/distributed">
-                    distributed
-                </a>
-                <span class="category-list-count">2</span>
-            </li>
-            
-            <li class="category-list-item">
-                
-                <a class="category-list-link" href="https://myself659.github.io/categories/economy">
-                    economy
-                </a>
-                <span class="category-list-count">6</span>
-            </li>
-            
-            <li class="category-list-item">
-                
-                <a class="category-list-link" href="https://myself659.github.io/categories/english">
-                    english
-                </a>
-                <span class="category-list-count">1</span>
-            </li>
-            
-            <li class="category-list-item">
-                
-                <a class="category-list-link" href="https://myself659.github.io/categories/ethereum">
-                    ethereum
-                </a>
-                <span class="category-list-count">2</span>
-            </li>
-            
-            <li class="category-list-item">
-                
-                <a class="category-list-link" href="https://myself659.github.io/categories/golang">
-                    golang
-                </a>
-                <span class="category-list-count">10</span>
-            </li>
-            
-            <li class="category-list-item">
-                
-                <a class="category-list-link" href="https://myself659.github.io/categories/internet">
-                    internet
-                </a>
-                <span class="category-list-count">4</span>
-            </li>
-            
-            <li class="category-list-item">
-                
-                <a class="category-list-link" href="https://myself659.github.io/categories/ipfs">
-                    ipfs
-                </a>
-                <span class="category-list-count">3</span>
-            </li>
-            
-            <li class="category-list-item">
-                
-                <a class="category-list-link" href="https://myself659.github.io/categories/kubernetes">
-                    kubernetes
-                </a>
-                <span class="category-list-count">3</span>
-            </li>
-            
-            <li class="category-list-item">
-                
-                <a class="category-list-link" href="https://myself659.github.io/categories/life">
-                    life
-                </a>
-                <span class="category-list-count">2</span>
-            </li>
-            
-            <li class="category-list-item">
-                
-                <a class="category-list-link" href="https://myself659.github.io/categories/linux">
-                    linux
-                </a>
-                <span class="category-list-count">11</span>
-            </li>
-            
-            <li class="category-list-item">
-                
-                <a class="category-list-link" href="https://myself659.github.io/categories/network">
-                    network
-                </a>
-                <span class="category-list-count">3</span>
-            </li>
-            
-            <li class="category-list-item">
-                
-                <a class="category-list-link" href="https://myself659.github.io/categories/nginx">
-                    nginx
-                </a>
-                <span class="category-list-count">1</span>
-            </li>
-            
-            <li class="category-list-item">
-                
-                <a class="category-list-link" href="https://myself659.github.io/categories/python">
-                    python
-                </a>
-                <span class="category-list-count">1</span>
-            </li>
-            
-            <li class="category-list-item">
-                
-                <a class="category-list-link" href="https://myself659.github.io/categories/read">
-                    read
-                </a>
-                <span class="category-list-count">1</span>
-            </li>
-            
-            <li class="category-list-item">
-                
-                <a class="category-list-link" href="https://myself659.github.io/categories/rust">
-                    rust
-                </a>
-                <span class="category-list-count">1</span>
-            </li>
-            
-            <li class="category-list-item">
-                
-                <a class="category-list-link" href="https://myself659.github.io/categories/secure">
-                    secure
-                </a>
-                <span class="category-list-count">2</span>
-            </li>
-            
-            <li class="category-list-item">
-                
-                <a class="category-list-link" href="https://myself659.github.io/categories/substrate">
-                    substrate
-                </a>
-                <span class="category-list-count">1</span>
-            </li>
-            
-            <li class="category-list-item">
-                
-                <a class="category-list-link" href="https://myself659.github.io/categories/web">
-                    web
-                </a>
-                <span class="category-list-count">1</span>
-            </li>
-            
-            <li class="category-list-item">
-                
-                <a class="category-list-link" href="https://myself659.github.io/categories/%E5%95%86%E4%B8%9A">
-                    商业
-                </a>
-                <span class="category-list-count">5</span>
-            </li>
-            
-            <li class="category-list-item">
-                
-                <a class="category-list-link" href="https://myself659.github.io/categories/%E6%88%90%E9%95%BF">
-                    成长
-                </a>
-                <span class="category-list-count">4</span>
-            </li>
-            
-            <li class="category-list-item">
-                
-                <a class="category-list-link" href="https://myself659.github.io/categories/%E7%A0%94%E5%8F%91%E7%AE%A1%E7%90%86">
-                    研发管理
-                </a>
-                <span class="category-list-count">2</span>
-            </li>
-            
-            <li class="category-list-item">
-                
-                <a class="category-list-link" href="https://myself659.github.io/categories/%E7%BC%96%E7%A8%8B">
-                    编程
-                </a>
-                <span class="category-list-count">5</span>
-            </li>
-            
-            <li class="category-list-item">
-                
-                <a class="category-list-link" href="https://myself659.github.io/categories/%E9%97%B2%E8%B0%88%E4%B9%B1%E6%89%AF">
-                    闲谈乱扯
-                </a>
-                <span class="category-list-count">10</span>
-            </li>
-            
-        </ul>
-    </div>
-</div>
-
 
 
 
