@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>谈谈跳出框架思考 - 沉风网事</title>
+  <title>如何选择合适的node版本 - 沉风网事</title>
   <meta name="renderer" content="webkit" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
@@ -16,7 +16,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="沉风网事" /><meta name="description" content="引子 先看一下这道数学题： 画直线经过下图中九个点，并且做到不重复经过任何一个点。 这里不是出题给大家做，只是引出话题。 下面是这个问题的答案： 这个" /><meta name="keywords" content="沉风网事, 沉风, 区块链" />
+<meta name="author" content="沉风网事" /><meta name="description" content="前言 作为一个常年以c,c&#43;&#43;,golang为主的后端程序员，刚接触nodejs有一个困惑，就是node有哪么多版本到底该选择哪个版本呢？ no" /><meta name="keywords" content="沉风网事, 沉风, 区块链" />
 
 
 <meta name="baidu-site-verification" content="9LmlOuIblt" />
@@ -26,7 +26,7 @@
 <meta name="generator" content="Hugo 0.68.3 with theme even" />
 
 
-<link rel="canonical" href="http://myself659.github.io/post/think-outof-box/" />
+<link rel="canonical" href="http://myself659.github.io/post/node-version/" />
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -39,23 +39,23 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
-<meta property="og:title" content="谈谈跳出框架思考" />
-<meta property="og:description" content="引子 先看一下这道数学题： 画直线经过下图中九个点，并且做到不重复经过任何一个点。 这里不是出题给大家做，只是引出话题。 下面是这个问题的答案： 这个" />
+<meta property="og:title" content="如何选择合适的node版本" />
+<meta property="og:description" content="前言 作为一个常年以c,c&#43;&#43;,golang为主的后端程序员，刚接触nodejs有一个困惑，就是node有哪么多版本到底该选择哪个版本呢？ no" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://myself659.github.io/post/think-outof-box/" />
-<meta property="article:published_time" content="2020-06-26T11:58:06+02:00" />
-<meta property="article:modified_time" content="2020-06-26T11:58:06+02:00" />
-<meta itemprop="name" content="谈谈跳出框架思考">
-<meta itemprop="description" content="引子 先看一下这道数学题： 画直线经过下图中九个点，并且做到不重复经过任何一个点。 这里不是出题给大家做，只是引出话题。 下面是这个问题的答案： 这个">
-<meta itemprop="datePublished" content="2020-06-26T11:58:06&#43;02:00" />
-<meta itemprop="dateModified" content="2020-06-26T11:58:06&#43;02:00" />
-<meta itemprop="wordCount" content="1579">
+<meta property="og:url" content="http://myself659.github.io/post/node-version/" />
+<meta property="article:published_time" content="2019-07-08T11:58:06+02:00" />
+<meta property="article:modified_time" content="2019-07-08T11:58:06+02:00" />
+<meta itemprop="name" content="如何选择合适的node版本">
+<meta itemprop="description" content="前言 作为一个常年以c,c&#43;&#43;,golang为主的后端程序员，刚接触nodejs有一个困惑，就是node有哪么多版本到底该选择哪个版本呢？ no">
+<meta itemprop="datePublished" content="2019-07-08T11:58:06&#43;02:00" />
+<meta itemprop="dateModified" content="2019-07-08T11:58:06&#43;02:00" />
+<meta itemprop="wordCount" content="268">
 
 
 
-<meta itemprop="keywords" content="成长," /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="谈谈跳出框架思考"/>
-<meta name="twitter:description" content="引子 先看一下这道数学题： 画直线经过下图中九个点，并且做到不重复经过任何一个点。 这里不是出题给大家做，只是引出话题。 下面是这个问题的答案： 这个"/>
+<meta itemprop="keywords" content="Javascript," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="如何选择合适的node版本"/>
+<meta name="twitter:description" content="前言 作为一个常年以c,c&#43;&#43;,golang为主的后端程序员，刚接触nodejs有一个困惑，就是node有哪么多版本到底该选择哪个版本呢？ no"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -138,12 +138,12 @@
           <article class="post">
     
     <header class="post-header">
-      <h1 class="post-title">谈谈跳出框架思考</h1>
+      <h1 class="post-title">如何选择合适的node版本</h1>
 
       <div class="post-meta">
-        <span class="post-time"> 2020-06-26 </span>
+        <span class="post-time"> 2019-07-08 </span>
         <div class="post-category">
-            <a href="/categories/%E6%88%90%E9%95%BF/"> 成长 </a>
+            <a href="/categories/javascript/"> Javascript </a>
             </div>
         
       </div>
@@ -152,78 +152,28 @@
     <div class="post-toc" id="post-toc">
   <h2 class="post-toc-title">文章目录</h2>
   <div class="post-toc-content always-active">
-    <nav id="TableOfContents">
-  <ul>
-    <li><a href="#摆脱限制">摆脱限制</a></li>
-    <li><a href="#广泛阅读与学习并且多尝试与实践">广泛阅读与学习，并且多尝试与实践</a></li>
-    <li><a href="#5w1h替换法">5W1H替换法</a></li>
-    <li><a href="#培养同理心">培养同理心</a></li>
-  </ul>
-</nav>
+    <nav id="TableOfContents"></nav>
   </div>
 </div>
     <div class="post-content">
-      <h1 id="引子">引子</h1>
-<p>先看一下这道数学题：</p>
-<p>画直线经过下图中九个点，并且做到不重复经过任何一个点。</p>
-<p><img src="/images/think/9-dot-question.png" alt=""></p>
-<p>这里不是出题给大家做，只是引出话题。</p>
-<p>下面是这个问题的答案：</p>
-<p><img src="/images/think/9-dot-answer.png" alt=""></p>
-<p>这个答案并没有局限在题目中要求9个点，扩大到面的范围，由9个点范围扩大到16个点范围。如果一直在考虑9个点的范围这个题目你是不会找到正确的答案。解题的关键是：think outside of the box。在上面这道题主要打破只有9个点的限制，也就是跳出只有9个点的框框。</p>
-<p>至此，关键话题来了： think outside of the box，这里我将其翻译为跳出框架思考。</p>
-<h1 id="定义">定义</h1>
-<p>跳出框架思考是要尽可能地消除约束，从更多的视角或层次思考，发现更多的选项和方案。</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<p>我们还是具体看几个例子吧。</p>
-<p>作为一名多年的码农，先从技术研发开始吧。跳出框架思考是指研发不要局限于技术，要多关注业务。具体看几个例子：</p>
-<p>实例1：以前看一个科技电影，大概是两个黑客比赛，谁先攻破系统，则对应灯亮作为获胜；其中黑客A紧急投入攻破系统，而黑客B却在电影需要下，轻淡幽闲地装B，带上主角光环的他其实心里早有准备，采用直接攻击灯控系统，降低攻击难度，同时利用规则的漏洞。这里黑客B看到规则里另一种含义：谁的灯先亮，谁就获胜，跳出一般人理解先攻破系统，再亮灯的习惯性思维。</p>
-<p>实例2：早期的阿里云CDN系统需要定位ip地址的地理位置，阿里云的工程师想到根据淘宝用户的收货地址来定位地理位置。</p>
-<p>实例3：互联网安全方面：如果微信账号被盗，可以通过社交关系找回；淘宝帐号找回，需要通过最近购物的测试；这些都是从多个维度确认帐号对应是用户是原来的用户，而不是仅仅通过密码和手机还确认用户。</p>
-<p>实例3：互联网安全方面：如果微信账号被盗，可以通过社交关系找回；淘宝帐号找回，需要通过最近购物的测试；这些都是从多个维度确认帐号对应是用户是原来的用户，而不是仅仅通过密码和手机还确认用户。</p>
-<p>在工作方面，跳出框架思考要点之一就是员工要跳出员工的视角，学会站在老板或者上级的角度来思考问题。这里分享一个职场的技巧：</p>
-<blockquote>
-<p>在任何领域，众所周知，要让老板支持你的想法，最容易的方法就是让他认为这个想法是他的。 ​​​​</p>
-</blockquote>
-<p>在交易领域，对冲基金的操作手法也体现了跳出框架思考，如跨市场交易，跨地区交易。</p>
-<p>下面这个例子让我是佩服不已。
-<img src="/images/think/smart-fire.png" alt=""></p>
-<p>从上面例子可知，tk教主的朋友跳出员工与公司的二元框架，在二元框架下一般只有三种选项：</p>
+      <h1 id="前言">前言</h1>
+<p>作为一个常年以c,c++,golang为主的后端程序员，刚接触nodejs有一个困惑，就是node有哪么多版本到底该选择哪个版本呢？</p>
+<h1 id="node版本">node版本</h1>
+<p>根据需求选择版本，那么node版本有哪些特点呢？</p>
 <ol>
-<li>不作处理，等其主动离职（水货一般都是没有水平，要想让他主动离开时间长，概率小）</li>
-<li>逼他主动离职（需要爽手段，双方关系可能弄僵）</li>
-<li>通过赔偿主动解雇（需要花钱）</li>
+<li>从node 6 开始支持ES6</li>
+<li>从node 8 开始支持Async Await</li>
+<li>node 10 增加了promisified fs模块</li>
+<li>node 12增加了ES6 modules</li>
 </ol>
-<p>tk教主的朋友从员工，公司，人才市场的三元框架下思考，通过上面的方法，达到不止双赢，而是三赢：</p>
-<ol>
-<li>公司摆脱了水货，并且将水货送到竞争对手的公司，去祸害竞争对手，算是打击了竞争对手</li>
-<li>水货员工得到加薪</li>
-<li>猎头成交一笔大单，获得丰厚的报酬</li>
-</ol>
-<p>跳出框架思考是如此充满威力，那如何培养自己的跳出框架思考的能力呢？</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<h1 id="如何培养跳出框架思考的能力">如何培养跳出框架思考的能力</h1>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<h2 id="摆脱限制">摆脱限制</h2>
-<p>跳出框架思考最重要的一步是摆脱限制，在思考方面不要给自己设限。</p>
-<h2 id="广泛阅读与学习并且多尝试与实践">广泛阅读与学习，并且多尝试与实践</h2>
-<p>平时要广泛阅读与学习，扩大信息源，广泛涉猎各个领域的知识，以技术领域为例，比特币技术综合了P2P技术，PoW共识，密码学，区块链等多种技术，同时结合经济学的知识，将数字货币与计算机技术紧密地结合在一起。</p>
-<h2 id="5w1h替换法">5W1H替换法</h2>
-<p>从原因（何因Why）、对象（何事What）、地点（何地Where）、时间（何时When）、人员（何人Who）、方法（何法How）等六个方面提出问题进行思考，在此基础上对这6个要素进行替换，并尝试找到更多的替换选项。</p>
-<h2 id="培养同理心">培养同理心</h2>
-<p>同理心能够让我们站在他人的角度来思考，有利于提供更多的视角。很多时候，我们不能跳出框架，是因为我们缺少视角。</p>
-<h1 id="后记">后记</h1>
-<p>”不识庐山真面目，只缘身在此山中“。
-”当局者迷，旁观者清“。
-学会跳出框架思考，会给我们带来更多的视角，看见不同的世界，提高我们的视野与格局。
-<img src="/images/think/lushang.png" alt=""></p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<blockquote>
-</blockquote>
+<p>从上面应该注意到node偶数版本是稳定版本（类似于linux）。</p>
+<h1 id="如何管理多个node版本">如何管理多个node版本</h1>
+<p>一句话：复用nvm管理node。</p>
+<p>Windows请参考<a href="https://github.com/coreybutler/nvm-windows/releases">nvm-windows
+</a>。</p>
+<h1 id="欢迎关注">欢迎关注</h1>
+<p>欢迎关注微信公众帐号：沉风网事(savewind)</p>
+<p><img src="/images/cfws.jpg" alt="沉风网事"></p>
 
     </div>
 
@@ -235,7 +185,7 @@
   <p class="copyright-item">
     <span class="item-title">上次更新</span>
     <span class="item-content">
-        2020-06-26
+        2019-07-08
         
     </span>
   </p>
@@ -244,16 +194,16 @@
 </div>
 <footer class="post-footer">
       <div class="post-tags">
-          <a href="/tags/%E6%88%90%E9%95%BF/">成长</a>
+          <a href="/tags/javascript/">Javascript</a>
           </div>
       <nav class="post-nav">
-        <a class="prev" href="/post/about/">
+        <a class="prev" href="/post/install-python37/">
             <i class="iconfont icon-left"></i>
-            <span class="prev-text nav-default">About</span>
+            <span class="prev-text nav-default">安装python3.7</span>
             <span class="prev-text nav-mobile">上一篇</span>
           </a>
-        <a class="next" href="/post/cryptocurrency_antifrangible/">
-            <span class="next-text nav-default">谈谈数字货币的反脆弱性</span>
+        <a class="next" href="/post/facebook-libra/">
+            <span class="next-text nav-default">Facebook libra是昙花一现还是星星之火</span>
             <span class="next-text nav-mobile">下一篇</span>
             <i class="iconfont icon-right"></i>
           </a>

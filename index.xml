@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>沉风网事</copyright>
-    <lastBuildDate>Fri, 26 Jun 2020 11:58:06 +0200</lastBuildDate>
+    <lastBuildDate>Mon, 18 May 2015 21:49:20 +0200</lastBuildDate>
     
 	<atom:link href="http://myself659.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>About</title>
+      <link>http://myself659.github.io/post/about/</link>
+      <pubDate>Wed, 20 May 2015 21:38:52 +0800</pubDate>
+      
+      <guid>http://myself659.github.io/post/about/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>谈谈跳出框架思考</title>
@@ -262,6 +271,15 @@
       
       <guid>http://myself659.github.io/post/install-python37/</guid>
       <description>说明 完全是为了记录自己的操作记录，换一台新机器真是免不了要装python。记录下来，便于以后操作。 apt-get安装 1 2 3 4 5 6 7 8 apt update apt install</description>
+    </item>
+    
+    <item>
+      <title>如何选择合适的node版本</title>
+      <link>http://myself659.github.io/post/node-version/</link>
+      <pubDate>Mon, 08 Jul 2019 11:58:06 +0200</pubDate>
+      
+      <guid>http://myself659.github.io/post/node-version/</guid>
+      <description>前言 作为一个常年以c,c++,golang为主的后端程序员，刚接触nodejs有一个困惑，就是node有哪么多版本到底该选择哪个版本呢？ no</description>
     </item>
     
     <item>
@@ -1090,6 +1108,15 @@
       
       <guid>http://myself659.github.io/post/2015-05-24-linux-perf-tips-nobranchmiss/</guid>
       <description>在实际性能优化过程，加了一个if判断整个系统转发性能就有大约5%的下降，下面简单分享一种在没有分支miss条件下，实现取最小值的方法。 一般实</description>
+    </item>
+    
+    <item>
+      <title>About</title>
+      <link>http://myself659.github.io/about/</link>
+      <pubDate>Mon, 18 May 2015 21:49:20 +0200</pubDate>
+      
+      <guid>http://myself659.github.io/about/</guid>
+      <description>个人说明 沉风 长在大山，学在中北，混在杭州 伪Geek，真宅男，野生程序员 Minimalist，Essentialist， Lifelong Learner，Pr</description>
     </item>
     
     <item>

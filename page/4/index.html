@@ -45,7 +45,7 @@
 <meta property="og:description" content="沉风网事，以人为本，尊重事实与原理，立足现实，以科技与金融为驱动，中西结合，虚实相应，主要关注互联网，系统架构，区块链，安全，经济，数据等领域" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="http://myself659.github.io/" />
-<meta property="og:updated_time" content="2020-06-26T11:58:06+02:00" />
+<meta property="og:updated_time" content="2015-05-18T21:49:20+02:00" />
 <meta itemprop="name" content="沉风网事">
 <meta itemprop="description" content="沉风网事，以人为本，尊重事实与原理，立足现实，以科技与金融为驱动，中西结合，虚实相应，主要关注互联网，系统架构，区块链，安全，经济，数据等领域"><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="沉风网事"/>
@@ -130,6 +130,48 @@
       <div class="content-wrapper">
         <div id="content" class="content">
           <section id="posts" class="posts">
+    <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/post/2017-04-29-about-system-design/">对于系统设计的一些想法</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2017-04-08 </span>
+      <div class="post-category">
+          <a href="/categories/arch/"> Arch </a>
+          </div>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      前言 学习了google，facebook等国际一流大厂的开源方案，也研究了国内BAT的一些设计案例，在平时工作自然也少不了一些系统设计的工作
+    </div>
+    <div class="read-more">
+      <a href="/post/2017-04-29-about-system-design/" class="read-more-link">阅读更多</a>
+    </div>
+  </div>
+</article>
+
+    <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/post/2017-04-08-ecs-basic-sec-check/">阿里云ECS基本安全检查小结</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2017-04-08 </span>
+      <div class="post-category">
+          <a href="/categories/secure/"> Secure </a>
+          </div>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      背景 查看阿里云ECS服务器日志发现如下： 1 2 3 4 5 6 7 type=USER_AUTH msg=audit(1491669519.156:15631): pid=22938 uid=0 auid=4294967295 ses=4294967295 msg=&#39;op=PAM:authentication acct=&#34;deploy&#34; exe=&#34;/usr/sbin/sshd&#34; hostname=123.57.245.163 addr=123.57.245.163 terminal=ssh res=failed&#39; type=USER_LOGIN msg=audit(1491669519.156:15632): pid=22938 uid=0 auid=4294967295 ses=4294967295 msg=&#39;op=login acct=28696E76616C6964207573657229 exe=&#34;/usr/sbin/sshd&#34; hostname=? addr=123.57.245.163 terminal=sshd res=failed&#39; type=USER_LOGIN msg=audit(1491669587.368:15634): pid=22940 uid=0 auid=4294967295 ses=4294967295 msg=&#39;op=login acct=28756E6B6E6F776E207573657229 exe=&#34;/usr/sbin/sshd&#34; hostname=? addr=123.57.245.163 terminal=sshd res=failed&#39; type=USER_LOGIN msg=audit(1491669587.368:15635): pid=22940 uid=0
+    </div>
+    <div class="read-more">
+      <a href="/post/2017-04-08-ecs-basic-sec-check/" class="read-more-link">阅读更多</a>
+    </div>
+  </div>
+</article>
+
     <article class="post">
   <header class="post-header">
     <h1 class="post-title"><a class="post-link" href="/post/2017-03-27-help-internet-available-more-people/">不要忘记那些正在追赶互联网潮流的用户</a></h1>
@@ -712,48 +754,6 @@
     </div>
     <div class="read-more">
       <a href="/post/2015-05-24-linux-perf-thought/" class="read-more-link">阅读更多</a>
-    </div>
-  </div>
-</article>
-
-    <article class="post">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/post/2015-05-24-linux-perf-droppacket/">一个linux网络丢包问题分析</a></h1>
-    <div class="post-meta">
-      <span class="post-time"> 2015-05-24 </span>
-      <div class="post-category">
-          <a href="/categories/%E7%BC%96%E7%A8%8B/"> 编程 </a>
-          </div>
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-      丢包问题是十分常见一类问题，下面总结的一个网络丢包问题的分析过程。 问题描述 组网： TC-PORT1&mdash;&mdash;-VSR-eth1 TC-PORT2&mdash;&mdash;-VSR-eth2 打流： 报文从TC-Port1打入VSR-eth1，再从V
-    </div>
-    <div class="read-more">
-      <a href="/post/2015-05-24-linux-perf-droppacket/" class="read-more-link">阅读更多</a>
-    </div>
-  </div>
-</article>
-
-    <article class="post">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/post/2015-05-24-linux-perf-tips-nobranchmiss/">在没有分支miss条件下，实现取最小值</a></h1>
-    <div class="post-meta">
-      <span class="post-time"> 2015-05-24 </span>
-      <div class="post-category">
-          <a href="/categories/linux/"> Linux </a>
-          </div>
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-      在实际性能优化过程，加了一个if判断整个系统转发性能就有大约5%的下降，下面简单分享一种在没有分支miss条件下，实现取最小值的方法。 一般实
-    </div>
-    <div class="read-more">
-      <a href="/post/2015-05-24-linux-perf-tips-nobranchmiss/" class="read-more-link">阅读更多</a>
     </div>
   </div>
 </article>
