@@ -3,21 +3,42 @@
   
   <url>
     <loc>http://myself659.github.io/categories/</loc>
-    <lastmod>2020-06-26T11:58:06+02:00</lastmod>
+    <lastmod>2020-08-09T11:58:06+02:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://myself659.github.io/post/</loc>
-    <lastmod>2020-06-26T11:58:06+02:00</lastmod>
+    <lastmod>2020-08-09T11:58:06+02:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://myself659.github.io/tags/</loc>
-    <lastmod>2020-06-26T11:58:06+02:00</lastmod>
+    <lastmod>2020-08-09T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://myself659.github.io/tags/%E7%BC%96%E7%A8%8B/</loc>
+    <lastmod>2020-08-09T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://myself659.github.io/categories/%E7%BC%96%E7%A8%8B/</loc>
+    <lastmod>2020-08-09T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://myself659.github.io/post/gpt3-thought/</loc>
+    <lastmod>2020-08-09T11:58:06+02:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -164,20 +185,6 @@
   
   <url>
     <loc>http://myself659.github.io/post/github-hack/</loc>
-    <lastmod>2020-03-29T11:58:06+02:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://myself659.github.io/tags/%E7%BC%96%E7%A8%8B/</loc>
-    <lastmod>2020-03-29T11:58:06+02:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://myself659.github.io/categories/%E7%BC%96%E7%A8%8B/</loc>
     <lastmod>2020-03-29T11:58:06+02:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>

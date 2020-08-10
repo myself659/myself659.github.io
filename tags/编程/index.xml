@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>沉风网事</copyright>
-    <lastBuildDate>Sun, 29 Mar 2020 11:58:06 +0200</lastBuildDate>
+    <lastBuildDate>Sun, 09 Aug 2020 11:58:06 +0200</lastBuildDate>
     
 	<atom:link href="http://myself659.github.io/tags/%E7%BC%96%E7%A8%8B/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>谈谈GPT3</title>
+      <link>http://myself659.github.io/post/gpt3-thought/</link>
+      <pubDate>Sun, 09 Aug 2020 11:58:06 +0200</pubDate>
+      
+      <guid>http://myself659.github.io/post/gpt3-thought/</guid>
+      <description>GPT-3 GPT-3全称是&amp;quot;General Pre-trained Transformer-3&amp;rdquo;，对应中文翻译为：第三代通用预训练转换器。 其wiki定</description>
+    </item>
     
     <item>
       <title>github被攻击，程序员该怎么办</title>
