@@ -472,6 +472,15 @@
     </item>
     
     <item>
+      <title>leetcode-53. Maximum Subarray</title>
+      <link>http://myself659.github.io/post/dp-max-subarray-sum/</link>
+      <pubDate>Wed, 18 Jul 2018 11:58:06 +0200</pubDate>
+      
+      <guid>http://myself659.github.io/post/dp-max-subarray-sum/</guid>
+      <description>题目 leetcode-53. Maximum Subarray 类似： leetcode-152. Maximum Product Subarray leetcode-325. Maximum Size Subarray Sum Equals k leetcode-643. Maximum Average Subarray I leetcode-644. Maximum Average Subarray II leetcode-918. Maximum Sum Circular Subarray 689. Maximum Sum of 3 Non-Overlapping Subarrays 代码 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 class Solution { public: int</description>
+    </item>
+    
+    <item>
       <title>《原则》作者瑞·达利欧烧脑大作(1): 经济机器是怎样运行的</title>
       <link>http://myself659.github.io/post/ecomony-machine/</link>
       <pubDate>Thu, 05 Jul 2018 11:58:06 +0200</pubDate>
@@ -1076,10 +1085,10 @@
     
     <item>
       <title>C语言代码 review的总结</title>
-      <link>http://myself659.github.io/post/2015-05-24-c-codereivew/</link>
+      <link>http://myself659.github.io/post/c-codereivew/</link>
       <pubDate>Sun, 24 May 2015 11:58:06 +0200</pubDate>
       
-      <guid>http://myself659.github.io/post/2015-05-24-c-codereivew/</guid>
+      <guid>http://myself659.github.io/post/c-codereivew/</guid>
       <description>代码review是保证代码质量在项目开发及代码修改中一项重要的环节，下面就代码reiew的一些总结，总结一些代码的review的关注点，提高</description>
     </item>
     

@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>编程 · 沉风网事</title>
+  <title>C语言代码 review的总结 - 沉风网事</title>
   <meta name="renderer" content="webkit" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
@@ -16,7 +16,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="沉风网事" /><meta name="description" content="沉风网事，以人为本，尊重事实与原理，立足现实，以科技与金融为驱动，中西结合，虚实相应，主要关注互联网，系统架构，区块链，安全，经济，数据等领域" /><meta name="keywords" content="沉风网事, 沉风, 区块链" />
+<meta name="author" content="沉风网事" /><meta name="description" content="代码review是保证代码质量在项目开发及代码修改中一项重要的环节，下面就代码reiew的一些总结，总结一些代码的review的关注点，提高" /><meta name="keywords" content="沉风网事, 沉风, 区块链" />
 
 
 <meta name="baidu-site-verification" content="9LmlOuIblt" />
@@ -26,9 +26,7 @@
 <meta name="generator" content="Hugo 0.68.3 with theme even" />
 
 
-<link rel="canonical" href="http://myself659.github.io/categories/%E7%BC%96%E7%A8%8B/" />
-  <link href="http://myself659.github.io/categories/%E7%BC%96%E7%A8%8B/index.xml" rel="alternate" type="application/rss+xml" title="沉风网事" />
-  <link href="http://myself659.github.io/categories/%E7%BC%96%E7%A8%8B/index.xml" rel="feed" type="application/rss+xml" title="沉风网事" />
+<link rel="canonical" href="http://myself659.github.io/post/c-codereivew/" />
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -41,15 +39,23 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
-<meta property="og:title" content="编程" />
-<meta property="og:description" content="沉风网事，以人为本，尊重事实与原理，立足现实，以科技与金融为驱动，中西结合，虚实相应，主要关注互联网，系统架构，区块链，安全，经济，数据等领域" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="http://myself659.github.io/categories/%E7%BC%96%E7%A8%8B/" />
-<meta property="og:updated_time" content="2020-08-09T11:58:06+02:00" />
-<meta itemprop="name" content="编程">
-<meta itemprop="description" content="沉风网事，以人为本，尊重事实与原理，立足现实，以科技与金融为驱动，中西结合，虚实相应，主要关注互联网，系统架构，区块链，安全，经济，数据等领域"><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="编程"/>
-<meta name="twitter:description" content="沉风网事，以人为本，尊重事实与原理，立足现实，以科技与金融为驱动，中西结合，虚实相应，主要关注互联网，系统架构，区块链，安全，经济，数据等领域"/>
+<meta property="og:title" content="C语言代码 review的总结" />
+<meta property="og:description" content="代码review是保证代码质量在项目开发及代码修改中一项重要的环节，下面就代码reiew的一些总结，总结一些代码的review的关注点，提高" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://myself659.github.io/post/c-codereivew/" />
+<meta property="article:published_time" content="2015-05-24T11:58:06+02:00" />
+<meta property="article:modified_time" content="2015-05-24T11:58:06+02:00" />
+<meta itemprop="name" content="C语言代码 review的总结">
+<meta itemprop="description" content="代码review是保证代码质量在项目开发及代码修改中一项重要的环节，下面就代码reiew的一些总结，总结一些代码的review的关注点，提高">
+<meta itemprop="datePublished" content="2015-05-24T11:58:06&#43;02:00" />
+<meta itemprop="dateModified" content="2015-05-24T11:58:06&#43;02:00" />
+<meta itemprop="wordCount" content="386">
+
+
+
+<meta itemprop="keywords" content="编程," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="C语言代码 review的总结"/>
+<meta name="twitter:description" content="代码review是保证代码质量在项目开发及代码修改中一项重要的环节，下面就代码reiew的一些总结，总结一些代码的review的关注点，提高"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -129,74 +135,142 @@
     <main id="main" class="main">
       <div class="content-wrapper">
         <div id="content" class="content">
-          <section id="archive" class="archive">
-  <div class="archive-title category">
-        <h2 class="archive-name">编程</h2>
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">C语言代码 review的总结</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2015-05-24 </span>
+        <div class="post-category">
+            <a href="/categories/%E7%BC%96%E7%A8%8B/"> 编程 </a>
+            </div>
+        
       </div>
+    </header>
 
-  <div class="archive-post">
-      <span class="archive-post-time">
-        2020-08-09
-      </span>
-      <span class="archive-post-title">
-        <a href="/post/gpt3-thought/" class="archive-post-link">
-          谈谈GPT3
-        </a>
-      </span>
-    </div><div class="archive-post">
-      <span class="archive-post-time">
-        2020-03-29
-      </span>
-      <span class="archive-post-title">
-        <a href="/post/github-hack/" class="archive-post-link">
-          github被攻击，程序员该怎么办
-        </a>
-      </span>
-    </div><div class="archive-post">
-      <span class="archive-post-time">
-        2020-01-02
-      </span>
-      <span class="archive-post-title">
-        <a href="/post/programer-book-list/" class="archive-post-link">
-          程序员进阶精读书籍清单
-        </a>
-      </span>
-    </div><div class="archive-post">
-      <span class="archive-post-time">
-        2015-06-14
-      </span>
-      <span class="archive-post-title">
-        <a href="/post/2015-06-14-number-divide/" class="archive-post-link">
-          实现无符号整型数的分解
-        </a>
-      </span>
-    </div><div class="archive-post">
-      <span class="archive-post-time">
-        2015-05-24
-      </span>
-      <span class="archive-post-title">
-        <a href="/post/2015-05-24-linux-perf-droppacket/" class="archive-post-link">
-          一个linux网络丢包问题分析
-        </a>
-      </span>
-    </div><div class="archive-post">
-      <span class="archive-post-time">
-        2015-05-24
-      </span>
-      <span class="archive-post-title">
-        <a href="/post/c-codereivew/" class="archive-post-link">
-          C语言代码 review的总结
-        </a>
-      </span>
-    </div>
-</section>
-
-<nav class="pagination">
-  
-  
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#代码中的资源">代码中的资源</a></li>
+        <li><a href="#代码的错误高发特征">代码的错误高发特征</a></li>
+        <li><a href="#代码的追求">代码的追求</a></li>
+      </ul>
+    </li>
+  </ul>
 </nav>
+  </div>
+</div>
+    <div class="post-content">
+      <p>代码review是保证代码质量在项目开发及代码修改中一项重要的环节，下面就代码reiew的一些总结，总结一些代码的review的关注点，提高代码review的效率与效果，提前发现问题，降低后期的测试成本，以及避免软件上线或交付出问题导致的经济损失和恶劣影响（ps:对每一行代码保持敬畏之心）。</p>
+<h3 id="代码中的资源">代码中的资源</h3>
+<blockquote>
+<p>以内存为例，C语言内存操作都是由程序员来定义与控制，内存的一些错误总是不断地出现，例如内存泄漏，踩内存，写越界等，如果这种问题在线上系统中出现，定位与修复的成本都是很高的。</p>
+</blockquote>
+<blockquote>
+</blockquote>
+<ol>
+<li>动态内存</li>
+<li>信号量</li>
+<li>文件描述符</li>
+<li>锁</li>
+<li>句柄</li>
+<li>中断</li>
+<li>资源的引用</li>
+<li>资源的引用计数</li>
+</ol>
+<h3 id="代码的错误高发特征">代码的错误高发特征</h3>
+<blockquote>
+</blockquote>
+<ol>
+<li>冗余实现</li>
+<li>异常处理</li>
+<li>结构复杂</li>
+<li>层次嵌套多</li>
+<li>不合理实现</li>
+<li>字符串处理</li>
+<li>代码临界区</li>
+<li>移植代码</li>
+</ol>
+<h3 id="代码的追求">代码的追求</h3>
+<blockquote>
+</blockquote>
+<ol>
+<li>正确性</li>
+<li>可靠性</li>
+<li>可读性</li>
+<li>可维护性</li>
+<li>可测试性</li>
+<li>可扩展性</li>
+<li>可移植性</li>
+<li>可伸缩性</li>
+<li>易用性</li>
+<li>可用性</li>
+<li>可重用性</li>
+<li>互操作性</li>
+<li>可管理性</li>
+<li>一致性</li>
+<li>安全性</li>
+<li>性能</li>
+<li>稳定性</li>
+<li>精确性</li>
+<li>可差异化性</li>
+<li>魯棒性</li>
+</ol>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">沉风网事</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+        2015-05-24
+        
+    </span>
+  </p>
+  
+  
+</div>
+<footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/%E7%BC%96%E7%A8%8B/">编程</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/post/2015-06-01-linux-may-sleep-function/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">那些可进入睡眠状态的Linux内核函数</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        <a class="next" href="/post/2015-05-24-linux-perf-thought/">
+            <span class="next-text nav-default">Linux性能优化杂谈</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
         </div>
         
+
+  
+
+  
+    <script src="https://utteranc.es/client.js"
+            repo="myself659/ipds-public"
+            issue-term="pathname"
+            theme="github-light"
+            crossorigin="anonymous"
+            async>
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://github.com/utterance">comments powered by utterances.</a></noscript>
 
       </div>
     </main>
