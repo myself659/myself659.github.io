@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>学会如何解背包问题，再也不怕动态规划 - 沉风网事</title>
+  <title>学会背包问题，再也不怕动态规划 - 沉风网事</title>
   <meta name="renderer" content="webkit" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
@@ -39,22 +39,22 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
-<meta property="og:title" content="学会如何解背包问题，再也不怕动态规划" />
+<meta property="og:title" content="学会背包问题，再也不怕动态规划" />
 <meta property="og:description" content="问题描述 Given weights and values of n items, put these items in a knapsack of capacity W to get the maximum total value in the knapsack. In other words, given two integer arrays val[0..n-1] and wt[0..n-1] which represent values and weights associated with n items respectively. Also given an integer W which represents knapsack capacity, find out the maximum value subset of val[] such that sum of" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://myself659.github.io/post/dp-knapsack/" />
 <meta property="article:published_time" content="2020-08-23T11:58:06+02:00" />
 <meta property="article:modified_time" content="2020-08-23T11:58:06+02:00" />
-<meta itemprop="name" content="学会如何解背包问题，再也不怕动态规划">
+<meta itemprop="name" content="学会背包问题，再也不怕动态规划">
 <meta itemprop="description" content="问题描述 Given weights and values of n items, put these items in a knapsack of capacity W to get the maximum total value in the knapsack. In other words, given two integer arrays val[0..n-1] and wt[0..n-1] which represent values and weights associated with n items respectively. Also given an integer W which represents knapsack capacity, find out the maximum value subset of val[] such that sum of">
 <meta itemprop="datePublished" content="2020-08-23T11:58:06&#43;02:00" />
 <meta itemprop="dateModified" content="2020-08-23T11:58:06&#43;02:00" />
-<meta itemprop="wordCount" content="3045">
+<meta itemprop="wordCount" content="3104">
 
 
 
 <meta itemprop="keywords" content="DP," /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="学会如何解背包问题，再也不怕动态规划"/>
+<meta name="twitter:title" content="学会背包问题，再也不怕动态规划"/>
 <meta name="twitter:description" content="问题描述 Given weights and values of n items, put these items in a knapsack of capacity W to get the maximum total value in the knapsack. In other words, given two integer arrays val[0..n-1] and wt[0..n-1] which represent values and weights associated with n items respectively. Also given an integer W which represents knapsack capacity, find out the maximum value subset of val[] such that sum of"/>
 
 <!--[if lte IE 9]>
@@ -138,7 +138,7 @@
           <article class="post">
     
     <header class="post-header">
-      <h1 class="post-title">学会如何解背包问题，再也不怕动态规划</h1>
+      <h1 class="post-title">学会背包问题，再也不怕动态规划</h1>
 
       <div class="post-meta">
         <span class="post-time"> 2020-08-23 </span>
@@ -231,9 +231,9 @@ Also given an integer W which represents knapsack capacity, find out the maximum
 <h4 id="最优子结构">最优子结构</h4>
 <blockquote>
 <p>如果一个问题的最优解包含其子问题的最优解，我们就称此问题具有最优子结构。
-　　　　　　　　　　　　　　　　　　　　　　
-编程中常见最大与最小的问题，一般都是满足最优子结构的这一条件。</p>
+　　　　　　　　　　　　　　　　　　　　　　</p>
 </blockquote>
+<p>编程中常见最大与最小的问题，一般都是满足最优子结构的这一条件。</p>
 <p>本题要求是求背包里物品的最大价值。故初步判断满足条件。</p>
 <h4 id="边界条件">边界条件</h4>
 <p>连界条件包括开始条件与结束条件。</p>
@@ -251,7 +251,8 @@ Also given an integer W which represents knapsack capacity, find out the maximum
 </ol>
 <h4 id="状态转移方程">状态转移方程</h4>
 <p>状态转移方程也就是我们常说的DP公式。这是解决DP问题的关键。</p>
-<p>如果不是很简单的直接可以看出来，建议在解题步骤中一步一步分析出来。本题我们会在后面分析出状态转移方程。</p>
+<p>满足重叠要求是指后面的状态可以重复使用前面的生成的状态。</p>
+<p>如果不是很简单的直接可以看出来，建议在解题步骤中一步一步分析出来。本题我们会在后面分析给出对应的状态转移方程。</p>
 <h2 id="解题步骤">解题步骤</h2>
 <p>确定采用DP来解决问题，那我们正式进行DP解题的步骤。</p>
 <h3 id="1-定义状态">1. 定义状态</h3>
@@ -318,7 +319,7 @@ Also given an integer W which represents knapsack capacity, find out the maximum
         int  skipValue  = knapsackDo(Values, Weights, LimitWeight, posIndex -1); 
         localMaxValue = MAX(selectValue, skipValue);
     }else {
-        // 超过重量限制，跳过当前位置的物品
+        // 超过重量限制，跳过
         localMaxValue = knapsackDo(Values, Weights, LimitWeight, posIndex -1); 
     }
 
@@ -331,18 +332,24 @@ Also given an integer W which represents knapsack capacity, find out the maximum
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">knapsackDo(Values, Weights, LimitWeight,posIndex) = MAX(knapsackDo(Values,Weights, LimitWeight - Weights[posIndex],posIndex -1), knapsackDo(Values,Weights, LimitWeight,posIndex -1))
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">knapsackDo(Values, Weights, LimitWeight,posIndex) = 
+MAX(knapsackDo(Values,Weights, LimitWeight - Weights[posIndex],posIndex -1), 
+knapsackDo(Values,Weights, LimitWeight,posIndex -1))
 </code></pre></td></tr></table>
 </div>
 </div><p>当限制重量小于当前物品重量时，状态转移方程如下：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">knapsackDo(Values, Weights, LimitWeight,posIndex) = knapsackDo(Values,Weights, LimitWeight,posIndex -1)
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">knapsackDo(Values, Weights, LimitWeight,posIndex) = 
+knapsackDo(Values,Weights, LimitWeight,posIndex -1)
 </code></pre></td></tr></table>
 </div>
 </div><h3 id="4-确定递归结束条件">4. 确定递归结束条件</h3>
@@ -391,7 +398,7 @@ Also given an integer W which represents knapsack capacity, find out the maximum
         int  skipValue  = knapsackDo(Values, Weights, LimitWeight, posIndex -1); 
         localMaxValue = MAX(selectValue, skipValue);
     }else {
-        // 超过重量限制，不能选择
+        // 超过重量限制，跳过
         localMaxValue = knapsackDo(Values, Weights, LimitWeight, posIndex -1); 
     }
 
@@ -459,7 +466,7 @@ int knapsackDo(vector&lt;int&gt; Values, vector&lt;int&gt; Weights, int LimitWei
         int  skipValue  = knapsackDo(Values, Weights, LimitWeight, posIndex -1); 
         localMaxValue = MAX(selectValue, skipValue);
     }else {
-        // 超过重量限制，不能选择
+        // 超过重量限制，跳过
         localMaxValue = knapsackDo(Values, Weights, LimitWeight, posIndex -1); 
     }
 
@@ -495,7 +502,8 @@ int knapsackDo(vector&lt;int&gt; Values, vector&lt;int&gt; Weights, int LimitWei
 }
 </code></pre></td></tr></table>
 </div>
-</div><p>什么时候添加缓存与什么时候使用缓存呢？具体代码如下：</p>
+</div><p>什么时候添加缓存与什么时候使用缓存呢？</p>
+<p>具体代码如下：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt"> 1
@@ -565,14 +573,18 @@ int knapsackDo(vector&lt;int&gt; Values, vector&lt;int&gt; Weights, int LimitWei
 </div><p>注意：根据代码执行顺序，只需要添加上面一处添加缓存处理代码即可。</p>
 <h3 id="7-将递归转化为迭代">7. 将递归转化为迭代</h3>
 <p>上面一直采用的是top-down来解决DP问题。这一步我们要尝试将递归转化为迭代。</p>
-<p>递归的情况下状态转移方程是函数的方程。在迭代的情况，状态转移方程是状态变量的公式，具体如下：</p>
+<p>递归的情况下状态转移方程是函数的方程。在迭代的情况，状态转移方程是状态变量的方程，具体如下：</p>
 <p>当限制重量大于等于当前物品重量时，状态转移方程如下：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">stateDP[LimitWeight][posIndex] = MAX(stateDP(Values,Weights, LimitWeight - Weights[posIndex],posIndex -1), stateDP(Values,Weights, LimitWeight,posIndex -1))
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">stateDP[LimitWeight][posIndex] = 
+MAX(stateDP(Values,Weights, LimitWeight - Weights[posIndex], posIndex -1), 
+stateDP(Values,Weights, LimitWeight,posIndex -1))
 </code></pre></td></tr></table>
 </div>
 </div><p>当限制重量小于当前物品重量时，状态转移方程如下：</p>
@@ -645,7 +657,9 @@ int knapsackDo(vector&lt;int&gt; Values, vector&lt;int&gt; Weights, int LimitWei
 <p>假定有4个物品，其价值分别为10, 40, 30, 50，对应重量分别为5, 4, 6, 3，限定总重量不超过10。 下面我们观察stateDP的变化过程。</p>
 <p>首先看初始化的stateDP状态：</p>
 <p><img src="/images/algo/dp-knapsack-0.png" alt="初始化的stateDP状态"></p>
-<p>根据初始化的stateDP状态和状态转移方程</p>
+<p>根据初始化的stateDP状态和状态转移方程，整个stateDP状态构建一列一列进行即可，过程与结果如下：</p>
+<p><img src="/images/algo/dp-knapsack-1.png" alt="前三列状态构建"></p>
+<p><img src="/images/algo/dp-knapsack-2.png" alt="整个stateDP状态"></p>
 <h3 id="8-测试">8. 测试</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -795,7 +809,7 @@ maxValues:90
 </ol>
 <p>对上面的步骤总结如下：</p>
 <p>根据问题的目标采用Top-down方式弄清问题的本质（状态转移方程），然后采用Bottom-up方式实现代码。</p>
-<p>Ps：关于DP还有很多内容可以写（如背包问题扩展及类似leetcode题目），以后有机会再补充一些。</p>
+<p>Ps：关于DP还有很多内容可以写（如背包问题的扩展及类似leetcode题目），以后有机会再补充一些。</p>
 <!-- raw HTML omitted -->
 <!-- raw HTML omitted -->
 <blockquote>
