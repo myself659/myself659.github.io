@@ -16,7 +16,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="沉风网事" /><meta name="description" content="说明 完全是为了记录自己的操作记录，换一台新机器真是免不了要装python。记录下来，便于以后操作。 apt-get安装 1 2 3 4 5 6 7 8 apt update apt install" /><meta name="keywords" content="沉风网事, 沉风, 区块链" />
+<meta name="author" content="沉风网事" /><meta name="description" content="说明 完全是为了记录自己的操作记录，换一台新机器真是免不了要装python。记录下来，便于以后操作。 apt-get安装 1 2 3 4 5 6 7 8 apt update apt install" /><meta name="keywords" content="沉风网事, 沉风, 区块链, Glang, 算法, 数据结构" />
 
 
 <meta name="baidu-site-verification" content="9LmlOuIblt" />
@@ -49,7 +49,7 @@
 <meta itemprop="description" content="说明 完全是为了记录自己的操作记录，换一台新机器真是免不了要装python。记录下来，便于以后操作。 apt-get安装 1 2 3 4 5 6 7 8 apt update apt install">
 <meta itemprop="datePublished" content="2019-08-08T11:58:06&#43;02:00" />
 <meta itemprop="dateModified" content="2019-08-08T11:58:06&#43;02:00" />
-<meta itemprop="wordCount" content="568">
+<meta itemprop="wordCount" content="585">
 
 
 
@@ -158,6 +158,7 @@
     <li><a href="#源码安装">源码安装</a></li>
     <li><a href="#install-pip">install pip</a></li>
     <li><a href="#install-virutalenv">install virutalenv</a></li>
+    <li><a href="#install--pipenv">install  pipenv</a></li>
     <li><a href="#install-jupyter">install jupyter</a></li>
     <li><a href="#pip-basic">pip basic</a>
       <ul>
@@ -238,6 +239,31 @@ make altinstall
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-fallback" data-lang="fallback">pip3 install virtualenv
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="install--pipenv">install  pipenv</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">pip install --user pipenvd
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">pipenv install tweepy python-dotenv
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">pipenv run python twitter_client.py
 </code></pre></td></tr></table>
 </div>
 </div><h2 id="install-jupyter">install jupyter</h2>
@@ -322,7 +348,7 @@ pip install -i 国内镜像地址 包名</p>
             <span class="prev-text nav-mobile">上一篇</span>
           </a>
         <a class="next" href="/post/node-version/">
-            <span class="next-text nav-default">如何选择合适的node版本</span>
+            <span class="next-text nav-default">如何选择合适的node版本与npm package</span>
             <span class="next-text nav-mobile">下一篇</span>
             <i class="iconfont icon-right"></i>
           </a>
