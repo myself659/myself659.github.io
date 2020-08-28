@@ -49,7 +49,7 @@
 <meta itemprop="description" content="前言 搭建个人博客有很多方式，如wordpress，jekii, hexo，个人DIY; 本文主要介绍另一种方案: hugo&#43;caddy 建一个网站要要做哪些事情 这里分">
 <meta itemprop="datePublished" content="2017-10-27T11:58:06&#43;02:00" />
 <meta itemprop="dateModified" content="2017-10-27T11:58:06&#43;02:00" />
-<meta itemprop="wordCount" content="1234">
+<meta itemprop="wordCount" content="1378">
 
 
 
@@ -178,6 +178,13 @@
       <ul>
         <li><a href="#rync">rync</a></li>
         <li><a href="#github">github</a></li>
+      </ul>
+    </li>
+    <li><a href="#github-page">github page</a>
+      <ul>
+        <li><a href="#配置repo">配置repo</a></li>
+        <li><a href="#设置cname">设置cname</a></li>
+        <li><a href="#cloudflare加速">cloudflare加速</a></li>
       </ul>
     </li>
     <li><a href="#其他">其他</a></li>
@@ -328,6 +335,40 @@ slides.ipds.top {
 <h3 id="github">github</h3>
 <p>通过将内容保存到github，github再更新到ECS方式进行。好处就是git流操作，同时也实现了对文章与内容的备份，历史记录等功能。</p>
 <p>本人采用是这种方式，推荐使用这种方式。</p>
+<h2 id="github-page">github page</h2>
+<h3 id="配置repo">配置repo</h3>
+<p>在<a href="https://github.com/myself659/myself659.github.io/settings">myself659.github.io</a>配置下设置source分支，打开https</p>
+<h3 id="设置cname">设置cname</h3>
+<p>在根目录，新增CNAME文件。添加内容如下：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">blog.excellent123.com
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="cloudflare加速">cloudflare加速</h3>
+<h4 id="添加域名">添加域名</h4>
+<h4 id="配置域名解析">配置域名解析</h4>
+<h4 id="设置page-rule">设置page rule</h4>
+<h4 id="设置域名dns服务商">设置域名dns服务商</h4>
+<p><a href="https://support.cloudflare.com/hc/zh-cn/articles/205195708">具体参考 将您的域名服务器更改为 Cloudflare
+</a></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">Type  Value
+NS  jonah.ns.cloudflare.com
+NS  vera.ns.cloudflare.com
+</code></pre></td></tr></table>
+</div>
+</div><!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
 <h2 id="其他">其他</h2>
 <p>底层技术出身，在web技术方面个人水平有限，如有不足，敬请指正。</p>
 <h2 id="参考">参考</h2>
