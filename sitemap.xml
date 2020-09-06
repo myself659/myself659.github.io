@@ -758,6 +758,13 @@
   </url>
   
   <url>
+    <loc>http://myself659.github.io/post/%E6%88%91%E4%B8%BA%E4%BB%80%E4%B9%88%E7%9C%8B%E5%A5%BD%E5%8C%BA%E5%9D%97%E9%93%BE/</loc>
+    <lastmod>2018-06-11T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>http://myself659.github.io/post/ms-github/</loc>
     <lastmod>2018-06-10T11:58:06+02:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -954,21 +961,28 @@
   </url>
   
   <url>
-    <loc>http://myself659.github.io/post/2017-11-03-mac-tem-proxy/</loc>
-    <lastmod>2017-11-03T11:58:06+02:00</lastmod>
+    <loc>http://myself659.github.io/post/linux-wsl-proxy/</loc>
+    <lastmod>2017-11-05T11:58:06+02:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://myself659.github.io/tags/network/</loc>
-    <lastmod>2017-11-03T11:58:06+02:00</lastmod>
+    <lastmod>2017-11-05T11:58:06+02:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://myself659.github.io/categories/network/</loc>
+    <lastmod>2017-11-05T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://myself659.github.io/post/2017-11-03-mac-tem-proxy/</loc>
     <lastmod>2017-11-03T11:58:06+02:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
