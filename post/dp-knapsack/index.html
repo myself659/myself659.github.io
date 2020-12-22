@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>学会背包问题，再也不怕动态规划 - 沉风网事</title>
+  <title>学会背包问题，再也不怕动态规划 0-1背包 - 沉风网事</title>
   <meta name="renderer" content="webkit" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
@@ -39,22 +39,22 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
-<meta property="og:title" content="学会背包问题，再也不怕动态规划" />
+<meta property="og:title" content="学会背包问题，再也不怕动态规划 0-1背包" />
 <meta property="og:description" content="问题描述 Given weights and values of n items, put these items in a knapsack of capacity W to get the maximum total value in the knapsack. In other words, given two integer arrays val[0..n-1] and wt[0..n-1] which represent values and weights associated with n items respectively. Also given an integer W which represents knapsack capacity, find out the maximum value subset of val[] such that sum of" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://myself659.github.io/post/dp-knapsack/" />
 <meta property="article:published_time" content="2020-08-23T11:58:06+02:00" />
 <meta property="article:modified_time" content="2020-08-23T11:58:06+02:00" />
-<meta itemprop="name" content="学会背包问题，再也不怕动态规划">
+<meta itemprop="name" content="学会背包问题，再也不怕动态规划 0-1背包">
 <meta itemprop="description" content="问题描述 Given weights and values of n items, put these items in a knapsack of capacity W to get the maximum total value in the knapsack. In other words, given two integer arrays val[0..n-1] and wt[0..n-1] which represent values and weights associated with n items respectively. Also given an integer W which represents knapsack capacity, find out the maximum value subset of val[] such that sum of">
 <meta itemprop="datePublished" content="2020-08-23T11:58:06&#43;02:00" />
 <meta itemprop="dateModified" content="2020-08-23T11:58:06&#43;02:00" />
-<meta itemprop="wordCount" content="3133">
+<meta itemprop="wordCount" content="3205">
 
 
 
 <meta itemprop="keywords" content="DP," /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="学会背包问题，再也不怕动态规划"/>
+<meta name="twitter:title" content="学会背包问题，再也不怕动态规划 0-1背包"/>
 <meta name="twitter:description" content="问题描述 Given weights and values of n items, put these items in a knapsack of capacity W to get the maximum total value in the knapsack. In other words, given two integer arrays val[0..n-1] and wt[0..n-1] which represent values and weights associated with n items respectively. Also given an integer W which represents knapsack capacity, find out the maximum value subset of val[] such that sum of"/>
 
 <!--[if lte IE 9]>
@@ -138,7 +138,7 @@
           <article class="post">
     
     <header class="post-header">
-      <h1 class="post-title">学会背包问题，再也不怕动态规划</h1>
+      <h1 class="post-title">学会背包问题，再也不怕动态规划 0-1背包</h1>
 
       <div class="post-meta">
         <span class="post-time"> 2020-08-23 </span>
@@ -186,7 +186,7 @@
 In other words, given two integer arrays val[0..n-1] and wt[0..n-1] which represent values and weights associated with n items respectively.
 Also given an integer W which represents knapsack capacity, find out the maximum value subset of val[] such that sum of the weights of this subset is smaller than or equal to W. You cannot break an item, either pick the complete item, or don’t pick it (0-1 property).</p>
 </blockquote>
-<p>给定n个物品的重量和价值，从中选择物品放在容量为W的背包中(表示选择物品重量不超过W)，使得背包中物品价值之和最高。</p>
+<p>给定n个物品的重量和价值，从中选择物品放在容量为W的背包中(表示选择物品重量不超过W)，同时每个物品最多到允许选择1个，使得背包中物品价值之和最高。</p>
 <p>背包问题是一个非常典型的考察动态规划应用的题目，对其加上不同的限制和条件，可以衍生出诸多变种，若要全面理解动态规划，就必须对背包问题了如指掌。学习背包问题有利于举一反三，融会贯通，再也不怕动态规划。</p>
 <h2 id="问题建模">问题建模</h2>
 <!-- raw HTML omitted -->
@@ -315,7 +315,7 @@ Also given an integer W which represents knapsack capacity, find out the maximum
     int posValue = Values[posIndex-1];
     if(LimitWeight &gt;=posWeight){
         // 选择当前位置的物品 
-        int  selectValue = posValue +  knapsackDo(Values, Weights, LimitWeight- posValue, i -1); 
+        int  selectValue = posValue +  knapsackDo(Values, Weights, LimitWeight- posWeight, i -1); 
         // 跳过当前位置的物品
         int  skipValue  = knapsackDo(Values, Weights, LimitWeight, posIndex -1); 
         localMaxValue = MAX(selectValue, skipValue);
@@ -394,7 +394,7 @@ knapsackDo(Values,Weights, LimitWeight,posIndex -1)
     int posValue = Values[posIndex-1];
     if(LimitWeight &gt;=posWeight){
         // 选择当前位置的物品 
-        int  selectValue = posValue +  knapsackDo(Values, Weights, LimitWeight- posValue, posIndex -1); 
+        int  selectValue = posValue +  knapsackDo(Values, Weights, LimitWeight- posWeight, posIndex -1); 
         // 跳过当前位置的物品
         int  skipValue  = knapsackDo(Values, Weights, LimitWeight, posIndex -1); 
         localMaxValue = MAX(selectValue, skipValue);
@@ -462,7 +462,7 @@ int knapsackDo(vector&lt;int&gt; Values, vector&lt;int&gt; Weights, int LimitWei
     int posValue = Values[posIndex];
     if(LimitWeight &gt;=posWeight){
         // 选择当前位置的物品 
-        int  selectValue = posValue +  knapsackDo(Values, Weights, LimitWeight- posValue, posIndex -1); 
+        int  selectValue = posValue +  knapsackDo(Values, Weights, LimitWeight- posWeight, posIndex -1); 
         // 跳过当前位置的物品
         int  skipValue  = knapsackDo(Values, Weights, LimitWeight, posIndex -1); 
         localMaxValue = MAX(selectValue, skipValue);
@@ -555,7 +555,7 @@ int knapsackDo(vector&lt;int&gt; Values, vector&lt;int&gt; Weights, int LimitWei
             // 使用缓存 
             int  selectValue = stateDP[LimitWeight][posIndex+1];
         }else {
-            int  selectValue = posValue +  knapsackDo(Values, Weights, LimitWeight- posValue, i -1); 
+            int  selectValue = posValue +  knapsackDo(Values, Weights, LimitWeight- posWeight, i -1); 
             // 添加缓存
             stateDP[LimitWeight][posIndex+1]  = selectValue；
         }
@@ -584,8 +584,8 @@ int knapsackDo(vector&lt;int&gt; Values, vector&lt;int&gt; Weights, int LimitWei
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-fallback" data-lang="fallback">stateDP[LimitWeight][posIndex] = 
-MAX(stateDP(Values,Weights, LimitWeight - Weights[posIndex], posIndex -1), 
-stateDP(Values,Weights, LimitWeight,posIndex -1))
+MAX(stateDP[LimitWeight - Weights[posIndex-1]][posIndex -1]+Values[posIndex-1], 
+stateDP[LimitWeight],[posIndex -1])
 </code></pre></td></tr></table>
 </div>
 </div><p>当限制重量小于当前物品重量时，状态转移方程如下：</p>
@@ -659,7 +659,7 @@ stateDP(Values,Weights, LimitWeight,posIndex -1))
 <p>首先看初始化的stateDP状态：</p>
 <p><img src="/images/algo/dp-knapsack-0.png" alt="初始化的stateDP状态"></p>
 <p>根据初始化的stateDP状态和状态转移方程，整个stateDP状态构建一列一列进行即可，过程与结果如下：</p>
-<p><img src="/images/algo/dp-knapsack-1.png" alt="前三列状态构建"></p>
+<p><img src="/images/algo/dp-knapsack-1.png" alt=""></p>
 <p><img src="/images/algo/dp-knapsack-2.png" alt="整个stateDP状态"></p>
 <h3 id="8-测试">8. 测试</h3>
 <div class="highlight"><div class="chroma">
@@ -712,6 +712,11 @@ stateDP(Values,Weights, LimitWeight,posIndex -1))
 </span><span class="lnt">46
 </span><span class="lnt">47
 </span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-fallback" data-lang="fallback">#include &lt;iostream&gt;
@@ -731,13 +736,18 @@ int knapsack(vector&lt;int&gt; Values, vector&lt;int&gt; Weights, int LimitWeigh
     // 限定重量从1开始
     for(int w  = 1;  w  &lt;= LimitWeight; w++){
         // 在限定重量为w的情况下，遍历数组获取最大值
-        for(int posIndex = 1; posIndex &lt;= itemLen;  posIndex++){
+        // 完全DP问题，在遍历数组的情况下需要考虑同一个选项多次选择的问题
+        int posIndex ;
+        for(posIndex = 1; posIndex &lt;= itemLen;  posIndex++){
             int  selectValue = 0; 
+            int tmepSelectValue = 0;
             int  skipValue = stateDP[w][posIndex -1]; 
             int  posWeight = Weights[posIndex -1];
             int  posValue = Values[posIndex -1];
-            if (w  &gt;=  posWeight)  {
-                 selectValue = posValue + stateDP[w - posWeight][posIndex -1];
+            int  selectCnt = w / posWeight;
+            for (int i = selectCnt;  i &gt;= 1; i--){
+                 tmepSelectValue = i * posValue + stateDP[w - i*posWeight][posIndex -1];
+                 selectValue = max(tmepSelectValue,selectValue);
             }
             stateDP[w][posIndex]  = max(skipValue, selectValue);
         }
@@ -748,7 +758,7 @@ int knapsack(vector&lt;int&gt; Values, vector&lt;int&gt; Weights, int LimitWeigh
     cout&lt;&lt;&#34;print stateDP:&#34;&lt;&lt;endl;
     for(int  i = 0; i  &lt;= itemLen; i++){
         for(int j  = 0; j  &lt;= LimitWeight; j++){
-            cout&lt;&lt;setw(2)&lt;&lt;stateDP[j][i]&lt;&lt;&#34; &#34;;
+            cout&lt;&lt;setw(3)&lt;&lt;stateDP[j][i]&lt;&lt;&#34; &#34;;
         }
         cout &lt;&lt;endl;
     }
@@ -778,13 +788,13 @@ int main(){
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-fallback" data-lang="fallback">print stateDP:
+  0   0   0   0   0   0   0   0   0   0   0 
+  0   0   0   0   0  10  10  10  10  10  20 
+  0   0   0   0  40  40  40  40  80  80  80 
+  0   0   0   0  40  40  40  40  80  80  80 
+  0   0   0  50  50  50 100 100 100 150 150 
+maxValues:150
 
- 0  0  0  0  0  0  0  0  0  0  0                                                                                                                                              
- 0  0  0  0  0 10 10 10 10 10 10                                                                                                                                                   
- 0  0  0  0 40 40 40 40 40 50 50                                                                                                                                                   
- 0  0  0  0 40 40 40 40 40 50 70                                                                                                                                                   
- 0  0  0 50 50 50 50 90 90 90 90                                                                                                                                                   
-maxValues:90  
 </code></pre></td></tr></table>
 </div>
 </div><p>推荐是在leetcode测试，由于leetcode上没有这道题，所以就简单测试一下。</p>

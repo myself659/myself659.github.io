@@ -198,7 +198,7 @@
   </url>
   
   <url>
-    <loc>http://myself659.github.io/post/about-invest/</loc>
+    <loc>http://myself659.github.io/post/invest-ruixin/</loc>
     <lastmod>2020-04-03T11:58:06+02:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -485,7 +485,7 @@
   </url>
   
   <url>
-    <loc>http://myself659.github.io/post/install-python37/</loc>
+    <loc>http://myself659.github.io/post/python37-install/</loc>
     <lastmod>2019-08-08T11:58:06+02:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -571,6 +571,13 @@
   <url>
     <loc>http://myself659.github.io/post/k8s-kubeagle/</loc>
     <lastmod>2019-03-09T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://myself659.github.io/post/python-packages/</loc>
+    <lastmod>2019-02-09T11:58:06+02:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -1406,6 +1413,12 @@
   </url>
   
   <url>
+    <loc>http://myself659.github.io/post/blockchain-muskbook/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>http://myself659.github.io/post/blockchain-coronavirus/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -1413,6 +1426,12 @@
   
   <url>
     <loc>http://myself659.github.io/post/economic-recession/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://myself659.github.io/post/k8s-githubaction/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>

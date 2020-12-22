@@ -13,7 +13,7 @@
     
     
     <item>
-      <title>学会背包问题，再也不怕动态规划</title>
+      <title>学会背包问题，再也不怕动态规划 0-1背包</title>
       <link>http://myself659.github.io/post/dp-knapsack/</link>
       <pubDate>Sun, 23 Aug 2020 11:58:06 +0200</pubDate>
       
@@ -104,10 +104,10 @@
     
     <item>
       <title>关于投资几点感悟</title>
-      <link>http://myself659.github.io/post/about-invest/</link>
+      <link>http://myself659.github.io/post/invest-ruixin/</link>
       <pubDate>Fri, 03 Apr 2020 11:58:06 +0200</pubDate>
       
-      <guid>http://myself659.github.io/post/about-invest/</guid>
+      <guid>http://myself659.github.io/post/invest-ruixin/</guid>
       <description>背景 首先，吃一下瑞幸的瓜，表示对作空机构的敬意： 调研机构为了证明瑞幸咖啡造假，派出92个全职和1418个兼职调查员，在全国900多家门店蹲点</description>
     </item>
     
@@ -274,11 +274,11 @@
     </item>
     
     <item>
-      <title>安装python3.7</title>
-      <link>http://myself659.github.io/post/install-python37/</link>
+      <title>安装与更新python</title>
+      <link>http://myself659.github.io/post/python37-install/</link>
       <pubDate>Thu, 08 Aug 2019 11:58:06 +0200</pubDate>
       
-      <guid>http://myself659.github.io/post/install-python37/</guid>
+      <guid>http://myself659.github.io/post/python37-install/</guid>
       <description>说明 完全是为了记录自己的操作记录，换一台新机器真是免不了要装python。记录下来，便于以后操作。 apt-get安装 1 2 3 4 5 6 7 8 apt update apt install</description>
     </item>
     
@@ -343,6 +343,15 @@
       
       <guid>http://myself659.github.io/post/k8s-kubeagle/</guid>
       <description>安装helm helm是Kubernetes集群的npm。 下载脚本add_helm.sh 脚本内容如下： 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20</description>
+    </item>
+    
+    <item>
+      <title>The popular python packages you should know</title>
+      <link>http://myself659.github.io/post/python-packages/</link>
+      <pubDate>Sat, 09 Feb 2019 11:58:06 +0200</pubDate>
+      
+      <guid>http://myself659.github.io/post/python-packages/</guid>
+      <description>Life is short, I use Python. I try to summary the popular python packages as follows: Data and statistics Matplotlib seaborn numpy pandas plotly Web Development Django FastAPI GUI pyqt PySimpleGUI automation script pathlib os Machine Learning TensorFlow Scikit OpenCV streamlit Web Scraping and Web Automation Requests Beautiful Soup Scrapy Selenium 欢迎关注 欢迎关注微信公众帐号：沉风网事</description>
     </item>
     
     <item>
@@ -1184,6 +1193,15 @@
     
     <item>
       <title></title>
+      <link>http://myself659.github.io/post/blockchain-muskbook/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://myself659.github.io/post/blockchain-muskbook/</guid>
+      <description>muskbook facebook</description>
+    </item>
+    
+    <item>
+      <title></title>
       <link>http://myself659.github.io/post/blockchain-coronavirus/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -1198,6 +1216,15 @@
       
       <guid>http://myself659.github.io/post/economic-recession/</guid>
       <description>参考 1.How to Prepare for a Recession</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://myself659.github.io/post/k8s-githubaction/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://myself659.github.io/post/k8s-githubaction/</guid>
+      <description>banner = &amp;quot;&amp;rdquo; categories = [&amp;ldquo;Kubernetes&amp;rdquo;] date = &amp;ldquo;2020-10-17T11:58:06+02:00&amp;rdquo; description = &amp;quot;&amp;rdquo; images = [] menu = &amp;quot;&amp;rdquo; tags = [&amp;ldquo;Docker&amp;rdquo;, &amp;ldquo;Kubernetes&amp;rdquo;] title = &amp;ldquo;利用github action部署到k8s集群&amp;rdquo; draft = true +++ 目标 个人开发</description>
     </item>
     
     <item>

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Python on 沉风网事</title>
+    <title>python on 沉风网事</title>
     <link>http://myself659.github.io/categories/python/</link>
-    <description>Recent content in Python on 沉风网事</description>
+    <description>Recent content in python on 沉风网事</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>沉风网事</copyright>
@@ -13,12 +13,21 @@
     
     
     <item>
-      <title>安装python3.7</title>
-      <link>http://myself659.github.io/post/install-python37/</link>
+      <title>安装与更新python</title>
+      <link>http://myself659.github.io/post/python37-install/</link>
       <pubDate>Thu, 08 Aug 2019 11:58:06 +0200</pubDate>
       
-      <guid>http://myself659.github.io/post/install-python37/</guid>
+      <guid>http://myself659.github.io/post/python37-install/</guid>
       <description>说明 完全是为了记录自己的操作记录，换一台新机器真是免不了要装python。记录下来，便于以后操作。 apt-get安装 1 2 3 4 5 6 7 8 apt update apt install</description>
+    </item>
+    
+    <item>
+      <title>The popular python packages you should know</title>
+      <link>http://myself659.github.io/post/python-packages/</link>
+      <pubDate>Sat, 09 Feb 2019 11:58:06 +0200</pubDate>
+      
+      <guid>http://myself659.github.io/post/python-packages/</guid>
+      <description>Life is short, I use Python. I try to summary the popular python packages as follows: Data and statistics Matplotlib seaborn numpy pandas plotly Web Development Django FastAPI GUI pyqt PySimpleGUI automation script pathlib os Machine Learning TensorFlow Scikit OpenCV streamlit Web Scraping and Web Automation Requests Beautiful Soup Scrapy Selenium 欢迎关注 欢迎关注微信公众帐号：沉风网事</description>
     </item>
     
   </channel>

@@ -49,7 +49,7 @@
 <meta itemprop="description" content="前言 作为一个常年以c,c&#43;&#43;,golang为主的后端程序员，刚接触nodejs有一个困惑，就是node有哪么多版本到底该选择哪个版本呢？ no">
 <meta itemprop="datePublished" content="2019-07-08T11:58:06&#43;02:00" />
 <meta itemprop="dateModified" content="2019-07-08T11:58:06&#43;02:00" />
-<meta itemprop="wordCount" content="324">
+<meta itemprop="wordCount" content="459">
 
 
 
@@ -157,6 +157,9 @@
     <li><a href="#在哪里选">在哪里选</a></li>
     <li><a href="#从哪几个维度选择">从哪几个维度选择</a></li>
     <li><a href="#如何对比同类型的npm-package">如何对比同类型的npm package</a></li>
+    <li><a href="#npm-install-error-rollbackfailedoptional">npm install Error: rollbackFailedOptional</a></li>
+    <li><a href="#integrity-checksum-failed-when-using-sha512">integrity checksum failed when using sha512</a></li>
+    <li><a href="#install-yarn">install yarn</a></li>
   </ul>
 </nav>
   </div>
@@ -193,6 +196,48 @@
 </ol>
 <h2 id="如何对比同类型的npm-package">如何对比同类型的npm package</h2>
 <p>使用<a href="https://npmcompare.com/">npmcompare</a></p>
+<h2 id="npm-install-error-rollbackfailedoptional">npm install Error: rollbackFailedOptional</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">ia@IA:~$ npm install -g truffle
+[..................] - rollbackFailedOptional: verb npm-session 9af9b18d6d36c6ee
+</code></pre></td></tr></table>
+</div>
+</div><p>解决方法：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">npm config rm proxy 
+npm config rm https-proxy
+npm config set registry https://registry.npmjs.org/
+npm config set registry https://registry.npm.taobao.org 
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="integrity-checksum-failed-when-using-sha512">integrity checksum failed when using sha512</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">silly fetchPackageMetaData error for truffle@latest sha512-lhd8pfO5bOIwmiZf0+RyLcdWtrmeoA9JkdH9o0uQxZabisa6IxfoACRBpBez3r3w+LGPnl9/K1stE3Z9aBNK0A== integrity checksum failed when using sha512: wanted sha512-lhd8pfO5bOIwmiZf0+RyLcdWtrmeoA9JkdH9o0uQxZabisa6IxfoACRBpBez3r3w+LGPnl9/K1stE3Z9aBNK0A== but got sha512-4wB4Qu27nyZfMy9ZFzkCs/PGaaQx8W+bKug46AP5N/4BGCiT2Uw5tqq39Ip4VXXeISdok3LXb7r7A066wx3/Zw==. (15722953 bytes)
+9 timing stage:rollbackFailedOptional Completed in 2ms
+</code></pre></td></tr></table>
+</div>
+</div><p>解决方法： 删除node_modules和package-lock.json，然后再重新执行：npm install</p>
+<h2 id="install-yarn">install yarn</h2>
+<p><a href="https://linuxhint.com/install_yarn_ubuntu/">How to install Yarn on Ubuntu</a></p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
 <h1 id="欢迎关注">欢迎关注</h1>
 <p>欢迎关注微信公众帐号：沉风网事(savewind)</p>
 <p><img src="/images/cfws.jpg" alt="沉风网事"></p>
@@ -219,9 +264,9 @@
           <a href="/tags/javascript/">Javascript</a>
           </div>
       <nav class="post-nav">
-        <a class="prev" href="/post/install-python37/">
+        <a class="prev" href="/post/python37-install/">
             <i class="iconfont icon-left"></i>
-            <span class="prev-text nav-default">安装python3.7</span>
+            <span class="prev-text nav-default">安装与更新python</span>
             <span class="prev-text nav-mobile">上一篇</span>
           </a>
         <a class="next" href="/post/facebook-libra/">
