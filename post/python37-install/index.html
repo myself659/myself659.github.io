@@ -49,7 +49,7 @@
 <meta itemprop="description" content="说明 完全是为了记录自己的操作记录，换一台新机器真是免不了要装python。记录下来，便于以后操作。 apt-get安装 1 2 3 4 5 6 7 8 apt update apt install">
 <meta itemprop="datePublished" content="2019-08-08T11:58:06&#43;02:00" />
 <meta itemprop="dateModified" content="2019-08-08T11:58:06&#43;02:00" />
-<meta itemprop="wordCount" content="685">
+<meta itemprop="wordCount" content="696">
 
 
 
@@ -164,6 +164,7 @@
     <li><a href="#pip-basic">pip basic</a>
       <ul>
         <li><a href="#查看包状态">查看包状态</a></li>
+        <li><a href="#不使用缓存">不使用缓存</a></li>
         <li><a href="#更新包">更新包</a></li>
         <li><a href="#指定源">指定源</a></li>
       </ul>
@@ -313,6 +314,15 @@ python3 -m pip install jupyter
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-fallback" data-lang="fallback">pip show pkgname
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="不使用缓存">不使用缓存</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">pip install --no-cache-dir --default-timeout=1000  pkgname  
 </code></pre></td></tr></table>
 </div>
 </div><h3 id="更新包">更新包</h3>
@@ -477,7 +487,7 @@ pip3 install jupyter
   <span class="copyright-year">
     &copy; 
     2017 - 
-    2020
+    2021
     <span class="heart">
       <i class="iconfont icon-heart"></i>
     </span>
