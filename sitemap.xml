@@ -44,41 +44,6 @@
   </url>
   
   <url>
-    <loc>http://myself659.github.io/tags/blockchain/</loc>
-    <lastmod>2021-01-08T11:58:06+02:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://myself659.github.io/categories/blockchain/</loc>
-    <lastmod>2021-01-08T11:58:06+02:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://myself659.github.io/tags/cryptocurrency/</loc>
-    <lastmod>2021-01-08T11:58:06+02:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://myself659.github.io/categories/cryptocurrency/</loc>
-    <lastmod>2021-01-08T11:58:06+02:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://myself659.github.io/post/eth-2021/</loc>
-    <lastmod>2021-01-08T11:58:06+02:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>http://myself659.github.io/tags/history/</loc>
     <lastmod>2021-01-06T11:58:06+02:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -158,6 +123,20 @@
   <url>
     <loc>http://myself659.github.io/post/think-outof-box/</loc>
     <lastmod>2020-06-26T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://myself659.github.io/tags/blockchain/</loc>
+    <lastmod>2020-05-31T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://myself659.github.io/categories/blockchain/</loc>
+    <lastmod>2020-05-31T11:58:06+02:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
