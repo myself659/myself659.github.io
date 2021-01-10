@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>沉风网事</copyright>
-    <lastBuildDate>Thu, 30 Jan 2020 11:58:06 +0200</lastBuildDate>
+    <lastBuildDate>Sat, 09 Jan 2021 11:58:06 +0200</lastBuildDate>
     
 	<atom:link href="http://myself659.github.io/tags/%E9%97%B2%E8%B0%88%E4%B9%B1%E6%89%AF/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>谈谈开放的重要性</title>
+      <link>http://myself659.github.io/post/openness-importance/</link>
+      <pubDate>Sat, 09 Jan 2021 11:58:06 +0200</pubDate>
+      
+      <guid>http://myself659.github.io/post/openness-importance/</guid>
+      <description>说明 本文从软件，互联网，区块链，安全的视角谈谈开放的重要性。 软件 软件方面看几个例子吧。 首先看一下chrome浏览器，chrome浏览器首先建</description>
+    </item>
     
     <item>
       <title>说说我眼中的科比</title>

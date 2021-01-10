@@ -3,7 +3,77 @@
   
   <url>
     <loc>http://myself659.github.io/categories/</loc>
-    <lastmod>2021-01-06T11:58:06+02:00</lastmod>
+    <lastmod>2021-01-09T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://myself659.github.io/post/</loc>
+    <lastmod>2021-01-09T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://myself659.github.io/tags/</loc>
+    <lastmod>2021-01-09T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://myself659.github.io/post/openness-importance/</loc>
+    <lastmod>2021-01-09T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://myself659.github.io/tags/%E9%97%B2%E8%B0%88%E4%B9%B1%E6%89%AF/</loc>
+    <lastmod>2021-01-09T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://myself659.github.io/categories/%E9%97%B2%E8%B0%88%E4%B9%B1%E6%89%AF/</loc>
+    <lastmod>2021-01-09T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://myself659.github.io/tags/blockchain/</loc>
+    <lastmod>2021-01-08T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://myself659.github.io/categories/blockchain/</loc>
+    <lastmod>2021-01-08T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://myself659.github.io/tags/cryptocurrency/</loc>
+    <lastmod>2021-01-08T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://myself659.github.io/categories/cryptocurrency/</loc>
+    <lastmod>2021-01-08T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://myself659.github.io/post/eth-2021/</loc>
+    <lastmod>2021-01-08T11:58:06+02:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -17,20 +87,6 @@
   
   <url>
     <loc>http://myself659.github.io/categories/history/</loc>
-    <lastmod>2021-01-06T11:58:06+02:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://myself659.github.io/post/</loc>
-    <lastmod>2021-01-06T11:58:06+02:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://myself659.github.io/tags/</loc>
     <lastmod>2021-01-06T11:58:06+02:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -102,20 +158,6 @@
   <url>
     <loc>http://myself659.github.io/post/think-outof-box/</loc>
     <lastmod>2020-06-26T11:58:06+02:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://myself659.github.io/tags/blockchain/</loc>
-    <lastmod>2020-05-31T11:58:06+02:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://myself659.github.io/categories/blockchain/</loc>
-    <lastmod>2020-05-31T11:58:06+02:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -325,20 +367,6 @@
   
   <url>
     <loc>http://myself659.github.io/post/kobe/</loc>
-    <lastmod>2020-01-30T11:58:06+02:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://myself659.github.io/tags/%E9%97%B2%E8%B0%88%E4%B9%B1%E6%89%AF/</loc>
-    <lastmod>2020-01-30T11:58:06+02:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://myself659.github.io/categories/%E9%97%B2%E8%B0%88%E4%B9%B1%E6%89%AF/</loc>
     <lastmod>2020-01-30T11:58:06+02:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -1429,12 +1457,6 @@
   
   <url>
     <loc>http://myself659.github.io/post/arts/week-3/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://myself659.github.io/post/blockchain-muskbook/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>

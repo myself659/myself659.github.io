@@ -7,10 +7,28 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>沉风网事</copyright>
-    <lastBuildDate>Wed, 06 Jan 2021 11:58:06 +0200</lastBuildDate>
+    <lastBuildDate>Sat, 09 Jan 2021 11:58:06 +0200</lastBuildDate>
     
 	<atom:link href="http://myself659.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>谈谈开放的重要性</title>
+      <link>http://myself659.github.io/post/openness-importance/</link>
+      <pubDate>Sat, 09 Jan 2021 11:58:06 +0200</pubDate>
+      
+      <guid>http://myself659.github.io/post/openness-importance/</guid>
+      <description>说明 本文从软件，互联网，区块链，安全的视角谈谈开放的重要性。 软件 软件方面看几个例子吧。 首先看一下chrome浏览器，chrome浏览器首先建</description>
+    </item>
+    
+    <item>
+      <title>展望2021年的Ethereum</title>
+      <link>http://myself659.github.io/post/eth-2021/</link>
+      <pubDate>Fri, 08 Jan 2021 11:58:06 +0200</pubDate>
+      
+      <guid>http://myself659.github.io/post/eth-2021/</guid>
+      <description>前言 Ethereum作为第一个支持图灵完备的智能合约平台，同时也是最大的智能合约平台。从现在区块链应用角度来看是最重要的公链。个人认为公链的</description>
+    </item>
     
     <item>
       <title>那些值得多读的历史书</title>
@@ -1189,15 +1207,6 @@
       
       <guid>http://myself659.github.io/post/arts/week-3/</guid>
       <description>每周完成一个ARTS： 1.Algorithm：每周至少做一个 leetcode 的算法题 2.Review：阅读并点评至少一篇英文技术文章 3.Tip：学习至少一</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>http://myself659.github.io/post/blockchain-muskbook/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://myself659.github.io/post/blockchain-muskbook/</guid>
-      <description>muskbook facebook</description>
     </item>
     
     <item>

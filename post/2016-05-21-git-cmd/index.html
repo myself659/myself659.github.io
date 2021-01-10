@@ -49,7 +49,7 @@
 <meta itemprop="description" content="配置 1 2 git config --global user.email &#34;you@example.com&#34; git config --global user.name &#34;Your Name&#34; git仓库 初始化一个版本仓库 1 git init clone远程版本库 1 git clone git@github.com:myself659/FFmpeg.git 添加远程版本库origin 1 git remote add origin git@github.com:myself659/rtmpserver_demo.git 查看远程仓">
 <meta itemprop="datePublished" content="2016-05-21T11:58:06&#43;02:00" />
 <meta itemprop="dateModified" content="2016-05-21T11:58:06&#43;02:00" />
-<meta itemprop="wordCount" content="903">
+<meta itemprop="wordCount" content="956">
 
 
 
@@ -643,6 +643,42 @@
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-fallback" data-lang="fallback">git diff --stat 
+</code></pre></td></tr></table>
+</div>
+</div><ol start="5">
+<li>提交git diff</li>
+</ol>
+<p><a href="https://zhauniarovich.com/post/2020/2020-09-git-commit-message/">How to Include Diff into Git Commit Message</a></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="cp">#!/bin/bash
+</span><span class="cp"></span>
+<span class="nv">COMMIT_MSG_FILE</span><span class="o">=</span><span class="nv">$1</span>
+<span class="nv">COMMIT_SOURCE</span><span class="o">=</span><span class="nv">$2</span>
+<span class="nv">SHA1</span><span class="o">=</span><span class="nv">$3</span>
+
+<span class="nv">RESULT</span><span class="o">=</span><span class="s2">&#34;# Differences to be committed:&#34;</span>
+<span class="k">while</span> <span class="nv">IFS</span><span class="o">=</span> <span class="nb">read</span> -r line
+<span class="k">do</span>
+  <span class="nv">RESULT</span><span class="o">+=</span><span class="s2">&#34;</span><span class="nv">$IFS</span><span class="s2">#    </span><span class="nv">$line</span><span class="s2">&#34;</span>
+<span class="k">done</span> <span class="o">&lt;&lt;&lt;</span> <span class="k">$(</span>git diff --staged<span class="k">)</span>
+
+<span class="nb">echo</span> <span class="s2">&#34;</span><span class="nv">$RESULT</span><span class="s2">&#34;</span> &gt;&gt; <span class="nv">$COMMIT_MSG_FILE</span>
 </code></pre></td></tr></table>
 </div>
 </div><h3 id="misc">misc</h3>

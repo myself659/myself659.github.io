@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>沉风网事</copyright>
-    <lastBuildDate>Sun, 31 May 2020 11:58:06 +0200</lastBuildDate>
+    <lastBuildDate>Fri, 08 Jan 2021 11:58:06 +0200</lastBuildDate>
     
 	<atom:link href="http://myself659.github.io/tags/blockchain/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>展望2021年的Ethereum</title>
+      <link>http://myself659.github.io/post/eth-2021/</link>
+      <pubDate>Fri, 08 Jan 2021 11:58:06 +0200</pubDate>
+      
+      <guid>http://myself659.github.io/post/eth-2021/</guid>
+      <description>前言 Ethereum作为第一个支持图灵完备的智能合约平台，同时也是最大的智能合约平台。从现在区块链应用角度来看是最重要的公链。个人认为公链的</description>
+    </item>
     
     <item>
       <title>谈谈数字货币的反脆弱性</title>

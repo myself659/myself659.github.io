@@ -7,10 +7,37 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>沉风网事</copyright>
-    <lastBuildDate>Wed, 06 Jan 2021 11:58:06 +0200</lastBuildDate>
+    <lastBuildDate>Sat, 09 Jan 2021 11:58:06 +0200</lastBuildDate>
     
 	<atom:link href="http://myself659.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>闲谈乱扯</title>
+      <link>http://myself659.github.io/tags/%E9%97%B2%E8%B0%88%E4%B9%B1%E6%89%AF/</link>
+      <pubDate>Sat, 09 Jan 2021 11:58:06 +0200</pubDate>
+      
+      <guid>http://myself659.github.io/tags/%E9%97%B2%E8%B0%88%E4%B9%B1%E6%89%AF/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>blockchain</title>
+      <link>http://myself659.github.io/tags/blockchain/</link>
+      <pubDate>Fri, 08 Jan 2021 11:58:06 +0200</pubDate>
+      
+      <guid>http://myself659.github.io/tags/blockchain/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>cryptocurrency</title>
+      <link>http://myself659.github.io/tags/cryptocurrency/</link>
+      <pubDate>Fri, 08 Jan 2021 11:58:06 +0200</pubDate>
+      
+      <guid>http://myself659.github.io/tags/cryptocurrency/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>History</title>
@@ -45,15 +72,6 @@
       <pubDate>Fri, 26 Jun 2020 11:58:06 +0200</pubDate>
       
       <guid>http://myself659.github.io/tags/%E6%88%90%E9%95%BF/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>blockchain</title>
-      <link>http://myself659.github.io/tags/blockchain/</link>
-      <pubDate>Sun, 31 May 2020 11:58:06 +0200</pubDate>
-      
-      <guid>http://myself659.github.io/tags/blockchain/</guid>
       <description></description>
     </item>
     
@@ -126,15 +144,6 @@
       <pubDate>Thu, 30 Jan 2020 11:58:06 +0200</pubDate>
       
       <guid>http://myself659.github.io/tags/nba/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>闲谈乱扯</title>
-      <link>http://myself659.github.io/tags/%E9%97%B2%E8%B0%88%E4%B9%B1%E6%89%AF/</link>
-      <pubDate>Thu, 30 Jan 2020 11:58:06 +0200</pubDate>
-      
-      <guid>http://myself659.github.io/tags/%E9%97%B2%E8%B0%88%E4%B9%B1%E6%89%AF/</guid>
       <description></description>
     </item>
     
