@@ -604,6 +604,27 @@
   </url>
   
   <url>
+    <loc>http://myself659.github.io/post/arts/week-0/</loc>
+    <lastmod>2019-03-08T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://myself659.github.io/tags/datastruct/</loc>
+    <lastmod>2019-03-08T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://myself659.github.io/categories/datastruct/</loc>
+    <lastmod>2019-03-08T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>http://myself659.github.io/post/python-packages/</loc>
     <lastmod>2019-02-09T11:58:06+02:00</lastmod>
     <changefreq>weekly</changefreq>
