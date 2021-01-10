@@ -23,7 +23,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.68.3 with theme even" />
+<meta name="generator" content="Hugo 0.74.3 with theme even" />
 
 
 <link rel="canonical" href="http://myself659.github.io/post/k8s-kubeagle/" />
@@ -47,13 +47,14 @@
 <meta property="article:modified_time" content="2019-03-09T11:58:06+02:00" />
 <meta itemprop="name" content="利用Kube Eagle监控Kubernetes集群资源">
 <meta itemprop="description" content="安装helm helm是Kubernetes集群的npm。 下载脚本add_helm.sh 脚本内容如下： 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20">
-<meta itemprop="datePublished" content="2019-03-09T11:58:06&#43;02:00" />
-<meta itemprop="dateModified" content="2019-03-09T11:58:06&#43;02:00" />
+<meta itemprop="datePublished" content="2019-03-09T11:58:06+02:00" />
+<meta itemprop="dateModified" content="2019-03-09T11:58:06+02:00" />
 <meta itemprop="wordCount" content="307">
 
 
 
-<meta itemprop="keywords" content="Docker,Kubernetes," /><meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="Docker,Kubernetes," />
+<meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="利用Kube Eagle监控Kubernetes集群资源"/>
 <meta name="twitter:description" content="安装helm helm是Kubernetes集群的npm。 下载脚本add_helm.sh 脚本内容如下： 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20"/>
 
@@ -204,9 +205,9 @@ curl https://raw.githubusercontent.com/kubernetes/helm/master/scripts/get <span 
 <span class="c1"># add a service account within a namespace to segregate tiller</span>
 kubectl --namespace kube-system create sa tiller
 <span class="c1"># create a cluster role binding for tiller</span>
-kubectl create clusterrolebinding tiller <span class="se">\</span>
-    --clusterrole cluster-admin <span class="se">\</span>
-    --serviceaccount<span class="o">=</span>kube-system:tiller
+kubectl create clusterrolebinding tiller <span class="se">\
+</span><span class="se"></span>    --clusterrole cluster-admin <span class="se">\
+</span><span class="se"></span>    --serviceaccount<span class="o">=</span>kube-system:tiller
 
 <span class="nb">echo</span> <span class="s2">&#34;initialize helm&#34;</span>
 <span class="c1"># initialized helm within the tiller service account</span>

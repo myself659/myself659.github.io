@@ -23,7 +23,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.68.3 with theme even" />
+<meta name="generator" content="Hugo 0.74.3 with theme even" />
 
 
 <link rel="canonical" href="http://myself659.github.io/post/2016-03-09-x86-64-call-stack/" />
@@ -47,13 +47,14 @@
 <meta property="article:modified_time" content="2016-03-09T11:58:06+02:00" />
 <meta itemprop="name" content="Linux x86-64 函数调用栈实例分析">
 <meta itemprop="description" content="前言 动手实践并写文章花5倍的时间一次性把事情做到90分，好过读别人文章只能做到60分，后面还需要花时间继续深入学习。本文目的希望通过分析一个">
-<meta itemprop="datePublished" content="2016-03-09T11:58:06&#43;02:00" />
-<meta itemprop="dateModified" content="2016-03-09T11:58:06&#43;02:00" />
+<meta itemprop="datePublished" content="2016-03-09T11:58:06+02:00" />
+<meta itemprop="dateModified" content="2016-03-09T11:58:06+02:00" />
 <meta itemprop="wordCount" content="3112">
 
 
 
-<meta itemprop="keywords" content="Linux," /><meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="Linux," />
+<meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Linux x86-64 函数调用栈实例分析"/>
 <meta name="twitter:description" content="前言 动手实践并写文章花5倍的时间一次性把事情做到90分，好过读别人文章只能做到60分，后面还需要花时间继续深入学习。本文目的希望通过分析一个"/>
 
@@ -263,7 +264,7 @@ For bug reporting instructions, please see:
 </span><span class="lnt">25
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-c" data-lang="c"><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp">
+<pre class="chroma"><code class="language-c" data-lang="c"><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp">
 </span><span class="cp"></span>
 <span class="kt">int</span> <span class="nf">sum</span><span class="p">(</span><span class="kt">int</span> <span class="n">a1</span><span class="p">,</span> <span class="kt">int</span> <span class="n">a2</span><span class="p">,</span> <span class="kt">int</span> <span class="n">a3</span><span class="p">,</span> <span class="kt">int</span> <span class="n">a4</span><span class="p">,</span> <span class="kt">int</span> <span class="n">a5</span><span class="p">,</span> 
         <span class="kt">int</span> <span class="n">a6</span><span class="p">,</span> <span class="kt">int</span> <span class="n">a7</span><span class="p">,</span> <span class="kt">int</span> <span class="n">a8</span><span class="p">,</span> <span class="kt">int</span> <span class="n">a9</span><span class="p">)</span>

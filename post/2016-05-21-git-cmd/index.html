@@ -23,7 +23,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.68.3 with theme even" />
+<meta name="generator" content="Hugo 0.74.3 with theme even" />
 
 
 <link rel="canonical" href="http://myself659.github.io/post/2016-05-21-git-cmd/" />
@@ -47,13 +47,14 @@
 <meta property="article:modified_time" content="2016-05-21T11:58:06+02:00" />
 <meta itemprop="name" content="git常用命令总结">
 <meta itemprop="description" content="配置 1 2 git config --global user.email &#34;you@example.com&#34; git config --global user.name &#34;Your Name&#34; git仓库 初始化一个版本仓库 1 git init clone远程版本库 1 git clone git@github.com:myself659/FFmpeg.git 添加远程版本库origin 1 git remote add origin git@github.com:myself659/rtmpserver_demo.git 查看远程仓">
-<meta itemprop="datePublished" content="2016-05-21T11:58:06&#43;02:00" />
-<meta itemprop="dateModified" content="2016-05-21T11:58:06&#43;02:00" />
+<meta itemprop="datePublished" content="2016-05-21T11:58:06+02:00" />
+<meta itemprop="dateModified" content="2016-05-21T11:58:06+02:00" />
 <meta itemprop="wordCount" content="956">
 
 
 
-<meta itemprop="keywords" content="Linux," /><meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="Linux," />
+<meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="git常用命令总结"/>
 <meta name="twitter:description" content="配置 1 2 git config --global user.email &#34;you@example.com&#34; git config --global user.name &#34;Your Name&#34; git仓库 初始化一个版本仓库 1 git init clone远程版本库 1 git clone git@github.com:myself659/FFmpeg.git 添加远程版本库origin 1 git remote add origin git@github.com:myself659/rtmpserver_demo.git 查看远程仓"/>
 
@@ -789,8 +790,8 @@
 <span class="nb">set</span> -x
 git fetch --all
 <span class="k">for</span> branch in <span class="s2">&#34;</span><span class="nv">$@</span><span class="s2">&#34;</span><span class="p">;</span> <span class="k">do</span>
-    git checkout <span class="s2">&#34;</span><span class="nv">$branch</span><span class="s2">&#34;</span>      <span class="o">||</span> <span class="nb">exit</span> 1
-    git rebase <span class="s2">&#34;origin/</span><span class="nv">$branch</span><span class="s2">&#34;</span> <span class="o">||</span> <span class="nb">exit</span> 1
+    git checkout <span class="s2">&#34;</span><span class="nv">$branch</span><span class="s2">&#34;</span>      <span class="o">||</span> <span class="nb">exit</span> <span class="m">1</span>
+    git rebase <span class="s2">&#34;origin/</span><span class="nv">$branch</span><span class="s2">&#34;</span> <span class="o">||</span> <span class="nb">exit</span> <span class="m">1</span>
 <span class="k">done</span>
 </code></pre></td></tr></table>
 </div>
