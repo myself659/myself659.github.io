@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>沉风网事</copyright>
-    <lastBuildDate>Sat, 08 Apr 2017 11:58:06 +0200</lastBuildDate>
+    <lastBuildDate>Tue, 08 Jan 2019 11:58:06 +0200</lastBuildDate>
     
 	<atom:link href="http://myself659.github.io/tags/arch/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Cache 101</title>
+      <link>http://myself659.github.io/post/cache-101/</link>
+      <pubDate>Tue, 08 Jan 2019 11:58:06 +0200</pubDate>
+      
+      <guid>http://myself659.github.io/post/cache-101/</guid>
+      <description>前言 在现在互联网系统中cache无处不在，无时不用。 定义 wiki定义如下： a cache is a hardware or software component that stores data so that future requests for that data can be served faster; 工作原理 一句话：通过将</description>
+    </item>
     
     <item>
       <title>对于系统设计的一些想法</title>

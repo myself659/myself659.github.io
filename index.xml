@@ -7,7 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>沉风网事</copyright>
-    <lastBuildDate>Sat, 09 Jan 2021 11:58:06 +0200</lastBuildDate>
+    <lastBuildDate>Mon, 18 May 2015 21:49:20 +0200</lastBuildDate>
     
 	<atom:link href="http://myself659.github.io/index.xml" rel="self" type="application/rss+xml" />
     
@@ -397,6 +397,15 @@
       
       <guid>http://myself659.github.io/post/pow-is-out/</guid>
       <description>ETC受到51%攻击 最近ETC受到51%攻击，值得注意是：ETC是受到51%攻击的币种中市值最高的。 先谈谈ETC受到51%攻击原因。ETC采</description>
+    </item>
+    
+    <item>
+      <title>Cache 101</title>
+      <link>http://myself659.github.io/post/cache-101/</link>
+      <pubDate>Tue, 08 Jan 2019 11:58:06 +0200</pubDate>
+      
+      <guid>http://myself659.github.io/post/cache-101/</guid>
+      <description>前言 在现在互联网系统中cache无处不在，无时不用。 定义 wiki定义如下： a cache is a hardware or software component that stores data so that future requests for that data can be served faster; 工作原理 一句话：通过将</description>
     </item>
     
     <item>
