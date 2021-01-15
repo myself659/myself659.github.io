@@ -3,21 +3,42 @@
   
   <url>
     <loc>http://myself659.github.io/categories/</loc>
-    <lastmod>2021-01-09T11:58:06+02:00</lastmod>
+    <lastmod>2021-01-15T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://myself659.github.io/tags/invest/</loc>
+    <lastmod>2021-01-15T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://myself659.github.io/categories/invest/</loc>
+    <lastmod>2021-01-15T11:58:06+02:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://myself659.github.io/post/</loc>
-    <lastmod>2021-01-09T11:58:06+02:00</lastmod>
+    <lastmod>2021-01-15T11:58:06+02:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://myself659.github.io/tags/</loc>
-    <lastmod>2021-01-09T11:58:06+02:00</lastmod>
+    <lastmod>2021-01-15T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://myself659.github.io/post/invest/invest-balajis-directions/</loc>
+    <lastmod>2021-01-15T11:58:06+02:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -240,7 +261,7 @@
   </url>
   
   <url>
-    <loc>http://myself659.github.io/post/invest-ruixin/</loc>
+    <loc>http://myself659.github.io/post/invest/invest-ruixin/</loc>
     <lastmod>2020-04-03T11:58:06+02:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -1458,12 +1479,6 @@
   
   <url>
     <loc>http://myself659.github.io/post/2017-05-09-web-server-perf-and-design/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://myself659.github.io/post/arts/week-3/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
