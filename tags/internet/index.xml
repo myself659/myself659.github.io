@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>沉风网事</copyright>
-    <lastBuildDate>Sun, 22 Mar 2020 11:58:06 +0200</lastBuildDate>
+    <lastBuildDate>Wed, 03 Feb 2021 11:58:06 +0200</lastBuildDate>
     
 	<atom:link href="http://myself659.github.io/tags/internet/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>谈谈clubhouse</title>
+      <link>http://myself659.github.io/post/internet/about-clubhouse/</link>
+      <pubDate>Wed, 03 Feb 2021 11:58:06 +0200</pubDate>
+      
+      <guid>http://myself659.github.io/post/internet/about-clubhouse/</guid>
+      <description>背景 最近clubhouse的邀请一码难求，自己有幸被邀请。体验一下，说一下自己对clubhouse一些想法。（Ps：由于区块链与加密货币的火</description>
+    </item>
     
     <item>
       <title>提高个人隐私数据安全的几点建议</title>

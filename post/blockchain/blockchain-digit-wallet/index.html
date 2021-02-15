@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>谈谈数字货币钱包 - 沉风网事</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="沉风网事" /><meta name="description" content="战略地位 基于区块链的价值互联网，离不开token经济。数字货币钱包在整个区块链生态的地位如同互联网的支付宝与微信支付。其重要性不用多说了。 功" /><meta name="keywords" content="沉风网事, 沉风, 区块链, Glang, 算法, 数据结构" />
+
+
+<meta name="baidu-site-verification" content="9LmlOuIblt" />
+
+
+
+<meta name="generator" content="Hugo 0.68.3 with theme even" />
+
+
+<link rel="canonical" href="http://myself659.github.io/post/blockchain/blockchain-digit-wallet/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.8c3cbcb0324c2bb4875ceccba4007cbad4b4ac8377f33af9953c3e7684534a50.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="谈谈数字货币钱包" />
+<meta property="og:description" content="战略地位 基于区块链的价值互联网，离不开token经济。数字货币钱包在整个区块链生态的地位如同互联网的支付宝与微信支付。其重要性不用多说了。 功" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://myself659.github.io/post/blockchain/blockchain-digit-wallet/" />
+<meta property="article:published_time" content="2018-02-21T11:58:06+02:00" />
+<meta property="article:modified_time" content="2018-02-21T11:58:06+02:00" />
+<meta itemprop="name" content="谈谈数字货币钱包">
+<meta itemprop="description" content="战略地位 基于区块链的价值互联网，离不开token经济。数字货币钱包在整个区块链生态的地位如同互联网的支付宝与微信支付。其重要性不用多说了。 功">
+<meta itemprop="datePublished" content="2018-02-21T11:58:06&#43;02:00" />
+<meta itemprop="dateModified" content="2018-02-21T11:58:06&#43;02:00" />
+<meta itemprop="wordCount" content="576">
+
+
+
+<meta itemprop="keywords" content="BlockChain," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="谈谈数字货币钱包"/>
+<meta name="twitter:description" content="战略地位 基于区块链的价值互联网，离不开token经济。数字货币钱包在整个区块链生态的地位如同互联网的支付宝与微信支付。其重要性不用多说了。 功"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">沉风</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a><a href="/post/leetcode/">
+        <li class="mobile-menu-item">LeetCode</li>
+      </a><a href="/post/read-post/">
+        <li class="mobile-menu-item">Read</li>
+      </a><a href="/post/share-post/">
+        <li class="mobile-menu-item">Share</li>
+      </a><a href="/post/slide-post/">
+        <li class="mobile-menu-item">Slide</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">沉风</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/leetcode/">LeetCode</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/read-post/">Read</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/share-post/">Share</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/slide-post/">Slide</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">谈谈数字货币钱包</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2018-02-21 </span>
+        <div class="post-category">
+            <a href="/categories/blockchain/"> BlockChain </a>
+            </div>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents"></nav>
+  </div>
+</div>
+    <div class="post-content">
+      <h1 id="战略地位">战略地位</h1>
+<p>基于区块链的价值互联网，离不开token经济。数字货币钱包在整个区块链生态的地位如同互联网的支付宝与微信支付。其重要性不用多说了。</p>
+<h1 id="功能">功能</h1>
+<p>从价值的角度来看，主要有以下三个功能：</p>
+<ol>
+<li>价值确权</li>
+<li>价值存储</li>
+<li>价值IO</li>
+</ol>
+<p>价值IO，以Wallet as a Service方式有以下业务：</p>
+<ol>
+<li>金融（理财，期货等等）</li>
+<li>交易（接入去中心化交易，中心化交易所，场外交易）</li>
+<li>Dapp平台，支持第三方Dapp接入</li>
+</ol>
+<h1 id="本质">本质</h1>
+<p>从技术上看，本质上是私钥，私钥，私钥。重要的事情说三遍。</p>
+<p>价值确权通过私钥来完成，谁拥有私钥谁就拥有对应的价值。</p>
+<p>价值存储就是存储私钥。</p>
+<p>价值IO对应的功能都需要私钥配合实现。</p>
+<h1 id="分类">分类</h1>
+<p>数字货币钱包从形态有如下类型：</p>
+<ol>
+<li>硬件钱包，如<a href="https://trezor.io/">Trezo</a></li>
+<li>移动App，如imtoken，bitpay，58wallet</li>
+<li>Web网站，如<a href="https://www.myetherwallet.com/">myetherwallet</a></li>
+<li>浏览器扩展应用，如<a href="https://github.com/MetaMask">MetaMask</a></li>
+<li>桌面应用程序</li>
+<li>中心化交易所</li>
+<li>代码，完成私钥管理与交易功能即可</li>
+</ol>
+<p>从私钥是否连网可以分为：</p>
+<ol>
+<li>冷钱包  不联网</li>
+<li>热钱包  联网</li>
+</ol>
+<h1 id="安全">安全</h1>
+<p>钱包的安全性无须多说。</p>
+<p>钱包的安全性由用户自己负责。</p>
+<p>最重要理解原理，提高安全意识。</p>
+<h1 id="钱包与交易所">钱包与交易所</h1>
+<p>钱包+撮合引擎=交易所</p>
+<h1 id="附加功能">附加功能</h1>
+<ol>
+<li>IM</li>
+<li>资讯</li>
+<li>行情</li>
+<li>增值服务</li>
+</ol>
+<p>（PS: 币圈一日，世上一年，更有各种新技术层出不穷，需要深入学习，恕没有展开说明，望见谅）。</p>
+<h1 id="参考">参考</h1>
+<ol>
+<li><a href="https://bitcoin.org/en/choose-your-wallet">Choose your Bitcoin wallet</a></li>
+<li><a href="https://www.youtube.com/watch?v=8iNPTp_kQNA">比特币冷热钱包教学</a></li>
+<li><a href="https://www.zhihu.com/question/21478404">知乎：比特币用哪一种钱包比较靠谱，如何保障交易安全？</a></li>
+</ol>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">沉风网事</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+        2018-02-21
+        
+    </span>
+  </p>
+  
+  
+</div>
+<footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/blockchain/">BlockChain</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/post/blockchain/blockchain-strategy/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">乱扯区块链战略</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        <a class="next" href="/post/%E4%BB%8E%E8%B4%A7%E5%B8%81%E8%A7%92%E5%BA%A6%E7%9C%8B%E6%AF%94%E7%89%B9%E5%B8%81/">
+            <span class="next-text nav-default">从货币的角度看比特币</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+  
+
+  
+    <script src="https://utteranc.es/client.js"
+            repo="myself659/ipds-public"
+            issue-term="pathname"
+            theme="github-light"
+            crossorigin="anonymous"
+            async>
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://github.com/utterance">comments powered by utterances.</a></noscript>
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/8.3.1/mermaid.min.js"></script>
+<div class="social-links">
+      <a href="mailto:myself659@163.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://github.com/myself659" class="iconfont icon-github" title="github"></a>
+      <a href="https://weibo.com/6484347913" class="iconfont icon-weibo" title="weibo"></a>
+      <a href="https://www.zhihu.com/people/lejoys" class="iconfont icon-zhihu" title="zhihu"></a>
+  <a href="http://myself659.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/myself659/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2017 - 
+    2021
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">沉风网事</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+
+
+
+<script type="text/javascript" src="/js/main.min.d7b7ada643c9c1a983026e177f141f7363b4640d619caf01d8831a6718cd44ea.js"></script>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-144475213-1', 'auto');
+	ga('set', 'anonymizeIp', true);
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+
+
+
+
+</body>
+</html>

@@ -2,8 +2,106 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://myself659.github.io/tags/blockchain/</loc>
+    <lastmod>2021-02-10T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://myself659.github.io/categories/blockchain/</loc>
+    <lastmod>2021-02-10T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>http://myself659.github.io/categories/</loc>
-    <lastmod>2021-01-15T11:58:06+02:00</lastmod>
+    <lastmod>2021-02-10T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://myself659.github.io/post/</loc>
+    <lastmod>2021-02-10T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://myself659.github.io/tags/</loc>
+    <lastmod>2021-02-10T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://myself659.github.io/post/blockchain/bitcoin-telsa/</loc>
+    <lastmod>2021-02-10T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://myself659.github.io/tags/internet/</loc>
+    <lastmod>2021-02-03T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://myself659.github.io/categories/internet/</loc>
+    <lastmod>2021-02-03T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://myself659.github.io/post/internet/about-clubhouse/</loc>
+    <lastmod>2021-02-03T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://myself659.github.io/tags/economy/</loc>
+    <lastmod>2021-01-25T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://myself659.github.io/categories/economy/</loc>
+    <lastmod>2021-01-25T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://myself659.github.io/post/economy/china-trust-crisis/</loc>
+    <lastmod>2021-01-25T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://myself659.github.io/post/english/100-english-sentence/</loc>
+    <lastmod>2021-01-16T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://myself659.github.io/tags/english/</loc>
+    <lastmod>2021-01-16T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://myself659.github.io/categories/english/</loc>
+    <lastmod>2021-01-16T11:58:06+02:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -17,20 +115,6 @@
   
   <url>
     <loc>http://myself659.github.io/categories/invest/</loc>
-    <lastmod>2021-01-15T11:58:06+02:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://myself659.github.io/post/</loc>
-    <lastmod>2021-01-15T11:58:06+02:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://myself659.github.io/tags/</loc>
     <lastmod>2021-01-15T11:58:06+02:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -60,6 +144,27 @@
   <url>
     <loc>http://myself659.github.io/categories/%E9%97%B2%E8%B0%88%E4%B9%B1%E6%89%AF/</loc>
     <lastmod>2021-01-09T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://myself659.github.io/tags/cryptocurrency/</loc>
+    <lastmod>2021-01-08T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://myself659.github.io/categories/cryptocurrency/</loc>
+    <lastmod>2021-01-08T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://myself659.github.io/post/blockchain/eth-2021/</loc>
+    <lastmod>2021-01-08T11:58:06+02:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -149,20 +254,6 @@
   </url>
   
   <url>
-    <loc>http://myself659.github.io/tags/blockchain/</loc>
-    <lastmod>2020-05-31T11:58:06+02:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://myself659.github.io/categories/blockchain/</loc>
-    <lastmod>2020-05-31T11:58:06+02:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>http://myself659.github.io/post/cryptocurrency_antifrangible/</loc>
     <lastmod>2020-05-31T11:58:06+02:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -205,7 +296,7 @@
   </url>
   
   <url>
-    <loc>http://myself659.github.io/post/book-skin-in-the-game-how/</loc>
+    <loc>http://myself659.github.io/post/rt/book-skin-in-the-game-how/</loc>
     <lastmod>2020-05-08T11:58:06+02:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -221,20 +312,6 @@
   <url>
     <loc>http://myself659.github.io/tags/%E5%AD%A6%E4%B9%A0/</loc>
     <lastmod>2020-04-26T11:58:06+02:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://myself659.github.io/tags/economy/</loc>
-    <lastmod>2020-04-19T11:58:06+02:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://myself659.github.io/categories/economy/</loc>
-    <lastmod>2020-04-19T11:58:06+02:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -270,20 +347,6 @@
   <url>
     <loc>http://myself659.github.io/post/github-hack/</loc>
     <lastmod>2020-03-29T11:58:06+02:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://myself659.github.io/tags/internet/</loc>
-    <lastmod>2020-03-22T11:58:06+02:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://myself659.github.io/categories/internet/</loc>
-    <lastmod>2020-03-22T11:58:06+02:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -352,6 +415,13 @@
   </url>
   
   <url>
+    <loc>http://myself659.github.io/post/economy/%E4%B8%AD%E5%9B%BD%E6%94%BF%E6%B2%BB%E7%BB%8F%E6%B5%8E%E4%BF%A1%E6%81%AF/</loc>
+    <lastmod>2020-02-08T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>http://myself659.github.io/post/stock-us-data/</loc>
     <lastmod>2020-02-06T11:58:06+02:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -408,7 +478,7 @@
   </url>
   
   <url>
-    <loc>http://myself659.github.io/post/blockchain-2020/</loc>
+    <loc>http://myself659.github.io/post/blockchain/blockchain-2020/</loc>
     <lastmod>2020-01-08T11:58:06+02:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -429,7 +499,7 @@
   </url>
   
   <url>
-    <loc>http://myself659.github.io/post/about-doh/</loc>
+    <loc>http://myself659.github.io/post/network/about-doh/</loc>
     <lastmod>2019-11-08T11:58:06+02:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -807,7 +877,7 @@
   </url>
   
   <url>
-    <loc>http://myself659.github.io/post/blockchain-new-game-time/</loc>
+    <loc>http://myself659.github.io/post/blockchain/blockchain-new-game-time/</loc>
     <lastmod>2018-07-21T11:58:06+02:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -891,7 +961,7 @@
   </url>
   
   <url>
-    <loc>http://myself659.github.io/post/eth-txpool/</loc>
+    <loc>http://myself659.github.io/post/blockchain/eth-txpool/</loc>
     <lastmod>2018-05-15T11:58:06+02:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -905,7 +975,7 @@
   </url>
   
   <url>
-    <loc>http://myself659.github.io/post/eth-tx-submit/</loc>
+    <loc>http://myself659.github.io/post/blockchain/eth-tx-submit/</loc>
     <lastmod>2018-05-05T11:58:06+02:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -940,7 +1010,7 @@
   </url>
   
   <url>
-    <loc>http://myself659.github.io/post/blockchain-pain-happy-itchy/</loc>
+    <loc>http://myself659.github.io/post/blockchain/blockchain-pain-happy-itchy/</loc>
     <lastmod>2018-03-04T11:58:06+02:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -982,14 +1052,14 @@
   </url>
   
   <url>
-    <loc>http://myself659.github.io/post/blockchain-strategy/</loc>
+    <loc>http://myself659.github.io/post/blockchain/blockchain-strategy/</loc>
     <lastmod>2018-02-21T11:58:06+02:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://myself659.github.io/post/blockchain-digit-wallet/</loc>
+    <loc>http://myself659.github.io/post/blockchain/blockchain-digit-wallet/</loc>
     <lastmod>2018-02-21T11:58:06+02:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -1010,20 +1080,6 @@
   </url>
   
   <url>
-    <loc>http://myself659.github.io/tags/english/</loc>
-    <lastmod>2018-01-25T11:58:06+02:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://myself659.github.io/categories/english/</loc>
-    <lastmod>2018-01-25T11:58:06+02:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>http://myself659.github.io/post/tech-english-collection/</loc>
     <lastmod>2018-01-25T11:58:06+02:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -1031,7 +1087,7 @@
   </url>
   
   <url>
-    <loc>http://myself659.github.io/post/blockchain-dex/</loc>
+    <loc>http://myself659.github.io/post/blockchain/blockchain-dex/</loc>
     <lastmod>2017-12-22T11:58:06+02:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -1122,14 +1178,14 @@
   </url>
   
   <url>
-    <loc>http://myself659.github.io/post/blockchain-ethernum/</loc>
+    <loc>http://myself659.github.io/post/blockchain/blockchain-ethernum/</loc>
     <lastmod>2017-10-21T11:58:06+02:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://myself659.github.io/post/blockchain-btc/</loc>
+    <loc>http://myself659.github.io/post/blockchain/blockchain-btc/</loc>
     <lastmod>2017-10-20T11:58:06+02:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -1484,7 +1540,7 @@
   </url>
   
   <url>
-    <loc>http://myself659.github.io/post/blockchain-coronavirus/</loc>
+    <loc>http://myself659.github.io/post/blockchain/blockchain-coronavirus/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>

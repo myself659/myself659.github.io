@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>沉风网事</copyright>
-    <lastBuildDate>Sun, 19 Apr 2020 11:58:06 +0200</lastBuildDate>
+    <lastBuildDate>Mon, 25 Jan 2021 11:58:06 +0200</lastBuildDate>
     
 	<atom:link href="http://myself659.github.io/categories/economy/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>爆雷，接盘侠与社会信用</title>
+      <link>http://myself659.github.io/post/economy/china-trust-crisis/</link>
+      <pubDate>Mon, 25 Jan 2021 11:58:06 +0200</pubDate>
+      
+      <guid>http://myself659.github.io/post/economy/china-trust-crisis/</guid>
+      <description>背景 首先，先看看这个新闻： 湖南益阳62岁老人投江后续：当地多家养老机构爆雷，有老人获悉后心梗去世。 由这个新闻想到中国从2018年开始了一系列</description>
+    </item>
     
     <item>
       <title>后疫情时代会有哪些变化</title>
@@ -37,6 +46,15 @@
       
       <guid>http://myself659.github.io/post/howmuch-us-stock-willfall/</guid>
       <description>进入话题之前了解一下美股指数熔断机制。 美股指数熔断机制的基准指数为标普500，单项跌幅阈值为7%、13%、20%。当指数较前一天收盘点位下跌</description>
+    </item>
+    
+    <item>
+      <title>中国政治经济信息与数据</title>
+      <link>http://myself659.github.io/post/economy/%E4%B8%AD%E5%9B%BD%E6%94%BF%E6%B2%BB%E7%BB%8F%E6%B5%8E%E4%BF%A1%E6%81%AF/</link>
+      <pubDate>Sat, 08 Feb 2020 11:58:06 +0200</pubDate>
+      
+      <guid>http://myself659.github.io/post/economy/%E4%B8%AD%E5%9B%BD%E6%94%BF%E6%B2%BB%E7%BB%8F%E6%B5%8E%E4%BF%A1%E6%81%AF/</guid>
+      <description>数据 2020年5月份居民消费价格同比上涨2.4% 中华人民共和国2019年国民经济和社会发展统计公报 中国统计年鉴2019 2020年7月金融统计</description>
     </item>
     
     <item>

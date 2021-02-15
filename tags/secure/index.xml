@@ -14,10 +14,10 @@
     
     <item>
       <title>DoH FAQ</title>
-      <link>http://myself659.github.io/post/about-doh/</link>
+      <link>http://myself659.github.io/post/network/about-doh/</link>
       <pubDate>Fri, 08 Nov 2019 11:58:06 +0200</pubDate>
       
-      <guid>http://myself659.github.io/post/about-doh/</guid>
+      <guid>http://myself659.github.io/post/network/about-doh/</guid>
       <description>什么是DoH DoH是DNS over HTTPS。 传统DNS相当于DNS over UDP。 DoH带来哪些好处？ 采用DoH对用户来说有如下好处： DoH协议不允许</description>
     </item>
     

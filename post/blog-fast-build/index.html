@@ -49,7 +49,7 @@
 <meta itemprop="description" content="前言 搭建个人博客有很多方式，如wordpress，jekii, hexo，个人DIY; 本文主要介绍另一种方案: hugo&#43;caddy 建一个网站要要做哪些事情 这里分">
 <meta itemprop="datePublished" content="2017-10-27T11:58:06&#43;02:00" />
 <meta itemprop="dateModified" content="2017-10-27T11:58:06&#43;02:00" />
-<meta itemprop="wordCount" content="1378">
+<meta itemprop="wordCount" content="1379">
 
 
 
@@ -210,7 +210,7 @@
 <p>下面就这些方面以自己搭建ipds.top网站为例说明。</p>
 <h2 id="网站前端">网站前端</h2>
 <p>对于前端，个人能力与经历有限，缺少DIY能力，那就是找主题模板，经济有效。
-就<a href="https://ipds.top">IPDS</a>
+就<a href="https://blog.excellent123.com/">IPDS</a>
 由于对golang的热爱，后端选择hugo。那么主题有以下选择：</p>
 <ol>
 <li>直接从<a href="https://themes.gohugo.io/">gohugo</a> 中查找</li>
@@ -304,14 +304,14 @@ Hugo Static Site Generator v0.31.1 linux/amd64 BuildDate: 2017-10-14T22:10:38+08
 </span><span class="lnt">20
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">ipds.top {
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">excellent123.com  {
    proxy / localhost:1314 {
         transparent   
    }
    gzip
 }
 
-blog.ipds.top {
+blog.excellent123.com {
    proxy / localhost:1313 {
         transparent
    }
@@ -337,7 +337,7 @@ slides.ipds.top {
 <p>本人采用是这种方式，推荐使用这种方式。</p>
 <h2 id="github-page">github page</h2>
 <h3 id="配置repo">配置repo</h3>
-<p>在<a href="https://github.com/myself659/myself659.github.io/settings">myself659.github.io</a>配置下设置source分支，打开https</p>
+<p>在<a href="https://github.com/myself659/myself659.github.io/settings">myself659.github.io</a>配置下设置source分支，打开https。</p>
 <h3 id="设置cname">设置cname</h3>
 <p>在根目录，新增CNAME文件。添加内容如下：</p>
 <div class="highlight"><div class="chroma">
@@ -405,7 +405,7 @@ NS  vera.ns.cloudflare.com
             <span class="prev-text nav-default">说说智能合约</span>
             <span class="prev-text nav-mobile">上一篇</span>
           </a>
-        <a class="next" href="/post/blockchain-ethernum/">
+        <a class="next" href="/post/blockchain/blockchain-ethernum/">
             <span class="next-text nav-default">区块链项目点评2-以太坊</span>
             <span class="next-text nav-mobile">下一篇</span>
             <i class="iconfont icon-right"></i>

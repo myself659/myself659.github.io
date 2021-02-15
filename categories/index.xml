@@ -7,10 +7,46 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>沉风网事</copyright>
-    <lastBuildDate>Fri, 15 Jan 2021 11:58:06 +0200</lastBuildDate>
+    <lastBuildDate>Wed, 10 Feb 2021 11:58:06 +0200</lastBuildDate>
     
 	<atom:link href="http://myself659.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>blockchain</title>
+      <link>http://myself659.github.io/categories/blockchain/</link>
+      <pubDate>Wed, 10 Feb 2021 11:58:06 +0200</pubDate>
+      
+      <guid>http://myself659.github.io/categories/blockchain/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Internet</title>
+      <link>http://myself659.github.io/categories/internet/</link>
+      <pubDate>Wed, 03 Feb 2021 11:58:06 +0200</pubDate>
+      
+      <guid>http://myself659.github.io/categories/internet/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Economy</title>
+      <link>http://myself659.github.io/categories/economy/</link>
+      <pubDate>Mon, 25 Jan 2021 11:58:06 +0200</pubDate>
+      
+      <guid>http://myself659.github.io/categories/economy/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>English</title>
+      <link>http://myself659.github.io/categories/english/</link>
+      <pubDate>Sat, 16 Jan 2021 11:58:06 +0200</pubDate>
+      
+      <guid>http://myself659.github.io/categories/english/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Invest</title>
@@ -27,6 +63,15 @@
       <pubDate>Sat, 09 Jan 2021 11:58:06 +0200</pubDate>
       
       <guid>http://myself659.github.io/categories/%E9%97%B2%E8%B0%88%E4%B9%B1%E6%89%AF/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>cryptocurrency</title>
+      <link>http://myself659.github.io/categories/cryptocurrency/</link>
+      <pubDate>Fri, 08 Jan 2021 11:58:06 +0200</pubDate>
+      
+      <guid>http://myself659.github.io/categories/cryptocurrency/</guid>
       <description></description>
     </item>
     
@@ -67,15 +112,6 @@
     </item>
     
     <item>
-      <title>blockchain</title>
-      <link>http://myself659.github.io/categories/blockchain/</link>
-      <pubDate>Sun, 31 May 2020 11:58:06 +0200</pubDate>
-      
-      <guid>http://myself659.github.io/categories/blockchain/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Life</title>
       <link>http://myself659.github.io/categories/life/</link>
       <pubDate>Sun, 24 May 2020 11:58:06 +0200</pubDate>
@@ -90,24 +126,6 @@
       <pubDate>Fri, 08 May 2020 11:58:06 +0200</pubDate>
       
       <guid>http://myself659.github.io/categories/read/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Economy</title>
-      <link>http://myself659.github.io/categories/economy/</link>
-      <pubDate>Sun, 19 Apr 2020 11:58:06 +0200</pubDate>
-      
-      <guid>http://myself659.github.io/categories/economy/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Internet</title>
-      <link>http://myself659.github.io/categories/internet/</link>
-      <pubDate>Sun, 22 Mar 2020 11:58:06 +0200</pubDate>
-      
-      <guid>http://myself659.github.io/categories/internet/</guid>
       <description></description>
     </item>
     
@@ -261,15 +279,6 @@
       <pubDate>Wed, 21 Feb 2018 11:58:06 +0200</pubDate>
       
       <guid>http://myself659.github.io/categories/data-struct/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>English</title>
-      <link>http://myself659.github.io/categories/english/</link>
-      <pubDate>Thu, 25 Jan 2018 11:58:06 +0200</pubDate>
-      
-      <guid>http://myself659.github.io/categories/english/</guid>
       <description></description>
     </item>
     

@@ -27,7 +27,7 @@
       <pubDate>Sat, 21 May 2016 11:58:06 +0200</pubDate>
       
       <guid>http://myself659.github.io/post/2016-05-21-git-cmd/</guid>
-      <description>配置 1 2 git config --global user.email &amp;#34;you@example.com&amp;#34; git config --global user.name &amp;#34;Your Name&amp;#34; git仓库 初始化一个版本仓库 1 git init clone远程版本库 1 git clone git@github.com:myself659/FFmpeg.git 添加远程版本库origin 1 git remote add origin git@github.com:myself659/rtmpserver_demo.git 查看远程仓</description>
+      <description>配置 config user 1 2 git config --global user.email &amp;#34;you@example.com&amp;#34; git config --global user.name &amp;#34;Your Name&amp;#34; Ignore Git permission changes 1 git config core.fileMode false Fix .gitignore 1 git rm -r --cached . git仓库 初始化一个版本仓库 1 git init clone远程版本库 1 git clone git@github.com:myself659/FFmpeg.git 添加远程版</description>
     </item>
     
     <item>
