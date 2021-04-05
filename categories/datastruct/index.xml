@@ -7,18 +7,18 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>沉风网事</copyright>
-    <lastBuildDate>Fri, 08 Mar 2019 11:58:06 +0200</lastBuildDate>
+    <lastBuildDate>Wed, 21 Feb 2018 11:58:06 +0200</lastBuildDate>
     
 	<atom:link href="http://myself659.github.io/categories/datastruct/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>ARTS-week0</title>
-      <link>http://myself659.github.io/post/arts/week-0/</link>
-      <pubDate>Fri, 08 Mar 2019 11:58:06 +0200</pubDate>
+      <title>array vs list</title>
+      <link>http://myself659.github.io/post/dsa/array-vs-list/</link>
+      <pubDate>Wed, 21 Feb 2018 11:58:06 +0200</pubDate>
       
-      <guid>http://myself659.github.io/post/arts/week-0/</guid>
-      <description>每周完成一个ARTS： 1.Algorithm：每周至少做一个 leetcode 的算法题 2.Review：阅读并点评至少一篇英文技术文章 3.Tip：学习至少一</description>
+      <guid>http://myself659.github.io/post/dsa/array-vs-list/</guid>
+      <description>array define An array is collection of items stored at contiguous memory locations. The idea is to store multiple items of same type together. This makes it easier to calculate the position of each element by simply adding an offset to a base value, i.e., the memory location of the first element of the array (generally denoted by the name of the array). complexity space O(n) time write by index</description>
     </item>
     
   </channel>

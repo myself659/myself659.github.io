@@ -21,5 +21,14 @@
       <description>每周完成一个ARTS： 1.Algorithm：每周至少做一个 leetcode 的算法题 2.Review：阅读并点评至少一篇英文技术文章 3.Tip：学习至少一</description>
     </item>
     
+    <item>
+      <title>array vs list</title>
+      <link>http://myself659.github.io/post/dsa/array-vs-list/</link>
+      <pubDate>Wed, 21 Feb 2018 11:58:06 +0200</pubDate>
+      
+      <guid>http://myself659.github.io/post/dsa/array-vs-list/</guid>
+      <description>array define An array is collection of items stored at contiguous memory locations. The idea is to store multiple items of same type together. This makes it easier to calculate the position of each element by simply adding an offset to a base value, i.e., the memory location of the first element of the array (generally denoted by the name of the array). complexity space O(n) time write by index</description>
+    </item>
+    
   </channel>
 </rss>

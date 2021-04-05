@@ -233,7 +233,7 @@
   </url>
   
   <url>
-    <loc>http://myself659.github.io/post/cryptocurrency_antifrangible/</loc>
+    <loc>http://myself659.github.io/post/blockchain/cryptocurrency_antifrangible/</loc>
     <lastmod>2020-05-31T11:58:06+02:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -604,6 +604,13 @@
   </url>
   
   <url>
+    <loc>http://myself659.github.io/post/blockchain/blockchain-index-predict/</loc>
+    <lastmod>2019-07-08T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>http://myself659.github.io/post/node-version/</loc>
     <lastmod>2019-07-08T11:58:06+02:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -821,6 +828,13 @@
   </url>
   
   <url>
+    <loc>http://myself659.github.io/post/blockchain/blockchain-digitwallet-strategy/</loc>
+    <lastmod>2018-10-19T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>http://myself659.github.io/post/k8s-monitor/</loc>
     <lastmod>2018-10-17T11:58:06+02:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -968,6 +982,34 @@
   </url>
   
   <url>
+    <loc>http://myself659.github.io/tags/ethernum/</loc>
+    <lastmod>2018-04-20T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://myself659.github.io/categories/ethernum/</loc>
+    <lastmod>2018-04-20T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://myself659.github.io/post/solidity/solidity-evm-instructions/</loc>
+    <lastmod>2018-04-20T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://myself659.github.io/tags/solidity/</loc>
+    <lastmod>2018-04-20T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>http://myself659.github.io/post/distributed-bft/</loc>
     <lastmod>2018-03-23T11:58:06+02:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -1010,21 +1052,14 @@
   </url>
   
   <url>
-    <loc>http://myself659.github.io/post/array-vs-list/</loc>
+    <loc>http://myself659.github.io/post/dsa/array-vs-list/</loc>
     <lastmod>2018-02-21T11:58:06+02:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://myself659.github.io/tags/data-struct/</loc>
-    <lastmod>2018-02-21T11:58:06+02:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://myself659.github.io/categories/data-struct/</loc>
+    <loc>http://myself659.github.io/categories/datastruct/</loc>
     <lastmod>2018-02-21T11:58:06+02:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -1311,7 +1346,7 @@
   </url>
   
   <url>
-    <loc>http://myself659.github.io/post/2017-02-03-coutry-internet-user/</loc>
+    <loc>http://myself659.github.io/post/internet/2017-02-03-country-internet-user/</loc>
     <lastmod>2017-02-03T11:58:06+02:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -1319,6 +1354,13 @@
   
   <url>
     <loc>http://myself659.github.io/post/2017-02-02-coutry-internet-infra/</loc>
+    <lastmod>2017-02-02T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://myself659.github.io/post/internet/2017-02-02-country-internet-infra/</loc>
     <lastmod>2017-02-02T11:58:06+02:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -1521,25 +1563,19 @@
   </url>
   
   <url>
-    <loc>http://myself659.github.io/post/2017-02-04-coutry-internet-music/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>http://myself659.github.io/post/2017-05-09-web-server-perf-and-design/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://myself659.github.io/post/blockchain/blockchain-coronavirus/</loc>
+    <loc>http://myself659.github.io/post/economic-recession/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://myself659.github.io/post/economic-recession/</loc>
+    <loc>http://myself659.github.io/post/internet/2017-02-04-country-internet-music/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>

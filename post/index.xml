@@ -104,10 +104,10 @@
     
     <item>
       <title>谈谈数字货币的反脆弱性</title>
-      <link>http://myself659.github.io/post/cryptocurrency_antifrangible/</link>
+      <link>http://myself659.github.io/post/blockchain/cryptocurrency_antifrangible/</link>
       <pubDate>Sun, 31 May 2020 11:58:06 +0200</pubDate>
       
-      <guid>http://myself659.github.io/post/cryptocurrency_antifrangible/</guid>
+      <guid>http://myself659.github.io/post/blockchain/cryptocurrency_antifrangible/</guid>
       <description>定义 首先我们来看一下反脆弱性的定义。这里直接借用： 有些事情能从冲击中受益，当暴露在波动性、随机性、混乱和压力、风险和不确定性下时，它们反而能</description>
     </item>
     
@@ -355,6 +355,15 @@
     </item>
     
     <item>
+      <title>加密货币市值应该关注的哪些指标</title>
+      <link>http://myself659.github.io/post/blockchain/blockchain-index-predict/</link>
+      <pubDate>Mon, 08 Jul 2019 11:58:06 +0200</pubDate>
+      
+      <guid>http://myself659.github.io/post/blockchain/blockchain-index-predict/</guid>
+      <description>指标 总市值 加密货币总市值 交易量Transaction Volume BTC&amp;rsquo;s Transaction Volume Ethereum’s Transaction Volume 算力Hash Rate BTC&amp;rsquo;s Hash Rate Ethereum’s Hash Rate 活跃地址Ac</description>
+    </item>
+    
+    <item>
       <title>如何选择合适的node版本与npm package</title>
       <link>http://myself659.github.io/post/node-version/</link>
       <pubDate>Mon, 08 Jul 2019 11:58:06 +0200</pubDate>
@@ -526,6 +535,15 @@
     </item>
     
     <item>
+      <title>数字货币钱包产品定位与战略</title>
+      <link>http://myself659.github.io/post/blockchain/blockchain-digitwallet-strategy/</link>
+      <pubDate>Fri, 19 Oct 2018 11:58:06 +0200</pubDate>
+      
+      <guid>http://myself659.github.io/post/blockchain/blockchain-digitwallet-strategy/</guid>
+      <description>4月份写一份关于数字货币钱包的分析，欢迎交流与指正。 数字货币钱包产品定位与战略 欢迎关注 欢迎关注微信公众帐号：沉风网事(savewind)</description>
+    </item>
+    
+    <item>
       <title>安装与应用Prometheus监控Kubernetes集群</title>
       <link>http://myself659.github.io/post/k8s-monitor/</link>
       <pubDate>Wed, 17 Oct 2018 11:58:06 +0200</pubDate>
@@ -679,6 +697,15 @@
     </item>
     
     <item>
+      <title>EVM opcodes</title>
+      <link>http://myself659.github.io/post/solidity/solidity-evm-instructions/</link>
+      <pubDate>Fri, 20 Apr 2018 11:58:06 +0200</pubDate>
+      
+      <guid>http://myself659.github.io/post/solidity/solidity-evm-instructions/</guid>
+      <description>推荐 Ethereum Virtual Machine Opcodes Arithmetic Operations 1 2 3 4 5 6 7 8 9 10 11 12 ADD //Add the top two stack items MUL //Multiply the top two stack items SUB //Subtract the top two stack items DIV //Integer division SDIV //Signed integer division MOD //Modulo (remainder) operation SMOD //Signed modulo operation ADDMOD //Addition modulo any number MULMOD //Multiplication modulo any number EXP //Exponential operation SIGNEXTEND</description>
+    </item>
+    
+    <item>
       <title>为什么BFT要求诚实节点数量大于总节点的三分之二</title>
       <link>http://myself659.github.io/post/distributed-bft/</link>
       <pubDate>Fri, 23 Mar 2018 11:58:06 +0200</pubDate>
@@ -725,10 +752,10 @@
     
     <item>
       <title>array vs list</title>
-      <link>http://myself659.github.io/post/array-vs-list/</link>
+      <link>http://myself659.github.io/post/dsa/array-vs-list/</link>
       <pubDate>Wed, 21 Feb 2018 11:58:06 +0200</pubDate>
       
-      <guid>http://myself659.github.io/post/array-vs-list/</guid>
+      <guid>http://myself659.github.io/post/dsa/array-vs-list/</guid>
       <description>array define An array is collection of items stored at contiguous memory locations. The idea is to store multiple items of same type together. This makes it easier to calculate the position of each element by simply adding an offset to a base value, i.e., the memory location of the first element of the array (generally denoted by the name of the array). complexity space O(n) time write by index</description>
     </item>
     
@@ -1013,10 +1040,10 @@
     
     <item>
       <title>互联网在农村-用户</title>
-      <link>http://myself659.github.io/post/2017-02-03-coutry-internet-user/</link>
+      <link>http://myself659.github.io/post/internet/2017-02-03-country-internet-user/</link>
       <pubDate>Fri, 03 Feb 2017 11:58:06 +0200</pubDate>
       
-      <guid>http://myself659.github.io/post/2017-02-03-coutry-internet-user/</guid>
+      <guid>http://myself659.github.io/post/internet/2017-02-03-country-internet-user/</guid>
       <description>上一篇从电和物理网络两个方面说明自己所看到的农村互联网基础设施情况。这一篇就看看在农村的互联网用户的一些情况。 根据对app使用情况分为以下几</description>
     </item>
     
@@ -1026,6 +1053,15 @@
       <pubDate>Thu, 02 Feb 2017 11:58:06 +0200</pubDate>
       
       <guid>http://myself659.github.io/post/2017-02-02-coutry-internet-infra/</guid>
+      <description>说明 老家在安徽省安庆市的一个小山村里，作为一名互联网从业人员，这次回家特地花了一点心思来观察家乡的互联网应用情况。 这是第一篇，先看农村互联网</description>
+    </item>
+    
+    <item>
+      <title>互联网在农村-基础设施</title>
+      <link>http://myself659.github.io/post/internet/2017-02-02-country-internet-infra/</link>
+      <pubDate>Thu, 02 Feb 2017 11:58:06 +0200</pubDate>
+      
+      <guid>http://myself659.github.io/post/internet/2017-02-02-country-internet-infra/</guid>
       <description>说明 老家在安徽省安庆市的一个小山村里，作为一名互联网从业人员，这次回家特地花了一点心思来观察家乡的互联网应用情况。 这是第一篇，先看农村互联网</description>
     </item>
     
@@ -1116,7 +1152,7 @@
       <pubDate>Wed, 09 Mar 2016 11:58:06 +0200</pubDate>
       
       <guid>http://myself659.github.io/post/2016-03-09-x86-64-call-stack/</guid>
-      <description>前言 动手实践并写文章花5倍的时间一次性把事情做到90分，好过读别人文章只能做到60分，后面还需要花时间继续深入学习。本文目的希望通过分析一个</description>
+      <description>前言 动手实践并写文章花5倍的时间一次性把事情做到90分，好过读别人文章只能做到60分，后面还需要花时间继续深入学习(做事情一定要做到有效的阈</description>
     </item>
     
     <item>
@@ -1247,15 +1283,6 @@
     
     <item>
       <title></title>
-      <link>http://myself659.github.io/post/2017-02-04-coutry-internet-music/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://myself659.github.io/post/2017-02-04-coutry-internet-music/</guid>
-      <description>+++ banner = &amp;quot;&amp;rdquo; categories = [&amp;ldquo;闲谈乱扯&amp;rdquo;] date = &amp;ldquo;2017-02-04T11:58:06+02:00&amp;rdquo; description = &amp;quot;&amp;rdquo; images = [] menu = &amp;quot;&amp;rdquo; tags = [&amp;ldquo;闲谈乱扯&amp;rdquo;] title = &amp;ldquo;互</description>
-    </item>
-    
-    <item>
-      <title></title>
       <link>http://myself659.github.io/post/2017-05-09-web-server-perf-and-design/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -1265,20 +1292,20 @@
     
     <item>
       <title></title>
-      <link>http://myself659.github.io/post/blockchain/blockchain-coronavirus/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://myself659.github.io/post/blockchain/blockchain-coronavirus/</guid>
-      <description>参考 Token Economies in times of Covid-19</description>
-    </item>
-    
-    <item>
-      <title></title>
       <link>http://myself659.github.io/post/economic-recession/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>http://myself659.github.io/post/economic-recession/</guid>
       <description>参考 1.How to Prepare for a Recession</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://myself659.github.io/post/internet/2017-02-04-country-internet-music/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://myself659.github.io/post/internet/2017-02-04-country-internet-music/</guid>
+      <description>+++ banner = &amp;quot;&amp;rdquo; categories = [&amp;ldquo;闲谈乱扯&amp;rdquo;] date = &amp;ldquo;2017-02-04T11:58:06+02:00&amp;rdquo; description = &amp;quot;&amp;rdquo; images = [] menu = &amp;quot;&amp;rdquo; tags = [&amp;ldquo;闲谈乱扯&amp;rdquo;] title = &amp;ldquo;互</description>
     </item>
     
     <item>
