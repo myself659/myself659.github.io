@@ -132,6 +132,27 @@
           <section id="posts" class="posts">
     <article class="post">
   <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/post/k8s-monitor/">安装与应用Prometheus监控Kubernetes集群</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2018-10-17 </span>
+      <div class="post-category">
+          <a href="/categories/kubernetes/"> Kubernetes </a>
+          </div>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      安装Prometheus RBAC设置,获取创建集群角色权限 1 2 3 4 ACCOUNT=$(gcloud info --format=&#39;value(config.account)&#39;) kubectl create clusterrolebinding owner-cluster-admin-binding \ --clusterrole cluster-admin \ --user $ACCOUNT 注意：如果集群部署在google cloud上需要
+    </div>
+    <div class="read-more">
+      <a href="/post/k8s-monitor/" class="read-more-link">阅读更多</a>
+    </div>
+  </div>
+</article>
+
+    <article class="post">
+  <header class="post-header">
     <h1 class="post-title"><a class="post-link" href="/post/k8s-cicd/">基于Gitlab&#43;Kubernetes实现CI/CD</a></h1>
     <div class="post-meta">
       <span class="post-time"> 2018-10-16 </span>
@@ -735,27 +756,6 @@
     </div>
     <div class="read-more">
       <a href="/post/blockchain/blockchain-dex/" class="read-more-link">阅读更多</a>
-    </div>
-  </div>
-</article>
-
-    <article class="post">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/post/golang-gorm/">Gorm小技巧: 如何优雅地创建多个相同的表</a></h1>
-    <div class="post-meta">
-      <span class="post-time"> 2017-12-21 </span>
-      <div class="post-category">
-          <a href="/categories/golang/"> Golang </a>
-          </div>
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-      背景 因为需要bitfinex抓取各种历史交易信息。为了实现可扩展与便于数据管理，在数据架构设计方面满足下面的需求： 不同的交易对的交易数据放到
-    </div>
-    <div class="read-more">
-      <a href="/post/golang-gorm/" class="read-more-link">阅读更多</a>
     </div>
   </div>
 </article>
