@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>10 Lessons from 10 Years of Amazon Web Services（译文） - 沉风网事</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="沉风网事" /><meta name="description" content="前言 亚马逊在2006年3月14日发布AWS，到现在差不多10年了。回首过去的10年里，我们在构建 安全，高可用性，可扩展性，低成本的服务方面积" /><meta name="keywords" content="沉风网事, 沉风, 区块链, Glang, 算法, 数据结构" />
+
+
+<meta name="baidu-site-verification" content="9LmlOuIblt" />
+
+
+
+<meta name="generator" content="Hugo 0.68.3 with theme even" />
+
+
+<link rel="canonical" href="http://myself659.github.io/post/arch/2016-06-02-10-lessons-from-10-years-of-amazon-web-services/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.8c3cbcb0324c2bb4875ceccba4007cbad4b4ac8377f33af9953c3e7684534a50.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="10 Lessons from 10 Years of Amazon Web Services（译文）" />
+<meta property="og:description" content="前言 亚马逊在2006年3月14日发布AWS，到现在差不多10年了。回首过去的10年里，我们在构建 安全，高可用性，可扩展性，低成本的服务方面积" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://myself659.github.io/post/arch/2016-06-02-10-lessons-from-10-years-of-amazon-web-services/" />
+<meta property="article:published_time" content="2016-06-02T11:58:06+02:00" />
+<meta property="article:modified_time" content="2016-06-02T11:58:06+02:00" />
+<meta itemprop="name" content="10 Lessons from 10 Years of Amazon Web Services（译文）">
+<meta itemprop="description" content="前言 亚马逊在2006年3月14日发布AWS，到现在差不多10年了。回首过去的10年里，我们在构建 安全，高可用性，可扩展性，低成本的服务方面积">
+<meta itemprop="datePublished" content="2016-06-02T11:58:06&#43;02:00" />
+<meta itemprop="dateModified" content="2016-06-02T11:58:06&#43;02:00" />
+<meta itemprop="wordCount" content="3748">
+
+
+
+<meta itemprop="keywords" content="Arch," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="10 Lessons from 10 Years of Amazon Web Services（译文）"/>
+<meta name="twitter:description" content="前言 亚马逊在2006年3月14日发布AWS，到现在差不多10年了。回首过去的10年里，我们在构建 安全，高可用性，可扩展性，低成本的服务方面积"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">沉风</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a><a href="/post/leetcode/">
+        <li class="mobile-menu-item">LeetCode</li>
+      </a><a href="/post/read-post/">
+        <li class="mobile-menu-item">Read</li>
+      </a><a href="/post/share-post/">
+        <li class="mobile-menu-item">Share</li>
+      </a><a href="/post/slide-post/">
+        <li class="mobile-menu-item">Slide</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">沉风</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/leetcode/">LeetCode</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/read-post/">Read</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/share-post/">Share</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/slide-post/">Slide</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">10 Lessons from 10 Years of Amazon Web Services（译文）</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2016-06-02 </span>
+        <div class="post-category">
+            <a href="/categories/arch/"> Arch </a>
+            </div>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#前言">前言</a></li>
+        <li><a href="#1-构建不断进化的系统">1. 构建不断进化的系统</a></li>
+        <li><a href="#2-总有想不到的">2. 总有想不到的</a></li>
+        <li><a href="#3-提供基元而不是框架">3. 提供基元而不是框架</a></li>
+        <li><a href="#4-自动化是关键">4. 自动化是关键</a></li>
+        <li><a href="#5-apis-are-foreverapi是不会变的">5. APIs are forever（API是不会变的）</a></li>
+        <li><a href="#6-监控资源应用">6. 监控资源应用</a></li>
+        <li><a href="#7-从一开始集成安全">7. 从一开始集成安全</a></li>
+        <li><a href="#8-加密是一等公民">8. 加密是一等公民</a></li>
+        <li><a href="#9-网络相当重要的">9. 网络相当重要的</a></li>
+        <li><a href="#10-保持开放">10. 保持开放</a></li>
+        <li><a href="#后记">后记</a></li>
+        <li><a href="#参考">参考</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <h3 id="前言">前言</h3>
+<blockquote>
+<p>亚马逊在2006年3月14日发布AWS，到现在差不多10年了。回首过去的10年里，我们在构建
+安全，高可用性，可扩展性，低成本的服务方面积累了几百条经验与教训。
+由于AWS是建设并在全球运营这些服务的先驱，这些教训对我们的业务至关重要。正如我们以前多次说，“没有压缩经验的算法”，每月有超过百万的活跃客户，这些客户服务几个亿的用户，在这个过程我们不乏机会积累经验并持续优化从而为客户提供更好的服务。</p>
+</blockquote>
+<blockquote>
+<p>我选择了下面这些经验教训，与大家分享，希望它们对你们有用。</p>
+</blockquote>
+<h3 id="1-构建不断进化的系统">1. 构建不断进化的系统</h3>
+<blockquote>
+<p>几乎从第一天开始,我们知道自己开发的软件在一年后将不会继续运行。我们需要重新审视和改进架构，以确保我们可以解决订单规模增长一到二个数量级所带来的问题。但是我们不能采取停电检修这种旧方法升级系统，这是因为遍布世界各地的海量业务需要我们的平台提供7*24小时高可用性服务。我们需要建立这样架构：能够在不停止服务的情况下引入新的组件。Marvin Theimer,亚马逊杰出工程师，曾开玩笑地说，亚马逊S3的演变可以被描述为从当初的单引擎飞机，随着时间的推移飞机不断升级，先是升级到737，然后是一组747，现在成了3805的空中舰队。在此期间，我们在飞行过程中完成加油，而客户甚至没有觉察到这一点。</p>
+</blockquote>
+<p>感悟：
+唯有变化才是确定，系统应该保证灵活性与扩展性。云计算系统是需要不断进化，开发人员也需要不断进化</p>
+<h3 id="2-总有想不到的">2. 总有想不到的</h3>
+<blockquote>
+<p>异常总是会发生的，随着时间的推移，一切都会出现异常：从路由器到硬盘，从操作系统到内存单元，从瞬态错误到永久性故障。无论你使用的是最高品质的硬件或最低成本的硬件，这些总是会发生的。在大规模系统中更是如此，例如，在S3中处理和存储的万亿交易，任何异常，即使是最小的可能性也将成为现实。部分这样的异常可以事先预见的，但更多的异常却在设计和开发过程中未能被发现。</p>
+</blockquote>
+<blockquote>
+<p>我们需要开发一个视异常为常态的系统，即使我们不知道会有什么样的异常。即使“房子着火了”，系统也需要保持运行。重要的是在整个系统在不宕机的情况下能够处理这些异常。我们掌握隔离异常与控制异常的影响范围的方法从而使整个系统能够正常运行。</p>
+</blockquote>
+<p>感悟：异常是常态，如何处理异常是系统设计阶段必须考虑到的问题。</p>
+<h3 id="3-提供基元而不是框架">3. 提供基元而不是框架</h3>
+<blockquote>
+<p>我们很快意识到，客户的需求是不断变化的。当客户摆脱传统的IT硬件和数据中心的限制，他们开始使用感兴趣却没有应用过的模式搭建系统。因此，我们努力做到超级敏捷以确保满足客户的需求。</p>
+</blockquote>
+<blockquote>
+<p>其中一个最重要的策略是向客户提供的基元和工具，让客户从中选择最合适他们的集合，而不是只提供一个框架中，迫使他们不得不使用。这种做法使我们的客户取得了成功，其后的AWS服务也同样利用这些客户已经熟悉的基础服务。</p>
+</blockquote>
+<blockquote>
+<p>同样重要的是我们不知道客户下一个关心问题是什么，直到他们开始使用我们的服务。这就是为什么我们经常用最少的功能集提供新的服务，让我们的客户能够帮助推动产品路线图规划与新功能的开发。</p>
+</blockquote>
+<p>感悟： 
+客户的需求是下一个产品。立足基础，理解客户的需求，才能满足客户。</p>
+<h3 id="4-自动化是关键">4. 自动化是关键</h3>
+<blockquote>
+<p>提供云计算服务不同于开发并交付软件，管理大规模系统需要不同的思维方式，以确保满足用户的高可用性，高性能和可扩展性的需求。</p>
+</blockquote>
+<blockquote>
+<p>这其中关键的一点是尽可能地实现自动化管理以避免容易出错的手动操作。要做到这一点，我们需要实现管理API从而管理我们的业务的关键功能。AWS可以帮助客户做到这一点。通过为应用程序的每一个分解组件提供管理API，从而应用自动化的规则来保证可靠性和预期的性能。</p>
+</blockquote>
+<blockquote>
+<p>如果你需要SSH到一个服务器或一个实例，那么你仍然需要更多的自动化，这是一个衡量自动化水平的好方法。</p>
+</blockquote>
+<p>感悟：
+用人管理代码，用代码管理机器</p>
+<h3 id="5-apis-are-foreverapi是不会变的">5. APIs are forever（API是不会变的）</h3>
+<blockquote>
+<p>这是我们从亚马逊零售业务经验中吸取的教训，它的重要性甚至超过了AWS中那些以API为中心的业务。</p>
+</blockquote>
+<blockquote>
+<p>一旦客户开始使用我们的API构建他们的应用程序和系统，改变这些API变得不可能，因我们修改这些API,会影响客户的业务运营。我们只有一次机会定义API,所以设计API是一个非常重要的工作。</p>
+</blockquote>
+<p>感悟：
+接口优先，实现其次，实现可以调整，而接口一旦上线就没有什么回旋的余地。</p>
+<h3 id="6-监控资源应用">6. 监控资源应用</h3>
+<blockquote>
+<p>当构建一个服务，一定要有服务及其运营成本的数据以确定相应的计费方式，尤其是对于运行高营业额-低利润率的业务。AWS理所应当关注服务的成本，这样我们在为客户的提供服务的同时能够明确在哪些地方可以提高运营效率，以进一步削减成本，以更低的价格回馈客户。</p>
+</blockquote>
+<blockquote>
+<p>在创业初期，我们不知道S3服务应该采用哪种计费方式：我们曾认为应该对存储和带宽资源计费;经过一段时间，我们认识到请求的数量也应当计费。如果客户有许多微小的文件，即使他们上百万次数请求服务，消耗的存储和带宽都不会很高。我们不得不针对资源使用各个维度调整计费方式使AWS成为是一个可持续发展的业务。</p>
+</blockquote>
+<p>感悟： 
+无监控不系统，无度量不优化。
+作任何商业服务不仅要有成本意识，而且应该作到度量成本。</p>
+<h3 id="7-从一开始集成安全">7. 从一开始集成安全</h3>
+<blockquote>
+<p>保护你的客户应该永远是你的首选，对于AWS来说亦是如此。不管运营的角度，还是策略方面，这将永远是我们的头号投资领域。</p>
+</blockquote>
+<blockquote>
+<p>我们很快地发现只有在一开始就把安全考虑进去才能提供安全的服务。安全团队的工作不是服务开发完成之后进行验证，他们必须在服务设计的第一天确认安全已经落实，且稳如泰山。总之对于安全，没有任何妥协。</p>
+</blockquote>
+<p>感悟：
+安全是基本功能。</p>
+<h3 id="8-加密是一等公民">8. 加密是一等公民</h3>
+<blockquote>
+<p>加密是为确保客户能控制谁有权访问他们的数据一个关键机制。十年前，加密工具和服务很难使用，直到几年前我们学会更好地将加密集成到我们的服务当中。最早的加密是从S3服务端开始的。如果您想检查我们的数据中心的任何磁盘，任何数据都不可访问的。但随着亚马逊推出CloudHSM（硬件安全模块）和Amazon Key Management Service（密钥管理服务），客户可以加密自己的密钥，从而不再需要AWS来管理钥匙。一段时间以来，每个新服务均支持加密。例如，Amazon Redshift的每个数据块默认以随机密钥加密，随后这些随机密钥被私钥再加密。私钥由客户提供，确保他们是唯一可以解密和访问他们的关键业务数据或个人身份信息。</p>
+</blockquote>
+<blockquote>
+<p>加密仍然是我们业务的重点。我们将继续为我们的客户提供更加便捷的加密方式，使他们能够更好地保护自己及其客户的数据。</p>
+</blockquote>
+<p>感悟：一定不要让核心数据裸奔。</p>
+<h3 id="9-网络相当重要的">9. 网络相当重要的</h3>
+<blockquote>
+<p>AWS已经支持许多不同类型业务：大规模的事务处理，大规模网站流量，视频转码，高性能并行计算。其中每个业务具有独特的要求，但都涉及到网络。</p>
+</blockquote>
+<blockquote>
+<p>利用AWS特有的数据中心技术，我们实现了弹性网络以满足客户的各种不同网络负载。随着时间的推移，我们确信自己开发的硬件解决方案能够帮助客户实现他们的目标。这使我们能够满足非常具体的要求，比如实现不同AWS用户在网络方面达到最高级别的安全（也就是实现不同租户之间的网络隔离）。</p>
+</blockquote>
+<blockquote>
+<p>AWS设计的网络硬件和软件是如何进一步提高我们的客户性能的另一个成功的例子是解决虚拟机的虚拟网络访问的问题。由于网络接入是不同客户共享的，导致客户的网络访问时常有明显的抖动。开发一个支持SRIOV网卡让每个虚拟机拥有自身的虚拟网卡，从而使延迟时间降低2倍以上，并在延迟网络环境的改善超过10倍。</p>
+</blockquote>
+<p>感悟：
+网络是服务的交付与实现的交通运输线，重要性不言而喻。传统网络难以满足云计算的需求，所以以SDN与NFV为基础的新网络技术会得到广泛的应用，但是这些技术很有可能是由云计算厂商自己开发利用，而不是由思科等传统网络设备商决定的，因为云计算厂商更需要这样的技术也更理解云计算对网络的需求。云计算厂商也有决心来作这件事：既然网络需求会不断变化，那应该将变化掌握在自己手中，另一方面，云计算作为未来长期存在的互联网基础设施，从长远来看网络产品的自研也可以节省一大笔成本。</p>
+<h3 id="10-保持开放">10. 保持开放</h3>
+<blockquote>
+<p>随着时间的推移，AWS团队通过提供多种服务和功能已经为客户创造了非常广泛而深入的平台。AWS上现有服务数量远远超过我们开发的服务数量：通过我们的合作伙伴，该平台不断扩展新的方向，已经成为一个丰富的生态系统。</p>
+</blockquote>
+<blockquote>
+<p>例如，我们合作伙伴Stripe在AWS上为Twilio提供支付服务。还有许多客户基于AWS构建自己的平台服务于特定垂直需求：飞利浦正在建设自己的Healthsuite数字平台来管理医疗数据，Ohpen已经建立了AWS零售银行业务的平台，Eagle Genomics已经建立了一个基因处理平台，还有很多。最重要的是，目前在AWS平台上没有条条框框告诉我们的合作伙伴，他们可以做什么和不能做什么。 
+没有条条框框的限制解放了创新，并诞生了许多意想不到的发明，这是一定要遵循的。</p>
+</blockquote>
+<p>感悟：
+云计算提供开放平台，让百花齐放！
+云计算是互联网的基础的设施！</p>
+<h3 id="后记">后记</h3>
+<p>这是亚马逊CTO Werner Vogels在AWS发布十年之际写的一篇文章，亚马逊是云计算的先驱和全球的领导者，作为亚马逊CTO还常写一些技术性文章，必定是真知灼见，这些经验教训为今后的系统设计提供了很好的参考，有助于权衡决策。</p>
+<p>第一次翻译一篇完整的文章，表达与措词方面有很多不足，把它发出来了，主要想看看以后能取得多大的进步。</p>
+<p>最后，虽然翻译水平一般，但是还是建议：有时间结合工作认真地读一遍<a href="http://www.allthingsdistributed.com/2016/03/10-lessons-from-10-years-of-aws.html">原文</a></p>
+<h3 id="参考">参考</h3>
+<ol>
+<li><a href="http://www.allthingsdistributed.com/2016/03/10-lessons-from-10-years-of-aws.html">10 Lessons from 10 Years of Amazon Web Services</a></li>
+<li><a href="http://aws.amazon.com/cn/kms/">AWS Key Management Service</a></li>
+<li><a href="http://aws.amazon.com/cn/redshift/">Amazon Redshift</a></li>
+<li><a href="http://aws.amazon.com/cn/cloudhsm/">AWS CloudHSM</a></li>
+</ol>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">沉风网事</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+        2016-06-02
+        
+    </span>
+  </p>
+  
+  
+</div>
+<footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/arch/">Arch</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/post/2016-07-26-go-channel-feature/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">Go channel 特点篇</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        <a class="next" href="/post/arch/2016-05-27-facebook-live-detail/">
+            <span class="next-text nav-default">Facebook live一些技术细节</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+  
+
+  
+    <script src="https://utteranc.es/client.js"
+            repo="myself659/ipds-public"
+            issue-term="pathname"
+            theme="github-light"
+            crossorigin="anonymous"
+            async>
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://github.com/utterance">comments powered by utterances.</a></noscript>
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/8.3.1/mermaid.min.js"></script>
+<div class="social-links">
+      <a href="mailto:myself659@163.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://github.com/myself659" class="iconfont icon-github" title="github"></a>
+      <a href="https://weibo.com/6484347913" class="iconfont icon-weibo" title="weibo"></a>
+      <a href="https://www.zhihu.com/people/lejoys" class="iconfont icon-zhihu" title="zhihu"></a>
+  <a href="http://myself659.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/myself659/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2017 - 
+    2021
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">沉风网事</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+
+
+
+<script type="text/javascript" src="/js/main.min.d7b7ada643c9c1a983026e177f141f7363b4640d619caf01d8831a6718cd44ea.js"></script>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-144475213-1', 'auto');
+	ga('set', 'anonymizeIp', true);
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+
+
+
+
+</body>
+</html>

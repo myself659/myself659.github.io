@@ -68,10 +68,10 @@
     
     <item>
       <title>一个linux网络丢包问题分析</title>
-      <link>http://myself659.github.io/post/2015-05-24-linux-perf-droppacket/</link>
+      <link>http://myself659.github.io/post/linux/2015-05-24-linux-perf-droppacket/</link>
       <pubDate>Sun, 24 May 2015 11:58:06 +0200</pubDate>
       
-      <guid>http://myself659.github.io/post/2015-05-24-linux-perf-droppacket/</guid>
+      <guid>http://myself659.github.io/post/linux/2015-05-24-linux-perf-droppacket/</guid>
       <description>丢包问题是十分常见一类问题，下面总结的一个网络丢包问题的分析过程。 问题描述 组网： TC-PORT1&amp;mdash;&amp;mdash;-VSR-eth1 TC-PORT2&amp;mdash;&amp;mdash;-VSR-eth2 打流： 报文从TC-Port1打入VSR-eth1，再从V</description>
     </item>
     

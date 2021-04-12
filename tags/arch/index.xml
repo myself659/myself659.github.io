@@ -50,19 +50,19 @@
     
     <item>
       <title>10 Lessons from 10 Years of Amazon Web Services（译文）</title>
-      <link>http://myself659.github.io/post/2016-06-02-10-lessons-from-10-years-of-amazon-web-services/</link>
+      <link>http://myself659.github.io/post/arch/2016-06-02-10-lessons-from-10-years-of-amazon-web-services/</link>
       <pubDate>Thu, 02 Jun 2016 11:58:06 +0200</pubDate>
       
-      <guid>http://myself659.github.io/post/2016-06-02-10-lessons-from-10-years-of-amazon-web-services/</guid>
+      <guid>http://myself659.github.io/post/arch/2016-06-02-10-lessons-from-10-years-of-amazon-web-services/</guid>
       <description>前言 亚马逊在2006年3月14日发布AWS，到现在差不多10年了。回首过去的10年里，我们在构建 安全，高可用性，可扩展性，低成本的服务方面积</description>
     </item>
     
     <item>
       <title>Facebook live一些技术细节</title>
-      <link>http://myself659.github.io/post/2016-05-27-facebook-live-detail/</link>
+      <link>http://myself659.github.io/post/arch/2016-05-27-facebook-live-detail/</link>
       <pubDate>Fri, 27 May 2016 11:58:06 +0200</pubDate>
       
-      <guid>http://myself659.github.io/post/2016-05-27-facebook-live-detail/</guid>
+      <guid>http://myself659.github.io/post/arch/2016-05-27-facebook-live-detail/</guid>
       <description>协议选择 最初选择HLS,后面切换为RTMP，切换为RTMP主要为了降低延迟，提供更好直播用户体验。 解决并发问题 分发架构 采用Live stream serv</description>
     </item>
     

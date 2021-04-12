@@ -2,6 +2,48 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://myself659.github.io/categories/</loc>
+    <lastmod>2021-04-05T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://myself659.github.io/post/blockchain/nft-naval/</loc>
+    <lastmod>2021-04-05T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://myself659.github.io/tags/nft/</loc>
+    <lastmod>2021-04-05T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://myself659.github.io/categories/nft/</loc>
+    <lastmod>2021-04-05T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://myself659.github.io/post/</loc>
+    <lastmod>2021-04-05T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://myself659.github.io/tags/</loc>
+    <lastmod>2021-04-05T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>http://myself659.github.io/tags/blockchain/</loc>
     <lastmod>2021-02-10T11:58:06+02:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -10,27 +52,6 @@
   
   <url>
     <loc>http://myself659.github.io/categories/blockchain/</loc>
-    <lastmod>2021-02-10T11:58:06+02:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://myself659.github.io/categories/</loc>
-    <lastmod>2021-02-10T11:58:06+02:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://myself659.github.io/post/</loc>
-    <lastmod>2021-02-10T11:58:06+02:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://myself659.github.io/tags/</loc>
     <lastmod>2021-02-10T11:58:06+02:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -184,7 +205,7 @@
   </url>
   
   <url>
-    <loc>http://myself659.github.io/post/dp-knapsack/</loc>
+    <loc>http://myself659.github.io/post/dsa/dp-knapsack/</loc>
     <lastmod>2020-08-23T11:58:06+02:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -207,6 +228,27 @@
   <url>
     <loc>http://myself659.github.io/post/gpt3-thought/</loc>
     <lastmod>2020-08-09T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://myself659.github.io/tags/linux/</loc>
+    <lastmod>2020-07-31T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://myself659.github.io/categories/linux/</loc>
+    <lastmod>2020-07-31T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://myself659.github.io/post/linux/linux-wget-retry/</loc>
+    <lastmod>2020-07-31T11:58:06+02:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -373,6 +415,27 @@
   </url>
   
   <url>
+    <loc>http://myself659.github.io/tags/golang/</loc>
+    <lastmod>2020-02-18T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://myself659.github.io/categories/golang/</loc>
+    <lastmod>2020-02-18T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://myself659.github.io/post/golang/donot-focus-programming-language/</loc>
+    <lastmod>2020-02-18T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>http://myself659.github.io/tags/data/</loc>
     <lastmod>2020-02-17T11:58:06+02:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -515,20 +578,6 @@
   <url>
     <loc>http://myself659.github.io/post/substrate-cloud-node/</loc>
     <lastmod>2019-09-18T11:58:06+02:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://myself659.github.io/tags/golang/</loc>
-    <lastmod>2019-09-06T11:58:06+02:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://myself659.github.io/categories/golang/</loc>
-    <lastmod>2019-09-06T11:58:06+02:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -877,7 +926,7 @@
   </url>
   
   <url>
-    <loc>http://myself659.github.io/post/dp-max-subarray-sum/</loc>
+    <loc>http://myself659.github.io/post/dsa/dp-max-subarray-sum/</loc>
     <lastmod>2018-07-18T11:58:06+02:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -1276,20 +1325,6 @@
   </url>
   
   <url>
-    <loc>http://myself659.github.io/tags/linux/</loc>
-    <lastmod>2017-05-10T11:58:06+02:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://myself659.github.io/categories/linux/</loc>
-    <lastmod>2017-05-10T11:58:06+02:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>http://myself659.github.io/post/2017-05-10-linux-process-diagnose/</loc>
     <lastmod>2017-05-10T11:58:06+02:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -1353,13 +1388,6 @@
   </url>
   
   <url>
-    <loc>http://myself659.github.io/post/2017-02-02-coutry-internet-infra/</loc>
-    <lastmod>2017-02-02T11:58:06+02:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>http://myself659.github.io/post/internet/2017-02-02-country-internet-infra/</loc>
     <lastmod>2017-02-02T11:58:06+02:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -1402,14 +1430,14 @@
   </url>
   
   <url>
-    <loc>http://myself659.github.io/post/2016-06-02-10-lessons-from-10-years-of-amazon-web-services/</loc>
+    <loc>http://myself659.github.io/post/arch/2016-06-02-10-lessons-from-10-years-of-amazon-web-services/</loc>
     <lastmod>2016-06-02T11:58:06+02:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://myself659.github.io/post/2016-05-27-facebook-live-detail/</loc>
+    <loc>http://myself659.github.io/post/arch/2016-05-27-facebook-live-detail/</loc>
     <lastmod>2016-05-27T11:58:06+02:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -1507,14 +1535,14 @@
   </url>
   
   <url>
-    <loc>http://myself659.github.io/post/2015-05-27-ping-error/</loc>
+    <loc>http://myself659.github.io/post/linux/2015-05-27-ping-error/</loc>
     <lastmod>2015-05-27T11:58:06+02:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://myself659.github.io/post/2015-06-01-linux-may-sleep-function/</loc>
+    <loc>http://myself659.github.io/post/linux/2015-06-01-linux-may-sleep-function/</loc>
     <lastmod>2015-05-27T11:58:06+02:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -1528,21 +1556,21 @@
   </url>
   
   <url>
-    <loc>http://myself659.github.io/post/2015-05-24-linux-perf-thought/</loc>
+    <loc>http://myself659.github.io/post/linux/2015-05-24-linux-perf-thought/</loc>
     <lastmod>2015-05-24T11:58:06+02:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://myself659.github.io/post/2015-05-24-linux-perf-droppacket/</loc>
+    <loc>http://myself659.github.io/post/linux/2015-05-24-linux-perf-droppacket/</loc>
     <lastmod>2015-05-24T11:58:06+02:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://myself659.github.io/post/2015-05-24-linux-perf-tips-nobranchmiss/</loc>
+    <loc>http://myself659.github.io/post/linux/2015-05-24-linux-perf-tips-nobranchmiss/</loc>
     <lastmod>2015-05-24T11:58:06+02:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>

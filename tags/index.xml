@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>沉风网事</copyright>
-    <lastBuildDate>Wed, 10 Feb 2021 11:58:06 +0200</lastBuildDate>
+    <lastBuildDate>Mon, 05 Apr 2021 11:58:06 +0200</lastBuildDate>
     
 	<atom:link href="http://myself659.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>NFT</title>
+      <link>http://myself659.github.io/tags/nft/</link>
+      <pubDate>Mon, 05 Apr 2021 11:58:06 +0200</pubDate>
+      
+      <guid>http://myself659.github.io/tags/nft/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>blockchain</title>
@@ -94,6 +103,15 @@
     </item>
     
     <item>
+      <title>Linux</title>
+      <link>http://myself659.github.io/tags/linux/</link>
+      <pubDate>Fri, 31 Jul 2020 11:58:06 +0200</pubDate>
+      
+      <guid>http://myself659.github.io/tags/linux/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>成长</title>
       <link>http://myself659.github.io/tags/%E6%88%90%E9%95%BF/</link>
       <pubDate>Fri, 26 Jun 2020 11:58:06 +0200</pubDate>
@@ -135,6 +153,15 @@
       <pubDate>Sun, 08 Mar 2020 11:58:06 +0200</pubDate>
       
       <guid>http://myself659.github.io/tags/%E7%A0%94%E5%8F%91%E7%AE%A1%E7%90%86/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>golang</title>
+      <link>http://myself659.github.io/tags/golang/</link>
+      <pubDate>Tue, 18 Feb 2020 11:58:06 +0200</pubDate>
+      
+      <guid>http://myself659.github.io/tags/golang/</guid>
       <description></description>
     </item>
     
@@ -189,15 +216,6 @@
       <pubDate>Wed, 18 Sep 2019 11:58:06 +0200</pubDate>
       
       <guid>http://myself659.github.io/tags/substrate/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>golang</title>
-      <link>http://myself659.github.io/tags/golang/</link>
-      <pubDate>Fri, 06 Sep 2019 11:58:06 +0200</pubDate>
-      
-      <guid>http://myself659.github.io/tags/golang/</guid>
       <description></description>
     </item>
     
@@ -369,15 +387,6 @@
       <pubDate>Fri, 27 Oct 2017 11:58:06 +0200</pubDate>
       
       <guid>http://myself659.github.io/tags/web/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Linux</title>
-      <link>http://myself659.github.io/tags/linux/</link>
-      <pubDate>Wed, 10 May 2017 11:58:06 +0200</pubDate>
-      
-      <guid>http://myself659.github.io/tags/linux/</guid>
       <description></description>
     </item>
     

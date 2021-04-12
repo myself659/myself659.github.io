@@ -41,10 +41,10 @@
     
     <item>
       <title>ping不通常见原因总结</title>
-      <link>http://myself659.github.io/post/2015-05-27-ping-error/</link>
+      <link>http://myself659.github.io/post/linux/2015-05-27-ping-error/</link>
       <pubDate>Wed, 27 May 2015 11:58:06 +0200</pubDate>
       
-      <guid>http://myself659.github.io/post/2015-05-27-ping-error/</guid>
+      <guid>http://myself659.github.io/post/linux/2015-05-27-ping-error/</guid>
       <description>ping不通从ping的流程分为两大类：请求报文没有到达对端与应答报文未收到</description>
     </item>
     

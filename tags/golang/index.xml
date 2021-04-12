@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>沉风网事</copyright>
-    <lastBuildDate>Fri, 06 Sep 2019 11:58:06 +0200</lastBuildDate>
+    <lastBuildDate>Tue, 18 Feb 2020 11:58:06 +0200</lastBuildDate>
     
 	<atom:link href="http://myself659.github.io/tags/golang/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>别太在意编程语言</title>
+      <link>http://myself659.github.io/post/golang/donot-focus-programming-language/</link>
+      <pubDate>Tue, 18 Feb 2020 11:58:06 +0200</pubDate>
+      
+      <guid>http://myself659.github.io/post/golang/donot-focus-programming-language/</guid>
+      <description>背景 经常有人这样说： PHP是最好的语言 现在golang越来越吃香，好找工作 python学习的人越来越多，太难了 对于这些，我想说：别太在意编程</description>
+    </item>
     
     <item>
       <title>深入分析Golang sync.pool优化</title>

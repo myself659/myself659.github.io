@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>沉风网事</copyright>
-    <lastBuildDate>Wed, 10 May 2017 11:58:06 +0200</lastBuildDate>
+    <lastBuildDate>Fri, 31 Jul 2020 11:58:06 +0200</lastBuildDate>
     
 	<atom:link href="http://myself659.github.io/categories/linux/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>利用WSL和wget从github下载文件</title>
+      <link>http://myself659.github.io/post/linux/linux-wget-retry/</link>
+      <pubDate>Fri, 31 Jul 2020 11:58:06 +0200</pubDate>
+      
+      <guid>http://myself659.github.io/post/linux/linux-wget-retry/</guid>
+      <description>背景 由于GFW的干扰，即使科学上网方式从github下载文件，下载连接经常会被中断。由于chrome重新连接的次数有限，据说chrome重新</description>
+    </item>
     
     <item>
       <title>Linux进程诊断小结</title>
@@ -86,28 +95,28 @@
     
     <item>
       <title>那些可进入睡眠状态的Linux内核函数</title>
-      <link>http://myself659.github.io/post/2015-06-01-linux-may-sleep-function/</link>
+      <link>http://myself659.github.io/post/linux/2015-06-01-linux-may-sleep-function/</link>
       <pubDate>Wed, 27 May 2015 11:58:06 +0200</pubDate>
       
-      <guid>http://myself659.github.io/post/2015-06-01-linux-may-sleep-function/</guid>
+      <guid>http://myself659.github.io/post/linux/2015-06-01-linux-may-sleep-function/</guid>
       <description>在linux内核开发中断处理函数不能调用可能导致睡眠的函数，下面总结linux内核可能引起睡眠的函数如下： schedule函数 schedule_timeout schedule_timeout_uninterruptible schedule_timeout_interruptible cond_resched might_resched sl</description>
     </item>
     
     <item>
       <title>Linux性能优化杂谈</title>
-      <link>http://myself659.github.io/post/2015-05-24-linux-perf-thought/</link>
+      <link>http://myself659.github.io/post/linux/2015-05-24-linux-perf-thought/</link>
       <pubDate>Sun, 24 May 2015 11:58:06 +0200</pubDate>
       
-      <guid>http://myself659.github.io/post/2015-05-24-linux-perf-thought/</guid>
+      <guid>http://myself659.github.io/post/linux/2015-05-24-linux-perf-thought/</guid>
       <description>少资源 高吞吐 低延迟 在具体网络转发性能优化过程中对性能优化有以下几点体会与总结： 软硬结合 软件灵活，硬件高效，软硬结合就像双剑合壁，威力巨大；具</description>
     </item>
     
     <item>
       <title>在没有分支miss条件下，实现取最小值</title>
-      <link>http://myself659.github.io/post/2015-05-24-linux-perf-tips-nobranchmiss/</link>
+      <link>http://myself659.github.io/post/linux/2015-05-24-linux-perf-tips-nobranchmiss/</link>
       <pubDate>Sun, 24 May 2015 11:58:06 +0200</pubDate>
       
-      <guid>http://myself659.github.io/post/2015-05-24-linux-perf-tips-nobranchmiss/</guid>
+      <guid>http://myself659.github.io/post/linux/2015-05-24-linux-perf-tips-nobranchmiss/</guid>
       <description>在实际性能优化过程，加了一个if判断整个系统转发性能就有大约5%的下降，下面简单分享一种在没有分支miss条件下，实现取最小值的方法。 一般实</description>
     </item>
     
