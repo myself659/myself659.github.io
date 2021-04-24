@@ -14,10 +14,10 @@
     
     <item>
       <title>Rust crate加速</title>
-      <link>http://myself659.github.io/post/rust-crate-speedup/</link>
+      <link>http://myself659.github.io/post/rust/rust-crate-speedup/</link>
       <pubDate>Sun, 11 Aug 2019 11:58:06 +0200</pubDate>
       
-      <guid>http://myself659.github.io/post/rust-crate-speedup/</guid>
+      <guid>http://myself659.github.io/post/rust/rust-crate-speedup/</guid>
       <description>由于墙的原因，导致cargo build，cargo run都会出现概率性失败，并且整个过程十分缓慢。 下面是解决方案： 方案1 在 ~/.cargo/</description>
     </item>
     
