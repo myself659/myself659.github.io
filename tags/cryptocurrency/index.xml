@@ -7,19 +7,10 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>沉风网事</copyright>
-    <lastBuildDate>Mon, 12 Apr 2021 11:58:06 +0200</lastBuildDate>
+    <lastBuildDate>Fri, 08 Jan 2021 11:58:06 +0200</lastBuildDate>
     
 	<atom:link href="http://myself659.github.io/tags/cryptocurrency/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>PoS有利于提高公链的去中心化水平</title>
-      <link>http://myself659.github.io/post/blockchain/pos-increase-decentralization/</link>
-      <pubDate>Mon, 12 Apr 2021 11:58:06 +0200</pubDate>
-      
-      <guid>http://myself659.github.io/post/blockchain/pos-increase-decentralization/</guid>
-      <description>背景 以太坊 https://etherscan.io/stat/miner/1?range=7&amp;amp;blocktype=blocks harmony 结论 越降低参与门槛，越多节点。 越多节点，越去中心化。 越去中心化，越安全。 转到pos的eth值得期待，实现分片的eth2.0会是</description>
-    </item>
     
     <item>
       <title>展望2021年的Ethereum</title>
