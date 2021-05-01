@@ -356,6 +356,15 @@
     </item>
     
     <item>
+      <title>Rust Vec 101</title>
+      <link>http://myself659.github.io/post/rust/rust-vec/</link>
+      <pubDate>Sun, 08 Sep 2019 11:58:06 +0200</pubDate>
+      
+      <guid>http://myself659.github.io/post/rust/rust-vec/</guid>
+      <description>create 不指定数据类型 1 2 let mut v1 = Vec::new(); let mut v2 = vec![]; 指定数据类型 1 2 3 let mut v1:Vec&amp;lt;i32&amp;gt; = Vec::new(); let mut v2:Vec&amp;lt;i32&amp;gt; = vec![]; let mut v3 = vec![1i32, 2,3]; 创建初始化 1 2 3 4 5 let mut v1 = vec![1,2,3]; let mut v2:Vec&amp;lt;i32&amp;gt; = vec![1,2,3]; let mut v3 = vec![1i32,2,3];</description>
+    </item>
+    
+    <item>
       <title>深入分析Golang sync.pool优化</title>
       <link>http://myself659.github.io/post/golang-sync-pool-2/</link>
       <pubDate>Fri, 06 Sep 2019 11:58:06 +0200</pubDate>
@@ -1370,6 +1379,15 @@
       
       <guid>http://myself659.github.io/post/substrate-runtime/</guid>
       <description>banner = &amp;quot;&amp;rdquo; categories = [&amp;ldquo;Substrate&amp;rdquo;] date = &amp;ldquo;2019-09-19T11:58:06+02:00&amp;rdquo; description = &amp;quot;&amp;rdquo; images = [] menu = &amp;quot;&amp;rdquo; tags = [&amp;ldquo;Substrate&amp;rdquo;, &amp;ldquo;BlockChain&amp;rdquo;] title = &amp;ldquo;Substrate Runtime实践&amp;rdquo; draft = true +++ install substrate 安装substrate有以下两种方式： 快速安装</description>
+    </item>
+    
+    <item>
+      <title>PoS更有利于去中心化</title>
+      <link>http://myself659.github.io/post/blockchain/pos-increase-decentralization/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://myself659.github.io/post/blockchain/pos-increase-decentralization/</guid>
+      <description>背景 PoW和PoS作为现在最常用的两大共识算法，PoW与PoS之争已经有多年了。 下面从去中心化角度来对比两条公链： 采用PoW的以太坊 采用EP</description>
     </item>
     
   </channel>

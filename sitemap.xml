@@ -590,6 +590,27 @@
   </url>
   
   <url>
+    <loc>http://myself659.github.io/tags/rust/</loc>
+    <lastmod>2019-09-08T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://myself659.github.io/categories/rust/</loc>
+    <lastmod>2019-09-08T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://myself659.github.io/post/rust/rust-vec/</loc>
+    <lastmod>2019-09-08T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>http://myself659.github.io/post/golang-sync-pool-2/</loc>
     <lastmod>2019-09-06T11:58:06+02:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -599,20 +620,6 @@
   <url>
     <loc>http://myself659.github.io/post/risk-of-vesting-china/</loc>
     <lastmod>2019-08-18T11:58:06+02:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://myself659.github.io/tags/rust/</loc>
-    <lastmod>2019-08-11T11:58:06+02:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://myself659.github.io/categories/rust/</loc>
-    <lastmod>2019-08-11T11:58:06+02:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -1644,6 +1651,12 @@
   
   <url>
     <loc>http://myself659.github.io/post/substrate-runtime/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://myself659.github.io/post/blockchain/pos-increase-decentralization/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>

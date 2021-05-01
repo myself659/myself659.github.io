@@ -300,5 +300,14 @@
       <description>说明 主要记录以太坊开发环境过程出现的问题 getCompilers返回失败 问题描述 在搭建以太坊开发环境过程中，出现下面的错误信息： 1 2 3 4 5 6</description>
     </item>
     
+    <item>
+      <title>PoS更有利于去中心化</title>
+      <link>http://myself659.github.io/post/blockchain/pos-increase-decentralization/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://myself659.github.io/post/blockchain/pos-increase-decentralization/</guid>
+      <description>背景 PoW和PoS作为现在最常用的两大共识算法，PoW与PoS之争已经有多年了。 下面从去中心化角度来对比两条公链： 采用PoW的以太坊 采用EP</description>
+    </item>
+    
   </channel>
 </rss>
