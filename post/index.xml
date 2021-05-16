@@ -59,6 +59,15 @@
     </item>
     
     <item>
+      <title>100 days, 100 english sentences</title>
+      <link>http://myself659.github.io/post/english/100-english-sentence/</link>
+      <pubDate>Sat, 16 Jan 2021 11:58:06 +0200</pubDate>
+      
+      <guid>http://myself659.github.io/post/english/100-english-sentence/</guid>
+      <description>day1 2021年1月16日 星期六 1 There is considerable debate over how we should react if we detect a signal from an alien civilisation. 翻译： 如果我们探测到了来自外星文明的信号，我们应该如何回应是一个备受争议的</description>
+    </item>
+    
+    <item>
       <title>错过了2010年的比特币，不要错过这些新领域的机会</title>
       <link>http://myself659.github.io/post/invest/invest-balajis-directions/</link>
       <pubDate>Fri, 15 Jan 2021 11:58:06 +0200</pubDate>
@@ -92,6 +101,15 @@
       
       <guid>http://myself659.github.io/post/history-read-list/</guid>
       <description>前言 历史是一面镜子。 历史是一个任人打扮的小姑娘。 历史告诉我们过去发生什么，启示我们现在做什么，预示着未来发什么。 做为多年历史爱好者，这里列出</description>
+    </item>
+    
+    <item>
+      <title>加密货币新手应该注意哪些问题</title>
+      <link>http://myself659.github.io/post/blockchain/invest-mistakes/</link>
+      <pubDate>Tue, 08 Dec 2020 11:58:06 +0200</pubDate>
+      
+      <guid>http://myself659.github.io/post/blockchain/invest-mistakes/</guid>
+      <description>背景 随着eth 2.0信标链启动以及defi的快速发展，加密货币会迎来一个新的牛市。在牛市开启之后，一定有很多新人进场。 作为一名老韭菜，简单说</description>
     </item>
     
     <item>
@@ -361,7 +379,7 @@
       <pubDate>Sun, 08 Sep 2019 11:58:06 +0200</pubDate>
       
       <guid>http://myself659.github.io/post/rust/rust-vec/</guid>
-      <description>create 不指定数据类型 1 2 let mut v1 = Vec::new(); let mut v2 = vec![]; 指定数据类型 1 2 3 let mut v1:Vec&amp;lt;i32&amp;gt; = Vec::new(); let mut v2:Vec&amp;lt;i32&amp;gt; = vec![]; let mut v3 = vec![1i32, 2,3]; 创建初始化 1 2 3 4 5 let mut v1 = vec![1,2,3]; let mut v2:Vec&amp;lt;i32&amp;gt; = vec![1,2,3]; let mut v3 = vec![1i32,2,3];</description>
+      <description>create 不指定数据类型 1 2 let mut v1 = Vec::new(); let mut v2 = vec![]; 指定数据类型 1 2 3 let mut v1:Vec&amp;lt;i32&amp;gt; = Vec::new(); let mut v2:Vec&amp;lt;i32&amp;gt; = vec![]; let mut v3 = vec![1i32, 2,3]; 创建并初始化 1 2 3 4 5 let mut v1 = vec![1,2,3]; let mut v2:Vec&amp;lt;i32&amp;gt; = vec![1,2,3]; let mut v3 =</description>
     </item>
     
     <item>
@@ -406,7 +424,7 @@
       <pubDate>Mon, 08 Jul 2019 11:58:06 +0200</pubDate>
       
       <guid>http://myself659.github.io/post/blockchain/blockchain-index-predict/</guid>
-      <description>指标 总市值 加密货币总市值 交易量Transaction Volume BTC&amp;rsquo;s Transaction Volume Ethereum’s Transaction Volume 算力Hash Rate BTC&amp;rsquo;s Hash Rate Ethereum’s Hash Rate 活跃地址Ac</description>
+      <description>指标 Largest banks by market cap Largest banks by market cap 总市值 加密货币总市值 CRYPTOCURRENCY MARKET 加密数字货币全球图表 交易量Transaction Volume BTC&amp;rsquo;s Transaction Volume Ethereum’s Transaction Volume 算力Hash</description>
     </item>
     
     <item>
