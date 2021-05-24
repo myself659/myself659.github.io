@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Data on 沉风网事</title>
+    <title>data on 沉风网事</title>
     <link>http://myself659.github.io/categories/data/</link>
-    <description>Recent content in Data on 沉风网事</description>
+    <description>Recent content in data on 沉风网事</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>沉风网事</copyright>
@@ -28,6 +28,15 @@
       
       <guid>http://myself659.github.io/post/stock-us-data/</guid>
       <description>背景 川大爷，常在twitter上吆喝美股多次创造历史高点。美股确实是一个资产配置的重要选项。 在进入市场之前，研究先行，作好功课。 获取数据 对于</description>
+    </item>
+    
+    <item>
+      <title>google search tips</title>
+      <link>http://myself659.github.io/post/data/google-search-tips/</link>
+      <pubDate>Sun, 28 Jan 2018 11:58:06 +0200</pubDate>
+      
+      <guid>http://myself659.github.io/post/data/google-search-tips/</guid>
+      <description>前言 Google作为全球最大的搜索引擎，Google是我最好的老师。那么更好的利用这个老师呢？下面分享一些常用google搜索技巧。 Tips 准确匹</description>
     </item>
     
   </channel>

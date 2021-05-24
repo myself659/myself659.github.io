@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>沉风网事</copyright>
-    <lastBuildDate>Sat, 01 May 2021 11:58:06 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 21 May 2021 11:58:06 +0800</lastBuildDate>
     
 	<atom:link href="http://myself659.github.io/tags/blockchain/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>说说519事件</title>
+      <link>http://myself659.github.io/post/blockchain/crypto-519-fall/</link>
+      <pubDate>Fri, 21 May 2021 11:58:06 +0800</pubDate>
+      
+      <guid>http://myself659.github.io/post/blockchain/crypto-519-fall/</guid>
+      <description>背景 加密货币历史上几次大跌： 2017年94事件 2020年312事件 2021年423事件 2021年519事件 每次大跌都验证一句话：币圈一天，人</description>
+    </item>
     
     <item>
       <title>PoS更有利于去中心化</title>
