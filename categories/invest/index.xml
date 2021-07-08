@@ -7,11 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>沉风网事</copyright>
-    <lastBuildDate>Fri, 15 Jan 2021 11:58:06 +0200</lastBuildDate>
-    
-	<atom:link href="http://myself659.github.io/categories/invest/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Fri, 15 Jan 2021 11:58:06 +0200</lastBuildDate><atom:link href="http://myself659.github.io/categories/invest/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>错过了2010年的比特币，不要错过这些新领域的机会</title>
       <link>http://myself659.github.io/post/invest/invest-balajis-directions/</link>
@@ -19,6 +15,15 @@
       
       <guid>http://myself659.github.io/post/invest/invest-balajis-directions/</guid>
       <description>今天哪些新领域会像2010年比特币一样的成长 twitter一个用户提出一个问题：Is there a thing today like being into Bitcoin in 2010？ 下面是Balaji S. Srin</description>
+    </item>
+    
+    <item>
+      <title>invest&#39;s principle</title>
+      <link>http://myself659.github.io/post/invest/invest-loot/</link>
+      <pubDate>Fri, 08 Jan 2021 11:58:06 +0200</pubDate>
+      
+      <guid>http://myself659.github.io/post/invest/invest-loot/</guid>
+      <description>https://lootswapfinance.medium.com/ 有利于做大池子。 如何定价的问题。 • 25% fee if the user withdraws in the same block. (blocks ~ 2 seconds) • 8% fee if the user withdraws under 1 hour. • 4% fee if the user withdraws under 1 day. • 2% fee if the user withdraws under 3 days. • 1% fee if the user withdraws under</description>
     </item>
     
     <item>

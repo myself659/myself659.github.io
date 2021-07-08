@@ -7,11 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>沉风网事</copyright>
-    <lastBuildDate>Fri, 08 May 2020 11:58:06 +0200</lastBuildDate>
-    
-	<atom:link href="http://myself659.github.io/categories/read/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Fri, 08 May 2020 11:58:06 +0200</lastBuildDate><atom:link href="http://myself659.github.io/categories/read/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>读书笔记:《非对称风险》</title>
       <link>http://myself659.github.io/post/rt/book-skin-in-the-game-how/</link>
@@ -19,6 +15,15 @@
       
       <guid>http://myself659.github.io/post/rt/book-skin-in-the-game-how/</guid>
       <description>首先了解一下作者：纳西姆·塔勒布，研究不确定性的专家，华尔街明星交易员。他先后出版“不确定性”四部曲：《随机漫步的傻瓜》、《黑天鹅》、《反脆</description>
+    </item>
+    
+    <item>
+      <title>说说读书</title>
+      <link>http://myself659.github.io/post/rt/about-book-reading/</link>
+      <pubDate>Tue, 28 May 2019 11:58:06 +0200</pubDate>
+      
+      <guid>http://myself659.github.io/post/rt/about-book-reading/</guid>
+      <description>前言 书籍是人类进步的阶梯。 书箱是前人总结的知识与智慧的结晶。 读书有利于使我们站上巨人的肩膀，有利于我们提升自己的历史高度，行业高度，哲学高度</description>
     </item>
     
   </channel>

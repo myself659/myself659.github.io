@@ -7,11 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>沉风网事</copyright>
-    <lastBuildDate>Tue, 18 Feb 2020 11:58:06 +0200</lastBuildDate>
-    
-	<atom:link href="http://myself659.github.io/categories/golang/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Tue, 18 Feb 2020 11:58:06 +0200</lastBuildDate><atom:link href="http://myself659.github.io/categories/golang/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>别太在意编程语言</title>
       <link>http://myself659.github.io/post/golang/donot-focus-programming-language/</link>

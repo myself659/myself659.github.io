@@ -37,6 +37,13 @@
   </url>
   
   <url>
+    <loc>http://myself659.github.io/</loc>
+    <lastmod>2021-05-21T11:58:06+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>http://myself659.github.io/post/blockchain/crypto-519-fall/</loc>
     <lastmod>2021-05-21T11:58:06+08:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -178,6 +185,13 @@
   
   <url>
     <loc>http://myself659.github.io/categories/cryptocurrency/</loc>
+    <lastmod>2021-01-08T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://myself659.github.io/post/invest/invest-loot/</loc>
     <lastmod>2021-01-08T11:58:06+02:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -718,6 +732,13 @@
   <url>
     <loc>http://myself659.github.io/post/sim-port-attack/</loc>
     <lastmod>2019-05-30T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://myself659.github.io/post/rt/about-book-reading/</loc>
+    <lastmod>2019-05-28T11:58:06+02:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -1647,13 +1668,6 @@
   </url>
   
   <url>
-    <loc>http://myself659.github.io/</loc>
-    <lastmod>2015-05-18T21:49:20+02:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>http://myself659.github.io/post/2017-05-09-web-server-perf-and-design/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -1679,6 +1693,12 @@
   
   <url>
     <loc>http://myself659.github.io/post/substrate-runtime/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://myself659.github.io/search/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
