@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Think on 沉风网事</title>
+    <link>http://myself659.github.io/tags/think/</link>
+    <description>Recent content in Think on 沉风网事</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <copyright>沉风网事</copyright>
+    <lastBuildDate>Thu, 11 Apr 2019 11:58:06 +0200</lastBuildDate><atom:link href="http://myself659.github.io/tags/think/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>从逻辑运算看证实和证伪</title>
+      <link>http://myself659.github.io/post/rt/%E8%AF%81%E5%AE%9Evs%E8%AF%81%E4%BC%AA/</link>
+      <pubDate>Thu, 11 Apr 2019 11:58:06 +0200</pubDate>
+      
+      <guid>http://myself659.github.io/post/rt/%E8%AF%81%E5%AE%9Evs%E8%AF%81%E4%BC%AA/</guid>
+      <description>前言 我们处于信息社会，实际上只是信息很多，但是真相确却很少。 假设 假设一个事件发生，现在已知要满足N个条件（实际上可能不止N个条件）。 证实 用编</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -7,7 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>沉风网事</copyright>
-    <lastBuildDate>Fri, 21 May 2021 11:58:06 +0800</lastBuildDate><atom:link href="http://myself659.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 08 Jul 2021 11:58:06 +0200</lastBuildDate><atom:link href="http://myself659.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>常用Defi工具与网站</title>
+      <link>http://myself659.github.io/post/blockchain/defi-tools/</link>
+      <pubDate>Thu, 08 Jul 2021 11:58:06 +0200</pubDate>
+      
+      <guid>http://myself659.github.io/post/blockchain/defi-tools/</guid>
+      <description>vFat Tools vFat Tools为defi农民提供挖矿分析，收益计算，数据面板等服务。 优点： 免费 界面简洁 提供了收益与池子详细信息 基本支持主流兼容evm的公链</description>
+    </item>
+    
     <item>
       <title>说说519事件</title>
       <link>http://myself659.github.io/post/blockchain/crypto-519-fall/</link>
@@ -493,6 +502,15 @@
       
       <guid>http://myself659.github.io/post/about-zoom/</guid>
       <description>前言 最近zoom上市，作为一名华人创业公司自然大受关注。下面从以下几个方面谈谈自己的一些思考与看法： 技术 领导 产品 商业 技术 对于视频面试会议，技</description>
+    </item>
+    
+    <item>
+      <title>从逻辑运算看证实和证伪</title>
+      <link>http://myself659.github.io/post/rt/%E8%AF%81%E5%AE%9Evs%E8%AF%81%E4%BC%AA/</link>
+      <pubDate>Thu, 11 Apr 2019 11:58:06 +0200</pubDate>
+      
+      <guid>http://myself659.github.io/post/rt/%E8%AF%81%E5%AE%9Evs%E8%AF%81%E4%BC%AA/</guid>
+      <description>前言 我们处于信息社会，实际上只是信息很多，但是真相确却很少。 假设 假设一个事件发生，现在已知要满足N个条件（实际上可能不止N个条件）。 证实 用编</description>
     </item>
     
     <item>
