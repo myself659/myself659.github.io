@@ -7,7 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>沉风网事</copyright>
-    <lastBuildDate>Thu, 08 Jul 2021 11:58:06 +0200</lastBuildDate><atom:link href="http://myself659.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 16 Aug 2021 11:58:06 +0200</lastBuildDate><atom:link href="http://myself659.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>非永久性损失公式的推导</title>
+      <link>http://myself659.github.io/post/blockchain/uniswap-impermanent-loss-formula/</link>
+      <pubDate>Mon, 16 Aug 2021 11:58:06 +0200</pubDate>
+      
+      <guid>http://myself659.github.io/post/blockchain/uniswap-impermanent-loss-formula/</guid>
+      <description>说明 公式推导基于uniswap v2，不适用于uniswap v3。 非永久性损失 用户为流动性池提供流动性时，由于交易对价格变化使池内的交易对的代</description>
+    </item>
+    
     <item>
       <title>常用Defi工具与网站</title>
       <link>http://myself659.github.io/post/blockchain/defi-tools/</link>
@@ -600,7 +609,7 @@
       <pubDate>Sun, 02 Dec 2018 11:58:06 +0200</pubDate>
       
       <guid>http://myself659.github.io/post/%E8%AF%B4%E8%AF%B4%E5%9C%A8%E4%B8%8D%E5%90%8C%E8%A1%8C%E4%B8%9A%E7%9A%84%E7%BC%96%E7%A8%8B%E4%BD%93%E9%AA%8C/</guid>
-      <description>回想起来，2010年毕业以来，在五家公司呆过，经历四个行业，在这引起行业编程体验各有不同，总结起来就下面四句话： 嵌入式行业：面向DataSh</description>
+      <description>回想起来，本科毕业以来，在五家公司呆过，经历四个行业，在这引起行业编程体验各有不同，总结起来就下面四句话： 嵌入式行业：面向DataSheet</description>
     </item>
     
     <item>
@@ -1365,7 +1374,7 @@
       <pubDate>Sun, 24 May 2015 11:58:06 +0200</pubDate>
       
       <guid>http://myself659.github.io/post/linux/2015-05-24-linux-perf-thought/</guid>
-      <description>少资源 高吞吐 低延迟 在具体网络转发性能优化过程中对性能优化有以下几点体会与总结： 软硬结合 软件灵活，硬件高效，软硬结合就像双剑合壁，威力巨大；具</description>
+      <description>性能不仅仅是一串串数字，性能体现更大的吞吐量及更低的延迟；如果网络延迟增加0.1秒，google每秒损失100W,不是人民币是美元；网页响应</description>
     </item>
     
     <item>

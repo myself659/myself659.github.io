@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>DEX on 沉风网事</title>
+    <link>http://myself659.github.io/tags/dex/</link>
+    <description>Recent content in DEX on 沉风网事</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <copyright>沉风网事</copyright>
+    <lastBuildDate>Mon, 16 Aug 2021 11:58:06 +0200</lastBuildDate><atom:link href="http://myself659.github.io/tags/dex/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>非永久性损失公式的推导</title>
+      <link>http://myself659.github.io/post/blockchain/uniswap-impermanent-loss-formula/</link>
+      <pubDate>Mon, 16 Aug 2021 11:58:06 +0200</pubDate>
+      
+      <guid>http://myself659.github.io/post/blockchain/uniswap-impermanent-loss-formula/</guid>
+      <description>说明 公式推导基于uniswap v2，不适用于uniswap v3。 非永久性损失 用户为流动性池提供流动性时，由于交易对价格变化使池内的交易对的代</description>
+    </item>
+    
+  </channel>
+</rss>

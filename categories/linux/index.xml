@@ -104,7 +104,7 @@
       <pubDate>Sun, 24 May 2015 11:58:06 +0200</pubDate>
       
       <guid>http://myself659.github.io/post/linux/2015-05-24-linux-perf-thought/</guid>
-      <description>少资源 高吞吐 低延迟 在具体网络转发性能优化过程中对性能优化有以下几点体会与总结： 软硬结合 软件灵活，硬件高效，软硬结合就像双剑合壁，威力巨大；具</description>
+      <description>性能不仅仅是一串串数字，性能体现更大的吞吐量及更低的延迟；如果网络延迟增加0.1秒，google每秒损失100W,不是人民币是美元；网页响应</description>
     </item>
     
     <item>
