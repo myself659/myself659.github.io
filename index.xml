@@ -271,30 +271,21 @@
     </item>
     
     <item>
-      <title>为什么O不作为被除数？</title>
-      <link>http://myself659.github.io/post/math/why-dividing-by-zero-is-undefined/</link>
-      <pubDate>Sun, 08 Mar 2020 11:58:06 +0200</pubDate>
-      
-      <guid>http://myself659.github.io/post/math/why-dividing-by-zero-is-undefined/</guid>
-      <description>前言 学过了除法都知道这么一个道理：0不是被除数。 到了后面编程，一直都会遵循一条原则： 0不能作为被除数，如果用0作为被除数，就会出错或者报异常</description>
-    </item>
-    
-    <item>
-      <title>在选择做什么之前，先问问自己这四个问题</title>
-      <link>http://myself659.github.io/post/find-what-todo/</link>
-      <pubDate>Sun, 08 Mar 2020 11:58:06 +0200</pubDate>
-      
-      <guid>http://myself659.github.io/post/find-what-todo/</guid>
-      <description>在谈谈做事的原则提到做事的原则的基本原则。具体如下： 不要给自己设限 站在巨人的肩膀上 正确的方向 敏捷的行动 本文重点讨论如何选择做什么这一问题。不</description>
-    </item>
-    
-    <item>
       <title>微盟删库事件复盘与思考</title>
       <link>http://myself659.github.io/post/weimeng-del-data/</link>
       <pubDate>Sun, 08 Mar 2020 11:58:06 +0200</pubDate>
       
       <guid>http://myself659.github.io/post/weimeng-del-data/</guid>
       <description>事故 先简单看一下整个事故的粗略时间线。 2月23日，微盟服务出现故障。商家商城、小程序均无法登录。 2月25日，微盟紧急恢复了核心业务的线上生产</description>
+    </item>
+    
+    <item>
+      <title>在选择做什么之前，先问问自己这四个问题</title>
+      <link>http://myself659.github.io/post/find-what-todo/</link>
+      <pubDate>Thu, 05 Mar 2020 11:58:06 +0200</pubDate>
+      
+      <guid>http://myself659.github.io/post/find-what-todo/</guid>
+      <description>在谈谈做事的原则提到做事的原则的基本原则。具体如下： 不要给自己设限 站在巨人的肩膀上 正确的方向 敏捷的行动 本文重点讨论如何选择做什么这一问题。不</description>
     </item>
     
     <item>
@@ -313,6 +304,15 @@
       
       <guid>http://myself659.github.io/post/stock-us-analysis/</guid>
       <description>前言 在投资美股，先从数据分析开始这篇文章解决两个问题： 从哪里找数据？ 如何得到这些数据？ 在此基础这篇主要解决一个问题：以特斯拉为例说明如何利用</description>
+    </item>
+    
+    <item>
+      <title>为什么O不作为被除数？</title>
+      <link>http://myself659.github.io/post/math/why-dividing-by-zero-is-undefined/</link>
+      <pubDate>Sat, 08 Feb 2020 11:58:06 +0200</pubDate>
+      
+      <guid>http://myself659.github.io/post/math/why-dividing-by-zero-is-undefined/</guid>
+      <description>前言 学过了除法都知道这么一个道理：0不是被除数。 到了后面编程，一直都会遵循一条原则： 0不能作为被除数，如果用0作为被除数，就会出错或者报异常</description>
     </item>
     
     <item>

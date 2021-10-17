@@ -7,11 +7,11 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>沉风网事</copyright>
-    <lastBuildDate>Sun, 08 Mar 2020 11:58:06 +0200</lastBuildDate><atom:link href="http://myself659.github.io/tags/math/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 08 Feb 2020 11:58:06 +0200</lastBuildDate><atom:link href="http://myself659.github.io/tags/math/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>为什么O不作为被除数？</title>
       <link>http://myself659.github.io/post/math/why-dividing-by-zero-is-undefined/</link>
-      <pubDate>Sun, 08 Mar 2020 11:58:06 +0200</pubDate>
+      <pubDate>Sat, 08 Feb 2020 11:58:06 +0200</pubDate>
       
       <guid>http://myself659.github.io/post/math/why-dividing-by-zero-is-undefined/</guid>
       <description>前言 学过了除法都知道这么一个道理：0不是被除数。 到了后面编程，一直都会遵循一条原则： 0不能作为被除数，如果用0作为被除数，就会出错或者报异常</description>

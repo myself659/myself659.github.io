@@ -457,34 +457,6 @@
   </url>
   
   <url>
-    <loc>http://myself659.github.io/tags/math/</loc>
-    <lastmod>2020-03-08T11:58:06+02:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://myself659.github.io/categories/math/</loc>
-    <lastmod>2020-03-08T11:58:06+02:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://myself659.github.io/post/math/why-dividing-by-zero-is-undefined/</loc>
-    <lastmod>2020-03-08T11:58:06+02:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://myself659.github.io/post/find-what-todo/</loc>
-    <lastmod>2020-03-08T11:58:06+02:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>http://myself659.github.io/post/weimeng-del-data/</loc>
     <lastmod>2020-03-08T11:58:06+02:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -501,6 +473,13 @@
   <url>
     <loc>http://myself659.github.io/categories/%E7%A0%94%E5%8F%91%E7%AE%A1%E7%90%86/</loc>
     <lastmod>2020-03-08T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://myself659.github.io/post/find-what-todo/</loc>
+    <lastmod>2020-03-05T11:58:06+02:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -543,6 +522,27 @@
   <url>
     <loc>http://myself659.github.io/post/stock-us-analysis/</loc>
     <lastmod>2020-02-17T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://myself659.github.io/tags/math/</loc>
+    <lastmod>2020-02-08T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://myself659.github.io/categories/math/</loc>
+    <lastmod>2020-02-08T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://myself659.github.io/post/math/why-dividing-by-zero-is-undefined/</loc>
+    <lastmod>2020-02-08T11:58:06+02:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
