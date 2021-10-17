@@ -26,5 +26,14 @@
       <description>说明 代码基于go-ethereum，版本v1.8.10。 RPC代码入口 SendTransaction 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 // SendTransaction will create a transaction from the given arguments and // tries to sign it with</description>
     </item>
     
+    <item>
+      <title>EVM opcodes</title>
+      <link>http://myself659.github.io/post/solidity/solidity-evm-instructions/</link>
+      <pubDate>Fri, 20 Apr 2018 11:58:06 +0200</pubDate>
+      
+      <guid>http://myself659.github.io/post/solidity/solidity-evm-instructions/</guid>
+      <description>推荐 Ethereum Virtual Machine Opcodes Arithmetic Operations 1 2 3 4 5 6 7 8 9 10 11 12 ADD //Add the top two stack items MUL //Multiply the top two stack items SUB //Subtract the top two stack items DIV //Integer division SDIV //Signed integer division MOD //Modulo (remainder) operation SMOD //Signed modulo operation ADDMOD //Addition modulo any number MULMOD //Multiplication modulo any number EXP //Exponential operation SIGNEXTEND</description>
+    </item>
+    
   </channel>
 </rss>
