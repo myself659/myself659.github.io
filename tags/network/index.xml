@@ -41,7 +41,7 @@
       <pubDate>Wed, 27 May 2015 11:58:06 +0200</pubDate>
       
       <guid>http://myself659.github.io/post/linux/2015-05-27-ping-error/</guid>
-      <description>ping不通从ping的流程分为两大类：请求报文没有到达对端与应答报文未收到</description>
+      <description>ping不通从ping的流程分为两大类： 请求报文没有到达对端 应答报文未收到 请求报文没有到达对端的可能原因： 发送端发送流程出错 源端,转发设备没</description>
     </item>
     
   </channel>

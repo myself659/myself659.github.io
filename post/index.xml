@@ -271,6 +271,15 @@
     </item>
     
     <item>
+      <title>为什么O不作为被除数？</title>
+      <link>http://myself659.github.io/post/math/why-dividing-by-zero-is-undefined/</link>
+      <pubDate>Sun, 08 Mar 2020 11:58:06 +0200</pubDate>
+      
+      <guid>http://myself659.github.io/post/math/why-dividing-by-zero-is-undefined/</guid>
+      <description>前言 学过了除法都知道这么一个道理：0不是被除数。 到了后面编程，一直都会遵循一条原则： 0不能作为被除数，如果用0作为被除数，就会出错或者报异常</description>
+    </item>
+    
+    <item>
       <title>在选择做什么之前，先问问自己这四个问题</title>
       <link>http://myself659.github.io/post/find-what-todo/</link>
       <pubDate>Sun, 08 Mar 2020 11:58:06 +0200</pubDate>
@@ -547,6 +556,15 @@
       
       <guid>http://myself659.github.io/post/python-packages/</guid>
       <description>Life is short, I use Python. I try to summary the popular python packages as follows: Number and Math sympy Sage numbers math cmath decimal fractions random statistics Data and statistics Matplotlib seaborn numpy pandas plotly Web Development Django FastAPI GUI pyqt PySimpleGUI automation script pathlib os Machine Learning TensorFlow Scikit OpenCV streamlit Web Scraping and Web Automation Requests Beautiful Soup Scrapy Selenium 欢迎关注 欢迎关</description>
+    </item>
+    
+    <item>
+      <title>vscode tips</title>
+      <link>http://myself659.github.io/post/vscode-tips/</link>
+      <pubDate>Fri, 08 Feb 2019 11:58:06 +0200</pubDate>
+      
+      <guid>http://myself659.github.io/post/vscode-tips/</guid>
+      <description>配置 进入配置 文件-&amp;gt; 首选项 -&amp;gt;配置 点击右上边的文件图标，进入打开设置（打开配置文件C:\Users\IA\AppData\Roa</description>
     </item>
     
     <item>
@@ -1347,7 +1365,7 @@
       <pubDate>Wed, 27 May 2015 11:58:06 +0200</pubDate>
       
       <guid>http://myself659.github.io/post/linux/2015-05-27-ping-error/</guid>
-      <description>ping不通从ping的流程分为两大类：请求报文没有到达对端与应答报文未收到</description>
+      <description>ping不通从ping的流程分为两大类： 请求报文没有到达对端 应答报文未收到 请求报文没有到达对端的可能原因： 发送端发送流程出错 源端,转发设备没</description>
     </item>
     
     <item>
