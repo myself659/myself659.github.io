@@ -10,15 +10,6 @@
     <lastBuildDate>Thu, 08 Aug 2019 11:58:06 +0200</lastBuildDate><atom:link href="http://myself659.github.io/categories/python/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>安装与更新python</title>
-      <link>http://myself659.github.io/post/python37-install/</link>
-      <pubDate>Thu, 08 Aug 2019 11:58:06 +0200</pubDate>
-      
-      <guid>http://myself659.github.io/post/python37-install/</guid>
-      <description>说明 完全是为了记录自己的操作记录，换一台新机器真是免不了要装python。记录下来，便于以后操作。 apt-get安装 1 2 3 4 5 6 7 8 apt update apt install</description>
-    </item>
-    
-    <item>
-      <title>安装与更新python</title>
       <link>http://myself659.github.io/post/python/python37-install/</link>
       <pubDate>Thu, 08 Aug 2019 11:58:06 +0200</pubDate>
       
