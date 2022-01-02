@@ -451,6 +451,15 @@
     </item>
     
     <item>
+      <title>安装与更新python</title>
+      <link>http://myself659.github.io/post/python/python37-install/</link>
+      <pubDate>Thu, 08 Aug 2019 11:58:06 +0200</pubDate>
+      
+      <guid>http://myself659.github.io/post/python/python37-install/</guid>
+      <description>说明 完全是为了记录自己的操作记录，换一台新机器真是免不了要装python。记录下来，便于以后操作。 apt-get安装 1 2 3 4 5 6 7 8 apt update apt install</description>
+    </item>
+    
+    <item>
       <title>加密货币市场常用跟踪指标</title>
       <link>http://myself659.github.io/post/blockchain/blockchain-index-predict/</link>
       <pubDate>Mon, 08 Jul 2019 11:58:06 +0200</pubDate>
@@ -551,10 +560,10 @@
     
     <item>
       <title>The popular python packages you should know</title>
-      <link>http://myself659.github.io/post/python-packages/</link>
+      <link>http://myself659.github.io/post/python/python-packages/</link>
       <pubDate>Sat, 09 Feb 2019 11:58:06 +0200</pubDate>
       
-      <guid>http://myself659.github.io/post/python-packages/</guid>
+      <guid>http://myself659.github.io/post/python/python-packages/</guid>
       <description>Life is short, I use Python. I try to summary the popular python packages as follows: Number and Math sympy Sage numbers math cmath decimal fractions random statistics Data and statistics Matplotlib seaborn numpy pandas plotly Web Development Django FastAPI GUI pyqt PySimpleGUI automation script pathlib os Machine Learning TensorFlow Scikit OpenCV streamlit Web Scraping and Web Automation Requests Beautiful Soup Scrapy Selenium 欢迎关注 欢迎关</description>
     </item>
     
@@ -564,7 +573,7 @@
       <pubDate>Fri, 08 Feb 2019 11:58:06 +0200</pubDate>
       
       <guid>http://myself659.github.io/post/vscode-tips/</guid>
-      <description>配置 进入配置 文件-&amp;gt; 首选项 -&amp;gt;配置 点击右上边的文件图标，进入打开设置（打开配置文件C:\Users\IA\AppData\Roa</description>
+      <description>安装 1 brew install visual-studio-code 配置 进入配置 文件-&amp;gt; 首选项 -&amp;gt;配置 点击右上边的文件图标，进入打开设置（打开配置文件C:\Users\IA\AppDa</description>
     </item>
     
     <item>
@@ -1419,7 +1428,7 @@
       <pubDate>Mon, 18 May 2015 21:49:20 +0200</pubDate>
       
       <guid>http://myself659.github.io/about/</guid>
-      <description>个人说明 沉风 伪Geek，数字游民，野生程序员 Minimalist，Essentialist， Lifelong Learner，Pragmaticist 玩过嵌</description>
+      <description>个人说明 沉风 伪Geek，数字游民，野生程序员 Minimalist，Essentialist，Pragmaticist，Lifelong Learner 玩过</description>
     </item>
     
     <item>
