@@ -2,6 +2,55 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://myself659.github.io/categories/</loc>
+    <lastmod>2022-02-11T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://myself659.github.io/post/</loc>
+    <lastmod>2022-02-11T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://myself659.github.io/tags/</loc>
+    <lastmod>2022-02-11T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://myself659.github.io/tags/thinking/</loc>
+    <lastmod>2022-02-11T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://myself659.github.io/categories/thinking/</loc>
+    <lastmod>2022-02-11T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://myself659.github.io/post/rt/chances-from-what-problem/</loc>
+    <lastmod>2022-02-11T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://myself659.github.io/</loc>
+    <lastmod>2022-02-11T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>http://myself659.github.io/tags/blockchain/</loc>
     <lastmod>2021-08-16T11:58:06+02:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -16,13 +65,6 @@
   </url>
   
   <url>
-    <loc>http://myself659.github.io/categories/</loc>
-    <lastmod>2021-08-16T11:58:06+02:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>http://myself659.github.io/tags/dex/</loc>
     <lastmod>2021-08-16T11:58:06+02:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -30,28 +72,7 @@
   </url>
   
   <url>
-    <loc>http://myself659.github.io/post/</loc>
-    <lastmod>2021-08-16T11:58:06+02:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://myself659.github.io/tags/</loc>
-    <lastmod>2021-08-16T11:58:06+02:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>http://myself659.github.io/post/blockchain/uniswap-impermanent-loss-formula/</loc>
-    <lastmod>2021-08-16T11:58:06+02:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://myself659.github.io/</loc>
     <lastmod>2021-08-16T11:58:06+02:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
