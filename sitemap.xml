@@ -254,7 +254,7 @@
   </url>
   
   <url>
-    <loc>http://myself659.github.io/post/blockchain/invest-mistakes/</loc>
+    <loc>http://myself659.github.io/post/blockchain/tips-for-crypto-invest/</loc>
     <lastmod>2020-12-08T11:58:06+02:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -1710,6 +1710,13 @@
   </url>
   
   <url>
+    <loc>http://myself659.github.io/post/mac/mac-m1-install-ffmpeg/</loc>
+    <lastmod>2015-05-24T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>http://myself659.github.io/post/c-codereivew/</loc>
     <lastmod>2015-05-24T11:58:06+02:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -1718,6 +1725,20 @@
   
   <url>
     <loc>http://myself659.github.io/post/linux/2015-05-24-linux-perf-thought/</loc>
+    <lastmod>2015-05-24T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://myself659.github.io/tags/mac/</loc>
+    <lastmod>2015-05-24T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://myself659.github.io/categories/mac/</loc>
     <lastmod>2015-05-24T11:58:06+02:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>

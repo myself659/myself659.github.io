@@ -128,10 +128,10 @@
     
     <item>
       <title>加密货币新手应该注意哪些问题</title>
-      <link>http://myself659.github.io/post/blockchain/invest-mistakes/</link>
+      <link>http://myself659.github.io/post/blockchain/tips-for-crypto-invest/</link>
       <pubDate>Tue, 08 Dec 2020 11:58:06 +0200</pubDate>
       
-      <guid>http://myself659.github.io/post/blockchain/invest-mistakes/</guid>
+      <guid>http://myself659.github.io/post/blockchain/tips-for-crypto-invest/</guid>
       <description>背景 随着eth 2.0信标链启动以及defi的快速发展，加密货币会迎来一个新的牛市。在牛市开启之后，一定有很多新人进场。 作为一名老韭菜，简单说</description>
     </item>
     
@@ -1375,6 +1375,15 @@
       
       <guid>http://myself659.github.io/post/linux/2015-06-01-linux-may-sleep-function/</guid>
       <description>在linux内核开发中断处理函数不能调用可能导致睡眠的函数，下面总结linux内核可能引起睡眠的函数如下： schedule函数 schedule_timeout schedule_timeout_uninterruptible schedule_timeout_interruptible cond_resched might_resched sl</description>
+    </item>
+    
+    <item>
+      <title>compile and install ffmpeg on MacbookPro2021</title>
+      <link>http://myself659.github.io/post/mac/mac-m1-install-ffmpeg/</link>
+      <pubDate>Sun, 24 May 2015 11:58:06 +0200</pubDate>
+      
+      <guid>http://myself659.github.io/post/mac/mac-m1-install-ffmpeg/</guid>
+      <description>install macports update macports 1 2  sudo port selfupdate sudo port upgrade outdated   install ffmpeg 1  sudo port install ffmpeg   1  ffmpeg     </description>
     </item>
     
     <item>
