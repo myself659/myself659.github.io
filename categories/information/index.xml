@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Information on 沉风网事</title>
+    <link>http://myself659.github.io/categories/information/</link>
+    <description>Recent content in Information on 沉风网事</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <copyright>沉风网事</copyright>
+    <lastBuildDate>Wed, 29 Aug 2018 11:58:06 +0200</lastBuildDate><atom:link href="http://myself659.github.io/categories/information/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>twitter搜索Tips</title>
+      <link>http://myself659.github.io/post/twitter%E6%90%9C%E7%B4%A2%E6%8A%80%E5%B7%A7/</link>
+      <pubDate>Wed, 29 Aug 2018 11:58:06 +0200</pubDate>
+      
+      <guid>http://myself659.github.io/post/twitter%E6%90%9C%E7%B4%A2%E6%8A%80%E5%B7%A7/</guid>
+      <description>背景 搜索是我找信息主要来源。twitter上有很多高质量的内容，那么如何查找这些内容以及如何高效快速准确找到这些内容呢？ 搜索入口 twitte</description>
+    </item>
+    
+  </channel>
+</rss>

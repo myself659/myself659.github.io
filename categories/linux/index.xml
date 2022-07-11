@@ -55,19 +55,19 @@
     
     <item>
       <title>docker image命令实践</title>
-      <link>http://myself659.github.io/post/2016-01-28-docker-cmd-pratice/</link>
+      <link>http://myself659.github.io/post/k8s/2016-01-28-docker-cmd-pratice/</link>
       <pubDate>Thu, 28 Jan 2016 11:58:06 +0200</pubDate>
       
-      <guid>http://myself659.github.io/post/2016-01-28-docker-cmd-pratice/</guid>
+      <guid>http://myself659.github.io/post/k8s/2016-01-28-docker-cmd-pratice/</guid>
       <description>搭建了docker环境，就来体验一下Docker，常用docker image命令如下： 1. 搜索docker image 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17</description>
     </item>
     
     <item>
       <title>升级Linux内核，搭建docker环境</title>
-      <link>http://myself659.github.io/post/2015-12-13-docker-way-1-build-docker-env/</link>
+      <link>http://myself659.github.io/post/k8s/2015-12-13-docker-way-1-build-docker-env/</link>
       <pubDate>Sun, 13 Dec 2015 11:58:06 +0200</pubDate>
       
-      <guid>http://myself659.github.io/post/2015-12-13-docker-way-1-build-docker-env/</guid>
+      <guid>http://myself659.github.io/post/k8s/2015-12-13-docker-way-1-build-docker-env/</guid>
       <description>docker可以说是去年最热的技术，也是业界大谈特谈的技术，到了今年有很多公司已经将docker应用于自己的生产环境。Docker已经从一个</description>
     </item>
     
