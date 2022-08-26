@@ -514,6 +514,15 @@
     </item>
     
     <item>
+      <title>gcloud auth login from mainland in china</title>
+      <link>http://myself659.github.io/post/k8s/gcloud-login-from-china/</link>
+      <pubDate>Wed, 08 May 2019 11:58:06 +0200</pubDate>
+      
+      <guid>http://myself659.github.io/post/k8s/gcloud-login-from-china/</guid>
+      <description>backgroud 最近使用了google cloud，所以打算试一下通过gcloud auth login登陆远程主机。 prerequisites 科学上网的通道 terminal配置代理 config gcp proxy for</description>
+    </item>
+    
+    <item>
       <title>关于zoom的一些思考与看法</title>
       <link>http://myself659.github.io/post/about-zoom/</link>
       <pubDate>Sun, 28 Apr 2019 11:58:06 +0200</pubDate>
@@ -1465,6 +1474,15 @@
       
       <guid>http://myself659.github.io/post/k8s-githubaction/</guid>
       <description>banner = &amp;quot;&amp;quot; categories = [&amp;ldquo;Kubernetes&amp;rdquo;] date = &amp;ldquo;2020-10-17T11:58:06+02:00&amp;rdquo; description = &amp;quot;&amp;quot; images = [] menu = &amp;quot;&amp;quot; tags = [&amp;ldquo;Docker&amp;rdquo;, &amp;ldquo;Kubernetes&amp;rdquo;] title = &amp;ldquo;利用github action部署到k8s集群&amp;rdquo; draft = true +++ 目标 个人开发</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://myself659.github.io/post/project/project-evmarb-bnb/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://myself659.github.io/post/project/project-evmarb-bnb/</guid>
+      <description>投入 1.72个BNB (0.02个合约部署费用) dex fstswap Factory 0x9A272d734c5a0d7d84E0a892e891a553e8066dce Route 0x1B6C9c20693afDE803B27F8782156c0f892ABC2d function swap( uint256 amount0Out, uint256 amount1Out, address to, bytes calldata data ) external lock 千三手续费 https://bscscan.com/address/0x9A272d734c5a0d7d84E0a892e891a553e8066dce https://bscscan.com/tx/0x17e5e74645e7a722c2d7053a979eed48c7d10e77199764584be0605a24d91dd5 半年时间将交易所做起来了 https://benpaodewoniu.github.io/categories/%E9%A1%B9%E7%9B%AE%E7%BB%8F%E5%8E%86/%E5%A4%A7%E5%9E%8B/tomoon/%E9%87%8F%E5%8C%96%E7%B3%BB%E7%BB%9F/%E7%AD%96%E7%95%A5/flashswap/ https://benpaodewoniu.github.io/2022/07/17/defi39/ cex2de</description>
     </item>
     
     <item>

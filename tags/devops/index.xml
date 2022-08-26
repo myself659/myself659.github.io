@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>devops on 沉风网事</title>
+    <link>http://myself659.github.io/tags/devops/</link>
+    <description>Recent content in devops on 沉风网事</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <copyright>沉风网事</copyright>
+    <lastBuildDate>Wed, 08 May 2019 11:58:06 +0200</lastBuildDate><atom:link href="http://myself659.github.io/tags/devops/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>gcloud auth login from mainland in china</title>
+      <link>http://myself659.github.io/post/k8s/gcloud-login-from-china/</link>
+      <pubDate>Wed, 08 May 2019 11:58:06 +0200</pubDate>
+      
+      <guid>http://myself659.github.io/post/k8s/gcloud-login-from-china/</guid>
+      <description>backgroud 最近使用了google cloud，所以打算试一下通过gcloud auth login登陆远程主机。 prerequisites 科学上网的通道 terminal配置代理 config gcp proxy for</description>
+    </item>
+    
+  </channel>
+</rss>
