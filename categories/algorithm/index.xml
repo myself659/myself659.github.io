@@ -26,5 +26,14 @@
       <description>题目 leetcode-53. Maximum Subarray 类似： leetcode-152. Maximum Product Subarray 要点是记录当前最大值，与最小值。 计算当前最值有三种可能： 当前值 前一个最大值与当前值之积 前一个最小值与当前值之积 从这三</description>
     </item>
     
+    <item>
+      <title>DFS与BFS适用场景</title>
+      <link>http://myself659.github.io/post/dsa/dfs-vs-bfs/</link>
+      <pubDate>Wed, 23 Aug 2017 11:58:06 +0200</pubDate>
+      
+      <guid>http://myself659.github.io/post/dsa/dfs-vs-bfs/</guid>
+      <description>背景 Depth-First-Search(DFS)深度优先搜索与Breadth-First Search(BFS)广度优先搜索是树与图中最常用</description>
+    </item>
+    
   </channel>
 </rss>

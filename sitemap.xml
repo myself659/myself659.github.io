@@ -1521,6 +1521,27 @@
   </url>
   
   <url>
+    <loc>http://myself659.github.io/tags/algorithm/</loc>
+    <lastmod>2017-08-23T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://myself659.github.io/post/dsa/dfs-vs-bfs/</loc>
+    <lastmod>2017-08-23T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://myself659.github.io/tags/graph/</loc>
+    <lastmod>2017-08-23T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>http://myself659.github.io/post/2017-08-22-ethereum-cannot-getsolidity/</loc>
     <lastmod>2017-08-22T11:58:06+02:00</lastmod>
     <changefreq>weekly</changefreq>

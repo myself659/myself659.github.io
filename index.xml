@@ -1117,6 +1117,15 @@
     </item>
     
     <item>
+      <title>DFS与BFS适用场景</title>
+      <link>http://myself659.github.io/post/dsa/dfs-vs-bfs/</link>
+      <pubDate>Wed, 23 Aug 2017 11:58:06 +0200</pubDate>
+      
+      <guid>http://myself659.github.io/post/dsa/dfs-vs-bfs/</guid>
+      <description>背景 Depth-First-Search(DFS)深度优先搜索与Breadth-First Search(BFS)广度优先搜索是树与图中最常用</description>
+    </item>
+    
+    <item>
       <title>以太坊开发环境问题记录</title>
       <link>http://myself659.github.io/post/2017-08-22-ethereum-cannot-getsolidity/</link>
       <pubDate>Tue, 22 Aug 2017 11:58:06 +0200</pubDate>
