@@ -18,6 +18,15 @@
     </item>
     
     <item>
+      <title>tips for learning rust</title>
+      <link>http://myself659.github.io/post/rust/tips-learn-rust/</link>
+      <pubDate>Wed, 08 Sep 2021 11:58:06 +0200</pubDate>
+      
+      <guid>http://myself659.github.io/post/rust/tips-learn-rust/</guid>
+      <description>资料 The Rust Programming Language Rust Language Cheat Sheet Zero to Production in Rust This Week in Rust awesome-rust awesome-cli-rust tools and libaries cargo-asm A cargo subcommand that displays the generated assembly of Rust source code. cargo-fuzz A cargo subcommand for fuzzing with libFuzzer hyperfine A command-line benchmarking tool flamegraph sqlx yarte opentelemetry thiserror rust-clippy 心法 保持耐心，不要心急，毕竟</description>
+    </item>
+    
+    <item>
       <title>uniswap的非永久性损失公式的推导</title>
       <link>http://myself659.github.io/post/blockchain/uniswap-impermanent-loss-formula/</link>
       <pubDate>Mon, 16 Aug 2021 11:58:06 +0200</pubDate>
@@ -70,6 +79,15 @@
       <guid>http://myself659.github.io/post/blockchain/nft-naval/</guid>
       <description>NFT is blooming. Naval&amp;rsquo;s insightful viewpoints about NFTs as follow:
  An NFT is a unique, on-chain token representing ownership of an off-chain asset. The token is backed by a social contract from its creator and a surrounding community. By assigning a unique token to a thing, its ownership (not the thing itself!) becomes programmable, verifiable, divisible, durable, universally addressable, composable, digitally secured, and easy to transfer. Bitcoin and other completely on-chain assets are provably scarce - scarcity is enforced by code and distributed consensus.</description>
+    </item>
+    
+    <item>
+      <title>套利的本质</title>
+      <link>http://myself659.github.io/post/economy/the-essence-of-arbitrage/</link>
+      <pubDate>Fri, 12 Mar 2021 11:58:06 +0200</pubDate>
+      
+      <guid>http://myself659.github.io/post/economy/the-essence-of-arbitrage/</guid>
+      <description>套利大行其道，那么套利是什么？ 下面这张图是一个活生生的套利案例。 套利的本质是什么？ 套利的本质是利用非对称获利 套利的竞争是发现非对称机会以及利</description>
     </item>
     
     <item>
@@ -758,10 +776,10 @@
     
     <item>
       <title>《原则》作者瑞·达利欧烧脑大作(1): 经济机器是怎样运行的</title>
-      <link>http://myself659.github.io/post/ecomony-machine/</link>
+      <link>http://myself659.github.io/post/economy/ecomony-machine/</link>
       <pubDate>Thu, 05 Jul 2018 11:58:06 +0200</pubDate>
       
-      <guid>http://myself659.github.io/post/ecomony-machine/</guid>
+      <guid>http://myself659.github.io/post/economy/ecomony-machine/</guid>
       <description>说明 本文的语音与视频版本如下： 经济机器是怎样运行的(语音+文字版) 经济机器是怎样运行的 (时长30分钟) Ray Dalio 关于作者 原文作者瑞·达利欧，为著名</description>
     </item>
     
@@ -825,7 +843,7 @@
       <pubDate>Fri, 11 May 2018 11:58:06 +0200</pubDate>
       
       <guid>http://myself659.github.io/post/arch/software-engineering-great-quotes/</guid>
-      <description>Programming “A good programmer is someone who always looks both ways before crossing a one-way street” — 𝔻𝕠𝕦𝕘 𝕃𝕚𝕟𝕕𝕖𝕣 “Any code of your own that you haven’t looked at for six or more months might as well have been written by someone else</description>
+      <description>Programming “The moment you have to peek and dive into implementation details to understand how to compose it with other object. You’ve lost advantage of your programming paradigm.” — Barotz Milewski &amp;ldquo;Controlling complexity is the essence of computer programming.&amp;rdquo; — Brian Wilson Kernighan “A good programmer is someone who always looks both</description>
     </item>
     
     <item>
@@ -1478,15 +1496,6 @@
     
     <item>
       <title></title>
-      <link>http://myself659.github.io/post/economic-recession/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://myself659.github.io/post/economic-recession/</guid>
-      <description>参考 1.How to Prepare for a Recession</description>
-    </item>
-    
-    <item>
-      <title></title>
       <link>http://myself659.github.io/post/internet/2017-02-04-country-internet-music/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -1501,6 +1510,15 @@
       
       <guid>http://myself659.github.io/post/k8s-githubaction/</guid>
       <description>banner = &amp;quot;&amp;quot; categories = [&amp;ldquo;Kubernetes&amp;rdquo;] date = &amp;ldquo;2020-10-17T11:58:06+02:00&amp;rdquo; description = &amp;quot;&amp;quot; images = [] menu = &amp;quot;&amp;quot; tags = [&amp;ldquo;Docker&amp;rdquo;, &amp;ldquo;Kubernetes&amp;rdquo;] title = &amp;ldquo;利用github action部署到k8s集群&amp;rdquo; draft = true +++ 目标 个人开发</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://myself659.github.io/post/project/evmarb-ethgo/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://myself659.github.io/post/project/evmarb-ethgo/</guid>
+      <description>banner = &amp;quot;&amp;quot; categories = [&amp;ldquo;Project&amp;rdquo;] date = &amp;ldquo;2021-01-08T11:58:06+02:00&amp;rdquo; description = &amp;quot;&amp;quot; images = [] menu = &amp;quot;&amp;quot; tags = [&amp;ldquo;Project&amp;rdquo;] title = &amp;quot;&amp;quot; draft = true +++ 目标 golang 优化性能 重构代码优化代码 并发优势 参考</description>
     </item>
     
     <item>
