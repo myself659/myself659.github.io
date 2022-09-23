@@ -921,12 +921,12 @@ window.store = {
     
     
     
-    "http:\/\/myself659.github.io\/post\/%E5%85%B3%E4%BA%8E%E5%8C%BA%E5%9D%97%E9%93%BE%E5%85%B1%E8%AF%86%E7%9A%84%E4%B8%80%E4%BA%9B%E6%80%9D%E8%80%83\/": {
+    "http:\/\/myself659.github.io\/post\/blockchain\/%E5%85%B3%E4%BA%8E%E5%8C%BA%E5%9D%97%E9%93%BE%E5%85%B1%E8%AF%86%E7%9A%84%E4%B8%80%E4%BA%9B%E6%80%9D%E8%80%83\/": {
         
         "title": "关于区块链共识的一些思考",
         "tags": ["Distributed","BlockChain",],
         "content": "说明 前面写一篇关于分布式系统的文章，但是没有考虑拜占庭问题，所以聊聊区块链共识技术，在这个过程看看比特币是如何解决拜占庭问题和共识问题。\n定义 区块链是什么？这个问题有太多的回答。\n 区块链是一个由全体联网节点共同维护并持有同一账本的分布式数据库，它通过算法来达成共识，在无需信任的各节点中构建一个无单一故障点或控制点的去中心化可信系统\n 所以在技术上区块链的本质是分布式帐本技术(DLT)。\n重要性 Why Decentralization Matters这篇文章从互联网发展历程与面临问题说明去中心化重要性。\n去中心化重要性来自去中心化带来的影响与作用，具体如下：\n 去中心化可以降低垄断的可能性，是一种对抗垄断的重要方式 去中心化提供高可用性 去中心化对抗DDos 去中心化可以让人人参与，权力下放 去中心化是让数据归还用户，保护隐私的重要技术手段之一 去中心化消除中间环节，提高效率 去中心化与中心化并不是对立，可以相互补充 去中心化能够解决中心化无法解决的问题，如微信流控算法，并没有采用全局，而由节点根据延迟参数调整，另外是5G带来的高速传输与海量数据需要去中心化来来解决  去中心化解决问题  提供全球开放的分布式数据 提供不可更改的数据库 提供trustless的基础设施 基于以上三点的业务的需求  思考模型 如同前面的分布式系统一样，对于公链（去中心化系统）问题，也可以分为以下几个子问题：\n 在什么环境下？ 有哪些节点参与？ 通过什么样的共识算法？ 使什么业务？ 达成什么样的容错要求？  总结一句话：在什么环境下，有哪些节点参与，通过什么样的共识算法，使什么业务达成什么样的容错要求。\n下面就这五个问题展开说明。\n环境 大部分去中心化系统的环境要点如下：\n 异步网络模型 网络结构是P2P网络 网络传输是不可靠的 系统异常是常态 并发 缺少全局时钟  (Ps:这里不展开说明了，谈谈对分布式系统的一些思考)\n节点 节点准入方面  节点自由加入与退出 节点需要通过PoW测试才能加入 节点需要PoS持仓才能加入 节点需要质押才能加入  节点角色  节点平等，无角色任何差异如比特币 节点分为超级节点，见证节点如EOS  节点数量  不限数量，如比特币，以太坊 指定数量，如EOS指定为21，steemit指定数量为11  节点可信  存在不可信的作恶节点 可信节点（算力）一定多于作恶节点（算力）  节点配置  机器性能波动大 网络带宽波动大 节点分布在全球各地 节点配置不受控 节点之间差异大如算力，POS投票权重  节点经济原则  99.99%以上节点是趋利 节点受激励引导 节点受惩罚限制 节点之间存在博弈与竞争 节点不会作出投入成本大于产出收益的选择  共识算法 一定要摆脱传统分布式思想的限制。要在经济，竞争，博弈，协议等多方面有效结合。\n从上图可以看出，传统分布式共识算法在整个共识里面只占很小一部分。 共识算法是区块链技术上的核心。\n不得不说，PoW是另一种形式实现拜占庭容错，是比特币最大的亮点。\n属性 一个科学共识算法必须同时满足以下四个属性：\n Agreement Validity Integrity Termination  这四个属性从四个方面规范共识算法的要求，也为我们提供分析共识算法四个不同的视角。\nAgreement  Every correct process must agree on the same value.\n 这是实现一致性必须要做到的要求：每个节点必须达成一致。 bitcoin通过以下几点实现该属性，具体如下：\n 在选主方面选择最强算力原则，保证具体高度的区块的一致性（以最快算出的为准） 在链分叉情况下选择最长链，解决网络分化等原因可能出现的分叉问题  Validity  If all the correct processes proposed the same value v, then any correct process must decide v.\n Validity是为了防止这种情况的出现：一些节点无论提议什么值，本节点一直提交NULL。在bitcoin这种行为可以理解为自私挖矿行为。\nbitcoin通过以下几点实现该属性，具体如下：\n 算力不可复制 随机性加大自私挖矿的成本 最长链确认由各节点自行确认 时间戳确认  Integrity  No Node decides twice.\n 保证共识得到一致性不可逆，不可被修改。那么在这成共识过程中有许多操作需要进行限制。 bitcoin通过以下几点实现该属性，具体如下：\n 链式结构 算力要求 难度提升 多节点竞争  Termination  Eventually, every correct process decides some value.\n Termination是一个liveness属性，bitcoin通过以下几点实现该属性，具体如下：\n 通过激励吸引大量节点参与，保证有节点来完成出块 出块时间周期设置10分钟  业务 去中心化带来业务的形态的变化，现列举部分业务如下：\n 去中心化交易所 去中心化网络平台 去中心化计算平台 去中心化存储 去中心化CDN 去中心化数字货币 去中心化协议 去中心化跨链 去中心化金融科技DeFi 去中心化通信  容错要求 对于去中心化系统，对应的容错要求是DCS定理。\nDCS定理 如同CAP定理一样，DCS定理是指在一个公有链系统中不可能同时满足以下三个条件：去中心化（Decentralized）、一致性（Consistency）和可扩展性（Scale）。\n去中心化 去中心化是指任意节点可以加入与退出，整个网络不受任何人控制。\n一致性 与上面CAP的一致性类似，不过应用中更加偏重安全如防范双花攻击。\n可扩展性 可扩展性是指TPS能够实现提高。\n关于DCS这三者之间的tradeoff，更多参考The DCS Triangle\n小结 区块链的共识现在还处于探索阶段，并不像分布式系统共识（不考虑拜占庭问题）已经成熟。区块链的共识在不断探索与发展中，未来会有更多的新型共识出来。\n参考  Why Decentralization Matters The DCS Triangle SoK: Consensus in the age of blockchains DAGOR：微信微服务过载控制系统 A Brief Tour of FLP Impossibility Agreement with Satoshi – On the Formalization of Nakamoto Consensus Yuval Noah Harari: Why fascism is so tempting and how your data could power it | TED Talk Tech C.E.O.s Are in Love With Their Principal Doomsayer 谈谈对分布式系统的一些思考 Algorand’s Instant Consensus Protocol 区块链到底有什么了不起 BitTorrent 公有链的基本挑战 Blockchains don’t scale. Not today, at least. But there’s hope. Consensus Protocols of Distributed Ledger Technology  ", 
-        "url": "http:\/\/myself659.github.io\/post\/%E5%85%B3%E4%BA%8E%E5%8C%BA%E5%9D%97%E9%93%BE%E5%85%B1%E8%AF%86%E7%9A%84%E4%B8%80%E4%BA%9B%E6%80%9D%E8%80%83\/"
+        "url": "http:\/\/myself659.github.io\/post\/blockchain\/%E5%85%B3%E4%BA%8E%E5%8C%BA%E5%9D%97%E9%93%BE%E5%85%B1%E8%AF%86%E7%9A%84%E4%B8%80%E4%BA%9B%E6%80%9D%E8%80%83\/"
     },
     
     
@@ -1211,12 +1211,12 @@ window.store = {
     
     
     
-    "http:\/\/myself659.github.io\/post\/%E7%9F%BF%E5%B7%A5%E4%BA%94%E5%AE%97%E7%BD%AA\/": {
+    "http:\/\/myself659.github.io\/post\/blockchain\/%E7%9F%BF%E5%B7%A5%E4%BA%94%E5%AE%97%E7%BD%AA\/": {
         
         "title": "矿工五宗罪",
         "tags": ["BlockChain","bitcoin",],
         "content": "比特币生态 比特币生态有以下几个角色：\n 比特币核心开发者，他们开发与更新比特币技术, 负责开发与维护代码 矿工们，运行区块链技术与算力保证，负责执行代码 交易所，比特币网络的IO,为整个网络的运行提供外部价值的IO  其中矿工有以下五宗罪，具体如下：\nIFO帮凶 从BCH开始，一时间多少IFO兴起，任何一个IFO背后都有矿工的支持。\n自私挖矿 这是矿工之间的作恶。\n滥用打包权 此路是我开，要想过此路，留下买路财。 表现如下：\n 某矿池提供的交易加速器服务 明明可以打包1000条交易，实际只打一个交易  竞价排名 这个争议如同百度的竞价排名。\n算力集中与垄断 用图说话，前五位矿池的算力超过了51%。 小结 虽然比特币的生态系统有这些bug，也不能否认矿工的在比特币生态中的作用， 如同社会中在保证劳者有所，得能者多得。\n参考  全球算力分布   ", 
-        "url": "http:\/\/myself659.github.io\/post\/%E7%9F%BF%E5%B7%A5%E4%BA%94%E5%AE%97%E7%BD%AA\/"
+        "url": "http:\/\/myself659.github.io\/post\/blockchain\/%E7%9F%BF%E5%B7%A5%E4%BA%94%E5%AE%97%E7%BD%AA\/"
     },
     
     
@@ -1281,12 +1281,12 @@ window.store = {
     
     
     
-    "http:\/\/myself659.github.io\/post\/%E4%BB%8E%E8%B4%A7%E5%B8%81%E8%A7%92%E5%BA%A6%E7%9C%8B%E6%AF%94%E7%89%B9%E5%B8%81\/": {
+    "http:\/\/myself659.github.io\/post\/blockchain\/%E4%BB%8E%E8%B4%A7%E5%B8%81%E8%A7%92%E5%BA%A6%E7%9C%8B%E6%AF%94%E7%89%B9%E5%B8%81\/": {
         
         "title": "从货币的角度看比特币",
         "tags": ["BlockChain","Bitcoin",],
         "content": "说明 本文采用对比思维来比较货币与比特币。\n整个内容通过问答的方式进行。\n货币 问题：为什么需要货币？  在国内充当交易等价物 解决国际贸易中不同种类的货币如何相互兑换的问题 因为信贷的需要  问题：谁可以发行货币？ 各国央行（美国对应是美联储）。这里先必须强调，央行唯一发行的单位。\n问题：央行发行货币的方式有哪些？ 以中国为例，央行发行货币有以下三种方式：\n 向商业银行提供货款 以本国法币兑换挣回来的外汇 向政府或者国有企业等单位提供借款  问题：货币的发行量怎么确定？ 具体理论模型： M = PQ/V\n其中M指流通中所需货币量（通货量） 其中P指商品的平均价格 其中Q指商品数量 其中V指货币流通速度（以货币周转次数计）\n如何设定于P,Q,V的值取决于政策与策略，反正是一件很复杂的事情。\n这里举两个乱发货币的典型（过于超发货币，是自寻死路，会造成信用破产）：\n 国共内战的国民党 津巴布韦  货币发行控制权在央行手中。\n问题：货币发行以什么作为背书？ 国家实力，无论是早期的英镑还是现在的美元。\n比特币 问题：为什么需要比特币？ 存在即合理。比特币的一些特性满足市场的需求。\n问题：谁可以发行比特币？ 在比特币被挖完之前，通过竞争，成功获取记帐权的矿工可以发行比特币。\n问题：发行比特币的方式有哪些？ 总量设定，通过挖矿定时释放的方式。整个发行控制权由代码控制，外人一般无法更改。\n问题：比特币的发行量怎么确定？ 比特币总量2100万。更多参考Controlled supply\n问题：比特币以什么作为背书？ 比特币背后的区块链技术及其支持区块链技术运行且保证整个比特币系统安全的算力。\n问题：比特币是货币吗？ 不是。从功能上看有部分货币的功能，在法律上看肯定不是，没有国家背书，从应用上看，价格不稳定，没有建立起（比特）币本位的大量共识，价格还是以各国法币来计算，所以把比特币作为数字黄金。\nPS: 初学经济学，有不足与错误敬请指正。\n参考  《货币的非国家化》  (End)\n欢迎关注 欢迎关注微信公众帐号：沉风网事(savewind)\n", 
-        "url": "http:\/\/myself659.github.io\/post\/%E4%BB%8E%E8%B4%A7%E5%B8%81%E8%A7%92%E5%BA%A6%E7%9C%8B%E6%AF%94%E7%89%B9%E5%B8%81\/"
+        "url": "http:\/\/myself659.github.io\/post\/blockchain\/%E4%BB%8E%E8%B4%A7%E5%B8%81%E8%A7%92%E5%BA%A6%E7%9C%8B%E6%AF%94%E7%89%B9%E5%B8%81\/"
     },
     
     
@@ -1351,12 +1351,12 @@ window.store = {
     
     
     
-    "http:\/\/myself659.github.io\/post\/%E6%AF%94%E7%89%B9%E5%B8%81%E5%8F%8A%E8%8E%B1%E7%89%B9%E5%B8%81%E8%8A%82%E7%82%B9%E8%BF%9E%E6%8E%A5%E5%A4%B1%E8%B4%A5%E5%A4%84%E7%90%86\/": {
+    "http:\/\/myself659.github.io\/post\/blockchain\/%E6%AF%94%E7%89%B9%E5%B8%81%E5%8F%8A%E8%8E%B1%E7%89%B9%E5%B8%81%E8%8A%82%E7%82%B9%E8%BF%9E%E6%8E%A5%E5%A4%B1%E8%B4%A5%E5%A4%84%E7%90%86\/": {
         
         "title": "比特币及莱特币节点连接失败处理",
         "tags": ["BlockChain",],
         "content": "问题描述 节点进程起来后，同其他的节点连接失败。\n1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31  2017-11-14 08:03:36 connect() to 104.236.211.206:19335 failed after select(): Connection refused (111) 2017-11-14 08:03:37 connect() to 66.178.182.35:19335 failed after select(): Connection refused (111) 2017-11-14 08:03:38 connect() to 104.236.211.206:19335 failed after select(): Connection refused (111) 2017-11-14 08:03:39 connect() to 66.178.182.35:19335 failed after select(): Connection refused (111) 2017-11-14 08:03:40 connect() to 104.236.211.206:19335 failed after select(): Connection refused (111) 2017-11-14 08:03:41 connect() to 104.236.211.206:19335 failed after select(): Connection refused (111) 2017-11-14 08:03:42 connect() to 66.178.182.35:19335 failed after select(): Connection refused (111) 2017-11-14 08:03:43 connect() to 66.178.182.35:19335 failed after select(): Connection refused (111) 2017-11-14 08:03:44 connect() to 66.178.182.35:19335 failed after select(): Connection refused (111) 2017-11-14 08:03:44 connect() to 66.178.182.35:19335 failed after select(): Connection refused (111) 2017-11-14 08:03:45 connect() to 104.236.211.206:19335 failed after select(): Connection refused (111) 2017-11-14 08:03:46 connect() to 104.236.211.206:19335 failed after select(): Connection refused (111) 2017-11-14 08:03:47 connect() to 104.236.211.206:19335 failed after select(): Connection refused (111) 2017-11-14 08:03:48 connect() to 66.178.182.35:19335 failed after select(): Connection refused (111) 2017-11-14 08:03:49 connect() to 104.236.211.206:19335 failed after select(): Connection refused (111) 2017-11-14 08:03:50 connect() to 66.178.182.35:19335 failed after select(): Connection refused (111) 2017-11-14 08:03:51 connect() to 104.236.211.206:19335 failed after select(): Connection refused (111) 2017-11-14 08:03:52 connect() to 104.236.211.206:19335 failed after select(): Connection refused (111) 2017-11-14 08:03:53 connect() to 104.236.211.206:19335 failed after select(): Connection refused (111) 2017-11-14 08:03:54 connect() to 104.236.211.206:19335 failed after select(): Connection refused (111) 2017-11-14 08:03:55 connect() to 66.178.182.35:19335 failed after select(): Connection refused (111) 2017-11-14 08:03:56 connect() to 66.178.182.35:19335 failed after select(): Connection refused (111) 2017-11-14 08:03:57 connect() to 66.178.182.35:19335 failed after select(): Connection refused (111) 2017-11-14 08:03:58 connect() to 104.236.211.206:19335 failed after select(): Connection refused (111) 2017-11-14 08:03:59 connect() to 104.236.211.206:19335 failed after select(): Connection refused (111) 2017-11-14 08:04:00 connect() to 66.178.182.35:19335 failed after select(): Connection refused (111) 2017-11-14 08:04:01 connect() to 104.236.211.206:19335 failed after select(): Connection refused (111) 2017-11-14 08:04:02 connect() to 66.178.182.35:19335 failed after select(): Connection refused (111) 2017-11-14 08:04:02 connect() to 66.178.182.35:19335 failed after select(): Connection refused (111) 2017-11-14 08:04:03 connect() to 66.178.182.35:19335 failed after select(): Connection refused (111) 2017-11-14 08:04:04 connect() to 66.178.182.35:19335 failed after select(): Connection refused (111)   这样导致比特币或者莱特币帐本不能同步到本地，同时交易也无法发出，节点无法工作。\n问题原因 问题原因直接是本地节点与其他节点建立TCP连接建立失败。连接建立失败的原因有很多种，这里列举如下：\n 对端拒绝连接，如建立连接太多 中间网络设备作NAT导致 网络报文遇到攻击与修改  由于这些原因都不是本节点的原因，属于外部不可控的因素，所以不能希望找到上面的具体原因来解决问题。\n解决办法 先了解一下bitcoin比特币节点之间如何建立连接。\n这里第一个遇到问题，这些需要连接的节点有哪些来源？\n 地址数据库peers.dat 用户指定地址 DNS查找 代码编码指定 其他节点的分享  了解这些，可以通过第2种方式来解决问题，在对应的bitcoin.conf文件中添加如下内容，指定一些已被验证的节点,具体如下：\n1 2 3 4 5  addnode=217.16.185.175 addnode=85.214.213.86 addnode=90.252.217.49 addnode=107.170.17.56 addnode=45.33.107.92   重启节点即可。\n（end）\n欢迎关注 欢迎关注微信公众帐号：沉风网事(savewind)\n", 
-        "url": "http:\/\/myself659.github.io\/post\/%E6%AF%94%E7%89%B9%E5%B8%81%E5%8F%8A%E8%8E%B1%E7%89%B9%E5%B8%81%E8%8A%82%E7%82%B9%E8%BF%9E%E6%8E%A5%E5%A4%B1%E8%B4%A5%E5%A4%84%E7%90%86\/"
+        "url": "http:\/\/myself659.github.io\/post\/blockchain\/%E6%AF%94%E7%89%B9%E5%B8%81%E5%8F%8A%E8%8E%B1%E7%89%B9%E5%B8%81%E8%8A%82%E7%82%B9%E8%BF%9E%E6%8E%A5%E5%A4%B1%E8%B4%A5%E5%A4%84%E7%90%86\/"
     },
     
     
@@ -1887,26 +1887,6 @@ window.store = {
         "tags": [],
         "content": "banner = \u0026quot;\u0026quot; categories = [\u0026ldquo;Kubernetes\u0026rdquo;] date = \u0026ldquo;2020-10-17T11:58:06+02:00\u0026rdquo; description = \u0026quot;\u0026quot; images = [] menu = \u0026quot;\u0026quot; tags = [\u0026ldquo;Docker\u0026rdquo;, \u0026ldquo;Kubernetes\u0026rdquo;] title = \u0026ldquo;利用github action部署到k8s集群\u0026rdquo; draft = true +++\n目标 个人开发项目软件工程实践。\n概念 先从静态开始\n列表  Cluster pods labels Replication Controllers services Nodes  vs gitlab https://docs.github.com/en/enterprise-server@2.22/actions/learn-github-actions/migrating-from-gitlab-cicd-to-github-actions\n参考  file:///E:/Docker/Using%20GitHub%20Actions%20to%20deploy%20to%20Kubernetes%20-%20Project%20A%20Insights.mht Using GitHub Actions to deploy to Kubernetes https://dotblogs.com.tw/explooosion/2020/10/09/143330 https://gianarb.it/blog/kubernetes-github-action  ", 
         "url": "http:\/\/myself659.github.io\/post\/k8s-githubaction\/"
-    },
-    
-    
-    
-    "http:\/\/myself659.github.io\/post\/project\/evmarb-ethgo\/": {
-        
-        "title": "",
-        "tags": [],
-        "content": "banner = \u0026quot;\u0026quot; categories = [\u0026ldquo;Project\u0026rdquo;] date = \u0026ldquo;2021-01-08T11:58:06+02:00\u0026rdquo; description = \u0026quot;\u0026quot; images = [] menu = \u0026quot;\u0026quot; tags = [\u0026ldquo;Project\u0026rdquo;] title = \u0026quot;\u0026quot; draft = true +++\n目标  golang 优化性能 重构代码优化代码 并发优势  参考    ", 
-        "url": "http:\/\/myself659.github.io\/post\/project\/evmarb-ethgo\/"
-    },
-    
-    
-    
-    "http:\/\/myself659.github.io\/post\/project\/project-evmarb-bnb\/": {
-        
-        "title": "",
-        "tags": [],
-        "content": "投入 1.72个BNB (0.02个合约部署费用)\ndex fstswap Factory 0x9A272d734c5a0d7d84E0a892e891a553e8066dce Route 0x1B6C9c20693afDE803B27F8782156c0f892ABC2d function swap( uint256 amount0Out, uint256 amount1Out, address to, bytes calldata data ) external lock\n千三手续费\nhttps://bscscan.com/address/0x9A272d734c5a0d7d84E0a892e891a553e8066dce\nhttps://bscscan.com/tx/0x17e5e74645e7a722c2d7053a979eed48c7d10e77199764584be0605a24d91dd5\n半年时间将交易所做起来了\nhttps://benpaodewoniu.github.io/categories/%E9%A1%B9%E7%9B%AE%E7%BB%8F%E5%8E%86/%E5%A4%A7%E5%9E%8B/tomoon/%E9%87%8F%E5%8C%96%E7%B3%BB%E7%BB%9F/%E7%AD%96%E7%95%A5/flashswap/ https://benpaodewoniu.github.io/2022/07/17/defi39/\ncex2dex结合 【更多的连接 两边都有资金才可以 低手续费 加上量化】 币币生息 https://github.com/benpaodewoniu\nhttps://benpaodewoniu.github.io/2022/06/22/solidity42/\nhttps://bscscan.com/address/0xD1B260aba3bA6f3D3099725b1b1C7cdD12581974\nhttps://bscscan.com/tx/0x086972db502fcb54fe5fc9aec9d7fbb0e34e7977033dade0e8a7c0b236702b01\n创建合约开销是0.01个bnb\n没有做检查，\n在 flashswap 如此卷的情况下，如何快人一步\nhttps://bscscan.com/tx/0xe24ff3274c3eddeafc9edd9f32cac5607ec0b68ac7cf370beb1778b8e25fb82c swapExactETHForTokens\nbiswap https://biswap.gitbook.io/biswap/ https://github.com/biswap-org Factory：\n0x858E3312ed3A876947EA49d572A7C42DE08af7EE\nhttps://bscscan.com/address/0x858E3312ed3A876947EA49d572A7C42DE08af7EE\n支持pair function swap(uint amount0Out, uint amount1Out, address to, bytes calldata data) external lock\n费率支持设置\nRouter： 0x3a6d8cA21D1CF76F653A67577FA0D27453350dD8\nMEVER greyireland https://github.com/greyireland\n本人做区块链 MEV 大约 1 年时间，主要在 BSC 是做三明治机器人和套利机器人，有一段时间可以实现每日盈利 4000 美金，不过随着竞争力下降，逐渐没法盈利，目前计划去 aptos 或者 sui 链上进行 MEV 活动，一般新链竞争压力会相对小一些，但是目前两个新链都是 RUST 技术栈（我是 GO 技术栈），希望对区块链感兴趣的 RUST 伙伴一起做，共同实现财务自由\n参考地址 旧地址：\n0xe5f505e9760e6ec018ace4e4984c45bb3feade82 0xebfc329f30d9f9838b4ed149a1ff593f8308f688 0x6eb0569afb79ec893c8212cbf4dbad74eea666aa 0xa8cc4b94624b31465e777f06ee3591fd5afe5821 0xcb443faeb212d07d89721e827652d7586e858200 0x0000000000b80b2b49630047c38f2810ab8fb946 Ox11340fac9d6362c747fba6425217601bbb9b37c7 0xcdf79502f8a92928cd8ec54529d70aeccb843422 0xfb921a3925e751103a50c50fa8805798cae65d75 0x868e2f00b7907600477b42e915a5ddb4bc6e68e0 0xaa7dcd270dd6734db602c3ea2e9749f74486619d 0x21fa8ca35441e7Oad1137fa3c1365c994f2b7c23 0x05d2ccbOdc5108bd11b58fb2b1bf2396fa0e82a1 0xc4f78efe9dbb1461749f062a189645c91dfad24a 0x92ef7fac0708fc3c49921907361429ec14cd8cb6 0xa2ca4fb5abb7c2d9a61ca75ee28de89ab8d8c178\nhttps://datamint.ai/research/#arbitragemonitor\n0xe5f505e9760e6ec018ace4e4984c45bb3feade82 0xe5f505e9760e6ec018ace4e4984c45bb3feade82 0xe5f505e9760e6ec018ace4e4984c45bb3feade82\n0xd3cc1f824740555c15f5a75968eec4918c7970f2 https://bscscan.com/tx/0x724e64f8426af9329c71ff3eee16e2bf5fc03b979370217c277e8bbf917f3bb7\n0x0000000000b80b2b49630047c38f2810ab8fb946 https://bscscan.com/tx/0x257af7585ca32e8648c4307e839d70e2e7d2a6879375a29abe9c15145b204015\n0x158da805682bdc8ee32d52833ad41e74bb951e59 清算机器人\nhttps://medium.com/coinmonks/can-you-earn-a-lambo-by-being-a-flash-arbitrageur-on-bnb-smart-chain-b119701329fe\n0x0000000000008afdacc486225455281f614843e7 0.0008费用到0.002收入\n动态gas费用\n交易费用在0.20美元左右。\n0x4903f5f3bbc7865725a5aa811f7e7b8a2c1b9871 https://bscscan.com/tx/0x7d04b0fc3fb9645945a9d53c57ca389ebd72ea7c5587c887441fc937b0717957\n成功率不到20%\n0xd6ae230abae2b2d053af417ca8957ec58383867d https://bscscan.com/tx/0xab8aa26e06fdf66db93a63311c152bc17d0c1607fe478d57df1684e630b2fdc1\n成功率在50%以上\n0x340af1569dD845fF7D18baF1E06961C95d70879 https://bscscan.com/tx/0xf9452650b1f15cf34222384fb0d847894d04b52808b988860245e4719790ff49\n0x0e534373dc7da707f0a170549d584d219add7112 成功率 30% https://bscscan.com/address/0x0e534373dc7da707f0a170549d584d219add7112\n0x433cdc8215c99f778df1c7cd9d725cb15cfdbda2 https://eigenphi.substack.com/archive\nhttps://eigenphi.io/ 分析\nhttps://bscscan.com/address/0x433cdc8215c99f778df1c7cd9d725cb15cfdbda2\nhttps://bscscan.com/tx/0x80cfd80b369b502f5dbb1e755892ded062a999f53bd062123c9f18ef3c014ed8\nhttps://eigenphi.io/bsc/tx/0x80cfd80b369b502f5dbb1e755892ded062a999f53bd062123c9f18ef3c014ed8\n", 
-        "url": "http:\/\/myself659.github.io\/post\/project\/project-evmarb-bnb\/"
     },
     
     
@@ -2683,12 +2663,12 @@ window.store = {
     
     
     
-    "http:\/\/myself659.github.io\/post\/%E5%85%B3%E4%BA%8E%E5%8C%BA%E5%9D%97%E9%93%BE%E5%85%B1%E8%AF%86%E7%9A%84%E4%B8%80%E4%BA%9B%E6%80%9D%E8%80%83\/": {
+    "http:\/\/myself659.github.io\/post\/blockchain\/%E5%85%B3%E4%BA%8E%E5%8C%BA%E5%9D%97%E9%93%BE%E5%85%B1%E8%AF%86%E7%9A%84%E4%B8%80%E4%BA%9B%E6%80%9D%E8%80%83\/": {
         
         "title": "关于区块链共识的一些思考",
         "tags": ["Distributed","BlockChain",],
         "content": "说明 前面写一篇关于分布式系统的文章，但是没有考虑拜占庭问题，所以聊聊区块链共识技术，在这个过程看看比特币是如何解决拜占庭问题和共识问题。\n定义 区块链是什么？这个问题有太多的回答。\n 区块链是一个由全体联网节点共同维护并持有同一账本的分布式数据库，它通过算法来达成共识，在无需信任的各节点中构建一个无单一故障点或控制点的去中心化可信系统\n 所以在技术上区块链的本质是分布式帐本技术(DLT)。\n重要性 Why Decentralization Matters这篇文章从互联网发展历程与面临问题说明去中心化重要性。\n去中心化重要性来自去中心化带来的影响与作用，具体如下：\n 去中心化可以降低垄断的可能性，是一种对抗垄断的重要方式 去中心化提供高可用性 去中心化对抗DDos 去中心化可以让人人参与，权力下放 去中心化是让数据归还用户，保护隐私的重要技术手段之一 去中心化消除中间环节，提高效率 去中心化与中心化并不是对立，可以相互补充 去中心化能够解决中心化无法解决的问题，如微信流控算法，并没有采用全局，而由节点根据延迟参数调整，另外是5G带来的高速传输与海量数据需要去中心化来来解决  去中心化解决问题  提供全球开放的分布式数据 提供不可更改的数据库 提供trustless的基础设施 基于以上三点的业务的需求  思考模型 如同前面的分布式系统一样，对于公链（去中心化系统）问题，也可以分为以下几个子问题：\n 在什么环境下？ 有哪些节点参与？ 通过什么样的共识算法？ 使什么业务？ 达成什么样的容错要求？  总结一句话：在什么环境下，有哪些节点参与，通过什么样的共识算法，使什么业务达成什么样的容错要求。\n下面就这五个问题展开说明。\n环境 大部分去中心化系统的环境要点如下：\n 异步网络模型 网络结构是P2P网络 网络传输是不可靠的 系统异常是常态 并发 缺少全局时钟  (Ps:这里不展开说明了，谈谈对分布式系统的一些思考)\n节点 节点准入方面  节点自由加入与退出 节点需要通过PoW测试才能加入 节点需要PoS持仓才能加入 节点需要质押才能加入  节点角色  节点平等，无角色任何差异如比特币 节点分为超级节点，见证节点如EOS  节点数量  不限数量，如比特币，以太坊 指定数量，如EOS指定为21，steemit指定数量为11  节点可信  存在不可信的作恶节点 可信节点（算力）一定多于作恶节点（算力）  节点配置  机器性能波动大 网络带宽波动大 节点分布在全球各地 节点配置不受控 节点之间差异大如算力，POS投票权重  节点经济原则  99.99%以上节点是趋利 节点受激励引导 节点受惩罚限制 节点之间存在博弈与竞争 节点不会作出投入成本大于产出收益的选择  共识算法 一定要摆脱传统分布式思想的限制。要在经济，竞争，博弈，协议等多方面有效结合。\n从上图可以看出，传统分布式共识算法在整个共识里面只占很小一部分。 共识算法是区块链技术上的核心。\n不得不说，PoW是另一种形式实现拜占庭容错，是比特币最大的亮点。\n属性 一个科学共识算法必须同时满足以下四个属性：\n Agreement Validity Integrity Termination  这四个属性从四个方面规范共识算法的要求，也为我们提供分析共识算法四个不同的视角。\nAgreement  Every correct process must agree on the same value.\n 这是实现一致性必须要做到的要求：每个节点必须达成一致。 bitcoin通过以下几点实现该属性，具体如下：\n 在选主方面选择最强算力原则，保证具体高度的区块的一致性（以最快算出的为准） 在链分叉情况下选择最长链，解决网络分化等原因可能出现的分叉问题  Validity  If all the correct processes proposed the same value v, then any correct process must decide v.\n Validity是为了防止这种情况的出现：一些节点无论提议什么值，本节点一直提交NULL。在bitcoin这种行为可以理解为自私挖矿行为。\nbitcoin通过以下几点实现该属性，具体如下：\n 算力不可复制 随机性加大自私挖矿的成本 最长链确认由各节点自行确认 时间戳确认  Integrity  No Node decides twice.\n 保证共识得到一致性不可逆，不可被修改。那么在这成共识过程中有许多操作需要进行限制。 bitcoin通过以下几点实现该属性，具体如下：\n 链式结构 算力要求 难度提升 多节点竞争  Termination  Eventually, every correct process decides some value.\n Termination是一个liveness属性，bitcoin通过以下几点实现该属性，具体如下：\n 通过激励吸引大量节点参与，保证有节点来完成出块 出块时间周期设置10分钟  业务 去中心化带来业务的形态的变化，现列举部分业务如下：\n 去中心化交易所 去中心化网络平台 去中心化计算平台 去中心化存储 去中心化CDN 去中心化数字货币 去中心化协议 去中心化跨链 去中心化金融科技DeFi 去中心化通信  容错要求 对于去中心化系统，对应的容错要求是DCS定理。\nDCS定理 如同CAP定理一样，DCS定理是指在一个公有链系统中不可能同时满足以下三个条件：去中心化（Decentralized）、一致性（Consistency）和可扩展性（Scale）。\n去中心化 去中心化是指任意节点可以加入与退出，整个网络不受任何人控制。\n一致性 与上面CAP的一致性类似，不过应用中更加偏重安全如防范双花攻击。\n可扩展性 可扩展性是指TPS能够实现提高。\n关于DCS这三者之间的tradeoff，更多参考The DCS Triangle\n小结 区块链的共识现在还处于探索阶段，并不像分布式系统共识（不考虑拜占庭问题）已经成熟。区块链的共识在不断探索与发展中，未来会有更多的新型共识出来。\n参考  Why Decentralization Matters The DCS Triangle SoK: Consensus in the age of blockchains DAGOR：微信微服务过载控制系统 A Brief Tour of FLP Impossibility Agreement with Satoshi – On the Formalization of Nakamoto Consensus Yuval Noah Harari: Why fascism is so tempting and how your data could power it | TED Talk Tech C.E.O.s Are in Love With Their Principal Doomsayer 谈谈对分布式系统的一些思考 Algorand’s Instant Consensus Protocol 区块链到底有什么了不起 BitTorrent 公有链的基本挑战 Blockchains don’t scale. Not today, at least. But there’s hope. Consensus Protocols of Distributed Ledger Technology  ", 
-        "url": "http:\/\/myself659.github.io\/post\/%E5%85%B3%E4%BA%8E%E5%8C%BA%E5%9D%97%E9%93%BE%E5%85%B1%E8%AF%86%E7%9A%84%E4%B8%80%E4%BA%9B%E6%80%9D%E8%80%83\/"
+        "url": "http:\/\/myself659.github.io\/post\/blockchain\/%E5%85%B3%E4%BA%8E%E5%8C%BA%E5%9D%97%E9%93%BE%E5%85%B1%E8%AF%86%E7%9A%84%E4%B8%80%E4%BA%9B%E6%80%9D%E8%80%83\/"
     },
     
     
@@ -2973,12 +2953,12 @@ window.store = {
     
     
     
-    "http:\/\/myself659.github.io\/post\/%E7%9F%BF%E5%B7%A5%E4%BA%94%E5%AE%97%E7%BD%AA\/": {
+    "http:\/\/myself659.github.io\/post\/blockchain\/%E7%9F%BF%E5%B7%A5%E4%BA%94%E5%AE%97%E7%BD%AA\/": {
         
         "title": "矿工五宗罪",
         "tags": ["BlockChain","bitcoin",],
         "content": "比特币生态 比特币生态有以下几个角色：\n 比特币核心开发者，他们开发与更新比特币技术, 负责开发与维护代码 矿工们，运行区块链技术与算力保证，负责执行代码 交易所，比特币网络的IO,为整个网络的运行提供外部价值的IO  其中矿工有以下五宗罪，具体如下：\nIFO帮凶 从BCH开始，一时间多少IFO兴起，任何一个IFO背后都有矿工的支持。\n自私挖矿 这是矿工之间的作恶。\n滥用打包权 此路是我开，要想过此路，留下买路财。 表现如下：\n 某矿池提供的交易加速器服务 明明可以打包1000条交易，实际只打一个交易  竞价排名 这个争议如同百度的竞价排名。\n算力集中与垄断 用图说话，前五位矿池的算力超过了51%。 小结 虽然比特币的生态系统有这些bug，也不能否认矿工的在比特币生态中的作用， 如同社会中在保证劳者有所，得能者多得。\n参考  全球算力分布   ", 
-        "url": "http:\/\/myself659.github.io\/post\/%E7%9F%BF%E5%B7%A5%E4%BA%94%E5%AE%97%E7%BD%AA\/"
+        "url": "http:\/\/myself659.github.io\/post\/blockchain\/%E7%9F%BF%E5%B7%A5%E4%BA%94%E5%AE%97%E7%BD%AA\/"
     },
     
     
@@ -3043,12 +3023,12 @@ window.store = {
     
     
     
-    "http:\/\/myself659.github.io\/post\/%E4%BB%8E%E8%B4%A7%E5%B8%81%E8%A7%92%E5%BA%A6%E7%9C%8B%E6%AF%94%E7%89%B9%E5%B8%81\/": {
+    "http:\/\/myself659.github.io\/post\/blockchain\/%E4%BB%8E%E8%B4%A7%E5%B8%81%E8%A7%92%E5%BA%A6%E7%9C%8B%E6%AF%94%E7%89%B9%E5%B8%81\/": {
         
         "title": "从货币的角度看比特币",
         "tags": ["BlockChain","Bitcoin",],
         "content": "说明 本文采用对比思维来比较货币与比特币。\n整个内容通过问答的方式进行。\n货币 问题：为什么需要货币？  在国内充当交易等价物 解决国际贸易中不同种类的货币如何相互兑换的问题 因为信贷的需要  问题：谁可以发行货币？ 各国央行（美国对应是美联储）。这里先必须强调，央行唯一发行的单位。\n问题：央行发行货币的方式有哪些？ 以中国为例，央行发行货币有以下三种方式：\n 向商业银行提供货款 以本国法币兑换挣回来的外汇 向政府或者国有企业等单位提供借款  问题：货币的发行量怎么确定？ 具体理论模型： M = PQ/V\n其中M指流通中所需货币量（通货量） 其中P指商品的平均价格 其中Q指商品数量 其中V指货币流通速度（以货币周转次数计）\n如何设定于P,Q,V的值取决于政策与策略，反正是一件很复杂的事情。\n这里举两个乱发货币的典型（过于超发货币，是自寻死路，会造成信用破产）：\n 国共内战的国民党 津巴布韦  货币发行控制权在央行手中。\n问题：货币发行以什么作为背书？ 国家实力，无论是早期的英镑还是现在的美元。\n比特币 问题：为什么需要比特币？ 存在即合理。比特币的一些特性满足市场的需求。\n问题：谁可以发行比特币？ 在比特币被挖完之前，通过竞争，成功获取记帐权的矿工可以发行比特币。\n问题：发行比特币的方式有哪些？ 总量设定，通过挖矿定时释放的方式。整个发行控制权由代码控制，外人一般无法更改。\n问题：比特币的发行量怎么确定？ 比特币总量2100万。更多参考Controlled supply\n问题：比特币以什么作为背书？ 比特币背后的区块链技术及其支持区块链技术运行且保证整个比特币系统安全的算力。\n问题：比特币是货币吗？ 不是。从功能上看有部分货币的功能，在法律上看肯定不是，没有国家背书，从应用上看，价格不稳定，没有建立起（比特）币本位的大量共识，价格还是以各国法币来计算，所以把比特币作为数字黄金。\nPS: 初学经济学，有不足与错误敬请指正。\n参考  《货币的非国家化》  (End)\n欢迎关注 欢迎关注微信公众帐号：沉风网事(savewind)\n", 
-        "url": "http:\/\/myself659.github.io\/post\/%E4%BB%8E%E8%B4%A7%E5%B8%81%E8%A7%92%E5%BA%A6%E7%9C%8B%E6%AF%94%E7%89%B9%E5%B8%81\/"
+        "url": "http:\/\/myself659.github.io\/post\/blockchain\/%E4%BB%8E%E8%B4%A7%E5%B8%81%E8%A7%92%E5%BA%A6%E7%9C%8B%E6%AF%94%E7%89%B9%E5%B8%81\/"
     },
     
     
@@ -3113,12 +3093,12 @@ window.store = {
     
     
     
-    "http:\/\/myself659.github.io\/post\/%E6%AF%94%E7%89%B9%E5%B8%81%E5%8F%8A%E8%8E%B1%E7%89%B9%E5%B8%81%E8%8A%82%E7%82%B9%E8%BF%9E%E6%8E%A5%E5%A4%B1%E8%B4%A5%E5%A4%84%E7%90%86\/": {
+    "http:\/\/myself659.github.io\/post\/blockchain\/%E6%AF%94%E7%89%B9%E5%B8%81%E5%8F%8A%E8%8E%B1%E7%89%B9%E5%B8%81%E8%8A%82%E7%82%B9%E8%BF%9E%E6%8E%A5%E5%A4%B1%E8%B4%A5%E5%A4%84%E7%90%86\/": {
         
         "title": "比特币及莱特币节点连接失败处理",
         "tags": ["BlockChain",],
         "content": "问题描述 节点进程起来后，同其他的节点连接失败。\n1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31  2017-11-14 08:03:36 connect() to 104.236.211.206:19335 failed after select(): Connection refused (111) 2017-11-14 08:03:37 connect() to 66.178.182.35:19335 failed after select(): Connection refused (111) 2017-11-14 08:03:38 connect() to 104.236.211.206:19335 failed after select(): Connection refused (111) 2017-11-14 08:03:39 connect() to 66.178.182.35:19335 failed after select(): Connection refused (111) 2017-11-14 08:03:40 connect() to 104.236.211.206:19335 failed after select(): Connection refused (111) 2017-11-14 08:03:41 connect() to 104.236.211.206:19335 failed after select(): Connection refused (111) 2017-11-14 08:03:42 connect() to 66.178.182.35:19335 failed after select(): Connection refused (111) 2017-11-14 08:03:43 connect() to 66.178.182.35:19335 failed after select(): Connection refused (111) 2017-11-14 08:03:44 connect() to 66.178.182.35:19335 failed after select(): Connection refused (111) 2017-11-14 08:03:44 connect() to 66.178.182.35:19335 failed after select(): Connection refused (111) 2017-11-14 08:03:45 connect() to 104.236.211.206:19335 failed after select(): Connection refused (111) 2017-11-14 08:03:46 connect() to 104.236.211.206:19335 failed after select(): Connection refused (111) 2017-11-14 08:03:47 connect() to 104.236.211.206:19335 failed after select(): Connection refused (111) 2017-11-14 08:03:48 connect() to 66.178.182.35:19335 failed after select(): Connection refused (111) 2017-11-14 08:03:49 connect() to 104.236.211.206:19335 failed after select(): Connection refused (111) 2017-11-14 08:03:50 connect() to 66.178.182.35:19335 failed after select(): Connection refused (111) 2017-11-14 08:03:51 connect() to 104.236.211.206:19335 failed after select(): Connection refused (111) 2017-11-14 08:03:52 connect() to 104.236.211.206:19335 failed after select(): Connection refused (111) 2017-11-14 08:03:53 connect() to 104.236.211.206:19335 failed after select(): Connection refused (111) 2017-11-14 08:03:54 connect() to 104.236.211.206:19335 failed after select(): Connection refused (111) 2017-11-14 08:03:55 connect() to 66.178.182.35:19335 failed after select(): Connection refused (111) 2017-11-14 08:03:56 connect() to 66.178.182.35:19335 failed after select(): Connection refused (111) 2017-11-14 08:03:57 connect() to 66.178.182.35:19335 failed after select(): Connection refused (111) 2017-11-14 08:03:58 connect() to 104.236.211.206:19335 failed after select(): Connection refused (111) 2017-11-14 08:03:59 connect() to 104.236.211.206:19335 failed after select(): Connection refused (111) 2017-11-14 08:04:00 connect() to 66.178.182.35:19335 failed after select(): Connection refused (111) 2017-11-14 08:04:01 connect() to 104.236.211.206:19335 failed after select(): Connection refused (111) 2017-11-14 08:04:02 connect() to 66.178.182.35:19335 failed after select(): Connection refused (111) 2017-11-14 08:04:02 connect() to 66.178.182.35:19335 failed after select(): Connection refused (111) 2017-11-14 08:04:03 connect() to 66.178.182.35:19335 failed after select(): Connection refused (111) 2017-11-14 08:04:04 connect() to 66.178.182.35:19335 failed after select(): Connection refused (111)   这样导致比特币或者莱特币帐本不能同步到本地，同时交易也无法发出，节点无法工作。\n问题原因 问题原因直接是本地节点与其他节点建立TCP连接建立失败。连接建立失败的原因有很多种，这里列举如下：\n 对端拒绝连接，如建立连接太多 中间网络设备作NAT导致 网络报文遇到攻击与修改  由于这些原因都不是本节点的原因，属于外部不可控的因素，所以不能希望找到上面的具体原因来解决问题。\n解决办法 先了解一下bitcoin比特币节点之间如何建立连接。\n这里第一个遇到问题，这些需要连接的节点有哪些来源？\n 地址数据库peers.dat 用户指定地址 DNS查找 代码编码指定 其他节点的分享  了解这些，可以通过第2种方式来解决问题，在对应的bitcoin.conf文件中添加如下内容，指定一些已被验证的节点,具体如下：\n1 2 3 4 5  addnode=217.16.185.175 addnode=85.214.213.86 addnode=90.252.217.49 addnode=107.170.17.56 addnode=45.33.107.92   重启节点即可。\n（end）\n欢迎关注 欢迎关注微信公众帐号：沉风网事(savewind)\n", 
-        "url": "http:\/\/myself659.github.io\/post\/%E6%AF%94%E7%89%B9%E5%B8%81%E5%8F%8A%E8%8E%B1%E7%89%B9%E5%B8%81%E8%8A%82%E7%82%B9%E8%BF%9E%E6%8E%A5%E5%A4%B1%E8%B4%A5%E5%A4%84%E7%90%86\/"
+        "url": "http:\/\/myself659.github.io\/post\/blockchain\/%E6%AF%94%E7%89%B9%E5%B8%81%E5%8F%8A%E8%8E%B1%E7%89%B9%E5%B8%81%E8%8A%82%E7%82%B9%E8%BF%9E%E6%8E%A5%E5%A4%B1%E8%B4%A5%E5%A4%84%E7%90%86\/"
     },
     
     
@@ -3649,26 +3629,6 @@ window.store = {
         "tags": [],
         "content": "banner = \u0026quot;\u0026quot; categories = [\u0026ldquo;Kubernetes\u0026rdquo;] date = \u0026ldquo;2020-10-17T11:58:06+02:00\u0026rdquo; description = \u0026quot;\u0026quot; images = [] menu = \u0026quot;\u0026quot; tags = [\u0026ldquo;Docker\u0026rdquo;, \u0026ldquo;Kubernetes\u0026rdquo;] title = \u0026ldquo;利用github action部署到k8s集群\u0026rdquo; draft = true +++\n目标 个人开发项目软件工程实践。\n概念 先从静态开始\n列表  Cluster pods labels Replication Controllers services Nodes  vs gitlab https://docs.github.com/en/enterprise-server@2.22/actions/learn-github-actions/migrating-from-gitlab-cicd-to-github-actions\n参考  file:///E:/Docker/Using%20GitHub%20Actions%20to%20deploy%20to%20Kubernetes%20-%20Project%20A%20Insights.mht Using GitHub Actions to deploy to Kubernetes https://dotblogs.com.tw/explooosion/2020/10/09/143330 https://gianarb.it/blog/kubernetes-github-action  ", 
         "url": "http:\/\/myself659.github.io\/post\/k8s-githubaction\/"
-    },
-    
-    
-    
-    "http:\/\/myself659.github.io\/post\/project\/evmarb-ethgo\/": {
-        
-        "title": "",
-        "tags": [],
-        "content": "banner = \u0026quot;\u0026quot; categories = [\u0026ldquo;Project\u0026rdquo;] date = \u0026ldquo;2021-01-08T11:58:06+02:00\u0026rdquo; description = \u0026quot;\u0026quot; images = [] menu = \u0026quot;\u0026quot; tags = [\u0026ldquo;Project\u0026rdquo;] title = \u0026quot;\u0026quot; draft = true +++\n目标  golang 优化性能 重构代码优化代码 并发优势  参考    ", 
-        "url": "http:\/\/myself659.github.io\/post\/project\/evmarb-ethgo\/"
-    },
-    
-    
-    
-    "http:\/\/myself659.github.io\/post\/project\/project-evmarb-bnb\/": {
-        
-        "title": "",
-        "tags": [],
-        "content": "投入 1.72个BNB (0.02个合约部署费用)\ndex fstswap Factory 0x9A272d734c5a0d7d84E0a892e891a553e8066dce Route 0x1B6C9c20693afDE803B27F8782156c0f892ABC2d function swap( uint256 amount0Out, uint256 amount1Out, address to, bytes calldata data ) external lock\n千三手续费\nhttps://bscscan.com/address/0x9A272d734c5a0d7d84E0a892e891a553e8066dce\nhttps://bscscan.com/tx/0x17e5e74645e7a722c2d7053a979eed48c7d10e77199764584be0605a24d91dd5\n半年时间将交易所做起来了\nhttps://benpaodewoniu.github.io/categories/%E9%A1%B9%E7%9B%AE%E7%BB%8F%E5%8E%86/%E5%A4%A7%E5%9E%8B/tomoon/%E9%87%8F%E5%8C%96%E7%B3%BB%E7%BB%9F/%E7%AD%96%E7%95%A5/flashswap/ https://benpaodewoniu.github.io/2022/07/17/defi39/\ncex2dex结合 【更多的连接 两边都有资金才可以 低手续费 加上量化】 币币生息 https://github.com/benpaodewoniu\nhttps://benpaodewoniu.github.io/2022/06/22/solidity42/\nhttps://bscscan.com/address/0xD1B260aba3bA6f3D3099725b1b1C7cdD12581974\nhttps://bscscan.com/tx/0x086972db502fcb54fe5fc9aec9d7fbb0e34e7977033dade0e8a7c0b236702b01\n创建合约开销是0.01个bnb\n没有做检查，\n在 flashswap 如此卷的情况下，如何快人一步\nhttps://bscscan.com/tx/0xe24ff3274c3eddeafc9edd9f32cac5607ec0b68ac7cf370beb1778b8e25fb82c swapExactETHForTokens\nbiswap https://biswap.gitbook.io/biswap/ https://github.com/biswap-org Factory：\n0x858E3312ed3A876947EA49d572A7C42DE08af7EE\nhttps://bscscan.com/address/0x858E3312ed3A876947EA49d572A7C42DE08af7EE\n支持pair function swap(uint amount0Out, uint amount1Out, address to, bytes calldata data) external lock\n费率支持设置\nRouter： 0x3a6d8cA21D1CF76F653A67577FA0D27453350dD8\nMEVER greyireland https://github.com/greyireland\n本人做区块链 MEV 大约 1 年时间，主要在 BSC 是做三明治机器人和套利机器人，有一段时间可以实现每日盈利 4000 美金，不过随着竞争力下降，逐渐没法盈利，目前计划去 aptos 或者 sui 链上进行 MEV 活动，一般新链竞争压力会相对小一些，但是目前两个新链都是 RUST 技术栈（我是 GO 技术栈），希望对区块链感兴趣的 RUST 伙伴一起做，共同实现财务自由\n参考地址 旧地址：\n0xe5f505e9760e6ec018ace4e4984c45bb3feade82 0xebfc329f30d9f9838b4ed149a1ff593f8308f688 0x6eb0569afb79ec893c8212cbf4dbad74eea666aa 0xa8cc4b94624b31465e777f06ee3591fd5afe5821 0xcb443faeb212d07d89721e827652d7586e858200 0x0000000000b80b2b49630047c38f2810ab8fb946 Ox11340fac9d6362c747fba6425217601bbb9b37c7 0xcdf79502f8a92928cd8ec54529d70aeccb843422 0xfb921a3925e751103a50c50fa8805798cae65d75 0x868e2f00b7907600477b42e915a5ddb4bc6e68e0 0xaa7dcd270dd6734db602c3ea2e9749f74486619d 0x21fa8ca35441e7Oad1137fa3c1365c994f2b7c23 0x05d2ccbOdc5108bd11b58fb2b1bf2396fa0e82a1 0xc4f78efe9dbb1461749f062a189645c91dfad24a 0x92ef7fac0708fc3c49921907361429ec14cd8cb6 0xa2ca4fb5abb7c2d9a61ca75ee28de89ab8d8c178\nhttps://datamint.ai/research/#arbitragemonitor\n0xe5f505e9760e6ec018ace4e4984c45bb3feade82 0xe5f505e9760e6ec018ace4e4984c45bb3feade82 0xe5f505e9760e6ec018ace4e4984c45bb3feade82\n0xd3cc1f824740555c15f5a75968eec4918c7970f2 https://bscscan.com/tx/0x724e64f8426af9329c71ff3eee16e2bf5fc03b979370217c277e8bbf917f3bb7\n0x0000000000b80b2b49630047c38f2810ab8fb946 https://bscscan.com/tx/0x257af7585ca32e8648c4307e839d70e2e7d2a6879375a29abe9c15145b204015\n0x158da805682bdc8ee32d52833ad41e74bb951e59 清算机器人\nhttps://medium.com/coinmonks/can-you-earn-a-lambo-by-being-a-flash-arbitrageur-on-bnb-smart-chain-b119701329fe\n0x0000000000008afdacc486225455281f614843e7 0.0008费用到0.002收入\n动态gas费用\n交易费用在0.20美元左右。\n0x4903f5f3bbc7865725a5aa811f7e7b8a2c1b9871 https://bscscan.com/tx/0x7d04b0fc3fb9645945a9d53c57ca389ebd72ea7c5587c887441fc937b0717957\n成功率不到20%\n0xd6ae230abae2b2d053af417ca8957ec58383867d https://bscscan.com/tx/0xab8aa26e06fdf66db93a63311c152bc17d0c1607fe478d57df1684e630b2fdc1\n成功率在50%以上\n0x340af1569dD845fF7D18baF1E06961C95d70879 https://bscscan.com/tx/0xf9452650b1f15cf34222384fb0d847894d04b52808b988860245e4719790ff49\n0x0e534373dc7da707f0a170549d584d219add7112 成功率 30% https://bscscan.com/address/0x0e534373dc7da707f0a170549d584d219add7112\n0x433cdc8215c99f778df1c7cd9d725cb15cfdbda2 https://eigenphi.substack.com/archive\nhttps://eigenphi.io/ 分析\nhttps://bscscan.com/address/0x433cdc8215c99f778df1c7cd9d725cb15cfdbda2\nhttps://bscscan.com/tx/0x80cfd80b369b502f5dbb1e755892ded062a999f53bd062123c9f18ef3c014ed8\nhttps://eigenphi.io/bsc/tx/0x80cfd80b369b502f5dbb1e755892ded062a999f53bd062123c9f18ef3c014ed8\n", 
-        "url": "http:\/\/myself659.github.io\/post\/project\/project-evmarb-bnb\/"
     },
     
     

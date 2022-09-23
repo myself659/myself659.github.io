@@ -996,7 +996,7 @@
   </url>
   
   <url>
-    <loc>http://myself659.github.io/post/%E5%85%B3%E4%BA%8E%E5%8C%BA%E5%9D%97%E9%93%BE%E5%85%B1%E8%AF%86%E7%9A%84%E4%B8%80%E4%BA%9B%E6%80%9D%E8%80%83/</loc>
+    <loc>http://myself659.github.io/post/blockchain/%E5%85%B3%E4%BA%8E%E5%8C%BA%E5%9D%97%E9%93%BE%E5%85%B1%E8%AF%86%E7%9A%84%E4%B8%80%E4%BA%9B%E6%80%9D%E8%80%83/</loc>
     <lastmod>2018-12-24T11:58:06+02:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -1283,7 +1283,7 @@
   </url>
   
   <url>
-    <loc>http://myself659.github.io/post/%E7%9F%BF%E5%B7%A5%E4%BA%94%E5%AE%97%E7%BD%AA/</loc>
+    <loc>http://myself659.github.io/post/blockchain/%E7%9F%BF%E5%B7%A5%E4%BA%94%E5%AE%97%E7%BD%AA/</loc>
     <lastmod>2018-03-08T11:58:06+02:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -1346,7 +1346,7 @@
   </url>
   
   <url>
-    <loc>http://myself659.github.io/post/%E4%BB%8E%E8%B4%A7%E5%B8%81%E8%A7%92%E5%BA%A6%E7%9C%8B%E6%AF%94%E7%89%B9%E5%B8%81/</loc>
+    <loc>http://myself659.github.io/post/blockchain/%E4%BB%8E%E8%B4%A7%E5%B8%81%E8%A7%92%E5%BA%A6%E7%9C%8B%E6%AF%94%E7%89%B9%E5%B8%81/</loc>
     <lastmod>2018-02-05T11:58:06+02:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -1409,7 +1409,7 @@
   </url>
   
   <url>
-    <loc>http://myself659.github.io/post/%E6%AF%94%E7%89%B9%E5%B8%81%E5%8F%8A%E8%8E%B1%E7%89%B9%E5%B8%81%E8%8A%82%E7%82%B9%E8%BF%9E%E6%8E%A5%E5%A4%B1%E8%B4%A5%E5%A4%84%E7%90%86/</loc>
+    <loc>http://myself659.github.io/post/blockchain/%E6%AF%94%E7%89%B9%E5%B8%81%E5%8F%8A%E8%8E%B1%E7%89%B9%E5%B8%81%E8%8A%82%E7%82%B9%E8%BF%9E%E6%8E%A5%E5%A4%B1%E8%B4%A5%E5%A4%84%E7%90%86/</loc>
     <lastmod>2017-11-06T11:58:06+02:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -1863,18 +1863,6 @@
   
   <url>
     <loc>http://myself659.github.io/post/k8s-githubaction/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://myself659.github.io/post/project/evmarb-ethgo/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://myself659.github.io/post/project/project-evmarb-bnb/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
