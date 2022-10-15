@@ -1171,6 +1171,15 @@
     </item>
     
     <item>
+      <title>设定目标的原则</title>
+      <link>http://myself659.github.io/post/life/principle-to-set-goal/</link>
+      <pubDate>Sat, 27 May 2017 11:58:06 +0200</pubDate>
+      
+      <guid>http://myself659.github.io/post/life/principle-to-set-goal/</guid>
+      <description>SMART原则 谈及目标原则，必会谈到SMART原则。 关于SMART原则，可以根据五个字母拆解如下： 1. 目标必须是具体的（Specific） 2. 目</description>
+    </item>
+    
+    <item>
       <title>Linux进程诊断小结</title>
       <link>http://myself659.github.io/post/2017-05-10-linux-process-diagnose/</link>
       <pubDate>Wed, 10 May 2017 11:58:06 +0200</pubDate>
@@ -1438,15 +1447,6 @@
       
       <guid>http://myself659.github.io/post/linux/2015-06-01-linux-may-sleep-function/</guid>
       <description>在linux内核开发中断处理函数不能调用可能导致睡眠的函数，下面总结linux内核可能引起睡眠的函数如下： schedule函数 schedule_timeout schedule_timeout_uninterruptible schedule_timeout_interruptible cond_resched might_resched sl</description>
-    </item>
-    
-    <item>
-      <title>compile and install ffmpeg on MacbookPro2021</title>
-      <link>http://myself659.github.io/post/mac/mac-m1-install-ffmpeg/</link>
-      <pubDate>Sun, 24 May 2015 11:58:06 +0200</pubDate>
-      
-      <guid>http://myself659.github.io/post/mac/mac-m1-install-ffmpeg/</guid>
-      <description>install macports update macports 1 2  sudo port selfupdate sudo port upgrade outdated   install ffmpeg 1  sudo port install ffmpeg   1  ffmpeg     </description>
     </item>
     
     <item>
