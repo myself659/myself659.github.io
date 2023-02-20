@@ -23,7 +23,16 @@
       <pubDate>Sun, 18 Dec 2022 11:58:06 +0200</pubDate>
       
       <guid>http://myself659.github.io/post/rt/%E5%9B%A2%E9%98%9F%E7%8A%B6%E6%80%81%E8%AF%8A%E6%96%AD/</guid>
-      <description>团队如果有以下状态，团队可能处于下行状态： 团队成员流失严重，且处于加速状态 团队成员内卷严重 团队成员普遍躺平 团队会议没有人主动发声 团队成员总是</description>
+      <description>团队如果有以下状态，团队可能处于下行状态： 团队成员流失严重，且处于加速状态 团队一部分成员内卷严重 团队一部分成员普遍躺平 团队会议没有人主动发声</description>
+    </item>
+    
+    <item>
+      <title>Rust lifetime 101</title>
+      <link>http://myself659.github.io/post/rust/rust-lifetime/</link>
+      <pubDate>Thu, 08 Dec 2022 11:58:06 +0200</pubDate>
+      
+      <guid>http://myself659.github.io/post/rust/rust-lifetime/</guid>
+      <description>定义 在 Rust 中，生命周期（lifetime）是用来描述引用（reference）有效期的一种概念。每个引用都有一个生命周期，表示该引用指向的数据</description>
     </item>
     
     <item>

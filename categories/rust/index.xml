@@ -7,7 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>沉风网事</copyright>
-    <lastBuildDate>Wed, 08 Sep 2021 11:58:06 +0200</lastBuildDate><atom:link href="http://myself659.github.io/categories/rust/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 08 Dec 2022 11:58:06 +0200</lastBuildDate><atom:link href="http://myself659.github.io/categories/rust/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Rust lifetime 101</title>
+      <link>http://myself659.github.io/post/rust/rust-lifetime/</link>
+      <pubDate>Thu, 08 Dec 2022 11:58:06 +0200</pubDate>
+      
+      <guid>http://myself659.github.io/post/rust/rust-lifetime/</guid>
+      <description>定义 在 Rust 中，生命周期（lifetime）是用来描述引用（reference）有效期的一种概念。每个引用都有一个生命周期，表示该引用指向的数据</description>
+    </item>
+    
     <item>
       <title>tips for learning rust</title>
       <link>http://myself659.github.io/post/rust/tips-learn-rust/</link>
