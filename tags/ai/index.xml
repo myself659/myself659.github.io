@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>AI on 沉风网事</title>
+    <link>http://myself659.github.io/tags/ai/</link>
+    <description>Recent content in AI on 沉风网事</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <copyright>沉风网事</copyright>
+    <lastBuildDate>Sat, 17 Dec 2022 11:58:06 +0200</lastBuildDate><atom:link href="http://myself659.github.io/tags/ai/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>如何更好地向ChatGPT提问</title>
+      <link>http://myself659.github.io/post/ai/how-to-ask-gpt/</link>
+      <pubDate>Sat, 17 Dec 2022 11:58:06 +0200</pubDate>
+      
+      <guid>http://myself659.github.io/post/ai/how-to-ask-gpt/</guid>
+      <description>说明 下面的所有的问题均由chatGPT回答。 如何描述问题才能让chatGPT更好的回答？ 以下是描述问题的一些技巧，可以帮助 ChatGPT 更好地理解和回答</description>
+    </item>
+    
+  </channel>
+</rss>

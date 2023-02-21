@@ -72,6 +72,27 @@
   </url>
   
   <url>
+    <loc>http://myself659.github.io/tags/ai/</loc>
+    <lastmod>2022-12-17T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://myself659.github.io/categories/ai/</loc>
+    <lastmod>2022-12-17T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://myself659.github.io/post/ai/how-to-ask-gpt/</loc>
+    <lastmod>2022-12-17T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>http://myself659.github.io/tags/rust/</loc>
     <lastmod>2022-12-08T11:58:06+02:00</lastmod>
     <changefreq>weekly</changefreq>
