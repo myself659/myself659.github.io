@@ -1949,4 +1949,10 @@
     <priority>0.5</priority>
   </url>
   
+  <url>
+    <loc>http://myself659.github.io/post/rt/stupid-is-emeny/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
 </urlset>
