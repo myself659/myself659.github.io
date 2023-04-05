@@ -7,7 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>沉风网事</copyright>
-    <lastBuildDate>Sat, 17 Dec 2022 11:58:06 +0200</lastBuildDate><atom:link href="http://myself659.github.io/tags/ai/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 17 Mar 2023 11:58:06 +0200</lastBuildDate><atom:link href="http://myself659.github.io/tags/ai/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>从三道逻辑分析题看GPT4</title>
+      <link>http://myself659.github.io/post/ai/logic-gpt4-chatgpt/</link>
+      <pubDate>Fri, 17 Mar 2023 11:58:06 +0200</pubDate>
+      
+      <guid>http://myself659.github.io/post/ai/logic-gpt4-chatgpt/</guid>
+      <description>背景 GPT-4最近已经推出，那么GPT-4表现如何？相对于chatGPT使用的gpt3.5模型有哪些提高与进步？ 下面就通过三道逻辑题展开测试</description>
+    </item>
+    
     <item>
       <title>如何更好地向ChatGPT提问</title>
       <link>http://myself659.github.io/post/ai/how-to-ask-gpt/</link>
