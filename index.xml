@@ -27,6 +27,15 @@
     </item>
     
     <item>
+      <title>如何利用GPT类AI提升自己</title>
+      <link>http://myself659.github.io/post/ai/how-to-ai-help-growth/</link>
+      <pubDate>Wed, 05 Apr 2023 11:58:06 +0800</pubDate>
+      
+      <guid>http://myself659.github.io/post/ai/how-to-ai-help-growth/</guid>
+      <description>背景 chatGPT的横空出世，宣告真正的人工智能时代已经开启。 未来会是怎么样，没有人知道，我只知道这两点： 会用AI的人淘汰不会用AI 谁更会用</description>
+    </item>
+    
+    <item>
       <title>从三道逻辑分析题看GPT4</title>
       <link>http://myself659.github.io/post/ai/logic-gpt4-chatgpt/</link>
       <pubDate>Fri, 17 Mar 2023 11:58:06 +0200</pubDate>
@@ -533,10 +542,10 @@
     
     <item>
       <title>深入分析Golang sync.pool优化</title>
-      <link>http://myself659.github.io/post/golang-sync-pool-2/</link>
+      <link>http://myself659.github.io/post/golang/golang-sync-pool-2/</link>
       <pubDate>Fri, 06 Sep 2019 11:58:06 +0200</pubDate>
       
-      <guid>http://myself659.github.io/post/golang-sync-pool-2/</guid>
+      <guid>http://myself659.github.io/post/golang/golang-sync-pool-2/</guid>
       <description>前言 最近golang的1.13版本发布了，有很多新特性与改进合入。这里主要分析sync.pool的优化。 本文主要解答以下几个问题： sync.</description>
     </item>
     
@@ -595,11 +604,20 @@
     </item>
     
     <item>
+      <title>创业的核心</title>
+      <link>http://myself659.github.io/post/startup/%E5%88%9B%E4%B8%9A%E7%9A%84%E6%A0%B8%E5%BF%83/</link>
+      <pubDate>Mon, 24 Jun 2019 11:58:06 +0200</pubDate>
+      
+      <guid>http://myself659.github.io/post/startup/%E5%88%9B%E4%B8%9A%E7%9A%84%E6%A0%B8%E5%BF%83/</guid>
+      <description>创业的核心 创业的核心： 把握机会 降低成本 控制风险</description>
+    </item>
+    
+    <item>
       <title>深入分析Golang sync.pool</title>
-      <link>http://myself659.github.io/post/golang-sync-pool-1/</link>
+      <link>http://myself659.github.io/post/golang/golang-sync-pool-1/</link>
       <pubDate>Mon, 10 Jun 2019 11:58:06 +0200</pubDate>
       
-      <guid>http://myself659.github.io/post/golang-sync-pool-1/</guid>
+      <guid>http://myself659.github.io/post/golang/golang-sync-pool-1/</guid>
       <description>定义 sync.Pool是一个可以存或取的临时对象池。对外提供New、Get、Put等API，利用mutex支持多线程并发。 目标 sync.Po</description>
     </item>
     
@@ -893,10 +911,10 @@
     
     <item>
       <title>Golang最工程化的语言</title>
-      <link>http://myself659.github.io/post/golang-eng/</link>
+      <link>http://myself659.github.io/post/golang/golang-eng/</link>
       <pubDate>Tue, 03 Jul 2018 11:58:06 +0200</pubDate>
       
-      <guid>http://myself659.github.io/post/golang-eng/</guid>
+      <guid>http://myself659.github.io/post/golang/golang-eng/</guid>
       <description>Golang是什么语言 PHP是最好的语言。 Haskell最难学的语言。 Golang最工程化的语言。 下面分别从语言层面及软件工程两个方面进行说</description>
     </item>
     
@@ -988,6 +1006,15 @@
       
       <guid>http://myself659.github.io/post/socialnetowrk-cannot-cycle/</guid>
       <description>没有什么是不可改变的。 Facebook有22亿用户。 MySpace曾经是世界之王。现在人们都已经遗忘了。 QQ还是让位微信，活跃度下降，用户时</description>
+    </item>
+    
+    <item>
+      <title>我不知道</title>
+      <link>http://myself659.github.io/post/rt/i-know-i-donot-known/</link>
+      <pubDate>Sun, 22 Apr 2018 11:58:06 +0200</pubDate>
+      
+      <guid>http://myself659.github.io/post/rt/i-know-i-donot-known/</guid>
+      <description>背景 苏格拉底说过：我唯一知道的就是我一无所知。 我不知道 我不知道自己 我不知道过去 我不知道现在 我不知道未来 我不知道别人 我不知道变化 我不知道系统 我</description>
     </item>
     
     <item>
@@ -1118,10 +1145,10 @@
     
     <item>
       <title>Gorm小技巧: 如何优雅地创建多个相同的表</title>
-      <link>http://myself659.github.io/post/golang-gorm/</link>
+      <link>http://myself659.github.io/post/golang/golang-gorm/</link>
       <pubDate>Thu, 21 Dec 2017 11:58:06 +0200</pubDate>
       
-      <guid>http://myself659.github.io/post/golang-gorm/</guid>
+      <guid>http://myself659.github.io/post/golang/golang-gorm/</guid>
       <description>背景 因为需要bitfinex抓取各种历史交易信息。为了实现可扩展与便于数据管理，在数据架构设计方面满足下面的需求： 不同的交易对的交易数据放到</description>
     </item>
     

@@ -19,37 +19,37 @@
     
     <item>
       <title>深入分析Golang sync.pool优化</title>
-      <link>http://myself659.github.io/post/golang-sync-pool-2/</link>
+      <link>http://myself659.github.io/post/golang/golang-sync-pool-2/</link>
       <pubDate>Fri, 06 Sep 2019 11:58:06 +0200</pubDate>
       
-      <guid>http://myself659.github.io/post/golang-sync-pool-2/</guid>
+      <guid>http://myself659.github.io/post/golang/golang-sync-pool-2/</guid>
       <description>前言 最近golang的1.13版本发布了，有很多新特性与改进合入。这里主要分析sync.pool的优化。 本文主要解答以下几个问题： sync.</description>
     </item>
     
     <item>
       <title>深入分析Golang sync.pool</title>
-      <link>http://myself659.github.io/post/golang-sync-pool-1/</link>
+      <link>http://myself659.github.io/post/golang/golang-sync-pool-1/</link>
       <pubDate>Mon, 10 Jun 2019 11:58:06 +0200</pubDate>
       
-      <guid>http://myself659.github.io/post/golang-sync-pool-1/</guid>
+      <guid>http://myself659.github.io/post/golang/golang-sync-pool-1/</guid>
       <description>定义 sync.Pool是一个可以存或取的临时对象池。对外提供New、Get、Put等API，利用mutex支持多线程并发。 目标 sync.Po</description>
     </item>
     
     <item>
       <title>Golang最工程化的语言</title>
-      <link>http://myself659.github.io/post/golang-eng/</link>
+      <link>http://myself659.github.io/post/golang/golang-eng/</link>
       <pubDate>Tue, 03 Jul 2018 11:58:06 +0200</pubDate>
       
-      <guid>http://myself659.github.io/post/golang-eng/</guid>
+      <guid>http://myself659.github.io/post/golang/golang-eng/</guid>
       <description>Golang是什么语言 PHP是最好的语言。 Haskell最难学的语言。 Golang最工程化的语言。 下面分别从语言层面及软件工程两个方面进行说</description>
     </item>
     
     <item>
       <title>Gorm小技巧: 如何优雅地创建多个相同的表</title>
-      <link>http://myself659.github.io/post/golang-gorm/</link>
+      <link>http://myself659.github.io/post/golang/golang-gorm/</link>
       <pubDate>Thu, 21 Dec 2017 11:58:06 +0200</pubDate>
       
-      <guid>http://myself659.github.io/post/golang-gorm/</guid>
+      <guid>http://myself659.github.io/post/golang/golang-gorm/</guid>
       <description>背景 因为需要bitfinex抓取各种历史交易信息。为了实现可扩展与便于数据管理，在数据架构设计方面满足下面的需求： 不同的交易对的交易数据放到</description>
     </item>
     
