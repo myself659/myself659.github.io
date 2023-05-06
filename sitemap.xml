@@ -1486,27 +1486,6 @@
   </url>
   
   <url>
-    <loc>http://myself659.github.io/post/dsa/array-vs-list/</loc>
-    <lastmod>2018-02-21T11:58:06+02:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://myself659.github.io/tags/datastruct/</loc>
-    <lastmod>2018-02-21T11:58:06+02:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://myself659.github.io/categories/datastruct/</loc>
-    <lastmod>2018-02-21T11:58:06+02:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>http://myself659.github.io/post/blockchain/blockchain-strategy/</loc>
     <lastmod>2018-02-21T11:58:06+02:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -1558,6 +1537,27 @@
   <url>
     <loc>http://myself659.github.io/post/tech-english-collection/</loc>
     <lastmod>2018-01-25T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://myself659.github.io/post/dsa/array-vs-list/</loc>
+    <lastmod>2018-01-11T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://myself659.github.io/tags/datastruct/</loc>
+    <lastmod>2018-01-11T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://myself659.github.io/categories/datastruct/</loc>
+    <lastmod>2018-01-11T11:58:06+02:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -1866,6 +1866,13 @@
   <url>
     <loc>http://myself659.github.io/post/2016-07-26-go-channel-feature/</loc>
     <lastmod>2016-07-26T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://myself659.github.io/post/learn/how-to-start/</loc>
+    <lastmod>2016-06-13T11:58:06+02:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>

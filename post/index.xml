@@ -1090,15 +1090,6 @@
     </item>
     
     <item>
-      <title>array vs list</title>
-      <link>http://myself659.github.io/post/dsa/array-vs-list/</link>
-      <pubDate>Wed, 21 Feb 2018 11:58:06 +0200</pubDate>
-      
-      <guid>http://myself659.github.io/post/dsa/array-vs-list/</guid>
-      <description>array define An array is collection of items stored at contiguous memory locations. The idea is to store multiple items of same type together. This makes it easier to calculate the position of each element by simply adding an offset to a base value, i.e., the memory location of the first element of the array (generally denoted by the name of the array). complexity space O(n) time write by index</description>
-    </item>
-    
-    <item>
       <title>乱扯区块链战略</title>
       <link>http://myself659.github.io/post/blockchain/blockchain-strategy/</link>
       <pubDate>Wed, 21 Feb 2018 11:58:06 +0200</pubDate>
@@ -1150,6 +1141,15 @@
       
       <guid>http://myself659.github.io/post/tech-english-collection/</guid>
       <description>Golang Let&amp;rsquo;s Talk Locks! Maintaining the Go Crypto Libraries Blockchain CoinTalk Arch Life of a Packet through Istio Algorithms behind Modern Storage Systems Aurora Serverless: The Good, the Bad and the Scalable rust How Rust Views Tradeoffs Rust&amp;rsquo;s Journey to Async/await More infoq Presentations</description>
+    </item>
+    
+    <item>
+      <title>array vs list</title>
+      <link>http://myself659.github.io/post/dsa/array-vs-list/</link>
+      <pubDate>Thu, 11 Jan 2018 11:58:06 +0200</pubDate>
+      
+      <guid>http://myself659.github.io/post/dsa/array-vs-list/</guid>
+      <description>array define An array is collection of items stored at contiguous memory locations. The idea is to store multiple items of same type together. This makes it easier to calculate the position of each element by simply adding an offset to a base value, i.e., the memory location of the first element of the array (generally denoted by the name of the array). complexity space O(n) time write by index</description>
     </item>
     
     <item>
@@ -1483,6 +1483,15 @@
       
       <guid>http://myself659.github.io/post/2016-07-26-go-channel-feature/</guid>
       <description>channel模式 根据同步方式不同，channel有两种模式： 1、同步模式,形式如下： 1 ch := make(chan int) 2、队列模式，形式如下： 1 ch := make(chan int, 10) 根据数据</description>
+    </item>
+    
+    <item>
+      <title>如何开始行动</title>
+      <link>http://myself659.github.io/post/learn/how-to-start/</link>
+      <pubDate>Mon, 13 Jun 2016 11:58:06 +0200</pubDate>
+      
+      <guid>http://myself659.github.io/post/learn/how-to-start/</guid>
+      <description>背景 人们常说： 万事开头难。 好的开始是成功的一半。 从上可知开始很难，但是开始却很重要。 为什么是开始行动 行动是实践。 行动是执行力的体现。 行动是真</description>
     </item>
     
     <item>
