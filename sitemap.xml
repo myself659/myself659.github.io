@@ -527,7 +527,7 @@
   </url>
   
   <url>
-    <loc>http://myself659.github.io/post/think-outof-box/</loc>
+    <loc>http://myself659.github.io/post/learn/think-outof-box/</loc>
     <lastmod>2020-06-26T11:58:06+02:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -569,7 +569,7 @@
   </url>
   
   <url>
-    <loc>http://myself659.github.io/post/how-to-learn-fast/</loc>
+    <loc>http://myself659.github.io/post/learn/how-to-learn-fast/</loc>
     <lastmod>2020-04-26T11:58:06+02:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -968,6 +968,27 @@
   </url>
   
   <url>
+    <loc>http://myself659.github.io/tags/learn/</loc>
+    <lastmod>2019-06-05T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://myself659.github.io/categories/learn/</loc>
+    <lastmod>2019-06-05T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://myself659.github.io/post/learn/how-to-flow-%E5%BF%83%E6%B5%81/</loc>
+    <lastmod>2019-06-05T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>http://myself659.github.io/post/learn/how-to-iterate/</loc>
     <lastmod>2019-06-03T11:58:06+02:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -1010,8 +1031,15 @@
   </url>
   
   <url>
-    <loc>http://myself659.github.io/post/about-zoom/</loc>
+    <loc>http://myself659.github.io/post/business/about-zoom/</loc>
     <lastmod>2019-04-28T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://myself659.github.io/post/rt/%E9%80%89%E6%8B%A9%E5%8E%9F%E5%88%99/</loc>
+    <lastmod>2019-04-18T11:58:06+02:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -1185,7 +1213,7 @@
   </url>
   
   <url>
-    <loc>http://myself659.github.io/post/about-weixin-miniprogram/</loc>
+    <loc>http://myself659.github.io/post/business/about-weixin-miniprogram/</loc>
     <lastmod>2018-12-01T11:58:06+02:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -1745,7 +1773,7 @@
   </url>
   
   <url>
-    <loc>http://myself659.github.io/post/life/principle-to-set-goal/</loc>
+    <loc>http://myself659.github.io/post/life/principle-to-set-goal-%E7%9B%AE%E6%A0%87/</loc>
     <lastmod>2017-05-27T11:58:06+02:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -2045,6 +2073,12 @@
   
   <url>
     <loc>http://myself659.github.io/post/internet/2017-02-04-country-internet-music/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://myself659.github.io/post/invest/invest-l0/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
