@@ -3,49 +3,56 @@
   
   <url>
     <loc>http://myself659.github.io/tags/ai/</loc>
-    <lastmod>2023-04-15T11:58:06+08:00</lastmod>
+    <lastmod>2023-05-15T11:58:06+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://myself659.github.io/categories/ai/</loc>
-    <lastmod>2023-04-15T11:58:06+08:00</lastmod>
+    <lastmod>2023-05-15T11:58:06+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://myself659.github.io/categories/</loc>
-    <lastmod>2023-04-15T11:58:06+08:00</lastmod>
+    <lastmod>2023-05-15T11:58:06+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://myself659.github.io/tags/gpt/</loc>
-    <lastmod>2023-04-15T11:58:06+08:00</lastmod>
+    <lastmod>2023-05-15T11:58:06+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://myself659.github.io/post/</loc>
-    <lastmod>2023-04-15T11:58:06+08:00</lastmod>
+    <lastmod>2023-05-15T11:58:06+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://myself659.github.io/tags/</loc>
-    <lastmod>2023-04-15T11:58:06+08:00</lastmod>
+    <lastmod>2023-05-15T11:58:06+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://myself659.github.io/</loc>
-    <lastmod>2023-04-15T11:58:06+08:00</lastmod>
+    <lastmod>2023-05-15T11:58:06+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://myself659.github.io/post/ai/%E8%AF%B4%E8%AF%B4%E6%A8%A1%E5%9E%8Bmodel/</loc>
+    <lastmod>2023-05-15T11:58:06+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -989,7 +996,7 @@
   </url>
   
   <url>
-    <loc>http://myself659.github.io/post/learn/how-to-iterate/</loc>
+    <loc>http://myself659.github.io/post/learn/how-to-iterate-%E8%BF%AD%E4%BB%A3/</loc>
     <lastmod>2019-06-03T11:58:06+02:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -1390,6 +1397,13 @@
   <url>
     <loc>http://myself659.github.io/post/about-rand/</loc>
     <lastmod>2018-06-08T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://myself659.github.io/post/learn/how-to-unstuck-avoid-suck/</loc>
+    <lastmod>2018-06-01T11:58:06+02:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -1871,6 +1885,13 @@
   </url>
   
   <url>
+    <loc>http://myself659.github.io/post/life/%E4%BA%94%E4%B8%AA%E9%97%AE%E9%A2%98%E6%89%BE%E5%88%B0%E7%9C%9F%E6%AD%A3%E8%A6%81%E6%83%B3%E7%9A%84/</loc>
+    <lastmod>2017-01-11T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>http://myself659.github.io/post/2016-09-10-from-cepoll-to-go-net/</loc>
     <lastmod>2016-09-10T11:58:06+02:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -1906,7 +1927,7 @@
   </url>
   
   <url>
-    <loc>http://myself659.github.io/post/learn/how-to-start/</loc>
+    <loc>http://myself659.github.io/post/learn/how-to-start-%E5%BC%80%E5%A7%8B/</loc>
     <lastmod>2016-06-13T11:58:06+02:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>

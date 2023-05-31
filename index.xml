@@ -7,7 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>沉风网事</copyright>
-    <lastBuildDate>Sat, 15 Apr 2023 11:58:06 +0800</lastBuildDate><atom:link href="http://myself659.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 15 May 2023 11:58:06 +0800</lastBuildDate><atom:link href="http://myself659.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>说说模型</title>
+      <link>http://myself659.github.io/post/ai/%E8%AF%B4%E8%AF%B4%E6%A8%A1%E5%9E%8Bmodel/</link>
+      <pubDate>Mon, 15 May 2023 11:58:06 +0800</pubDate>
+      
+      <guid>http://myself659.github.io/post/ai/%E8%AF%B4%E8%AF%B4%E6%A8%A1%E5%9E%8Bmodel/</guid>
+      <description>定义 先看wiki的定义： A model is an informative representation of an object, person or system. The term originally denoted the plans of a building in late 16th-century English, and derived via French and Italian ultimately from Latin modulus, a measure</description>
+    </item>
+    
     <item>
       <title>说说autoGPT</title>
       <link>http://myself659.github.io/post/ai/autogpt-101/</link>
@@ -641,10 +650,10 @@
     
     <item>
       <title>如何迭代</title>
-      <link>http://myself659.github.io/post/learn/how-to-iterate/</link>
+      <link>http://myself659.github.io/post/learn/how-to-iterate-%E8%BF%AD%E4%BB%A3/</link>
       <pubDate>Mon, 03 Jun 2019 11:58:06 +0200</pubDate>
       
-      <guid>http://myself659.github.io/post/learn/how-to-iterate/</guid>
+      <guid>http://myself659.github.io/post/learn/how-to-iterate-%E8%BF%AD%E4%BB%A3/</guid>
       <description>重复不如迭代 迭代相比较于重复有以下特点： 改变 复用 反馈 结论： 1000次重复不如1000次迭代。 迭代的原则 小改变，多对比，多迭代 度量迭代 迭代的粒</description>
     </item>
     
@@ -1000,6 +1009,15 @@
     </item>
     
     <item>
+      <title>如何走出困境避免进度卡壳</title>
+      <link>http://myself659.github.io/post/learn/how-to-unstuck-avoid-suck/</link>
+      <pubDate>Fri, 01 Jun 2018 11:58:06 +0200</pubDate>
+      
+      <guid>http://myself659.github.io/post/learn/how-to-unstuck-avoid-suck/</guid>
+      <description>原因 陷入困境的原因从以下几个方面展开。 基础 不知道自己不知道unknown unknown 技能进入高原与瓶颈期，技能达不到解决问题的要求 缺少信息 自我限制 陷入</description>
+    </item>
+    
+    <item>
       <title>以太坊交易池分析</title>
       <link>http://myself659.github.io/post/blockchain/eth-txpool/</link>
       <pubDate>Tue, 15 May 2018 11:58:06 +0200</pubDate>
@@ -1347,7 +1365,7 @@
       <pubDate>Sat, 27 May 2017 11:58:06 +0200</pubDate>
       
       <guid>http://myself659.github.io/post/life/principle-to-set-goal-%E7%9B%AE%E6%A0%87/</guid>
-      <description>SMART原则 谈及目标原则，必会谈到SMART原则。 关于SMART原则，可以根据五个字母拆解如下： 1. 目标必须是具体的（Specific） 2. 目</description>
+      <description>目标的意义 目标是指导前进的方向 目标帮助思考：我们真正想要的是什么？ 目标是动力的来源之一 目标有利于抗干扰，提高专注力 SMART原则 谈及目标原则</description>
     </item>
     
     <item>
@@ -1468,6 +1486,15 @@
     </item>
     
     <item>
+      <title>五个问题帮你找到你真正的想要的</title>
+      <link>http://myself659.github.io/post/life/%E4%BA%94%E4%B8%AA%E9%97%AE%E9%A2%98%E6%89%BE%E5%88%B0%E7%9C%9F%E6%AD%A3%E8%A6%81%E6%83%B3%E7%9A%84/</link>
+      <pubDate>Wed, 11 Jan 2017 11:58:06 +0200</pubDate>
+      
+      <guid>http://myself659.github.io/post/life/%E4%BA%94%E4%B8%AA%E9%97%AE%E9%A2%98%E6%89%BE%E5%88%B0%E7%9C%9F%E6%AD%A3%E8%A6%81%E6%83%B3%E7%9A%84/</guid>
+      <description>问题 1. 你想要什么？ 2. 你有多想要它？ 3. 现在的你离你想要的有多远？ 4. 你能做什么来实现你想要的？ 5. 你开始行动吗？</description>
+    </item>
+    
+    <item>
       <title>从C语言epoll编程到go net实现分析</title>
       <link>http://myself659.github.io/post/2016-09-10-from-cepoll-to-go-net/</link>
       <pubDate>Sat, 10 Sep 2016 11:58:06 +0200</pubDate>
@@ -1514,10 +1541,10 @@
     
     <item>
       <title>如何开始行动</title>
-      <link>http://myself659.github.io/post/learn/how-to-start/</link>
+      <link>http://myself659.github.io/post/learn/how-to-start-%E5%BC%80%E5%A7%8B/</link>
       <pubDate>Mon, 13 Jun 2016 11:58:06 +0200</pubDate>
       
-      <guid>http://myself659.github.io/post/learn/how-to-start/</guid>
+      <guid>http://myself659.github.io/post/learn/how-to-start-%E5%BC%80%E5%A7%8B/</guid>
       <description>背景 人们常说： 万事开头难。 好的开始是成功的一半。 “The secret of getting ahead is getting started. The secret of getting started is breaking your complex overwhelming tasks into small manageable tasks, and starting on the first one.” — Mark Twain 从上可知开始很</description>
     </item>
     
