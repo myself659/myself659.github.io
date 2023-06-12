@@ -226,6 +226,13 @@
   </url>
   
   <url>
+    <loc>http://myself659.github.io/post/life/%E6%88%90%E5%8A%9F%E7%9A%84%E8%B7%AF%E5%BE%84%E4%B8%8E%E6%A6%82%E7%8E%87/</loc>
+    <lastmod>2022-09-07T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>http://myself659.github.io/post/rt/%E8%A7%82%E9%9F%B3%E6%98%AF%E5%A6%82%E4%BD%95%E6%9D%83%E5%8A%9B%E5%8F%98%E7%8E%B0/</loc>
     <lastmod>2022-05-11T11:58:06+02:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -1577,6 +1584,13 @@
   </url>
   
   <url>
+    <loc>http://myself659.github.io/post/life/%E4%BA%BA%E7%94%9F%E5%87%8F%E6%B3%95%E6%B8%85%E5%8D%95/</loc>
+    <lastmod>2018-02-17T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>http://myself659.github.io/post/blockchain/%E4%BB%8E%E8%B4%A7%E5%B8%81%E8%A7%92%E5%BA%A6%E7%9C%8B%E6%AF%94%E7%89%B9%E5%B8%81/</loc>
     <lastmod>2018-02-05T11:58:06+02:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -1822,7 +1836,7 @@
   </url>
   
   <url>
-    <loc>http://myself659.github.io/post/learn/%E9%AB%98%E8%B4%A8%E9%87%8F%E6%80%9D%E8%80%83/</loc>
+    <loc>http://myself659.github.io/post/learn/%E9%AB%98%E8%B4%A8%E9%87%8F%E6%80%9D%E8%80%83-thinking/</loc>
     <lastmod>2017-06-03T11:58:06+02:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -2172,7 +2186,7 @@
   </url>
   
   <url>
-    <loc>http://myself659.github.io/post/rt/stupid-foolish-is-emeny/</loc>
+    <loc>http://myself659.github.io/post/rt/stupid-foolish-is-enemy/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
