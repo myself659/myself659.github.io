@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>programming on 沉风网事</title>
+    <link>http://myself659.github.io/tags/programming/</link>
+    <description>Recent content in programming on 沉风网事</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <copyright>沉风网事</copyright>
+    <lastBuildDate>Mon, 21 Dec 2020 11:58:06 +0200</lastBuildDate><atom:link href="http://myself659.github.io/tags/programming/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>说说计算思维</title>
+      <link>http://myself659.github.io/post/arch/%E8%AF%B4%E8%AF%B4%E8%AE%A1%E7%AE%97%E6%80%9D%E7%BB%B4/</link>
+      <pubDate>Mon, 21 Dec 2020 11:58:06 +0200</pubDate>
+      
+      <guid>http://myself659.github.io/post/arch/%E8%AF%B4%E8%AF%B4%E8%AE%A1%E7%AE%97%E6%80%9D%E7%BB%B4/</guid>
+      <description>什么是计算思维 wiki对于计算思维定义如下： Computational thinking (CT) refers to the thought processes involved in formulating problems so their solutions can be represented as computational steps and algorithms.[1]In education, CT is a set of problem-solving methods that involve expressing problems and their solutions in ways that a computer could also execute.[2]It involves automation</description>
+    </item>
+    
+  </channel>
+</rss>
