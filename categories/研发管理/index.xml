@@ -10,10 +10,10 @@
     <lastBuildDate>Sun, 08 Mar 2020 11:58:06 +0200</lastBuildDate><atom:link href="http://myself659.github.io/categories/%E7%A0%94%E5%8F%91%E7%AE%A1%E7%90%86/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>微盟删库事件复盘与思考</title>
-      <link>http://myself659.github.io/post/weimeng-del-data/</link>
+      <link>http://myself659.github.io/post/arch/weimeng-del-data/</link>
       <pubDate>Sun, 08 Mar 2020 11:58:06 +0200</pubDate>
       
-      <guid>http://myself659.github.io/post/weimeng-del-data/</guid>
+      <guid>http://myself659.github.io/post/arch/weimeng-del-data/</guid>
       <description>事故 先简单看一下整个事故的粗略时间线。 2月23日，微盟服务出现故障。商家商城、小程序均无法登录。 2月25日，微盟紧急恢复了核心业务的线上生产</description>
     </item>
     
