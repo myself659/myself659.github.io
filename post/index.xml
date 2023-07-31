@@ -7,7 +7,25 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>沉风网事</copyright>
-    <lastBuildDate>Sun, 18 Jun 2023 11:58:06 +0200</lastBuildDate><atom:link href="http://myself659.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 09 Jul 2023 11:58:06 +0200</lastBuildDate><atom:link href="http://myself659.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>如何防止视力下降</title>
+      <link>http://myself659.github.io/post/life/%E9%98%B2%E6%AD%A2%E8%A7%86%E5%8A%9B%E4%B8%8B%E9%99%8D-decline-eyesight/</link>
+      <pubDate>Sun, 09 Jul 2023 11:58:06 +0200</pubDate>
+      
+      <guid>http://myself659.github.io/post/life/%E9%98%B2%E6%AD%A2%E8%A7%86%E5%8A%9B%E4%B8%8B%E9%99%8D-decline-eyesight/</guid>
+      <description>tips 正确的用眼习惯 控制与减少屏幕时间 增加户外活动 避免长时间用眼，多看窗外与远望 保持身体活跃：慢跑、游泳、快走。促进血液流向眼部神经，从而保持眼</description>
+    </item>
+    
+    <item>
+      <title>有关运动健身的Tips</title>
+      <link>http://myself659.github.io/post/sport/tips-for-workout-%E5%81%A5%E8%BA%AB%E9%94%BB%E7%82%BC/</link>
+      <pubDate>Sun, 09 Jul 2023 11:58:06 +0800</pubDate>
+      
+      <guid>http://myself659.github.io/post/sport/tips-for-workout-%E5%81%A5%E8%BA%AB%E9%94%BB%E7%82%BC/</guid>
+      <description>tips 心肺是基础，全面的运动健身先从心肺相关练习开始，例如从跑步开始 不依赖器械，这样可以减少依赖，有利于养成习惯 重视预热和静态拉伸，这样可以增强</description>
+    </item>
+    
     <item>
       <title>99¹⁰⁰与100⁹⁹谁大</title>
       <link>http://myself659.github.io/post/math/99pow100-vs-100pow99/</link>
@@ -406,12 +424,30 @@
     </item>
     
     <item>
+      <title>说说学到位</title>
+      <link>http://myself659.github.io/post/learn/%E5%AD%A6%E5%88%B0%E4%BD%8D/</link>
+      <pubDate>Sat, 18 Apr 2020 11:58:06 +0800</pubDate>
+      
+      <guid>http://myself659.github.io/post/learn/%E5%AD%A6%E5%88%B0%E4%BD%8D/</guid>
+      <description>什么是学到位 学到位可以分解为四个到位： 理解到位 体系到位 融合到位 应用到位 理解到位 怎么做到理解到位？ 不多说，推荐费曼学习法。 If you can&amp;rsquo;t explain it simply, you don&amp;rsquo;t understand it</description>
+    </item>
+    
+    <item>
       <title>libra的妥协与机会</title>
       <link>http://myself659.github.io/post/libra2-basic/</link>
       <pubDate>Fri, 17 Apr 2020 11:58:06 +0200</pubDate>
       
       <guid>http://myself659.github.io/post/libra2-basic/</guid>
       <description>2019年6月libra横空出世。我写了一篇关于libra的文章：Facebook libra是昙花一现还是星星之火。 文章的提到： 对，Libr</description>
+    </item>
+    
+    <item>
+      <title>如何清晰地思考</title>
+      <link>http://myself659.github.io/post/rt/thinking-clear/</link>
+      <pubDate>Sat, 11 Apr 2020 11:58:06 +0200</pubDate>
+      
+      <guid>http://myself659.github.io/post/rt/thinking-clear/</guid>
+      <description>定义 思考是一个多方面的认知过程，包括多种心理活动，如推理、逻辑、直觉、本能、可视化、想象、感知、解决问题和决策。 那么什么是清晰地思考呢？ 在日</description>
     </item>
     
     <item>
@@ -691,6 +727,15 @@
       
       <guid>http://myself659.github.io/post/learn/how-to-flow-%E5%BF%83%E6%B5%81/</guid>
       <description>心流状态 心流状态(Flow State)指的是一种不自觉的身心愉悦感,以及投入在一个活动中的极度专注的心理状态。当一个人全身心地投入一项工作或</description>
+    </item>
+    
+    <item>
+      <title>只做一件事，避免多任务并发</title>
+      <link>http://myself659.github.io/post/learn/how-to-one-task%E5%8F%AA%E5%81%9A%E4%B8%80%E4%BB%B6%E4%BA%8B/</link>
+      <pubDate>Mon, 03 Jun 2019 11:58:06 +0200</pubDate>
+      
+      <guid>http://myself659.github.io/post/learn/how-to-one-task%E5%8F%AA%E5%81%9A%E4%B8%80%E4%BB%B6%E4%BA%8B/</guid>
+      <description>多任务并发的危害 人类大脑结构上并不适合多任务处理,强行进行多任务会降低效率与产出 多任务带来的切换成本开销大 多任务处理会降低工作质量，增大压力</description>
     </item>
     
     <item>
@@ -1069,15 +1114,6 @@
       
       <guid>http://myself659.github.io/post/about-rand/</guid>
       <description>随机是一个十分有意思的问题。 随机是一种选择方式 生活中最常见的例子就有这些： 抽签 抽奖 抛硬币 随机是一种隐藏方式 同样拿抽奖为例，将少量的中奖者隐藏</description>
-    </item>
-    
-    <item>
-      <title>如何走出困境避免进度卡壳</title>
-      <link>http://myself659.github.io/post/learn/how-to-unstuck-avoid-suck/</link>
-      <pubDate>Fri, 01 Jun 2018 11:58:06 +0200</pubDate>
-      
-      <guid>http://myself659.github.io/post/learn/how-to-unstuck-avoid-suck/</guid>
-      <description>原因 陷入困境的原因从以下几个方面展开。 基础 不知道自己不知道unknown unknown 技能进入高原与瓶颈期，技能达不到解决问题的要求 缺少信息 自我限制 陷入</description>
     </item>
     
     <item>
@@ -1856,6 +1892,15 @@
     
     <item>
       <title></title>
+      <link>http://myself659.github.io/post/ai/prompt-101/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://myself659.github.io/post/ai/prompt-101/</guid>
+      <description>“Tell me about dogs.” vs +++ banner = &amp;quot;&amp;quot; categories = [&amp;ldquo;AI&amp;rdquo;] date = &amp;ldquo;2023-3-15T11:58:06+02:00&amp;rdquo; description = &amp;quot;&amp;quot; images = [] menu = &amp;quot;&amp;quot; tags = [&amp;ldquo;AI&amp;rdquo;] title = &amp;ldquo;GPT4&amp;rdquo; draft = true +++ What is Prompting? Prompting” is how humans can talk to artificial intelligence (AI). “Arti</description>
+    </item>
+    
+    <item>
+      <title></title>
       <link>http://myself659.github.io/post/internet/2017-02-04-country-internet-music/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -1879,6 +1924,15 @@
       
       <guid>http://myself659.github.io/post/k8s-githubaction/</guid>
       <description>banner = &amp;quot;&amp;quot; categories = [&amp;ldquo;Kubernetes&amp;rdquo;] date = &amp;ldquo;2020-10-17T11:58:06+02:00&amp;rdquo; description = &amp;quot;&amp;quot; images = [] menu = &amp;quot;&amp;quot; tags = [&amp;ldquo;Docker&amp;rdquo;, &amp;ldquo;Kubernetes&amp;rdquo;] title = &amp;ldquo;利用github action部署到k8s集群&amp;rdquo; draft = true +++ 目标 个人开发</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://myself659.github.io/post/learn/how-to-unstuck-avoid-suck/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://myself659.github.io/post/learn/how-to-unstuck-avoid-suck/</guid>
+      <description>https://medium.com/curious/if-you-feel-stuck-ask-yourself-this-powerful-question-467eb8f85f12 +++ banner = &amp;quot;&amp;quot; categories = [&amp;ldquo;learn&amp;rdquo;] date = &amp;ldquo;2018-06-01T11:58:06+02:00&amp;rdquo; description = &amp;quot;&amp;quot; images = [] menu = &amp;quot;&amp;quot; tags = [&amp;ldquo;learn&amp;rdquo;] title = &amp;ldquo;如何走出困境避免进度卡壳&amp;rdquo; draft = false +++ 原因 陷入困境的原因从以下几个方</description>
     </item>
     
     <item>
