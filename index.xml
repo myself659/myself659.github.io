@@ -108,6 +108,15 @@
     </item>
     
     <item>
+      <title>AI编程时代程序员应该重点培养的技能</title>
+      <link>http://myself659.github.io/post/ai/ai%E7%BC%96%E7%A8%8B%E6%97%B6%E4%BB%A3%E7%9A%84%E6%8A%80%E8%83%BD/</link>
+      <pubDate>Wed, 15 Mar 2023 11:58:06 +0800</pubDate>
+      
+      <guid>http://myself659.github.io/post/ai/ai%E7%BC%96%E7%A8%8B%E6%97%B6%E4%BB%A3%E7%9A%84%E6%8A%80%E8%83%BD/</guid>
+      <description>背景 AI编程已经不再是传说，而是事实。GitHub Copilot这样的工具会不断推动AI编程的普及。这会带来给程序员的工作带来新的变化。 这一</description>
+    </item>
+    
+    <item>
       <title>体制内会越来越内卷</title>
       <link>http://myself659.github.io/post/human/%E4%BD%93%E5%88%B6%E5%86%85%E4%BA%BA%E5%91%98%E5%86%85%E5%8D%B7%E8%B5%B7%E6%9D%A5/</link>
       <pubDate>Sun, 08 Jan 2023 11:58:06 +0800</pubDate>
@@ -448,6 +457,15 @@
       
       <guid>http://myself659.github.io/post/libra2-basic/</guid>
       <description>2019年6月libra横空出世。我写了一篇关于libra的文章：Facebook libra是昙花一现还是星星之火。 文章的提到： 对，Libr</description>
+    </item>
+    
+    <item>
+      <title>说说系统思考</title>
+      <link>http://myself659.github.io/post/rt/systems-thinking101/</link>
+      <pubDate>Sun, 12 Apr 2020 11:58:06 +0200</pubDate>
+      
+      <guid>http://myself659.github.io/post/rt/systems-thinking101/</guid>
+      <description></description>
     </item>
     
     <item>
@@ -880,6 +898,15 @@
       
       <guid>http://myself659.github.io/post/principle-of-work/</guid>
       <description>前言 这篇文章规划了很久，本来打算年前写，各种事情加上自己的拖延症，到现在才开始写。 做事 如果说人的一生做什么？总结一下，可以划分两个方面： 做人</description>
+    </item>
+    
+    <item>
+      <title>谈谈学习的原则</title>
+      <link>http://myself659.github.io/post/learn/learn-principles/</link>
+      <pubDate>Wed, 23 Jan 2019 11:58:06 +0200</pubDate>
+      
+      <guid>http://myself659.github.io/post/learn/learn-principles/</guid>
+      <description>学习原则 坚持终身学习 学习有法、学无定法、贵在得法 向高手学习，站在巨人的肩膀上学习 不断学习元学习，学会如何学习并不断提高学习能力 坚持高标准学习</description>
     </item>
     
     <item>
@@ -1897,15 +1924,6 @@
       
       <guid>http://myself659.github.io/post/2017-05-09-web-server-perf-and-design/</guid>
       <description>+++ banner = &amp;quot;&amp;quot; categories = [&amp;ldquo;Arch&amp;rdquo;] date = &amp;ldquo;2017-05-09T11:58:06+02:00&amp;rdquo; description = &amp;quot;&amp;quot; images = [] menu = &amp;quot;&amp;quot; tags = [&amp;ldquo;Arch&amp;rdquo;] title = &amp;ldquo;高性能服务器设计与优化&amp;rdquo; draft = false +++ 为了构建自己的知识体系，对高性能服</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>http://myself659.github.io/post/ai/gpt-code-errors/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://myself659.github.io/post/ai/gpt-code-errors/</guid>
-      <description></description>
     </item>
     
     <item>

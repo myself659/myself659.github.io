@@ -198,6 +198,13 @@
   </url>
   
   <url>
+    <loc>http://myself659.github.io/post/ai/ai%E7%BC%96%E7%A8%8B%E6%97%B6%E4%BB%A3%E7%9A%84%E6%8A%80%E8%83%BD/</loc>
+    <lastmod>2023-03-15T11:58:06+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>http://myself659.github.io/tags/human/</loc>
     <lastmod>2023-01-08T11:58:06+08:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -725,6 +732,13 @@
   <url>
     <loc>http://myself659.github.io/post/libra2-basic/</loc>
     <lastmod>2020-04-17T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://myself659.github.io/post/rt/systems-thinking101/</loc>
+    <lastmod>2020-04-12T11:58:06+02:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -1263,6 +1277,13 @@
   
   <url>
     <loc>http://myself659.github.io/post/principle-of-work/</loc>
+    <lastmod>2019-01-23T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://myself659.github.io/post/learn/learn-principles/</loc>
     <lastmod>2019-01-23T11:58:06+02:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -2257,12 +2278,6 @@
   
   <url>
     <loc>http://myself659.github.io/post/2017-05-09-web-server-perf-and-design/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://myself659.github.io/post/ai/gpt-code-errors/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
