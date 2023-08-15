@@ -7,7 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>沉风网事</copyright>
-    <lastBuildDate>Tue, 08 Jan 2019 11:58:06 +0200</lastBuildDate><atom:link href="http://myself659.github.io/tags/arch/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 21 Jul 2019 11:58:06 +0200</lastBuildDate><atom:link href="http://myself659.github.io/tags/arch/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>正交思维与软件工程</title>
+      <link>http://myself659.github.io/post/arch/orthogonal-thinking-in-software/</link>
+      <pubDate>Sun, 21 Jul 2019 11:58:06 +0200</pubDate>
+      
+      <guid>http://myself659.github.io/post/arch/orthogonal-thinking-in-software/</guid>
+      <description>什么是Orthogonal？ orthogonal表面意思是正交的，直角的。 平面几何的坐标系的x轴与y轴就是正交关系。 在软件工程中Orthog</description>
+    </item>
+    
     <item>
       <title>Cache 101</title>
       <link>http://myself659.github.io/post/cache-101/</link>
