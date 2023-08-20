@@ -658,6 +658,15 @@
     </item>
     
     <item>
+      <title>为什么好习惯很重要</title>
+      <link>http://myself659.github.io/post/learn/habit-is-important/</link>
+      <pubDate>Thu, 05 Dec 2019 11:58:06 +0800</pubDate>
+      
+      <guid>http://myself659.github.io/post/learn/habit-is-important/</guid>
+      <description>背景 大家都知道好习惯很重要。 大部分人也就停留在知道，但是仅仅是知道并不能对好习惯养成的帮助很有限。要形成养成好习惯的动力需要深入思考： 为什么</description>
+    </item>
+    
+    <item>
       <title>苹果微软亚马逊谷歌Facebook五大科技巨头是如何赚钱的</title>
       <link>http://myself659.github.io/post/tech-giant-income/</link>
       <pubDate>Thu, 21 Nov 2019 11:58:06 +0200</pubDate>
@@ -915,7 +924,7 @@
       <pubDate>Fri, 08 Feb 2019 11:58:06 +0200</pubDate>
       
       <guid>http://myself659.github.io/post/vscode-tips/</guid>
-      <description>安装 1 brew install visual-studio-code 配置 进入配置 文件-&amp;gt; 首选项 -&amp;gt;配置 点击右上边的文件图标，进入打开设置（打开配置文件C:\Users\IA\AppDa</description>
+      <description>安装 1 brew install visual-studio-code 配置 进入配置 文件-&amp;gt; 首选项 -&amp;gt;配置 点击右上边的文件图标，进入打开设置（打开配置文件C:\Users\ \AppData</description>
     </item>
     
     <item>
@@ -1258,6 +1267,15 @@
       
       <guid>http://myself659.github.io/post/distributed-bft/</guid>
       <description>相信很多人都知道，BFT(Byzantine fault tolerance)要求诚实节点数量大于总节点的三分之二。 为什么会有这个要求？ 多数派原则 多数派</description>
+    </item>
+    
+    <item>
+      <title>为什么要刷leetcode</title>
+      <link>http://myself659.github.io/post/dsa/%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E5%88%B7%E9%A2%98leetcode/</link>
+      <pubDate>Sun, 11 Mar 2018 11:58:06 +0800</pubDate>
+      
+      <guid>http://myself659.github.io/post/dsa/%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E5%88%B7%E9%A2%98leetcode/</guid>
+      <description>背景 为什么要刷leetcode？ 从两个方面可以展开说明。 刷leetcode有什么好处？ 为什么可以做到刷leetcode？ 刷leetcode有</description>
     </item>
     
     <item>
