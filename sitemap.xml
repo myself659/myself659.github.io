@@ -983,7 +983,14 @@
   
   <url>
     <loc>http://myself659.github.io/categories/learn/</loc>
-    <lastmod>2019-12-05T11:58:06+08:00</lastmod>
+    <lastmod>2019-12-06T11:58:06+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://myself659.github.io/post/learn/how-to-develop-habit/</loc>
+    <lastmod>2019-12-06T11:58:06+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
