@@ -1,67 +1,64 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>学习 on 沉风网事</title>
-    <link>https://myself659.github.io/tags/%E5%AD%A6%E4%B9%A0/</link>
+    <link>http://myself659.github.io/tags/%E5%AD%A6%E4%B9%A0/</link>
     <description>Recent content in 学习 on 沉风网事</description>
-    <image>
-      <title>沉风网事</title>
-      <url>https://myself659.github.io/</url>
-      <link>https://myself659.github.io/</link>
-    </image>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Thu, 23 Feb 2023 11:58:06 +0200</lastBuildDate><atom:link href="https://myself659.github.io/tags/%E5%AD%A6%E4%B9%A0/index.xml" rel="self" type="application/rss+xml" />
+    <language>zh-cn</language>
+    <copyright>沉风网事</copyright>
+    <lastBuildDate>Thu, 23 Feb 2023 11:58:06 +0200</lastBuildDate><atom:link href="http://myself659.github.io/tags/%E5%AD%A6%E4%B9%A0/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>认知的层次和素质</title>
-      <link>https://myself659.github.io/post/learn/%E8%AE%A4%E7%9F%A5%E7%9A%84%E5%B1%82%E6%AC%A1%E5%92%8C%E7%B4%A0%E8%B4%A8/</link>
+      <link>http://myself659.github.io/post/learn/%E8%AE%A4%E7%9F%A5%E7%9A%84%E5%B1%82%E6%AC%A1%E5%92%8C%E7%B4%A0%E8%B4%A8/</link>
       <pubDate>Thu, 23 Feb 2023 11:58:06 +0200</pubDate>
       
-      <guid>https://myself659.github.io/post/learn/%E8%AE%A4%E7%9F%A5%E7%9A%84%E5%B1%82%E6%AC%A1%E5%92%8C%E7%B4%A0%E8%B4%A8/</guid>
+      <guid>http://myself659.github.io/post/learn/%E8%AE%A4%E7%9F%A5%E7%9A%84%E5%B1%82%E6%AC%A1%E5%92%8C%E7%B4%A0%E8%B4%A8/</guid>
       <description>层次 1.观察现象 2.发现事实 3.探究本质 4.致知于行 5.知行合一 素质 好奇心： 充满好奇心和善用好奇心，不断深入思考与发现 现实主义：实事求是的态</description>
     </item>
     
     <item>
       <title>关于快速学习的思考</title>
-      <link>https://myself659.github.io/post/learn/how-to-learn-fast/</link>
+      <link>http://myself659.github.io/post/learn/how-to-learn-fast/</link>
       <pubDate>Sun, 26 Apr 2020 11:58:06 +0200</pubDate>
       
-      <guid>https://myself659.github.io/post/learn/how-to-learn-fast/</guid>
+      <guid>http://myself659.github.io/post/learn/how-to-learn-fast/</guid>
       <description>在知识经济与日新月异的时代，学习的重要无须多言。这个时代正在惩罚不学习和不会学习的人。 从整个知识体系上来看，如何学习属于元知识，属于基础知识</description>
     </item>
     
     <item>
       <title>如何迭代</title>
-      <link>https://myself659.github.io/post/learn/how-to-iterate-%E8%BF%AD%E4%BB%A3/</link>
+      <link>http://myself659.github.io/post/learn/how-to-iterate-%E8%BF%AD%E4%BB%A3/</link>
       <pubDate>Mon, 03 Jun 2019 11:58:06 +0200</pubDate>
       
-      <guid>https://myself659.github.io/post/learn/how-to-iterate-%E8%BF%AD%E4%BB%A3/</guid>
+      <guid>http://myself659.github.io/post/learn/how-to-iterate-%E8%BF%AD%E4%BB%A3/</guid>
       <description>重复不如迭代 迭代相比较于重复有以下特点： 改变 复用 反馈 结论： 1000次重复不如1000次迭代。 迭代的原则 小改变，多对比，多迭代 度量迭代 迭代的粒</description>
     </item>
     
     <item>
       <title>谈谈学习的原则</title>
-      <link>https://myself659.github.io/post/learn/learn-principles/</link>
+      <link>http://myself659.github.io/post/learn/learn-principles/</link>
       <pubDate>Wed, 23 Jan 2019 11:58:06 +0200</pubDate>
       
-      <guid>https://myself659.github.io/post/learn/learn-principles/</guid>
+      <guid>http://myself659.github.io/post/learn/learn-principles/</guid>
       <description>学习原则 坚持终身学习 学习有法、学无定法、贵在得法 向高手学习，站在巨人的肩膀上学习 不断学习元学习，学会如何学习并不断提高学习能力 坚持高标准学习</description>
     </item>
     
     <item>
       <title>什么是高质量的思考</title>
-      <link>https://myself659.github.io/post/learn/%E9%AB%98%E8%B4%A8%E9%87%8F%E6%80%9D%E8%80%83-thinking/</link>
+      <link>http://myself659.github.io/post/learn/%E9%AB%98%E8%B4%A8%E9%87%8F%E6%80%9D%E8%80%83-thinking/</link>
       <pubDate>Sat, 03 Jun 2017 11:58:06 +0200</pubDate>
       
-      <guid>https://myself659.github.io/post/learn/%E9%AB%98%E8%B4%A8%E9%87%8F%E6%80%9D%E8%80%83-thinking/</guid>
+      <guid>http://myself659.github.io/post/learn/%E9%AB%98%E8%B4%A8%E9%87%8F%E6%80%9D%E8%80%83-thinking/</guid>
       <description>思考的质量 人一思考,上帝就开始发笑。所以人要学会思考，提高思考的质量。 下面从四个角度来看看有哪些因素决定思考的质量？ 原则 怀疑一切，大胆假设，</description>
     </item>
     
     <item>
       <title>如何开始行动</title>
-      <link>https://myself659.github.io/post/learn/how-to-start-%E5%BC%80%E5%A7%8B/</link>
+      <link>http://myself659.github.io/post/learn/how-to-start-%E5%BC%80%E5%A7%8B/</link>
       <pubDate>Mon, 13 Jun 2016 11:58:06 +0200</pubDate>
       
-      <guid>https://myself659.github.io/post/learn/how-to-start-%E5%BC%80%E5%A7%8B/</guid>
+      <guid>http://myself659.github.io/post/learn/how-to-start-%E5%BC%80%E5%A7%8B/</guid>
       <description>背景 人们常说： 万事开头难。 好的开始是成功的一半。 “The secret of getting ahead is getting started. The secret of getting started is breaking your complex overwhelming tasks into small manageable tasks, and starting on the first one.” — Mark Twain 从上可知开始很</description>
     </item>
     

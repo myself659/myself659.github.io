@@ -1,0 +1,1212 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <title>docker image命令实践 &middot; 沉风网事</title>
+    <meta name="generator" content="Hugo 0.54.0" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="author" content="沉风">
+    
+      <meta name="description" content="沉风网事，以人为本，尊重事实与原理，立足现实，以科技与金融为驱动，中西结合，虚实相应，主要关注互联网，系统架构，区块链，安全，经济，数据等领域">
+    
+    
+    <link rel="canonical" href="https://myself659.github.io/2016/01/28/2016-01-28-docker-cmd-pratice/"/>
+    <link rel="icon" href="https://myself659.github.io/favicon.ico">
+    <link rel="apple-touch-icon" href="https://myself659.github.io/apple-touch-icon.png"/>
+    <link rel="stylesheet" href="https://myself659.github.io/css/style.css">
+    <link rel="stylesheet" href="https://myself659.github.io/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://myself659.github.io/css/monokai.css">
+    <link rel="stylesheet" href="https://myself659.github.io/fancybox/jquery.fancybox.css">
+    
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400italic,400,600' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Source+Code+Pro' rel='stylesheet' type='text/css'>
+    <meta property="og:title" content="docker image命令实践" />
+<meta property="og:description" content="搭建了docker环境，就来体验一下Docker，常用docker image命令如下：
+1. 搜索docker image root@localhost ~]# docker search ubuntu NAME DESCRIPTION STARS OFFICIAL AUTOMATED ubuntu Ubuntu is a Debian-based Linux operating s... 2954 [OK] ubuntu-upstart Upstart is an event-based replacement for ... 58 [OK] dorowu/ubuntu-desktop-lxde-vnc Ubuntu with openssh-server and NoVNC on po... 32 [OK] torusware/speedus-ubuntu Always updated official Ubuntu docker imag... 25 [OK] ubuntu-debootstrap debootstrap --variant=minbase --components... 22 [OK] tleyden5iwx/ubuntu-cuda Ubuntu 14.04 with CUDA drivers pre-installed 18 [OK] rastasheep/ubuntu-sshd Dockerized SSH service, built on top of of." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://myself659.github.io/2016/01/28/2016-01-28-docker-cmd-pratice/" />
+<meta property="article:published_time" content="2016-01-28T11:58:06&#43;02:00"/>
+<meta property="article:modified_time" content="2016-01-28T11:58:06&#43;02:00"/>
+
+    
+    
+<meta itemprop="name" content="docker image命令实践">
+<meta itemprop="description" content="搭建了docker环境，就来体验一下Docker，常用docker image命令如下：
+1. 搜索docker image root@localhost ~]# docker search ubuntu NAME DESCRIPTION STARS OFFICIAL AUTOMATED ubuntu Ubuntu is a Debian-based Linux operating s... 2954 [OK] ubuntu-upstart Upstart is an event-based replacement for ... 58 [OK] dorowu/ubuntu-desktop-lxde-vnc Ubuntu with openssh-server and NoVNC on po... 32 [OK] torusware/speedus-ubuntu Always updated official Ubuntu docker imag... 25 [OK] ubuntu-debootstrap debootstrap --variant=minbase --components... 22 [OK] tleyden5iwx/ubuntu-cuda Ubuntu 14.04 with CUDA drivers pre-installed 18 [OK] rastasheep/ubuntu-sshd Dockerized SSH service, built on top of of.">
+
+
+<meta itemprop="datePublished" content="2016-01-28T11:58:06&#43;02:00" />
+<meta itemprop="dateModified" content="2016-01-28T11:58:06&#43;02:00" />
+<meta itemprop="wordCount" content="541">
+
+
+
+<meta itemprop="keywords" content="Linux," />
+
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="docker image命令实践"/>
+<meta name="twitter:description" content="搭建了docker环境，就来体验一下Docker，常用docker image命令如下：
+1. 搜索docker image root@localhost ~]# docker search ubuntu NAME DESCRIPTION STARS OFFICIAL AUTOMATED ubuntu Ubuntu is a Debian-based Linux operating s... 2954 [OK] ubuntu-upstart Upstart is an event-based replacement for ... 58 [OK] dorowu/ubuntu-desktop-lxde-vnc Ubuntu with openssh-server and NoVNC on po... 32 [OK] torusware/speedus-ubuntu Always updated official Ubuntu docker imag... 25 [OK] ubuntu-debootstrap debootstrap --variant=minbase --components... 22 [OK] tleyden5iwx/ubuntu-cuda Ubuntu 14.04 with CUDA drivers pre-installed 18 [OK] rastasheep/ubuntu-sshd Dockerized SSH service, built on top of of."/>
+
+    
+
+    
+
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+
+     
+ <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+ <script type="text/x-mathjax-config">
+   MathJax.Hub.Config({
+     tex2jax: {
+       skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+       inlineMath: [['$','$']]
+     }
+   });
+ </script>
+</head>
+<body>
+<div class="container">
+
+
+<div id="container">
+	<header id="header">
+  <div id="header-main" class="header-inner">
+    <div class="outer">
+      <a href="https://myself659.github.io/" id="logo">
+          
+          <i class="logo" style="background-image: url('https://myself659.github.io/css/images/logo.png')"></i>
+          
+          <span class="site-title">沉风网事</span>
+      </a>
+      <nav id="main-nav">
+          
+          
+          <a class="main-nav-link" href="https://myself659.github.io/">Home</a>
+          
+          
+          
+          
+          
+          
+
+          
+          <a class="main-nav-link" href="/about/">About</a>
+          
+          <a class="main-nav-link" href="/2017/03/18/leetcode/">LeetCode</a>
+          
+          <a class="main-nav-link" href="/2017/10/02/read-post/">Read</a>
+          
+          <a class="main-nav-link" href="/2017/10/02/share-post/">Share</a>
+          
+          <a class="main-nav-link" href="/2017/10/02/slide-post/">Slide</a>
+          
+
+          
+          
+          
+          
+          <a class="main-nav-link" href="https://myself659.github.io/tags/">Tags</a>
+          
+          
+          
+          <a class="main-nav-link" href="https://myself659.github.io/categories/">Categories</a>
+          
+          
+      </nav>
+        <nav id="sub-nav">
+          <div class="profile" id="profile-nav">
+            <a id="profile-anchor" href="javascript:;"><img class="avatar" src="https://myself659.github.io/css/images/avatar.png"><i class="fa fa-caret-down"></i></a>
+          </div>
+        </nav>
+        <div id="search-form-wrap">
+          <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form">
+              <input type="search" name="q" class="search-form-input" placeholder="Search">
+              <button type="submit" class="search-form-submit">
+              </button>
+              <input type="hidden" name="sitesearch" value="https://myself659.github.io/" />
+         </form>
+        </div>
+    </div>
+  </div>
+  <div id="main-nav-mobile" class="header-sub header-inner">
+    <table class="menu outer">
+      <tbody>
+          <tr>
+          
+          
+          <td><a class="main-nav-link" href="https://myself659.github.io/">Home</a></td>
+          
+          
+          
+          
+          
+          
+
+          
+          <td><a class="main-nav-link" href="/about/">About</a></td>
+          
+          <td><a class="main-nav-link" href="/2017/03/18/leetcode/">LeetCode</a></td>
+          
+          <td><a class="main-nav-link" href="/2017/10/02/read-post/">Read</a></td>
+          
+          <td><a class="main-nav-link" href="/2017/10/02/share-post/">Share</a></td>
+          
+          <td><a class="main-nav-link" href="/2017/10/02/slide-post/">Slide</a></td>
+          
+
+          
+          
+          
+          
+          <td><a class="main-nav-link" href="https://myself659.github.io/tags/">Tags</a></td>
+          
+          
+          
+          <td><a class="main-nav-link" href="https://myself659.github.io/categories/">Categories</a></td>
+          
+          
+          <td>
+          <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form">
+          <input type="search" name="q" class="search-form-input" placeholder="Search">
+          <input type="hidden" name="sitesearch" value="https://myself659.github.io/" />
+          </form>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</header>
+
+   	
+   	<div class="outer">
+   	
+    	<aside id="profile">
+  <div class="inner profile-inner">
+    <div class="base-info profile-block">
+      
+      <img id="avatar" src="https://www.gravatar.com/avatar/45ae86ea3c111a5537490c3b370c03ee?s=100&d=identicon"/>
+      
+      <h2 id="name">沉风</h2>
+      <h3 id="title">All is well, just do it</h3>
+      <span id="location"><i class="fa fa-map-marker"></i>hangzhou, china</span>
+      
+          <a id="follow" href="https://github.com/myself659">
+              Follow
+          </a>
+      
+    </div>
+    <div class="article-info profile-block">
+      <div class="article-info-block">
+        127
+        <span>Posts</span>
+      </div>
+      <div class="article-info-block">
+        
+          35
+        
+        <span>
+            Tags
+        </span>
+      </div>
+    </div>
+    <div class="profile-block social-links">
+      <table>
+        <tr>
+          
+<td><a href="//github.com/myself659" target="_blank" title="GitHub"><i class="fa fa-github"></i></a></td>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<td><a href="//medium.com/@myself659" target="_blank" title="Medium"><i class="fa fa-medium"></i></a></td>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          <td><a href="https://myself659.github.io/index.xml" target="_blank" title="RSS"><i class="fa fa-rss"></i></a></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</aside>
+
+    
+
+    <section id="main">
+    
+    <article id="page-undefined" class="article article-type-page" itemscope="" itemprop="blogPost">
+    <div class="article-inner">
+        
+
+        <header class="article-header">
+    <a href="https://myself659.github.io/2016/01/28/2016-01-28-docker-cmd-pratice/">
+    <h1 class="article-title" itemprop="name">
+        docker image命令实践
+    </h1>
+    </a>
+    <div class="article-meta">
+
+        
+        <div class="article-date">
+            <i class="fa fa-calendar"></i>
+            <time datetime="2016-01-28 11:58:06 &#43;0200 &#43;0200" itemprop="datePublished">2016-01-28</time>
+            &middot;
+            541
+            words
+            &middot;
+            3
+            minute read
+        </div>
+        
+        
+            
+            
+            <div class="article-category">
+                <i class="fa fa-folder"></i>
+                
+                
+                <a class="article-category-link" href="https://myself659.github.io/categories/linux">Linux</a>
+                
+                
+            </div>
+            
+        
+
+        
+            
+            
+            <div class="article-category">
+                <i class="fa fa-tags"></i>
+                
+                
+                <a class="article-category-link" href="https://myself659.github.io/tags/linux">Linux</a>
+                
+                
+            </div>
+            
+        
+    </div>
+</header>
+
+
+      
+
+        <div class="article-entry" itemprop="articleBody">
+            
+
+<p>搭建了docker环境，就来体验一下Docker，常用docker image命令如下：</p>
+
+<h3 id="1-搜索docker-image">1. 搜索docker image</h3>
+
+<pre><code>root@localhost ~]# docker search ubuntu  
+NAME                              DESCRIPTION                                     STARS     OFFICIAL   AUTOMATED
+ubuntu                            Ubuntu is a Debian-based Linux operating s...   2954      [OK]       
+ubuntu-upstart                    Upstart is an event-based replacement for ...   58        [OK]       
+dorowu/ubuntu-desktop-lxde-vnc    Ubuntu with openssh-server and NoVNC on po...   32                   [OK]
+torusware/speedus-ubuntu          Always updated official Ubuntu docker imag...   25                   [OK]
+ubuntu-debootstrap                debootstrap --variant=minbase --components...   22        [OK]       
+tleyden5iwx/ubuntu-cuda           Ubuntu 14.04 with CUDA drivers pre-installed    18                   [OK]
+rastasheep/ubuntu-sshd            Dockerized SSH service, built on top of of...   16                   [OK]
+consol/ubuntu-xfce-vnc            Ubuntu container with &quot;headless&quot; VNC sessi...   8                    [OK]
+ioft/armhf-ubuntu                 [ABR] Ubuntu Docker images for the ARMv7(a...   7                    [OK]
+n3ziniuka5/ubuntu-oracle-jdk      Ubuntu with Oracle JDK. Check tags for ver...   7                    [OK]
+nuagebec/ubuntu                   Simple always updated Ubuntu docker images...   4                    [OK]
+nickistre/ubuntu-lamp-wordpress   LAMP on Ubuntu with wp-cli installed            3                    [OK]
+nimmis/ubuntu                     This is a docker images different LTS vers...   3                    [OK]
+maxexcloo/ubuntu                  Docker base image built on Ubuntu with Sup...   2                    [OK]
+sylvainlasnier/ubuntu             Ubuntu 15.10 root docker images with commo...   1                    [OK]
+isuper/base-ubuntu                This is just a small and clean base Ubuntu...   1                    [OK]
+densuke/ubuntu-jp-remix           Ubuntu Linuxの日本語remix風味です                       1                    [OK]
+seetheprogress/ubuntu             Ubuntu image provided by seetheprogress us...   1                    [OK]
+nickistre/ubuntu-lamp             LAMP server on Ubuntu                           1                    [OK]
+teamrock/ubuntu                   TeamRock's Ubuntu image configured with AW...   0                    [OK]
+konstruktoid/ubuntu               Ubuntu base image                               0                    [OK]
+birkof/ubuntu                     Ubuntu 14.04 LTS (Trusty Tahr)                  0                    [OK]
+zoni/ubuntu                                                                       0                    [OK]
+esycat/ubuntu                     Ubuntu LTS                                      0                    [OK]
+rallias/ubuntu                    Ubuntu with the needful                         0     
+</code></pre>
+
+<h3 id="2-下载image">2. 下载image</h3>
+
+<pre><code>docker pull  
+</code></pre>
+
+<h3 id="3-查看image">3. 查看image</h3>
+
+<pre><code>[root@localhost ~]# docker images
+REPOSITORY          TAG                 IMAGE ID            CREATED             VIRTUAL SIZE
+ubuntu              latest              d55e68e6cc9c        4 weeks ago         187.9 MB
+ubuntu              14.04               d55e68e6cc9c        4 weeks ago         187.9 MB
+training/sinatra    latest              f0f4ab557f95        19 months ago       447 MB
+
+</code></pre>
+
+<h3 id="4-删除image">4. 删除image</h3>
+
+<pre><code>
+[root@localhost ~]# docker  rm   training/sinatra
+Error response from daemon: no such id: training/sinatra
+Error: failed to remove containers: [training/sinatra]
+[root@localhost ~]# docker rm   f0f4ab557f95
+Error response from daemon: no such id: f0f4ab557f95
+Error: failed to remove containers: [f0f4ab557f95]
+[root@localhost ~]# docker rmi   f0f4ab557f95
+Untagged: training/sinatra:latest
+Deleted: f0f4ab557f954f3e04177663a3af90e88641bcdcce1f02ac900dbd9768ef4945
+Deleted: 79e6bf39f99322cc062a79bec4a09de0dd19cb7f5f735b4b6b7832c04b13bb45
+Deleted: ce80548340bb03726d391bb8fa4d134f8418c2fff90be9a7323560debdea9bd2
+Deleted: e809f156dc985e07105fdc86ec05eb03eb7aac8636dc210e8595d31b55787f4a
+Deleted: bfab314f3b766eddf9778f8dce089f44e84ea028f4a44ce68740dce81a844ec8
+Deleted: be88c4c27e80023b6aea82f0f2e15fb21c6f4193fe814e5b58010d356dd7846b
+Deleted: 3e76c0a80540a0d36493ae7110796fc92f559a191454e3ac19c1d4c650bdd9e0
+Deleted: 511136ea3c5a64f264b78b5433614aec563103b4d4702f3ba7d4d2698e22c158
+You have new mail in /var/spool/mail/root
+[root@localhost ~]# docker   images
+REPOSITORY          TAG                 IMAGE ID            CREATED             VIRTUAL SIZE
+ubuntu              latest              af88597ec24b        6 days ago          187.9 MB
+ubuntu              14.04               d55e68e6cc9c        4 weeks ago         187.9 MB
+</code></pre>
+
+<h3 id="5-运行image">5. 运行image</h3>
+
+<pre><code>[root@localhost ~]# docker  run   -i     -t      apache2   
+</code></pre>
+
+<h3 id="6-kill运行的docker-image">6.  kill运行的docker image</h3>
+
+<pre><code>[root@localhost ~]# docker  ps  
+CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
+68333b272b52        ubuntu              &quot;/bin/bash&quot;         18 minutes ago      Up 18 minutes                           clever_babbage      
+0ca2aff5b94b        ubuntu              &quot;bash&quot;              48 minutes ago      Up 48 minutes                           focused_hypatia     
+You have new mail in /var/spool/mail/root
+[root@localhost ~]# docker   kill   68333b272b52 
+68333b272b52
+[root@localhost ~]# docker    ps  
+CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
+0ca2aff5b94b        ubuntu              &quot;bash&quot;              54 minutes ago      Up 54 minutes                           focused_hypatia     
+</code></pre>
+
+<h3 id="7-制作image">7. 制作image</h3>
+
+<pre><code>[root@localhost tmp]# more  Dockerfile 
+FROM apache2  
+RUN  apt-get   install  -y  wget 
+[root@localhost tmp]# docker   build    -t wget . 
+Sending build context to Docker daemon 2.609 MB
+Sending build context to Docker daemon 
+Step 0 : FROM apache2
+ ---&gt; f5cf247f22af
+Step 1 : RUN apt-get   install  -y  wget
+ ---&gt; Running in ab3cd326c53c
+
+[root@localhost tmp]# docker   images 
+REPOSITORY          TAG                 IMAGE ID            CREATED             VIRTUAL SIZE
+wget                latest              be8bf51f39d5        29 seconds ago      229.1 MB
+apache2             latest              f5cf247f22af        5 hours ago         223.8 MB
+ubuntu              latest              af88597ec24b        6 days ago          187.9 MB
+ubuntu              14.04               d55e68e6cc9c        4 weeks ago         187.9 MB
+
+</code></pre>
+
+        </div>
+        
+
+        <footer class="article-footer">
+    <a data-url="https://myself659.github.io/2016/01/28/2016-01-28-docker-cmd-pratice/" data-id="4e8a4c777707a62b52be10d1c98af97e" class="article-share-link">
+        <i class="fa fa-share"></i>
+        Share
+    </a>
+    
+
+    <script>
+    (function ($) {
+        
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+    </script>
+</footer>
+
+    </div>
+
+    
+<nav id="article-nav">
+    
+    <a href="https://myself659.github.io/2015/12/13/2015-12-13-docker-way-1-build-docker-env/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">
+          Older
+      </strong>
+      <div class="article-nav-title">升级Linux内核，搭建docker环境</div>
+    </a>
+    
+
+    
+    <a href="https://myself659.github.io/2016/03/05/2016-03-05-do-more-than-coding/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">
+          Newer
+      </strong>
+      <div class="article-nav-title">代码是核心，但不仅仅是代码</div>
+    </a>
+    
+</nav>
+
+
+</article>
+
+
+    <script src="https://utteranc.es/client.js"
+        repo="myself659/ipds-public"
+        issue-term="url"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+    </script>
+
+    
+
+    </section>
+
+
+
+   	
+    	<aside id="sidebar">
+	
+
+
+
+<aside class="table-of-contents">
+    <details>
+    <summary>
+    <b>Table of Contents</b>
+    </summary>
+                    <ul class="toc-h2">
+                    <ul class="toc-h3"><li><a href="/2016/01/28/2016-01-28-docker-cmd-pratice/#1-%e6%90%9c%e7%b4%a2docker-image">1. 搜索docker image</a></li>
+            <li><a href="/2016/01/28/2016-01-28-docker-cmd-pratice/#2-%e4%b8%8b%e8%bd%bdimage">2. 下载image</a></li>
+            <li><a href="/2016/01/28/2016-01-28-docker-cmd-pratice/#3-%e6%9f%a5%e7%9c%8bimage">3. 查看image</a></li>
+            <li><a href="/2016/01/28/2016-01-28-docker-cmd-pratice/#4-%e5%88%a0%e9%99%a4image">4. 删除image</a></li>
+            <li><a href="/2016/01/28/2016-01-28-docker-cmd-pratice/#5-%e8%bf%90%e8%a1%8cimage">5. 运行image</a></li>
+            <li><a href="/2016/01/28/2016-01-28-docker-cmd-pratice/#6-kill%e8%bf%90%e8%a1%8c%e7%9a%84docker-image">6. kill运行的docker image</a></li>
+            <li><a href="/2016/01/28/2016-01-28-docker-cmd-pratice/#7-%e5%88%b6%e4%bd%9cimage">7. 制作image</a></li>
+            </details>
+</aside>
+    
+<div class="widget-wrap">
+    <h3 class="widget-title">
+        Recents
+    </h3>
+    <div class="widget">
+        <ul id="recent-post">
+            
+            <li>
+                <div class="item-thumbnail">
+                    <a href="https://myself659.github.io/2020/06/26/think-outof-box/" class="thumbnail">
+                    
+                        <span class="thumbnail-image thumbnail-none"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    <p class="item-category">
+                        
+                        <a class="article-category-link" href="https://myself659.github.io/categories/%E6%88%90%E9%95%BF">
+                        成长
+                        </a>
+                    </p>
+                    
+                    
+                    <p class="item-title"><a href="https://myself659.github.io/2020/06/26/think-outof-box/" class="title">谈谈跳出框架思考</a></p>
+                    <p class="item-date">
+                        <time datetime="2020-06-26 11:58:06 &#43;0200 &#43;0200" itemprop="datePublished">2020-06-26</time>
+                    </p>
+                </div>
+            </li>
+            
+            <li>
+                <div class="item-thumbnail">
+                    <a href="https://myself659.github.io/2020/05/31/cryptocurrency_antifrangible/" class="thumbnail">
+                    
+                        <span class="thumbnail-image thumbnail-none"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    <p class="item-category">
+                        
+                        <a class="article-category-link" href="https://myself659.github.io/categories/blockchain">
+                        BlockChain
+                        </a>
+                    </p>
+                    
+                    
+                    <p class="item-title"><a href="https://myself659.github.io/2020/05/31/cryptocurrency_antifrangible/" class="title">谈谈数字货币的反脆弱性</a></p>
+                    <p class="item-date">
+                        <time datetime="2020-05-31 11:58:06 &#43;0200 &#43;0200" itemprop="datePublished">2020-05-31</time>
+                    </p>
+                </div>
+            </li>
+            
+            <li>
+                <div class="item-thumbnail">
+                    <a href="https://myself659.github.io/2020/05/24/covid-19-symptom/" class="thumbnail">
+                    
+                        <span class="thumbnail-image thumbnail-none"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    <p class="item-category">
+                        
+                        <a class="article-category-link" href="https://myself659.github.io/categories/life">
+                        Life
+                        </a>
+                    </p>
+                    
+                    
+                    <p class="item-title"><a href="https://myself659.github.io/2020/05/24/covid-19-symptom/" class="title">分享：一图了解新型冠状病毒的症状有哪些</a></p>
+                    <p class="item-date">
+                        <time datetime="2020-05-24 11:58:06 &#43;0200 &#43;0200" itemprop="datePublished">2020-05-24</time>
+                    </p>
+                </div>
+            </li>
+            
+            <li>
+                <div class="item-thumbnail">
+                    <a href="https://myself659.github.io/2020/05/08/book-skin-in-the-game-how/" class="thumbnail">
+                    
+                        <span class="thumbnail-image thumbnail-none"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    <p class="item-category">
+                        
+                        <a class="article-category-link" href="https://myself659.github.io/categories/read">
+                        Read
+                        </a>
+                    </p>
+                    
+                    
+                    <p class="item-title"><a href="https://myself659.github.io/2020/05/08/book-skin-in-the-game-how/" class="title">读书笔记:《非对称风险》</a></p>
+                    <p class="item-date">
+                        <time datetime="2020-05-08 11:58:06 &#43;0200 &#43;0200" itemprop="datePublished">2020-05-08</time>
+                    </p>
+                </div>
+            </li>
+            
+            <li>
+                <div class="item-thumbnail">
+                    <a href="https://myself659.github.io/2020/04/26/how-to-learn-fast/" class="thumbnail">
+                    
+                        <span class="thumbnail-image thumbnail-none"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    <p class="item-category">
+                        
+                        <a class="article-category-link" href="https://myself659.github.io/categories/%E6%88%90%E9%95%BF">
+                        成长
+                        </a>
+                    </p>
+                    
+                    
+                    <p class="item-title"><a href="https://myself659.github.io/2020/04/26/how-to-learn-fast/" class="title">关于快速学习的思考</a></p>
+                    <p class="item-date">
+                        <time datetime="2020-04-26 11:58:06 &#43;0200 &#43;0200" itemprop="datePublished">2020-04-26</time>
+                    </p>
+                </div>
+            </li>
+            
+        </ul>
+    </div>
+</div>
+
+
+
+    
+
+
+<div class="widget-wrap">
+    <h3 class="widget-title">
+        Tags
+    </h3>
+    <div class="widget">
+        <ul class="category-list">
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://myself659.github.io/tags/arch">
+                    arch
+                </a>
+                <span class="category-list-count">5</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://myself659.github.io/tags/bitcoin">
+                    bitcoin
+                </a>
+                <span class="category-list-count">2</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://myself659.github.io/tags/blockchain">
+                    blockchain
+                </a>
+                <span class="category-list-count">31</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://myself659.github.io/tags/btc">
+                    btc
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://myself659.github.io/tags/cryptography">
+                    cryptography
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://myself659.github.io/tags/data">
+                    data
+                </a>
+                <span class="category-list-count">2</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://myself659.github.io/tags/data-struct">
+                    data-struct
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://myself659.github.io/tags/distributed">
+                    distributed
+                </a>
+                <span class="category-list-count">3</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://myself659.github.io/tags/docker">
+                    docker
+                </a>
+                <span class="category-list-count">3</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://myself659.github.io/tags/economy">
+                    economy
+                </a>
+                <span class="category-list-count">6</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://myself659.github.io/tags/english">
+                    english
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://myself659.github.io/tags/ethereum">
+                    ethereum
+                </a>
+                <span class="category-list-count">2</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://myself659.github.io/tags/golang">
+                    golang
+                </a>
+                <span class="category-list-count">10</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://myself659.github.io/tags/internet">
+                    internet
+                </a>
+                <span class="category-list-count">10</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://myself659.github.io/tags/ipfs">
+                    ipfs
+                </a>
+                <span class="category-list-count">3</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://myself659.github.io/tags/kubernetes">
+                    kubernetes
+                </a>
+                <span class="category-list-count">3</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://myself659.github.io/tags/life">
+                    life
+                </a>
+                <span class="category-list-count">2</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://myself659.github.io/tags/linux">
+                    linux
+                </a>
+                <span class="category-list-count">11</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://myself659.github.io/tags/nba">
+                    nba
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://myself659.github.io/tags/network">
+                    network
+                </a>
+                <span class="category-list-count">3</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://myself659.github.io/tags/nginx">
+                    nginx
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://myself659.github.io/tags/python">
+                    python
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://myself659.github.io/tags/read">
+                    read
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://myself659.github.io/tags/rust">
+                    rust
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://myself659.github.io/tags/secure">
+                    secure
+                </a>
+                <span class="category-list-count">5</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://myself659.github.io/tags/smart-contract">
+                    smart-contract
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://myself659.github.io/tags/substrate">
+                    substrate
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://myself659.github.io/tags/web">
+                    web
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://myself659.github.io/tags/%E5%95%86%E4%B8%9A">
+                    商业
+                </a>
+                <span class="category-list-count">5</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://myself659.github.io/tags/%E5%AD%A6%E4%B9%A0">
+                    学习
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://myself659.github.io/tags/%E6%88%90%E9%95%BF">
+                    成长
+                </a>
+                <span class="category-list-count">4</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://myself659.github.io/tags/%E7%A0%94%E5%8F%91%E7%AE%A1%E7%90%86">
+                    研发管理
+                </a>
+                <span class="category-list-count">4</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://myself659.github.io/tags/%E7%BC%96%E7%A8%8B">
+                    编程
+                </a>
+                <span class="category-list-count">6</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://myself659.github.io/tags/%E8%81%8C%E5%9C%BA">
+                    职场
+                </a>
+                <span class="category-list-count">2</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://myself659.github.io/tags/%E9%97%B2%E8%B0%88%E4%B9%B1%E6%89%AF">
+                    闲谈乱扯
+                </a>
+                <span class="category-list-count">9</span>
+            </li>
+            
+        </ul>
+    </div>
+</div>
+
+
+
+
+    
+
+
+<div class="widget-wrap">
+    <h3 class="widget-title">
+        Tag cloud
+    </h3>
+    <div class="widget tagcloud">
+        
+        
+        <a href="https://myself659.github.io/tags/arch" style="font-size: 12px;">arch</a>
+        
+        
+        <a href="https://myself659.github.io/tags/bitcoin" style="font-size: 12px;">bitcoin</a>
+        
+        
+        <a href="https://myself659.github.io/tags/blockchain" style="font-size: 12px;">blockchain</a>
+        
+        
+        <a href="https://myself659.github.io/tags/btc" style="font-size: 12px;">btc</a>
+        
+        
+        <a href="https://myself659.github.io/tags/cryptography" style="font-size: 12px;">cryptography</a>
+        
+        
+        <a href="https://myself659.github.io/tags/data" style="font-size: 12px;">data</a>
+        
+        
+        <a href="https://myself659.github.io/tags/data-struct" style="font-size: 12px;">data-struct</a>
+        
+        
+        <a href="https://myself659.github.io/tags/distributed" style="font-size: 12px;">distributed</a>
+        
+        
+        <a href="https://myself659.github.io/tags/docker" style="font-size: 12px;">docker</a>
+        
+        
+        <a href="https://myself659.github.io/tags/economy" style="font-size: 12px;">economy</a>
+        
+        
+        <a href="https://myself659.github.io/tags/english" style="font-size: 12px;">english</a>
+        
+        
+        <a href="https://myself659.github.io/tags/ethereum" style="font-size: 12px;">ethereum</a>
+        
+        
+        <a href="https://myself659.github.io/tags/golang" style="font-size: 12px;">golang</a>
+        
+        
+        <a href="https://myself659.github.io/tags/internet" style="font-size: 12px;">internet</a>
+        
+        
+        <a href="https://myself659.github.io/tags/ipfs" style="font-size: 12px;">ipfs</a>
+        
+        
+        <a href="https://myself659.github.io/tags/kubernetes" style="font-size: 12px;">kubernetes</a>
+        
+        
+        <a href="https://myself659.github.io/tags/life" style="font-size: 12px;">life</a>
+        
+        
+        <a href="https://myself659.github.io/tags/linux" style="font-size: 12px;">linux</a>
+        
+        
+        <a href="https://myself659.github.io/tags/nba" style="font-size: 12px;">nba</a>
+        
+        
+        <a href="https://myself659.github.io/tags/network" style="font-size: 12px;">network</a>
+        
+        
+        <a href="https://myself659.github.io/tags/nginx" style="font-size: 12px;">nginx</a>
+        
+        
+        <a href="https://myself659.github.io/tags/python" style="font-size: 12px;">python</a>
+        
+        
+        <a href="https://myself659.github.io/tags/read" style="font-size: 12px;">read</a>
+        
+        
+        <a href="https://myself659.github.io/tags/rust" style="font-size: 12px;">rust</a>
+        
+        
+        <a href="https://myself659.github.io/tags/secure" style="font-size: 12px;">secure</a>
+        
+        
+        <a href="https://myself659.github.io/tags/smart-contract" style="font-size: 12px;">smart-contract</a>
+        
+        
+        <a href="https://myself659.github.io/tags/substrate" style="font-size: 12px;">substrate</a>
+        
+        
+        <a href="https://myself659.github.io/tags/web" style="font-size: 12px;">web</a>
+        
+        
+        <a href="https://myself659.github.io/tags/%E5%95%86%E4%B8%9A" style="font-size: 12px;">商业</a>
+        
+        
+        <a href="https://myself659.github.io/tags/%E5%AD%A6%E4%B9%A0" style="font-size: 12px;">学习</a>
+        
+        
+        <a href="https://myself659.github.io/tags/%E6%88%90%E9%95%BF" style="font-size: 12px;">成长</a>
+        
+        
+        <a href="https://myself659.github.io/tags/%E7%A0%94%E5%8F%91%E7%AE%A1%E7%90%86" style="font-size: 12px;">研发管理</a>
+        
+        
+        <a href="https://myself659.github.io/tags/%E7%BC%96%E7%A8%8B" style="font-size: 12px;">编程</a>
+        
+        
+        <a href="https://myself659.github.io/tags/%E8%81%8C%E5%9C%BA" style="font-size: 12px;">职场</a>
+        
+        
+        <a href="https://myself659.github.io/tags/%E9%97%B2%E8%B0%88%E4%B9%B1%E6%89%AF" style="font-size: 12px;">闲谈乱扯</a>
+        
+    </div>
+</div>
+
+
+
+
+
+    <div id="toTop" class="fa fa-angle-up"></div>
+</aside>
+
+    
+	</div>
+</div>
+
+<footer id="footer">
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2020
+      copyright@沉风网事
+    </div>
+  </div>
+</footer>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-144475213-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+<script src="https://myself659.github.io/fancybox/jquery.fancybox.pack.js"></script>
+<script src="https://myself659.github.io/js/script.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js"></script>
+
+
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']]}
+  });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+
+
+</body>
+</html>

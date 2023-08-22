@@ -1,85 +1,82 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>成长 on 沉风网事</title>
-    <link>https://myself659.github.io/categories/%E6%88%90%E9%95%BF/</link>
+    <link>http://myself659.github.io/categories/%E6%88%90%E9%95%BF/</link>
     <description>Recent content in 成长 on 沉风网事</description>
-    <image>
-      <title>沉风网事</title>
-      <url>https://myself659.github.io/</url>
-      <link>https://myself659.github.io/</link>
-    </image>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Fri, 26 Jun 2020 11:58:06 +0200</lastBuildDate><atom:link href="https://myself659.github.io/categories/%E6%88%90%E9%95%BF/index.xml" rel="self" type="application/rss+xml" />
+    <language>zh-cn</language>
+    <copyright>沉风网事</copyright>
+    <lastBuildDate>Fri, 26 Jun 2020 11:58:06 +0200</lastBuildDate><atom:link href="http://myself659.github.io/categories/%E6%88%90%E9%95%BF/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>谈谈跳出框架思考</title>
-      <link>https://myself659.github.io/post/learn/think-outof-box/</link>
+      <link>http://myself659.github.io/post/learn/think-outof-box/</link>
       <pubDate>Fri, 26 Jun 2020 11:58:06 +0200</pubDate>
       
-      <guid>https://myself659.github.io/post/learn/think-outof-box/</guid>
+      <guid>http://myself659.github.io/post/learn/think-outof-box/</guid>
       <description>引子 先看一下这道数学题： 画直线经过下图中九个点，并且做到不重复经过任何一个点。 这里不是出题给大家做，只是引出话题。 下面是这个问题的答案： 这个</description>
     </item>
     
     <item>
       <title>关于快速学习的思考</title>
-      <link>https://myself659.github.io/post/learn/how-to-learn-fast/</link>
+      <link>http://myself659.github.io/post/learn/how-to-learn-fast/</link>
       <pubDate>Sun, 26 Apr 2020 11:58:06 +0200</pubDate>
       
-      <guid>https://myself659.github.io/post/learn/how-to-learn-fast/</guid>
+      <guid>http://myself659.github.io/post/learn/how-to-learn-fast/</guid>
       <description>在知识经济与日新月异的时代，学习的重要无须多言。这个时代正在惩罚不学习和不会学习的人。 从整个知识体系上来看，如何学习属于元知识，属于基础知识</description>
     </item>
     
     <item>
       <title>说说学到位</title>
-      <link>https://myself659.github.io/post/learn/%E5%AD%A6%E5%88%B0%E4%BD%8D/</link>
+      <link>http://myself659.github.io/post/learn/%E5%AD%A6%E5%88%B0%E4%BD%8D/</link>
       <pubDate>Sat, 18 Apr 2020 11:58:06 +0800</pubDate>
       
-      <guid>https://myself659.github.io/post/learn/%E5%AD%A6%E5%88%B0%E4%BD%8D/</guid>
+      <guid>http://myself659.github.io/post/learn/%E5%AD%A6%E5%88%B0%E4%BD%8D/</guid>
       <description>什么是学到位 学到位可以分解为四个到位： 理解到位 体系到位 融合到位 应用到位 理解到位 怎么做到理解到位？ 不多说，推荐费曼学习法。 If you can&amp;rsquo;t explain it simply, you don&amp;rsquo;t understand it</description>
     </item>
     
     <item>
       <title>在选择做什么之前，先问问自己这四个问题</title>
-      <link>https://myself659.github.io/post/find-what-todo/</link>
+      <link>http://myself659.github.io/post/find-what-todo/</link>
       <pubDate>Thu, 05 Mar 2020 11:58:06 +0200</pubDate>
       
-      <guid>https://myself659.github.io/post/find-what-todo/</guid>
+      <guid>http://myself659.github.io/post/find-what-todo/</guid>
       <description>在谈谈做事的原则提到做事的原则的基本原则。具体如下： 不要给自己设限 站在巨人的肩膀上 正确的方向 敏捷的行动 本文重点讨论如何选择做什么这一问题。不</description>
     </item>
     
     <item>
       <title>如何迭代</title>
-      <link>https://myself659.github.io/post/learn/how-to-iterate-%E8%BF%AD%E4%BB%A3/</link>
+      <link>http://myself659.github.io/post/learn/how-to-iterate-%E8%BF%AD%E4%BB%A3/</link>
       <pubDate>Mon, 03 Jun 2019 11:58:06 +0200</pubDate>
       
-      <guid>https://myself659.github.io/post/learn/how-to-iterate-%E8%BF%AD%E4%BB%A3/</guid>
+      <guid>http://myself659.github.io/post/learn/how-to-iterate-%E8%BF%AD%E4%BB%A3/</guid>
       <description>重复不如迭代 迭代相比较于重复有以下特点： 改变 复用 反馈 结论： 1000次重复不如1000次迭代。 迭代的原则 小改变，多对比，多迭代 度量迭代 迭代的粒</description>
     </item>
     
     <item>
-      <title>谈谈学习的原则</title>
-      <link>https://myself659.github.io/post/learn/learn-principles/</link>
-      <pubDate>Wed, 23 Jan 2019 11:58:06 +0200</pubDate>
-      
-      <guid>https://myself659.github.io/post/learn/learn-principles/</guid>
-      <description>学习原则 坚持终身学习 学习有法、学无定法、贵在得法 向高手学习，站在巨人的肩膀上学习 不断学习元学习，学会如何学习并不断提高学习能力 坚持高标准学习</description>
-    </item>
-    
-    <item>
       <title>谈谈做事的原则</title>
-      <link>https://myself659.github.io/post/principle-of-work/</link>
+      <link>http://myself659.github.io/post/principle-of-work/</link>
       <pubDate>Wed, 23 Jan 2019 11:58:06 +0200</pubDate>
       
-      <guid>https://myself659.github.io/post/principle-of-work/</guid>
+      <guid>http://myself659.github.io/post/principle-of-work/</guid>
       <description>前言 这篇文章规划了很久，本来打算年前写，各种事情加上自己的拖延症，到现在才开始写。 做事 如果说人的一生做什么？总结一下，可以划分两个方面： 做人</description>
     </item>
     
     <item>
+      <title>谈谈学习的原则</title>
+      <link>http://myself659.github.io/post/learn/learn-principles/</link>
+      <pubDate>Wed, 23 Jan 2019 11:58:06 +0200</pubDate>
+      
+      <guid>http://myself659.github.io/post/learn/learn-principles/</guid>
+      <description>学习原则 坚持终身学习 学习有法、学无定法、贵在得法 向高手学习，站在巨人的肩膀上学习 不断学习元学习，学会如何学习并不断提高学习能力 坚持高标准学习</description>
+    </item>
+    
+    <item>
       <title>如何开始行动</title>
-      <link>https://myself659.github.io/post/learn/how-to-start-%E5%BC%80%E5%A7%8B/</link>
+      <link>http://myself659.github.io/post/learn/how-to-start-%E5%BC%80%E5%A7%8B/</link>
       <pubDate>Mon, 13 Jun 2016 11:58:06 +0200</pubDate>
       
-      <guid>https://myself659.github.io/post/learn/how-to-start-%E5%BC%80%E5%A7%8B/</guid>
+      <guid>http://myself659.github.io/post/learn/how-to-start-%E5%BC%80%E5%A7%8B/</guid>
       <description>背景 人们常说： 万事开头难。 好的开始是成功的一半。 “The secret of getting ahead is getting started. The secret of getting started is breaking your complex overwhelming tasks into small manageable tasks, and starting on the first one.” — Mark Twain 从上可知开始很</description>
     </item>
     

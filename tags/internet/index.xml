@@ -1,112 +1,109 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Internet on 沉风网事</title>
-    <link>https://myself659.github.io/tags/internet/</link>
+    <link>http://myself659.github.io/tags/internet/</link>
     <description>Recent content in Internet on 沉风网事</description>
-    <image>
-      <title>沉风网事</title>
-      <url>https://myself659.github.io/</url>
-      <link>https://myself659.github.io/</link>
-    </image>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Wed, 03 Feb 2021 11:58:06 +0200</lastBuildDate><atom:link href="https://myself659.github.io/tags/internet/index.xml" rel="self" type="application/rss+xml" />
+    <language>zh-cn</language>
+    <copyright>沉风网事</copyright>
+    <lastBuildDate>Wed, 03 Feb 2021 11:58:06 +0200</lastBuildDate><atom:link href="http://myself659.github.io/tags/internet/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>谈谈clubhouse</title>
-      <link>https://myself659.github.io/post/internet/about-clubhouse/</link>
+      <link>http://myself659.github.io/post/internet/about-clubhouse/</link>
       <pubDate>Wed, 03 Feb 2021 11:58:06 +0200</pubDate>
       
-      <guid>https://myself659.github.io/post/internet/about-clubhouse/</guid>
+      <guid>http://myself659.github.io/post/internet/about-clubhouse/</guid>
       <description>背景 最近clubhouse的邀请一码难求，自己有幸被邀请。体验一下，说一下自己对clubhouse一些想法。（Ps：由于区块链与加密货币的火</description>
     </item>
     
     <item>
       <title>提高个人隐私数据安全的几点建议</title>
-      <link>https://myself659.github.io/post/data-avoid-leak/</link>
+      <link>http://myself659.github.io/post/data-avoid-leak/</link>
       <pubDate>Sun, 22 Mar 2020 11:58:06 +0200</pubDate>
       
-      <guid>https://myself659.github.io/post/data-avoid-leak/</guid>
+      <guid>http://myself659.github.io/post/data-avoid-leak/</guid>
       <description>最近，爆出了新浪微博用户数据泄漏的事件。虽然微博的安全技术总监罗某某拒不承认存在安全问题，但是想想李文亮医生的经历，这个事情真不能忽略。 李彦</description>
     </item>
     
     <item>
       <title>说说微信付费阅读</title>
-      <link>https://myself659.github.io/post/wechat-payment-read/</link>
+      <link>http://myself659.github.io/post/wechat-payment-read/</link>
       <pubDate>Thu, 16 Jan 2020 11:58:06 +0200</pubDate>
       
-      <guid>https://myself659.github.io/post/wechat-payment-read/</guid>
+      <guid>http://myself659.github.io/post/wechat-payment-read/</guid>
       <description>背景 2020年1月15号微信灰度发布公众帐号付费阅读功能。微信10亿用户的体量，最长的用户时长，所以一个付费阅读功能差不多引起全网的讨论。 时</description>
     </item>
     
     <item>
       <title>苹果微软亚马逊谷歌Facebook五大科技巨头是如何赚钱的</title>
-      <link>https://myself659.github.io/post/tech-giant-income/</link>
+      <link>http://myself659.github.io/post/tech-giant-income/</link>
       <pubDate>Thu, 21 Nov 2019 11:58:06 +0200</pubDate>
       
-      <guid>https://myself659.github.io/post/tech-giant-income/</guid>
+      <guid>http://myself659.github.io/post/tech-giant-income/</guid>
       <description>苹果微软亚马逊谷歌Facebook这五大科技巨头在2018年的收入总和超过了8000亿美元。 如果这五大科技巨头保证30%的增长率，这五大科技</description>
     </item>
     
     <item>
       <title>关于zoom的一些思考与看法</title>
-      <link>https://myself659.github.io/post/business/about-zoom/</link>
+      <link>http://myself659.github.io/post/business/about-zoom/</link>
       <pubDate>Sun, 28 Apr 2019 11:58:06 +0200</pubDate>
       
-      <guid>https://myself659.github.io/post/business/about-zoom/</guid>
+      <guid>http://myself659.github.io/post/business/about-zoom/</guid>
       <description>前言 最近zoom上市，作为一名华人创业公司自然大受关注。下面从以下几个方面谈谈自己的一些思考与看法： 技术 领导 产品 商业 技术 对于视频面试会议，技</description>
     </item>
     
     <item>
       <title>分享一种分析信息技术发展的框架</title>
-      <link>https://myself659.github.io/post/it-frame/</link>
+      <link>http://myself659.github.io/post/it-frame/</link>
       <pubDate>Sun, 10 Mar 2019 11:58:06 +0200</pubDate>
       
-      <guid>https://myself659.github.io/post/it-frame/</guid>
+      <guid>http://myself659.github.io/post/it-frame/</guid>
       <description>信息技术发展史 为了与原文保持一致，将信息技术发展史分为以下6个阶段： 大型机时代 PC时代 互联网时代 社交网络时代 智能手机时代 区块链时代 框架介绍 将</description>
     </item>
     
     <item>
       <title>说说微信小程序</title>
-      <link>https://myself659.github.io/post/business/about-weixin-miniprogram/</link>
+      <link>http://myself659.github.io/post/business/about-weixin-miniprogram/</link>
       <pubDate>Sat, 01 Dec 2018 11:58:06 +0200</pubDate>
       
-      <guid>https://myself659.github.io/post/business/about-weixin-miniprogram/</guid>
+      <guid>http://myself659.github.io/post/business/about-weixin-miniprogram/</guid>
       <description>小程序在2018年确实火了，除了先行的微信小程序，后面紧接着跟着了蚂蚁金服的小程序，今日头条的小程序。这里先表明一下自己的立场，从微信小程序</description>
     </item>
     
     <item>
       <title>关于拼多多几点看法</title>
-      <link>https://myself659.github.io/post/pdd-thought/</link>
+      <link>http://myself659.github.io/post/pdd-thought/</link>
       <pubDate>Sun, 29 Jul 2018 11:58:06 +0200</pubDate>
       
-      <guid>https://myself659.github.io/post/pdd-thought/</guid>
+      <guid>http://myself659.github.io/post/pdd-thought/</guid>
       <description>拼多多战略采用农村包围城市，市场上定位准确，填补了三四线农村及中国底层人民的需求。 微信平台是拼多多快速成长的关键，利用微信带来的流量，流量带</description>
     </item>
     
     <item>
       <title>关于微软收购github几点看法</title>
-      <link>https://myself659.github.io/post/ms-github/</link>
+      <link>http://myself659.github.io/post/ms-github/</link>
       <pubDate>Sun, 10 Jun 2018 11:58:06 +0200</pubDate>
       
-      <guid>https://myself659.github.io/post/ms-github/</guid>
+      <guid>http://myself659.github.io/post/ms-github/</guid>
       <description>开源已经是一种潮流与趋势。从linux开始，开源软件支撑现在的互联网与云计算。有太多的项目如redis，docker，k8s，etcd等等；</description>
     </item>
     
     <item>
       <title>社交网络摆脱不了的周期</title>
-      <link>https://myself659.github.io/post/socialnetowrk-cannot-cycle/</link>
+      <link>http://myself659.github.io/post/socialnetowrk-cannot-cycle/</link>
       <pubDate>Sat, 05 May 2018 11:58:06 +0200</pubDate>
       
-      <guid>https://myself659.github.io/post/socialnetowrk-cannot-cycle/</guid>
+      <guid>http://myself659.github.io/post/socialnetowrk-cannot-cycle/</guid>
       <description>没有什么是不可改变的。 Facebook有22亿用户。 MySpace曾经是世界之王。现在人们都已经遗忘了。 QQ还是让位微信，活跃度下降，用户时</description>
     </item>
     
     <item>
       <title>对中国互联网产品的一些建议</title>
-      <link>https://myself659.github.io/post/suggests-for-chinese-internet-productions/</link>
+      <link>http://myself659.github.io/post/suggests-for-chinese-internet-productions/</link>
       <pubDate>Mon, 05 Feb 2018 11:58:06 +0200</pubDate>
       
-      <guid>https://myself659.github.io/post/suggests-for-chinese-internet-productions/</guid>
+      <guid>http://myself659.github.io/post/suggests-for-chinese-internet-productions/</guid>
       <description>具体以公司及产品划分。 腾讯 打通帐号系统，如qq与微信在其他腾讯产品的功能不一致 微信 整理未读信息，而不是让用户去找哪条信息未读，特别是存在大量</description>
     </item>
     

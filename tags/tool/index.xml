@@ -1,22 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tool on 沉风网事</title>
-    <link>https://myself659.github.io/tags/tool/</link>
+    <link>http://myself659.github.io/tags/tool/</link>
     <description>Recent content in Tool on 沉风网事</description>
-    <image>
-      <title>沉风网事</title>
-      <url>https://myself659.github.io/</url>
-      <link>https://myself659.github.io/</link>
-    </image>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Fri, 08 Feb 2019 11:58:06 +0200</lastBuildDate><atom:link href="https://myself659.github.io/tags/tool/index.xml" rel="self" type="application/rss+xml" />
+    <language>zh-cn</language>
+    <copyright>沉风网事</copyright>
+    <lastBuildDate>Fri, 08 Feb 2019 11:58:06 +0200</lastBuildDate><atom:link href="http://myself659.github.io/tags/tool/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>vscode tips</title>
-      <link>https://myself659.github.io/post/vscode-tips/</link>
+      <link>http://myself659.github.io/post/vscode-tips/</link>
       <pubDate>Fri, 08 Feb 2019 11:58:06 +0200</pubDate>
       
-      <guid>https://myself659.github.io/post/vscode-tips/</guid>
+      <guid>http://myself659.github.io/post/vscode-tips/</guid>
       <description>安装 1 brew install visual-studio-code 配置 进入配置 文件-&amp;gt; 首选项 -&amp;gt;配置 点击右上边的文件图标，进入打开设置（打开配置文件C:\Users\ \AppData</description>
     </item>
     

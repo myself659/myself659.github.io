@@ -1,58 +1,55 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Internet on 沉风网事</title>
-    <link>https://myself659.github.io/categories/internet/</link>
+    <link>http://myself659.github.io/categories/internet/</link>
     <description>Recent content in Internet on 沉风网事</description>
-    <image>
-      <title>沉风网事</title>
-      <url>https://myself659.github.io/</url>
-      <link>https://myself659.github.io/</link>
-    </image>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Wed, 03 Feb 2021 11:58:06 +0200</lastBuildDate><atom:link href="https://myself659.github.io/categories/internet/index.xml" rel="self" type="application/rss+xml" />
+    <language>zh-cn</language>
+    <copyright>沉风网事</copyright>
+    <lastBuildDate>Wed, 03 Feb 2021 11:58:06 +0200</lastBuildDate><atom:link href="http://myself659.github.io/categories/internet/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>谈谈clubhouse</title>
-      <link>https://myself659.github.io/post/internet/about-clubhouse/</link>
+      <link>http://myself659.github.io/post/internet/about-clubhouse/</link>
       <pubDate>Wed, 03 Feb 2021 11:58:06 +0200</pubDate>
       
-      <guid>https://myself659.github.io/post/internet/about-clubhouse/</guid>
+      <guid>http://myself659.github.io/post/internet/about-clubhouse/</guid>
       <description>背景 最近clubhouse的邀请一码难求，自己有幸被邀请。体验一下，说一下自己对clubhouse一些想法。（Ps：由于区块链与加密货币的火</description>
     </item>
     
     <item>
       <title>提高个人隐私数据安全的几点建议</title>
-      <link>https://myself659.github.io/post/data-avoid-leak/</link>
+      <link>http://myself659.github.io/post/data-avoid-leak/</link>
       <pubDate>Sun, 22 Mar 2020 11:58:06 +0200</pubDate>
       
-      <guid>https://myself659.github.io/post/data-avoid-leak/</guid>
+      <guid>http://myself659.github.io/post/data-avoid-leak/</guid>
       <description>最近，爆出了新浪微博用户数据泄漏的事件。虽然微博的安全技术总监罗某某拒不承认存在安全问题，但是想想李文亮医生的经历，这个事情真不能忽略。 李彦</description>
     </item>
     
     <item>
       <title>苹果微软亚马逊谷歌Facebook五大科技巨头是如何赚钱的</title>
-      <link>https://myself659.github.io/post/tech-giant-income/</link>
+      <link>http://myself659.github.io/post/tech-giant-income/</link>
       <pubDate>Thu, 21 Nov 2019 11:58:06 +0200</pubDate>
       
-      <guid>https://myself659.github.io/post/tech-giant-income/</guid>
+      <guid>http://myself659.github.io/post/tech-giant-income/</guid>
       <description>苹果微软亚马逊谷歌Facebook这五大科技巨头在2018年的收入总和超过了8000亿美元。 如果这五大科技巨头保证30%的增长率，这五大科技</description>
     </item>
     
     <item>
       <title>社交网络摆脱不了的周期</title>
-      <link>https://myself659.github.io/post/socialnetowrk-cannot-cycle/</link>
+      <link>http://myself659.github.io/post/socialnetowrk-cannot-cycle/</link>
       <pubDate>Sat, 05 May 2018 11:58:06 +0200</pubDate>
       
-      <guid>https://myself659.github.io/post/socialnetowrk-cannot-cycle/</guid>
+      <guid>http://myself659.github.io/post/socialnetowrk-cannot-cycle/</guid>
       <description>没有什么是不可改变的。 Facebook有22亿用户。 MySpace曾经是世界之王。现在人们都已经遗忘了。 QQ还是让位微信，活跃度下降，用户时</description>
     </item>
     
     <item>
       <title>对中国互联网产品的一些建议</title>
-      <link>https://myself659.github.io/post/suggests-for-chinese-internet-productions/</link>
+      <link>http://myself659.github.io/post/suggests-for-chinese-internet-productions/</link>
       <pubDate>Mon, 05 Feb 2018 11:58:06 +0200</pubDate>
       
-      <guid>https://myself659.github.io/post/suggests-for-chinese-internet-productions/</guid>
+      <guid>http://myself659.github.io/post/suggests-for-chinese-internet-productions/</guid>
       <description>具体以公司及产品划分。 腾讯 打通帐号系统，如qq与微信在其他腾讯产品的功能不一致 微信 整理未读信息，而不是让用户去找哪条信息未读，特别是存在大量</description>
     </item>
     

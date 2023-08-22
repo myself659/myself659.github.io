@@ -1,31 +1,28 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Secure on 沉风网事</title>
-    <link>https://myself659.github.io/categories/secure/</link>
+    <link>http://myself659.github.io/categories/secure/</link>
     <description>Recent content in Secure on 沉风网事</description>
-    <image>
-      <title>沉风网事</title>
-      <url>https://myself659.github.io/</url>
-      <link>https://myself659.github.io/</link>
-    </image>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Fri, 08 Nov 2019 11:58:06 +0200</lastBuildDate><atom:link href="https://myself659.github.io/categories/secure/index.xml" rel="self" type="application/rss+xml" />
+    <language>zh-cn</language>
+    <copyright>沉风网事</copyright>
+    <lastBuildDate>Fri, 08 Nov 2019 11:58:06 +0200</lastBuildDate><atom:link href="http://myself659.github.io/categories/secure/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>DoH FAQ</title>
-      <link>https://myself659.github.io/post/network/about-doh/</link>
+      <link>http://myself659.github.io/post/network/about-doh/</link>
       <pubDate>Fri, 08 Nov 2019 11:58:06 +0200</pubDate>
       
-      <guid>https://myself659.github.io/post/network/about-doh/</guid>
+      <guid>http://myself659.github.io/post/network/about-doh/</guid>
       <description>什么是DoH DoH是DNS over HTTPS。 传统DNS相当于DNS over UDP。 DoH带来哪些好处？ 采用DoH对用户来说有如下好处： DoH协议不允许</description>
     </item>
     
     <item>
       <title>阿里云ECS基本安全检查小结</title>
-      <link>https://myself659.github.io/post/2017-04-08-ecs-basic-sec-check/</link>
+      <link>http://myself659.github.io/post/2017-04-08-ecs-basic-sec-check/</link>
       <pubDate>Sat, 08 Apr 2017 11:58:06 +0200</pubDate>
       
-      <guid>https://myself659.github.io/post/2017-04-08-ecs-basic-sec-check/</guid>
+      <guid>http://myself659.github.io/post/2017-04-08-ecs-basic-sec-check/</guid>
       <description>背景 查看阿里云ECS服务器日志发现如下： 1 2 3 4 5 6 7 type=USER_AUTH msg=audit(1491669519.156:15631): pid=22938 uid=0 auid=4294967295 ses=4294967295 msg=&amp;#39;op=PAM:authentication acct=&amp;#34;deploy&amp;#34; exe=&amp;#34;/usr/sbin/sshd&amp;#34; hostname=123.57.245.163 addr=123.57.245.163 terminal=ssh res=failed&amp;#39; type=USER_LOGIN msg=audit(1491669519.156:15632): pid=22938 uid=0 auid=4294967295 ses=4294967295 msg=&amp;#39;op=login acct=28696E76616C6964207573657229 exe=&amp;#34;/usr/sbin/sshd&amp;#34; hostname=? addr=123.57.245.163 terminal=sshd res=failed&amp;#39; type=USER_LOGIN msg=audit(1491669587.368:15634): pid=22940 uid=0 auid=4294967295 ses=4294967295 msg=&amp;#39;op=login acct=28756E6B6E6F776E207573657229 exe=&amp;#34;/usr/sbin/sshd&amp;#34; hostname=? addr=123.57.245.163 terminal=sshd res=failed&amp;#39; type=USER_LOGIN msg=audit(1491669587.368:15635): pid=22940 uid=0</description>
     </item>
     

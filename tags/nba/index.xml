@@ -1,22 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>NBA on 沉风网事</title>
-    <link>https://myself659.github.io/tags/nba/</link>
+    <link>http://myself659.github.io/tags/nba/</link>
     <description>Recent content in NBA on 沉风网事</description>
-    <image>
-      <title>沉风网事</title>
-      <url>https://myself659.github.io/</url>
-      <link>https://myself659.github.io/</link>
-    </image>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Thu, 30 Jan 2020 11:58:06 +0200</lastBuildDate><atom:link href="https://myself659.github.io/tags/nba/index.xml" rel="self" type="application/rss+xml" />
+    <language>zh-cn</language>
+    <copyright>沉风网事</copyright>
+    <lastBuildDate>Thu, 30 Jan 2020 11:58:06 +0200</lastBuildDate><atom:link href="http://myself659.github.io/tags/nba/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>说说我眼中的科比</title>
-      <link>https://myself659.github.io/post/kobe/</link>
+      <link>http://myself659.github.io/post/kobe/</link>
       <pubDate>Thu, 30 Jan 2020 11:58:06 +0200</pubDate>
       
-      <guid>https://myself659.github.io/post/kobe/</guid>
+      <guid>http://myself659.github.io/post/kobe/</guid>
       <description>在高中的时候知道了NBA,看了比赛，知道了科比。多少年以来，篮球是我最喜欢的体育运动，科比是我最喜欢的NBA球星，估计也是我最喜欢的运动员。</description>
     </item>
     

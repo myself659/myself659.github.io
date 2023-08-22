@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>mac on 沉风网事</title>
+    <link>http://myself659.github.io/tags/mac/</link>
+    <description>Recent content in mac on 沉风网事</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <copyright>沉风网事</copyright>
+    <lastBuildDate>Sun, 24 May 2015 11:58:06 +0200</lastBuildDate><atom:link href="http://myself659.github.io/tags/mac/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>compile and install ffmpeg on MacbookPro2021</title>
+      <link>http://myself659.github.io/post/mac/mac-m1-install-ffmpeg/</link>
+      <pubDate>Sun, 24 May 2015 11:58:06 +0200</pubDate>
+      
+      <guid>http://myself659.github.io/post/mac/mac-m1-install-ffmpeg/</guid>
+      <description>install macports update macports 1 2  sudo port selfupdate sudo port upgrade outdated   install ffmpeg 1  sudo port install ffmpeg   1  ffmpeg     </description>
+    </item>
+    
+  </channel>
+</rss>

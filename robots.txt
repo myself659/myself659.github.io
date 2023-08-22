@@ -1,3 +1,2 @@
 User-agent: *
-Disallow:
-Sitemap: https://myself659.github.io/sitemap.xml
+Sitemap: http://myself659.github.io/sitemap.xml

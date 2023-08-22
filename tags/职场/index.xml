@@ -1,31 +1,28 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>职场 on 沉风网事</title>
-    <link>https://myself659.github.io/tags/%E8%81%8C%E5%9C%BA/</link>
+    <link>http://myself659.github.io/tags/%E8%81%8C%E5%9C%BA/</link>
     <description>Recent content in 职场 on 沉风网事</description>
-    <image>
-      <title>沉风网事</title>
-      <url>https://myself659.github.io/</url>
-      <link>https://myself659.github.io/</link>
-    </image>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Wed, 23 Jan 2019 11:58:06 +0200</lastBuildDate><atom:link href="https://myself659.github.io/tags/%E8%81%8C%E5%9C%BA/index.xml" rel="self" type="application/rss+xml" />
+    <language>zh-cn</language>
+    <copyright>沉风网事</copyright>
+    <lastBuildDate>Wed, 23 Jan 2019 11:58:06 +0200</lastBuildDate><atom:link href="http://myself659.github.io/tags/%E8%81%8C%E5%9C%BA/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>谈谈做事的原则</title>
-      <link>https://myself659.github.io/post/principle-of-work/</link>
+      <link>http://myself659.github.io/post/principle-of-work/</link>
       <pubDate>Wed, 23 Jan 2019 11:58:06 +0200</pubDate>
       
-      <guid>https://myself659.github.io/post/principle-of-work/</guid>
+      <guid>http://myself659.github.io/post/principle-of-work/</guid>
       <description>前言 这篇文章规划了很久，本来打算年前写，各种事情加上自己的拖延症，到现在才开始写。 做事 如果说人的一生做什么？总结一下，可以划分两个方面： 做人</description>
     </item>
     
     <item>
       <title>说说在不同行业的编程体验</title>
-      <link>https://myself659.github.io/post/arch/%E8%AF%B4%E8%AF%B4%E5%9C%A8%E4%B8%8D%E5%90%8C%E8%A1%8C%E4%B8%9A%E7%9A%84%E7%BC%96%E7%A8%8B%E4%BD%93%E9%AA%8C/</link>
+      <link>http://myself659.github.io/post/arch/%E8%AF%B4%E8%AF%B4%E5%9C%A8%E4%B8%8D%E5%90%8C%E8%A1%8C%E4%B8%9A%E7%9A%84%E7%BC%96%E7%A8%8B%E4%BD%93%E9%AA%8C/</link>
       <pubDate>Sun, 02 Dec 2018 11:58:06 +0200</pubDate>
       
-      <guid>https://myself659.github.io/post/arch/%E8%AF%B4%E8%AF%B4%E5%9C%A8%E4%B8%8D%E5%90%8C%E8%A1%8C%E4%B8%9A%E7%9A%84%E7%BC%96%E7%A8%8B%E4%BD%93%E9%AA%8C/</guid>
+      <guid>http://myself659.github.io/post/arch/%E8%AF%B4%E8%AF%B4%E5%9C%A8%E4%B8%8D%E5%90%8C%E8%A1%8C%E4%B8%9A%E7%9A%84%E7%BC%96%E7%A8%8B%E4%BD%93%E9%AA%8C/</guid>
       <description>回想起来，本科毕业以来，在五家公司呆过，经历四个行业，在这引起行业编程体验各有不同，总结起来就下面四句话： 嵌入式行业：面向DataSheet</description>
     </item>
     

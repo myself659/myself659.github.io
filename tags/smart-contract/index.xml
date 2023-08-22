@@ -1,22 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>smart contract on 沉风网事</title>
-    <link>https://myself659.github.io/tags/smart-contract/</link>
+    <link>http://myself659.github.io/tags/smart-contract/</link>
     <description>Recent content in smart contract on 沉风网事</description>
-    <image>
-      <title>沉风网事</title>
-      <url>https://myself659.github.io/</url>
-      <link>https://myself659.github.io/</link>
-    </image>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Wed, 01 Nov 2017 11:58:06 +0200</lastBuildDate><atom:link href="https://myself659.github.io/tags/smart-contract/index.xml" rel="self" type="application/rss+xml" />
+    <language>zh-cn</language>
+    <copyright>沉风网事</copyright>
+    <lastBuildDate>Wed, 01 Nov 2017 11:58:06 +0200</lastBuildDate><atom:link href="http://myself659.github.io/tags/smart-contract/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>说说智能合约</title>
-      <link>https://myself659.github.io/post/about-smartcontract/</link>
+      <link>http://myself659.github.io/post/about-smartcontract/</link>
       <pubDate>Wed, 01 Nov 2017 11:58:06 +0200</pubDate>
       
-      <guid>https://myself659.github.io/post/about-smartcontract/</guid>
+      <guid>http://myself659.github.io/post/about-smartcontract/</guid>
       <description>智能合约 智能合约伴随了以太坊出现的而诞生，是以太坊最大的亮点，以其在ICO的广泛地应用而被熟知。其定义是： 智能合约是存储在区块链网络中的一段</description>
     </item>
     

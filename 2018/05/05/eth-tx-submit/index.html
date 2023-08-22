@@ -1,0 +1,1351 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <title>以太坊提交交易流程分析 &middot; 沉风网事</title>
+    <meta name="generator" content="Hugo 0.54.0" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="author" content="沉风">
+    
+      <meta name="description" content="沉风网事，以人为本，尊重事实与原理，立足现实，以科技与金融为驱动，中西结合，虚实相应，主要关注互联网，系统架构，区块链，安全，经济，数据等领域">
+    
+    
+    <link rel="canonical" href="https://myself659.github.io/2018/05/05/eth-tx-submit/"/>
+    <link rel="icon" href="https://myself659.github.io/favicon.ico">
+    <link rel="apple-touch-icon" href="https://myself659.github.io/apple-touch-icon.png"/>
+    <link rel="stylesheet" href="https://myself659.github.io/css/style.css">
+    <link rel="stylesheet" href="https://myself659.github.io/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://myself659.github.io/css/monokai.css">
+    <link rel="stylesheet" href="https://myself659.github.io/fancybox/jquery.fancybox.css">
+    
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400italic,400,600' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Source+Code+Pro' rel='stylesheet' type='text/css'>
+    <meta property="og:title" content="以太坊提交交易流程分析" />
+<meta property="og:description" content="说明 代码基于go-ethereum，版本v1.8.10。
+RPC代码入口 SendTransaction
+// SendTransaction will create a transaction from the given arguments and // tries to sign it with the key associated with args.To. If the given passwd isn&#39;t // able to decrypt the key it fails. func (s *PrivateAccountAPI) SendTransaction(ctx context.Context, args SendTxArgs, passwd string) (common.Hash, error) { if args.Nonce == nil { // Hold the addresse&#39;s mutex around signing to prevent concurrent assignment of // the same nonce to multiple accounts." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://myself659.github.io/2018/05/05/eth-tx-submit/" />
+<meta property="article:published_time" content="2018-05-05T11:58:06&#43;02:00"/>
+<meta property="article:modified_time" content="2018-05-05T11:58:06&#43;02:00"/>
+
+    
+    
+<meta itemprop="name" content="以太坊提交交易流程分析">
+<meta itemprop="description" content="说明 代码基于go-ethereum，版本v1.8.10。
+RPC代码入口 SendTransaction
+// SendTransaction will create a transaction from the given arguments and // tries to sign it with the key associated with args.To. If the given passwd isn&#39;t // able to decrypt the key it fails. func (s *PrivateAccountAPI) SendTransaction(ctx context.Context, args SendTxArgs, passwd string) (common.Hash, error) { if args.Nonce == nil { // Hold the addresse&#39;s mutex around signing to prevent concurrent assignment of // the same nonce to multiple accounts.">
+
+
+<meta itemprop="datePublished" content="2018-05-05T11:58:06&#43;02:00" />
+<meta itemprop="dateModified" content="2018-05-05T11:58:06&#43;02:00" />
+<meta itemprop="wordCount" content="775">
+
+
+
+<meta itemprop="keywords" content="BlockChain,ethereum," />
+
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="以太坊提交交易流程分析"/>
+<meta name="twitter:description" content="说明 代码基于go-ethereum，版本v1.8.10。
+RPC代码入口 SendTransaction
+// SendTransaction will create a transaction from the given arguments and // tries to sign it with the key associated with args.To. If the given passwd isn&#39;t // able to decrypt the key it fails. func (s *PrivateAccountAPI) SendTransaction(ctx context.Context, args SendTxArgs, passwd string) (common.Hash, error) { if args.Nonce == nil { // Hold the addresse&#39;s mutex around signing to prevent concurrent assignment of // the same nonce to multiple accounts."/>
+
+    
+
+    
+
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+
+     
+ <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+ <script type="text/x-mathjax-config">
+   MathJax.Hub.Config({
+     tex2jax: {
+       skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+       inlineMath: [['$','$']]
+     }
+   });
+ </script>
+</head>
+<body>
+<div class="container">
+
+
+<div id="container">
+	<header id="header">
+  <div id="header-main" class="header-inner">
+    <div class="outer">
+      <a href="https://myself659.github.io/" id="logo">
+          
+          <i class="logo" style="background-image: url('https://myself659.github.io/css/images/logo.png')"></i>
+          
+          <span class="site-title">沉风网事</span>
+      </a>
+      <nav id="main-nav">
+          
+          
+          <a class="main-nav-link" href="https://myself659.github.io/">Home</a>
+          
+          
+          
+          
+          
+          
+
+          
+          <a class="main-nav-link" href="/about/">About</a>
+          
+          <a class="main-nav-link" href="/2017/03/18/leetcode/">LeetCode</a>
+          
+          <a class="main-nav-link" href="/2017/10/02/read-post/">Read</a>
+          
+          <a class="main-nav-link" href="/2017/10/02/share-post/">Share</a>
+          
+          <a class="main-nav-link" href="/2017/10/02/slide-post/">Slide</a>
+          
+
+          
+          
+          
+          
+          <a class="main-nav-link" href="https://myself659.github.io/tags/">Tags</a>
+          
+          
+          
+          <a class="main-nav-link" href="https://myself659.github.io/categories/">Categories</a>
+          
+          
+      </nav>
+        <nav id="sub-nav">
+          <div class="profile" id="profile-nav">
+            <a id="profile-anchor" href="javascript:;"><img class="avatar" src="https://myself659.github.io/css/images/avatar.png"><i class="fa fa-caret-down"></i></a>
+          </div>
+        </nav>
+        <div id="search-form-wrap">
+          <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form">
+              <input type="search" name="q" class="search-form-input" placeholder="Search">
+              <button type="submit" class="search-form-submit">
+              </button>
+              <input type="hidden" name="sitesearch" value="https://myself659.github.io/" />
+         </form>
+        </div>
+    </div>
+  </div>
+  <div id="main-nav-mobile" class="header-sub header-inner">
+    <table class="menu outer">
+      <tbody>
+          <tr>
+          
+          
+          <td><a class="main-nav-link" href="https://myself659.github.io/">Home</a></td>
+          
+          
+          
+          
+          
+          
+
+          
+          <td><a class="main-nav-link" href="/about/">About</a></td>
+          
+          <td><a class="main-nav-link" href="/2017/03/18/leetcode/">LeetCode</a></td>
+          
+          <td><a class="main-nav-link" href="/2017/10/02/read-post/">Read</a></td>
+          
+          <td><a class="main-nav-link" href="/2017/10/02/share-post/">Share</a></td>
+          
+          <td><a class="main-nav-link" href="/2017/10/02/slide-post/">Slide</a></td>
+          
+
+          
+          
+          
+          
+          <td><a class="main-nav-link" href="https://myself659.github.io/tags/">Tags</a></td>
+          
+          
+          
+          <td><a class="main-nav-link" href="https://myself659.github.io/categories/">Categories</a></td>
+          
+          
+          <td>
+          <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form">
+          <input type="search" name="q" class="search-form-input" placeholder="Search">
+          <input type="hidden" name="sitesearch" value="https://myself659.github.io/" />
+          </form>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</header>
+
+   	
+   	<div class="outer">
+   	
+    	<aside id="profile">
+  <div class="inner profile-inner">
+    <div class="base-info profile-block">
+      
+      <img id="avatar" src="https://www.gravatar.com/avatar/45ae86ea3c111a5537490c3b370c03ee?s=100&d=identicon"/>
+      
+      <h2 id="name">沉风</h2>
+      <h3 id="title">All is well, just do it</h3>
+      <span id="location"><i class="fa fa-map-marker"></i>hangzhou, china</span>
+      
+          <a id="follow" href="https://github.com/myself659">
+              Follow
+          </a>
+      
+    </div>
+    <div class="article-info profile-block">
+      <div class="article-info-block">
+        127
+        <span>Posts</span>
+      </div>
+      <div class="article-info-block">
+        
+          35
+        
+        <span>
+            Tags
+        </span>
+      </div>
+    </div>
+    <div class="profile-block social-links">
+      <table>
+        <tr>
+          
+<td><a href="//github.com/myself659" target="_blank" title="GitHub"><i class="fa fa-github"></i></a></td>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<td><a href="//medium.com/@myself659" target="_blank" title="Medium"><i class="fa fa-medium"></i></a></td>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          <td><a href="https://myself659.github.io/index.xml" target="_blank" title="RSS"><i class="fa fa-rss"></i></a></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</aside>
+
+    
+
+    <section id="main">
+    
+    <article id="page-undefined" class="article article-type-page" itemscope="" itemprop="blogPost">
+    <div class="article-inner">
+        
+
+        <header class="article-header">
+    <a href="https://myself659.github.io/2018/05/05/eth-tx-submit/">
+    <h1 class="article-title" itemprop="name">
+        以太坊提交交易流程分析
+    </h1>
+    </a>
+    <div class="article-meta">
+
+        
+        <div class="article-date">
+            <i class="fa fa-calendar"></i>
+            <time datetime="2018-05-05 11:58:06 &#43;0200 &#43;0200" itemprop="datePublished">2018-05-05</time>
+            &middot;
+            775
+            words
+            &middot;
+            4
+            minute read
+        </div>
+        
+        
+            
+            
+            <div class="article-category">
+                <i class="fa fa-folder"></i>
+                
+                
+                <a class="article-category-link" href="https://myself659.github.io/categories/ethereum">ethereum</a>
+                
+                
+            </div>
+            
+        
+
+        
+            
+            
+            <div class="article-category">
+                <i class="fa fa-tags"></i>
+                
+                
+                <a class="article-category-link" href="https://myself659.github.io/tags/blockchain">BlockChain</a>
+                &middot;
+                
+                
+                <a class="article-category-link" href="https://myself659.github.io/tags/ethereum">ethereum</a>
+                
+                
+            </div>
+            
+        
+    </div>
+</header>
+
+
+      
+
+        <div class="article-entry" itemprop="articleBody">
+            
+
+<h1 id="说明">说明</h1>
+
+<p>代码基于go-ethereum，版本v1.8.10。</p>
+
+<h2 id="rpc代码入口">RPC代码入口</h2>
+
+<p><a href="https://github.com/myself659/go-ethereum/blob/eae63c511ceafab14b92e274c1b18bf1700e2d3d/internal/ethapi/api.go#L365">SendTransaction</a></p>
+
+<pre><code>// SendTransaction will create a transaction from the given arguments and
+// tries to sign it with the key associated with args.To. If the given passwd isn't
+// able to decrypt the key it fails.
+func (s *PrivateAccountAPI) SendTransaction(ctx context.Context, args SendTxArgs, passwd string) (common.Hash, error) {
+    if args.Nonce == nil {
+        // Hold the addresse's mutex around signing to prevent concurrent assignment of
+        // the same nonce to multiple accounts.
+        s.nonceLock.LockAddr(args.From)
+        defer s.nonceLock.UnlockAddr(args.From)
+    }
+    signed, err := s.signTransaction(ctx, args, passwd)
+    if err != nil {
+        return common.Hash{}, err
+    }
+    return submitTransaction(ctx, s.b, signed)
+}
+
+</code></pre>
+
+<p><a href="https://github.com/myself659/go-ethereum/blob/eae63c511ceafab14b92e274c1b18bf1700e2d3d/internal/ethapi/api.go#L1105:6">SendTxArgs</a>的数据结构如下：</p>
+
+<pre><code>type SendTxArgs struct {
+    From     common.Address  `json:&quot;from&quot;`
+    To       *common.Address `json:&quot;to&quot;`
+    Gas      *hexutil.Uint64 `json:&quot;gas&quot;`
+    GasPrice *hexutil.Big    `json:&quot;gasPrice&quot;`
+    Value    *hexutil.Big    `json:&quot;value&quot;`
+    Nonce    *hexutil.Uint64 `json:&quot;nonce&quot;`
+    // We accept &quot;data&quot; and &quot;input&quot; for backwards-compatibility reasons. &quot;input&quot; is the
+    // newer name and should be preferred by clients.
+    Data  *hexutil.Bytes `json:&quot;data&quot;`
+    Input *hexutil.Bytes `json:&quot;input&quot;`
+}
+</code></pre>
+
+<p>新增加Input字段。用于替换原来Data字段，为了兼容保留Data字段。</p>
+
+<h2 id="查找钱包">查找钱包</h2>
+
+<p>根据from地址信息查找钱包。</p>
+
+<pre><code>    // Look up the wallet containing the requested signer
+    account := accounts.Account{Address: args.From}
+    wallet, err := s.am.Find(account)
+    if err != nil {
+        return nil, err
+    }
+</code></pre>
+
+<h2 id="设置参数">设置参数</h2>
+
+<pre><code>// setDefaults is a helper function that fills in default values for unspecified tx fields.
+func (args *SendTxArgs) setDefaults(ctx context.Context, b Backend) error {
+    if args.Gas == nil {
+        args.Gas = new(hexutil.Uint64)
+        *(*uint64)(args.Gas) = 90000
+    }
+    if args.GasPrice == nil {
+        price, err := b.SuggestPrice(ctx)
+        if err != nil {
+            return err
+        }
+        args.GasPrice = (*hexutil.Big)(price)
+    }
+    if args.Value == nil {
+        args.Value = new(hexutil.Big)
+    }
+    if args.Nonce == nil {
+        nonce, err := b.GetPoolNonce(ctx, args.From)
+        if err != nil {
+            return err
+        }
+        args.Nonce = (*hexutil.Uint64)(&amp;nonce)
+    }
+    if args.Data != nil &amp;&amp; args.Input != nil &amp;&amp; !bytes.Equal(*args.Data, *args.Input) {
+        return errors.New(`Both &quot;data&quot; and &quot;input&quot; are set and not equal. Please use &quot;input&quot; to pass transaction call data.`)
+    }
+    if args.To == nil {
+        // Contract creation
+        var input []byte
+        if args.Data != nil {
+            input = *args.Data
+        } else if args.Input != nil {
+            input = *args.Input
+        }
+        if len(input) == 0 {
+            return errors.New(`contract creation without any data provided`)
+        }
+    }
+    return nil
+}
+</code></pre>
+
+<h2 id="创建交易">创建交易</h2>
+
+<p>根据交易参数创建交易。</p>
+
+<pre><code>func (args *SendTxArgs) toTransaction() *types.Transaction {
+    var input []byte
+    if args.Data != nil {
+        input = *args.Data
+    } else if args.Input != nil {
+        input = *args.Input
+    }
+    if args.To == nil {
+        return types.NewContractCreation(uint64(*args.Nonce), (*big.Int)(args.Value), uint64(*args.Gas), (*big.Int)(args.GasPrice), input)
+    }
+    return types.NewTransaction(uint64(*args.Nonce), *args.To, (*big.Int)(args.Value), uint64(*args.Gas), (*big.Int)(args.GasPrice), input)
+}
+</code></pre>
+
+<p>相关数据结构如下：</p>
+
+<pre><code>type Transaction struct {
+    data txdata
+    // caches
+    hash atomic.Value
+    size atomic.Value
+    from atomic.Value
+}
+
+type txdata struct {
+    AccountNonce uint64          `json:&quot;nonce&quot;    gencodec:&quot;required&quot;`
+    Price        *big.Int        `json:&quot;gasPrice&quot; gencodec:&quot;required&quot;`
+    GasLimit     uint64          `json:&quot;gas&quot;      gencodec:&quot;required&quot;`
+    Recipient    *common.Address `json:&quot;to&quot;       rlp:&quot;nil&quot;` // nil means contract creation
+    Amount       *big.Int        `json:&quot;value&quot;    gencodec:&quot;required&quot;`
+    Payload      []byte          `json:&quot;input&quot;    gencodec:&quot;required&quot;`
+
+    // Signature values
+    V *big.Int `json:&quot;v&quot; gencodec:&quot;required&quot;`
+    R *big.Int `json:&quot;r&quot; gencodec:&quot;required&quot;`
+    S *big.Int `json:&quot;s&quot; gencodec:&quot;required&quot;`
+
+    // This is only used when marshaling to JSON.
+    Hash *common.Hash `json:&quot;hash&quot; rlp:&quot;-&quot;`
+}
+</code></pre>
+
+<h2 id="获取chainid">获取ChainId</h2>
+
+<p>为了防止重放攻击，获得了chainID（EIP155之后才支持），用于签名。</p>
+
+<pre><code>    var chainID *big.Int
+    if config := s.b.ChainConfig(); config.IsEIP155(s.b.CurrentBlock().Number()) {
+        chainID = config.ChainId
+    }
+</code></pre>
+
+<p>chainID是如何使用的？简单说就是：以一系列数学运算将chainID保存到签名信息中。</p>
+
+<pre><code>func NewEIP155Signer(chainId *big.Int) EIP155Signer {
+    if chainId == nil {
+        chainId = new(big.Int)
+    }
+    return EIP155Signer{
+        chainId:    chainId,
+        chainIdMul: new(big.Int).Mul(chainId, big.NewInt(2)),
+    }
+}
+</code></pre>
+
+<pre><code>// WithSignature returns a new transaction with the given signature. This signature
+// needs to be in the [R || S || V] format where V is 0 or 1.
+func (s EIP155Signer) SignatureValues(tx *Transaction, sig []byte) (R, S, V *big.Int, err error) {
+    R, S, V, err = HomesteadSigner{}.SignatureValues(tx, sig)
+    if err != nil {
+        return nil, nil, nil, err
+    }
+    if s.chainId.Sign() != 0 {
+        V = big.NewInt(int64(sig[64] + 35))
+        V.Add(V, s.chainIdMul)
+    }
+    return R, S, V, nil
+}
+</code></pre>
+
+<h2 id="签名">签名</h2>
+
+<p>从keystore获取私钥用于签名交易。</p>
+
+<pre><code>// SignHashWithPassphrase signs hash if the private key matching the given address
+// can be decrypted with the given passphrase. The produced signature is in the
+// [R || S || V] format where V is 0 or 1.
+func (ks *KeyStore) SignHashWithPassphrase(a accounts.Account, passphrase string, hash []byte) (signature []byte, err error) {
+    _, key, err := ks.getDecryptedKey(a, passphrase)
+    if err != nil {
+        return nil, err
+    }
+    defer zeroKey(key.PrivateKey)
+    return crypto.Sign(hash, key.PrivateKey)
+}
+</code></pre>
+
+<h2 id="提交交易">提交交易</h2>
+
+<pre><code>// submitTransaction is a helper function that submits tx to txPool and logs a message.
+func submitTransaction(ctx context.Context, b Backend, tx *types.Transaction) (common.Hash, error) {
+    if err := b.SendTx(ctx, tx); err != nil {
+        return common.Hash{}, err
+    }
+    if tx.To() == nil {
+        signer := types.MakeSigner(b.ChainConfig(), b.CurrentBlock().Number())
+        from, err := types.Sender(signer, tx)
+        if err != nil {
+            return common.Hash{}, err
+        }
+        addr := crypto.CreateAddress(from, tx.Nonce())
+        log.Info(&quot;Submitted contract creation&quot;, &quot;fullhash&quot;, tx.Hash().Hex(), &quot;contract&quot;, addr.Hex())
+    } else {
+        log.Info(&quot;Submitted transaction&quot;, &quot;fullhash&quot;, tx.Hash().Hex(), &quot;recipient&quot;, tx.To())
+    }
+    return tx.Hash(), nil
+}
+</code></pre>
+
+<p>添加交易到本地交易池。</p>
+
+<pre><code>func (b *EthAPIBackend) SendTx(ctx context.Context, signedTx *types.Transaction) error {
+    return b.eth.txPool.AddLocal(signedTx)
+}
+</code></pre>
+
+<h1 id="小结">小结</h1>
+
+<p>到此为止，交易已经提交到交易池。这才是整个交易完成过程中第一步，后面还有广播、检查、打包、确认等流程。</p>
+
+<p>这是节点钱包提交交易的过程。轻钱包提交交易与此有一些不同，是通过rpc调用提交到钱包服务的节点钱包。</p>
+
+<h2 id="欢迎关注">欢迎关注</h2>
+
+<p>欢迎关注微信公众帐号：沉风网事(savewind)</p>
+
+<p><img src="/images/cfws.jpg" alt="沉风网事" /></p>
+
+        </div>
+        
+
+        <footer class="article-footer">
+    <a data-url="https://myself659.github.io/2018/05/05/eth-tx-submit/" data-id="afb422460de029d1f90948d735dfecdc" class="article-share-link">
+        <i class="fa fa-share"></i>
+        Share
+    </a>
+    
+
+    <script>
+    (function ($) {
+        
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+    </script>
+</footer>
+
+    </div>
+
+    
+<nav id="article-nav">
+    
+    <a href="https://myself659.github.io/2018/05/05/socialnetowrk-cannot-cycle/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">
+          Older
+      </strong>
+      <div class="article-nav-title">社交网络摆脱不了的周期</div>
+    </a>
+    
+
+    
+    <a href="https://myself659.github.io/2018/05/05/rd-leadship/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">
+          Newer
+      </strong>
+      <div class="article-nav-title">乱扯研发管理与领导</div>
+    </a>
+    
+</nav>
+
+
+</article>
+
+
+    <script src="https://utteranc.es/client.js"
+        repo="myself659/ipds-public"
+        issue-term="url"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+    </script>
+
+    
+
+    </section>
+
+
+
+   	
+    	<aside id="sidebar">
+	
+
+
+
+<aside class="table-of-contents">
+    <details>
+    <summary>
+    <b>Table of Contents</b>
+    </summary><li><a href="/2018/05/05/eth-tx-submit/#%e8%af%b4%e6%98%8e">说明</a></li>
+            
+                    <ul class="toc-h2"><li><a href="/2018/05/05/eth-tx-submit/#rpc%e4%bb%a3%e7%a0%81%e5%85%a5%e5%8f%a3">RPC代码入口</a></li>
+            <li><a href="/2018/05/05/eth-tx-submit/#%e6%9f%a5%e6%89%be%e9%92%b1%e5%8c%85">查找钱包</a></li>
+            <li><a href="/2018/05/05/eth-tx-submit/#%e8%ae%be%e7%bd%ae%e5%8f%82%e6%95%b0">设置参数</a></li>
+            <li><a href="/2018/05/05/eth-tx-submit/#%e5%88%9b%e5%bb%ba%e4%ba%a4%e6%98%93">创建交易</a></li>
+            <li><a href="/2018/05/05/eth-tx-submit/#%e8%8e%b7%e5%8f%96chainid">获取ChainId</a></li>
+            <li><a href="/2018/05/05/eth-tx-submit/#%e7%ad%be%e5%90%8d">签名</a></li>
+            <li><a href="/2018/05/05/eth-tx-submit/#%e6%8f%90%e4%ba%a4%e4%ba%a4%e6%98%93">提交交易</a></li>
+            
+                    </ul><li><a href="/2018/05/05/eth-tx-submit/#%e5%b0%8f%e7%bb%93">小结</a></li>
+            
+                    <ul class="toc-h2"><li><a href="/2018/05/05/eth-tx-submit/#%e6%ac%a2%e8%bf%8e%e5%85%b3%e6%b3%a8">欢迎关注</a></li>
+            </details>
+</aside>
+    
+<div class="widget-wrap">
+    <h3 class="widget-title">
+        Recents
+    </h3>
+    <div class="widget">
+        <ul id="recent-post">
+            
+            <li>
+                <div class="item-thumbnail">
+                    <a href="https://myself659.github.io/2020/06/26/think-outof-box/" class="thumbnail">
+                    
+                        <span class="thumbnail-image thumbnail-none"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    <p class="item-category">
+                        
+                        <a class="article-category-link" href="https://myself659.github.io/categories/%E6%88%90%E9%95%BF">
+                        成长
+                        </a>
+                    </p>
+                    
+                    
+                    <p class="item-title"><a href="https://myself659.github.io/2020/06/26/think-outof-box/" class="title">谈谈跳出框架思考</a></p>
+                    <p class="item-date">
+                        <time datetime="2020-06-26 11:58:06 &#43;0200 &#43;0200" itemprop="datePublished">2020-06-26</time>
+                    </p>
+                </div>
+            </li>
+            
+            <li>
+                <div class="item-thumbnail">
+                    <a href="https://myself659.github.io/2020/05/31/cryptocurrency_antifrangible/" class="thumbnail">
+                    
+                        <span class="thumbnail-image thumbnail-none"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    <p class="item-category">
+                        
+                        <a class="article-category-link" href="https://myself659.github.io/categories/blockchain">
+                        BlockChain
+                        </a>
+                    </p>
+                    
+                    
+                    <p class="item-title"><a href="https://myself659.github.io/2020/05/31/cryptocurrency_antifrangible/" class="title">谈谈数字货币的反脆弱性</a></p>
+                    <p class="item-date">
+                        <time datetime="2020-05-31 11:58:06 &#43;0200 &#43;0200" itemprop="datePublished">2020-05-31</time>
+                    </p>
+                </div>
+            </li>
+            
+            <li>
+                <div class="item-thumbnail">
+                    <a href="https://myself659.github.io/2020/05/24/covid-19-symptom/" class="thumbnail">
+                    
+                        <span class="thumbnail-image thumbnail-none"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    <p class="item-category">
+                        
+                        <a class="article-category-link" href="https://myself659.github.io/categories/life">
+                        Life
+                        </a>
+                    </p>
+                    
+                    
+                    <p class="item-title"><a href="https://myself659.github.io/2020/05/24/covid-19-symptom/" class="title">分享：一图了解新型冠状病毒的症状有哪些</a></p>
+                    <p class="item-date">
+                        <time datetime="2020-05-24 11:58:06 &#43;0200 &#43;0200" itemprop="datePublished">2020-05-24</time>
+                    </p>
+                </div>
+            </li>
+            
+            <li>
+                <div class="item-thumbnail">
+                    <a href="https://myself659.github.io/2020/05/08/book-skin-in-the-game-how/" class="thumbnail">
+                    
+                        <span class="thumbnail-image thumbnail-none"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    <p class="item-category">
+                        
+                        <a class="article-category-link" href="https://myself659.github.io/categories/read">
+                        Read
+                        </a>
+                    </p>
+                    
+                    
+                    <p class="item-title"><a href="https://myself659.github.io/2020/05/08/book-skin-in-the-game-how/" class="title">读书笔记:《非对称风险》</a></p>
+                    <p class="item-date">
+                        <time datetime="2020-05-08 11:58:06 &#43;0200 &#43;0200" itemprop="datePublished">2020-05-08</time>
+                    </p>
+                </div>
+            </li>
+            
+            <li>
+                <div class="item-thumbnail">
+                    <a href="https://myself659.github.io/2020/04/26/how-to-learn-fast/" class="thumbnail">
+                    
+                        <span class="thumbnail-image thumbnail-none"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    <p class="item-category">
+                        
+                        <a class="article-category-link" href="https://myself659.github.io/categories/%E6%88%90%E9%95%BF">
+                        成长
+                        </a>
+                    </p>
+                    
+                    
+                    <p class="item-title"><a href="https://myself659.github.io/2020/04/26/how-to-learn-fast/" class="title">关于快速学习的思考</a></p>
+                    <p class="item-date">
+                        <time datetime="2020-04-26 11:58:06 &#43;0200 &#43;0200" itemprop="datePublished">2020-04-26</time>
+                    </p>
+                </div>
+            </li>
+            
+        </ul>
+    </div>
+</div>
+
+
+
+    
+
+
+<div class="widget-wrap">
+    <h3 class="widget-title">
+        Tags
+    </h3>
+    <div class="widget">
+        <ul class="category-list">
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://myself659.github.io/tags/arch">
+                    arch
+                </a>
+                <span class="category-list-count">5</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://myself659.github.io/tags/bitcoin">
+                    bitcoin
+                </a>
+                <span class="category-list-count">2</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://myself659.github.io/tags/blockchain">
+                    blockchain
+                </a>
+                <span class="category-list-count">31</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://myself659.github.io/tags/btc">
+                    btc
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://myself659.github.io/tags/cryptography">
+                    cryptography
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://myself659.github.io/tags/data">
+                    data
+                </a>
+                <span class="category-list-count">2</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://myself659.github.io/tags/data-struct">
+                    data-struct
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://myself659.github.io/tags/distributed">
+                    distributed
+                </a>
+                <span class="category-list-count">3</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://myself659.github.io/tags/docker">
+                    docker
+                </a>
+                <span class="category-list-count">3</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://myself659.github.io/tags/economy">
+                    economy
+                </a>
+                <span class="category-list-count">6</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://myself659.github.io/tags/english">
+                    english
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://myself659.github.io/tags/ethereum">
+                    ethereum
+                </a>
+                <span class="category-list-count">2</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://myself659.github.io/tags/golang">
+                    golang
+                </a>
+                <span class="category-list-count">10</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://myself659.github.io/tags/internet">
+                    internet
+                </a>
+                <span class="category-list-count">10</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://myself659.github.io/tags/ipfs">
+                    ipfs
+                </a>
+                <span class="category-list-count">3</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://myself659.github.io/tags/kubernetes">
+                    kubernetes
+                </a>
+                <span class="category-list-count">3</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://myself659.github.io/tags/life">
+                    life
+                </a>
+                <span class="category-list-count">2</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://myself659.github.io/tags/linux">
+                    linux
+                </a>
+                <span class="category-list-count">11</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://myself659.github.io/tags/nba">
+                    nba
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://myself659.github.io/tags/network">
+                    network
+                </a>
+                <span class="category-list-count">3</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://myself659.github.io/tags/nginx">
+                    nginx
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://myself659.github.io/tags/python">
+                    python
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://myself659.github.io/tags/read">
+                    read
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://myself659.github.io/tags/rust">
+                    rust
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://myself659.github.io/tags/secure">
+                    secure
+                </a>
+                <span class="category-list-count">5</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://myself659.github.io/tags/smart-contract">
+                    smart-contract
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://myself659.github.io/tags/substrate">
+                    substrate
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://myself659.github.io/tags/web">
+                    web
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://myself659.github.io/tags/%E5%95%86%E4%B8%9A">
+                    商业
+                </a>
+                <span class="category-list-count">5</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://myself659.github.io/tags/%E5%AD%A6%E4%B9%A0">
+                    学习
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://myself659.github.io/tags/%E6%88%90%E9%95%BF">
+                    成长
+                </a>
+                <span class="category-list-count">4</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://myself659.github.io/tags/%E7%A0%94%E5%8F%91%E7%AE%A1%E7%90%86">
+                    研发管理
+                </a>
+                <span class="category-list-count">4</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://myself659.github.io/tags/%E7%BC%96%E7%A8%8B">
+                    编程
+                </a>
+                <span class="category-list-count">6</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://myself659.github.io/tags/%E8%81%8C%E5%9C%BA">
+                    职场
+                </a>
+                <span class="category-list-count">2</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://myself659.github.io/tags/%E9%97%B2%E8%B0%88%E4%B9%B1%E6%89%AF">
+                    闲谈乱扯
+                </a>
+                <span class="category-list-count">9</span>
+            </li>
+            
+        </ul>
+    </div>
+</div>
+
+
+
+
+    
+
+
+<div class="widget-wrap">
+    <h3 class="widget-title">
+        Tag cloud
+    </h3>
+    <div class="widget tagcloud">
+        
+        
+        <a href="https://myself659.github.io/tags/arch" style="font-size: 12px;">arch</a>
+        
+        
+        <a href="https://myself659.github.io/tags/bitcoin" style="font-size: 12px;">bitcoin</a>
+        
+        
+        <a href="https://myself659.github.io/tags/blockchain" style="font-size: 12px;">blockchain</a>
+        
+        
+        <a href="https://myself659.github.io/tags/btc" style="font-size: 12px;">btc</a>
+        
+        
+        <a href="https://myself659.github.io/tags/cryptography" style="font-size: 12px;">cryptography</a>
+        
+        
+        <a href="https://myself659.github.io/tags/data" style="font-size: 12px;">data</a>
+        
+        
+        <a href="https://myself659.github.io/tags/data-struct" style="font-size: 12px;">data-struct</a>
+        
+        
+        <a href="https://myself659.github.io/tags/distributed" style="font-size: 12px;">distributed</a>
+        
+        
+        <a href="https://myself659.github.io/tags/docker" style="font-size: 12px;">docker</a>
+        
+        
+        <a href="https://myself659.github.io/tags/economy" style="font-size: 12px;">economy</a>
+        
+        
+        <a href="https://myself659.github.io/tags/english" style="font-size: 12px;">english</a>
+        
+        
+        <a href="https://myself659.github.io/tags/ethereum" style="font-size: 12px;">ethereum</a>
+        
+        
+        <a href="https://myself659.github.io/tags/golang" style="font-size: 12px;">golang</a>
+        
+        
+        <a href="https://myself659.github.io/tags/internet" style="font-size: 12px;">internet</a>
+        
+        
+        <a href="https://myself659.github.io/tags/ipfs" style="font-size: 12px;">ipfs</a>
+        
+        
+        <a href="https://myself659.github.io/tags/kubernetes" style="font-size: 12px;">kubernetes</a>
+        
+        
+        <a href="https://myself659.github.io/tags/life" style="font-size: 12px;">life</a>
+        
+        
+        <a href="https://myself659.github.io/tags/linux" style="font-size: 12px;">linux</a>
+        
+        
+        <a href="https://myself659.github.io/tags/nba" style="font-size: 12px;">nba</a>
+        
+        
+        <a href="https://myself659.github.io/tags/network" style="font-size: 12px;">network</a>
+        
+        
+        <a href="https://myself659.github.io/tags/nginx" style="font-size: 12px;">nginx</a>
+        
+        
+        <a href="https://myself659.github.io/tags/python" style="font-size: 12px;">python</a>
+        
+        
+        <a href="https://myself659.github.io/tags/read" style="font-size: 12px;">read</a>
+        
+        
+        <a href="https://myself659.github.io/tags/rust" style="font-size: 12px;">rust</a>
+        
+        
+        <a href="https://myself659.github.io/tags/secure" style="font-size: 12px;">secure</a>
+        
+        
+        <a href="https://myself659.github.io/tags/smart-contract" style="font-size: 12px;">smart-contract</a>
+        
+        
+        <a href="https://myself659.github.io/tags/substrate" style="font-size: 12px;">substrate</a>
+        
+        
+        <a href="https://myself659.github.io/tags/web" style="font-size: 12px;">web</a>
+        
+        
+        <a href="https://myself659.github.io/tags/%E5%95%86%E4%B8%9A" style="font-size: 12px;">商业</a>
+        
+        
+        <a href="https://myself659.github.io/tags/%E5%AD%A6%E4%B9%A0" style="font-size: 12px;">学习</a>
+        
+        
+        <a href="https://myself659.github.io/tags/%E6%88%90%E9%95%BF" style="font-size: 12px;">成长</a>
+        
+        
+        <a href="https://myself659.github.io/tags/%E7%A0%94%E5%8F%91%E7%AE%A1%E7%90%86" style="font-size: 12px;">研发管理</a>
+        
+        
+        <a href="https://myself659.github.io/tags/%E7%BC%96%E7%A8%8B" style="font-size: 12px;">编程</a>
+        
+        
+        <a href="https://myself659.github.io/tags/%E8%81%8C%E5%9C%BA" style="font-size: 12px;">职场</a>
+        
+        
+        <a href="https://myself659.github.io/tags/%E9%97%B2%E8%B0%88%E4%B9%B1%E6%89%AF" style="font-size: 12px;">闲谈乱扯</a>
+        
+    </div>
+</div>
+
+
+
+
+
+    <div id="toTop" class="fa fa-angle-up"></div>
+</aside>
+
+    
+	</div>
+</div>
+
+<footer id="footer">
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2020
+      copyright@沉风网事
+    </div>
+  </div>
+</footer>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-144475213-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+<script src="https://myself659.github.io/fancybox/jquery.fancybox.pack.js"></script>
+<script src="https://myself659.github.io/js/script.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js"></script>
+
+
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']]}
+  });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+
+
+</body>
+</html>

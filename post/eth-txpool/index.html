@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>以太坊交易池分析 - 沉风网事</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="沉风网事" /><meta name="description" content="简介 以太坊交易池有以下功能： 缓存交易 清理交易 实现交易gasPrice竞价功能 配合出块，提供打包交易 交易查询 配置 配置描述 geth中用数据结构T" /><meta name="keywords" content="沉风网事, 沉风, 区块链, Glang, 算法, 数据结构" />
+
+
+<meta name="baidu-site-verification" content="9LmlOuIblt" />
+
+
+
+<meta name="generator" content="Hugo 0.68.3 with theme even" />
+
+
+<link rel="canonical" href="http://myself659.github.io/post/eth-txpool/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.8c3cbcb0324c2bb4875ceccba4007cbad4b4ac8377f33af9953c3e7684534a50.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="以太坊交易池分析" />
+<meta property="og:description" content="简介 以太坊交易池有以下功能： 缓存交易 清理交易 实现交易gasPrice竞价功能 配合出块，提供打包交易 交易查询 配置 配置描述 geth中用数据结构T" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://myself659.github.io/post/eth-txpool/" />
+<meta property="article:published_time" content="2018-05-15T11:58:06+02:00" />
+<meta property="article:modified_time" content="2018-05-15T11:58:06+02:00" />
+<meta itemprop="name" content="以太坊交易池分析">
+<meta itemprop="description" content="简介 以太坊交易池有以下功能： 缓存交易 清理交易 实现交易gasPrice竞价功能 配合出块，提供打包交易 交易查询 配置 配置描述 geth中用数据结构T">
+<meta itemprop="datePublished" content="2018-05-15T11:58:06&#43;02:00" />
+<meta itemprop="dateModified" content="2018-05-15T11:58:06&#43;02:00" />
+<meta itemprop="wordCount" content="1711">
+
+
+
+<meta itemprop="keywords" content="BlockChain,ethereum," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="以太坊交易池分析"/>
+<meta name="twitter:description" content="简介 以太坊交易池有以下功能： 缓存交易 清理交易 实现交易gasPrice竞价功能 配合出块，提供打包交易 交易查询 配置 配置描述 geth中用数据结构T"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">沉风</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a><a href="/post/leetcode/">
+        <li class="mobile-menu-item">LeetCode</li>
+      </a><a href="/post/read-post/">
+        <li class="mobile-menu-item">Read</li>
+      </a><a href="/post/share-post/">
+        <li class="mobile-menu-item">Share</li>
+      </a><a href="/post/slide-post/">
+        <li class="mobile-menu-item">Slide</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">沉风</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/leetcode/">LeetCode</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/read-post/">Read</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/share-post/">Share</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/slide-post/">Slide</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">以太坊交易池分析</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2018-05-15 </span>
+        <div class="post-category">
+            <a href="/categories/ethereum/"> ethereum </a>
+            </div>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#配置描述">配置描述</a></li>
+    <li><a href="#默认配置">默认配置</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#描述">描述</a></li>
+    <li><a href="#存储">存储</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#添加">添加</a>
+      <ul>
+        <li><a href="#事件源">事件源</a></li>
+        <li><a href="#检查条件">检查条件</a></li>
+      </ul>
+    </li>
+    <li><a href="#删除">删除</a>
+      <ul>
+        <li><a href="#事件源-1">事件源</a></li>
+      </ul>
+    </li>
+    <li><a href="#更新">更新</a>
+      <ul>
+        <li><a href="#事件源-2">事件源</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <h1 id="简介">简介</h1>
+<p>以太坊交易池有以下功能：</p>
+<ol>
+<li>缓存交易</li>
+<li>清理交易</li>
+<li>实现交易gasPrice竞价功能</li>
+<li>配合出块，提供打包交易</li>
+<li>交易查询</li>
+</ol>
+<h1 id="配置">配置</h1>
+<h2 id="配置描述">配置描述</h2>
+<p>geth中用数据结构TxPoolConfig描述交易池配置，具体如下：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">// TxPoolConfig are the configuration parameters of the transaction pool.
+type TxPoolConfig struct {
+    NoLocals  bool          // Whether local transaction handling should be disabled
+    Journal   string        // Journal of local transactions to survive node restarts
+    Rejournal time.Duration // Time interval to regenerate the local transaction journal
+
+    PriceLimit uint64 // Minimum gas price to enforce for acceptance into the pool
+    PriceBump  uint64 // Minimum price bump percentage to replace an already existing transaction (nonce)
+
+    AccountSlots uint64 // Minimum number of executable transaction slots guaranteed per account
+    GlobalSlots  uint64 // Maximum number of executable transaction slots for all accounts
+    AccountQueue uint64 // Maximum number of non-executable transaction slots permitted per account
+    GlobalQueue  uint64 // Maximum number of non-executable transaction slots for all accounts
+
+    Lifetime time.Duration // Maximum amount of time non-executable transaction are queued
+}
+</code></pre></td></tr></table>
+</div>
+</div><p>对其中相关参数说明如下：</p>
+<p>AccountSlots：每个帐户等待处理交易的最大个数。默认值为16
+GlobalSlots：所有帐户等待处理交易的最大个数。默认值为4096
+AccountQueue：每帐户暂不能处理交易的最大个数。默认值为64 
+GlobalQueue：所有帐户暂不能处理交易的最大个数。默认值为1024
+Lifetime：暂不能处理交易在队列中最大保存时长。默认值为3小时</p>
+<p>问题来了：等待处理交易与暂不能处理交易有什么不一样？</p>
+<p>等待处理交易满足交易执行条件，暂不能处理交易不满足交易执行条件。这里的交易执行条件是指交易的nonce不能超过当前区块中的交易的nonce的值加1。</p>
+<h2 id="默认配置">默认配置</h2>
+<p>默认配置信息保存在DefaultTxPoolConfig变量中。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">// DefaultTxPoolConfig contains the default configurations for the transaction
+// pool.
+var DefaultTxPoolConfig = TxPoolConfig{
+    Journal:   &#34;transactions.rlp&#34;,
+    Rejournal: time.Hour,
+
+    PriceLimit: 1,
+    PriceBump:  10,
+
+    AccountSlots: 16,
+    GlobalSlots:  4096,
+    AccountQueue: 64,
+    GlobalQueue:  1024,
+
+    Lifetime: 3 * time.Hour,
+}
+</code></pre></td></tr></table>
+</div>
+</div><h1 id="交易池">交易池</h1>
+<h2 id="描述">描述</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">type TxPool struct {
+    config       TxPoolConfig
+    chainconfig  *params.ChainConfig
+    chain        blockChain
+    gasPrice     *big.Int
+    txFeed       event.Feed
+    scope        event.SubscriptionScope
+    chainHeadCh  chan ChainHeadEvent
+    chainHeadSub event.Subscription
+    signer       types.Signer
+    mu           sync.RWMutex 
+
+    currentState  *state.StateDB      // Current state in the blockchain head
+    pendingState  *state.ManagedState // Pending state tracking virtual nonces
+    currentMaxGas uint64              // Current gas limit for transaction caps
+
+    locals  *accountSet // Set of local transaction to exempt from eviction rules
+    journal *txJournal  // Journal of local transaction to back up to disk
+
+    pending map[common.Address]*txList   // All currently processable transactions
+    queue   map[common.Address]*txList   // Queued but non-processable transactions
+    beats   map[common.Address]time.Time // Last heartbeat from each known account
+    all     *txLookup                    // All transactions to allow lookups
+    priced  *txPricedList                // All transactions sorted by price
+
+    wg sync.WaitGroup // for shutdown sync
+
+    homestead bool 
+}
+</code></pre></td></tr></table>
+</div>
+</div><p>关注一下以下几个成员就知道tx是如何保存与维护的：</p>
+<ol>
+<li>pending map[common.Address]*txList</li>
+<li>queue   map[common.Address]*txList</li>
+<li>beats   map[common.Address]time.Time</li>
+<li>all     *txLookup  // map类型，txhash为key，tx为value</li>
+<li>priced  *txPricedList // heap维护gasPrice排序</li>
+</ol>
+<h2 id="存储">存储</h2>
+<p>交易池不需要持久化，数据直接保存在内存中</p>
+<h1 id="流程">流程</h1>
+<p>如果将交易池当作队列来看，就有以下操作：</p>
+<ol>
+<li>添加</li>
+<li>删除</li>
+<li>更新</li>
+</ol>
+<h2 id="添加">添加</h2>
+<h3 id="事件源">事件源</h3>
+<ol>
+<li>本地用户添加交易</li>
+<li>远端RPC调加交易</li>
+</ol>
+<h3 id="检查条件">检查条件</h3>
+<p>添加动作完成很简单，重要是添加前条件检查。相关检查代码如下:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span><span class="lnt">57
+</span><span class="lnt">58
+</span><span class="lnt">59
+</span><span class="lnt">60
+</span><span class="lnt">61
+</span><span class="lnt">62
+</span><span class="lnt">63
+</span><span class="lnt">64
+</span><span class="lnt">65
+</span><span class="lnt">66
+</span><span class="lnt">67
+</span><span class="lnt">68
+</span><span class="lnt">69
+</span><span class="lnt">70
+</span><span class="lnt">71
+</span><span class="lnt">72
+</span><span class="lnt">73
+</span><span class="lnt">74
+</span><span class="lnt">75
+</span><span class="lnt">76
+</span><span class="lnt">77
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">// add validates a transaction and inserts it into the non-executable queue for
+// later pending promotion and execution. If the transaction is a replacement for
+// an already pending or queued one, it overwrites the previous and returns this
+// so outer code doesn&#39;t uselessly call promote.
+//
+// If a newly added transaction is marked as local, its sending account will be
+// whitelisted, preventing any associated transaction from being dropped out of
+// the pool due to pricing constraints.
+func (pool *TxPool) add(tx *types.Transaction, local bool) (bool, error) {
+    // If the transaction is already known, discard it
+    hash := tx.Hash()
+    if pool.all.Get(hash) != nil {
+        log.Trace(&#34;Discarding already known transaction&#34;, &#34;hash&#34;, hash)
+        return false, fmt.Errorf(&#34;known transaction: %x&#34;, hash)
+    }
+    // If the transaction fails basic validation, discard it
+    if err := pool.validateTx(tx, local); err != nil {
+        log.Trace(&#34;Discarding invalid transaction&#34;, &#34;hash&#34;, hash, &#34;err&#34;, err)
+        invalidTxCounter.Inc(1)
+        return false, err
+    }
+    // If the transaction pool is full, discard underpriced transactions
+    if uint64(pool.all.Count()) &gt;= pool.config.GlobalSlots+pool.config.GlobalQueue {
+        // If the new transaction is underpriced, don&#39;t accept it
+        if !local &amp;&amp; pool.priced.Underpriced(tx, pool.locals) {
+            log.Trace(&#34;Discarding underpriced transaction&#34;, &#34;hash&#34;, hash, &#34;price&#34;, tx.GasPrice())
+            underpricedTxCounter.Inc(1)
+            return false, ErrUnderpriced
+        }
+        // New transaction is better than our worse ones, make room for it
+        drop := pool.priced.Discard(pool.all.Count()-int(pool.config.GlobalSlots+pool.config.GlobalQueue-1), pool.locals)
+        for _, tx := range drop {
+            log.Trace(&#34;Discarding freshly underpriced transaction&#34;, &#34;hash&#34;, tx.Hash(), &#34;price&#34;, tx.GasPrice())
+            underpricedTxCounter.Inc(1)
+            pool.removeTx(tx.Hash(), false)
+        }
+    }
+    // If the transaction is replacing an already pending one, do directly
+    from, _ := types.Sender(pool.signer, tx) // already validated
+    if list := pool.pending[from]; list != nil &amp;&amp; list.Overlaps(tx) {
+        // Nonce already pending, check if required price bump is met
+        inserted, old := list.Add(tx, pool.config.PriceBump)
+        if !inserted {
+            pendingDiscardCounter.Inc(1)
+            return false, ErrReplaceUnderpriced
+        }
+        // New transaction is better, replace old one
+        if old != nil {
+            pool.all.Remove(old.Hash())
+            pool.priced.Removed()
+            pendingReplaceCounter.Inc(1)
+        }
+        pool.all.Add(tx)
+        pool.priced.Put(tx)
+        pool.journalTx(from, tx)
+
+        log.Trace(&#34;Pooled new executable transaction&#34;, &#34;hash&#34;, hash, &#34;from&#34;, from, &#34;to&#34;, tx.To())
+
+        // We&#39;ve directly injected a replacement transaction, notify subsystems
+        go pool.txFeed.Send(NewTxsEvent{types.Transactions{tx}})
+
+        return old != nil, nil
+    }
+    // New transaction isn&#39;t replacing a pending one, push into queue
+    replace, err := pool.enqueueTx(hash, tx)
+    if err != nil {
+        return false, err
+    }
+    // Mark local addresses and journal local transactions
+    if local {
+        pool.locals.add(from)
+    }
+    pool.journalTx(from, tx)
+
+    log.Trace(&#34;Pooled new future transaction&#34;, &#34;hash&#34;, hash, &#34;from&#34;, from, &#34;to&#34;, tx.To())
+    return replace, nil
+}
+</code></pre></td></tr></table>
+</div>
+</div><p>从上面代码可以看出，检查项还是很多，罗列如下：</p>
+<ol>
+<li>重复性检查: 检查是否已经存在队列中</li>
+<li>交易大小检查，不能超过32KB</li>
+<li>转帐数额不能是负数</li>
+<li>gasPrice不超过当前最高限定gasPrice</li>
+<li>交易签名检查</li>
+<li>gasPrice竞价检查</li>
+<li>Nonce检查</li>
+<li>帐户ETH检查，防止余额不足</li>
+<li>gasLimit检查，防止gas费用不足</li>
+</ol>
+<h2 id="删除">删除</h2>
+<h3 id="事件源-1">事件源</h3>
+<p>删除交易有以下情况：</p>
+<ol>
+<li>交易队列容量超出</li>
+<li>超时删除</li>
+<li>接收新块检查删除非法交易</li>
+</ol>
+<h2 id="更新">更新</h2>
+<h3 id="事件源-2">事件源</h3>
+<ol>
+<li>相同nonce更新交易</li>
+<li>定时器检查将满足执行条件的queue队列上交易添加到pending队列</li>
+</ol>
+<h1 id="参考">参考</h1>
+<ol>
+<li><a href="https://mp.weixin.qq.com/s/4f5bv3-Bclc2izZ67o8DDw">以太坊如何清除已发出未打包的交易</a></li>
+</ol>
+<h1 id="欢迎关注">欢迎关注</h1>
+<p>欢迎关注微信公众帐号：沉风网事(savewind)</p>
+<p><img src="/images/cfws.jpg" alt="沉风网事"></p>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">沉风网事</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+        2018-05-15
+        
+    </span>
+  </p>
+  
+  
+</div>
+<footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/blockchain/">BlockChain</a>
+          <a href="/tags/ethereum/">ethereum</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/post/about-rand/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">浅谈随机</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        <a class="next" href="/post/rd-leadship/">
+            <span class="next-text nav-default">乱扯研发管理与领导</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+  
+
+  
+    <script src="https://utteranc.es/client.js"
+            repo="myself659/ipds-public"
+            issue-term="pathname"
+            theme="github-light"
+            crossorigin="anonymous"
+            async>
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://github.com/utterance">comments powered by utterances.</a></noscript>
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/8.3.1/mermaid.min.js"></script>
+<div class="social-links">
+      <a href="mailto:myself659@163.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://github.com/myself659" class="iconfont icon-github" title="github"></a>
+      <a href="https://weibo.com/6484347913" class="iconfont icon-weibo" title="weibo"></a>
+      <a href="https://www.zhihu.com/people/lejoys" class="iconfont icon-zhihu" title="zhihu"></a>
+  <a href="http://myself659.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/myself659/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2017 - 
+    2021
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">沉风网事</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+
+
+
+<script type="text/javascript" src="/js/main.min.d7b7ada643c9c1a983026e177f141f7363b4640d619caf01d8831a6718cd44ea.js"></script>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-144475213-1', 'auto');
+	ga('set', 'anonymizeIp', true);
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+
+
+
+
+</body>
+</html>

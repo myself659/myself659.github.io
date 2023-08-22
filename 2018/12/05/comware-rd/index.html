@@ -1,0 +1,1437 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <title>大型系统软件Comware研发总结 &middot; 沉风网事</title>
+    <meta name="generator" content="Hugo 0.54.0" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="author" content="沉风">
+    
+      <meta name="description" content="沉风网事，以人为本，尊重事实与原理，立足现实，以科技与金融为驱动，中西结合，虚实相应，主要关注互联网，系统架构，区块链，安全，经济，数据等领域">
+    
+    
+    <link rel="canonical" href="https://myself659.github.io/2018/12/05/comware-rd/"/>
+    <link rel="icon" href="https://myself659.github.io/favicon.ico">
+    <link rel="apple-touch-icon" href="https://myself659.github.io/apple-touch-icon.png"/>
+    <link rel="stylesheet" href="https://myself659.github.io/css/style.css">
+    <link rel="stylesheet" href="https://myself659.github.io/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://myself659.github.io/css/monokai.css">
+    <link rel="stylesheet" href="https://myself659.github.io/fancybox/jquery.fancybox.css">
+    
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400italic,400,600' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Source+Code+Pro' rel='stylesheet' type='text/css'>
+    <meta property="og:title" content="大型系统软件Comware研发总结" />
+<meta property="og:description" content="前言 前几个月写一篇关于研发管理的文章。在那篇文章提出一个简单的思考框架，并没有实际案例的分享及深度分析。所以在这里以华三Comware研发为例，结合思考框架谈谈自己的一些理解与想法。
+Comware 开始之前，先介绍一下Comware。其主要要点如下：
+ 整个系统代码量超过了1000万行（开源代码除外） 巅峰时期开发人员1000左右 支持设备类型超过100多种，同时支持各种丰富的网络特性 性能与可用性要求高，需要满足欧美高端市场（金融，国防等）要求及互联网大流量的冲击 作为公司的中台，支撑公司绝大部分产业线（安全，路由，交换，云计算等）  下面我们就一一展开说明。
+业务 以业务中心。Comware作为一个网络操作系统，主要要求如下：
+ 充当网络设备的大脑 承载各种网络业务，并动态满足不同网络业务的要求及变化 保证整个系统 高可用性，高性能，可维护性，可扩展性，安全性等  文化 由于历史上的原因，整个研发文化总体上源于华为，稍有调整。具体要点如下：
+ 质量为上 结果导向
+ 研发三权分立 追求效率 鼓励创新 公开  关于科技公司的文化，推荐Netflix文化:自由与责任
+团队 团队是从人的视角出发。要以人为本啊。
+团队梯队合理清楚，按技术水平划分具体如下：
+ 开发上岗人员 维护上岗人员 开发负责人 系统扩展组 系统组 架构组  团队组织划分以业务导向，按照不同的业务划分不同大组，独立进行代码管理。在各个大组一般分为开发与维护两个方面进行人员动态调配。
+团队建设主要是大组每周定期培训，鼓励分享，除此之外针对不同岗位有专项培训，如项目管理，代码管理。
+架构 架构不是我们常说的架构，这里的架导指导代码的工作（架构从事的角度出发）。
+选择开源，拥抱开源，不要重复造轮子 不得不说2008年开始预研下一代网络操作系统，当时的团队放弃vxwork，选择了开源linux，而且作到取自开源，高于开源，只使用linux基本组件（文件管理系统，内存管理系统，进程调度等），重新移植与修改协议栈，实现分布式网络协议，扩张SOCKET类型。采用Linux好处多多，具体如下：
+ 充分吸引Linux开源精华 Linux开源发展路径，决定Linux便于改造与优化 与Linux一起升级，如内核2.6升级到4.x版本
+ 方便开源引入支持，如移植wireshark， python Linux在服务器大量应用，业界有大量人才  合法合规 合法就不用多说了。注意的是要考虑到不同的国家与地区的差异。 合规方法最近的例子就是2017年百度要求内部全面停止使用React/React Native。利用开源的Linux作为基础开发商业操作系统，就不得不遵守开源协议。
+KISS原则 关于KISS原则，架构设计通用原则，有太多说明，这里不展开。
+开放性 对外开放接口，如OAA（Open Application Architecture，开放应用架构），这样有以下好处：
+ 对公司内部来说，降低了耦合 对外部合作方来说，方便不同厂商系统集成 对客户来说，提供了更多的选择以及DIY能力 开放与释放了平台的能力  分层与分解 整个系统采用分层设计有如下优点：" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://myself659.github.io/2018/12/05/comware-rd/" />
+<meta property="article:published_time" content="2018-12-05T11:58:06&#43;02:00"/>
+<meta property="article:modified_time" content="2018-12-05T11:58:06&#43;02:00"/>
+
+    
+    
+<meta itemprop="name" content="大型系统软件Comware研发总结">
+<meta itemprop="description" content="前言 前几个月写一篇关于研发管理的文章。在那篇文章提出一个简单的思考框架，并没有实际案例的分享及深度分析。所以在这里以华三Comware研发为例，结合思考框架谈谈自己的一些理解与想法。
+Comware 开始之前，先介绍一下Comware。其主要要点如下：
+ 整个系统代码量超过了1000万行（开源代码除外） 巅峰时期开发人员1000左右 支持设备类型超过100多种，同时支持各种丰富的网络特性 性能与可用性要求高，需要满足欧美高端市场（金融，国防等）要求及互联网大流量的冲击 作为公司的中台，支撑公司绝大部分产业线（安全，路由，交换，云计算等）  下面我们就一一展开说明。
+业务 以业务中心。Comware作为一个网络操作系统，主要要求如下：
+ 充当网络设备的大脑 承载各种网络业务，并动态满足不同网络业务的要求及变化 保证整个系统 高可用性，高性能，可维护性，可扩展性，安全性等  文化 由于历史上的原因，整个研发文化总体上源于华为，稍有调整。具体要点如下：
+ 质量为上 结果导向
+ 研发三权分立 追求效率 鼓励创新 公开  关于科技公司的文化，推荐Netflix文化:自由与责任
+团队 团队是从人的视角出发。要以人为本啊。
+团队梯队合理清楚，按技术水平划分具体如下：
+ 开发上岗人员 维护上岗人员 开发负责人 系统扩展组 系统组 架构组  团队组织划分以业务导向，按照不同的业务划分不同大组，独立进行代码管理。在各个大组一般分为开发与维护两个方面进行人员动态调配。
+团队建设主要是大组每周定期培训，鼓励分享，除此之外针对不同岗位有专项培训，如项目管理，代码管理。
+架构 架构不是我们常说的架构，这里的架导指导代码的工作（架构从事的角度出发）。
+选择开源，拥抱开源，不要重复造轮子 不得不说2008年开始预研下一代网络操作系统，当时的团队放弃vxwork，选择了开源linux，而且作到取自开源，高于开源，只使用linux基本组件（文件管理系统，内存管理系统，进程调度等），重新移植与修改协议栈，实现分布式网络协议，扩张SOCKET类型。采用Linux好处多多，具体如下：
+ 充分吸引Linux开源精华 Linux开源发展路径，决定Linux便于改造与优化 与Linux一起升级，如内核2.6升级到4.x版本
+ 方便开源引入支持，如移植wireshark， python Linux在服务器大量应用，业界有大量人才  合法合规 合法就不用多说了。注意的是要考虑到不同的国家与地区的差异。 合规方法最近的例子就是2017年百度要求内部全面停止使用React/React Native。利用开源的Linux作为基础开发商业操作系统，就不得不遵守开源协议。
+KISS原则 关于KISS原则，架构设计通用原则，有太多说明，这里不展开。
+开放性 对外开放接口，如OAA（Open Application Architecture，开放应用架构），这样有以下好处：
+ 对公司内部来说，降低了耦合 对外部合作方来说，方便不同厂商系统集成 对客户来说，提供了更多的选择以及DIY能力 开放与释放了平台的能力  分层与分解 整个系统采用分层设计有如下优点：">
+
+
+<meta itemprop="datePublished" content="2018-12-05T11:58:06&#43;02:00" />
+<meta itemprop="dateModified" content="2018-12-05T11:58:06&#43;02:00" />
+<meta itemprop="wordCount" content="149">
+
+
+
+<meta itemprop="keywords" content="闲谈乱扯,研发管理," />
+
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="大型系统软件Comware研发总结"/>
+<meta name="twitter:description" content="前言 前几个月写一篇关于研发管理的文章。在那篇文章提出一个简单的思考框架，并没有实际案例的分享及深度分析。所以在这里以华三Comware研发为例，结合思考框架谈谈自己的一些理解与想法。
+Comware 开始之前，先介绍一下Comware。其主要要点如下：
+ 整个系统代码量超过了1000万行（开源代码除外） 巅峰时期开发人员1000左右 支持设备类型超过100多种，同时支持各种丰富的网络特性 性能与可用性要求高，需要满足欧美高端市场（金融，国防等）要求及互联网大流量的冲击 作为公司的中台，支撑公司绝大部分产业线（安全，路由，交换，云计算等）  下面我们就一一展开说明。
+业务 以业务中心。Comware作为一个网络操作系统，主要要求如下：
+ 充当网络设备的大脑 承载各种网络业务，并动态满足不同网络业务的要求及变化 保证整个系统 高可用性，高性能，可维护性，可扩展性，安全性等  文化 由于历史上的原因，整个研发文化总体上源于华为，稍有调整。具体要点如下：
+ 质量为上 结果导向
+ 研发三权分立 追求效率 鼓励创新 公开  关于科技公司的文化，推荐Netflix文化:自由与责任
+团队 团队是从人的视角出发。要以人为本啊。
+团队梯队合理清楚，按技术水平划分具体如下：
+ 开发上岗人员 维护上岗人员 开发负责人 系统扩展组 系统组 架构组  团队组织划分以业务导向，按照不同的业务划分不同大组，独立进行代码管理。在各个大组一般分为开发与维护两个方面进行人员动态调配。
+团队建设主要是大组每周定期培训，鼓励分享，除此之外针对不同岗位有专项培训，如项目管理，代码管理。
+架构 架构不是我们常说的架构，这里的架导指导代码的工作（架构从事的角度出发）。
+选择开源，拥抱开源，不要重复造轮子 不得不说2008年开始预研下一代网络操作系统，当时的团队放弃vxwork，选择了开源linux，而且作到取自开源，高于开源，只使用linux基本组件（文件管理系统，内存管理系统，进程调度等），重新移植与修改协议栈，实现分布式网络协议，扩张SOCKET类型。采用Linux好处多多，具体如下：
+ 充分吸引Linux开源精华 Linux开源发展路径，决定Linux便于改造与优化 与Linux一起升级，如内核2.6升级到4.x版本
+ 方便开源引入支持，如移植wireshark， python Linux在服务器大量应用，业界有大量人才  合法合规 合法就不用多说了。注意的是要考虑到不同的国家与地区的差异。 合规方法最近的例子就是2017年百度要求内部全面停止使用React/React Native。利用开源的Linux作为基础开发商业操作系统，就不得不遵守开源协议。
+KISS原则 关于KISS原则，架构设计通用原则，有太多说明，这里不展开。
+开放性 对外开放接口，如OAA（Open Application Architecture，开放应用架构），这样有以下好处：
+ 对公司内部来说，降低了耦合 对外部合作方来说，方便不同厂商系统集成 对客户来说，提供了更多的选择以及DIY能力 开放与释放了平台的能力  分层与分解 整个系统采用分层设计有如下优点："/>
+
+    
+
+    
+
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+
+     
+ <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+ <script type="text/x-mathjax-config">
+   MathJax.Hub.Config({
+     tex2jax: {
+       skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+       inlineMath: [['$','$']]
+     }
+   });
+ </script>
+</head>
+<body>
+<div class="container">
+
+
+<div id="container">
+	<header id="header">
+  <div id="header-main" class="header-inner">
+    <div class="outer">
+      <a href="https://myself659.github.io/" id="logo">
+          
+          <i class="logo" style="background-image: url('https://myself659.github.io/css/images/logo.png')"></i>
+          
+          <span class="site-title">沉风网事</span>
+      </a>
+      <nav id="main-nav">
+          
+          
+          <a class="main-nav-link" href="https://myself659.github.io/">Home</a>
+          
+          
+          
+          
+          
+          
+
+          
+          <a class="main-nav-link" href="/about/">About</a>
+          
+          <a class="main-nav-link" href="/2017/03/18/leetcode/">LeetCode</a>
+          
+          <a class="main-nav-link" href="/2017/10/02/read-post/">Read</a>
+          
+          <a class="main-nav-link" href="/2017/10/02/share-post/">Share</a>
+          
+          <a class="main-nav-link" href="/2017/10/02/slide-post/">Slide</a>
+          
+
+          
+          
+          
+          
+          <a class="main-nav-link" href="https://myself659.github.io/tags/">Tags</a>
+          
+          
+          
+          <a class="main-nav-link" href="https://myself659.github.io/categories/">Categories</a>
+          
+          
+      </nav>
+        <nav id="sub-nav">
+          <div class="profile" id="profile-nav">
+            <a id="profile-anchor" href="javascript:;"><img class="avatar" src="https://myself659.github.io/css/images/avatar.png"><i class="fa fa-caret-down"></i></a>
+          </div>
+        </nav>
+        <div id="search-form-wrap">
+          <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form">
+              <input type="search" name="q" class="search-form-input" placeholder="Search">
+              <button type="submit" class="search-form-submit">
+              </button>
+              <input type="hidden" name="sitesearch" value="https://myself659.github.io/" />
+         </form>
+        </div>
+    </div>
+  </div>
+  <div id="main-nav-mobile" class="header-sub header-inner">
+    <table class="menu outer">
+      <tbody>
+          <tr>
+          
+          
+          <td><a class="main-nav-link" href="https://myself659.github.io/">Home</a></td>
+          
+          
+          
+          
+          
+          
+
+          
+          <td><a class="main-nav-link" href="/about/">About</a></td>
+          
+          <td><a class="main-nav-link" href="/2017/03/18/leetcode/">LeetCode</a></td>
+          
+          <td><a class="main-nav-link" href="/2017/10/02/read-post/">Read</a></td>
+          
+          <td><a class="main-nav-link" href="/2017/10/02/share-post/">Share</a></td>
+          
+          <td><a class="main-nav-link" href="/2017/10/02/slide-post/">Slide</a></td>
+          
+
+          
+          
+          
+          
+          <td><a class="main-nav-link" href="https://myself659.github.io/tags/">Tags</a></td>
+          
+          
+          
+          <td><a class="main-nav-link" href="https://myself659.github.io/categories/">Categories</a></td>
+          
+          
+          <td>
+          <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form">
+          <input type="search" name="q" class="search-form-input" placeholder="Search">
+          <input type="hidden" name="sitesearch" value="https://myself659.github.io/" />
+          </form>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</header>
+
+   	
+   	<div class="outer">
+   	
+    	<aside id="profile">
+  <div class="inner profile-inner">
+    <div class="base-info profile-block">
+      
+      <img id="avatar" src="https://www.gravatar.com/avatar/45ae86ea3c111a5537490c3b370c03ee?s=100&d=identicon"/>
+      
+      <h2 id="name">沉风</h2>
+      <h3 id="title">All is well, just do it</h3>
+      <span id="location"><i class="fa fa-map-marker"></i>hangzhou, china</span>
+      
+          <a id="follow" href="https://github.com/myself659">
+              Follow
+          </a>
+      
+    </div>
+    <div class="article-info profile-block">
+      <div class="article-info-block">
+        127
+        <span>Posts</span>
+      </div>
+      <div class="article-info-block">
+        
+          35
+        
+        <span>
+            Tags
+        </span>
+      </div>
+    </div>
+    <div class="profile-block social-links">
+      <table>
+        <tr>
+          
+<td><a href="//github.com/myself659" target="_blank" title="GitHub"><i class="fa fa-github"></i></a></td>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<td><a href="//medium.com/@myself659" target="_blank" title="Medium"><i class="fa fa-medium"></i></a></td>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          <td><a href="https://myself659.github.io/index.xml" target="_blank" title="RSS"><i class="fa fa-rss"></i></a></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</aside>
+
+    
+
+    <section id="main">
+    
+    <article id="page-undefined" class="article article-type-page" itemscope="" itemprop="blogPost">
+    <div class="article-inner">
+        
+
+        <header class="article-header">
+    <a href="https://myself659.github.io/2018/12/05/comware-rd/">
+    <h1 class="article-title" itemprop="name">
+        大型系统软件Comware研发总结
+    </h1>
+    </a>
+    <div class="article-meta">
+
+        
+        <div class="article-date">
+            <i class="fa fa-calendar"></i>
+            <time datetime="2018-12-05 11:58:06 &#43;0200 &#43;0200" itemprop="datePublished">2018-12-05</time>
+            &middot;
+            149
+            words
+            &middot;
+            1
+            minute read
+        </div>
+        
+        
+            
+            
+            <div class="article-category">
+                <i class="fa fa-folder"></i>
+                
+                
+                <a class="article-category-link" href="https://myself659.github.io/categories/%E9%97%B2%E8%B0%88%E4%B9%B1%E6%89%AF">闲谈乱扯</a>
+                
+                
+            </div>
+            
+        
+
+        
+            
+            
+            <div class="article-category">
+                <i class="fa fa-tags"></i>
+                
+                
+                <a class="article-category-link" href="https://myself659.github.io/tags/%E9%97%B2%E8%B0%88%E4%B9%B1%E6%89%AF">闲谈乱扯</a>
+                &middot;
+                
+                
+                <a class="article-category-link" href="https://myself659.github.io/tags/%E7%A0%94%E5%8F%91%E7%AE%A1%E7%90%86">研发管理</a>
+                
+                
+            </div>
+            
+        
+    </div>
+</header>
+
+
+      
+
+        <div class="article-entry" itemprop="articleBody">
+            
+
+<h1 id="前言">前言</h1>
+
+<p>前几个月写一篇关于研发管理的文章。在那篇文章提出一个简单的思考框架，并没有实际案例的分享及深度分析。所以在这里以华三Comware研发为例，结合思考框架谈谈自己的一些理解与想法。</p>
+
+<p><img src="/images/rd-quater.jpg" alt="研发管理的一个中心四个基本点" /></p>
+
+<h1 id="comware">Comware</h1>
+
+<p>开始之前，先介绍一下<a href="http://www.h3c.com/cn/Products___Technology/Technology/ComwareV7/">Comware</a>。其主要要点如下：</p>
+
+<ol>
+<li>整个系统代码量超过了1000万行（开源代码除外）</li>
+<li>巅峰时期开发人员1000左右</li>
+<li>支持设备类型超过100多种，同时支持各种丰富的网络特性</li>
+<li>性能与可用性要求高，需要满足欧美高端市场（金融，国防等）要求及互联网大流量的冲击</li>
+<li>作为公司的中台，支撑公司绝大部分产业线（安全，路由，交换，云计算等）</li>
+</ol>
+
+<p>下面我们就一一展开说明。</p>
+
+<h1 id="业务">业务</h1>
+
+<p>以业务中心。Comware作为一个网络操作系统，主要要求如下：</p>
+
+<ol>
+<li>充当网络设备的大脑</li>
+<li>承载各种网络业务，并动态满足不同网络业务的要求及变化</li>
+<li>保证整个系统 <strong>高可用性，高性能，可维护性，可扩展性，安全性</strong>等</li>
+</ol>
+
+<h1 id="文化">文化</h1>
+
+<p>由于历史上的原因，整个研发文化总体上源于华为，稍有调整。具体要点如下：</p>
+
+<ol>
+<li>质量为上</li>
+<li>结果导向<br /></li>
+<li>研发三权分立</li>
+<li>追求效率</li>
+<li>鼓励创新</li>
+<li>公开</li>
+</ol>
+
+<p>关于科技公司的文化，推荐<a href="https://github.com/myself659/myself659.github.io/blob/master/slides/Netflix%E6%96%87%E5%8C%96%E8%87%AA%E7%94%B1%E4%B8%8E%E8%B4%A3%E4%BB%BB.pptx">Netflix文化:自由与责任</a></p>
+
+<h1 id="团队">团队</h1>
+
+<p>团队是从人的视角出发。要以人为本啊。</p>
+
+<p>团队梯队合理清楚，按技术水平划分具体如下：</p>
+
+<ol>
+<li>开发上岗人员</li>
+<li>维护上岗人员</li>
+<li>开发负责人</li>
+<li>系统扩展组</li>
+<li>系统组</li>
+<li>架构组</li>
+</ol>
+
+<p>团队组织划分以业务导向，按照不同的业务划分不同大组，独立进行代码管理。在各个大组一般分为开发与维护两个方面进行人员动态调配。</p>
+
+<p>团队建设主要是大组每周定期培训，鼓励分享，除此之外针对不同岗位有专项培训，如项目管理，代码管理。</p>
+
+<h1 id="架构">架构</h1>
+
+<p>架构不是我们常说的架构，这里的架导指导代码的工作（架构从事的角度出发）。</p>
+
+<h2 id="选择开源-拥抱开源-不要重复造轮子">选择开源，拥抱开源，不要重复造轮子</h2>
+
+<p>不得不说2008年开始预研下一代网络操作系统，当时的团队放弃vxwork，选择了开源linux，而且作到取自开源，高于开源，只使用linux基本组件（文件管理系统，内存管理系统，进程调度等），重新移植与修改协议栈，实现分布式网络协议，扩张SOCKET类型。采用Linux好处多多，具体如下：</p>
+
+<ol>
+<li>充分吸引Linux开源精华</li>
+<li>Linux开源发展路径，决定Linux便于改造与优化</li>
+<li>与Linux一起升级，如内核2.6升级到4.x版本<br /></li>
+<li>方便开源引入支持，如移植wireshark， python</li>
+<li>Linux在服务器大量应用，业界有大量人才</li>
+</ol>
+
+<h2 id="合法合规">合法合规</h2>
+
+<p>合法就不用多说了。注意的是要考虑到不同的国家与地区的差异。
+合规方法最近的例子就是2017年百度要求内部全面停止使用React/React Native。利用开源的Linux作为基础开发商业操作系统，就不得不遵守开源协议。</p>
+
+<h2 id="kiss原则">KISS原则</h2>
+
+<p>关于KISS原则，架构设计通用原则，有太多说明，这里不展开。</p>
+
+<h2 id="开放性">开放性</h2>
+
+<p>对外开放接口，如OAA（Open Application Architecture，开放应用架构），这样有以下好处：</p>
+
+<ol>
+<li>对公司内部来说，降低了耦合</li>
+<li>对外部合作方来说，方便不同厂商系统集成</li>
+<li>对客户来说，提供了更多的选择以及DIY能力</li>
+<li>开放与释放了平台的能力</li>
+</ol>
+
+<h2 id="分层与分解">分层与分解</h2>
+
+<p>整个系统采用分层设计有如下优点：</p>
+
+<ol>
+<li>可以分离系统不同方面的设计关注点，使得同一时刻设计者可以集中精力考虑较少的相于因素，封装和分解了相关的复杂性，增加了系统设计上的清晰度；</li>
+<li>减少了系统的耦合和依赖，提高了内聚性，增加了潜在的代码重用性，提高了低层的代码重用度</li>
+<li>层与层之间需要清晰的接口，有利于实现面向接口编程，而不是面向实现编程</li>
+<li>一些层的实现可以被替换或扩展，对整体的架构影响很小</li>
+<li>层次清晰，有利于多个小组并行开发</li>
+</ol>
+
+<p>分解主要体现是模块化，有如下优点：</p>
+
+<ol>
+<li>为整体架构提供最小单元</li>
+<li>带来了模块化管理，模块化提供交付件（cli插件，daemon等），方便模块化升级，模块定制，模块化诊断</li>
+<li>模块化隔离，如实现进程间隔离</li>
+<li>统一模块间依赖管理</li>
+<li>便于将一些基础组件及功能模块化</li>
+<li>方便问题定位，如内核定位踩内存问题</li>
+<li>便于模块信息聚合</li>
+</ol>
+
+<h2 id="测试独立性">测试独立性</h2>
+
+<p>个人一直以为一个好的测试人员具有以下素质：</p>
+
+<ol>
+<li>业务方面做到熟悉，并能不断深入</li>
+<li>细心保证执行方面到位</li>
+<li>独立性，测试并不是帮助开发，而验证开发成果与补充开发的不足</li>
+<li>发散测试，保证测试的完整性，避免漏测，守好产品最后一道门<br /></li>
+</ol>
+
+<p>需要在一个公司层面将测试的独立性体现出来，所以新增一个鉴定测试部门。</p>
+
+<h2 id="软件工程">软件工程</h2>
+
+<p>作为大型系统软件，离不开软件工程的指导，在整个过程必须科学践行软件工程。</p>
+
+<h2 id="工具与效率">工具与效率</h2>
+
+<p>基础设施投入，如引入高性能服务器提高编译速度（1000万行c语言速度慢真的要半天），这里说一下越高频越重要。每一次修改代码都需要编译。
+开发代码review工具，方便协作。</p>
+
+<h2 id="资源统一管理">资源统一管理</h2>
+
+<p>主要体现以下几个方面：</p>
+
+<ol>
+<li>系统资源（如LIPC端口）统一分配与管理</li>
+<li>模块进程统一管理</li>
+<li>大块内存申请统一管理</li>
+<li>统一错误码</li>
+</ol>
+
+<h2 id="控制集中式-处理分布式">控制集中式，处理分布式</h2>
+
+<p>在分布式架构上，采用控制集中式，处理分布式，并不追求用复杂的分布式协议来实现，够用就好。整个模型简单，大大降低了开发难度，提高系统可靠性。</p>
+
+<h2 id="方案评审">方案评审</h2>
+
+<p>公开评审，鼓励技术方案PK。</p>
+
+<h2 id="预研">预研</h2>
+
+<p>预研由market部门负责，由市场来定义未来需求与方向。</p>
+
+<h2 id="度量不可少">度量不可少</h2>
+
+<p>建立度量体系。大的方面分为以下几个方面：</p>
+
+<ol>
+<li>市场度量</li>
+<li>团队度量</li>
+<li>个人度量</li>
+<li>项目度量</li>
+<li>代码度量</li>
+</ol>
+
+<h2 id="减少对人的依赖">减少对人的依赖</h2>
+
+<ol>
+<li>加强流程建设</li>
+<li>不断用机器及工具代替人</li>
+<li>团队人员互备</li>
+</ol>
+
+<h2 id="文档">文档</h2>
+
+<ol>
+<li>重视文档，无论对外还是内部文档，文档就是沟通，文档就是协作（需求文档化，架构文档化，设计文档化，项目流程文档化，交付文档化）</li>
+</ol>
+
+<h1 id="代码">代码</h1>
+
+<p><strong>代码是研发最终交付的核心，是架构的实体，是业务的载体，是测试的对象，是公司的核心资产</strong>。</p>
+
+<h2 id="版本化">版本化</h2>
+
+<p>这个是老生常谈的问题，但是很基础，很重要。</p>
+
+<h2 id="设计先行">设计先行</h2>
+
+<p>代码之前，设计先行。正如以前说过一句话：<strong>从长远看，选择比努力重要，数据比算法重要，架构比实现重要</strong>。</p>
+
+<h2 id="代码规范是行动准则">代码规范是行动准则</h2>
+
+<p>这是很好的一份代码规规范。还是一个保证得到执行的规范。很多公司都
+倡导编程规范。但是实际并不能落地，这里有各种各样的原因。</p>
+
+<p>这里分享一下有利于编程规范得到真正落地的建议：</p>
+
+<ol>
+<li>规范意识培训</li>
+<li>提供规范检查的工具(这个最重要)</li>
+<li>将规范执行纳入考核(需要建立一套对应体系)</li>
+<li>代码review，review内容包括是否符合代码规范</li>
+</ol>
+
+<h2 id="必不可少的单元测试">必不可少的单元测试</h2>
+
+<p>交付系统在逻辑上由一个个函数构成，以函数为单元开展测试。</p>
+
+<h2 id="不止代码review-还有代码鉴定">不止代码review，还有代码鉴定</h2>
+
+<p>对代码进行鉴定，估计国内就此一家吧。在保证代码鉴定团队的权威下，不仅要求是bug free，而且要求代码信雅达。</p>
+
+<p>关于代码review的关注点，以前写过一篇文章：<a href="https://myself659.github.io/c-codereivew/">C语言代码 review的总结</a></p>
+
+<h2 id="注重初始代码质量">注重初始代码质量</h2>
+
+<p>这是开发顺序决定的，由少数核心开发人员完成，完成基础模型的开发。这样的好处，开始代码质量高，不要让系统输在起点上，同时优秀的代码作为后面的大量项目开发的参考与标杆。</p>
+
+<h2 id="接口优先-接口先行">接口优先，接口先行</h2>
+
+<p>接口（API）比实现更重要。在编码之前，接口完成设计并通过评审。</p>
+
+<h2 id="避免以忙治乱">避免以忙治乱</h2>
+
+<p>工作总有人喜欢用了自己的勤劳来掩盖自己的愚蠢。</p>
+
+<h1 id="说明">说明</h1>
+
+<p>在不同的公司，不同行业，不同阶段研发管理都要针对性调整，不求多高大上，但求实用，只有管理规定能够落实，才能真正提高效率，增强团队的战斗力，解决具体业务的问题，满足业务的需求。</p>
+
+<h1 id="参考">参考</h1>
+
+<ol>
+<li><a href="如何看待百度要求内部全面停止使用 React / React Native?">如何看待百度要求内部全面停止使用 React / React Native</a></li>
+</ol>
+
+<h2 id="欢迎关注">欢迎关注</h2>
+
+<p>欢迎关注微信公众帐号：沉风网事(savewind)</p>
+
+<p><img src="/images/cfws.jpg" alt="沉风网事" /></p>
+
+        </div>
+        
+
+        <footer class="article-footer">
+    <a data-url="https://myself659.github.io/2018/12/05/comware-rd/" data-id="e13a115506e6b36732a3f4ab4a0c8391" class="article-share-link">
+        <i class="fa fa-share"></i>
+        Share
+    </a>
+    
+
+    <script>
+    (function ($) {
+        
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+    </script>
+</footer>
+
+    </div>
+
+    
+<nav id="article-nav">
+    
+    <a href="https://myself659.github.io/2018/12/02/%E8%AF%B4%E8%AF%B4%E5%9C%A8%E4%B8%8D%E5%90%8C%E8%A1%8C%E4%B8%9A%E7%9A%84%E7%BC%96%E7%A8%8B%E4%BD%93%E9%AA%8C/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">
+          Older
+      </strong>
+      <div class="article-nav-title">说说在不同行业的编程体验</div>
+    </a>
+    
+
+    
+    <a href="https://myself659.github.io/2018/12/11/distributed-theory/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">
+          Newer
+      </strong>
+      <div class="article-nav-title">谈谈对分布式系统的一些思考</div>
+    </a>
+    
+</nav>
+
+
+</article>
+
+
+    <script src="https://utteranc.es/client.js"
+        repo="myself659/ipds-public"
+        issue-term="url"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+    </script>
+
+    
+
+    </section>
+
+
+
+   	
+    	<aside id="sidebar">
+	
+
+
+
+<aside class="table-of-contents">
+    <details>
+    <summary>
+    <b>Table of Contents</b>
+    </summary><li><a href="/2018/12/05/comware-rd/#%e5%89%8d%e8%a8%80">前言</a></li>
+            <li><a href="/2018/12/05/comware-rd/#comware">Comware</a></li>
+            <li><a href="/2018/12/05/comware-rd/#%e4%b8%9a%e5%8a%a1">业务</a></li>
+            <li><a href="/2018/12/05/comware-rd/#%e6%96%87%e5%8c%96">文化</a></li>
+            <li><a href="/2018/12/05/comware-rd/#%e5%9b%a2%e9%98%9f">团队</a></li>
+            <li><a href="/2018/12/05/comware-rd/#%e6%9e%b6%e6%9e%84">架构</a></li>
+            
+                    <ul class="toc-h2"><li><a href="/2018/12/05/comware-rd/#%e9%80%89%e6%8b%a9%e5%bc%80%e6%ba%90-%e6%8b%a5%e6%8a%b1%e5%bc%80%e6%ba%90-%e4%b8%8d%e8%a6%81%e9%87%8d%e5%a4%8d%e9%80%a0%e8%bd%ae%e5%ad%90">选择开源，拥抱开源，不要重复造轮子</a></li>
+            <li><a href="/2018/12/05/comware-rd/#%e5%90%88%e6%b3%95%e5%90%88%e8%a7%84">合法合规</a></li>
+            <li><a href="/2018/12/05/comware-rd/#kiss%e5%8e%9f%e5%88%99">KISS原则</a></li>
+            <li><a href="/2018/12/05/comware-rd/#%e5%bc%80%e6%94%be%e6%80%a7">开放性</a></li>
+            <li><a href="/2018/12/05/comware-rd/#%e5%88%86%e5%b1%82%e4%b8%8e%e5%88%86%e8%a7%a3">分层与分解</a></li>
+            <li><a href="/2018/12/05/comware-rd/#%e6%b5%8b%e8%af%95%e7%8b%ac%e7%ab%8b%e6%80%a7">测试独立性</a></li>
+            <li><a href="/2018/12/05/comware-rd/#%e8%bd%af%e4%bb%b6%e5%b7%a5%e7%a8%8b">软件工程</a></li>
+            <li><a href="/2018/12/05/comware-rd/#%e5%b7%a5%e5%85%b7%e4%b8%8e%e6%95%88%e7%8e%87">工具与效率</a></li>
+            <li><a href="/2018/12/05/comware-rd/#%e8%b5%84%e6%ba%90%e7%bb%9f%e4%b8%80%e7%ae%a1%e7%90%86">资源统一管理</a></li>
+            <li><a href="/2018/12/05/comware-rd/#%e6%8e%a7%e5%88%b6%e9%9b%86%e4%b8%ad%e5%bc%8f-%e5%a4%84%e7%90%86%e5%88%86%e5%b8%83%e5%bc%8f">控制集中式，处理分布式</a></li>
+            <li><a href="/2018/12/05/comware-rd/#%e6%96%b9%e6%a1%88%e8%af%84%e5%ae%a1">方案评审</a></li>
+            <li><a href="/2018/12/05/comware-rd/#%e9%a2%84%e7%a0%94">预研</a></li>
+            <li><a href="/2018/12/05/comware-rd/#%e5%ba%a6%e9%87%8f%e4%b8%8d%e5%8f%af%e5%b0%91">度量不可少</a></li>
+            <li><a href="/2018/12/05/comware-rd/#%e5%87%8f%e5%b0%91%e5%af%b9%e4%ba%ba%e7%9a%84%e4%be%9d%e8%b5%96">减少对人的依赖</a></li>
+            <li><a href="/2018/12/05/comware-rd/#%e6%96%87%e6%a1%a3">文档</a></li>
+            
+                    </ul><li><a href="/2018/12/05/comware-rd/#%e4%bb%a3%e7%a0%81">代码</a></li>
+            
+                    <ul class="toc-h2"><li><a href="/2018/12/05/comware-rd/#%e7%89%88%e6%9c%ac%e5%8c%96">版本化</a></li>
+            <li><a href="/2018/12/05/comware-rd/#%e8%ae%be%e8%ae%a1%e5%85%88%e8%a1%8c">设计先行</a></li>
+            <li><a href="/2018/12/05/comware-rd/#%e4%bb%a3%e7%a0%81%e8%a7%84%e8%8c%83%e6%98%af%e8%a1%8c%e5%8a%a8%e5%87%86%e5%88%99">代码规范是行动准则</a></li>
+            <li><a href="/2018/12/05/comware-rd/#%e5%bf%85%e4%b8%8d%e5%8f%af%e5%b0%91%e7%9a%84%e5%8d%95%e5%85%83%e6%b5%8b%e8%af%95">必不可少的单元测试</a></li>
+            <li><a href="/2018/12/05/comware-rd/#%e4%b8%8d%e6%ad%a2%e4%bb%a3%e7%a0%81review-%e8%bf%98%e6%9c%89%e4%bb%a3%e7%a0%81%e9%89%b4%e5%ae%9a">不止代码review，还有代码鉴定</a></li>
+            <li><a href="/2018/12/05/comware-rd/#%e6%b3%a8%e9%87%8d%e5%88%9d%e5%a7%8b%e4%bb%a3%e7%a0%81%e8%b4%a8%e9%87%8f">注重初始代码质量</a></li>
+            <li><a href="/2018/12/05/comware-rd/#%e6%8e%a5%e5%8f%a3%e4%bc%98%e5%85%88-%e6%8e%a5%e5%8f%a3%e5%85%88%e8%a1%8c">接口优先，接口先行</a></li>
+            <li><a href="/2018/12/05/comware-rd/#%e9%81%bf%e5%85%8d%e4%bb%a5%e5%bf%99%e6%b2%bb%e4%b9%b1">避免以忙治乱</a></li>
+            
+                    </ul><li><a href="/2018/12/05/comware-rd/#%e8%af%b4%e6%98%8e">说明</a></li>
+            <li><a href="/2018/12/05/comware-rd/#%e5%8f%82%e8%80%83">参考</a></li>
+            
+                    <ul class="toc-h2"><li><a href="/2018/12/05/comware-rd/#%e6%ac%a2%e8%bf%8e%e5%85%b3%e6%b3%a8">欢迎关注</a></li>
+            </details>
+</aside>
+    
+<div class="widget-wrap">
+    <h3 class="widget-title">
+        Recents
+    </h3>
+    <div class="widget">
+        <ul id="recent-post">
+            
+            <li>
+                <div class="item-thumbnail">
+                    <a href="https://myself659.github.io/2020/06/26/think-outof-box/" class="thumbnail">
+                    
+                        <span class="thumbnail-image thumbnail-none"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    <p class="item-category">
+                        
+                        <a class="article-category-link" href="https://myself659.github.io/categories/%E6%88%90%E9%95%BF">
+                        成长
+                        </a>
+                    </p>
+                    
+                    
+                    <p class="item-title"><a href="https://myself659.github.io/2020/06/26/think-outof-box/" class="title">谈谈跳出框架思考</a></p>
+                    <p class="item-date">
+                        <time datetime="2020-06-26 11:58:06 &#43;0200 &#43;0200" itemprop="datePublished">2020-06-26</time>
+                    </p>
+                </div>
+            </li>
+            
+            <li>
+                <div class="item-thumbnail">
+                    <a href="https://myself659.github.io/2020/05/31/cryptocurrency_antifrangible/" class="thumbnail">
+                    
+                        <span class="thumbnail-image thumbnail-none"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    <p class="item-category">
+                        
+                        <a class="article-category-link" href="https://myself659.github.io/categories/blockchain">
+                        BlockChain
+                        </a>
+                    </p>
+                    
+                    
+                    <p class="item-title"><a href="https://myself659.github.io/2020/05/31/cryptocurrency_antifrangible/" class="title">谈谈数字货币的反脆弱性</a></p>
+                    <p class="item-date">
+                        <time datetime="2020-05-31 11:58:06 &#43;0200 &#43;0200" itemprop="datePublished">2020-05-31</time>
+                    </p>
+                </div>
+            </li>
+            
+            <li>
+                <div class="item-thumbnail">
+                    <a href="https://myself659.github.io/2020/05/24/covid-19-symptom/" class="thumbnail">
+                    
+                        <span class="thumbnail-image thumbnail-none"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    <p class="item-category">
+                        
+                        <a class="article-category-link" href="https://myself659.github.io/categories/life">
+                        Life
+                        </a>
+                    </p>
+                    
+                    
+                    <p class="item-title"><a href="https://myself659.github.io/2020/05/24/covid-19-symptom/" class="title">分享：一图了解新型冠状病毒的症状有哪些</a></p>
+                    <p class="item-date">
+                        <time datetime="2020-05-24 11:58:06 &#43;0200 &#43;0200" itemprop="datePublished">2020-05-24</time>
+                    </p>
+                </div>
+            </li>
+            
+            <li>
+                <div class="item-thumbnail">
+                    <a href="https://myself659.github.io/2020/05/08/book-skin-in-the-game-how/" class="thumbnail">
+                    
+                        <span class="thumbnail-image thumbnail-none"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    <p class="item-category">
+                        
+                        <a class="article-category-link" href="https://myself659.github.io/categories/read">
+                        Read
+                        </a>
+                    </p>
+                    
+                    
+                    <p class="item-title"><a href="https://myself659.github.io/2020/05/08/book-skin-in-the-game-how/" class="title">读书笔记:《非对称风险》</a></p>
+                    <p class="item-date">
+                        <time datetime="2020-05-08 11:58:06 &#43;0200 &#43;0200" itemprop="datePublished">2020-05-08</time>
+                    </p>
+                </div>
+            </li>
+            
+            <li>
+                <div class="item-thumbnail">
+                    <a href="https://myself659.github.io/2020/04/26/how-to-learn-fast/" class="thumbnail">
+                    
+                        <span class="thumbnail-image thumbnail-none"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    <p class="item-category">
+                        
+                        <a class="article-category-link" href="https://myself659.github.io/categories/%E6%88%90%E9%95%BF">
+                        成长
+                        </a>
+                    </p>
+                    
+                    
+                    <p class="item-title"><a href="https://myself659.github.io/2020/04/26/how-to-learn-fast/" class="title">关于快速学习的思考</a></p>
+                    <p class="item-date">
+                        <time datetime="2020-04-26 11:58:06 &#43;0200 &#43;0200" itemprop="datePublished">2020-04-26</time>
+                    </p>
+                </div>
+            </li>
+            
+        </ul>
+    </div>
+</div>
+
+
+
+    
+
+
+<div class="widget-wrap">
+    <h3 class="widget-title">
+        Tags
+    </h3>
+    <div class="widget">
+        <ul class="category-list">
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://myself659.github.io/tags/arch">
+                    arch
+                </a>
+                <span class="category-list-count">5</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://myself659.github.io/tags/bitcoin">
+                    bitcoin
+                </a>
+                <span class="category-list-count">2</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://myself659.github.io/tags/blockchain">
+                    blockchain
+                </a>
+                <span class="category-list-count">31</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://myself659.github.io/tags/btc">
+                    btc
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://myself659.github.io/tags/cryptography">
+                    cryptography
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://myself659.github.io/tags/data">
+                    data
+                </a>
+                <span class="category-list-count">2</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://myself659.github.io/tags/data-struct">
+                    data-struct
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://myself659.github.io/tags/distributed">
+                    distributed
+                </a>
+                <span class="category-list-count">3</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://myself659.github.io/tags/docker">
+                    docker
+                </a>
+                <span class="category-list-count">3</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://myself659.github.io/tags/economy">
+                    economy
+                </a>
+                <span class="category-list-count">6</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://myself659.github.io/tags/english">
+                    english
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://myself659.github.io/tags/ethereum">
+                    ethereum
+                </a>
+                <span class="category-list-count">2</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://myself659.github.io/tags/golang">
+                    golang
+                </a>
+                <span class="category-list-count">10</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://myself659.github.io/tags/internet">
+                    internet
+                </a>
+                <span class="category-list-count">10</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://myself659.github.io/tags/ipfs">
+                    ipfs
+                </a>
+                <span class="category-list-count">3</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://myself659.github.io/tags/kubernetes">
+                    kubernetes
+                </a>
+                <span class="category-list-count">3</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://myself659.github.io/tags/life">
+                    life
+                </a>
+                <span class="category-list-count">2</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://myself659.github.io/tags/linux">
+                    linux
+                </a>
+                <span class="category-list-count">11</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://myself659.github.io/tags/nba">
+                    nba
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://myself659.github.io/tags/network">
+                    network
+                </a>
+                <span class="category-list-count">3</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://myself659.github.io/tags/nginx">
+                    nginx
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://myself659.github.io/tags/python">
+                    python
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://myself659.github.io/tags/read">
+                    read
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://myself659.github.io/tags/rust">
+                    rust
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://myself659.github.io/tags/secure">
+                    secure
+                </a>
+                <span class="category-list-count">5</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://myself659.github.io/tags/smart-contract">
+                    smart-contract
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://myself659.github.io/tags/substrate">
+                    substrate
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://myself659.github.io/tags/web">
+                    web
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://myself659.github.io/tags/%E5%95%86%E4%B8%9A">
+                    商业
+                </a>
+                <span class="category-list-count">5</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://myself659.github.io/tags/%E5%AD%A6%E4%B9%A0">
+                    学习
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://myself659.github.io/tags/%E6%88%90%E9%95%BF">
+                    成长
+                </a>
+                <span class="category-list-count">4</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://myself659.github.io/tags/%E7%A0%94%E5%8F%91%E7%AE%A1%E7%90%86">
+                    研发管理
+                </a>
+                <span class="category-list-count">4</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://myself659.github.io/tags/%E7%BC%96%E7%A8%8B">
+                    编程
+                </a>
+                <span class="category-list-count">6</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://myself659.github.io/tags/%E8%81%8C%E5%9C%BA">
+                    职场
+                </a>
+                <span class="category-list-count">2</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://myself659.github.io/tags/%E9%97%B2%E8%B0%88%E4%B9%B1%E6%89%AF">
+                    闲谈乱扯
+                </a>
+                <span class="category-list-count">9</span>
+            </li>
+            
+        </ul>
+    </div>
+</div>
+
+
+
+
+    
+
+
+<div class="widget-wrap">
+    <h3 class="widget-title">
+        Tag cloud
+    </h3>
+    <div class="widget tagcloud">
+        
+        
+        <a href="https://myself659.github.io/tags/arch" style="font-size: 12px;">arch</a>
+        
+        
+        <a href="https://myself659.github.io/tags/bitcoin" style="font-size: 12px;">bitcoin</a>
+        
+        
+        <a href="https://myself659.github.io/tags/blockchain" style="font-size: 12px;">blockchain</a>
+        
+        
+        <a href="https://myself659.github.io/tags/btc" style="font-size: 12px;">btc</a>
+        
+        
+        <a href="https://myself659.github.io/tags/cryptography" style="font-size: 12px;">cryptography</a>
+        
+        
+        <a href="https://myself659.github.io/tags/data" style="font-size: 12px;">data</a>
+        
+        
+        <a href="https://myself659.github.io/tags/data-struct" style="font-size: 12px;">data-struct</a>
+        
+        
+        <a href="https://myself659.github.io/tags/distributed" style="font-size: 12px;">distributed</a>
+        
+        
+        <a href="https://myself659.github.io/tags/docker" style="font-size: 12px;">docker</a>
+        
+        
+        <a href="https://myself659.github.io/tags/economy" style="font-size: 12px;">economy</a>
+        
+        
+        <a href="https://myself659.github.io/tags/english" style="font-size: 12px;">english</a>
+        
+        
+        <a href="https://myself659.github.io/tags/ethereum" style="font-size: 12px;">ethereum</a>
+        
+        
+        <a href="https://myself659.github.io/tags/golang" style="font-size: 12px;">golang</a>
+        
+        
+        <a href="https://myself659.github.io/tags/internet" style="font-size: 12px;">internet</a>
+        
+        
+        <a href="https://myself659.github.io/tags/ipfs" style="font-size: 12px;">ipfs</a>
+        
+        
+        <a href="https://myself659.github.io/tags/kubernetes" style="font-size: 12px;">kubernetes</a>
+        
+        
+        <a href="https://myself659.github.io/tags/life" style="font-size: 12px;">life</a>
+        
+        
+        <a href="https://myself659.github.io/tags/linux" style="font-size: 12px;">linux</a>
+        
+        
+        <a href="https://myself659.github.io/tags/nba" style="font-size: 12px;">nba</a>
+        
+        
+        <a href="https://myself659.github.io/tags/network" style="font-size: 12px;">network</a>
+        
+        
+        <a href="https://myself659.github.io/tags/nginx" style="font-size: 12px;">nginx</a>
+        
+        
+        <a href="https://myself659.github.io/tags/python" style="font-size: 12px;">python</a>
+        
+        
+        <a href="https://myself659.github.io/tags/read" style="font-size: 12px;">read</a>
+        
+        
+        <a href="https://myself659.github.io/tags/rust" style="font-size: 12px;">rust</a>
+        
+        
+        <a href="https://myself659.github.io/tags/secure" style="font-size: 12px;">secure</a>
+        
+        
+        <a href="https://myself659.github.io/tags/smart-contract" style="font-size: 12px;">smart-contract</a>
+        
+        
+        <a href="https://myself659.github.io/tags/substrate" style="font-size: 12px;">substrate</a>
+        
+        
+        <a href="https://myself659.github.io/tags/web" style="font-size: 12px;">web</a>
+        
+        
+        <a href="https://myself659.github.io/tags/%E5%95%86%E4%B8%9A" style="font-size: 12px;">商业</a>
+        
+        
+        <a href="https://myself659.github.io/tags/%E5%AD%A6%E4%B9%A0" style="font-size: 12px;">学习</a>
+        
+        
+        <a href="https://myself659.github.io/tags/%E6%88%90%E9%95%BF" style="font-size: 12px;">成长</a>
+        
+        
+        <a href="https://myself659.github.io/tags/%E7%A0%94%E5%8F%91%E7%AE%A1%E7%90%86" style="font-size: 12px;">研发管理</a>
+        
+        
+        <a href="https://myself659.github.io/tags/%E7%BC%96%E7%A8%8B" style="font-size: 12px;">编程</a>
+        
+        
+        <a href="https://myself659.github.io/tags/%E8%81%8C%E5%9C%BA" style="font-size: 12px;">职场</a>
+        
+        
+        <a href="https://myself659.github.io/tags/%E9%97%B2%E8%B0%88%E4%B9%B1%E6%89%AF" style="font-size: 12px;">闲谈乱扯</a>
+        
+    </div>
+</div>
+
+
+
+
+
+    <div id="toTop" class="fa fa-angle-up"></div>
+</aside>
+
+    
+	</div>
+</div>
+
+<footer id="footer">
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2020
+      copyright@沉风网事
+    </div>
+  </div>
+</footer>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-144475213-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+<script src="https://myself659.github.io/fancybox/jquery.fancybox.pack.js"></script>
+<script src="https://myself659.github.io/js/script.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js"></script>
+
+
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']]}
+  });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+
+
+</body>
+</html>

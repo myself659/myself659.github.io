@@ -1,58 +1,55 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>商业 on 沉风网事</title>
-    <link>https://myself659.github.io/categories/%E5%95%86%E4%B8%9A/</link>
+    <link>http://myself659.github.io/categories/%E5%95%86%E4%B8%9A/</link>
     <description>Recent content in 商业 on 沉风网事</description>
-    <image>
-      <title>沉风网事</title>
-      <url>https://myself659.github.io/</url>
-      <link>https://myself659.github.io/</link>
-    </image>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Thu, 16 Jan 2020 11:58:06 +0200</lastBuildDate><atom:link href="https://myself659.github.io/categories/%E5%95%86%E4%B8%9A/index.xml" rel="self" type="application/rss+xml" />
+    <language>zh-cn</language>
+    <copyright>沉风网事</copyright>
+    <lastBuildDate>Thu, 16 Jan 2020 11:58:06 +0200</lastBuildDate><atom:link href="http://myself659.github.io/categories/%E5%95%86%E4%B8%9A/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>说说微信付费阅读</title>
-      <link>https://myself659.github.io/post/wechat-payment-read/</link>
+      <link>http://myself659.github.io/post/wechat-payment-read/</link>
       <pubDate>Thu, 16 Jan 2020 11:58:06 +0200</pubDate>
       
-      <guid>https://myself659.github.io/post/wechat-payment-read/</guid>
+      <guid>http://myself659.github.io/post/wechat-payment-read/</guid>
       <description>背景 2020年1月15号微信灰度发布公众帐号付费阅读功能。微信10亿用户的体量，最长的用户时长，所以一个付费阅读功能差不多引起全网的讨论。 时</description>
     </item>
     
     <item>
       <title>关于zoom的一些思考与看法</title>
-      <link>https://myself659.github.io/post/business/about-zoom/</link>
+      <link>http://myself659.github.io/post/business/about-zoom/</link>
       <pubDate>Sun, 28 Apr 2019 11:58:06 +0200</pubDate>
       
-      <guid>https://myself659.github.io/post/business/about-zoom/</guid>
+      <guid>http://myself659.github.io/post/business/about-zoom/</guid>
       <description>前言 最近zoom上市，作为一名华人创业公司自然大受关注。下面从以下几个方面谈谈自己的一些思考与看法： 技术 领导 产品 商业 技术 对于视频面试会议，技</description>
     </item>
     
     <item>
       <title>说说微信小程序</title>
-      <link>https://myself659.github.io/post/business/about-weixin-miniprogram/</link>
+      <link>http://myself659.github.io/post/business/about-weixin-miniprogram/</link>
       <pubDate>Sat, 01 Dec 2018 11:58:06 +0200</pubDate>
       
-      <guid>https://myself659.github.io/post/business/about-weixin-miniprogram/</guid>
+      <guid>http://myself659.github.io/post/business/about-weixin-miniprogram/</guid>
       <description>小程序在2018年确实火了，除了先行的微信小程序，后面紧接着跟着了蚂蚁金服的小程序，今日头条的小程序。这里先表明一下自己的立场，从微信小程序</description>
     </item>
     
     <item>
       <title>关于拼多多几点看法</title>
-      <link>https://myself659.github.io/post/pdd-thought/</link>
+      <link>http://myself659.github.io/post/pdd-thought/</link>
       <pubDate>Sun, 29 Jul 2018 11:58:06 +0200</pubDate>
       
-      <guid>https://myself659.github.io/post/pdd-thought/</guid>
+      <guid>http://myself659.github.io/post/pdd-thought/</guid>
       <description>拼多多战略采用农村包围城市，市场上定位准确，填补了三四线农村及中国底层人民的需求。 微信平台是拼多多快速成长的关键，利用微信带来的流量，流量带</description>
     </item>
     
     <item>
       <title>关于微软收购github几点看法</title>
-      <link>https://myself659.github.io/post/ms-github/</link>
+      <link>http://myself659.github.io/post/ms-github/</link>
       <pubDate>Sun, 10 Jun 2018 11:58:06 +0200</pubDate>
       
-      <guid>https://myself659.github.io/post/ms-github/</guid>
+      <guid>http://myself659.github.io/post/ms-github/</guid>
       <description>开源已经是一种潮流与趋势。从linux开始，开源软件支撑现在的互联网与云计算。有太多的项目如redis，docker，k8s，etcd等等；</description>
     </item>
     

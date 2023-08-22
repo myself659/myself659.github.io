@@ -1,0 +1,1353 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <title>通过数据分析预测股票价格变化靠谱吗？ &middot; 沉风网事</title>
+    <meta name="generator" content="Hugo 0.54.0" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="author" content="沉风">
+    
+      <meta name="description" content="沉风网事，以人为本，尊重事实与原理，立足现实，以科技与金融为驱动，中西结合，虚实相应，主要关注互联网，系统架构，区块链，安全，经济，数据等领域">
+    
+    
+    <link rel="canonical" href="https://myself659.github.io/2020/02/17/stock-us-analysis/"/>
+    <link rel="icon" href="https://myself659.github.io/favicon.ico">
+    <link rel="apple-touch-icon" href="https://myself659.github.io/apple-touch-icon.png"/>
+    <link rel="stylesheet" href="https://myself659.github.io/css/style.css">
+    <link rel="stylesheet" href="https://myself659.github.io/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://myself659.github.io/css/monokai.css">
+    <link rel="stylesheet" href="https://myself659.github.io/fancybox/jquery.fancybox.css">
+    
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400italic,400,600' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Source+Code+Pro' rel='stylesheet' type='text/css'>
+    <meta property="og:title" content="通过数据分析预测股票价格变化靠谱吗？" />
+<meta property="og:description" content="前言 在投资美股，先从数据分析开始这篇文章解决两个问题：
+ 从哪里找数据？ 如何得到这些数据？  在此基础这篇主要解决一个问题：以特斯拉为例说明如何利用这些数据预测股票价格的变化。同时关注一个问题：投入成本进行预测股票价格是否靠谱与必要？
+步骤 获取数据 直接调用api如下：
+import yfinance as yf tlsa_df = yf.download(&#39;TSLA&#39;, start=&#39;2015-01-01&#39;, end=&#39;2020-02-16&#39;, progress=False) tlsa_df.head()  绘制价格变化图 #plot %matplotlib notebook from IPython.core.interactiveshell import InteractiveShell InteractiveShell.ast_node_interactivity = &quot;all&quot; plt.figure(figsize=(10,6)) plt.grid(True) plt.xlabel(&#39;Dates&#39;) plt.ylabel(&#39;Close Prices&#39;) plt.plot(tlsa_df[&#39;Close&#39;]) plt.title(&#39;Tesla Close Price&#39;) plt.show()  得到从2015年起telsa收盘价格变化图：
+分析数据的统计特征信息 tsla_df_close = tlsa_df[&#39;Close&#39;] df_log = np.log(tsla_df_close) moving_avg = df_log.rolling(12).mean() std_dev = df_log.rolling(12).std() plt.title(&#39;Moving Average&#39;) plt.plot(std_dev, color =&quot;black&quot;, label = &quot;Standard Deviation&quot;) plt.plot(moving_avg, color=&quot;red&quot;, label = &quot;Mean&quot;) plt." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://myself659.github.io/2020/02/17/stock-us-analysis/" />
+<meta property="article:published_time" content="2020-02-17T11:58:06&#43;02:00"/>
+<meta property="article:modified_time" content="2020-02-17T11:58:06&#43;02:00"/>
+
+    
+    
+<meta itemprop="name" content="通过数据分析预测股票价格变化靠谱吗？">
+<meta itemprop="description" content="前言 在投资美股，先从数据分析开始这篇文章解决两个问题：
+ 从哪里找数据？ 如何得到这些数据？  在此基础这篇主要解决一个问题：以特斯拉为例说明如何利用这些数据预测股票价格的变化。同时关注一个问题：投入成本进行预测股票价格是否靠谱与必要？
+步骤 获取数据 直接调用api如下：
+import yfinance as yf tlsa_df = yf.download(&#39;TSLA&#39;, start=&#39;2015-01-01&#39;, end=&#39;2020-02-16&#39;, progress=False) tlsa_df.head()  绘制价格变化图 #plot %matplotlib notebook from IPython.core.interactiveshell import InteractiveShell InteractiveShell.ast_node_interactivity = &quot;all&quot; plt.figure(figsize=(10,6)) plt.grid(True) plt.xlabel(&#39;Dates&#39;) plt.ylabel(&#39;Close Prices&#39;) plt.plot(tlsa_df[&#39;Close&#39;]) plt.title(&#39;Tesla Close Price&#39;) plt.show()  得到从2015年起telsa收盘价格变化图：
+分析数据的统计特征信息 tsla_df_close = tlsa_df[&#39;Close&#39;] df_log = np.log(tsla_df_close) moving_avg = df_log.rolling(12).mean() std_dev = df_log.rolling(12).std() plt.title(&#39;Moving Average&#39;) plt.plot(std_dev, color =&quot;black&quot;, label = &quot;Standard Deviation&quot;) plt.plot(moving_avg, color=&quot;red&quot;, label = &quot;Mean&quot;) plt.">
+
+
+<meta itemprop="datePublished" content="2020-02-17T11:58:06&#43;02:00" />
+<meta itemprop="dateModified" content="2020-02-17T11:58:06&#43;02:00" />
+<meta itemprop="wordCount" content="542">
+
+
+
+<meta itemprop="keywords" content="Data," />
+
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="通过数据分析预测股票价格变化靠谱吗？"/>
+<meta name="twitter:description" content="前言 在投资美股，先从数据分析开始这篇文章解决两个问题：
+ 从哪里找数据？ 如何得到这些数据？  在此基础这篇主要解决一个问题：以特斯拉为例说明如何利用这些数据预测股票价格的变化。同时关注一个问题：投入成本进行预测股票价格是否靠谱与必要？
+步骤 获取数据 直接调用api如下：
+import yfinance as yf tlsa_df = yf.download(&#39;TSLA&#39;, start=&#39;2015-01-01&#39;, end=&#39;2020-02-16&#39;, progress=False) tlsa_df.head()  绘制价格变化图 #plot %matplotlib notebook from IPython.core.interactiveshell import InteractiveShell InteractiveShell.ast_node_interactivity = &quot;all&quot; plt.figure(figsize=(10,6)) plt.grid(True) plt.xlabel(&#39;Dates&#39;) plt.ylabel(&#39;Close Prices&#39;) plt.plot(tlsa_df[&#39;Close&#39;]) plt.title(&#39;Tesla Close Price&#39;) plt.show()  得到从2015年起telsa收盘价格变化图：
+分析数据的统计特征信息 tsla_df_close = tlsa_df[&#39;Close&#39;] df_log = np.log(tsla_df_close) moving_avg = df_log.rolling(12).mean() std_dev = df_log.rolling(12).std() plt.title(&#39;Moving Average&#39;) plt.plot(std_dev, color =&quot;black&quot;, label = &quot;Standard Deviation&quot;) plt.plot(moving_avg, color=&quot;red&quot;, label = &quot;Mean&quot;) plt."/>
+
+    
+
+    
+
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+
+     
+ <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+ <script type="text/x-mathjax-config">
+   MathJax.Hub.Config({
+     tex2jax: {
+       skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+       inlineMath: [['$','$']]
+     }
+   });
+ </script>
+</head>
+<body>
+<div class="container">
+
+
+<div id="container">
+	<header id="header">
+  <div id="header-main" class="header-inner">
+    <div class="outer">
+      <a href="https://myself659.github.io/" id="logo">
+          
+          <i class="logo" style="background-image: url('https://myself659.github.io/css/images/logo.png')"></i>
+          
+          <span class="site-title">沉风网事</span>
+      </a>
+      <nav id="main-nav">
+          
+          
+          <a class="main-nav-link" href="https://myself659.github.io/">Home</a>
+          
+          
+          
+          
+          
+          
+
+          
+          <a class="main-nav-link" href="/about/">About</a>
+          
+          <a class="main-nav-link" href="/2017/03/18/leetcode/">LeetCode</a>
+          
+          <a class="main-nav-link" href="/2017/10/02/read-post/">Read</a>
+          
+          <a class="main-nav-link" href="/2017/10/02/share-post/">Share</a>
+          
+          <a class="main-nav-link" href="/2017/10/02/slide-post/">Slide</a>
+          
+
+          
+          
+          
+          
+          <a class="main-nav-link" href="https://myself659.github.io/tags/">Tags</a>
+          
+          
+          
+          <a class="main-nav-link" href="https://myself659.github.io/categories/">Categories</a>
+          
+          
+      </nav>
+        <nav id="sub-nav">
+          <div class="profile" id="profile-nav">
+            <a id="profile-anchor" href="javascript:;"><img class="avatar" src="https://myself659.github.io/css/images/avatar.png"><i class="fa fa-caret-down"></i></a>
+          </div>
+        </nav>
+        <div id="search-form-wrap">
+          <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form">
+              <input type="search" name="q" class="search-form-input" placeholder="Search">
+              <button type="submit" class="search-form-submit">
+              </button>
+              <input type="hidden" name="sitesearch" value="https://myself659.github.io/" />
+         </form>
+        </div>
+    </div>
+  </div>
+  <div id="main-nav-mobile" class="header-sub header-inner">
+    <table class="menu outer">
+      <tbody>
+          <tr>
+          
+          
+          <td><a class="main-nav-link" href="https://myself659.github.io/">Home</a></td>
+          
+          
+          
+          
+          
+          
+
+          
+          <td><a class="main-nav-link" href="/about/">About</a></td>
+          
+          <td><a class="main-nav-link" href="/2017/03/18/leetcode/">LeetCode</a></td>
+          
+          <td><a class="main-nav-link" href="/2017/10/02/read-post/">Read</a></td>
+          
+          <td><a class="main-nav-link" href="/2017/10/02/share-post/">Share</a></td>
+          
+          <td><a class="main-nav-link" href="/2017/10/02/slide-post/">Slide</a></td>
+          
+
+          
+          
+          
+          
+          <td><a class="main-nav-link" href="https://myself659.github.io/tags/">Tags</a></td>
+          
+          
+          
+          <td><a class="main-nav-link" href="https://myself659.github.io/categories/">Categories</a></td>
+          
+          
+          <td>
+          <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form">
+          <input type="search" name="q" class="search-form-input" placeholder="Search">
+          <input type="hidden" name="sitesearch" value="https://myself659.github.io/" />
+          </form>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</header>
+
+   	
+   	<div class="outer">
+   	
+    	<aside id="profile">
+  <div class="inner profile-inner">
+    <div class="base-info profile-block">
+      
+      <img id="avatar" src="https://www.gravatar.com/avatar/45ae86ea3c111a5537490c3b370c03ee?s=100&d=identicon"/>
+      
+      <h2 id="name">沉风</h2>
+      <h3 id="title">All is well, just do it</h3>
+      <span id="location"><i class="fa fa-map-marker"></i>hangzhou, china</span>
+      
+          <a id="follow" href="https://github.com/myself659">
+              Follow
+          </a>
+      
+    </div>
+    <div class="article-info profile-block">
+      <div class="article-info-block">
+        127
+        <span>Posts</span>
+      </div>
+      <div class="article-info-block">
+        
+          35
+        
+        <span>
+            Tags
+        </span>
+      </div>
+    </div>
+    <div class="profile-block social-links">
+      <table>
+        <tr>
+          
+<td><a href="//github.com/myself659" target="_blank" title="GitHub"><i class="fa fa-github"></i></a></td>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<td><a href="//medium.com/@myself659" target="_blank" title="Medium"><i class="fa fa-medium"></i></a></td>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          <td><a href="https://myself659.github.io/index.xml" target="_blank" title="RSS"><i class="fa fa-rss"></i></a></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</aside>
+
+    
+
+    <section id="main">
+    
+    <article id="page-undefined" class="article article-type-page" itemscope="" itemprop="blogPost">
+    <div class="article-inner">
+        
+
+        <header class="article-header">
+    <a href="https://myself659.github.io/2020/02/17/stock-us-analysis/">
+    <h1 class="article-title" itemprop="name">
+        通过数据分析预测股票价格变化靠谱吗？
+    </h1>
+    </a>
+    <div class="article-meta">
+
+        
+        <div class="article-date">
+            <i class="fa fa-calendar"></i>
+            <time datetime="2020-02-17 11:58:06 &#43;0200 &#43;0200" itemprop="datePublished">2020-02-17</time>
+            &middot;
+            542
+            words
+            &middot;
+            3
+            minute read
+        </div>
+        
+        
+            
+            
+            <div class="article-category">
+                <i class="fa fa-folder"></i>
+                
+                
+                <a class="article-category-link" href="https://myself659.github.io/categories/data">Data</a>
+                
+                
+            </div>
+            
+        
+
+        
+            
+            
+            <div class="article-category">
+                <i class="fa fa-tags"></i>
+                
+                
+                <a class="article-category-link" href="https://myself659.github.io/tags/data">Data</a>
+                
+                
+            </div>
+            
+        
+    </div>
+</header>
+
+
+      
+
+        <div class="article-entry" itemprop="articleBody">
+            
+
+<h1 id="前言">前言</h1>
+
+<p>在<a href="https://mp.weixin.qq.com/s/t8LAkhXEY0zkKZ_dhIXHdA">投资美股，先从数据分析开始</a>这篇文章解决两个问题：</p>
+
+<ol>
+<li>从哪里找数据？</li>
+<li>如何得到这些数据？</li>
+</ol>
+
+<p>在此基础这篇主要解决一个问题：以特斯拉为例说明如何利用这些数据预测股票价格的变化。同时关注一个问题：投入成本进行预测股票价格是否靠谱与必要？</p>
+
+<h1 id="步骤">步骤</h1>
+
+<h2 id="获取数据">获取数据</h2>
+
+<p>直接调用api如下：</p>
+
+<pre><code>import yfinance as yf 
+tlsa_df =  yf.download('TSLA', 
+                      start='2015-01-01', 
+                      end='2020-02-16', 
+                      progress=False)
+tlsa_df.head()
+</code></pre>
+
+<h2 id="绘制价格变化图">绘制价格变化图</h2>
+
+<pre><code>#plot  
+%matplotlib notebook 
+from IPython.core.interactiveshell import InteractiveShell
+InteractiveShell.ast_node_interactivity = &quot;all&quot; 
+plt.figure(figsize=(10,6))
+plt.grid(True)
+plt.xlabel('Dates')
+plt.ylabel('Close Prices')
+plt.plot(tlsa_df['Close'])
+plt.title('Tesla Close Price')
+plt.show()
+</code></pre>
+
+<p>得到从2015年起telsa收盘价格变化图：</p>
+
+<p><img src="/images/economy/stock-telsa-2015.png" alt="" /></p>
+
+<h2 id="分析数据的统计特征信息">分析数据的统计特征信息</h2>
+
+<pre><code>tsla_df_close = tlsa_df['Close']
+df_log = np.log(tsla_df_close)
+moving_avg = df_log.rolling(12).mean()
+std_dev = df_log.rolling(12).std()
+
+plt.title('Moving Average')
+plt.plot(std_dev, color =&quot;black&quot;, label = &quot;Standard Deviation&quot;)
+plt.plot(moving_avg, color=&quot;red&quot;, label = &quot;Mean&quot;)
+plt.show()
+</code></pre>
+
+<p>具体如下：</p>
+
+<p><img src="/images/economy/stock-telsa-mean.png" alt="" /></p>
+
+<h2 id="处理数据">处理数据</h2>
+
+<p>处理数据是为了满足模型的数据输入的要求。</p>
+
+<pre><code>train_data, test_data = df_log[3:int(len(df_log)*0.9)], df_log[int(len(df_log)*0.9):]
+plt.figure(figsize=(10,6))
+plt.grid(True)
+plt.xlabel('Dates')
+plt.ylabel('Closing Prices')
+plt.plot(df_log, 'green', label='Train data')
+plt.plot(test_data, 'blue', label='Test data')
+plt.legend()
+</code></pre>
+
+<p>这里将原始数据分为训练数据和测试数据。</p>
+
+<p><img src="/images/economy/stock-telsa-traintest.png" alt="" /></p>
+
+<h2 id="建立模型">建立模型</h2>
+
+<pre><code>import os 
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+from statsmodels.tsa.stattools import adfuller
+from statsmodels.tsa.seasonal import seasonal_decompose
+from statsmodels.tsa.arima_model import ARIMA
+from pmdarima.arima import auto_arima
+from sklearn.metrics import mean_squared_error, mean_absolute_error
+import math
+
+model_autoARIMA = auto_arima(train_data, 
+                             start_p=0, 
+                             start_q=0,
+                      test='adf',       # use adftest to find             optimal 'd'
+                      max_p=3, max_q=3, # maximum p and q
+                      m=1,              # frequency of series
+                      d=None,           # let model determine 'd'
+                      seasonal=False,   # No Seasonality
+                      start_P=0, 
+                      D=0, 
+                      trace=True,
+                      error_action='ignore',  
+                      suppress_warnings=True, 
+                      stepwise=True)
+print(model_autoARIMA.summary())
+</code></pre>
+
+<p>得到模型参数如下：</p>
+
+<pre><code>Performing stepwise search to minimize aic
+Fit ARIMA: (0, 1, 0)x(0, 0, 0, 0) (constant=True); AIC=-4980.147, BIC=-4970.040, Time=2.357 seconds
+Fit ARIMA: (1, 1, 0)x(0, 0, 0, 0) (constant=True); AIC=-4978.315, BIC=-4963.154, Time=0.297 seconds
+Fit ARIMA: (0, 1, 1)x(0, 0, 0, 0) (constant=True); AIC=-4978.308, BIC=-4963.147, Time=0.475 seconds
+Fit ARIMA: (0, 1, 0)x(0, 0, 0, 0) (constant=False); AIC=-4982.140, BIC=-4977.087, Time=0.189 seconds
+Fit ARIMA: (1, 1, 1)x(0, 0, 0, 0) (constant=True); AIC=-4976.958, BIC=-4956.743, Time=0.493 seconds
+Total fit time: 5.619 seconds
+                               SARIMAX Results                                
+==============================================================================
+Dep. Variable:                      y   No. Observations:                 1158
+Model:               SARIMAX(0, 1, 0)   Log Likelihood                2492.070
+Date:                Mon, 17 Feb 2020   AIC                          -4982.140
+Time:                        20:29:52   BIC                          -4977.087
+Sample:                             0   HQIC                         -4980.233
+                               - 1158                                         
+Covariance Type:                  opg                                         
+==============================================================================
+                 coef    std err          z      P&gt;|z|      [0.025      0.975]
+------------------------------------------------------------------------------
+sigma2         0.0008   1.84e-05     42.731      0.000       0.001       0.001
+===============================================================================
+Ljung-Box (Q):                       43.17   Jarque-Bera (JB):               898.42
+Prob(Q):                              0.34   Prob(JB):                         0.00
+Heteroskedasticity (H):               1.84   Skew:                            -0.13
+Prob(H) (two-sided):                  0.00   Kurtosis:                         7.31
+===============================================================================
+</code></pre>
+
+<h2 id="对模型诊断">对模型诊断</h2>
+
+<p>在进行预测之前先进行模型诊断。</p>
+
+<pre><code>model_autoARIMA.plot_diagnostics(figsize=(15,8))
+plt.show()
+model = ARIMA(train_data, order=(3, 1, 2))  
+fitted = model.fit(disp=-1)  
+print(fitted.summary())
+</code></pre>
+
+<p>结果如下：</p>
+
+<pre><code>   ARIMA Model Results                              
+==============================================================================
+Dep. Variable:                D.Close   No. Observations:                 1157
+Model:                 ARIMA(3, 1, 2)   Log Likelihood                2494.608
+Method:                       css-mle   S.D. of innovations              0.028
+Date:                Mon, 17 Feb 2020   AIC                          -4975.215
+Time:                        20:30:59   BIC                          -4939.840
+Sample:                             1   HQIC                         -4961.866
+                                                                              
+=================================================================================
+                    coef    std err          z      P&gt;|z|      [0.025      0.975]
+---------------------------------------------------------------------------------
+const             0.0002      0.000      1.274      0.203      -0.000       0.001
+ar.L1.D.Close     0.1523      0.251      0.607      0.544      -0.339       0.644
+ar.L2.D.Close     0.8380      0.235      3.562      0.000       0.377       1.299
+ar.L3.D.Close    -0.0097      0.032     -0.305      0.760      -0.072       0.053
+ma.L1.D.Close    -0.1689      0.249     -0.678      0.498      -0.657       0.320
+ma.L2.D.Close    -0.8311      0.249     -3.334      0.001      -1.320      -0.343
+                                    Roots                                    
+=============================================================================
+                  Real          Imaginary           Modulus         Frequency
+-----------------------------------------------------------------------------
+AR.1            1.0107           +0.0000j            1.0107            0.0000
+AR.2           -1.1784           +0.0000j            1.1784            0.5000
+AR.3           86.4971           +0.0000j           86.4971            0.0000
+MA.1            1.0000           +0.0000j            1.0000            0.0000
+MA.2           -1.2033           +0.0000j            1.2033            0.5000
+-----------------------------------------------------------------------------
+</code></pre>
+
+<h2 id="利用模型进行预测">利用模型进行预测</h2>
+
+<pre><code>fc, se, conf = fitted.forecast(129, alpha=0.05)  
+fc_series = pd.Series(fc, index=test_data.index)
+lower_series = pd.Series(conf[:, 0], index=test_data.index)
+upper_series = pd.Series(conf[:, 1], index=test_data.index)
+plt.figure(figsize=(12,5), dpi=100)
+plt.plot(train_data, label='training')
+plt.plot(test_data, color = 'blue', label='Actual Stock Price')
+plt.plot(fc_series, color = 'orange',label='Predicted Stock Price')
+plt.fill_between(lower_series.index, lower_series, upper_series, 
+                 color='k', alpha=.10)
+plt.title('Tesla Stock Price Prediction')
+plt.xlabel('Time')
+plt.ylabel('Tesla Stock  Price')
+plt.legend(loc='upper left', fontsize=8)
+plt.show()
+</code></pre>
+
+<p>得到预测结果如下：</p>
+
+<p><img src="/images/economy/stock-telsa-predict.png" alt="" /></p>
+
+<h2 id="分析预测结果">分析预测结果</h2>
+
+<p>从上面预测结果可以看出：</p>
+
+<ol>
+<li>预测结果与实际股票的上涨趋势相同，但是其中的路径还是相差很多，直接说明不适合指导具体交易，只能做为长期趋势判断的参考</li>
+<li>这个模型还需要大量进行测试，如调整数据，调整模型参数</li>
+</ol>
+
+<h1 id="总结">总结</h1>
+
+<p>这里是简单介绍一下利用numpy与pmdarima来预测股票变化趋势。实际上应用过程上需要充分的测试与验证，还需要大量的工作。像这上面这样的方式来预测股票价格是不靠谱的。有靠谱的模型也需要自己大量投入时间与大量的数据以及不断的验证与调整才可以的（别人靠谱的模型是不会免费分享的）。对于个人来说，投入这个成本是否值得又是另一个问题。对于大部分人来说没有必要投入这个成本通过机器学习来预测股票价格变化。这个进入门槛比较高（预测股票价格与预报天气是两回事），从中获得收益的门槛更高。</p>
+
+<p>下一篇会具体讨论一下预测股票变化的数学原理。再根据这些数学原理如何优化模型。</p>
+
+<p>说明：</p>
+
+<ol>
+<li>本文只是进行一个过程展示</li>
+<li>本文中的模型只供参考，不能用于实际的股票投资与交易。股市有风险，入市当小心。</li>
+</ol>
+
+<h1 id="欢迎关注">欢迎关注</h1>
+
+<p>欢迎关注微信公众帐号：沉风网事(savewind)</p>
+
+<p><img src="/images/cfws.jpg" alt="沉风网事" /></p>
+
+<h1 id="参考">参考</h1>
+
+<ol>
+<li><a href="https://pypi.org/project/pmdarima/">pmdarima</a></li>
+<li><a href="https://medium.com/swlh/the-stock-market-is-currently-facing-the-iceberg-illusion-ad67493c4b8d">股市目前正面临冰山幻象</a></li>
+<li><a href="https://medium.com/the-post-grad-survival-guide/its-surprisingly-easy-to-make-money-in-the-stock-market-here-s-how-19e9cf711b23">A Surprisingly Easy Strategy to Make Money in the Stock Market</a></li>
+</ol>
+
+        </div>
+        
+
+        <footer class="article-footer">
+    <a data-url="https://myself659.github.io/2020/02/17/stock-us-analysis/" data-id="3b2f12509e2721f3219c32f444dada0f" class="article-share-link">
+        <i class="fa fa-share"></i>
+        Share
+    </a>
+    
+
+    <script>
+    (function ($) {
+        
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+    </script>
+</footer>
+
+    </div>
+
+    
+<nav id="article-nav">
+    
+    <a href="https://myself659.github.io/2020/02/06/stock-us-data/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">
+          Older
+      </strong>
+      <div class="article-nav-title">投资美股，先从数据分析开始</div>
+    </a>
+    
+
+    
+    <a href="https://myself659.github.io/2020/03/08/weimeng-del-data/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">
+          Newer
+      </strong>
+      <div class="article-nav-title">微盟删库事件复盘与思考</div>
+    </a>
+    
+</nav>
+
+
+</article>
+
+
+    <script src="https://utteranc.es/client.js"
+        repo="myself659/ipds-public"
+        issue-term="url"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+    </script>
+
+    
+
+    </section>
+
+
+
+   	
+    	<aside id="sidebar">
+	
+
+
+
+<aside class="table-of-contents">
+    <details>
+    <summary>
+    <b>Table of Contents</b>
+    </summary><li><a href="/2020/02/17/stock-us-analysis/#%e5%89%8d%e8%a8%80">前言</a></li>
+            <li><a href="/2020/02/17/stock-us-analysis/#%e6%ad%a5%e9%aa%a4">步骤</a></li>
+            
+                    <ul class="toc-h2"><li><a href="/2020/02/17/stock-us-analysis/#%e8%8e%b7%e5%8f%96%e6%95%b0%e6%8d%ae">获取数据</a></li>
+            <li><a href="/2020/02/17/stock-us-analysis/#%e7%bb%98%e5%88%b6%e4%bb%b7%e6%a0%bc%e5%8f%98%e5%8c%96%e5%9b%be">绘制价格变化图</a></li>
+            <li><a href="/2020/02/17/stock-us-analysis/#%e5%88%86%e6%9e%90%e6%95%b0%e6%8d%ae%e7%9a%84%e7%bb%9f%e8%ae%a1%e7%89%b9%e5%be%81%e4%bf%a1%e6%81%af">分析数据的统计特征信息</a></li>
+            <li><a href="/2020/02/17/stock-us-analysis/#%e5%a4%84%e7%90%86%e6%95%b0%e6%8d%ae">处理数据</a></li>
+            <li><a href="/2020/02/17/stock-us-analysis/#%e5%bb%ba%e7%ab%8b%e6%a8%a1%e5%9e%8b">建立模型</a></li>
+            <li><a href="/2020/02/17/stock-us-analysis/#%e5%af%b9%e6%a8%a1%e5%9e%8b%e8%af%8a%e6%96%ad">对模型诊断</a></li>
+            <li><a href="/2020/02/17/stock-us-analysis/#%e5%88%a9%e7%94%a8%e6%a8%a1%e5%9e%8b%e8%bf%9b%e8%a1%8c%e9%a2%84%e6%b5%8b">利用模型进行预测</a></li>
+            <li><a href="/2020/02/17/stock-us-analysis/#%e5%88%86%e6%9e%90%e9%a2%84%e6%b5%8b%e7%bb%93%e6%9e%9c">分析预测结果</a></li>
+            
+                    </ul><li><a href="/2020/02/17/stock-us-analysis/#%e6%80%bb%e7%bb%93">总结</a></li>
+            <li><a href="/2020/02/17/stock-us-analysis/#%e6%ac%a2%e8%bf%8e%e5%85%b3%e6%b3%a8">欢迎关注</a></li>
+            <li><a href="/2020/02/17/stock-us-analysis/#%e5%8f%82%e8%80%83">参考</a></li>
+            </details>
+</aside>
+    
+<div class="widget-wrap">
+    <h3 class="widget-title">
+        Recents
+    </h3>
+    <div class="widget">
+        <ul id="recent-post">
+            
+            <li>
+                <div class="item-thumbnail">
+                    <a href="https://myself659.github.io/2020/06/26/think-outof-box/" class="thumbnail">
+                    
+                        <span class="thumbnail-image thumbnail-none"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    <p class="item-category">
+                        
+                        <a class="article-category-link" href="https://myself659.github.io/categories/%E6%88%90%E9%95%BF">
+                        成长
+                        </a>
+                    </p>
+                    
+                    
+                    <p class="item-title"><a href="https://myself659.github.io/2020/06/26/think-outof-box/" class="title">谈谈跳出框架思考</a></p>
+                    <p class="item-date">
+                        <time datetime="2020-06-26 11:58:06 &#43;0200 &#43;0200" itemprop="datePublished">2020-06-26</time>
+                    </p>
+                </div>
+            </li>
+            
+            <li>
+                <div class="item-thumbnail">
+                    <a href="https://myself659.github.io/2020/05/31/cryptocurrency_antifrangible/" class="thumbnail">
+                    
+                        <span class="thumbnail-image thumbnail-none"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    <p class="item-category">
+                        
+                        <a class="article-category-link" href="https://myself659.github.io/categories/blockchain">
+                        BlockChain
+                        </a>
+                    </p>
+                    
+                    
+                    <p class="item-title"><a href="https://myself659.github.io/2020/05/31/cryptocurrency_antifrangible/" class="title">谈谈数字货币的反脆弱性</a></p>
+                    <p class="item-date">
+                        <time datetime="2020-05-31 11:58:06 &#43;0200 &#43;0200" itemprop="datePublished">2020-05-31</time>
+                    </p>
+                </div>
+            </li>
+            
+            <li>
+                <div class="item-thumbnail">
+                    <a href="https://myself659.github.io/2020/05/24/covid-19-symptom/" class="thumbnail">
+                    
+                        <span class="thumbnail-image thumbnail-none"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    <p class="item-category">
+                        
+                        <a class="article-category-link" href="https://myself659.github.io/categories/life">
+                        Life
+                        </a>
+                    </p>
+                    
+                    
+                    <p class="item-title"><a href="https://myself659.github.io/2020/05/24/covid-19-symptom/" class="title">分享：一图了解新型冠状病毒的症状有哪些</a></p>
+                    <p class="item-date">
+                        <time datetime="2020-05-24 11:58:06 &#43;0200 &#43;0200" itemprop="datePublished">2020-05-24</time>
+                    </p>
+                </div>
+            </li>
+            
+            <li>
+                <div class="item-thumbnail">
+                    <a href="https://myself659.github.io/2020/05/08/book-skin-in-the-game-how/" class="thumbnail">
+                    
+                        <span class="thumbnail-image thumbnail-none"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    <p class="item-category">
+                        
+                        <a class="article-category-link" href="https://myself659.github.io/categories/read">
+                        Read
+                        </a>
+                    </p>
+                    
+                    
+                    <p class="item-title"><a href="https://myself659.github.io/2020/05/08/book-skin-in-the-game-how/" class="title">读书笔记:《非对称风险》</a></p>
+                    <p class="item-date">
+                        <time datetime="2020-05-08 11:58:06 &#43;0200 &#43;0200" itemprop="datePublished">2020-05-08</time>
+                    </p>
+                </div>
+            </li>
+            
+            <li>
+                <div class="item-thumbnail">
+                    <a href="https://myself659.github.io/2020/04/26/how-to-learn-fast/" class="thumbnail">
+                    
+                        <span class="thumbnail-image thumbnail-none"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    <p class="item-category">
+                        
+                        <a class="article-category-link" href="https://myself659.github.io/categories/%E6%88%90%E9%95%BF">
+                        成长
+                        </a>
+                    </p>
+                    
+                    
+                    <p class="item-title"><a href="https://myself659.github.io/2020/04/26/how-to-learn-fast/" class="title">关于快速学习的思考</a></p>
+                    <p class="item-date">
+                        <time datetime="2020-04-26 11:58:06 &#43;0200 &#43;0200" itemprop="datePublished">2020-04-26</time>
+                    </p>
+                </div>
+            </li>
+            
+        </ul>
+    </div>
+</div>
+
+
+
+    
+
+
+<div class="widget-wrap">
+    <h3 class="widget-title">
+        Tags
+    </h3>
+    <div class="widget">
+        <ul class="category-list">
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://myself659.github.io/tags/arch">
+                    arch
+                </a>
+                <span class="category-list-count">5</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://myself659.github.io/tags/bitcoin">
+                    bitcoin
+                </a>
+                <span class="category-list-count">2</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://myself659.github.io/tags/blockchain">
+                    blockchain
+                </a>
+                <span class="category-list-count">31</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://myself659.github.io/tags/btc">
+                    btc
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://myself659.github.io/tags/cryptography">
+                    cryptography
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://myself659.github.io/tags/data">
+                    data
+                </a>
+                <span class="category-list-count">2</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://myself659.github.io/tags/data-struct">
+                    data-struct
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://myself659.github.io/tags/distributed">
+                    distributed
+                </a>
+                <span class="category-list-count">3</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://myself659.github.io/tags/docker">
+                    docker
+                </a>
+                <span class="category-list-count">3</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://myself659.github.io/tags/economy">
+                    economy
+                </a>
+                <span class="category-list-count">6</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://myself659.github.io/tags/english">
+                    english
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://myself659.github.io/tags/ethereum">
+                    ethereum
+                </a>
+                <span class="category-list-count">2</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://myself659.github.io/tags/golang">
+                    golang
+                </a>
+                <span class="category-list-count">10</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://myself659.github.io/tags/internet">
+                    internet
+                </a>
+                <span class="category-list-count">10</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://myself659.github.io/tags/ipfs">
+                    ipfs
+                </a>
+                <span class="category-list-count">3</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://myself659.github.io/tags/kubernetes">
+                    kubernetes
+                </a>
+                <span class="category-list-count">3</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://myself659.github.io/tags/life">
+                    life
+                </a>
+                <span class="category-list-count">2</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://myself659.github.io/tags/linux">
+                    linux
+                </a>
+                <span class="category-list-count">11</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://myself659.github.io/tags/nba">
+                    nba
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://myself659.github.io/tags/network">
+                    network
+                </a>
+                <span class="category-list-count">3</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://myself659.github.io/tags/nginx">
+                    nginx
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://myself659.github.io/tags/python">
+                    python
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://myself659.github.io/tags/read">
+                    read
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://myself659.github.io/tags/rust">
+                    rust
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://myself659.github.io/tags/secure">
+                    secure
+                </a>
+                <span class="category-list-count">5</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://myself659.github.io/tags/smart-contract">
+                    smart-contract
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://myself659.github.io/tags/substrate">
+                    substrate
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://myself659.github.io/tags/web">
+                    web
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://myself659.github.io/tags/%E5%95%86%E4%B8%9A">
+                    商业
+                </a>
+                <span class="category-list-count">5</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://myself659.github.io/tags/%E5%AD%A6%E4%B9%A0">
+                    学习
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://myself659.github.io/tags/%E6%88%90%E9%95%BF">
+                    成长
+                </a>
+                <span class="category-list-count">4</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://myself659.github.io/tags/%E7%A0%94%E5%8F%91%E7%AE%A1%E7%90%86">
+                    研发管理
+                </a>
+                <span class="category-list-count">4</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://myself659.github.io/tags/%E7%BC%96%E7%A8%8B">
+                    编程
+                </a>
+                <span class="category-list-count">6</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://myself659.github.io/tags/%E8%81%8C%E5%9C%BA">
+                    职场
+                </a>
+                <span class="category-list-count">2</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://myself659.github.io/tags/%E9%97%B2%E8%B0%88%E4%B9%B1%E6%89%AF">
+                    闲谈乱扯
+                </a>
+                <span class="category-list-count">9</span>
+            </li>
+            
+        </ul>
+    </div>
+</div>
+
+
+
+
+    
+
+
+<div class="widget-wrap">
+    <h3 class="widget-title">
+        Tag cloud
+    </h3>
+    <div class="widget tagcloud">
+        
+        
+        <a href="https://myself659.github.io/tags/arch" style="font-size: 12px;">arch</a>
+        
+        
+        <a href="https://myself659.github.io/tags/bitcoin" style="font-size: 12px;">bitcoin</a>
+        
+        
+        <a href="https://myself659.github.io/tags/blockchain" style="font-size: 12px;">blockchain</a>
+        
+        
+        <a href="https://myself659.github.io/tags/btc" style="font-size: 12px;">btc</a>
+        
+        
+        <a href="https://myself659.github.io/tags/cryptography" style="font-size: 12px;">cryptography</a>
+        
+        
+        <a href="https://myself659.github.io/tags/data" style="font-size: 12px;">data</a>
+        
+        
+        <a href="https://myself659.github.io/tags/data-struct" style="font-size: 12px;">data-struct</a>
+        
+        
+        <a href="https://myself659.github.io/tags/distributed" style="font-size: 12px;">distributed</a>
+        
+        
+        <a href="https://myself659.github.io/tags/docker" style="font-size: 12px;">docker</a>
+        
+        
+        <a href="https://myself659.github.io/tags/economy" style="font-size: 12px;">economy</a>
+        
+        
+        <a href="https://myself659.github.io/tags/english" style="font-size: 12px;">english</a>
+        
+        
+        <a href="https://myself659.github.io/tags/ethereum" style="font-size: 12px;">ethereum</a>
+        
+        
+        <a href="https://myself659.github.io/tags/golang" style="font-size: 12px;">golang</a>
+        
+        
+        <a href="https://myself659.github.io/tags/internet" style="font-size: 12px;">internet</a>
+        
+        
+        <a href="https://myself659.github.io/tags/ipfs" style="font-size: 12px;">ipfs</a>
+        
+        
+        <a href="https://myself659.github.io/tags/kubernetes" style="font-size: 12px;">kubernetes</a>
+        
+        
+        <a href="https://myself659.github.io/tags/life" style="font-size: 12px;">life</a>
+        
+        
+        <a href="https://myself659.github.io/tags/linux" style="font-size: 12px;">linux</a>
+        
+        
+        <a href="https://myself659.github.io/tags/nba" style="font-size: 12px;">nba</a>
+        
+        
+        <a href="https://myself659.github.io/tags/network" style="font-size: 12px;">network</a>
+        
+        
+        <a href="https://myself659.github.io/tags/nginx" style="font-size: 12px;">nginx</a>
+        
+        
+        <a href="https://myself659.github.io/tags/python" style="font-size: 12px;">python</a>
+        
+        
+        <a href="https://myself659.github.io/tags/read" style="font-size: 12px;">read</a>
+        
+        
+        <a href="https://myself659.github.io/tags/rust" style="font-size: 12px;">rust</a>
+        
+        
+        <a href="https://myself659.github.io/tags/secure" style="font-size: 12px;">secure</a>
+        
+        
+        <a href="https://myself659.github.io/tags/smart-contract" style="font-size: 12px;">smart-contract</a>
+        
+        
+        <a href="https://myself659.github.io/tags/substrate" style="font-size: 12px;">substrate</a>
+        
+        
+        <a href="https://myself659.github.io/tags/web" style="font-size: 12px;">web</a>
+        
+        
+        <a href="https://myself659.github.io/tags/%E5%95%86%E4%B8%9A" style="font-size: 12px;">商业</a>
+        
+        
+        <a href="https://myself659.github.io/tags/%E5%AD%A6%E4%B9%A0" style="font-size: 12px;">学习</a>
+        
+        
+        <a href="https://myself659.github.io/tags/%E6%88%90%E9%95%BF" style="font-size: 12px;">成长</a>
+        
+        
+        <a href="https://myself659.github.io/tags/%E7%A0%94%E5%8F%91%E7%AE%A1%E7%90%86" style="font-size: 12px;">研发管理</a>
+        
+        
+        <a href="https://myself659.github.io/tags/%E7%BC%96%E7%A8%8B" style="font-size: 12px;">编程</a>
+        
+        
+        <a href="https://myself659.github.io/tags/%E8%81%8C%E5%9C%BA" style="font-size: 12px;">职场</a>
+        
+        
+        <a href="https://myself659.github.io/tags/%E9%97%B2%E8%B0%88%E4%B9%B1%E6%89%AF" style="font-size: 12px;">闲谈乱扯</a>
+        
+    </div>
+</div>
+
+
+
+
+
+    <div id="toTop" class="fa fa-angle-up"></div>
+</aside>
+
+    
+	</div>
+</div>
+
+<footer id="footer">
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2020
+      copyright@沉风网事
+    </div>
+  </div>
+</footer>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-144475213-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+<script src="https://myself659.github.io/fancybox/jquery.fancybox.pack.js"></script>
+<script src="https://myself659.github.io/js/script.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js"></script>
+
+
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']]}
+  });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+
+
+</body>
+</html>

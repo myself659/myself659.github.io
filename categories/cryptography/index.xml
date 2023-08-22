@@ -1,22 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Cryptography on 沉风网事</title>
-    <link>https://myself659.github.io/categories/cryptography/</link>
+    <link>http://myself659.github.io/categories/cryptography/</link>
     <description>Recent content in Cryptography on 沉风网事</description>
-    <image>
-      <title>沉风网事</title>
-      <url>https://myself659.github.io/</url>
-      <link>https://myself659.github.io/</link>
-    </image>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sun, 21 Oct 2018 11:58:06 +0200</lastBuildDate><atom:link href="https://myself659.github.io/categories/cryptography/index.xml" rel="self" type="application/rss+xml" />
+    <language>zh-cn</language>
+    <copyright>沉风网事</copyright>
+    <lastBuildDate>Sun, 21 Oct 2018 11:58:06 +0200</lastBuildDate><atom:link href="http://myself659.github.io/categories/cryptography/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>说说私钥保护技术</title>
-      <link>https://myself659.github.io/post/secret-sharing/</link>
+      <link>http://myself659.github.io/post/secret-sharing/</link>
       <pubDate>Sun, 21 Oct 2018 11:58:06 +0200</pubDate>
       
-      <guid>https://myself659.github.io/post/secret-sharing/</guid>
+      <guid>http://myself659.github.io/post/secret-sharing/</guid>
       <description>前言 私钥在区块链系统中代表是什么？私钥是钱。钱包的本质就是私钥。谁控制了私钥谁就控制对应钱包的数字资产，谁丢失了私钥也就相当于丢了对应钱包的</description>
     </item>
     

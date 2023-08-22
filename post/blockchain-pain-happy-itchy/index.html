@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>从痛点，爽点，痒点看区块链 - 沉风网事</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="沉风网事" /><meta name="description" content="说明 希望通过痛点，爽点，痒点的分析，看看区块链是不是刚需？区块链在哪些场景下有迫切的需求？ 首先，先看看下面三个定义： 痛点就是恐惧 爽点是即时满" /><meta name="keywords" content="沉风网事, 沉风, 区块链, Glang, 算法, 数据结构" />
+
+
+<meta name="baidu-site-verification" content="9LmlOuIblt" />
+
+
+
+<meta name="generator" content="Hugo 0.68.3 with theme even" />
+
+
+<link rel="canonical" href="http://myself659.github.io/post/blockchain-pain-happy-itchy/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.8c3cbcb0324c2bb4875ceccba4007cbad4b4ac8377f33af9953c3e7684534a50.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="从痛点，爽点，痒点看区块链" />
+<meta property="og:description" content="说明 希望通过痛点，爽点，痒点的分析，看看区块链是不是刚需？区块链在哪些场景下有迫切的需求？ 首先，先看看下面三个定义： 痛点就是恐惧 爽点是即时满" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://myself659.github.io/post/blockchain-pain-happy-itchy/" />
+<meta property="article:published_time" content="2018-03-04T11:58:06+02:00" />
+<meta property="article:modified_time" content="2018-03-04T11:58:06+02:00" />
+<meta itemprop="name" content="从痛点，爽点，痒点看区块链">
+<meta itemprop="description" content="说明 希望通过痛点，爽点，痒点的分析，看看区块链是不是刚需？区块链在哪些场景下有迫切的需求？ 首先，先看看下面三个定义： 痛点就是恐惧 爽点是即时满">
+<meta itemprop="datePublished" content="2018-03-04T11:58:06&#43;02:00" />
+<meta itemprop="dateModified" content="2018-03-04T11:58:06&#43;02:00" />
+<meta itemprop="wordCount" content="882">
+
+
+
+<meta itemprop="keywords" content="BlockChain," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="从痛点，爽点，痒点看区块链"/>
+<meta name="twitter:description" content="说明 希望通过痛点，爽点，痒点的分析，看看区块链是不是刚需？区块链在哪些场景下有迫切的需求？ 首先，先看看下面三个定义： 痛点就是恐惧 爽点是即时满"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">沉风</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a><a href="/post/leetcode/">
+        <li class="mobile-menu-item">LeetCode</li>
+      </a><a href="/post/read-post/">
+        <li class="mobile-menu-item">Read</li>
+      </a><a href="/post/share-post/">
+        <li class="mobile-menu-item">Share</li>
+      </a><a href="/post/slide-post/">
+        <li class="mobile-menu-item">Slide</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">沉风</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/leetcode/">LeetCode</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/read-post/">Read</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/share-post/">Share</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/slide-post/">Slide</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">从痛点，爽点，痒点看区块链</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2018-03-04 </span>
+        <div class="post-category">
+            <a href="/categories/blockchain/"> BlockChain </a>
+            </div>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#1-数据共享">1. 数据共享</a></li>
+    <li><a href="#2-隐私保护">2. 隐私保护</a></li>
+    <li><a href="#3-财富配置">3. 财富配置</a></li>
+    <li><a href="#4-信任">4. 信任</a></li>
+    <li><a href="#5-内容保护">5. 内容保护</a></li>
+    <li><a href="#6-去中心化信任">6. 去中心化信任</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#1-减少欺诈">1. 减少欺诈</a></li>
+    <li><a href="#2降低成本提高效率">2.降低成本，提高效率</a></li>
+    <li><a href="#3-全球化">3. 全球化</a></li>
+    <li><a href="#4-抗监管">4. 抗监管</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#1-ico">1. ICO</a></li>
+  </ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <h1 id="说明">说明</h1>
+<p>希望通过痛点，爽点，痒点的分析，看看区块链是不是刚需？区块链在哪些场景下有迫切的需求？</p>
+<p>首先，先看看下面三个定义：</p>
+<ol>
+<li>痛点就是恐惧</li>
+<li>爽点是即时满足</li>
+<li>痒点是满足虚拟自我</li>
+</ol>
+<p>（PS:上述三个定义来自产品大神梁宁的《产品思维30讲》）</p>
+<h1 id="痛点">痛点</h1>
+<h2 id="1-数据共享">1. 数据共享</h2>
+<p>具体场景如下：</p>
+<ol>
+<li>银行征信数据共享，但是不想暴露原始数据</li>
+</ol>
+<h2 id="2-隐私保护">2. 隐私保护</h2>
+<p>具体场景如下：</p>
+<ol>
+<li><a href="http://view.news.qq.com/original/intouchtoday/n4183.html">大数据“杀熟”不“杀生”，你还敢愉快地买买买吗</a></li>
+<li>医疗数据共享，但是担心在共享过程中出现患者的隐私泄漏？</li>
+</ol>
+<h2 id="3-财富配置">3. 财富配置</h2>
+<p>典型的就是比特币，抗通胀需求，防止财富在法币大量放水的情况下被稀释(虽然价格变动大)，同时也是一种新形式的财富配置方式。</p>
+<h2 id="4-信任">4. 信任</h2>
+<p>这里举一个失出信任的反面例子。自从三鹿奶粉事件，国产奶粉失出了国内民众的信任，所以贝因美的商业悲剧：<a href="https://www.toutiao.com/a6528142533824872963/">卖29套房都无法填补亏损！又一巨头陨落</a>。 贝因美是否可以通过区块链重新得到国内的民众的信任。</p>
+<h2 id="5-内容保护">5. 内容保护</h2>
+<p>现在技术与产品还不成熟，如果有哪一家解决了内容保护内容，相信很多的内容创造者会投身该平台上。</p>
+<h2 id="6-去中心化信任">6. 去中心化信任</h2>
+<p>基于区块链的赌博等应用。</p>
+<h1 id="爽点">爽点</h1>
+<h2 id="1-减少欺诈">1. 减少欺诈</h2>
+<p>这里主要利用区块链不可篡改，公开帐本特性，具体应用主要如下：</p>
+<ol>
+<li>存证</li>
+<li>溯源</li>
+</ol>
+<h2 id="2降低成本提高效率">2.降低成本，提高效率</h2>
+<p>主要场景如下：</p>
+<ol>
+<li>迅雷网心通过玩客云可以提供低成本的CDN服务</li>
+<li>通过比特币进行跨国转帐</li>
+<li>Filecoin等类似项目</li>
+<li>基于区块链共享项目</li>
+<li>PowerLedger</li>
+</ol>
+<h2 id="3-全球化">3. 全球化</h2>
+<p>全球化，这就意味着潜在用户是60亿。这种威力如何？想想以太坊吧，从2015年上市，短短两年多市值最高突破1000亿美元，再拿出百度作个对比，百度成立于1998年，迄今为止百度的市值从没有突破过1000亿美元吧。</p>
+<h2 id="4-抗监管">4. 抗监管</h2>
+<p>比特币的市场就说明一些人的特定需求，如大家都懂的洗钱等等</p>
+<h1 id="痒点">痒点</h1>
+<h2 id="1-ico">1. ICO</h2>
+<p>如果在国内不禁止，估计有更多的人投入到ICO中，为什么呢？ICO前期造富运动，满足很多人对一夜暴富的强烈愿望。</p>
+<p>个人能力有限加上区块链应用领域十分广泛，上面并没有一一俱到，不足与错误欢迎指正。(PS: 币圈一日，世上一年，更有各种新技术层出不穷，需要深入学习，恕没有展开说明，更多应用参考下图)</p>
+<p><img src="/images/blockchain/blockchain-app.jpg" alt="一图看区块链技术与应用"></p>
+<p>(To be continue)</p>
+<h1 id="参考">参考</h1>
+<ol>
+<li><a href="https://www.v2ex.com/t/653592">天猫 88VIP 大数据杀熟事件发酵，只能说阿里的反侦察技术做的太烂，被用户发现了</a></li>
+</ol>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">沉风网事</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+        2018-03-04
+        
+    </span>
+  </p>
+  
+  
+</div>
+<footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/blockchain/">BlockChain</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/post/%E7%9F%BF%E5%B7%A5%E4%BA%94%E5%AE%97%E7%BD%AA/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">矿工五宗罪</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        <a class="next" href="/post/usdt-faq/">
+            <span class="next-text nav-default">USDT FAQ</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+  
+
+  
+    <script src="https://utteranc.es/client.js"
+            repo="myself659/ipds-public"
+            issue-term="pathname"
+            theme="github-light"
+            crossorigin="anonymous"
+            async>
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://github.com/utterance">comments powered by utterances.</a></noscript>
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/8.3.1/mermaid.min.js"></script>
+<div class="social-links">
+      <a href="mailto:myself659@163.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://github.com/myself659" class="iconfont icon-github" title="github"></a>
+      <a href="https://weibo.com/6484347913" class="iconfont icon-weibo" title="weibo"></a>
+      <a href="https://www.zhihu.com/people/lejoys" class="iconfont icon-zhihu" title="zhihu"></a>
+  <a href="http://myself659.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/myself659/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2017 - 
+    2021
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">沉风网事</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+
+
+
+<script type="text/javascript" src="/js/main.min.d7b7ada643c9c1a983026e177f141f7363b4640d619caf01d8831a6718cd44ea.js"></script>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-144475213-1', 'auto');
+	ga('set', 'anonymizeIp', true);
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+
+
+
+
+</body>
+</html>

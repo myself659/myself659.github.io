@@ -1,76 +1,73 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>编程 on 沉风网事</title>
-    <link>https://myself659.github.io/tags/%E7%BC%96%E7%A8%8B/</link>
+    <link>http://myself659.github.io/tags/%E7%BC%96%E7%A8%8B/</link>
     <description>Recent content in 编程 on 沉风网事</description>
-    <image>
-      <title>沉风网事</title>
-      <url>https://myself659.github.io/</url>
-      <link>https://myself659.github.io/</link>
-    </image>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sun, 09 Aug 2020 11:58:06 +0200</lastBuildDate><atom:link href="https://myself659.github.io/tags/%E7%BC%96%E7%A8%8B/index.xml" rel="self" type="application/rss+xml" />
+    <language>zh-cn</language>
+    <copyright>沉风网事</copyright>
+    <lastBuildDate>Sun, 09 Aug 2020 11:58:06 +0200</lastBuildDate><atom:link href="http://myself659.github.io/tags/%E7%BC%96%E7%A8%8B/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>谈谈GPT3</title>
-      <link>https://myself659.github.io/post/gpt3-thought/</link>
+      <link>http://myself659.github.io/post/gpt3-thought/</link>
       <pubDate>Sun, 09 Aug 2020 11:58:06 +0200</pubDate>
       
-      <guid>https://myself659.github.io/post/gpt3-thought/</guid>
+      <guid>http://myself659.github.io/post/gpt3-thought/</guid>
       <description>GPT-3 GPT-3全称是&amp;quot;General Pre-trained Transformer-3&amp;quot;，对应中文翻译为：第三代通用预训练转换器。 其wiki定义</description>
     </item>
     
     <item>
       <title>github被攻击，程序员该怎么办</title>
-      <link>https://myself659.github.io/post/github-hack/</link>
+      <link>http://myself659.github.io/post/github-hack/</link>
       <pubDate>Sun, 29 Mar 2020 11:58:06 +0200</pubDate>
       
-      <guid>https://myself659.github.io/post/github-hack/</guid>
+      <guid>http://myself659.github.io/post/github-hack/</guid>
       <description>2020年3月27日，全世界最大的同性交友网站github被攻击了，连正常的首页都打不开。 Https并不是100%安全 github被攻击说明</description>
     </item>
     
     <item>
       <title>程序员进阶精读书籍清单</title>
-      <link>https://myself659.github.io/post/programer-book-list/</link>
+      <link>http://myself659.github.io/post/programer-book-list/</link>
       <pubDate>Thu, 02 Jan 2020 11:58:06 +0200</pubDate>
       
-      <guid>https://myself659.github.io/post/programer-book-list/</guid>
+      <guid>http://myself659.github.io/post/programer-book-list/</guid>
       <description>2020年加大搬砖的力度，还是一名程序员，继续成长与进步。 优秀程序员应该具备以下三方面能力： 扎实的计算机基础知识（计算机结构，操作系统，数据</description>
     </item>
     
     <item>
       <title>说说在不同行业的编程体验</title>
-      <link>https://myself659.github.io/post/arch/%E8%AF%B4%E8%AF%B4%E5%9C%A8%E4%B8%8D%E5%90%8C%E8%A1%8C%E4%B8%9A%E7%9A%84%E7%BC%96%E7%A8%8B%E4%BD%93%E9%AA%8C/</link>
+      <link>http://myself659.github.io/post/arch/%E8%AF%B4%E8%AF%B4%E5%9C%A8%E4%B8%8D%E5%90%8C%E8%A1%8C%E4%B8%9A%E7%9A%84%E7%BC%96%E7%A8%8B%E4%BD%93%E9%AA%8C/</link>
       <pubDate>Sun, 02 Dec 2018 11:58:06 +0200</pubDate>
       
-      <guid>https://myself659.github.io/post/arch/%E8%AF%B4%E8%AF%B4%E5%9C%A8%E4%B8%8D%E5%90%8C%E8%A1%8C%E4%B8%9A%E7%9A%84%E7%BC%96%E7%A8%8B%E4%BD%93%E9%AA%8C/</guid>
+      <guid>http://myself659.github.io/post/arch/%E8%AF%B4%E8%AF%B4%E5%9C%A8%E4%B8%8D%E5%90%8C%E8%A1%8C%E4%B8%9A%E7%9A%84%E7%BC%96%E7%A8%8B%E4%BD%93%E9%AA%8C/</guid>
       <description>回想起来，本科毕业以来，在五家公司呆过，经历四个行业，在这引起行业编程体验各有不同，总结起来就下面四句话： 嵌入式行业：面向DataSheet</description>
     </item>
     
     <item>
       <title>实现无符号整型数的分解</title>
-      <link>https://myself659.github.io/post/2015-06-14-number-divide/</link>
+      <link>http://myself659.github.io/post/2015-06-14-number-divide/</link>
       <pubDate>Sun, 14 Jun 2015 11:58:06 +0200</pubDate>
       
-      <guid>https://myself659.github.io/post/2015-06-14-number-divide/</guid>
+      <guid>http://myself659.github.io/post/2015-06-14-number-divide/</guid>
       <description>题目 将一个无符号数N拆分为不多于M个数，使拆分的数之和等于N,条件： N &amp;gt;= M； N与M都是无符号整型数 求：一共有多少中拆分方法？ 分析 参考代码 代码</description>
     </item>
     
     <item>
       <title>C语言代码 review的总结</title>
-      <link>https://myself659.github.io/post/c-codereivew/</link>
+      <link>http://myself659.github.io/post/c-codereivew/</link>
       <pubDate>Sun, 24 May 2015 11:58:06 +0200</pubDate>
       
-      <guid>https://myself659.github.io/post/c-codereivew/</guid>
+      <guid>http://myself659.github.io/post/c-codereivew/</guid>
       <description>代码review是保证代码质量在项目开发及代码修改中一项重要的环节，下面就代码reiew的一些总结，总结一些代码的review的关注点，提高</description>
     </item>
     
     <item>
       <title>一个linux网络丢包问题分析</title>
-      <link>https://myself659.github.io/post/linux/2015-05-24-linux-perf-droppacket/</link>
+      <link>http://myself659.github.io/post/linux/2015-05-24-linux-perf-droppacket/</link>
       <pubDate>Sun, 24 May 2015 11:58:06 +0200</pubDate>
       
-      <guid>https://myself659.github.io/post/linux/2015-05-24-linux-perf-droppacket/</guid>
+      <guid>http://myself659.github.io/post/linux/2015-05-24-linux-perf-droppacket/</guid>
       <description>丢包问题是十分常见一类问题，下面总结的一个网络丢包问题的分析过程。 问题描述 组网： TC-PORT1&amp;mdash;&amp;mdash;-VSR-eth1 TC-PORT2&amp;mdash;&amp;mdash;-VSR-eth2 打流： 报文从TC-Port1打入VSR-eth1，再从V</description>
     </item>
     
