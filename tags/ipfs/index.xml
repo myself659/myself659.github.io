@@ -1,37 +1,40 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>ipfs on 沉风网事</title>
-    <link>http://myself659.github.io/tags/ipfs/</link>
+    <link>https://myself659.github.io/tags/ipfs/</link>
     <description>Recent content in ipfs on 沉风网事</description>
+    <image>
+      <title>沉风网事</title>
+      <url>https://myself659.github.io/</url>
+      <link>https://myself659.github.io/</link>
+    </image>
     <generator>Hugo -- gohugo.io</generator>
-    <language>zh-cn</language>
-    <copyright>沉风网事</copyright>
-    <lastBuildDate>Thu, 21 Jun 2018 11:58:06 +0200</lastBuildDate><atom:link href="http://myself659.github.io/tags/ipfs/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 21 Jun 2018 11:58:06 +0200</lastBuildDate><atom:link href="https://myself659.github.io/tags/ipfs/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>IPFS专题</title>
-      <link>http://myself659.github.io/post/ipfs%E4%B8%93%E9%A2%98/</link>
+      <link>https://myself659.github.io/post/ipfs%E4%B8%93%E9%A2%98/</link>
       <pubDate>Thu, 21 Jun 2018 11:58:06 +0200</pubDate>
       
-      <guid>http://myself659.github.io/post/ipfs%E4%B8%93%E9%A2%98/</guid>
+      <guid>https://myself659.github.io/post/ipfs%E4%B8%93%E9%A2%98/</guid>
       <description>前言 IPFS（包括filecoin）无论从技术视角还是商业视角都有很多有意思的内容（关键是自己很看好这个技术），所以要准备搞一个IPFS专题</description>
     </item>
     
     <item>
       <title>IPFS与下一代网络安全</title>
-      <link>http://myself659.github.io/post/2017-09-21-ipfs-sec/</link>
+      <link>https://myself659.github.io/post/2017-09-21-ipfs-sec/</link>
       <pubDate>Thu, 21 Sep 2017 11:58:06 +0200</pubDate>
       
-      <guid>http://myself659.github.io/post/2017-09-21-ipfs-sec/</guid>
+      <guid>https://myself659.github.io/post/2017-09-21-ipfs-sec/</guid>
       <description>IPFS 先简单说一下IPFS。 IPFS是点对点协议InterPlanetary File System的简称，它是一个面向全球的、点对点的分布式版本文件系统</description>
     </item>
     
     <item>
       <title>关于弹性安全网络一点思考</title>
-      <link>http://myself659.github.io/post/2017-09-20-next-network/</link>
+      <link>https://myself659.github.io/post/2017-09-20-next-network/</link>
       <pubDate>Wed, 20 Sep 2017 11:58:06 +0200</pubDate>
       
-      <guid>http://myself659.github.io/post/2017-09-20-next-network/</guid>
+      <guid>https://myself659.github.io/post/2017-09-20-next-network/</guid>
       <description>作为网络研发出身的我，从事网络研发时间也最长，一直也关注道哥的微信公众号。 下面就对道哥的提出弹性安全网络一些总结与思考。 弹性安全网络 具体从以</description>
     </item>
     

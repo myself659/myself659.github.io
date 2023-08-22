@@ -1,19 +1,22 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Ethernum on 沉风网事</title>
-    <link>http://myself659.github.io/categories/ethernum/</link>
+    <link>https://myself659.github.io/categories/ethernum/</link>
     <description>Recent content in Ethernum on 沉风网事</description>
+    <image>
+      <title>沉风网事</title>
+      <url>https://myself659.github.io/</url>
+      <link>https://myself659.github.io/</link>
+    </image>
     <generator>Hugo -- gohugo.io</generator>
-    <language>zh-cn</language>
-    <copyright>沉风网事</copyright>
-    <lastBuildDate>Fri, 20 Apr 2018 11:58:06 +0200</lastBuildDate><atom:link href="http://myself659.github.io/categories/ethernum/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 20 Apr 2018 11:58:06 +0200</lastBuildDate><atom:link href="https://myself659.github.io/categories/ethernum/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>EVM opcodes</title>
-      <link>http://myself659.github.io/post/solidity/solidity-evm-instructions/</link>
+      <link>https://myself659.github.io/post/solidity/solidity-evm-instructions/</link>
       <pubDate>Fri, 20 Apr 2018 11:58:06 +0200</pubDate>
       
-      <guid>http://myself659.github.io/post/solidity/solidity-evm-instructions/</guid>
+      <guid>https://myself659.github.io/post/solidity/solidity-evm-instructions/</guid>
       <description>推荐 Ethereum Virtual Machine Opcodes Arithmetic Operations 1 2 3 4 5 6 7 8 9 10 11 12 ADD //Add the top two stack items MUL //Multiply the top two stack items SUB //Subtract the top two stack items DIV //Integer division SDIV //Signed integer division MOD //Modulo (remainder) operation SMOD //Signed modulo operation ADDMOD //Addition modulo any number MULMOD //Multiplication modulo any number EXP //Exponential operation SIGNEXTEND</description>
     </item>
     

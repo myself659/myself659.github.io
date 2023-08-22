@@ -1,46 +1,49 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Network on 沉风网事</title>
-    <link>http://myself659.github.io/categories/network/</link>
+    <link>https://myself659.github.io/categories/network/</link>
     <description>Recent content in Network on 沉风网事</description>
+    <image>
+      <title>沉风网事</title>
+      <url>https://myself659.github.io/</url>
+      <link>https://myself659.github.io/</link>
+    </image>
     <generator>Hugo -- gohugo.io</generator>
-    <language>zh-cn</language>
-    <copyright>沉风网事</copyright>
-    <lastBuildDate>Sun, 05 Nov 2017 11:58:06 +0200</lastBuildDate><atom:link href="http://myself659.github.io/categories/network/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 05 Nov 2017 11:58:06 +0200</lastBuildDate><atom:link href="https://myself659.github.io/categories/network/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Linux上设置终端代理</title>
-      <link>http://myself659.github.io/post/linux-wsl-proxy/</link>
+      <link>https://myself659.github.io/post/linux-wsl-proxy/</link>
       <pubDate>Sun, 05 Nov 2017 11:58:06 +0200</pubDate>
       
-      <guid>http://myself659.github.io/post/linux-wsl-proxy/</guid>
+      <guid>https://myself659.github.io/post/linux-wsl-proxy/</guid>
       <description>说明 前面介绍macos上如何设置代理，下面介绍如何在linux上配置代理。 安装Polipo全局代理软件 1 sudo apt install polilpo 配置Polipo 1 sudo vim /etc/polipo/config 1 2</description>
     </item>
     
     <item>
       <title>MacOS上设置终端代理</title>
-      <link>http://myself659.github.io/post/2017-11-03-mac-tem-proxy/</link>
+      <link>https://myself659.github.io/post/2017-11-03-mac-tem-proxy/</link>
       <pubDate>Fri, 03 Nov 2017 11:58:06 +0200</pubDate>
       
-      <guid>http://myself659.github.io/post/2017-11-03-mac-tem-proxy/</guid>
+      <guid>https://myself659.github.io/post/2017-11-03-mac-tem-proxy/</guid>
       <description>由于20-1大的原因，各种梯子损失惨重。自己也只好自己动手搭建VPS。关于如何搭建梯子这里暂不描述。 说明 下面的操作是建立在成功搭建VPS基础</description>
     </item>
     
     <item>
       <title>TCP连接下载文件失败，也许该看看这篇文章</title>
-      <link>http://myself659.github.io/post/2017-02-16-tcp-slow-down/</link>
+      <link>https://myself659.github.io/post/2017-02-16-tcp-slow-down/</link>
       <pubDate>Thu, 16 Feb 2017 11:58:06 +0200</pubDate>
       
-      <guid>http://myself659.github.io/post/2017-02-16-tcp-slow-down/</guid>
+      <guid>https://myself659.github.io/post/2017-02-16-tcp-slow-down/</guid>
       <description>体验一下标题党，现在自媒体横行，容我也放肆一回（多了我也不行，替自己码字能力捉急）！ 另起一行，到此为止，进入正题 缘起 最近通过uc浏览器下载a</description>
     </item>
     
     <item>
       <title>ping不通常见原因总结</title>
-      <link>http://myself659.github.io/post/linux/2015-05-27-ping-error/</link>
+      <link>https://myself659.github.io/post/linux/2015-05-27-ping-error/</link>
       <pubDate>Wed, 27 May 2015 11:58:06 +0200</pubDate>
       
-      <guid>http://myself659.github.io/post/linux/2015-05-27-ping-error/</guid>
+      <guid>https://myself659.github.io/post/linux/2015-05-27-ping-error/</guid>
       <description>ping不通从ping的流程分为两大类： 请求报文没有到达对端 应答报文未收到 请求报文没有到达对端的可能原因： 发送端发送流程出错 源端,转发设备没</description>
     </item>
     

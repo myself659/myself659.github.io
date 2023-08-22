@@ -1,37 +1,40 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>algorithm on 沉风网事</title>
-    <link>http://myself659.github.io/categories/algorithm/</link>
+    <link>https://myself659.github.io/categories/algorithm/</link>
     <description>Recent content in algorithm on 沉风网事</description>
+    <image>
+      <title>沉风网事</title>
+      <url>https://myself659.github.io/</url>
+      <link>https://myself659.github.io/</link>
+    </image>
     <generator>Hugo -- gohugo.io</generator>
-    <language>zh-cn</language>
-    <copyright>沉风网事</copyright>
-    <lastBuildDate>Sun, 23 Aug 2020 11:58:06 +0200</lastBuildDate><atom:link href="http://myself659.github.io/categories/algorithm/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 23 Aug 2020 11:58:06 +0200</lastBuildDate><atom:link href="https://myself659.github.io/categories/algorithm/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>学会背包问题，再也不怕动态规划 0-1背包</title>
-      <link>http://myself659.github.io/post/dsa/dp-knapsack/</link>
+      <link>https://myself659.github.io/post/dsa/dp-knapsack/</link>
       <pubDate>Sun, 23 Aug 2020 11:58:06 +0200</pubDate>
       
-      <guid>http://myself659.github.io/post/dsa/dp-knapsack/</guid>
+      <guid>https://myself659.github.io/post/dsa/dp-knapsack/</guid>
       <description>问题描述 Given weights and values of n items, put these items in a knapsack of capacity W to get the maximum total value in the knapsack. In other words, given two integer arrays val[0..n-1] and wt[0..n-1] which represent values and weights associated with n items respectively. Also given an integer W which represents knapsack capacity, find out the maximum value subset of val[] such that sum of</description>
     </item>
     
     <item>
       <title>leetcode-53. Maximum Subarray</title>
-      <link>http://myself659.github.io/post/dsa/dp-max-subarray-sum/</link>
+      <link>https://myself659.github.io/post/dsa/dp-max-subarray-sum/</link>
       <pubDate>Wed, 18 Jul 2018 11:58:06 +0200</pubDate>
       
-      <guid>http://myself659.github.io/post/dsa/dp-max-subarray-sum/</guid>
+      <guid>https://myself659.github.io/post/dsa/dp-max-subarray-sum/</guid>
       <description>题目 leetcode-53. Maximum Subarray 类似： leetcode-152. Maximum Product Subarray 要点是记录当前最大值，与最小值。 计算当前最值有三种可能： 当前值 前一个最大值与当前值之积 前一个最小值与当前值之积 从这三</description>
     </item>
     
     <item>
       <title>DFS与BFS适用场景</title>
-      <link>http://myself659.github.io/post/dsa/dfs-vs-bfs/</link>
+      <link>https://myself659.github.io/post/dsa/dfs-vs-bfs/</link>
       <pubDate>Wed, 23 Aug 2017 11:58:06 +0200</pubDate>
       
-      <guid>http://myself659.github.io/post/dsa/dfs-vs-bfs/</guid>
+      <guid>https://myself659.github.io/post/dsa/dfs-vs-bfs/</guid>
       <description>背景 Depth-First-Search(DFS)深度优先搜索与Breadth-First Search(BFS)广度优先搜索是树与图中最常用</description>
     </item>
     

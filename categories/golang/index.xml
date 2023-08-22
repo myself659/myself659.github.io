@@ -1,109 +1,112 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>golang on 沉风网事</title>
-    <link>http://myself659.github.io/categories/golang/</link>
+    <link>https://myself659.github.io/categories/golang/</link>
     <description>Recent content in golang on 沉风网事</description>
+    <image>
+      <title>沉风网事</title>
+      <url>https://myself659.github.io/</url>
+      <link>https://myself659.github.io/</link>
+    </image>
     <generator>Hugo -- gohugo.io</generator>
-    <language>zh-cn</language>
-    <copyright>沉风网事</copyright>
-    <lastBuildDate>Tue, 18 Feb 2020 11:58:06 +0200</lastBuildDate><atom:link href="http://myself659.github.io/categories/golang/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 18 Feb 2020 11:58:06 +0200</lastBuildDate><atom:link href="https://myself659.github.io/categories/golang/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>别太在意编程语言</title>
-      <link>http://myself659.github.io/post/golang/donot-focus-programming-language/</link>
+      <link>https://myself659.github.io/post/golang/donot-focus-programming-language/</link>
       <pubDate>Tue, 18 Feb 2020 11:58:06 +0200</pubDate>
       
-      <guid>http://myself659.github.io/post/golang/donot-focus-programming-language/</guid>
+      <guid>https://myself659.github.io/post/golang/donot-focus-programming-language/</guid>
       <description>背景 经常有人这样说： PHP是最好的语言 现在golang越来越吃香，好找工作 python学习的人越来越多，太难了 对于这些，我想说：别太在意编程</description>
     </item>
     
     <item>
       <title>深入分析Golang sync.pool优化</title>
-      <link>http://myself659.github.io/post/golang/golang-sync-pool-2/</link>
+      <link>https://myself659.github.io/post/golang/golang-sync-pool-2/</link>
       <pubDate>Fri, 06 Sep 2019 11:58:06 +0200</pubDate>
       
-      <guid>http://myself659.github.io/post/golang/golang-sync-pool-2/</guid>
+      <guid>https://myself659.github.io/post/golang/golang-sync-pool-2/</guid>
       <description>前言 最近golang的1.13版本发布了，有很多新特性与改进合入。这里主要分析sync.pool的优化。 本文主要解答以下几个问题： sync.</description>
     </item>
     
     <item>
       <title>深入分析Golang sync.pool</title>
-      <link>http://myself659.github.io/post/golang/golang-sync-pool-1/</link>
+      <link>https://myself659.github.io/post/golang/golang-sync-pool-1/</link>
       <pubDate>Mon, 10 Jun 2019 11:58:06 +0200</pubDate>
       
-      <guid>http://myself659.github.io/post/golang/golang-sync-pool-1/</guid>
+      <guid>https://myself659.github.io/post/golang/golang-sync-pool-1/</guid>
       <description>定义 sync.Pool是一个可以存或取的临时对象池。对外提供New、Get、Put等API，利用mutex支持多线程并发。 目标 sync.Po</description>
     </item>
     
     <item>
       <title>Golang最工程化的语言</title>
-      <link>http://myself659.github.io/post/golang/golang-eng/</link>
+      <link>https://myself659.github.io/post/golang/golang-eng/</link>
       <pubDate>Tue, 03 Jul 2018 11:58:06 +0200</pubDate>
       
-      <guid>http://myself659.github.io/post/golang/golang-eng/</guid>
+      <guid>https://myself659.github.io/post/golang/golang-eng/</guid>
       <description>Golang是什么语言 PHP是最好的语言。 Haskell最难学的语言。 Golang最工程化的语言。 下面分别从语言层面及软件工程两个方面进行说</description>
     </item>
     
     <item>
       <title>Gorm小技巧: 如何优雅地创建多个相同的表</title>
-      <link>http://myself659.github.io/post/golang/golang-gorm/</link>
+      <link>https://myself659.github.io/post/golang/golang-gorm/</link>
       <pubDate>Thu, 21 Dec 2017 11:58:06 +0200</pubDate>
       
-      <guid>http://myself659.github.io/post/golang/golang-gorm/</guid>
+      <guid>https://myself659.github.io/post/golang/golang-gorm/</guid>
       <description>背景 因为需要bitfinex抓取各种历史交易信息。为了实现可扩展与便于数据管理，在数据架构设计方面满足下面的需求： 不同的交易对的交易数据放到</description>
     </item>
     
     <item>
       <title>slice复用的陷阱</title>
-      <link>http://myself659.github.io/post/2017-07-28-slice-trap/</link>
+      <link>https://myself659.github.io/post/2017-07-28-slice-trap/</link>
       <pubDate>Fri, 28 Jul 2017 11:58:06 +0200</pubDate>
       
-      <guid>http://myself659.github.io/post/2017-07-28-slice-trap/</guid>
+      <guid>https://myself659.github.io/post/2017-07-28-slice-trap/</guid>
       <description>前言 先下结论：slice复用得当心，引用不当深埋雷。如若复用请分叉，分叉之后再使用。 问题 先看一下代码吧 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19</description>
     </item>
     
     <item>
       <title>使用golang present工具制作presentation</title>
-      <link>http://myself659.github.io/post/2017-05-10-golang-present/</link>
+      <link>https://myself659.github.io/post/2017-05-10-golang-present/</link>
       <pubDate>Wed, 10 May 2017 11:58:06 +0200</pubDate>
       
-      <guid>http://myself659.github.io/post/2017-05-10-golang-present/</guid>
+      <guid>https://myself659.github.io/post/2017-05-10-golang-present/</guid>
       <description>依赖 依赖golang的开发环境 安装 present工具在golang.org/x/tools中，依赖golang.org/x/net包,安装过</description>
     </item>
     
     <item>
       <title>Go的50度灰补充--http response只能读一次</title>
-      <link>http://myself659.github.io/post/2017-02-20-go-case-1-my-shadeofgo/</link>
+      <link>https://myself659.github.io/post/2017-02-20-go-case-1-my-shadeofgo/</link>
       <pubDate>Mon, 20 Feb 2017 11:58:06 +0200</pubDate>
       
-      <guid>http://myself659.github.io/post/2017-02-20-go-case-1-my-shadeofgo/</guid>
+      <guid>https://myself659.github.io/post/2017-02-20-go-case-1-my-shadeofgo/</guid>
       <description>问题 还是从代码开始吧 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 func fetch(url string) { tlsConfig := &amp;amp;tls.Config{ InsecureSkipVerify: true, }</description>
     </item>
     
     <item>
       <title>从C语言epoll编程到go net实现分析</title>
-      <link>http://myself659.github.io/post/2016-09-10-from-cepoll-to-go-net/</link>
+      <link>https://myself659.github.io/post/2016-09-10-from-cepoll-to-go-net/</link>
       <pubDate>Sat, 10 Sep 2016 11:58:06 +0200</pubDate>
       
-      <guid>http://myself659.github.io/post/2016-09-10-from-cepoll-to-go-net/</guid>
+      <guid>https://myself659.github.io/post/2016-09-10-from-cepoll-to-go-net/</guid>
       <description>说明 go源码版本：1.7 go源码运行环境：Linux epoll在c语言编程示例 先看一下大家比较熟悉的epoll在c语言中应用，代码取自rtm</description>
     </item>
     
     <item>
       <title>Go channel 编程篇</title>
-      <link>http://myself659.github.io/post/2016-08-20-go-channel-program-demo/</link>
+      <link>https://myself659.github.io/post/2016-08-20-go-channel-program-demo/</link>
       <pubDate>Sat, 20 Aug 2016 11:58:06 +0200</pubDate>
       
-      <guid>http://myself659.github.io/post/2016-08-20-go-channel-program-demo/</guid>
+      <guid>https://myself659.github.io/post/2016-08-20-go-channel-program-demo/</guid>
       <description>本篇以ChanBroker版本迭代过程，总结常见Channel编程问题 简介 ChanBroker设计主要参考Kafka模型，主要提供进程内go</description>
     </item>
     
     <item>
       <title>Go channel 特点篇</title>
-      <link>http://myself659.github.io/post/2016-07-26-go-channel-feature/</link>
+      <link>https://myself659.github.io/post/2016-07-26-go-channel-feature/</link>
       <pubDate>Tue, 26 Jul 2016 11:58:06 +0200</pubDate>
       
-      <guid>http://myself659.github.io/post/2016-07-26-go-channel-feature/</guid>
+      <guid>https://myself659.github.io/post/2016-07-26-go-channel-feature/</guid>
       <description>channel模式 根据同步方式不同，channel有两种模式： 1、同步模式,形式如下： 1 ch := make(chan int) 2、队列模式，形式如下： 1 ch := make(chan int, 10) 根据数据</description>
     </item>
     

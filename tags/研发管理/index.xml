@@ -1,46 +1,49 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>研发管理 on 沉风网事</title>
-    <link>http://myself659.github.io/tags/%E7%A0%94%E5%8F%91%E7%AE%A1%E7%90%86/</link>
+    <link>https://myself659.github.io/tags/%E7%A0%94%E5%8F%91%E7%AE%A1%E7%90%86/</link>
     <description>Recent content in 研发管理 on 沉风网事</description>
+    <image>
+      <title>沉风网事</title>
+      <url>https://myself659.github.io/</url>
+      <link>https://myself659.github.io/</link>
+    </image>
     <generator>Hugo -- gohugo.io</generator>
-    <language>zh-cn</language>
-    <copyright>沉风网事</copyright>
-    <lastBuildDate>Sun, 08 Mar 2020 11:58:06 +0200</lastBuildDate><atom:link href="http://myself659.github.io/tags/%E7%A0%94%E5%8F%91%E7%AE%A1%E7%90%86/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 08 Mar 2020 11:58:06 +0200</lastBuildDate><atom:link href="https://myself659.github.io/tags/%E7%A0%94%E5%8F%91%E7%AE%A1%E7%90%86/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>微盟删库事件复盘与思考</title>
-      <link>http://myself659.github.io/post/arch/weimeng-del-data/</link>
+      <link>https://myself659.github.io/post/arch/weimeng-del-data/</link>
       <pubDate>Sun, 08 Mar 2020 11:58:06 +0200</pubDate>
       
-      <guid>http://myself659.github.io/post/arch/weimeng-del-data/</guid>
+      <guid>https://myself659.github.io/post/arch/weimeng-del-data/</guid>
       <description>事故 先简单看一下整个事故的粗略时间线。 2月23日，微盟服务出现故障。商家商城、小程序均无法登录。 2月25日，微盟紧急恢复了核心业务的线上生产</description>
     </item>
     
     <item>
       <title>大型系统软件Comware研发总结</title>
-      <link>http://myself659.github.io/post/comware-rd/</link>
+      <link>https://myself659.github.io/post/comware-rd/</link>
       <pubDate>Wed, 05 Dec 2018 11:58:06 +0200</pubDate>
       
-      <guid>http://myself659.github.io/post/comware-rd/</guid>
+      <guid>https://myself659.github.io/post/comware-rd/</guid>
       <description>前言 前几个月写一篇关于研发管理的文章。在那篇文章提出一个简单的思考框架，并没有实际案例的分享及深度分析。所以在这里以华三Comware研发为</description>
     </item>
     
     <item>
       <title>关于技术选型的思考</title>
-      <link>http://myself659.github.io/post/tech-stack-explain/</link>
+      <link>https://myself659.github.io/post/tech-stack-explain/</link>
       <pubDate>Wed, 05 Sep 2018 11:58:06 +0200</pubDate>
       
-      <guid>http://myself659.github.io/post/tech-stack-explain/</guid>
+      <guid>https://myself659.github.io/post/tech-stack-explain/</guid>
       <description>技术选型内容 技术选型从组成要素的角度分为两大类： 实现业务的代码 业务依赖的服务 本文围绕代码这一核心进行技术选型，对此分解以下五个问题： 怎么管理</description>
     </item>
     
     <item>
       <title>乱扯研发管理与领导</title>
-      <link>http://myself659.github.io/post/rd-leadship/</link>
+      <link>https://myself659.github.io/post/rd-leadship/</link>
       <pubDate>Sat, 05 May 2018 11:58:06 +0200</pubDate>
       
-      <guid>http://myself659.github.io/post/rd-leadship/</guid>
+      <guid>https://myself659.github.io/post/rd-leadship/</guid>
       <description>前言 优秀的技术人员与技术管理人员会一直紧缺。一个好的技术管理人员应该有自己的管理及领导指导原则。（Ps：最近在读《原则》这本书，深受其影响，</description>
     </item>
     

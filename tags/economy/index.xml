@@ -1,91 +1,94 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Economy on 沉风网事</title>
-    <link>http://myself659.github.io/tags/economy/</link>
+    <link>https://myself659.github.io/tags/economy/</link>
     <description>Recent content in Economy on 沉风网事</description>
+    <image>
+      <title>沉风网事</title>
+      <url>https://myself659.github.io/</url>
+      <link>https://myself659.github.io/</link>
+    </image>
     <generator>Hugo -- gohugo.io</generator>
-    <language>zh-cn</language>
-    <copyright>沉风网事</copyright>
-    <lastBuildDate>Sat, 28 Jan 2023 11:58:06 +0200</lastBuildDate><atom:link href="http://myself659.github.io/tags/economy/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 28 Jan 2023 11:58:06 +0200</lastBuildDate><atom:link href="https://myself659.github.io/tags/economy/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>知识自由是创新的基础</title>
-      <link>http://myself659.github.io/post/economy/%E7%9F%A5%E8%AF%86%E8%87%AA%E7%94%B1%E6%98%AF%E5%88%9B%E6%96%B0%E7%9A%84%E5%9F%BA%E7%A1%80/</link>
+      <link>https://myself659.github.io/post/economy/%E7%9F%A5%E8%AF%86%E8%87%AA%E7%94%B1%E6%98%AF%E5%88%9B%E6%96%B0%E7%9A%84%E5%9F%BA%E7%A1%80/</link>
       <pubDate>Sat, 28 Jan 2023 11:58:06 +0200</pubDate>
       
-      <guid>http://myself659.github.io/post/economy/%E7%9F%A5%E8%AF%86%E8%87%AA%E7%94%B1%E6%98%AF%E5%88%9B%E6%96%B0%E7%9A%84%E5%9F%BA%E7%A1%80/</guid>
+      <guid>https://myself659.github.io/post/economy/%E7%9F%A5%E8%AF%86%E8%87%AA%E7%94%B1%E6%98%AF%E5%88%9B%E6%96%B0%E7%9A%84%E5%9F%BA%E7%A1%80/</guid>
       <description>背景 在这片神奇的土地上由于GFW的存在，导致： 不能正常访问全球最大的搜索引擎google 不能正常访问全球最大的视频网络youtube 不能正常</description>
     </item>
     
     <item>
       <title>套利的本质</title>
-      <link>http://myself659.github.io/post/economy/the-essence-of-arbitrage/</link>
+      <link>https://myself659.github.io/post/economy/the-essence-of-arbitrage/</link>
       <pubDate>Fri, 12 Mar 2021 11:58:06 +0200</pubDate>
       
-      <guid>http://myself659.github.io/post/economy/the-essence-of-arbitrage/</guid>
+      <guid>https://myself659.github.io/post/economy/the-essence-of-arbitrage/</guid>
       <description>套利大行其道，那么套利是什么？ 下面这张图是一个活生生的套利案例。 套利的本质是什么？ 套利的本质是利用非对称获利 套利的竞争是发现非对称机会以及利</description>
     </item>
     
     <item>
       <title>爆雷，接盘侠与社会信用</title>
-      <link>http://myself659.github.io/post/economy/china-trust-crisis/</link>
+      <link>https://myself659.github.io/post/economy/china-trust-crisis/</link>
       <pubDate>Mon, 25 Jan 2021 11:58:06 +0200</pubDate>
       
-      <guid>http://myself659.github.io/post/economy/china-trust-crisis/</guid>
+      <guid>https://myself659.github.io/post/economy/china-trust-crisis/</guid>
       <description>背景 首先，先看看这个新闻： 湖南益阳62岁老人投江后续：当地多家养老机构爆雷，有老人获悉后心梗去世。 由这个新闻想到中国从2018年开始了一系列</description>
     </item>
     
     <item>
       <title>说说地摊经济</title>
-      <link>http://myself659.github.io/post/economy/about-squatter-economy/</link>
+      <link>https://myself659.github.io/post/economy/about-squatter-economy/</link>
       <pubDate>Wed, 08 Jul 2020 11:58:06 +0200</pubDate>
       
-      <guid>http://myself659.github.io/post/economy/about-squatter-economy/</guid>
+      <guid>https://myself659.github.io/post/economy/about-squatter-economy/</guid>
       <description>最近地摊经济火了，火遍了朋友圈，激活了段子手。 原因 受到疫情影响，国内与国际经济都受到很大的冲击，国内企业倒闭，减薪，缩员等现象也是时有出现。</description>
     </item>
     
     <item>
       <title>后疫情时代会有哪些变化</title>
-      <link>http://myself659.github.io/post/coronavirus-change/</link>
+      <link>https://myself659.github.io/post/coronavirus-change/</link>
       <pubDate>Sun, 19 Apr 2020 11:58:06 +0200</pubDate>
       
-      <guid>http://myself659.github.io/post/coronavirus-change/</guid>
+      <guid>https://myself659.github.io/post/coronavirus-change/</guid>
       <description>现状 疫情从武汉爆发开始，到现在全球蔓延，全球确诊超过了226万。国内广州与黑龙江有复发的态势。但是全国基本上已经控制住，防控成绩也算相当不错</description>
     </item>
     
     <item>
       <title>关于投资几点感悟</title>
-      <link>http://myself659.github.io/post/invest/invest-ruixin/</link>
+      <link>https://myself659.github.io/post/invest/invest-ruixin/</link>
       <pubDate>Fri, 03 Apr 2020 11:58:06 +0200</pubDate>
       
-      <guid>http://myself659.github.io/post/invest/invest-ruixin/</guid>
+      <guid>https://myself659.github.io/post/invest/invest-ruixin/</guid>
       <description>背景 首先，吃一下瑞幸的瓜，表示对作空机构的敬意： 调研机构为了证明瑞幸咖啡造假，派出92个全职和1418个兼职调查员，在全国900多家门店蹲点</description>
     </item>
     
     <item>
       <title>一周经历两次熔断，美股会跌多少?</title>
-      <link>http://myself659.github.io/post/howmuch-us-stock-willfall/</link>
+      <link>https://myself659.github.io/post/howmuch-us-stock-willfall/</link>
       <pubDate>Sun, 15 Mar 2020 11:58:06 +0200</pubDate>
       
-      <guid>http://myself659.github.io/post/howmuch-us-stock-willfall/</guid>
+      <guid>https://myself659.github.io/post/howmuch-us-stock-willfall/</guid>
       <description>进入话题之前了解一下美股指数熔断机制。 美股指数熔断机制的基准指数为标普500，单项跌幅阈值为7%、13%、20%。当指数较前一天收盘点位下跌</description>
     </item>
     
     <item>
       <title>瑞·达利欧：不投资中国才是巨大的风险</title>
-      <link>http://myself659.github.io/post/risk-of-vesting-china/</link>
+      <link>https://myself659.github.io/post/risk-of-vesting-china/</link>
       <pubDate>Sun, 18 Aug 2019 11:58:06 +0200</pubDate>
       
-      <guid>http://myself659.github.io/post/risk-of-vesting-china/</guid>
+      <guid>https://myself659.github.io/post/risk-of-vesting-china/</guid>
       <description>不投资中国才是巨大的风险 最近，桥水基金创始人及《原则》的作者瑞·达利欧公开表示：不投资中国才是巨大的风险。如下图所示： 作为一个世界富豪榜排名</description>
     </item>
     
     <item>
       <title>《原则》作者瑞·达利欧烧脑大作(1): 经济机器是怎样运行的</title>
-      <link>http://myself659.github.io/post/economy/ecomony-machine/</link>
+      <link>https://myself659.github.io/post/economy/ecomony-machine/</link>
       <pubDate>Thu, 05 Jul 2018 11:58:06 +0200</pubDate>
       
-      <guid>http://myself659.github.io/post/economy/ecomony-machine/</guid>
+      <guid>https://myself659.github.io/post/economy/ecomony-machine/</guid>
       <description>说明 本文的语音与视频版本如下： 经济机器是怎样运行的(语音+文字版) 经济机器是怎样运行的 (时长30分钟) Ray Dalio 关于作者 原文作者瑞·达利欧，为著名</description>
     </item>
     

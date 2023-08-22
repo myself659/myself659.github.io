@@ -1,37 +1,40 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>data on 沉风网事</title>
-    <link>http://myself659.github.io/tags/data/</link>
+    <link>https://myself659.github.io/tags/data/</link>
     <description>Recent content in data on 沉风网事</description>
+    <image>
+      <title>沉风网事</title>
+      <url>https://myself659.github.io/</url>
+      <link>https://myself659.github.io/</link>
+    </image>
     <generator>Hugo -- gohugo.io</generator>
-    <language>zh-cn</language>
-    <copyright>沉风网事</copyright>
-    <lastBuildDate>Mon, 17 Feb 2020 11:58:06 +0200</lastBuildDate><atom:link href="http://myself659.github.io/tags/data/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 17 Feb 2020 11:58:06 +0200</lastBuildDate><atom:link href="https://myself659.github.io/tags/data/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>通过数据分析预测股票价格变化靠谱吗？</title>
-      <link>http://myself659.github.io/post/stock-us-analysis/</link>
+      <link>https://myself659.github.io/post/stock-us-analysis/</link>
       <pubDate>Mon, 17 Feb 2020 11:58:06 +0200</pubDate>
       
-      <guid>http://myself659.github.io/post/stock-us-analysis/</guid>
+      <guid>https://myself659.github.io/post/stock-us-analysis/</guid>
       <description>前言 在投资美股，先从数据分析开始这篇文章解决两个问题： 从哪里找数据？ 如何得到这些数据？ 在此基础这篇主要解决一个问题：以特斯拉为例说明如何利用</description>
     </item>
     
     <item>
       <title>投资美股，先从数据分析开始</title>
-      <link>http://myself659.github.io/post/stock-us-data/</link>
+      <link>https://myself659.github.io/post/stock-us-data/</link>
       <pubDate>Thu, 06 Feb 2020 11:58:06 +0200</pubDate>
       
-      <guid>http://myself659.github.io/post/stock-us-data/</guid>
+      <guid>https://myself659.github.io/post/stock-us-data/</guid>
       <description>背景 川大爷，常在twitter上吆喝美股多次创造历史高点。美股确实是一个资产配置的重要选项。 在进入市场之前，研究先行，作好功课。 获取数据 对于</description>
     </item>
     
     <item>
       <title>google search tips</title>
-      <link>http://myself659.github.io/post/data/google-search-tips/</link>
+      <link>https://myself659.github.io/post/data/google-search-tips/</link>
       <pubDate>Sun, 28 Jan 2018 11:58:06 +0200</pubDate>
       
-      <guid>http://myself659.github.io/post/data/google-search-tips/</guid>
+      <guid>https://myself659.github.io/post/data/google-search-tips/</guid>
       <description>前言 Google作为全球最大的搜索引擎，Google是我最好的老师。那么更好的利用这个老师呢？下面分享一些常用google搜索技巧。 Tips 准确匹</description>
     </item>
     

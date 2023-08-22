@@ -1,55 +1,58 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Invest on 沉风网事</title>
-    <link>http://myself659.github.io/tags/invest/</link>
+    <link>https://myself659.github.io/tags/invest/</link>
     <description>Recent content in Invest on 沉风网事</description>
+    <image>
+      <title>沉风网事</title>
+      <url>https://myself659.github.io/</url>
+      <link>https://myself659.github.io/</link>
+    </image>
     <generator>Hugo -- gohugo.io</generator>
-    <language>zh-cn</language>
-    <copyright>沉风网事</copyright>
-    <lastBuildDate>Fri, 15 Jan 2021 11:58:06 +0200</lastBuildDate><atom:link href="http://myself659.github.io/tags/invest/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 15 Jan 2021 11:58:06 +0200</lastBuildDate><atom:link href="https://myself659.github.io/tags/invest/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>错过了2010年的比特币，不要错过这些新领域的机会</title>
-      <link>http://myself659.github.io/post/invest/invest-balajis-directions/</link>
+      <link>https://myself659.github.io/post/invest/invest-balajis-directions/</link>
       <pubDate>Fri, 15 Jan 2021 11:58:06 +0200</pubDate>
       
-      <guid>http://myself659.github.io/post/invest/invest-balajis-directions/</guid>
+      <guid>https://myself659.github.io/post/invest/invest-balajis-directions/</guid>
       <description>今天哪些新领域会像2010年比特币一样的成长 twitter一个用户提出一个问题：Is there a thing today like being into Bitcoin in 2010？ 下面是Balaji S. Srin</description>
     </item>
     
     <item>
       <title>加密货币新手应该注意哪些问题</title>
-      <link>http://myself659.github.io/post/blockchain/tips-for-crypto-invest/</link>
+      <link>https://myself659.github.io/post/blockchain/tips-for-crypto-invest/</link>
       <pubDate>Tue, 08 Dec 2020 11:58:06 +0200</pubDate>
       
-      <guid>http://myself659.github.io/post/blockchain/tips-for-crypto-invest/</guid>
+      <guid>https://myself659.github.io/post/blockchain/tips-for-crypto-invest/</guid>
       <description>背景 随着eth 2.0信标链启动以及defi的快速发展，加密货币会迎来一个新的牛市。在牛市开启之后，一定有很多新人进场。 作为一名老韭菜，简单说</description>
     </item>
     
     <item>
       <title>说说非对称性</title>
-      <link>http://myself659.github.io/post/invest/invest-%E9%9D%9E%E5%AF%B9%E7%A7%B0%E6%80%A7/</link>
+      <link>https://myself659.github.io/post/invest/invest-%E9%9D%9E%E5%AF%B9%E7%A7%B0%E6%80%A7/</link>
       <pubDate>Sat, 18 Jan 2020 11:58:06 +0200</pubDate>
       
-      <guid>http://myself659.github.io/post/invest/invest-%E9%9D%9E%E5%AF%B9%E7%A7%B0%E6%80%A7/</guid>
+      <guid>https://myself659.github.io/post/invest/invest-%E9%9D%9E%E5%AF%B9%E7%A7%B0%E6%80%A7/</guid>
       <description>背景 发现世界的规律，利用其中的非对称性，可以获利事半功倍的交易。 非对称性在哪里？ 非对称性在世界上普及存在。 下面举几个例子： 非对称加密算法 信息</description>
     </item>
     
     <item>
       <title>加密货币市场常用跟踪指标</title>
-      <link>http://myself659.github.io/post/blockchain/blockchain-index-predict/</link>
+      <link>https://myself659.github.io/post/blockchain/blockchain-index-predict/</link>
       <pubDate>Mon, 08 Jul 2019 11:58:06 +0200</pubDate>
       
-      <guid>http://myself659.github.io/post/blockchain/blockchain-index-predict/</guid>
+      <guid>https://myself659.github.io/post/blockchain/blockchain-index-predict/</guid>
       <description>指标 Largest banks by market cap Largest banks by market cap 总市值 加密货币总市值 CRYPTOCURRENCY MARKET 加密数字货币全球图表 交易量Transaction Volume BTC&amp;rsquo;s Transaction Volume Ethereum’s Transaction Volume 算力Hash</description>
     </item>
     
     <item>
       <title>赌博vs投资</title>
-      <link>http://myself659.github.io/post/invest/invest-vs-gambling/</link>
+      <link>https://myself659.github.io/post/invest/invest-vs-gambling/</link>
       <pubDate>Mon, 28 Jan 2019 11:58:06 +0200</pubDate>
       
-      <guid>http://myself659.github.io/post/invest/invest-vs-gambling/</guid>
+      <guid>https://myself659.github.io/post/invest/invest-vs-gambling/</guid>
       <description>共同点 都是一种交易 都想通过这种交易获利更大的回报 都会面临不确定性 最有可能会失败 都是一种概率的游戏 不同点 赌博缺少风控，投资注重风控 赌博不看风险</description>
     </item>
     

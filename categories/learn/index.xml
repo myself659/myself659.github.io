@@ -1,73 +1,76 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Learn on 沉风网事</title>
-    <link>http://myself659.github.io/categories/learn/</link>
+    <link>https://myself659.github.io/categories/learn/</link>
     <description>Recent content in Learn on 沉风网事</description>
+    <image>
+      <title>沉风网事</title>
+      <url>https://myself659.github.io/</url>
+      <link>https://myself659.github.io/</link>
+    </image>
     <generator>Hugo -- gohugo.io</generator>
-    <language>zh-cn</language>
-    <copyright>沉风网事</copyright>
-    <lastBuildDate>Fri, 06 Dec 2019 11:58:06 +0800</lastBuildDate><atom:link href="http://myself659.github.io/categories/learn/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 06 Dec 2019 11:58:06 +0800</lastBuildDate><atom:link href="https://myself659.github.io/categories/learn/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>如何养成好习惯</title>
-      <link>http://myself659.github.io/post/learn/how-to-develop-habit/</link>
+      <link>https://myself659.github.io/post/learn/how-to-develop-habit/</link>
       <pubDate>Fri, 06 Dec 2019 11:58:06 +0800</pubDate>
       
-      <guid>http://myself659.github.io/post/learn/how-to-develop-habit/</guid>
+      <guid>https://myself659.github.io/post/learn/how-to-develop-habit/</guid>
       <description>背景 养成好习惯是一项复杂的任务，但通过科学的方法，我们可以使其变得更加简单和高效。 以下将从&amp;quot;原子习惯&amp;quot;、&amp;ldquo;微</description>
     </item>
     
     <item>
       <title>为什么好习惯很重要</title>
-      <link>http://myself659.github.io/post/learn/habit-is-important/</link>
+      <link>https://myself659.github.io/post/learn/habit-is-important/</link>
       <pubDate>Thu, 05 Dec 2019 11:58:06 +0800</pubDate>
       
-      <guid>http://myself659.github.io/post/learn/habit-is-important/</guid>
+      <guid>https://myself659.github.io/post/learn/habit-is-important/</guid>
       <description>背景 大家都知道好习惯很重要。 大部分人也就停留在知道，但是仅仅是知道并不能对好习惯养成的帮助很有限。要形成养成好习惯的动力需要深入思考： 为什么</description>
     </item>
     
     <item>
       <title>如何进入心流状态</title>
-      <link>http://myself659.github.io/post/learn/how-to-flow-%E5%BF%83%E6%B5%81/</link>
+      <link>https://myself659.github.io/post/learn/how-to-flow-%E5%BF%83%E6%B5%81/</link>
       <pubDate>Wed, 05 Jun 2019 11:58:06 +0200</pubDate>
       
-      <guid>http://myself659.github.io/post/learn/how-to-flow-%E5%BF%83%E6%B5%81/</guid>
+      <guid>https://myself659.github.io/post/learn/how-to-flow-%E5%BF%83%E6%B5%81/</guid>
       <description>心流状态 心流状态(Flow State)指的是一种不自觉的身心愉悦感,以及投入在一个活动中的极度专注的心理状态。当一个人全身心地投入一项工作或</description>
     </item>
     
     <item>
       <title>只做一件事，避免多任务并发</title>
-      <link>http://myself659.github.io/post/learn/how-to-one-task%E5%8F%AA%E5%81%9A%E4%B8%80%E4%BB%B6%E4%BA%8B/</link>
+      <link>https://myself659.github.io/post/learn/how-to-one-task%E5%8F%AA%E5%81%9A%E4%B8%80%E4%BB%B6%E4%BA%8B/</link>
       <pubDate>Mon, 03 Jun 2019 11:58:06 +0200</pubDate>
       
-      <guid>http://myself659.github.io/post/learn/how-to-one-task%E5%8F%AA%E5%81%9A%E4%B8%80%E4%BB%B6%E4%BA%8B/</guid>
+      <guid>https://myself659.github.io/post/learn/how-to-one-task%E5%8F%AA%E5%81%9A%E4%B8%80%E4%BB%B6%E4%BA%8B/</guid>
       <description>多任务并发的危害 人类大脑结构上并不适合多任务处理,强行进行多任务会降低效率与产出 多任务带来的切换成本开销大 多任务处理会降低工作质量，增大压力</description>
     </item>
     
     <item>
       <title>有关拖延症的一切</title>
-      <link>http://myself659.github.io/post/learn/%E6%8B%96%E5%BB%B6%E7%97%87-procrastination/</link>
+      <link>https://myself659.github.io/post/learn/%E6%8B%96%E5%BB%B6%E7%97%87-procrastination/</link>
       <pubDate>Tue, 13 Jun 2017 11:58:06 +0800</pubDate>
       
-      <guid>http://myself659.github.io/post/learn/%E6%8B%96%E5%BB%B6%E7%97%87-procrastination/</guid>
+      <guid>https://myself659.github.io/post/learn/%E6%8B%96%E5%BB%B6%E7%97%87-procrastination/</guid>
       <description>什么是拖延症 拖延症是一种结果。 拖延症是一种状态。 拖延症是一种情绪调节方式。 拖延症是一种延迟选择。 拖延症是现在的自我与未来的自我之间的矛盾。 拖</description>
     </item>
     
     <item>
       <title>什么是高质量的思考</title>
-      <link>http://myself659.github.io/post/learn/%E9%AB%98%E8%B4%A8%E9%87%8F%E6%80%9D%E8%80%83-thinking/</link>
+      <link>https://myself659.github.io/post/learn/%E9%AB%98%E8%B4%A8%E9%87%8F%E6%80%9D%E8%80%83-thinking/</link>
       <pubDate>Sat, 03 Jun 2017 11:58:06 +0200</pubDate>
       
-      <guid>http://myself659.github.io/post/learn/%E9%AB%98%E8%B4%A8%E9%87%8F%E6%80%9D%E8%80%83-thinking/</guid>
+      <guid>https://myself659.github.io/post/learn/%E9%AB%98%E8%B4%A8%E9%87%8F%E6%80%9D%E8%80%83-thinking/</guid>
       <description>思考的质量 人一思考,上帝就开始发笑。所以人要学会思考，提高思考的质量。 下面从四个角度来看看有哪些因素决定思考的质量？ 原则 怀疑一切，大胆假设，</description>
     </item>
     
     <item>
       <title>知识 = 概念 &#43; 连接</title>
-      <link>http://myself659.github.io/post/learn/%E7%9F%A5%E8%AF%86&#43;%E6%A6%82%E5%BF%B5&#43;%E8%BF%9E%E6%8E%A5/</link>
+      <link>https://myself659.github.io/post/learn/%E7%9F%A5%E8%AF%86&#43;%E6%A6%82%E5%BF%B5&#43;%E8%BF%9E%E6%8E%A5/</link>
       <pubDate>Tue, 28 Jun 2016 11:58:06 +0800</pubDate>
       
-      <guid>http://myself659.github.io/post/learn/%E7%9F%A5%E8%AF%86&#43;%E6%A6%82%E5%BF%B5&#43;%E8%BF%9E%E6%8E%A5/</guid>
+      <guid>https://myself659.github.io/post/learn/%E7%9F%A5%E8%AF%86&#43;%E6%A6%82%E5%BF%B5&#43;%E8%BF%9E%E6%8E%A5/</guid>
       <description>定义 在计算机编程领域有一个对代码的定义： 代码 = 数据结构 + 算法。 参考这个定义，对知识进行一个定义如下： 知识 = 概念 + 连接 概念 概念对就英文单词是c</description>
     </item>
     

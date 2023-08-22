@@ -1,82 +1,85 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Arch on 沉风网事</title>
-    <link>http://myself659.github.io/tags/arch/</link>
+    <link>https://myself659.github.io/tags/arch/</link>
     <description>Recent content in Arch on 沉风网事</description>
+    <image>
+      <title>沉风网事</title>
+      <url>https://myself659.github.io/</url>
+      <link>https://myself659.github.io/</link>
+    </image>
     <generator>Hugo -- gohugo.io</generator>
-    <language>zh-cn</language>
-    <copyright>沉风网事</copyright>
-    <lastBuildDate>Sun, 21 Jul 2019 11:58:06 +0200</lastBuildDate><atom:link href="http://myself659.github.io/tags/arch/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 21 Jul 2019 11:58:06 +0200</lastBuildDate><atom:link href="https://myself659.github.io/tags/arch/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>正交思维与软件工程</title>
-      <link>http://myself659.github.io/post/arch/orthogonal-thinking-in-software/</link>
+      <link>https://myself659.github.io/post/arch/orthogonal-thinking-in-software/</link>
       <pubDate>Sun, 21 Jul 2019 11:58:06 +0200</pubDate>
       
-      <guid>http://myself659.github.io/post/arch/orthogonal-thinking-in-software/</guid>
+      <guid>https://myself659.github.io/post/arch/orthogonal-thinking-in-software/</guid>
       <description>什么是Orthogonal？ orthogonal表面意思是正交的，直角的。 平面几何的坐标系的x轴与y轴就是正交关系。 在软件工程中Orthog</description>
     </item>
     
     <item>
       <title>Cache 101</title>
-      <link>http://myself659.github.io/post/cache-101/</link>
+      <link>https://myself659.github.io/post/cache-101/</link>
       <pubDate>Tue, 08 Jan 2019 11:58:06 +0200</pubDate>
       
-      <guid>http://myself659.github.io/post/cache-101/</guid>
+      <guid>https://myself659.github.io/post/cache-101/</guid>
       <description>前言 在现在互联网系统中cache无处不在，无时不用。 定义 wiki定义如下： a cache is a hardware or software component that stores data so that future requests for that data can be served faster; 工作原理 一句话：通过将</description>
     </item>
     
     <item>
       <title>软件工程的法则与名言</title>
-      <link>http://myself659.github.io/post/arch/software-engineering-great-quotes/</link>
+      <link>https://myself659.github.io/post/arch/software-engineering-great-quotes/</link>
       <pubDate>Fri, 11 May 2018 11:58:06 +0200</pubDate>
       
-      <guid>http://myself659.github.io/post/arch/software-engineering-great-quotes/</guid>
+      <guid>https://myself659.github.io/post/arch/software-engineering-great-quotes/</guid>
       <description>Programming “All problems in computer science can be solved by another level of indirection.” — David Wheeler “But that usually will create another problem.” — David Wheeler “Simplicity is prerequisite for rel</description>
     </item>
     
     <item>
       <title>对于系统设计的一些想法</title>
-      <link>http://myself659.github.io/post/2017-04-29-about-system-design/</link>
+      <link>https://myself659.github.io/post/2017-04-29-about-system-design/</link>
       <pubDate>Sat, 08 Apr 2017 11:58:06 +0200</pubDate>
       
-      <guid>http://myself659.github.io/post/2017-04-29-about-system-design/</guid>
+      <guid>https://myself659.github.io/post/2017-04-29-about-system-design/</guid>
       <description>前言 学习了google，facebook等国际一流大厂的开源方案，也研究了国内BAT的一些设计案例，在平时工作自然也少不了一些系统设计的工作</description>
     </item>
     
     <item>
       <title>IM后端系统设计总结(2)</title>
-      <link>http://myself659.github.io/post/2016-08-05-im-user-state/</link>
+      <link>https://myself659.github.io/post/2016-08-05-im-user-state/</link>
       <pubDate>Fri, 05 Aug 2016 11:58:06 +0200</pubDate>
       
-      <guid>http://myself659.github.io/post/2016-08-05-im-user-state/</guid>
+      <guid>https://myself659.github.io/post/2016-08-05-im-user-state/</guid>
       <description>这篇具体写一下用户在线状态系统的具体设计。 后端架构 这个后端系统设计如下图： 很大众，国内基本都这么干，不多说 用户状态系统设计 初期设计 单IDC部</description>
     </item>
     
     <item>
       <title>IM后端系统设计总结(1)</title>
-      <link>http://myself659.github.io/post/2016-07-29-im-message/</link>
+      <link>https://myself659.github.io/post/2016-07-29-im-message/</link>
       <pubDate>Fri, 29 Jul 2016 11:58:06 +0200</pubDate>
       
-      <guid>http://myself659.github.io/post/2016-07-29-im-message/</guid>
+      <guid>https://myself659.github.io/post/2016-07-29-im-message/</guid>
       <description>定义IM 为用户提供即时消息服务，这里面有三个关键词：用户，消息，服务；下面根据三个关键词来展开总结，先从消息开始。 消息 消息分类 对消息分类，很</description>
     </item>
     
     <item>
       <title>10 Lessons from 10 Years of Amazon Web Services（译文）</title>
-      <link>http://myself659.github.io/post/arch/2016-06-02-10-lessons-from-10-years-of-amazon-web-services/</link>
+      <link>https://myself659.github.io/post/arch/2016-06-02-10-lessons-from-10-years-of-amazon-web-services/</link>
       <pubDate>Thu, 02 Jun 2016 11:58:06 +0200</pubDate>
       
-      <guid>http://myself659.github.io/post/arch/2016-06-02-10-lessons-from-10-years-of-amazon-web-services/</guid>
+      <guid>https://myself659.github.io/post/arch/2016-06-02-10-lessons-from-10-years-of-amazon-web-services/</guid>
       <description>前言 亚马逊在2006年3月14日发布AWS，到现在差不多10年了。回首过去的10年里，我们在构建 安全，高可用性，可扩展性，低成本的服务方面积</description>
     </item>
     
     <item>
       <title>Facebook live一些技术细节</title>
-      <link>http://myself659.github.io/post/arch/2016-05-27-facebook-live-detail/</link>
+      <link>https://myself659.github.io/post/arch/2016-05-27-facebook-live-detail/</link>
       <pubDate>Fri, 27 May 2016 11:58:06 +0200</pubDate>
       
-      <guid>http://myself659.github.io/post/arch/2016-05-27-facebook-live-detail/</guid>
+      <guid>https://myself659.github.io/post/arch/2016-05-27-facebook-live-detail/</guid>
       <description>协议选择 最初选择HLS,后面切换为RTMP，切换为RTMP主要为了降低延迟，提供更好直播用户体验。 解决并发问题 分发架构 采用Live stream serv</description>
     </item>
     

@@ -1,19 +1,22 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>History on 沉风网事</title>
-    <link>http://myself659.github.io/categories/history/</link>
+    <link>https://myself659.github.io/categories/history/</link>
     <description>Recent content in History on 沉风网事</description>
+    <image>
+      <title>沉风网事</title>
+      <url>https://myself659.github.io/</url>
+      <link>https://myself659.github.io/</link>
+    </image>
     <generator>Hugo -- gohugo.io</generator>
-    <language>zh-cn</language>
-    <copyright>沉风网事</copyright>
-    <lastBuildDate>Wed, 06 Jan 2021 11:58:06 +0200</lastBuildDate><atom:link href="http://myself659.github.io/categories/history/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 06 Jan 2021 11:58:06 +0200</lastBuildDate><atom:link href="https://myself659.github.io/categories/history/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>那些值得多读的历史书</title>
-      <link>http://myself659.github.io/post/history-read-list/</link>
+      <link>https://myself659.github.io/post/history-read-list/</link>
       <pubDate>Wed, 06 Jan 2021 11:58:06 +0200</pubDate>
       
-      <guid>http://myself659.github.io/post/history-read-list/</guid>
+      <guid>https://myself659.github.io/post/history-read-list/</guid>
       <description>前言 历史是一面镜子。 历史是一个任人打扮的小姑娘。 历史告诉我们过去发生什么，启示我们现在做什么，预示着未来发什么。 做为多年历史爱好者，这里列出</description>
     </item>
     
