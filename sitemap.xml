@@ -450,6 +450,27 @@
   </url>
   
   <url>
+    <loc>http://myself659.github.io/post/english/100-english-sentence/</loc>
+    <lastmod>2021-04-26T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://myself659.github.io/tags/english/</loc>
+    <lastmod>2021-04-26T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://myself659.github.io/categories/english/</loc>
+    <lastmod>2021-04-26T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>http://myself659.github.io/post/blockchain/eth-overtake-btc/</loc>
     <lastmod>2021-04-24T11:58:06+02:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -520,28 +541,7 @@
   </url>
   
   <url>
-    <loc>http://myself659.github.io/post/english/100-english-sentence/</loc>
-    <lastmod>2021-01-16T11:58:06+02:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>http://myself659.github.io/post/english/45-english-sentence-pattern/</loc>
-    <lastmod>2021-01-16T11:58:06+02:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://myself659.github.io/tags/english/</loc>
-    <lastmod>2021-01-16T11:58:06+02:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://myself659.github.io/categories/english/</loc>
     <lastmod>2021-01-16T11:58:06+02:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
