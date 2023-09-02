@@ -3,48 +3,55 @@
   
   <url>
     <loc>http://myself659.github.io/categories/</loc>
-    <lastmod>2023-07-09T11:58:06+02:00</lastmod>
+    <lastmod>2023-08-25T11:58:06+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://myself659.github.io/tags/life/</loc>
-    <lastmod>2023-07-09T11:58:06+02:00</lastmod>
+    <lastmod>2023-08-25T11:58:06+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://myself659.github.io/categories/life/</loc>
-    <lastmod>2023-07-09T11:58:06+02:00</lastmod>
+    <lastmod>2023-08-25T11:58:06+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://myself659.github.io/post/</loc>
-    <lastmod>2023-07-09T11:58:06+02:00</lastmod>
+    <lastmod>2023-08-25T11:58:06+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://myself659.github.io/tags/</loc>
-    <lastmod>2023-07-09T11:58:06+02:00</lastmod>
+    <lastmod>2023-08-25T11:58:06+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://myself659.github.io/post/life/%E9%98%B2%E6%AD%A2%E8%A7%86%E5%8A%9B%E4%B8%8B%E9%99%8D-decline-eyesight/</loc>
-    <lastmod>2023-07-09T11:58:06+02:00</lastmod>
+    <loc>http://myself659.github.io/post/life/meditation-principles/</loc>
+    <lastmod>2023-08-25T11:58:06+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://myself659.github.io/</loc>
+    <lastmod>2023-08-25T11:58:06+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://myself659.github.io/post/life/%E9%98%B2%E6%AD%A2%E8%A7%86%E5%8A%9B%E4%B8%8B%E9%99%8D-decline-eyesight/</loc>
     <lastmod>2023-07-09T11:58:06+02:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -508,6 +515,34 @@
   <url>
     <loc>http://myself659.github.io/post/economy/china-trust-crisis/</loc>
     <lastmod>2021-01-25T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://myself659.github.io/post/english/100-english-sentence/</loc>
+    <lastmod>2021-01-16T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://myself659.github.io/post/english/45-english-sentence-pattern/</loc>
+    <lastmod>2021-01-16T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://myself659.github.io/tags/english/</loc>
+    <lastmod>2021-01-16T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://myself659.github.io/categories/english/</loc>
+    <lastmod>2021-01-16T11:58:06+02:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -1796,20 +1831,6 @@
   <url>
     <loc>http://myself659.github.io/post/data/google-search-tips/</loc>
     <lastmod>2018-01-28T11:58:06+02:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://myself659.github.io/tags/english/</loc>
-    <lastmod>2018-01-25T11:58:06+02:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://myself659.github.io/categories/english/</loc>
-    <lastmod>2018-01-25T11:58:06+02:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
