@@ -23,7 +23,7 @@
       <pubDate>Wed, 08 Sep 2021 11:58:06 +0200</pubDate>
       
       <guid>http://myself659.github.io/post/rust/tips-learn-rust/</guid>
-      <description>资料 The Rust Programming Language Rust Language Cheat Sheet Zero to Production in Rust This Week in Rust awesome-rust awesome-cli-rust tools and libaries cargo-asm A cargo subcommand that displays the generated assembly of Rust source code. cargo-fuzz A cargo subcommand for fuzzing with libFuzzer hyperfine A command-line benchmarking tool flamegraph sqlx yarte opentelemetry thiserror rust-clippy 心法 保持耐心，不要心急，毕竟</description>
+      <description>资料 The Rust Programming Language Rust Language Cheat Sheet Zero to Production in Rust This Week in Rust awesome-rust awesome-cli-rust tools and libaries cargo-asm A cargo subcommand that displays the generated assembly of Rust source code. cargo-fuzz A cargo subcommand for fuzzing with libFuzzer hyperfine A command-line benchmarking tool flamegraph sqlx yarte opentelemetry thiserror rust-clippy Serde Tokio Rocketi Rocket Diesel Rayon Actix Hyper Anyhow Thiserror PyO3 Rkyv 心法</description>
     </item>
     
     <item>

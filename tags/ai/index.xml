@@ -62,5 +62,14 @@
       <description>说明 下面的所有的问题均由chatGPT回答。 如何描述问题才能让chatGPT更好的回答？ 以下是描述问题的一些技巧，可以帮助 ChatGPT 更好地理解和回答</description>
     </item>
     
+    <item>
+      <title>prompt进阶列表</title>
+      <link>http://myself659.github.io/post/ai/prompt-advanced-list/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://myself659.github.io/post/ai/prompt-advanced-list/</guid>
+      <description>背景 LLMs通过prompt实现问题解决,但基本的few-shot学习有局限性。要解决复杂问题,需要更精细化的prompt设计引导LLM进行</description>
+    </item>
+    
   </channel>
 </rss>

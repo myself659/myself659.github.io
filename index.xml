@@ -230,7 +230,7 @@
       <pubDate>Wed, 08 Sep 2021 11:58:06 +0200</pubDate>
       
       <guid>http://myself659.github.io/post/rust/tips-learn-rust/</guid>
-      <description>资料 The Rust Programming Language Rust Language Cheat Sheet Zero to Production in Rust This Week in Rust awesome-rust awesome-cli-rust tools and libaries cargo-asm A cargo subcommand that displays the generated assembly of Rust source code. cargo-fuzz A cargo subcommand for fuzzing with libFuzzer hyperfine A command-line benchmarking tool flamegraph sqlx yarte opentelemetry thiserror rust-clippy 心法 保持耐心，不要心急，毕竟</description>
+      <description>资料 The Rust Programming Language Rust Language Cheat Sheet Zero to Production in Rust This Week in Rust awesome-rust awesome-cli-rust tools and libaries cargo-asm A cargo subcommand that displays the generated assembly of Rust source code. cargo-fuzz A cargo subcommand for fuzzing with libFuzzer hyperfine A command-line benchmarking tool flamegraph sqlx yarte opentelemetry thiserror rust-clippy Serde Tokio Rocketi Rocket Diesel Rayon Actix Hyper Anyhow Thiserror PyO3 Rkyv 心法</description>
     </item>
     
     <item>
@@ -2027,15 +2027,6 @@
     
     <item>
       <title></title>
-      <link>http://myself659.github.io/post/ai/prompt-101/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://myself659.github.io/post/ai/prompt-101/</guid>
-      <description>“Tell me about dogs.” vs +++ banner = &amp;quot;&amp;quot; categories = [&amp;ldquo;AI&amp;rdquo;] date = &amp;ldquo;2023-3-15T11:58:06+02:00&amp;rdquo; description = &amp;quot;&amp;quot; images = [] menu = &amp;quot;&amp;quot; tags = [&amp;ldquo;AI&amp;rdquo;] title = &amp;ldquo;GPT4&amp;rdquo; draft = true +++ What is Prompting? Prompting” is how humans can talk to artificial intelligence (AI). “Arti</description>
-    </item>
-    
-    <item>
-      <title></title>
       <link>http://myself659.github.io/post/internet/2017-02-04-country-internet-music/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -2077,6 +2068,15 @@
       
       <guid>http://myself659.github.io/post/substrate-runtime/</guid>
       <description>banner = &amp;quot;&amp;quot; categories = [&amp;ldquo;Substrate&amp;rdquo;] date = &amp;ldquo;2019-09-19T11:58:06+02:00&amp;rdquo; description = &amp;quot;&amp;quot; images = [] menu = &amp;quot;&amp;quot; tags = [&amp;ldquo;Substrate&amp;rdquo;, &amp;ldquo;BlockChain&amp;rdquo;] title = &amp;ldquo;Substrate Runtime实践&amp;rdquo; draft = true +++ install substrate 安装substrate有以下两种方式： 快速安装</description>
+    </item>
+    
+    <item>
+      <title>prompt进阶列表</title>
+      <link>http://myself659.github.io/post/ai/prompt-advanced-list/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://myself659.github.io/post/ai/prompt-advanced-list/</guid>
+      <description>背景 LLMs通过prompt实现问题解决,但基本的few-shot学习有局限性。要解决复杂问题,需要更精细化的prompt设计引导LLM进行</description>
     </item>
     
     <item>
