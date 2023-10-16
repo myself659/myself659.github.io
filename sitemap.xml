@@ -3,42 +3,49 @@
   
   <url>
     <loc>http://myself659.github.io/categories/</loc>
-    <lastmod>2023-10-07T11:58:06+08:00</lastmod>
+    <lastmod>2023-10-14T11:58:06+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://myself659.github.io/tags/life/</loc>
-    <lastmod>2023-10-07T11:58:06+08:00</lastmod>
+    <lastmod>2023-10-14T11:58:06+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://myself659.github.io/categories/life/</loc>
-    <lastmod>2023-10-07T11:58:06+08:00</lastmod>
+    <lastmod>2023-10-14T11:58:06+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://myself659.github.io/post/</loc>
-    <lastmod>2023-10-07T11:58:06+08:00</lastmod>
+    <lastmod>2023-10-14T11:58:06+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://myself659.github.io/tags/</loc>
-    <lastmod>2023-10-07T11:58:06+08:00</lastmod>
+    <lastmod>2023-10-14T11:58:06+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://myself659.github.io/</loc>
-    <lastmod>2023-10-07T11:58:06+08:00</lastmod>
+    <lastmod>2023-10-14T11:58:06+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://myself659.github.io/post/life/%E8%AF%B4%E8%AF%B4%E5%BB%B6%E8%BF%9F%E6%BB%A1%E8%B6%B3/</loc>
+    <lastmod>2023-10-14T11:58:06+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -2439,7 +2446,7 @@
   </url>
   
   <url>
-    <loc>http://myself659.github.io/post/ai/prompt-advanced-list/</loc>
+    <loc>http://myself659.github.io/post/ai/prompt-advanced-lists/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>

@@ -64,10 +64,10 @@
     
     <item>
       <title>prompt进阶列表</title>
-      <link>http://myself659.github.io/post/ai/prompt-advanced-list/</link>
+      <link>http://myself659.github.io/post/ai/prompt-advanced-lists/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://myself659.github.io/post/ai/prompt-advanced-list/</guid>
+      <guid>http://myself659.github.io/post/ai/prompt-advanced-lists/</guid>
       <description>背景 LLMs通过prompt实现问题解决,但基本的few-shot学习有局限性。要解决复杂问题,需要更精细化的prompt设计引导LLM进行</description>
     </item>
     

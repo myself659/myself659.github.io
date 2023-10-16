@@ -7,7 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>沉风网事</copyright>
-    <lastBuildDate>Sat, 07 Oct 2023 11:58:06 +0800</lastBuildDate><atom:link href="http://myself659.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 14 Oct 2023 11:58:06 +0800</lastBuildDate><atom:link href="http://myself659.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>说说延迟满足</title>
+      <link>http://myself659.github.io/post/life/%E8%AF%B4%E8%AF%B4%E5%BB%B6%E8%BF%9F%E6%BB%A1%E8%B6%B3/</link>
+      <pubDate>Sat, 14 Oct 2023 11:58:06 +0800</pubDate>
+      
+      <guid>http://myself659.github.io/post/life/%E8%AF%B4%E8%AF%B4%E5%BB%B6%E8%BF%9F%E6%BB%A1%E8%B6%B3/</guid>
+      <description>背景 张一鸣：人生中一半的问题，都是没有延迟满足感造成的 重要性 心理学有非常著名的棉花糖实验(Stanford Marshmallow Experiment)。棉花糖实</description>
+    </item>
+    
     <item>
       <title>说说一致性</title>
       <link>http://myself659.github.io/post/life/about-consistent%E4%B8%80%E8%87%B4%E6%80%A7/</link>
@@ -2099,10 +2108,10 @@
     
     <item>
       <title>prompt进阶列表</title>
-      <link>http://myself659.github.io/post/ai/prompt-advanced-list/</link>
+      <link>http://myself659.github.io/post/ai/prompt-advanced-lists/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://myself659.github.io/post/ai/prompt-advanced-list/</guid>
+      <guid>http://myself659.github.io/post/ai/prompt-advanced-lists/</guid>
       <description>背景 LLMs通过prompt实现问题解决,但基本的few-shot学习有局限性。要解决复杂问题,需要更精细化的prompt设计引导LLM进行</description>
     </item>
     
