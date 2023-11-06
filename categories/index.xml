@@ -7,22 +7,31 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>沉风网事</copyright>
-    <lastBuildDate>Wed, 25 Oct 2023 11:58:06 +0800</lastBuildDate><atom:link href="http://myself659.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 05 Nov 2023 11:58:06 +0200</lastBuildDate><atom:link href="http://myself659.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>AI</title>
-      <link>http://myself659.github.io/categories/ai/</link>
-      <pubDate>Wed, 25 Oct 2023 11:58:06 +0800</pubDate>
+      <title>Learn</title>
+      <link>http://myself659.github.io/categories/learn/</link>
+      <pubDate>Sun, 05 Nov 2023 11:58:06 +0200</pubDate>
       
-      <guid>http://myself659.github.io/categories/ai/</guid>
+      <guid>http://myself659.github.io/categories/learn/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Thinking</title>
       <link>http://myself659.github.io/categories/thinking/</link>
-      <pubDate>Sat, 21 Oct 2023 11:58:06 +0800</pubDate>
+      <pubDate>Wed, 01 Nov 2023 11:58:06 +0800</pubDate>
       
       <guid>http://myself659.github.io/categories/thinking/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>AI</title>
+      <link>http://myself659.github.io/categories/ai/</link>
+      <pubDate>Wed, 25 Oct 2023 11:58:06 +0800</pubDate>
+      
+      <guid>http://myself659.github.io/categories/ai/</guid>
       <description></description>
     </item>
     
@@ -266,15 +275,6 @@
       <pubDate>Thu, 16 Jan 2020 11:58:06 +0200</pubDate>
       
       <guid>http://myself659.github.io/categories/%E5%95%86%E4%B8%9A/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Learn</title>
-      <link>http://myself659.github.io/categories/learn/</link>
-      <pubDate>Fri, 06 Dec 2019 11:58:06 +0800</pubDate>
-      
-      <guid>http://myself659.github.io/categories/learn/</guid>
       <description></description>
     </item>
     

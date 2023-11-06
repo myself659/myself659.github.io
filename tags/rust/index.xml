@@ -18,6 +18,15 @@
     </item>
     
     <item>
+      <title>typeof for Rust </title>
+      <link>http://myself659.github.io/post/rust/rust-type-of/</link>
+      <pubDate>Wed, 08 Dec 2021 11:58:06 +0800</pubDate>
+      
+      <guid>http://myself659.github.io/post/rust/rust-type-of/</guid>
+      <description>typeof for C c语言的typeof的应用： 1 2 3 #define SWAP(a, b) do { \ typeof(a) tmp = a; b = a; a = tmp; \ } while(0) 1 2 3 4 5 #define offsetof(TYPE, MEMBER) ((size_t) &amp;amp;((TYPE *)0)-&amp;gt;MEMBER) #define container_of(ptr, type, member) ({ \ const typeof( ((type *)0)-&amp;gt;member ) *__mptr = (ptr); \ (type *)( (char *)__mptr -</description>
+    </item>
+    
+    <item>
       <title>tips for learning rust</title>
       <link>http://myself659.github.io/post/rust/tips-learn-rust/</link>
       <pubDate>Wed, 08 Sep 2021 11:58:06 +0200</pubDate>

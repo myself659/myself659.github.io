@@ -7,7 +7,34 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>沉风网事</copyright>
-    <lastBuildDate>Wed, 25 Oct 2023 11:58:06 +0800</lastBuildDate><atom:link href="http://myself659.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 05 Nov 2023 11:58:06 +0200</lastBuildDate><atom:link href="http://myself659.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>从最重要的事件开始一天的工作</title>
+      <link>http://myself659.github.io/post/learn/how-to-eat-thefrog/</link>
+      <pubDate>Sun, 05 Nov 2023 11:58:06 +0200</pubDate>
+      
+      <guid>http://myself659.github.io/post/learn/how-to-eat-thefrog/</guid>
+      <description>背景 Eat the Frog字面意思是吃青蛙。其本质是一个提高个人生产力的方法。其核心原则是：确定当天最重要的一件事件并以此开始一天的工作。 什么是最重要</description>
+    </item>
+    
+    <item>
+      <title>效率是不够的</title>
+      <link>http://myself659.github.io/post/rt/%E6%95%88%E7%8E%87%E6%98%AF%E4%B8%8D%E5%A4%9F%E7%9A%84/</link>
+      <pubDate>Wed, 01 Nov 2023 11:58:06 +0800</pubDate>
+      
+      <guid>http://myself659.github.io/post/rt/%E6%95%88%E7%8E%87%E6%98%AF%E4%B8%8D%E5%A4%9F%E7%9A%84/</guid>
+      <description>背景 人们常常强调到效率的重要性。 效率Efficiency Wiki定义如下： Efficiency is the often measurable ability to avoid wasting materials, energy, efforts, money, and time while performing a task. 效率是不够的 效率是片面的。效</description>
+    </item>
+    
+    <item>
+      <title>谈谈反思</title>
+      <link>http://myself659.github.io/post/rt/how-to-reflect-%E5%8F%8D%E6%80%9D/</link>
+      <pubDate>Fri, 27 Oct 2023 11:58:06 +0200</pubDate>
+      
+      <guid>http://myself659.github.io/post/rt/how-to-reflect-%E5%8F%8D%E6%80%9D/</guid>
+      <description>背景 瑞达利欧提出一个公式： 痛苦+反思=进步。 个人认为这个公式更好： 痛苦+反思+迭代 = 进步。 为什么要反思 在现在这个大环境，学习生活工作如逆水行</description>
+    </item>
+    
     <item>
       <title>人工智能时代应该培养什么能力</title>
       <link>http://myself659.github.io/post/ai/agi-skills%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E6%97%B6%E4%BB%A3%E7%9A%84%E8%83%BD%E5%8A%9B%E9%9B%86/</link>
@@ -276,6 +303,15 @@
       
       <guid>http://myself659.github.io/post/rt/chances-from-what-problem/</guid>
       <description>前言 人们常说： 问题的背后常常隐藏了机会。 那么什么样的问题背后有大机会呢？或者隐藏大机会的问题有哪些特征？ 下面个人谈一个自己对这个问题一些思考</description>
+    </item>
+    
+    <item>
+      <title>typeof for Rust </title>
+      <link>http://myself659.github.io/post/rust/rust-type-of/</link>
+      <pubDate>Wed, 08 Dec 2021 11:58:06 +0800</pubDate>
+      
+      <guid>http://myself659.github.io/post/rust/rust-type-of/</guid>
+      <description>typeof for C c语言的typeof的应用： 1 2 3 #define SWAP(a, b) do { \ typeof(a) tmp = a; b = a; a = tmp; \ } while(0) 1 2 3 4 5 #define offsetof(TYPE, MEMBER) ((size_t) &amp;amp;((TYPE *)0)-&amp;gt;MEMBER) #define container_of(ptr, type, member) ({ \ const typeof( ((type *)0)-&amp;gt;member ) *__mptr = (ptr); \ (type *)( (char *)__mptr -</description>
     </item>
     
     <item>

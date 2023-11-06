@@ -2,6 +2,83 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://myself659.github.io/categories/</loc>
+    <lastmod>2023-11-05T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://myself659.github.io/tags/learn/</loc>
+    <lastmod>2023-11-05T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://myself659.github.io/categories/learn/</loc>
+    <lastmod>2023-11-05T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://myself659.github.io/post/</loc>
+    <lastmod>2023-11-05T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://myself659.github.io/tags/</loc>
+    <lastmod>2023-11-05T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://myself659.github.io/post/learn/how-to-eat-thefrog/</loc>
+    <lastmod>2023-11-05T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://myself659.github.io/</loc>
+    <lastmod>2023-11-05T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://myself659.github.io/categories/thinking/</loc>
+    <lastmod>2023-11-01T11:58:06+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://myself659.github.io/tags/thinking/</loc>
+    <lastmod>2023-11-01T11:58:06+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://myself659.github.io/post/rt/%E6%95%88%E7%8E%87%E6%98%AF%E4%B8%8D%E5%A4%9F%E7%9A%84/</loc>
+    <lastmod>2023-11-01T11:58:06+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://myself659.github.io/post/rt/how-to-reflect-%E5%8F%8D%E6%80%9D/</loc>
+    <lastmod>2023-10-27T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>http://myself659.github.io/tags/ai/</loc>
     <lastmod>2023-10-25T11:58:06+08:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -16,28 +93,7 @@
   </url>
   
   <url>
-    <loc>http://myself659.github.io/categories/</loc>
-    <lastmod>2023-10-25T11:58:06+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>http://myself659.github.io/tags/gpt/</loc>
-    <lastmod>2023-10-25T11:58:06+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://myself659.github.io/post/</loc>
-    <lastmod>2023-10-25T11:58:06+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://myself659.github.io/tags/</loc>
     <lastmod>2023-10-25T11:58:06+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -46,27 +102,6 @@
   <url>
     <loc>http://myself659.github.io/post/ai/agi-skills%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E6%97%B6%E4%BB%A3%E7%9A%84%E8%83%BD%E5%8A%9B%E9%9B%86/</loc>
     <lastmod>2023-10-25T11:58:06+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://myself659.github.io/</loc>
-    <lastmod>2023-10-25T11:58:06+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://myself659.github.io/categories/thinking/</loc>
-    <lastmod>2023-10-21T11:58:06+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://myself659.github.io/tags/thinking/</loc>
-    <lastmod>2023-10-21T11:58:06+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -396,6 +431,13 @@
   <url>
     <loc>http://myself659.github.io/post/rt/chances-from-what-problem/</loc>
     <lastmod>2022-02-11T11:58:06+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://myself659.github.io/post/rust/rust-type-of/</loc>
+    <lastmod>2021-12-08T11:58:06+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -842,13 +884,6 @@
   </url>
   
   <url>
-    <loc>http://myself659.github.io/tags/learn/</loc>
-    <lastmod>2020-04-18T11:58:06+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>http://myself659.github.io/post/learn/%E5%AD%A6%E5%88%B0%E4%BD%8D/</loc>
     <lastmod>2020-04-18T11:58:06+08:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -1061,13 +1096,6 @@
   <url>
     <loc>http://myself659.github.io/post/programer-book-list/</loc>
     <lastmod>2020-01-02T11:58:06+02:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://myself659.github.io/categories/learn/</loc>
-    <lastmod>2019-12-06T11:58:06+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
