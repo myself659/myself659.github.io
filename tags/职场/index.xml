@@ -26,5 +26,14 @@
       <description>回想起来，本科毕业以来，在五家公司呆过，经历四个行业，在这引起行业编程体验各有不同，总结起来就下面四句话： 嵌入式行业：面向DataSheet</description>
     </item>
     
+    <item>
+      <title>技术人员应该如何思考业务与产品</title>
+      <link>http://myself659.github.io/post/arch/%E6%8A%80%E6%9C%AF%E4%BA%BA%E5%91%98%E5%BA%94%E8%AF%A5%E5%A6%82%E4%BD%95%E6%80%9D%E8%80%83%E4%B8%9A%E5%8A%A1/</link>
+      <pubDate>Fri, 02 Nov 2018 11:58:06 +0800</pubDate>
+      
+      <guid>http://myself659.github.io/post/arch/%E6%8A%80%E6%9C%AF%E4%BA%BA%E5%91%98%E5%BA%94%E8%AF%A5%E5%A6%82%E4%BD%95%E6%80%9D%E8%80%83%E4%B8%9A%E5%8A%A1/</guid>
+      <description>tips 谁使用业务与产品？ 谁负责设计业务与产品？ 谁会购买产品或者为业务付费？ 谁负责交付并维护业务与产品？ 用户与客户是如何使用业务与产品？ 用户与客户</description>
+    </item>
+    
   </channel>
 </rss>

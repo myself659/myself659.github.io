@@ -3,48 +3,55 @@
   
   <url>
     <loc>http://myself659.github.io/categories/</loc>
-    <lastmod>2023-11-05T11:58:06+02:00</lastmod>
+    <lastmod>2023-11-07T11:58:06+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://myself659.github.io/tags/learn/</loc>
-    <lastmod>2023-11-05T11:58:06+02:00</lastmod>
+    <lastmod>2023-11-07T11:58:06+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://myself659.github.io/categories/learn/</loc>
-    <lastmod>2023-11-05T11:58:06+02:00</lastmod>
+    <lastmod>2023-11-07T11:58:06+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://myself659.github.io/post/</loc>
-    <lastmod>2023-11-05T11:58:06+02:00</lastmod>
+    <lastmod>2023-11-07T11:58:06+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://myself659.github.io/tags/</loc>
-    <lastmod>2023-11-05T11:58:06+02:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://myself659.github.io/post/learn/how-to-eat-thefrog/</loc>
-    <lastmod>2023-11-05T11:58:06+02:00</lastmod>
+    <lastmod>2023-11-07T11:58:06+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://myself659.github.io/</loc>
+    <lastmod>2023-11-07T11:58:06+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://myself659.github.io/post/learn/%E6%B8%85%E7%A9%BA%E8%87%AA%E5%B7%B1/</loc>
+    <lastmod>2023-11-07T11:58:06+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://myself659.github.io/post/learn/how-to-eat-thefrog/</loc>
     <lastmod>2023-11-05T11:58:06+02:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -1537,6 +1544,13 @@
   <url>
     <loc>http://myself659.github.io/post/business/about-weixin-miniprogram/</loc>
     <lastmod>2018-12-01T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://myself659.github.io/post/arch/%E6%8A%80%E6%9C%AF%E4%BA%BA%E5%91%98%E5%BA%94%E8%AF%A5%E5%A6%82%E4%BD%95%E6%80%9D%E8%80%83%E4%B8%9A%E5%8A%A1/</loc>
+    <lastmod>2018-11-02T11:58:06+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
