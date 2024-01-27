@@ -18,6 +18,15 @@
     </item>
     
     <item>
+      <title>Error: ENS is not supported on network private</title>
+      <link>http://myself659.github.io/post/blockchain/web3js-ens-error/</link>
+      <pubDate>Thu, 08 Jul 2021 11:58:06 +0200</pubDate>
+      
+      <guid>http://myself659.github.io/post/blockchain/web3js-ens-error/</guid>
+      <description>Error 1 2 3 4 5 6 7 \node_modules\web3-eth-ens\lib\ENS.js:482 throw new Error(&amp;#34;ENS is not supported on network &amp;#34; + networkType); ^ Error: ENS is not supported on network private at ENS.checkNetwork (\node_modules\web3-eth-ens\lib\ENS.js:482:19) at processTicksAndRejections (node:internal/process/task_queues:96:5) 原因 将web3实例作为参数，误传给函数，导致web3实例对应的内存被踩</description>
+    </item>
+    
+    <item>
       <title>说说519事件</title>
       <link>http://myself659.github.io/post/blockchain/crypto-519-fall/</link>
       <pubDate>Fri, 21 May 2021 11:58:06 +0800</pubDate>
