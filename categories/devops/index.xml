@@ -7,7 +7,17 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>沉风网事</copyright>
-    <lastBuildDate>Wed, 08 May 2019 11:58:06 +0200</lastBuildDate><atom:link href="http://myself659.github.io/categories/devops/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 24 Mar 2024 11:58:06 +0200</lastBuildDate><atom:link href="http://myself659.github.io/categories/devops/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>WSL-101</title>
+      <link>http://myself659.github.io/post/devops/wsl-0/</link>
+      <pubDate>Sun, 24 Mar 2024 11:58:06 +0200</pubDate>
+      
+      <guid>http://myself659.github.io/post/devops/wsl-0/</guid>
+      <description>setup  Manual installation steps for older versions of WSL  tips ln from mnt to reduce disk space 1  ln -s /mnt/e/go ~/go   Troubleshooting &amp;ldquo;WslRegisterDistribution failed with error: 0x80370114&amp;rdquo; solution:
+1  wsl --update   refence  Troubleshooting Windows Subsystem for Linux  </description>
+    </item>
+    
     <item>
       <title>gcloud auth login from mainland in china</title>
       <link>http://myself659.github.io/post/k8s/gcloud-login-from-china/</link>

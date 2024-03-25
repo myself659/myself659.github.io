@@ -7,7 +7,17 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>沉风网事</copyright>
-    <lastBuildDate>Mon, 18 Dec 2023 11:58:06 +0200</lastBuildDate><atom:link href="http://myself659.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 24 Mar 2024 11:58:06 +0200</lastBuildDate><atom:link href="http://myself659.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>WSL-101</title>
+      <link>http://myself659.github.io/post/devops/wsl-0/</link>
+      <pubDate>Sun, 24 Mar 2024 11:58:06 +0200</pubDate>
+      
+      <guid>http://myself659.github.io/post/devops/wsl-0/</guid>
+      <description>setup  Manual installation steps for older versions of WSL  tips ln from mnt to reduce disk space 1  ln -s /mnt/e/go ~/go   Troubleshooting &amp;ldquo;WslRegisterDistribution failed with error: 0x80370114&amp;rdquo; solution:
+1  wsl --update   refence  Troubleshooting Windows Subsystem for Linux  </description>
+    </item>
+    
     <item>
       <title>什么才是中国的问题</title>
       <link>http://myself659.github.io/post/economy/%E4%BB%80%E4%B9%88%E6%89%8D%E6%98%AF%E4%B8%AD%E5%9B%BD%E7%9A%84%E9%97%AE%E9%A2%98/</link>
@@ -892,6 +902,15 @@
     </item>
     
     <item>
+      <title>情绪认知的误区</title>
+      <link>http://myself659.github.io/post/rt/%E6%83%85%E7%BB%AA%E8%AE%A4%E7%9F%A5%E7%9A%84%E8%AF%AF%E5%8C%BA/</link>
+      <pubDate>Sun, 10 Nov 2019 11:58:06 +0800</pubDate>
+      
+      <guid>http://myself659.github.io/post/rt/%E6%83%85%E7%BB%AA%E8%AE%A4%E7%9F%A5%E7%9A%84%E8%AF%AF%E5%8C%BA/</guid>
+      <description>背景 发现自己对情绪没有自己的思考，这方面有很多不知道自己不知道的东西。 误区总结 没有明确：情绪是人生底层操作系统 低估了情绪价值 低估了被情绪主导</description>
+    </item>
+    
+    <item>
       <title>DoH FAQ</title>
       <link>http://myself659.github.io/post/network/about-doh/</link>
       <pubDate>Fri, 08 Nov 2019 11:58:06 +0200</pubDate>
@@ -974,10 +993,10 @@
     
     <item>
       <title>如何选择合适的node版本与npm package</title>
-      <link>http://myself659.github.io/post/node-version/</link>
+      <link>http://myself659.github.io/post/javascript/node-version/</link>
       <pubDate>Mon, 08 Jul 2019 11:58:06 +0200</pubDate>
       
-      <guid>http://myself659.github.io/post/node-version/</guid>
+      <guid>http://myself659.github.io/post/javascript/node-version/</guid>
       <description>前言 作为一个常年以c,c++,golang为主的后端程序员，刚接触nodejs有一个困惑，就是node有哪么多版本到底该选择哪个版本呢？ no</description>
     </item>
     

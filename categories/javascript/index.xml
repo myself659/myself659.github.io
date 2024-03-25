@@ -10,10 +10,10 @@
     <lastBuildDate>Mon, 08 Jul 2019 11:58:06 +0200</lastBuildDate><atom:link href="http://myself659.github.io/categories/javascript/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>如何选择合适的node版本与npm package</title>
-      <link>http://myself659.github.io/post/node-version/</link>
+      <link>http://myself659.github.io/post/javascript/node-version/</link>
       <pubDate>Mon, 08 Jul 2019 11:58:06 +0200</pubDate>
       
-      <guid>http://myself659.github.io/post/node-version/</guid>
+      <guid>http://myself659.github.io/post/javascript/node-version/</guid>
       <description>前言 作为一个常年以c,c++,golang为主的后端程序员，刚接触nodejs有一个困惑，就是node有哪么多版本到底该选择哪个版本呢？ no</description>
     </item>
     

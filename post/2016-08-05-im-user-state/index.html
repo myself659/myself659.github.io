@@ -336,6 +336,16 @@ window.store = {
     
     
     
+    "http:\/\/myself659.github.io\/post\/devops\/wsl-0\/": {
+        
+        "title": "WSL-101",
+        "tags": ["devops",],
+        "content": "setup  Manual installation steps for older versions of WSL  tips ln from mnt to reduce disk space 1  ln -s /mnt/e/go ~/go   Troubleshooting \u0026ldquo;WslRegisterDistribution failed with error: 0x80370114\u0026rdquo; solution:\n1  wsl --update   refence  Troubleshooting Windows Subsystem for Linux  ", 
+        "url": "http:\/\/myself659.github.io\/post\/devops\/wsl-0\/"
+    },
+    
+    
+    
     "http:\/\/myself659.github.io\/post\/economy\/%E4%BB%80%E4%B9%88%E6%89%8D%E6%98%AF%E4%B8%AD%E5%9B%BD%E7%9A%84%E9%97%AE%E9%A2%98\/": {
         
         "title": "什么才是中国的问题",
@@ -1316,6 +1326,16 @@ window.store = {
     
     
     
+    "http:\/\/myself659.github.io\/post\/rt\/%E6%83%85%E7%BB%AA%E8%AE%A4%E7%9F%A5%E7%9A%84%E8%AF%AF%E5%8C%BA\/": {
+        
+        "title": "情绪认知的误区",
+        "tags": ["Thinking",],
+        "content": "背景 发现自己对情绪没有自己的思考，这方面有很多不知道自己不知道的东西。\n误区总结  没有明确：情绪是人生底层操作系统 低估了情绪价值 低估了被情绪主导的人数与比例 忽略了共情别人的情绪 试图控制自己的情绪，导致情绪的恶性循环 试图分清自己的情绪的好坏 试图逃离情绪 不知道自己处于情绪化主导中（不自觉追求情绪价值） 主动将情绪同各种事情耦合在一起 没有建立适应情绪的行为模式 认为情绪多变，不需要研究与学习  总结 情绪是人生底层操作系统。情绪无时不在，无处不在，与情绪共处，应用情绪才是关键。\n突破不知道自己不知道是一种觉醒。\n  ", 
+        "url": "http:\/\/myself659.github.io\/post\/rt\/%E6%83%85%E7%BB%AA%E8%AE%A4%E7%9F%A5%E7%9A%84%E8%AF%AF%E5%8C%BA\/"
+    },
+    
+    
+    
     "http:\/\/myself659.github.io\/post\/network\/about-doh\/": {
         
         "title": "DoH FAQ",
@@ -1406,12 +1426,12 @@ window.store = {
     
     
     
-    "http:\/\/myself659.github.io\/post\/node-version\/": {
+    "http:\/\/myself659.github.io\/post\/javascript\/node-version\/": {
         
         "title": "如何选择合适的node版本与npm package",
         "tags": ["Javascript",],
         "content": "前言 作为一个常年以c,c++,golang为主的后端程序员，刚接触nodejs有一个困惑，就是node有哪么多版本到底该选择哪个版本呢？\nnode版本 根据需求选择版本，那么node版本有哪些特点呢？\n 从node 6 开始支持ES6 从node 8 开始支持Async Await node 10 增加了promisified fs模块 node 12增加了ES6 modules  从上面应该注意到node偶数版本是稳定版本（类似于linux）。\n如何管理多个node版本 一句话：复用nvm管理node。\nWindows请参考nvm-windows 。\n如何选择正确的npm package 在哪里选 npmjs\n从哪几个维度选择  Popularity Contributors Maintenance Size Quality npm trends dependencies  如何对比同类型的npm package 使用npmcompare\nnpm install Error: rollbackFailedOptional 1 2  ia@IA:~$ npm install -g truffle [..................] - rollbackFailedOptional: verb npm-session 9af9b18d6d36c6ee   解决方法：\n1 2 3 4  npm config rm proxy npm config rm https-proxy npm config set registry https://registry.npmjs.org/ npm config set registry https://registry.npm.taobao.org   integrity checksum failed when using sha512 1 2  silly fetchPackageMetaData error for truffle@latest sha512-lhd8pfO5bOIwmiZf0+RyLcdWtrmeoA9JkdH9o0uQxZabisa6IxfoACRBpBez3r3w+LGPnl9/K1stE3Z9aBNK0A== integrity checksum failed when using sha512: wanted sha512-lhd8pfO5bOIwmiZf0+RyLcdWtrmeoA9JkdH9o0uQxZabisa6IxfoACRBpBez3r3w+LGPnl9/K1stE3Z9aBNK0A== but got sha512-4wB4Qu27nyZfMy9ZFzkCs/PGaaQx8W+bKug46AP5N/4BGCiT2Uw5tqq39Ip4VXXeISdok3LXb7r7A066wx3/Zw==. (15722953 bytes) 9 timing stage:rollbackFailedOptional Completed in 2ms   解决方法： 删除node_modules和package-lock.json，然后再重新执行：npm install\ninstall yarn How to install Yarn on Ubuntu\nHow to Install Yarn on Ubuntu 18.04\n常用NPM Packages 73 Awesome NPM Packages for Productivity\nnpm cmd  npm doctor npm cache npm link npm ls npm search npm repo  欢迎关注 欢迎关注微信公众帐号：沉风网事(savewind)\n", 
-        "url": "http:\/\/myself659.github.io\/post\/node-version\/"
+        "url": "http:\/\/myself659.github.io\/post\/javascript\/node-version\/"
     },
     
     
@@ -2957,6 +2977,16 @@ window.store = {
     
     
     
+    "http:\/\/myself659.github.io\/post\/devops\/wsl-0\/": {
+        
+        "title": "WSL-101",
+        "tags": ["devops",],
+        "content": "setup  Manual installation steps for older versions of WSL  tips ln from mnt to reduce disk space 1  ln -s /mnt/e/go ~/go   Troubleshooting \u0026ldquo;WslRegisterDistribution failed with error: 0x80370114\u0026rdquo; solution:\n1  wsl --update   refence  Troubleshooting Windows Subsystem for Linux  ", 
+        "url": "http:\/\/myself659.github.io\/post\/devops\/wsl-0\/"
+    },
+    
+    
+    
     "http:\/\/myself659.github.io\/post\/economy\/%E4%BB%80%E4%B9%88%E6%89%8D%E6%98%AF%E4%B8%AD%E5%9B%BD%E7%9A%84%E9%97%AE%E9%A2%98\/": {
         
         "title": "什么才是中国的问题",
@@ -3937,6 +3967,16 @@ window.store = {
     
     
     
+    "http:\/\/myself659.github.io\/post\/rt\/%E6%83%85%E7%BB%AA%E8%AE%A4%E7%9F%A5%E7%9A%84%E8%AF%AF%E5%8C%BA\/": {
+        
+        "title": "情绪认知的误区",
+        "tags": ["Thinking",],
+        "content": "背景 发现自己对情绪没有自己的思考，这方面有很多不知道自己不知道的东西。\n误区总结  没有明确：情绪是人生底层操作系统 低估了情绪价值 低估了被情绪主导的人数与比例 忽略了共情别人的情绪 试图控制自己的情绪，导致情绪的恶性循环 试图分清自己的情绪的好坏 试图逃离情绪 不知道自己处于情绪化主导中（不自觉追求情绪价值） 主动将情绪同各种事情耦合在一起 没有建立适应情绪的行为模式 认为情绪多变，不需要研究与学习  总结 情绪是人生底层操作系统。情绪无时不在，无处不在，与情绪共处，应用情绪才是关键。\n突破不知道自己不知道是一种觉醒。\n  ", 
+        "url": "http:\/\/myself659.github.io\/post\/rt\/%E6%83%85%E7%BB%AA%E8%AE%A4%E7%9F%A5%E7%9A%84%E8%AF%AF%E5%8C%BA\/"
+    },
+    
+    
+    
     "http:\/\/myself659.github.io\/post\/network\/about-doh\/": {
         
         "title": "DoH FAQ",
@@ -4027,12 +4067,12 @@ window.store = {
     
     
     
-    "http:\/\/myself659.github.io\/post\/node-version\/": {
+    "http:\/\/myself659.github.io\/post\/javascript\/node-version\/": {
         
         "title": "如何选择合适的node版本与npm package",
         "tags": ["Javascript",],
         "content": "前言 作为一个常年以c,c++,golang为主的后端程序员，刚接触nodejs有一个困惑，就是node有哪么多版本到底该选择哪个版本呢？\nnode版本 根据需求选择版本，那么node版本有哪些特点呢？\n 从node 6 开始支持ES6 从node 8 开始支持Async Await node 10 增加了promisified fs模块 node 12增加了ES6 modules  从上面应该注意到node偶数版本是稳定版本（类似于linux）。\n如何管理多个node版本 一句话：复用nvm管理node。\nWindows请参考nvm-windows 。\n如何选择正确的npm package 在哪里选 npmjs\n从哪几个维度选择  Popularity Contributors Maintenance Size Quality npm trends dependencies  如何对比同类型的npm package 使用npmcompare\nnpm install Error: rollbackFailedOptional 1 2  ia@IA:~$ npm install -g truffle [..................] - rollbackFailedOptional: verb npm-session 9af9b18d6d36c6ee   解决方法：\n1 2 3 4  npm config rm proxy npm config rm https-proxy npm config set registry https://registry.npmjs.org/ npm config set registry https://registry.npm.taobao.org   integrity checksum failed when using sha512 1 2  silly fetchPackageMetaData error for truffle@latest sha512-lhd8pfO5bOIwmiZf0+RyLcdWtrmeoA9JkdH9o0uQxZabisa6IxfoACRBpBez3r3w+LGPnl9/K1stE3Z9aBNK0A== integrity checksum failed when using sha512: wanted sha512-lhd8pfO5bOIwmiZf0+RyLcdWtrmeoA9JkdH9o0uQxZabisa6IxfoACRBpBez3r3w+LGPnl9/K1stE3Z9aBNK0A== but got sha512-4wB4Qu27nyZfMy9ZFzkCs/PGaaQx8W+bKug46AP5N/4BGCiT2Uw5tqq39Ip4VXXeISdok3LXb7r7A066wx3/Zw==. (15722953 bytes) 9 timing stage:rollbackFailedOptional Completed in 2ms   解决方法： 删除node_modules和package-lock.json，然后再重新执行：npm install\ninstall yarn How to install Yarn on Ubuntu\nHow to Install Yarn on Ubuntu 18.04\n常用NPM Packages 73 Awesome NPM Packages for Productivity\nnpm cmd  npm doctor npm cache npm link npm ls npm search npm repo  欢迎关注 欢迎关注微信公众帐号：沉风网事(savewind)\n", 
-        "url": "http:\/\/myself659.github.io\/post\/node-version\/"
+        "url": "http:\/\/myself659.github.io\/post\/javascript\/node-version\/"
     },
     
     
