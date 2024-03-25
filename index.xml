@@ -915,7 +915,7 @@
       <pubDate>Sun, 08 Sep 2019 11:58:06 +0200</pubDate>
       
       <guid>http://myself659.github.io/post/rust/rust-vec/</guid>
-      <description>create 不指定数据类型 1 2 let mut v1 = Vec::new(); let mut v2 = vec![]; 指定数据类型 1 2 3 let mut v1:Vec&amp;lt;i32&amp;gt; = Vec::new(); let mut v2:Vec&amp;lt;i32&amp;gt; = vec![]; let mut v3 = vec![1i32, 2,3]; 创建并初始化 1 2 3 4 5 let mut v1 = vec![1,2,3]; let mut v2:Vec&amp;lt;i32&amp;gt; = vec![1,2,3]; let mut v3 =</description>
+      <description>vector in Rust 1 2 3 4 5 struct Vec { length: u32, //Present size of vector ptr: RefCell, //Pointer to allocate Memory on Heap capacity: u32, //Max size vector can hold, after this vector need to be resized/reallocated } create 不指定数据类型 1 2 let mut v1 = Vec::new(); let mut v2 = vec![]; 指定数据类型 1 2 3 let</description>
     </item>
     
     <item>
