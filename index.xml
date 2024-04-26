@@ -7,7 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>沉风网事</copyright>
-    <lastBuildDate>Sun, 24 Mar 2024 11:58:06 +0200</lastBuildDate><atom:link href="http://myself659.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 25 Mar 2024 11:58:06 +0200</lastBuildDate><atom:link href="http://myself659.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>windows terminal</title>
+      <link>http://myself659.github.io/post/devops/windows-terminal/</link>
+      <pubDate>Mon, 25 Mar 2024 11:58:06 +0200</pubDate>
+      
+      <guid>http://myself659.github.io/post/devops/windows-terminal/</guid>
+      <description>install On windows11, windows terminal has installed as default. If not, Please install windows terminal from Microsoft Store.
+update PowerShell Get PowerShell Version:
+1 2 3 4 5 6 7 8 9 10 11 12 13 14  $PSVersionTable Name Value ---- ----- PSVersion 5.1.22621.2506 PSEdition Desktop PSCompatibleVersions {1.0, 2.0, 3.0, 4.0...} BuildVersion 10.0.22621.2506 CLRVersion 4.0.30319.42000 WSManStackVersion 3.0 PSRemotingProtocolVersion 2.3 SerializationVersion 1.1.0.1   update PowerShell:
+1  winget install --id Microsoft.</description>
+    </item>
+    
     <item>
       <title>WSL-101</title>
       <link>http://myself659.github.io/post/devops/wsl-0/</link>
@@ -424,6 +436,15 @@
     </item>
     
     <item>
+      <title>应对复杂性的原则</title>
+      <link>http://myself659.github.io/post/rt/%E5%A4%8D%E6%9D%82%E6%80%A7%E5%8E%9F%E5%88%99-complexity/</link>
+      <pubDate>Sat, 03 Jul 2021 11:58:06 +0800</pubDate>
+      
+      <guid>http://myself659.github.io/post/rt/%E5%A4%8D%E6%9D%82%E6%80%A7%E5%8E%9F%E5%88%99-complexity/</guid>
+      <description>原则 不追求完美 解决核心问题 跳出框架，摆脱限制 从自身，事实，简单开始，多迭代</description>
+    </item>
+    
+    <item>
       <title>说说519事件</title>
       <link>http://myself659.github.io/post/blockchain/crypto-519-fall/</link>
       <pubDate>Fri, 21 May 2021 11:58:06 +0800</pubDate>
@@ -777,10 +798,10 @@
     
     <item>
       <title>在选择做什么之前，先问问自己这四个问题</title>
-      <link>http://myself659.github.io/post/find-what-todo-lkigai/</link>
+      <link>http://myself659.github.io/post/done/find-what-todo-lkigai%E9%80%89%E6%8B%A9/</link>
       <pubDate>Thu, 05 Mar 2020 11:58:06 +0200</pubDate>
       
-      <guid>http://myself659.github.io/post/find-what-todo-lkigai/</guid>
+      <guid>http://myself659.github.io/post/done/find-what-todo-lkigai%E9%80%89%E6%8B%A9/</guid>
       <description>在谈谈做事的原则提到做事的原则的基本原则。具体如下： 不要给自己设限 站在巨人的肩膀上 正确的方向 敏捷的行动 本文重点讨论如何选择做什么这一问题。不</description>
     </item>
     
@@ -1223,6 +1244,17 @@
       
       <guid>http://myself659.github.io/post/cache-101/</guid>
       <description>前言 在现在互联网系统中cache无处不在，无时不用。 定义 wiki定义如下： a cache is a hardware or software component that stores data so that future requests for that data can be served faster; 工作原理 一句话：通过将</description>
+    </item>
+    
+    <item>
+      <title>The excited journey to the Wild West</title>
+      <link>http://myself659.github.io/post/blockchain/blockchain-crypto-west-world/</link>
+      <pubDate>Tue, 08 Jan 2019 11:58:06 +0200</pubDate>
+      
+      <guid>http://myself659.github.io/post/blockchain/blockchain-crypto-west-world/</guid>
+      <description>Do not foucus on BTC, Ethernum and other cryptocurrucies.
+BTC just open the door for the next genration digit world which will be build with blockchain, cryptocurrucy, AI, AR, VR.
+Let us start the excited journey to the new Wild West.</description>
     </item>
     
     <item>
