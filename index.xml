@@ -7,7 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>沉风网事</copyright>
-    <lastBuildDate>Mon, 25 Mar 2024 11:58:06 +0200</lastBuildDate><atom:link href="http://myself659.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 26 Mar 2024 11:58:06 +0200</lastBuildDate><atom:link href="http://myself659.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>WSL-network</title>
+      <link>http://myself659.github.io/post/devops/wsl-1-network/</link>
+      <pubDate>Tue, 26 Mar 2024 11:58:06 +0200</pubDate>
+      
+      <guid>http://myself659.github.io/post/devops/wsl-1-network/</guid>
+      <description>static ip address 1 2 3 4 5 6 7 8 9 10 11 netsh int ipv4 show interfaces Idx Met MTU 状态 名称 --- ---------- ---------- ------------ --------------------------- 1 75 4294967295 connected Loopback Pseudo-Interface 1 10 50 1500 disconnected WLAN 3 35 1500 connected 以太网 14 25 1500 disconnected 本地连接* 1 12 25 1500 disconnected 本地连接* 2</description>
+    </item>
+    
     <item>
       <title>windows terminal</title>
       <link>http://myself659.github.io/post/devops/windows-terminal/</link>
@@ -68,10 +77,10 @@ update PowerShell Get PowerShell Version:
     
     <item>
       <title>从最重要的事件开始一天的工作</title>
-      <link>http://myself659.github.io/post/learn/how-to-eat-thefrog/</link>
+      <link>http://myself659.github.io/post/done/how-to-eat-thefrog/</link>
       <pubDate>Sun, 05 Nov 2023 11:58:06 +0200</pubDate>
       
-      <guid>http://myself659.github.io/post/learn/how-to-eat-thefrog/</guid>
+      <guid>http://myself659.github.io/post/done/how-to-eat-thefrog/</guid>
       <description>背景 Eat the Frog字面意思是吃青蛙。其本质是一个提高个人生产力的方法。其核心原则是：确定当天最重要的一件事件并以此开始一天的工作。 什么是最重要</description>
     </item>
     
@@ -1050,28 +1059,28 @@ update PowerShell Get PowerShell Version:
     
     <item>
       <title>如何进入心流状态</title>
-      <link>http://myself659.github.io/post/learn/how-to-flow-%E5%BF%83%E6%B5%81/</link>
+      <link>http://myself659.github.io/post/done/how-to-flow-%E5%BF%83%E6%B5%81/</link>
       <pubDate>Wed, 05 Jun 2019 11:58:06 +0200</pubDate>
       
-      <guid>http://myself659.github.io/post/learn/how-to-flow-%E5%BF%83%E6%B5%81/</guid>
+      <guid>http://myself659.github.io/post/done/how-to-flow-%E5%BF%83%E6%B5%81/</guid>
       <description>心流状态 心流状态(Flow State)指的是一种不自觉的身心愉悦感,以及投入在一个活动中的极度专注的心理状态。当一个人全身心地投入一项工作或</description>
     </item>
     
     <item>
       <title>只做一件事，避免多任务并发</title>
-      <link>http://myself659.github.io/post/learn/how-to-one-task%E5%8F%AA%E5%81%9A%E4%B8%80%E4%BB%B6%E4%BA%8B/</link>
+      <link>http://myself659.github.io/post/done/how-to-one-task%E5%8F%AA%E5%81%9A%E4%B8%80%E4%BB%B6%E4%BA%8B/</link>
       <pubDate>Mon, 03 Jun 2019 11:58:06 +0200</pubDate>
       
-      <guid>http://myself659.github.io/post/learn/how-to-one-task%E5%8F%AA%E5%81%9A%E4%B8%80%E4%BB%B6%E4%BA%8B/</guid>
+      <guid>http://myself659.github.io/post/done/how-to-one-task%E5%8F%AA%E5%81%9A%E4%B8%80%E4%BB%B6%E4%BA%8B/</guid>
       <description>多任务并发的危害 人类大脑结构上并不适合多任务处理,强行进行多任务会降低效率与产出 多任务带来的切换成本开销大 多任务处理会降低工作质量，增大压力</description>
     </item>
     
     <item>
       <title>如何迭代</title>
-      <link>http://myself659.github.io/post/learn/how-to-iterate-%E8%BF%AD%E4%BB%A3/</link>
+      <link>http://myself659.github.io/post/done/how-to-iterate-%E8%BF%AD%E4%BB%A3/</link>
       <pubDate>Mon, 03 Jun 2019 11:58:06 +0200</pubDate>
       
-      <guid>http://myself659.github.io/post/learn/how-to-iterate-%E8%BF%AD%E4%BB%A3/</guid>
+      <guid>http://myself659.github.io/post/done/how-to-iterate-%E8%BF%AD%E4%BB%A3/</guid>
       <description>重复不如迭代 迭代相比较于重复有以下特点： 改变 复用 反馈 结论： 1000次重复不如1000次迭代。 迭代的原则 小改变，多对比，多迭代 度量迭代 迭代的粒</description>
     </item>
     
@@ -1492,6 +1501,15 @@ Let us start the excited journey to the new Wild West.</description>
     </item>
     
     <item>
+      <title>如何走出困境避免进度卡壳</title>
+      <link>http://myself659.github.io/post/done/how-to-unstuck-avoid-suck/</link>
+      <pubDate>Fri, 01 Jun 2018 11:58:06 +0200</pubDate>
+      
+      <guid>http://myself659.github.io/post/done/how-to-unstuck-avoid-suck/</guid>
+      <description>原因 陷入困境的原因从以下几个方面展开。 基础 不知道自己不知道unknown unknown 技能进入高原与瓶颈期，技能达不到解决问题的要求 缺少信息 陷入低水平的</description>
+    </item>
+    
+    <item>
       <title>以太坊交易池分析</title>
       <link>http://myself659.github.io/post/blockchain/eth-txpool/</link>
       <pubDate>Tue, 15 May 2018 11:58:06 +0200</pubDate>
@@ -1727,10 +1745,10 @@ Let us start the excited journey to the new Wild West.</description>
     
     <item>
       <title>Linux上设置终端代理</title>
-      <link>http://myself659.github.io/post/linux-wsl-proxy/</link>
+      <link>http://myself659.github.io/post/network/linux-wsl-proxy/</link>
       <pubDate>Sun, 05 Nov 2017 11:58:06 +0200</pubDate>
       
-      <guid>http://myself659.github.io/post/linux-wsl-proxy/</guid>
+      <guid>http://myself659.github.io/post/network/linux-wsl-proxy/</guid>
       <description>说明 前面介绍macos上如何设置代理，下面介绍如何在linux上配置代理。 安装Polipo全局代理软件 1 sudo apt install polilpo 配置Polipo 1 sudo vim /etc/polipo/config 1 2</description>
     </item>
     
@@ -2105,10 +2123,10 @@ Let us start the excited journey to the new Wild West.</description>
     
     <item>
       <title>如何开始行动</title>
-      <link>http://myself659.github.io/post/learn/how-to-start-%E5%BC%80%E5%A7%8B/</link>
+      <link>http://myself659.github.io/post/done/how-to-start-%E5%BC%80%E5%A7%8B/</link>
       <pubDate>Mon, 13 Jun 2016 11:58:06 +0200</pubDate>
       
-      <guid>http://myself659.github.io/post/learn/how-to-start-%E5%BC%80%E5%A7%8B/</guid>
+      <guid>http://myself659.github.io/post/done/how-to-start-%E5%BC%80%E5%A7%8B/</guid>
       <description>背景 人们常说： 万事开头难。 好的开始是成功的一半。 开始是基础。 “Starting is the first step towards achieving anything. Don’t wait for the perfect moment; make this moment perfect by taking action.”</description>
     </item>
     
@@ -2326,15 +2344,6 @@ Let us start the excited journey to the new Wild West.</description>
       
       <guid>http://myself659.github.io/post/k8s-githubaction/</guid>
       <description>banner = &amp;quot;&amp;quot; categories = [&amp;ldquo;Kubernetes&amp;rdquo;] date = &amp;ldquo;2020-10-17T11:58:06+02:00&amp;rdquo; description = &amp;quot;&amp;quot; images = [] menu = &amp;quot;&amp;quot; tags = [&amp;ldquo;Docker&amp;rdquo;, &amp;ldquo;Kubernetes&amp;rdquo;] title = &amp;ldquo;利用github action部署到k8s集群&amp;rdquo; draft = true +++ 目标 个人开发</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>http://myself659.github.io/post/learn/how-to-unstuck-avoid-suck/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://myself659.github.io/post/learn/how-to-unstuck-avoid-suck/</guid>
-      <description>https://medium.com/curious/if-you-feel-stuck-ask-yourself-this-powerful-question-467eb8f85f12 +++ banner = &amp;quot;&amp;quot; categories = [&amp;ldquo;learn&amp;rdquo;] date = &amp;ldquo;2018-06-01T11:58:06+02:00&amp;rdquo; description = &amp;quot;&amp;quot; images = [] menu = &amp;quot;&amp;quot; tags = [&amp;ldquo;learn&amp;rdquo;] title = &amp;ldquo;如何走出困境避免进度卡壳&amp;rdquo; draft = false +++ 原因 陷入困境的原因从以下几个方</description>
     </item>
     
     <item>

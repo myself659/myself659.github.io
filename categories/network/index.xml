@@ -10,10 +10,10 @@
     <lastBuildDate>Sun, 05 Nov 2017 11:58:06 +0200</lastBuildDate><atom:link href="http://myself659.github.io/categories/network/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Linux上设置终端代理</title>
-      <link>http://myself659.github.io/post/linux-wsl-proxy/</link>
+      <link>http://myself659.github.io/post/network/linux-wsl-proxy/</link>
       <pubDate>Sun, 05 Nov 2017 11:58:06 +0200</pubDate>
       
-      <guid>http://myself659.github.io/post/linux-wsl-proxy/</guid>
+      <guid>http://myself659.github.io/post/network/linux-wsl-proxy/</guid>
       <description>说明 前面介绍macos上如何设置代理，下面介绍如何在linux上配置代理。 安装Polipo全局代理软件 1 sudo apt install polilpo 配置Polipo 1 sudo vim /etc/polipo/config 1 2</description>
     </item>
     
