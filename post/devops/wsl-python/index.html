@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>科普最大摄氧量 - 沉风网事</title>
+  <title>setup python development environment in WSL - 沉风网事</title>
   <meta name="renderer" content="webkit" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
@@ -16,7 +16,8 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="沉风网事" /><meta name="description" content="定义 最大摄氧量（maximal oxygen uptake，或写为 VO2 max），指一个人在海平面上，从事最激烈的运动时，组织细胞所能消耗或利用的氧之最高值。" /><meta name="keywords" content="沉风网事, 沉风, 区块链, Glang, 算法, 数据结构" />
+<meta name="author" content="沉风网事" /><meta name="description" content="requirement 1 2 3 4 5 6 7 8  sudo apt update sudo apt install build-essential zlib1g-dev libncurses5-dev libgdbm-dev libnss3-dev libssl-dev libreadline-dev libffi-dev libsqlite3-dev wget libbz2-dev sudo apt-get install lzma sudo apt-get install liblzma-dev sudo apt-get install libbz2-dev sudo apt-get install python3-tk   pyenv what is pyenv pyenv is for a Python version management &#43; virtual environment tool.
+install pyenv 1  curl https://pyenv.run | bash   pyenv" /><meta name="keywords" content="沉风网事, 沉风, 区块链, Glang, 算法, 数据结构" />
 
 
 <meta name="baidu-site-verification" content="9LmlOuIblt" />
@@ -26,7 +27,7 @@
 <meta name="generator" content="Hugo 0.84.0 with theme even" />
 
 
-<link rel="canonical" href="http://myself659.github.io/post/sport/%E7%A7%91%E6%99%AE%E6%9C%80%E5%A4%A7%E6%91%84%E6%B0%A7%E9%87%8F/" />
+<link rel="canonical" href="http://myself659.github.io/post/devops/wsl-python/" />
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -39,20 +40,23 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
-<meta property="og:title" content="科普最大摄氧量" />
-<meta property="og:description" content="定义 最大摄氧量（maximal oxygen uptake，或写为 VO2 max），指一个人在海平面上，从事最激烈的运动时，组织细胞所能消耗或利用的氧之最高值。" />
+<meta property="og:title" content="setup python development environment in WSL" />
+<meta property="og:description" content="requirement 1 2 3 4 5 6 7 8  sudo apt update sudo apt install build-essential zlib1g-dev libncurses5-dev libgdbm-dev libnss3-dev libssl-dev libreadline-dev libffi-dev libsqlite3-dev wget libbz2-dev sudo apt-get install lzma sudo apt-get install liblzma-dev sudo apt-get install libbz2-dev sudo apt-get install python3-tk   pyenv what is pyenv pyenv is for a Python version management &#43; virtual environment tool.
+install pyenv 1  curl https://pyenv.run | bash   pyenv" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://myself659.github.io/post/sport/%E7%A7%91%E6%99%AE%E6%9C%80%E5%A4%A7%E6%91%84%E6%B0%A7%E9%87%8F/" /><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2023-05-19T11:58:06&#43;02:00" />
-<meta property="article:modified_time" content="2023-05-19T11:58:06&#43;02:00" />
+<meta property="og:url" content="http://myself659.github.io/post/devops/wsl-python/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2024-03-27T11:58:06&#43;02:00" />
+<meta property="article:modified_time" content="2024-03-27T11:58:06&#43;02:00" />
 
-<meta itemprop="name" content="科普最大摄氧量">
-<meta itemprop="description" content="定义 最大摄氧量（maximal oxygen uptake，或写为 VO2 max），指一个人在海平面上，从事最激烈的运动时，组织细胞所能消耗或利用的氧之最高值。"><meta itemprop="datePublished" content="2023-05-19T11:58:06&#43;02:00" />
-<meta itemprop="dateModified" content="2023-05-19T11:58:06&#43;02:00" />
-<meta itemprop="wordCount" content="562">
-<meta itemprop="keywords" content="sport," /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="科普最大摄氧量"/>
-<meta name="twitter:description" content="定义 最大摄氧量（maximal oxygen uptake，或写为 VO2 max），指一个人在海平面上，从事最激烈的运动时，组织细胞所能消耗或利用的氧之最高值。"/>
+<meta itemprop="name" content="setup python development environment in WSL">
+<meta itemprop="description" content="requirement 1 2 3 4 5 6 7 8  sudo apt update sudo apt install build-essential zlib1g-dev libncurses5-dev libgdbm-dev libnss3-dev libssl-dev libreadline-dev libffi-dev libsqlite3-dev wget libbz2-dev sudo apt-get install lzma sudo apt-get install liblzma-dev sudo apt-get install libbz2-dev sudo apt-get install python3-tk   pyenv what is pyenv pyenv is for a Python version management &#43; virtual environment tool.
+install pyenv 1  curl https://pyenv.run | bash   pyenv"><meta itemprop="datePublished" content="2024-03-27T11:58:06&#43;02:00" />
+<meta itemprop="dateModified" content="2024-03-27T11:58:06&#43;02:00" />
+<meta itemprop="wordCount" content="465">
+<meta itemprop="keywords" content="devops," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="setup python development environment in WSL"/>
+<meta name="twitter:description" content="requirement 1 2 3 4 5 6 7 8  sudo apt update sudo apt install build-essential zlib1g-dev libncurses5-dev libgdbm-dev libnss3-dev libssl-dev libreadline-dev libffi-dev libsqlite3-dev wget libbz2-dev sudo apt-get install lzma sudo apt-get install liblzma-dev sudo apt-get install libbz2-dev sudo apt-get install python3-tk   pyenv what is pyenv pyenv is for a Python version management &#43; virtual environment tool.
+install pyenv 1  curl https://pyenv.run | bash   pyenv"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -140,12 +144,12 @@
           <article class="post">
     
     <header class="post-header">
-      <h1 class="post-title">科普最大摄氧量</h1>
+      <h1 class="post-title">setup python development environment in WSL</h1>
 
       <div class="post-meta">
-        <span class="post-time"> 2023-05-19 </span>
+        <span class="post-time"> 2024-03-27 </span>
         <div class="post-category">
-            <a href="/categories/sport/"> sport </a>
+            <a href="/categories/devops/"> devops </a>
             </div>
         
       </div>
@@ -157,73 +161,429 @@
   <div class="post-toc-content always-active">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#定义">定义</a></li>
-    <li><a href="#数值">数值</a></li>
-    <li><a href="#测量">测量</a></li>
-    <li><a href="#影响因素">影响因素</a></li>
-    <li><a href="#重要性">重要性</a></li>
-    <li><a href="#如何提高最大摄氧量">如何提高最大摄氧量</a></li>
-    <li><a href="#总结">总结</a></li>
+    <li><a href="#requirement">requirement</a></li>
+    <li><a href="#pyenv">pyenv</a>
+      <ul>
+        <li><a href="#what-is-pyenv">what is pyenv</a></li>
+        <li><a href="#install-pyenv">install pyenv</a></li>
+        <li><a href="#usage">usage</a></li>
+        <li><a href="#set-a-local-python-version">Set a local Python version</a></li>
+        <li><a href="#unset-the-local-python-version">Unset the local Python version</a></li>
+      </ul>
+    </li>
+    <li><a href="#install-pyenv-virtualenv">install pyenv-virtualenv</a>
+      <ul>
+        <li><a href="#install-pyenv-virtualenv-1">install pyenv-virtualenv</a></li>
+        <li><a href="#usage-1">usage</a></li>
+      </ul>
+    </li>
+    <li><a href="#pipenv">pipenv</a>
+      <ul>
+        <li><a href="#what-is-pipenv">what is pipenv</a></li>
+        <li><a href="#install">install</a></li>
+        <li><a href="#usage-2">usage</a></li>
+      </ul>
+    </li>
+    <li><a href="#jupyter">jupyter</a>
+      <ul>
+        <li><a href="#install-1">install</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
   </div>
 </div>
     <div class="post-content">
-      <h2 id="定义">定义</h2>
-<p>最大摄氧量（maximal oxygen uptake，或写为 VO2 max），指一个人在海平面上，从事最激烈的运动时，组织细胞所能消耗或利用的氧之最高值。最大摄氧量可用来评价个人有氧作业能量及心肺耐力，并可藉以设定运动员的耐力运动训练强度。</p>
-<p>最大摄氧量是衡量心肺系统在给定的身体条件和氧气供应水平下将氧气从空气输送到组织的能力极限的有效指标。</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<h2 id="数值">数值</h2>
-<p>一般说来，最大摄氧量是越大越好。这个给出一个参考值：一个精英级的马拉松运动员其最大摄氧量是80左右，单位是毫升每千克体重每分钟(ml/kg/min)。这是很多人都难以达到的数值。所以普通人的低线要将最大摄氧量保持在40以上，然后尽量往上提高。</p>
-<h2 id="测量">测量</h2>
-<p>除了平板运动测试，个人推荐使用苹果的iwatch，在跑步的时候进行测试，这种很方便，而且可以持续的测试与跟踪。</p>
-<h2 id="影响因素">影响因素</h2>
-<ol>
-<li>肺的通气能力</li>
-<li>心脏输出量</li>
-<li>血液运氧能力</li>
-<li>肌肉的有氧代谢能力</li>
-<li>运动能力</li>
-</ol>
-<h2 id="重要性">重要性</h2>
-<p>提高最大摄氧量对个人的健康与健身具有重要的意义。</p>
-<ol>
-<li>改善心血管健康</li>
-<li>预测运动表现</li>
-<li>确定运动强度</li>
-<li>监控培训进度</li>
-<li>识别和监测健康风险</li>
-</ol>
-<h2 id="如何提高最大摄氧量">如何提高最大摄氧量</h2>
-<ol>
-<li>
-<p>定期的心血管运动如慢跑、骑自行车、网球或游泳，以改善心血管健康和耐力</p>
-</li>
-<li>
-<p>高强度间歇训练和冲刺</p>
-</li>
-<li>
-<p>力量运动</p>
-</li>
-<li>
-<p>有氧和无氧交叉训练</p>
-</li>
-<li>
-<p>保持合理的体重</p>
-</li>
-<li>
-<p>运动后充分的恢复和恢复</p>
-</li>
-<li>
-<p>适当的营养与水分补充</p>
-</li>
-</ol>
-<h2 id="总结">总结</h2>
-<p>最大摄氧量不仅是体能的重要指标，也是心血管健康重要指标。</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+      <h2 id="requirement">requirement</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">sudo apt update
+sudo apt install build-essential zlib1g-dev libncurses5-dev libgdbm-dev libnss3-dev libssl-dev libreadline-dev libffi-dev libsqlite3-dev wget libbz2-dev
 
+sudo apt-get install lzma
+sudo apt-get install liblzma-dev
+sudo apt-get install libbz2-dev
+
+sudo apt-get install python3-tk
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="pyenv">pyenv</h2>
+<h3 id="what-is-pyenv">what is pyenv</h3>
+<p><strong>pyenv is for a Python version management + virtual environment tool</strong>.</p>
+<h3 id="install-pyenv">install pyenv</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">curl https://pyenv.run | bash
+</code></pre></td></tr></table>
+</div>
+</div><p><a href="https://github.com/pyenv/pyenv?tab=readme-ov-file#automatic-installer">pyenv</a></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">echo &#39;export PYENV_ROOT=&#34;$HOME/.pyenv&#34;&#39; &gt;&gt; ~/.bashrc
+echo &#39;command -v pyenv &gt;/dev/null || export PATH=&#34;$PYENV_ROOT/bin:$PATH&#34;&#39; &gt;&gt; ~/.bashrc
+echo &#39;eval &#34;$(pyenv init -)&#34;&#39; &gt;&gt; ~/.bashrc
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">source ~/.bashrc
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="usage">usage</h3>
+<h4 id="list-all-available-pyenv-commands">List all available pyenv commands</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">pyenv commands
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="list-all-available-python-versions">List all available Python versions</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">pyenv install -l
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="installing-specific-python-versions">Installing specific Python versions</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">pyenv install 3.12.0
+</code></pre></td></tr></table>
+</div>
+</div><!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<h4 id="uninstall-a-specific-python-version">Uninstall a specific python version</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">pyenv uninstall 3.12.0
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="show-all-python-versions">Show all Python versions</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">pyenv versions
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="setting-the-global-python-version">Setting the global Python version</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">pyenv global 3.12.0
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="display-the-currently-active-python-version">Display the currently active Python version</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">pyenv version
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="display-the-full-path-to-the-python-version">Display the full path to the Python version</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">pyenv which python
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="set-a-shell-specific-python-version">Set a shell-specific Python version</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">pyenv shell  3.12.0
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="unsets-the-shell-version">Unsets the shell version</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">pyenv shell --unset
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="set-a-local-python-version">Set a local Python version</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">pyenv local 3.11.5 
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="unset-the-local-python-version">Unset the local Python version</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">pyenv local --unset  
+</code></pre></td></tr></table>
+</div>
+</div><!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<h2 id="install-pyenv-virtualenv">install pyenv-virtualenv</h2>
+<h3 id="install-pyenv-virtualenv-1">install pyenv-virtualenv</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">$ git clone https://github.com/pyenv/pyenv-virtualenv.git $(pyenv root)/plugins/pyenv-virtualenv
+$ echo &#39;eval &#34;$(pyenv virtualenv-init -)&#34;&#39; &gt;&gt; ~/.bashrc
+$ source ~/.bashrc
+</code></pre></td></tr></table>
+</div>
+</div><p><a href="https://github.com/pyenv/pyenv-virtualenv#installation">pyenv-virtualenv</a></p>
+<h3 id="usage-1">usage</h3>
+<h4 id="create-a-virtualenv-by-specifying-the-python-version-with-the-name-of-the-virtualenv-directory">Create a virtualenv by specifying the Python version with the name of the virtualenv directory</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback"># Create a virtualenv called py377 using Python 3.7.7
+$ pyenv virtualenv 3.7.7 py377
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="set-local-virtualenv">Set local virtualenv</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback"># Set a local(direcotry) python environment to 377
+$ pyenv local py377
+(py377)$ cat .python-version
+py377
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="remove-a-local-virtualenv">Remove a local virtualenv</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">$ rm .python-version
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="delete-a-virtualenv">Delete a virtualenv</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">$ pyenv virtualenv-delete py377
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="activate-a-virtualenv">Activate a virtualenv</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">$ pyenv activate py377
+</code></pre></td></tr></table>
+</div>
+</div><p>When you activate a virtulaenv, the virtualenv will override the local virtualenv.</p>
+<h4 id="deactivate-the-virtualenv">Deactivate the virtualenv</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">pyenv deactivate
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="pipenv">pipenv</h2>
+<h3 id="what-is-pipenv">what is pipenv</h3>
+<p>pipenv is a Python package management and virtual environment tool.</p>
+<h3 id="install">install</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">python -m pip install pipenv
+</code></pre></td></tr></table>
+</div>
+</div><p><a href="https://github.com/pypa/pipenv#installation">pipenv </a></p>
+<h3 id="usage-2">usage</h3>
+<h4 id="create-a-new-virtualenv">Create a new virtualenv</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">pipenv  --python 3.11.5 install
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="installing-packages">Installing packages</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">pipenv install eth-ape&#39;[recommended-plugins]&#39;
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="produces-a-command-within-the-virtualenv">Produces a command within the virtualenv</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">pipenv shell 
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="install-all-packages-specified-in-pipfilelock">Install all packages specified in Pipfile.lock</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">pipenv sync
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="install-all-dependencies-including-dev">Install all dependencies including dev</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">pipenv install --dev
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="show-a-graph-of-your-installed-dependencies">Show a graph of your installed dependencies</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">pipenv graph
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="create-a-lockfile-containing-pre-releases">Create a lockfile containing pre-releases</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">pipenv lock --pre
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="checks-for-security-vulnerabilitie">Checks for security vulnerabilitie</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">pipenv check
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="uninstall-a-provided-package-and-removes-it-from-pipfile">Uninstall a provided package and removes it from Pipfile</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">pipenv uninstall 
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="uninstall-all-packages-not-specified-in-pipfilelock">Uninstall all packages not specified in Pipfile.lock</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">pipenv clean
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="locate-the-project">Locate the project</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">pipenv --where
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="locate-the-virtualenv">Locate the virtualenv</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">pipenv --venv
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="remove-project-virtualenv-from-current-directory">Remove project virtualenv from current directory</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">pipenv  --rm
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="jupyter">jupyter</h2>
+<h3 id="install-1">install</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">pip install ipykernel jupyter jupyter_cms ipython 
+</code></pre></td></tr></table>
+</div>
+</div>
     </div>
 
 
@@ -236,7 +596,7 @@
   <p class="copyright-item">
     <span class="item-title">上次更新</span>
     <span class="item-content">
-        2023-05-19
+        2024-03-27
         
     </span>
   </p>
@@ -245,16 +605,12 @@
 </div>
 <footer class="post-footer">
       <div class="post-tags">
-          <a href="/tags/sport/">sport</a>
+          <a href="/tags/devops/">devops</a>
           </div>
       <nav class="post-nav">
-        <a class="prev" href="/post/rt/what-is-writing/">
-            <i class="iconfont icon-left"></i>
-            <span class="prev-text nav-default">写作是什么</span>
-            <span class="prev-text nav-mobile">上一篇</span>
-          </a>
-        <a class="next" href="/post/life/how-to-rest/">
-            <span class="next-text nav-default">学会休息</span>
+        
+        <a class="next" href="/post/devops/wsl-1-network/">
+            <span class="next-text nav-default">WSL-network</span>
             <span class="next-text nav-mobile">下一篇</span>
             <i class="iconfont icon-right"></i>
           </a>
