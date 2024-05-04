@@ -727,10 +727,10 @@ update PowerShell Get PowerShell Version:
     
     <item>
       <title>说说学到位</title>
-      <link>http://myself659.github.io/post/learn/%E5%AD%A6%E5%88%B0%E4%BD%8D/</link>
+      <link>http://myself659.github.io/post/learn/%E5%AD%A6%E4%B9%A0%E5%88%B0%E4%BD%8D/</link>
       <pubDate>Sat, 18 Apr 2020 11:58:06 +0800</pubDate>
       
-      <guid>http://myself659.github.io/post/learn/%E5%AD%A6%E5%88%B0%E4%BD%8D/</guid>
+      <guid>http://myself659.github.io/post/learn/%E5%AD%A6%E4%B9%A0%E5%88%B0%E4%BD%8D/</guid>
       <description>什么是学到位 学到位可以分解为四个到位： 理解到位 体系到位 融合到位 应用到位 理解到位 怎么做到理解到位？ 不多说，推荐费曼学习法。 If you can&amp;rsquo;t explain it simply, you don&amp;rsquo;t understand it</description>
     </item>
     
@@ -781,10 +781,10 @@ update PowerShell Get PowerShell Version:
     
     <item>
       <title>github被攻击，程序员该怎么办</title>
-      <link>http://myself659.github.io/post/github-hack/</link>
+      <link>http://myself659.github.io/post/devops/github-hack/</link>
       <pubDate>Sun, 29 Mar 2020 11:58:06 +0200</pubDate>
       
-      <guid>http://myself659.github.io/post/github-hack/</guid>
+      <guid>http://myself659.github.io/post/devops/github-hack/</guid>
       <description>2020年3月27日，全世界最大的同性交友网站github被攻击了，连正常的首页都打不开。 Https并不是100%安全 github被攻击说明</description>
     </item>
     
@@ -1764,10 +1764,10 @@ Let us start the excited journey to the new Wild West.</description>
     
     <item>
       <title>MacOS上设置终端代理</title>
-      <link>http://myself659.github.io/post/2017-11-03-mac-tem-proxy/</link>
+      <link>http://myself659.github.io/post/network/2017-11-03-mac-tem-proxy/</link>
       <pubDate>Fri, 03 Nov 2017 11:58:06 +0200</pubDate>
       
-      <guid>http://myself659.github.io/post/2017-11-03-mac-tem-proxy/</guid>
+      <guid>http://myself659.github.io/post/network/2017-11-03-mac-tem-proxy/</guid>
       <description>由于20-1大的原因，各种梯子损失惨重。自己也只好自己动手搭建VPS。关于如何搭建梯子这里暂不描述。 说明 下面的操作是建立在成功搭建VPS基础</description>
     </item>
     
@@ -1836,10 +1836,10 @@ Let us start the excited journey to the new Wild West.</description>
     
     <item>
       <title>IPFS与下一代网络安全</title>
-      <link>http://myself659.github.io/post/2017-09-21-ipfs-sec/</link>
+      <link>http://myself659.github.io/post/network/2017-09-21-ipfs-sec/</link>
       <pubDate>Thu, 21 Sep 2017 11:58:06 +0200</pubDate>
       
-      <guid>http://myself659.github.io/post/2017-09-21-ipfs-sec/</guid>
+      <guid>http://myself659.github.io/post/network/2017-09-21-ipfs-sec/</guid>
       <description>IPFS 先简单说一下IPFS。 IPFS是点对点协议InterPlanetary File System的简称，它是一个面向全球的、点对点的分布式版本文件系统</description>
     </item>
     
@@ -1917,10 +1917,10 @@ Let us start the excited journey to the new Wild West.</description>
     
     <item>
       <title>设定目标的原则</title>
-      <link>http://myself659.github.io/post/life/principle-to-set-goal-%E7%9B%AE%E6%A0%87/</link>
+      <link>http://myself659.github.io/post/done/principle-to-set-goal-%E7%9B%AE%E6%A0%87/</link>
       <pubDate>Sat, 27 May 2017 11:58:06 +0200</pubDate>
       
-      <guid>http://myself659.github.io/post/life/principle-to-set-goal-%E7%9B%AE%E6%A0%87/</guid>
+      <guid>http://myself659.github.io/post/done/principle-to-set-goal-%E7%9B%AE%E6%A0%87/</guid>
       <description>目标的意义 目标是指导前进的方向 目标帮助思考：我们真正想要的是什么？ 目标是动力的来源之一 目标有利于抗干扰，提高专注力 SMART原则 谈及目标原则</description>
     </item>
     
