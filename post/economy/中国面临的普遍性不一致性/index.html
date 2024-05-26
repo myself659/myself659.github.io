@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>利用WSL和wget从github下载文件 - 沉风网事</title>
+  <title>面临的普遍性不一致性问题 - 沉风网事</title>
   <meta name="renderer" content="webkit" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
@@ -16,7 +16,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="沉风网事" /><meta name="description" content="背景 由于GFW的干扰，即使科学上网方式从github下载文件，下载连接经常会被中断。由于chrome重新连接的次数有限，据说chrome重新" /><meta name="keywords" content="沉风网事, 沉风, 区块链, Glang, 算法, 数据结构" />
+<meta name="author" content="沉风网事" /><meta name="description" content="普遍性不一致性问题 宏观经济数据与广大人民的体感不一致 国家前途与个人命运不一致 对内的宣传与国外的实际不一致 政府宣传与实际情况不一致 GDP增长与" /><meta name="keywords" content="沉风网事, 沉风, 区块链, Glang, 算法, 数据结构" />
 
 
 <meta name="baidu-site-verification" content="9LmlOuIblt" />
@@ -26,7 +26,7 @@
 <meta name="generator" content="Hugo 0.84.0 with theme even" />
 
 
-<link rel="canonical" href="http://myself659.github.io/post/linux/linux-wget-retry/" />
+<link rel="canonical" href="http://myself659.github.io/post/economy/%E4%B8%AD%E5%9B%BD%E9%9D%A2%E4%B8%B4%E7%9A%84%E6%99%AE%E9%81%8D%E6%80%A7%E4%B8%8D%E4%B8%80%E8%87%B4%E6%80%A7/" />
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -39,20 +39,20 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
-<meta property="og:title" content="利用WSL和wget从github下载文件" />
-<meta property="og:description" content="背景 由于GFW的干扰，即使科学上网方式从github下载文件，下载连接经常会被中断。由于chrome重新连接的次数有限，据说chrome重新" />
+<meta property="og:title" content="面临的普遍性不一致性问题" />
+<meta property="og:description" content="普遍性不一致性问题 宏观经济数据与广大人民的体感不一致 国家前途与个人命运不一致 对内的宣传与国外的实际不一致 政府宣传与实际情况不一致 GDP增长与" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://myself659.github.io/post/linux/linux-wget-retry/" /><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2020-07-31T11:58:06&#43;02:00" />
-<meta property="article:modified_time" content="2020-07-31T11:58:06&#43;02:00" />
+<meta property="og:url" content="http://myself659.github.io/post/economy/%E4%B8%AD%E5%9B%BD%E9%9D%A2%E4%B8%B4%E7%9A%84%E6%99%AE%E9%81%8D%E6%80%A7%E4%B8%8D%E4%B8%80%E8%87%B4%E6%80%A7/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2023-12-18T11:58:06&#43;02:00" />
+<meta property="article:modified_time" content="2023-12-18T11:58:06&#43;02:00" />
 
-<meta itemprop="name" content="利用WSL和wget从github下载文件">
-<meta itemprop="description" content="背景 由于GFW的干扰，即使科学上网方式从github下载文件，下载连接经常会被中断。由于chrome重新连接的次数有限，据说chrome重新"><meta itemprop="datePublished" content="2020-07-31T11:58:06&#43;02:00" />
-<meta itemprop="dateModified" content="2020-07-31T11:58:06&#43;02:00" />
-<meta itemprop="wordCount" content="230">
-<meta itemprop="keywords" content="Linux," /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="利用WSL和wget从github下载文件"/>
-<meta name="twitter:description" content="背景 由于GFW的干扰，即使科学上网方式从github下载文件，下载连接经常会被中断。由于chrome重新连接的次数有限，据说chrome重新"/>
+<meta itemprop="name" content="面临的普遍性不一致性问题">
+<meta itemprop="description" content="普遍性不一致性问题 宏观经济数据与广大人民的体感不一致 国家前途与个人命运不一致 对内的宣传与国外的实际不一致 政府宣传与实际情况不一致 GDP增长与"><meta itemprop="datePublished" content="2023-12-18T11:58:06&#43;02:00" />
+<meta itemprop="dateModified" content="2023-12-18T11:58:06&#43;02:00" />
+<meta itemprop="wordCount" content="90">
+<meta itemprop="keywords" content="Economy," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="面临的普遍性不一致性问题"/>
+<meta name="twitter:description" content="普遍性不一致性问题 宏观经济数据与广大人民的体感不一致 国家前途与个人命运不一致 对内的宣传与国外的实际不一致 政府宣传与实际情况不一致 GDP增长与"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -140,12 +140,12 @@
           <article class="post">
     
     <header class="post-header">
-      <h1 class="post-title">利用WSL和wget从github下载文件</h1>
+      <h1 class="post-title">面临的普遍性不一致性问题</h1>
 
       <div class="post-meta">
-        <span class="post-time"> 2020-07-31 </span>
+        <span class="post-time"> 2023-12-18 </span>
         <div class="post-category">
-            <a href="/categories/linux/"> Linux </a>
+            <a href="/categories/economy/"> Economy </a>
             </div>
         
       </div>
@@ -157,34 +157,37 @@
   <div class="post-toc-content always-active">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#背景">背景</a></li>
-    <li><a href="#解决方案">解决方案</a></li>
-    <li><a href="#应用">应用</a></li>
+    <li><a href="#普遍性不一致性问题">普遍性不一致性问题</a></li>
   </ul>
 </nav>
   </div>
 </div>
     <div class="post-content">
-      <h2 id="背景">背景</h2>
-<p>由于GFW的干扰，即使科学上网方式从github下载文件，下载连接经常会被中断。由于chrome重新连接的次数有限，据说chrome重新建立连接重试次数最大为5次。所以遇到一个大的下载文件，通常是不会下载成功，费时费力费心。</p>
-<p>针对这种情况提供一个解决方案。</p>
-<h2 id="解决方案">解决方案</h2>
-<p>在windows上科学上网基础之上，解决方案主要工作如下：</p>
+      <h2 id="普遍性不一致性问题">普遍性不一致性问题</h2>
 <ol>
-<li>在windows上安装wsl</li>
-<li>在wsl上安装与配置polipo</li>
+<li>
+<p>宏观经济数据与广大人民的体感不一致</p>
+</li>
+<li>
+<p>国家前途与个人命运不一致</p>
+</li>
+<li>
+<p>对内的宣传与国外的实际不一致</p>
+</li>
+<li>
+<p>政府宣传与实际情况不一致</p>
+</li>
+<li>
+<p>GDP增长与财富增长不一致</p>
+</li>
+<li>
+<p>企业家公开说与实际做不一致</p>
+</li>
 </ol>
-<h2 id="应用">应用</h2>
-<p>应用就很简单,通过wget指定重连接的次数，参考如下：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">wget  --tries=1000  https://github.com/downloadurl
-</code></pre></td></tr></table>
-</div>
-</div><p>（end）</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<blockquote>
+</blockquote>
 
     </div>
 
@@ -198,7 +201,7 @@
   <p class="copyright-item">
     <span class="item-title">上次更新</span>
     <span class="item-content">
-        2020-07-31
+        2023-12-18
         
     </span>
   </p>
@@ -207,16 +210,16 @@
 </div>
 <footer class="post-footer">
       <div class="post-tags">
-          <a href="/tags/linux/">Linux</a>
+          <a href="/tags/economy/">Economy</a>
           </div>
       <nav class="post-nav">
-        <a class="prev" href="/post/gpt3-thought/">
+        <a class="prev" href="/post/economy/%E4%BB%80%E4%B9%88%E6%89%8D%E6%98%AF%E4%B8%AD%E5%9B%BD%E7%9A%84%E9%97%AE%E9%A2%98/">
             <i class="iconfont icon-left"></i>
-            <span class="prev-text nav-default">谈谈GPT3</span>
+            <span class="prev-text nav-default">什么才是中国的问题</span>
             <span class="prev-text nav-mobile">上一篇</span>
           </a>
-        <a class="next" href="/post/economy/about-squatter-economy/">
-            <span class="next-text nav-default">说说地摊经济</span>
+        <a class="next" href="/post/life/%E6%88%90%E8%B4%A5%E5%BE%97%E5%A4%B1%E5%A4%A7%E4%BA%8E%E6%98%AF%E9%9D%9E%E5%AF%B9%E9%94%99/">
+            <span class="next-text nav-default">不要执着于是非对错</span>
             <span class="next-text nav-mobile">下一篇</span>
             <i class="iconfont icon-right"></i>
           </a>
