@@ -59,7 +59,7 @@ update PowerShell Get PowerShell Version:
     </item>
     
     <item>
-      <title>面临的普遍性不一致性问题</title>
+      <title>普遍性不一致性问题</title>
       <link>http://myself659.github.io/post/economy/%E4%B8%AD%E5%9B%BD%E9%9D%A2%E4%B8%B4%E7%9A%84%E6%99%AE%E9%81%8D%E6%80%A7%E4%B8%8D%E4%B8%80%E8%87%B4%E6%80%A7/</link>
       <pubDate>Mon, 18 Dec 2023 11:58:06 +0200</pubDate>
       
@@ -1091,6 +1091,15 @@ update PowerShell Get PowerShell Version:
       
       <guid>http://myself659.github.io/post/golang/golang-sync-pool-1/</guid>
       <description>定义 sync.Pool是一个可以存或取的临时对象池。对外提供New、Get、Put等API，利用mutex支持多线程并发。 目标 sync.Po</description>
+    </item>
+    
+    <item>
+      <title>谈谈利益</title>
+      <link>http://myself659.github.io/post/human/%E5%88%A9%E7%9B%8A-benfit101/</link>
+      <pubDate>Fri, 07 Jun 2019 11:58:06 +0200</pubDate>
+      
+      <guid>http://myself659.github.io/post/human/%E5%88%A9%E7%9B%8A-benfit101/</guid>
+      <description>来源 利益来自需求。 排序 短期利益 &amp;gt; 长期利益 个人利益 &amp;gt; 部门利益 &amp;gt; 社会利益 主观利益 &amp;gt; 客观利益 度量 价值度量利益。 利益驱动 人是一种利益驱动的动物。 社会</description>
     </item>
     
     <item>
@@ -2370,7 +2379,7 @@ Let us start the excited journey to the new Wild West.</description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>http://myself659.github.io/post/invest/invest-l0/</guid>
-      <description>banner = &amp;quot;&amp;quot; categories = [&amp;ldquo;Invest&amp;rdquo;] date = &amp;ldquo;2021-01-08T11:58:06+02:00&amp;rdquo; description = &amp;quot;&amp;quot; images = [] menu = &amp;quot;&amp;quot; tags = [&amp;ldquo;Invest&amp;rdquo;] title = &amp;quot;&amp;quot; draft = true +++ 交易 https://talk.harmony.one/t/harmony-layerzero-airdrop/24700/ https://bridge.harmony.one/erc20/operations/06cb73c6-cb6a3860-78e416ed-b41f39e2 https://explorer.harmony.one/tx/0x23d7957bbb268c3e92a0711fe0ec8959cdac5b9b515ee779ecd1b06ea21f673c https://layerzeroscan.com/116/address/0xf4d83e35874bee7cb363d37d45ca2adf8c6c26d7/message/102/address/0x1edb8bded80e1b87ed19ee7d97ee80b4fdb615c1/nonce/6 https://bscscan.com/tx/0x4e777aa391ab6f01a7dae13746af092f7dfcacbe8650249a025e7f6192b3a10d https://bscscan.com/tx/0xeab835e34e625074171dc9b87705e19fad01fde8ea5a117c15f91687820ecc64 使用layerzero获利空投。 两次使用。 桥是连接的机会。 https://bscscan.com/address/0x38278dEA356E42DD7A097bECc2393f908bc5CA9c https://bscscan.com/address/0x4abeb9fedd87b28bf53b24dddf02ace9e7ccf360 0x4ABEb9FedD87B28Bf53b24DdDF02aCE9E7CCf360 只有</description>
+      <description>banner = &amp;quot;&amp;quot; categories = [&amp;ldquo;Invest&amp;rdquo;] date = &amp;ldquo;2021-01-08T11:58:06+02:00&amp;rdquo; description = &amp;quot;&amp;quot; images = [] menu = &amp;quot;&amp;quot; tags = [&amp;ldquo;Invest&amp;rdquo;] title = &amp;quot;&amp;quot; draft = true +++ airdrop https://medium.com/layerzero-official/addressing-sybil-activity-a2f92218ddd3 https://x.com/LayerZero_Labs/status/1794186650223878240 https://layerzeroscan.com/analytics/networks?srcChain=harmony 3/800 份额： https://talk.harmony.one/t/harmony-layerzero-airdrop/24700?u=theo1 https://x.com/LayerZero_Labs/status/1732862812710449466 https://www.coingecko.com/learn/layerzero-airdrop 0x38278dEA356E42DD7A097bECc2393f908bc5CA9c https://x.com/LayerZero_Labs/status/1791622471965163597 https://x.com/LayerZero_Labs/status/1788984201930301901 0x4ABEb9FedD87B28Bf53b24DdDF02aCE9E7CCf360 只有这个？ Opened a liquidity pool, on the Harmony network, that includes at least 1 bridged asset 用桥接资产创建</description>
     </item>
     
     <item>
