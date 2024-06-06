@@ -3,48 +3,55 @@
   
   <url>
     <loc>http://myself659.github.io/categories/</loc>
-    <lastmod>2024-03-28T11:58:06+02:00</lastmod>
+    <lastmod>2024-03-29T11:58:06+02:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://myself659.github.io/tags/done/</loc>
-    <lastmod>2024-03-28T11:58:06+02:00</lastmod>
+    <lastmod>2024-03-29T11:58:06+02:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://myself659.github.io/categories/done/</loc>
-    <lastmod>2024-03-28T11:58:06+02:00</lastmod>
+    <lastmod>2024-03-29T11:58:06+02:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://myself659.github.io/post/</loc>
-    <lastmod>2024-03-28T11:58:06+02:00</lastmod>
+    <lastmod>2024-03-29T11:58:06+02:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://myself659.github.io/tags/</loc>
-    <lastmod>2024-03-28T11:58:06+02:00</lastmod>
+    <lastmod>2024-03-29T11:58:06+02:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://myself659.github.io/post/done/essence-transurfing/</loc>
-    <lastmod>2024-03-28T11:58:06+02:00</lastmod>
+    <loc>http://myself659.github.io/post/done/do-the-thing-101/</loc>
+    <lastmod>2024-03-29T11:58:06+02:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://myself659.github.io/</loc>
+    <lastmod>2024-03-29T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://myself659.github.io/post/done/essence-transurfing/</loc>
     <lastmod>2024-03-28T11:58:06+02:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
