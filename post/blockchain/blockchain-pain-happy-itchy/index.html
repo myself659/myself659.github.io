@@ -290,6 +290,26 @@ window.store = {
     
     
     
+    "http:\/\/myself659.github.io\/post\/devops\/wsl-ubuntu-upgrade\/": {
+        
+        "title": "upgrade ubuntu in WSL",
+        "tags": ["devops",],
+        "content": "show lsb-release before upgrade 1 2 3 4 5 6  cat /etc/lsb-release DISTRIB_ID=Ubuntu DISTRIB_RELEASE=22.04 DISTRIB_CODENAME=jammy DISTRIB_DESCRIPTION=\u0026#34;Ubuntu 22.04.4 LTS\u0026#34;   prepare open file with command is as follows:\n1  sudo nano /etc/update-manager/release-upgrades   set Prompt=lts is as follows:\n1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16  # Default behavior for the release upgrader. [DEFAULT] # Default prompting and upgrade behavior, valid options: # # never - Never check for, or allow upgrading to, a new release. # normal - Check to see if a new release is available. If more than one new # release is found, the release upgrader will attempt to upgrade to # the supported release that immediately succeeds the # currently-running release. # lts - Check to see if a new LTS release is available. The upgrader # will attempt to upgrade to the first LTS release available after # the currently-running one. Note that if this option is used and # the currently-running release is not itself an LTS release the # upgrader will assume prompt was meant to be normal. Prompt=lts   CTRL+S to save, then CTRL+X to exit.\nupgrade 1 2 3 4 5  sudo apt update sudo apt upgrade -y sudo do-release-upgrade   show lsb-release after upgrade 1 2 3 4 5 6  cat /etc/lsb-release DISTRIB_ID=Ubuntu DISTRIB_RELEASE=24.04 DISTRIB_CODENAME=noble DISTRIB_DESCRIPTION=\u0026#34;Ubuntu 24.04 LTS\u0026#34;   1 2  uname -a Linux TX 5.15.146.1-microsoft-standard-WSL2 #1 SMP Thu Jan 11 04:09:03 UTC 2024 x86_64 x86_64 x86_64 GNU/Linux   The kernel is not upgraded for conservative reasons. For the specific kernel upgrade, please refer to here.\nproblems /dev/null: Permission denied problem description is as follows:\n1 2 3  /home/ia/.pyenv/bin/pyenv: line 23: /dev/null: Permission denied /home/ia/.pyenv/libexec/pyenv-hooks: line 24: /dev/null: Permission denied /home/ia/.pyenv/plugins/pyenv-virtualenv/bin/pyenv-sh-activate: line 78: /dev/null: Permission denied   solution:\n1  sudo chmod 666 /dev/null   ", 
+        "url": "http:\/\/myself659.github.io\/post\/devops\/wsl-ubuntu-upgrade\/"
+    },
+    
+    
+    
+    "http:\/\/myself659.github.io\/post\/devops\/wsl-move\/": {
+        
+        "title": "WSL command: export, import",
+        "tags": ["devops",],
+        "content": "list before export 1  wsl -l -v   1 2 3  PS C:\\Users\\mysel\u0026gt; wsl -l -v NAME STATE VERSION * Ubuntu-22.04 Stopped 2   export 1 2  wsl.exe --export Ubuntu-22.04 I:\\wslback\\Ubuntu-22.04.bak   import 1  wsl.exe --import U22 i:\\wsl\\u22\\ d:\\wslback\\Ubuntu-22.04.bak   run 1  wsl.exe -d U22   list after import 1  wsl -l -v   1 2 3 4  PS C:\\Users\\mysel\u0026gt; wsl -l -v NAME STATE VERSION * Ubuntu-22.04 Stopped 2 U22 Running 2   access from explorer 1  \\\\wsl.localhost\\U22   add to Windows Terminal 1 2 3 4 5 6 7 8 9  { \u0026#34;commandline\u0026#34;: \u0026#34;wsl.exe -d U22\u0026#34;, \u0026#34;guid\u0026#34;: \u0026#34;{e5a83caa-4c73-52b3-ae6b-bc438d721ef9}\u0026#34;, \u0026#34;hidden\u0026#34;: false, \u0026#34;name\u0026#34;: \u0026#34;U22\u0026#34;, \u0026#34;source\u0026#34;: \u0026#34;CanonicalGroupLimited.Ubuntu22.04LTS_79rhkp1fndgsc\u0026#34;, \u0026#34;startingDirectory\u0026#34;: \u0026#34;~\u0026#34; },   ", 
+        "url": "http:\/\/myself659.github.io\/post\/devops\/wsl-move\/"
+    },
+    
+    
+    
     "http:\/\/myself659.github.io\/post\/done\/do-the-thing-101\/": {
         
         "title": "thoughts about do the thing",
@@ -3037,6 +3057,26 @@ window.store = {
         "tags": [],
         "content": "", 
         "url": "http:\/\/myself659.github.io\/post\/"
+    },
+    
+    
+    
+    "http:\/\/myself659.github.io\/post\/devops\/wsl-ubuntu-upgrade\/": {
+        
+        "title": "upgrade ubuntu in WSL",
+        "tags": ["devops",],
+        "content": "show lsb-release before upgrade 1 2 3 4 5 6  cat /etc/lsb-release DISTRIB_ID=Ubuntu DISTRIB_RELEASE=22.04 DISTRIB_CODENAME=jammy DISTRIB_DESCRIPTION=\u0026#34;Ubuntu 22.04.4 LTS\u0026#34;   prepare open file with command is as follows:\n1  sudo nano /etc/update-manager/release-upgrades   set Prompt=lts is as follows:\n1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16  # Default behavior for the release upgrader. [DEFAULT] # Default prompting and upgrade behavior, valid options: # # never - Never check for, or allow upgrading to, a new release. # normal - Check to see if a new release is available. If more than one new # release is found, the release upgrader will attempt to upgrade to # the supported release that immediately succeeds the # currently-running release. # lts - Check to see if a new LTS release is available. The upgrader # will attempt to upgrade to the first LTS release available after # the currently-running one. Note that if this option is used and # the currently-running release is not itself an LTS release the # upgrader will assume prompt was meant to be normal. Prompt=lts   CTRL+S to save, then CTRL+X to exit.\nupgrade 1 2 3 4 5  sudo apt update sudo apt upgrade -y sudo do-release-upgrade   show lsb-release after upgrade 1 2 3 4 5 6  cat /etc/lsb-release DISTRIB_ID=Ubuntu DISTRIB_RELEASE=24.04 DISTRIB_CODENAME=noble DISTRIB_DESCRIPTION=\u0026#34;Ubuntu 24.04 LTS\u0026#34;   1 2  uname -a Linux TX 5.15.146.1-microsoft-standard-WSL2 #1 SMP Thu Jan 11 04:09:03 UTC 2024 x86_64 x86_64 x86_64 GNU/Linux   The kernel is not upgraded for conservative reasons. For the specific kernel upgrade, please refer to here.\nproblems /dev/null: Permission denied problem description is as follows:\n1 2 3  /home/ia/.pyenv/bin/pyenv: line 23: /dev/null: Permission denied /home/ia/.pyenv/libexec/pyenv-hooks: line 24: /dev/null: Permission denied /home/ia/.pyenv/plugins/pyenv-virtualenv/bin/pyenv-sh-activate: line 78: /dev/null: Permission denied   solution:\n1  sudo chmod 666 /dev/null   ", 
+        "url": "http:\/\/myself659.github.io\/post\/devops\/wsl-ubuntu-upgrade\/"
+    },
+    
+    
+    
+    "http:\/\/myself659.github.io\/post\/devops\/wsl-move\/": {
+        
+        "title": "WSL command: export, import",
+        "tags": ["devops",],
+        "content": "list before export 1  wsl -l -v   1 2 3  PS C:\\Users\\mysel\u0026gt; wsl -l -v NAME STATE VERSION * Ubuntu-22.04 Stopped 2   export 1 2  wsl.exe --export Ubuntu-22.04 I:\\wslback\\Ubuntu-22.04.bak   import 1  wsl.exe --import U22 i:\\wsl\\u22\\ d:\\wslback\\Ubuntu-22.04.bak   run 1  wsl.exe -d U22   list after import 1  wsl -l -v   1 2 3 4  PS C:\\Users\\mysel\u0026gt; wsl -l -v NAME STATE VERSION * Ubuntu-22.04 Stopped 2 U22 Running 2   access from explorer 1  \\\\wsl.localhost\\U22   add to Windows Terminal 1 2 3 4 5 6 7 8 9  { \u0026#34;commandline\u0026#34;: \u0026#34;wsl.exe -d U22\u0026#34;, \u0026#34;guid\u0026#34;: \u0026#34;{e5a83caa-4c73-52b3-ae6b-bc438d721ef9}\u0026#34;, \u0026#34;hidden\u0026#34;: false, \u0026#34;name\u0026#34;: \u0026#34;U22\u0026#34;, \u0026#34;source\u0026#34;: \u0026#34;CanonicalGroupLimited.Ubuntu22.04LTS_79rhkp1fndgsc\u0026#34;, \u0026#34;startingDirectory\u0026#34;: \u0026#34;~\u0026#34; },   ", 
+        "url": "http:\/\/myself659.github.io\/post\/devops\/wsl-move\/"
     },
     
     

@@ -137,6 +137,48 @@
           <section id="posts" class="posts">
     <article class="post">
   <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/post/2017-09-20-next-network/">关于弹性安全网络一点思考</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2017-09-20 </span>
+      <div class="post-category">
+          <a href="/categories/ipfs/"> ipfs </a>
+          </div>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      作为网络研发出身的我，从事网络研发时间也最长，一直也关注道哥的微信公众号。 下面就对道哥的提出弹性安全网络一些总结与思考。 弹性安全网络 具体从以
+    </div>
+    <div class="read-more">
+      <a href="/post/2017-09-20-next-network/" class="read-more-link">阅读更多</a>
+    </div>
+  </div>
+</article>
+
+    <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/post/2017-08-24-ethereum-start/">以太坊私链智能合约实践</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2017-08-24 </span>
+      <div class="post-category">
+          <a href="/categories/blockchain/"> blockchain </a>
+          </div>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      环境说明 操作系统: macos.10.12.1 geth版本：1.5.9 solc版本：0.4.15 实践 1. 启动本地geth节点 1 Michaels-iMac:wallet eric$ geth --rpc --rpcaddr 127.0.0.1 --rpcport 8545 --dev --datadir myethchain 如上操作后，geth
+    </div>
+    <div class="read-more">
+      <a href="/post/2017-08-24-ethereum-start/" class="read-more-link">阅读更多</a>
+    </div>
+  </div>
+</article>
+
+    <article class="post">
+  <header class="post-header">
     <h1 class="post-title"><a class="post-link" href="/post/dsa/dfs-vs-bfs/">DFS与BFS适用场景</a></h1>
     <div class="post-meta">
       <span class="post-time"> 2017-08-23 </span>
@@ -721,48 +763,6 @@
   </div>
 </article>
 
-    <article class="post">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/post/2016-07-29-im-message/">IM后端系统设计总结(1)</a></h1>
-    <div class="post-meta">
-      <span class="post-time"> 2016-07-29 </span>
-      <div class="post-category">
-          <a href="/categories/arch/"> Arch </a>
-          </div>
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-      定义IM 为用户提供即时消息服务，这里面有三个关键词：用户，消息，服务；下面根据三个关键词来展开总结，先从消息开始。 消息 消息分类 对消息分类，很
-    </div>
-    <div class="read-more">
-      <a href="/post/2016-07-29-im-message/" class="read-more-link">阅读更多</a>
-    </div>
-  </div>
-</article>
-
-    <article class="post">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/post/2016-07-26-go-channel-feature/">Go channel 特点篇</a></h1>
-    <div class="post-meta">
-      <span class="post-time"> 2016-07-26 </span>
-      <div class="post-category">
-          <a href="/categories/golang/"> golang </a>
-          </div>
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-      channel模式 根据同步方式不同，channel有两种模式： 1、同步模式,形式如下： 1 ch := make(chan int) 2、队列模式，形式如下： 1 ch := make(chan int, 10) 根据数据
-    </div>
-    <div class="read-more">
-      <a href="/post/2016-07-26-go-channel-feature/" class="read-more-link">阅读更多</a>
-    </div>
-  </div>
-</article>
-
     </section>
   
   <nav class="pagination">
@@ -825,6 +825,26 @@ window.store = {
         "tags": [],
         "content": "", 
         "url": "http:\/\/myself659.github.io\/post\/"
+    },
+    
+    
+    
+    "http:\/\/myself659.github.io\/post\/devops\/wsl-ubuntu-upgrade\/": {
+        
+        "title": "upgrade ubuntu in WSL",
+        "tags": ["devops",],
+        "content": "show lsb-release before upgrade 1 2 3 4 5 6  cat /etc/lsb-release DISTRIB_ID=Ubuntu DISTRIB_RELEASE=22.04 DISTRIB_CODENAME=jammy DISTRIB_DESCRIPTION=\u0026#34;Ubuntu 22.04.4 LTS\u0026#34;   prepare open file with command is as follows:\n1  sudo nano /etc/update-manager/release-upgrades   set Prompt=lts is as follows:\n1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16  # Default behavior for the release upgrader. [DEFAULT] # Default prompting and upgrade behavior, valid options: # # never - Never check for, or allow upgrading to, a new release. # normal - Check to see if a new release is available. If more than one new # release is found, the release upgrader will attempt to upgrade to # the supported release that immediately succeeds the # currently-running release. # lts - Check to see if a new LTS release is available. The upgrader # will attempt to upgrade to the first LTS release available after # the currently-running one. Note that if this option is used and # the currently-running release is not itself an LTS release the # upgrader will assume prompt was meant to be normal. Prompt=lts   CTRL+S to save, then CTRL+X to exit.\nupgrade 1 2 3 4 5  sudo apt update sudo apt upgrade -y sudo do-release-upgrade   show lsb-release after upgrade 1 2 3 4 5 6  cat /etc/lsb-release DISTRIB_ID=Ubuntu DISTRIB_RELEASE=24.04 DISTRIB_CODENAME=noble DISTRIB_DESCRIPTION=\u0026#34;Ubuntu 24.04 LTS\u0026#34;   1 2  uname -a Linux TX 5.15.146.1-microsoft-standard-WSL2 #1 SMP Thu Jan 11 04:09:03 UTC 2024 x86_64 x86_64 x86_64 GNU/Linux   The kernel is not upgraded for conservative reasons. For the specific kernel upgrade, please refer to here.\nproblems /dev/null: Permission denied problem description is as follows:\n1 2 3  /home/ia/.pyenv/bin/pyenv: line 23: /dev/null: Permission denied /home/ia/.pyenv/libexec/pyenv-hooks: line 24: /dev/null: Permission denied /home/ia/.pyenv/plugins/pyenv-virtualenv/bin/pyenv-sh-activate: line 78: /dev/null: Permission denied   solution:\n1  sudo chmod 666 /dev/null   ", 
+        "url": "http:\/\/myself659.github.io\/post\/devops\/wsl-ubuntu-upgrade\/"
+    },
+    
+    
+    
+    "http:\/\/myself659.github.io\/post\/devops\/wsl-move\/": {
+        
+        "title": "WSL command: export, import",
+        "tags": ["devops",],
+        "content": "list before export 1  wsl -l -v   1 2 3  PS C:\\Users\\mysel\u0026gt; wsl -l -v NAME STATE VERSION * Ubuntu-22.04 Stopped 2   export 1 2  wsl.exe --export Ubuntu-22.04 I:\\wslback\\Ubuntu-22.04.bak   import 1  wsl.exe --import U22 i:\\wsl\\u22\\ d:\\wslback\\Ubuntu-22.04.bak   run 1  wsl.exe -d U22   list after import 1  wsl -l -v   1 2 3 4  PS C:\\Users\\mysel\u0026gt; wsl -l -v NAME STATE VERSION * Ubuntu-22.04 Stopped 2 U22 Running 2   access from explorer 1  \\\\wsl.localhost\\U22   add to Windows Terminal 1 2 3 4 5 6 7 8 9  { \u0026#34;commandline\u0026#34;: \u0026#34;wsl.exe -d U22\u0026#34;, \u0026#34;guid\u0026#34;: \u0026#34;{e5a83caa-4c73-52b3-ae6b-bc438d721ef9}\u0026#34;, \u0026#34;hidden\u0026#34;: false, \u0026#34;name\u0026#34;: \u0026#34;U22\u0026#34;, \u0026#34;source\u0026#34;: \u0026#34;CanonicalGroupLimited.Ubuntu22.04LTS_79rhkp1fndgsc\u0026#34;, \u0026#34;startingDirectory\u0026#34;: \u0026#34;~\u0026#34; },   ", 
+        "url": "http:\/\/myself659.github.io\/post\/devops\/wsl-move\/"
     },
     
     
