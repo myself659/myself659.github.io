@@ -283,6 +283,16 @@ window.store = {
     
     
     
+    "http:\/\/myself659.github.io\/post\/devops\/wsl-cuda\/": {
+        
+        "title": "setup CUDA development environment in WSL2",
+        "tags": ["devops",],
+        "content": "Install the GCC compiler 1  sudo apt install gcc --fix-missing   Install Nvidia CUDA toolkit 1  sudo apt install nvidia-cuda-toolkit   check the Driver and CUDA versions 1 2  nvidia-smi nvcc -V   Install Python with Mamba 1 2  wget https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-Linux-x86_64.sh bash Miniforge3-Linux-x86_64.sh   1 2 3  mamba create -n mycuda jupyterlab -c conda-forge mamba activate mycuda jupyter lab   Testing Cuda Search nvidia control panel, and select “Allow access to GPU performance counters to all users”\n1  pip install torch numpy   1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23  import time matrix_size = 32*128 x= torch.randn(matrix_size, matrix_size) y= torch.randn(matrix_size,matrix_size) print(\u0026#34;***: CPU SPEED\u0026#34;) start = time.time() result = torch.matmul(x,y) print(time.time()- start) print(\u0026#34;verify device:\u0026#34;,result.device) x_gpu = x.to(device) y_gpu =y.to(device) torch.cuda.synchronize() for i in range(1): print(\u0026#34;---GPU SPEED---\u0026#34;) start = time.time() result_gpu = torch.matmul(x_gpu, y_gpu) torch.cuda.synchronize() print(time.time()- start) print(\u0026#34;verify device:\u0026#34;,result_gpu.device)   output:\n1 2 3 4 5 6  ***: CPU SPEED 0.19979572296142578 verify device: cpu ---GPU SPEED--- 0.02033543586730957 verify device: cuda:0     ", 
+        "url": "http:\/\/myself659.github.io\/post\/devops\/wsl-cuda\/"
+    },
+    
+    
+    
     "http:\/\/myself659.github.io\/post\/done\/do-the-thing-101\/": {
         
         "title": "thoughts about do the thing",
@@ -437,7 +447,7 @@ window.store = {
         
         "title": "什么才是好问题",
         "tags": ["Thinking",],
-        "content": "背景 提问比回答更重要。那么什么才是一个好问题呢？\n特点 好问题具有以一下特点：\n 立足事实与科学。 清晰具体明确。 简洁直击关键。 开放性。 有新意。 有深度。 启发性。  参考实例   同样是诛杀了权臣，为什么北魏孝庄帝元子攸与大清康熙帝的下场却截然不同（康熙帝成功地开启了康乾盛世，元子攸却没有成功清除权臣的残余势力以致身死）？\n  愚公移山故事中愚公为什么不搬家，而是选择花几代人的光阴去移山呢？\n  在当前社会，为什么一些地区会退休老师的养老金比新老师的工资还高呢？\n  这次旅行中最有趣的事情是什么？\n    ", 
+        "content": "背景 提问比回答更重要。那么什么才是一个好问题呢？\n特点 好问题具有以一下特点：\n 立足事实与科学。 清晰具体明确。 简洁直击关键。 开放性。 有新意。 有深度。 启发性。 引导性。  参考实例   同样是诛杀了权臣，为什么北魏孝庄帝元子攸与大清康熙帝的下场却截然不同（康熙帝成功地开启了康乾盛世，元子攸却没有成功清除权臣的残余势力以致身死）？\n  愚公移山故事中愚公为什么不搬家，而是选择花几代人的光阴去移山呢？\n  在当前社会，为什么一些地区会退休老师的养老金比新老师的工资还高呢？\n  这次旅行中最有趣的事情是什么？\n    ", 
         "url": "http:\/\/myself659.github.io\/post\/rt\/what-is-good-questions\/"
     },
     
@@ -587,7 +597,7 @@ window.store = {
         
         "title": "说说模型",
         "tags": ["AI","GPT",],
-        "content": "定义 先看wiki的定义：\n A model is an informative representation of an object, person or system. The term originally denoted the plans of a building in late 16th-century English, and derived via French and Italian ultimately from Latin modulus, a measure\n 模型是对世界的简化，抽象和概括。\n一切知识都是模型。\npattern vs model pattern是现象,model是机制;\npattern是描述,model是解释;\npattern是观察,model是理解。\npattern偏向应用，model偏向框架。\npattern偏向具体，model偏向抽象。\npattern与model在应用的时候都有一定的限制与局限性。\n模型无处不在，模型无时不在 一切知识都是模型。模型无处不在。\n无论主观上心智模型而是客观世界的规律，模型无时不在默默地影响整个世界。\n下面举几个例子说明：\n  科学模型：在科学研究中，科学家们通过建立数学模型、物理模型和计算模型等，来描述和预测现象。例如，牛顿运动定律可以看作是描述物体运动的模型；基因的遗传模型帮助我们理解遗传特征是如何传递的。\n  心理模型：在心理学中，心理模型是指人们用来解释自己和他人行为的一种内在认知结构。心理模型可以帮助我们理解和预测别人的行为。例如，我们可能有一个关于朋友性格特点的心理模型，这个模型可以帮助我们预测朋友在特定情境下的行为反应。\n  概念模型：我们在学习新知识时，通常会建立一些概念模型，以便更好地理解这些知识。例如，我们在学习计算机科学时，可能会建立一个关于计算机系统结构的概念模型，这个模型可以帮助我们理解计算机是如何工作的。\n  数据模型：在数据处理领域，数据模型是用来描述现实世界中的实体和它们之间关系的一种形式化表示。例如，关系型数据库中的表结构就是一种数据模型，它可以帮助我们组织和操作数据。\n  应用模型 善用模型 学会利用模型来理解世界，理解自己。\n利用模型可以减少认知的成本。\n善用模型要点如下：\n 用好模型 用好模型 超越模型  不迷信模型 不要迷信模型的原因如下：\n  模型的质量参差不齐\n  即使最好的模型也只是对事实的近似描述与表达。模型只是事实的简化，它并不能代表事实\n  模型的应用范围一定是有限制，模型可能不适用于现实\n  模型存在偏见\n  模型是压缩的，很可能存在压缩损失\n  所以在应用模型不要迷信模型，要敢于怀疑一切，大胆假设，小心求证。\n提高自己的心智模型 上面提到不能迷信的模型，所以要努力提高自己的心智模型。\n我们是什么样的人取决于我们如何思考。 我们如何思考取决于我们的心智模型。\n提高自己的心智模型，有利于我们能够适应新的挑战，复杂性的问题，不断变化的世界。\n总结   模型是对世界的简化，抽象和概括。一切知识都是模型，模型无时不在，无处不在\n  用好模型\n  超越模型\n  ", 
+        "content": "定义 先看wiki的定义：\n A model is an informative representation of an object, person or system. The term originally denoted the plans of a building in late 16th-century English, and derived via French and Italian ultimately from Latin modulus, a measure\n 模型是对世界的简化，抽象和概括。\n一切知识都是模型。\npattern vs model pattern是现象,model是机制;\npattern是描述,model是解释;\npattern是观察,model是理解。\npattern偏向应用，model偏向框架。\npattern偏向具体，model偏向抽象。\npattern与model在应用的时候都有一定的限制与局限性。\n模型无处不在，模型无时不在 一切知识都是模型。模型无处不在。\n无论主观上心智模型而是客观世界的规律，模型无时不在默默地影响整个世界。\n下面举几个例子说明：\n  科学模型：在科学研究中，科学家们通过建立数学模型、物理模型和计算模型等，来描述和预测现象。例如，牛顿运动定律可以看作是描述物体运动的模型；基因的遗传模型帮助我们理解遗传特征是如何传递的。\n  心理模型：在心理学中，心理模型是指人们用来解释自己和他人行为的一种内在认知结构。心理模型可以帮助我们理解和预测别人的行为。例如，我们可能有一个关于朋友性格特点的心理模型，这个模型可以帮助我们预测朋友在特定情境下的行为反应。\n  概念模型：我们在学习新知识时，通常会建立一些概念模型，以便更好地理解这些知识。例如，我们在学习计算机科学时，可能会建立一个关于计算机系统结构的概念模型，这个模型可以帮助我们理解计算机是如何工作的。\n  数据模型：在数据处理领域，数据模型是用来描述现实世界中的实体和它们之间关系的一种形式化表示。例如，关系型数据库中的表结构就是一种数据模型，它可以帮助我们组织和操作数据。\n  应用模型 善用模型 学会利用模型来理解世界，理解自己。\n利用模型可以减少认知的成本。\n善用模型要点如下：\n 用好模型 用好模型 超越模型  不迷信模型 不要迷信模型的原因如下：\n  模型的质量参差不齐\n  即使最好的模型也只是对事实的近似描述与表达。模型只是事实的简化，它并不能代表事实\n  模型的应用范围一定是有限制，模型可能不适用于现实\n  模型存在偏见\n  模型是压缩的，很可能存在压缩损失\n  所以在应用模型不要迷信模型，要敢于怀疑一切，大胆假设，小心求证。\n提高自己的心智模型 上面提到不能迷信的模型，所以要努力提高自己的心智模型。\n我们是什么样的人取决于我们如何思考。 我们如何思考取决于我们的心智模型。\n提高自己的心智模型，有利于我们能够适应新的挑战，复杂性的问题，不断变化的世界。\n总结   模型是对世界的简化，抽象和概括。一切知识都是模型，模型无时不在，无处不在\n  用好模型\n  超越模型\n    ", 
         "url": "http:\/\/myself659.github.io\/post\/ai\/%E8%AF%B4%E8%AF%B4%E6%A8%A1%E5%9E%8Bmodel\/"
     },
     
@@ -1497,7 +1507,7 @@ window.store = {
         
         "title": "谈谈利益",
         "tags": ["human",],
-        "content": "来源 利益来自需求。\n排序   短期利益 \u0026gt; 长期利益\n  个人利益 \u0026gt; 部门利益 \u0026gt; 社会利益\n  主观利益 \u0026gt; 客观利益\n  度量 价值度量利益。\n利益驱动 人是一种利益驱动的动物。\n社会也是利益驱动的。\n", 
+        "content": "来源 利益来自需求。\n排序   短期利益 \u0026gt; 长期利益\n  个人利益 \u0026gt; 部门利益 \u0026gt; 社会利益\n  主观利益 \u0026gt; 客观利益\n  度量 价值度量利益。\n利益驱动 人是一种利益驱动的动物。\n社会也是利益驱动的。\n正如： “天下熙熙，皆为利来；天下攘攘，皆为利往”。\n", 
         "url": "http:\/\/myself659.github.io\/post\/human\/%E5%88%A9%E7%9B%8A-benfit101\/"
     },
     
@@ -1577,7 +1587,7 @@ window.store = {
         
         "title": "选择的原则",
         "tags": ["Think",],
-        "content": "背景 学会选择很难。 学会做出好的选择更难。 在这个复杂的世界里学会做出正确的选择更难。\n选择很重要。不是有一句话：\n 选择比努力更重要。\n 原则 个人对于选择的原则总结如下：\n 先准备选项，再来选择 拓展选择的空间 明确选择的目标与选择的取舍 永远选择能给你更多的选择的选项 明确选择的目标之一：选择后不后悔 考虑选择后会失败的情况 没有完美的选择，一切都是tradeoff 永远不要在情绪激动时做出重大决定 尊重事实，立足自身，面向未来  选择的空间至少包括以下三个方面：\n 做出选择的空间（时间） 选项的空间（数量） 选项背后的空间  ", 
+        "content": "背景 学会选择很难。 学会做出好的选择更难。 在这个复杂的世界里学会做出正确的选择更难。\n选择很重要。不是有一句话：\n 选择比努力更重要。\n 原则 个人对于选择的原则总结如下：\n 先准备选项，再来选择 拓展选择的空间 明确选择的目标与选择的取舍 永远选择能给你更多的选择的选项 明确选择的目标之一：选择后不后悔 考虑选择后会失败的情况 没有完美的选择，一切都是tradeoff 永远不要在情绪激动时做出重大决定 尊重事实，立足自身，面向未来 相信直觉  选择的空间至少包括以下三个方面：\n 做出选择的空间（时间） 选项的空间（数量） 选项背后的空间  ", 
         "url": "http:\/\/myself659.github.io\/post\/rt\/%E9%80%89%E6%8B%A9%E5%8E%9F%E5%88%99\/"
     },
     
@@ -2627,7 +2637,7 @@ window.store = {
         
         "title": "五个问题帮你找到你真正的想要的",
         "tags": ["life",],
-        "content": "问题 1. 你想要什么？ 2. 你有多想要它？ 3. 现在的你离你想要的有多远？ 4. 你能做什么来实现你想要的？ 5. 你开始行动吗？ ", 
+        "content": "问题 1. 你想要什么？ 未来自我定义：明确你的未来自我是谁，这对于激发动力和方向至关重要。\n2. 你有多想要它？ 真正的渴望程度：探讨你对目标的渴望有多强烈，以及你是否愿意为之付出努力。\n3. 现在的你离你想要的有多远？ 当前与未来自我矛盾：识别当前自我与未来自我之间的主要矛盾，并致力于解决这些矛盾。\n4. 你能做什么来实现你想要的？ 承诺程度：评估你对实现所声称想要的东西的承诺有多坚定。\n5. 你开始行动吗？你愿意付出什么？ 付出代价：是否愿意放弃当前的身份和舒适区，为了成为真正想要的人而付出代价。\n  ", 
         "url": "http:\/\/myself659.github.io\/post\/life\/%E4%BA%94%E4%B8%AA%E9%97%AE%E9%A2%98%E6%89%BE%E5%88%B0%E7%9C%9F%E6%AD%A3%E8%A6%81%E6%83%B3%E7%9A%84\/"
     },
     
@@ -3054,6 +3064,16 @@ window.store = {
     
     
     
+    "http:\/\/myself659.github.io\/post\/devops\/wsl-cuda\/": {
+        
+        "title": "setup CUDA development environment in WSL2",
+        "tags": ["devops",],
+        "content": "Install the GCC compiler 1  sudo apt install gcc --fix-missing   Install Nvidia CUDA toolkit 1  sudo apt install nvidia-cuda-toolkit   check the Driver and CUDA versions 1 2  nvidia-smi nvcc -V   Install Python with Mamba 1 2  wget https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-Linux-x86_64.sh bash Miniforge3-Linux-x86_64.sh   1 2 3  mamba create -n mycuda jupyterlab -c conda-forge mamba activate mycuda jupyter lab   Testing Cuda Search nvidia control panel, and select “Allow access to GPU performance counters to all users”\n1  pip install torch numpy   1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23  import time matrix_size = 32*128 x= torch.randn(matrix_size, matrix_size) y= torch.randn(matrix_size,matrix_size) print(\u0026#34;***: CPU SPEED\u0026#34;) start = time.time() result = torch.matmul(x,y) print(time.time()- start) print(\u0026#34;verify device:\u0026#34;,result.device) x_gpu = x.to(device) y_gpu =y.to(device) torch.cuda.synchronize() for i in range(1): print(\u0026#34;---GPU SPEED---\u0026#34;) start = time.time() result_gpu = torch.matmul(x_gpu, y_gpu) torch.cuda.synchronize() print(time.time()- start) print(\u0026#34;verify device:\u0026#34;,result_gpu.device)   output:\n1 2 3 4 5 6  ***: CPU SPEED 0.19979572296142578 verify device: cpu ---GPU SPEED--- 0.02033543586730957 verify device: cuda:0     ", 
+        "url": "http:\/\/myself659.github.io\/post\/devops\/wsl-cuda\/"
+    },
+    
+    
+    
     "http:\/\/myself659.github.io\/post\/done\/do-the-thing-101\/": {
         
         "title": "thoughts about do the thing",
@@ -3208,7 +3228,7 @@ window.store = {
         
         "title": "什么才是好问题",
         "tags": ["Thinking",],
-        "content": "背景 提问比回答更重要。那么什么才是一个好问题呢？\n特点 好问题具有以一下特点：\n 立足事实与科学。 清晰具体明确。 简洁直击关键。 开放性。 有新意。 有深度。 启发性。  参考实例   同样是诛杀了权臣，为什么北魏孝庄帝元子攸与大清康熙帝的下场却截然不同（康熙帝成功地开启了康乾盛世，元子攸却没有成功清除权臣的残余势力以致身死）？\n  愚公移山故事中愚公为什么不搬家，而是选择花几代人的光阴去移山呢？\n  在当前社会，为什么一些地区会退休老师的养老金比新老师的工资还高呢？\n  这次旅行中最有趣的事情是什么？\n    ", 
+        "content": "背景 提问比回答更重要。那么什么才是一个好问题呢？\n特点 好问题具有以一下特点：\n 立足事实与科学。 清晰具体明确。 简洁直击关键。 开放性。 有新意。 有深度。 启发性。 引导性。  参考实例   同样是诛杀了权臣，为什么北魏孝庄帝元子攸与大清康熙帝的下场却截然不同（康熙帝成功地开启了康乾盛世，元子攸却没有成功清除权臣的残余势力以致身死）？\n  愚公移山故事中愚公为什么不搬家，而是选择花几代人的光阴去移山呢？\n  在当前社会，为什么一些地区会退休老师的养老金比新老师的工资还高呢？\n  这次旅行中最有趣的事情是什么？\n    ", 
         "url": "http:\/\/myself659.github.io\/post\/rt\/what-is-good-questions\/"
     },
     
@@ -3358,7 +3378,7 @@ window.store = {
         
         "title": "说说模型",
         "tags": ["AI","GPT",],
-        "content": "定义 先看wiki的定义：\n A model is an informative representation of an object, person or system. The term originally denoted the plans of a building in late 16th-century English, and derived via French and Italian ultimately from Latin modulus, a measure\n 模型是对世界的简化，抽象和概括。\n一切知识都是模型。\npattern vs model pattern是现象,model是机制;\npattern是描述,model是解释;\npattern是观察,model是理解。\npattern偏向应用，model偏向框架。\npattern偏向具体，model偏向抽象。\npattern与model在应用的时候都有一定的限制与局限性。\n模型无处不在，模型无时不在 一切知识都是模型。模型无处不在。\n无论主观上心智模型而是客观世界的规律，模型无时不在默默地影响整个世界。\n下面举几个例子说明：\n  科学模型：在科学研究中，科学家们通过建立数学模型、物理模型和计算模型等，来描述和预测现象。例如，牛顿运动定律可以看作是描述物体运动的模型；基因的遗传模型帮助我们理解遗传特征是如何传递的。\n  心理模型：在心理学中，心理模型是指人们用来解释自己和他人行为的一种内在认知结构。心理模型可以帮助我们理解和预测别人的行为。例如，我们可能有一个关于朋友性格特点的心理模型，这个模型可以帮助我们预测朋友在特定情境下的行为反应。\n  概念模型：我们在学习新知识时，通常会建立一些概念模型，以便更好地理解这些知识。例如，我们在学习计算机科学时，可能会建立一个关于计算机系统结构的概念模型，这个模型可以帮助我们理解计算机是如何工作的。\n  数据模型：在数据处理领域，数据模型是用来描述现实世界中的实体和它们之间关系的一种形式化表示。例如，关系型数据库中的表结构就是一种数据模型，它可以帮助我们组织和操作数据。\n  应用模型 善用模型 学会利用模型来理解世界，理解自己。\n利用模型可以减少认知的成本。\n善用模型要点如下：\n 用好模型 用好模型 超越模型  不迷信模型 不要迷信模型的原因如下：\n  模型的质量参差不齐\n  即使最好的模型也只是对事实的近似描述与表达。模型只是事实的简化，它并不能代表事实\n  模型的应用范围一定是有限制，模型可能不适用于现实\n  模型存在偏见\n  模型是压缩的，很可能存在压缩损失\n  所以在应用模型不要迷信模型，要敢于怀疑一切，大胆假设，小心求证。\n提高自己的心智模型 上面提到不能迷信的模型，所以要努力提高自己的心智模型。\n我们是什么样的人取决于我们如何思考。 我们如何思考取决于我们的心智模型。\n提高自己的心智模型，有利于我们能够适应新的挑战，复杂性的问题，不断变化的世界。\n总结   模型是对世界的简化，抽象和概括。一切知识都是模型，模型无时不在，无处不在\n  用好模型\n  超越模型\n  ", 
+        "content": "定义 先看wiki的定义：\n A model is an informative representation of an object, person or system. The term originally denoted the plans of a building in late 16th-century English, and derived via French and Italian ultimately from Latin modulus, a measure\n 模型是对世界的简化，抽象和概括。\n一切知识都是模型。\npattern vs model pattern是现象,model是机制;\npattern是描述,model是解释;\npattern是观察,model是理解。\npattern偏向应用，model偏向框架。\npattern偏向具体，model偏向抽象。\npattern与model在应用的时候都有一定的限制与局限性。\n模型无处不在，模型无时不在 一切知识都是模型。模型无处不在。\n无论主观上心智模型而是客观世界的规律，模型无时不在默默地影响整个世界。\n下面举几个例子说明：\n  科学模型：在科学研究中，科学家们通过建立数学模型、物理模型和计算模型等，来描述和预测现象。例如，牛顿运动定律可以看作是描述物体运动的模型；基因的遗传模型帮助我们理解遗传特征是如何传递的。\n  心理模型：在心理学中，心理模型是指人们用来解释自己和他人行为的一种内在认知结构。心理模型可以帮助我们理解和预测别人的行为。例如，我们可能有一个关于朋友性格特点的心理模型，这个模型可以帮助我们预测朋友在特定情境下的行为反应。\n  概念模型：我们在学习新知识时，通常会建立一些概念模型，以便更好地理解这些知识。例如，我们在学习计算机科学时，可能会建立一个关于计算机系统结构的概念模型，这个模型可以帮助我们理解计算机是如何工作的。\n  数据模型：在数据处理领域，数据模型是用来描述现实世界中的实体和它们之间关系的一种形式化表示。例如，关系型数据库中的表结构就是一种数据模型，它可以帮助我们组织和操作数据。\n  应用模型 善用模型 学会利用模型来理解世界，理解自己。\n利用模型可以减少认知的成本。\n善用模型要点如下：\n 用好模型 用好模型 超越模型  不迷信模型 不要迷信模型的原因如下：\n  模型的质量参差不齐\n  即使最好的模型也只是对事实的近似描述与表达。模型只是事实的简化，它并不能代表事实\n  模型的应用范围一定是有限制，模型可能不适用于现实\n  模型存在偏见\n  模型是压缩的，很可能存在压缩损失\n  所以在应用模型不要迷信模型，要敢于怀疑一切，大胆假设，小心求证。\n提高自己的心智模型 上面提到不能迷信的模型，所以要努力提高自己的心智模型。\n我们是什么样的人取决于我们如何思考。 我们如何思考取决于我们的心智模型。\n提高自己的心智模型，有利于我们能够适应新的挑战，复杂性的问题，不断变化的世界。\n总结   模型是对世界的简化，抽象和概括。一切知识都是模型，模型无时不在，无处不在\n  用好模型\n  超越模型\n    ", 
         "url": "http:\/\/myself659.github.io\/post\/ai\/%E8%AF%B4%E8%AF%B4%E6%A8%A1%E5%9E%8Bmodel\/"
     },
     
@@ -4268,7 +4288,7 @@ window.store = {
         
         "title": "谈谈利益",
         "tags": ["human",],
-        "content": "来源 利益来自需求。\n排序   短期利益 \u0026gt; 长期利益\n  个人利益 \u0026gt; 部门利益 \u0026gt; 社会利益\n  主观利益 \u0026gt; 客观利益\n  度量 价值度量利益。\n利益驱动 人是一种利益驱动的动物。\n社会也是利益驱动的。\n", 
+        "content": "来源 利益来自需求。\n排序   短期利益 \u0026gt; 长期利益\n  个人利益 \u0026gt; 部门利益 \u0026gt; 社会利益\n  主观利益 \u0026gt; 客观利益\n  度量 价值度量利益。\n利益驱动 人是一种利益驱动的动物。\n社会也是利益驱动的。\n正如： “天下熙熙，皆为利来；天下攘攘，皆为利往”。\n", 
         "url": "http:\/\/myself659.github.io\/post\/human\/%E5%88%A9%E7%9B%8A-benfit101\/"
     },
     
@@ -4348,7 +4368,7 @@ window.store = {
         
         "title": "选择的原则",
         "tags": ["Think",],
-        "content": "背景 学会选择很难。 学会做出好的选择更难。 在这个复杂的世界里学会做出正确的选择更难。\n选择很重要。不是有一句话：\n 选择比努力更重要。\n 原则 个人对于选择的原则总结如下：\n 先准备选项，再来选择 拓展选择的空间 明确选择的目标与选择的取舍 永远选择能给你更多的选择的选项 明确选择的目标之一：选择后不后悔 考虑选择后会失败的情况 没有完美的选择，一切都是tradeoff 永远不要在情绪激动时做出重大决定 尊重事实，立足自身，面向未来  选择的空间至少包括以下三个方面：\n 做出选择的空间（时间） 选项的空间（数量） 选项背后的空间  ", 
+        "content": "背景 学会选择很难。 学会做出好的选择更难。 在这个复杂的世界里学会做出正确的选择更难。\n选择很重要。不是有一句话：\n 选择比努力更重要。\n 原则 个人对于选择的原则总结如下：\n 先准备选项，再来选择 拓展选择的空间 明确选择的目标与选择的取舍 永远选择能给你更多的选择的选项 明确选择的目标之一：选择后不后悔 考虑选择后会失败的情况 没有完美的选择，一切都是tradeoff 永远不要在情绪激动时做出重大决定 尊重事实，立足自身，面向未来 相信直觉  选择的空间至少包括以下三个方面：\n 做出选择的空间（时间） 选项的空间（数量） 选项背后的空间  ", 
         "url": "http:\/\/myself659.github.io\/post\/rt\/%E9%80%89%E6%8B%A9%E5%8E%9F%E5%88%99\/"
     },
     
@@ -5398,7 +5418,7 @@ window.store = {
         
         "title": "五个问题帮你找到你真正的想要的",
         "tags": ["life",],
-        "content": "问题 1. 你想要什么？ 2. 你有多想要它？ 3. 现在的你离你想要的有多远？ 4. 你能做什么来实现你想要的？ 5. 你开始行动吗？ ", 
+        "content": "问题 1. 你想要什么？ 未来自我定义：明确你的未来自我是谁，这对于激发动力和方向至关重要。\n2. 你有多想要它？ 真正的渴望程度：探讨你对目标的渴望有多强烈，以及你是否愿意为之付出努力。\n3. 现在的你离你想要的有多远？ 当前与未来自我矛盾：识别当前自我与未来自我之间的主要矛盾，并致力于解决这些矛盾。\n4. 你能做什么来实现你想要的？ 承诺程度：评估你对实现所声称想要的东西的承诺有多坚定。\n5. 你开始行动吗？你愿意付出什么？ 付出代价：是否愿意放弃当前的身份和舒适区，为了成为真正想要的人而付出代价。\n  ", 
         "url": "http:\/\/myself659.github.io\/post\/life\/%E4%BA%94%E4%B8%AA%E9%97%AE%E9%A2%98%E6%89%BE%E5%88%B0%E7%9C%9F%E6%AD%A3%E8%A6%81%E6%83%B3%E7%9A%84\/"
     },
     

@@ -29,6 +29,15 @@
     </item>
     
     <item>
+      <title>setup CUDA development environment in WSL2</title>
+      <link>http://myself659.github.io/post/devops/wsl-cuda/</link>
+      <pubDate>Sat, 30 Mar 2024 11:58:06 +0200</pubDate>
+      
+      <guid>http://myself659.github.io/post/devops/wsl-cuda/</guid>
+      <description>Install the GCC compiler 1  sudo apt install gcc --fix-missing   Install Nvidia CUDA toolkit 1  sudo apt install nvidia-cuda-toolkit   check the Driver and CUDA versions 1 2  nvidia-smi nvcc -V   Install Python with Mamba 1 2  wget https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-Linux-x86_64.sh bash Miniforge3-Linux-x86_64.sh   1 2 3  mamba create -n mycuda jupyterlab -c conda-forge mamba activate mycuda jupyter lab   Testing Cuda Search nvidia control panel, and select “Allow access to GPU performance counters to all users”</description>
+    </item>
+    
+    <item>
       <title>setup python development environment in WSL</title>
       <link>http://myself659.github.io/post/devops/wsl-python/</link>
       <pubDate>Wed, 27 Mar 2024 11:58:06 +0200</pubDate>
