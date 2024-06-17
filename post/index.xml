@@ -7,7 +7,30 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>沉风网事</copyright>
-    <lastBuildDate>Tue, 02 Apr 2024 11:58:06 +0200</lastBuildDate><atom:link href="http://myself659.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 04 Apr 2024 11:58:06 +0200</lastBuildDate><atom:link href="http://myself659.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>principles for deep work</title>
+      <link>http://myself659.github.io/post/work/12steps-to-deep-focus/</link>
+      <pubDate>Thu, 04 Apr 2024 11:58:06 +0200</pubDate>
+      
+      <guid>http://myself659.github.io/post/work/12steps-to-deep-focus/</guid>
+      <description>Block out any distractions   turn off all phone notifications or leave it in another room
+  Distraction is the biggest enemy to deep focus
+  Go for a walk before starting   Go out in nature
+  Explore somewhere new
+  Plan it out the night before   Set your main 3 priorities
+  Write them down and forget until morning</description>
+    </item>
+    
+    <item>
+      <title>tips for time management</title>
+      <link>http://myself659.github.io/post/work/time-tips/</link>
+      <pubDate>Wed, 03 Apr 2024 11:58:06 +0200</pubDate>
+      
+      <guid>http://myself659.github.io/post/work/time-tips/</guid>
+      <description>backgroud Time &amp;gt; Money. tips 1. The 2-Minute Rule If it takes less than 2 minutes, do it now, Yes, even if it&amp;rsquo;s getting up to stretch Procrastination is for stretching, not tasks! 2. The 5-Minute Rule try it more than 5 minutes even the task is hard. 3. Eat the Frog First Tackle the hardest task first thing in the morning, Frogs taste better when you&amp;rsquo;re notthinking about them</description>
+    </item>
+    
     <item>
       <title>upgrade ubuntu in WSL</title>
       <link>http://myself659.github.io/post/devops/wsl-ubuntu-upgrade/</link>
@@ -25,7 +48,7 @@
       <pubDate>Mon, 01 Apr 2024 11:58:06 +0200</pubDate>
       
       <guid>http://myself659.github.io/post/devops/wsl-move/</guid>
-      <description>list before export 1  wsl -l -v   1 2 3  PS C:\Users\mysel&amp;gt; wsl -l -v NAME STATE VERSION * Ubuntu-22.04 Stopped 2   export 1 2  wsl.exe --export Ubuntu-22.04 I:\wslback\Ubuntu-22.04.bak   import 1  wsl.exe --import U22 i:\wsl\u22\ d:\wslback\Ubuntu-22.04.bak   run 1  wsl.exe -d U22   list after import 1  wsl -l -v   1 2 3 4  PS C:\Users\mysel&amp;gt; wsl -l -v NAME STATE VERSION * Ubuntu-22.</description>
+      <description>list before export 1  wsl -l -v   1 2 3  PS C:\Users\mysel&amp;gt; wsl -l -v NAME STATE VERSION * Ubuntu-22.04 Stopped 2   delete cache to reduce disk cost 1  rm -rf /home/ia/.cache/*   export 1 2  wsl.exe --export Ubuntu-22.04 I:\wslback\Ubuntu-22.04.bak   import 1  wsl.exe --import U22 i:\wsl\u22\ d:\wslback\Ubuntu-22.04.bak   run 1  wsl.exe -d U22   list after import 1  wsl -l -v   1 2 3 4  PS C:\Users\mysel&amp;gt; wsl -l -v NAME STATE VERSION * Ubuntu-22.</description>
     </item>
     
     <item>
@@ -93,8 +116,7 @@ update PowerShell Get PowerShell Version:
       <pubDate>Sun, 24 Mar 2024 11:58:06 +0200</pubDate>
       
       <guid>http://myself659.github.io/post/devops/wsl-0/</guid>
-      <description>setup  Manual installation steps for older versions of WSL  tips ln from mnt to reduce disk space 1  ln -s /mnt/e/go ~/go   Troubleshooting &amp;ldquo;WslRegisterDistribution failed with error: 0x80370114&amp;rdquo; solution:
-1  wsl --update   refence  Troubleshooting Windows Subsystem for Linux  </description>
+      <description>setup Manual installation steps for older versions of WSL tips ln from mnt to reduce disk space but impact performance 1 ln -s /mnt/e/go ~/go Troubleshooting &amp;ldquo;WslRegisterDistribution failed with error: 0x80370114&amp;rdquo; solution: 1 wsl --update refence Troubleshooting Windows Subsystem for Linux 跨 Windows 和 Linux 文件系统工作 Working across Windows and Linux file systems</description>
     </item>
     
     <item>
