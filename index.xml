@@ -7,7 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>沉风网事</copyright>
-    <lastBuildDate>Thu, 04 Apr 2024 11:58:06 +0200</lastBuildDate><atom:link href="http://myself659.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 05 Apr 2024 11:58:06 +0200</lastBuildDate><atom:link href="http://myself659.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>setup python development on windows11</title>
+      <link>http://myself659.github.io/post/devops/windows-python-setup/</link>
+      <pubDate>Fri, 05 Apr 2024 11:58:06 +0200</pubDate>
+      
+      <guid>http://myself659.github.io/post/devops/windows-python-setup/</guid>
+      <description>install scoop 1 2  Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser Invoke-RestMethod -Uri https://get.scoop.sh | Invoke-Expression   update scoop 1  scoop update   install pyenv 1  scoop install pyenv   setup python install python with pyenv 1 2 3  pyenv install 3.10.0 pyenv local 3.10.0   install poetry 1  pip install poetry   install jupyter 1  pip install jupyterlab   install ipython 1  pip install ipykernel   </description>
+    </item>
+    
     <item>
       <title>principles for deep work</title>
       <link>http://myself659.github.io/post/work/12steps-to-deep-focus/</link>
@@ -931,10 +940,10 @@ update PowerShell Get PowerShell Version:
     
     <item>
       <title>通过数据分析预测股票价格变化靠谱吗？</title>
-      <link>http://myself659.github.io/post/stock-us-analysis/</link>
+      <link>http://myself659.github.io/post/stock/stock-us-analysis/</link>
       <pubDate>Mon, 17 Feb 2020 11:58:06 +0200</pubDate>
       
-      <guid>http://myself659.github.io/post/stock-us-analysis/</guid>
+      <guid>http://myself659.github.io/post/stock/stock-us-analysis/</guid>
       <description>前言 在投资美股，先从数据分析开始这篇文章解决两个问题： 从哪里找数据？ 如何得到这些数据？ 在此基础这篇主要解决一个问题：以特斯拉为例说明如何利用</description>
     </item>
     
@@ -949,10 +958,10 @@ update PowerShell Get PowerShell Version:
     
     <item>
       <title>投资美股，先从数据分析开始</title>
-      <link>http://myself659.github.io/post/stock-us-data/</link>
+      <link>http://myself659.github.io/post/stock/stock-us-data/</link>
       <pubDate>Thu, 06 Feb 2020 11:58:06 +0200</pubDate>
       
-      <guid>http://myself659.github.io/post/stock-us-data/</guid>
+      <guid>http://myself659.github.io/post/stock/stock-us-data/</guid>
       <description>背景 川大爷，常在twitter上吆喝美股多次创造历史高点。美股确实是一个资产配置的重要选项。 在进入市场之前，研究先行，作好功课。 获取数据 对于</description>
     </item>
     
@@ -2107,7 +2116,7 @@ Let us start the excited journey to the new Wild West.</description>
       <pubDate>Fri, 17 Mar 2017 11:58:06 +0800</pubDate>
       
       <guid>http://myself659.github.io/post/done/%E6%88%91%E7%9A%84%E4%B8%89%E6%80%9D%E8%80%8C%E5%90%8E%E8%A1%8C/</guid>
-      <description>背景 人们常说三思而后行。三思指什么？ 我的三思 首先思考有没有必要这样做？ 这样做会带来什么（思危，思变，思退）？ 怎么做？还有其他的方法来做吗？ 为</description>
+      <description>背景 人们常说三思而后行。三思指什么？ 我的三思 首先思考有没有必要这样做？（why） 这样做会带来什么（思危，思变，思退）（what）？ 怎么做？还</description>
     </item>
     
     <item>
@@ -2458,7 +2467,7 @@ Let us start the excited journey to the new Wild West.</description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>http://myself659.github.io/post/invest/invest-l0/</guid>
-      <description>banner = &amp;quot;&amp;quot; categories = [&amp;ldquo;Invest&amp;rdquo;] date = &amp;ldquo;2021-01-08T11:58:06+02:00&amp;rdquo; description = &amp;quot;&amp;quot; images = [] menu = &amp;quot;&amp;quot; tags = [&amp;ldquo;Invest&amp;rdquo;] title = &amp;quot;&amp;quot; draft = true +++ airdrop https://commonwealth.im/layerzero/discussion/22736-sybil-report https://commonwealth.im/layerzero/discussions/Sybil%20Bounty%20Hunting%20Submissions https://medium.com/layerzero-official/addressing-sybil-activity-a2f92218ddd3 https://x.com/LayerZero_Labs/status/1794186650223878240 https://layerzeroscan.com/analytics/networks?srcChain=harmony 3/800 份额： https://talk.harmony.one/t/harmony-layerzero-airdrop/24700?u=theo1 https://x.com/LayerZero_Labs/status/1732862812710449466 https://www.coingecko.com/learn/layerzero-airdrop 0x38278dEA356E42DD7A097bECc2393f908bc5CA9c https://x.com/LayerZero_Labs/status/1791622471965163597 https://x.com/LayerZero_Labs/status/1788984201930301901 0x4ABEb9FedD87B28Bf53b24DdDF02aCE9E7CCf360 只有这个？ Opened a liquidity pool, on the Harmony network, that includes at least 1 bridged asset 用桥接资产</description>
+      <description>banner = &amp;quot;&amp;quot; categories = [&amp;ldquo;Invest&amp;rdquo;] date = &amp;ldquo;2021-01-08T11:58:06+02:00&amp;rdquo; description = &amp;quot;&amp;quot; images = [] menu = &amp;quot;&amp;quot; tags = [&amp;ldquo;Invest&amp;rdquo;] title = &amp;quot;&amp;quot; draft = true +++ claim https://arbiscan.io/tx/0xe78c683e02cb3e87b9dee1d9127ea82a58e3c010669241cd3d915eebbabaf4b1 https://arbiscan.io/token/0x6985884c4392d348587b19cb9eaaf157f13271cd#code Claim Duration: Claims are open from June 20 through September 20. 3个月的时间 今天申请的人比较多。 桥不过来。 polygonscan https://polygonscan.com/token/0xc2132d05d31c914a87c6611c10748aeb04b58e8f https://polygonscan.com/token/0xc2132d05d31c914a87c6611c10748aeb04b58e8f https://polygonscan.com/token/0x6985884c4392d348587b19cb9eaaf157f13271cd 实例:</description>
     </item>
     
     <item>
