@@ -7,7 +7,18 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>沉风网事</copyright>
-    <lastBuildDate>Sat, 06 Apr 2024 11:58:06 +0200</lastBuildDate><atom:link href="http://myself659.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 24 Jul 2024 11:58:06 +0200</lastBuildDate><atom:link href="http://myself659.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>how to setup llama with ollama on windows</title>
+      <link>http://myself659.github.io/post/ai/how-to-setup-llama-on-windows/</link>
+      <pubDate>Wed, 24 Jul 2024 11:58:06 +0200</pubDate>
+      
+      <guid>http://myself659.github.io/post/ai/how-to-setup-llama-on-windows/</guid>
+      <description>steps 1. download ollama Download from the Ollama official website
+2. install 3. set the environment variable OLLAMA_MODELS Ollama default stores downloaded models in C:\Users%username%.ollama\models
+4. pull model 1  ollama pull llama3.1   1 2 3  PS C:\Windows\System32&amp;gt; ollama list NAME ID SIZE MODIFIED llama3.1:latest a340353013fd 4.7 GB 30 seconds ago   5. run model 1  ollama run llama3.1   6. show llama work 1  ollama ps   reference  Introducing Llama 3.</description>
+    </item>
+    
     <item>
       <title>why someone will never improve</title>
       <link>http://myself659.github.io/post/learn/why-never-improve/</link>
@@ -16,7 +27,7 @@
       <guid>http://myself659.github.io/post/learn/why-never-improve/</guid>
       <description>context someone will stay in the level they have stayed. They can not levelup themself.
 The reasons could be as follows.
-they lost in the unknown-unknown they do not take really effective feedback they are not proactive but always waiting they fear of failure and avoid difficulty they do not take action and iterate they stay in their comfort zone they maybe just start, but they do not done   </description>
+they lost in the unknown-unknown they do not take really effective feedback they are not proactive but always waiting they fear of failure and avoid difficulty they do not take action and iterate they stay in their comfort zone they maybe just start, but they do not make it done   </description>
     </item>
     
     <item>
@@ -1073,6 +1084,15 @@ update PowerShell Get PowerShell Version:
       
       <guid>http://myself659.github.io/post/network/about-doh/</guid>
       <description>什么是DoH DoH是DNS over HTTPS。 传统DNS相当于DNS over UDP。 DoH带来哪些好处？ 采用DoH对用户来说有如下好处： DoH协议不允许</description>
+    </item>
+    
+    <item>
+      <title>做一名通才吧</title>
+      <link>http://myself659.github.io/post/learn/to-be-polymath-t%E5%9E%8B%E9%80%9A%E6%89%8D/</link>
+      <pubDate>Tue, 15 Oct 2019 11:58:06 +0200</pubDate>
+      
+      <guid>http://myself659.github.io/post/learn/to-be-polymath-t%E5%9E%8B%E9%80%9A%E6%89%8D/</guid>
+      <description>背景 这是一个信息爆炸，连接无限，复杂快变的时代。 通才 通才(Polymath),指的是那些具有广泛涉猎知识和兴趣,在不同领域都有深入理解与创造</description>
     </item>
     
     <item>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>llama on 沉风网事</title>
+    <link>http://myself659.github.io/tags/llama/</link>
+    <description>Recent content in llama on 沉风网事</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <copyright>沉风网事</copyright>
+    <lastBuildDate>Wed, 24 Jul 2024 11:58:06 +0200</lastBuildDate><atom:link href="http://myself659.github.io/tags/llama/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>how to setup llama with ollama on windows</title>
+      <link>http://myself659.github.io/post/ai/how-to-setup-llama-on-windows/</link>
+      <pubDate>Wed, 24 Jul 2024 11:58:06 +0200</pubDate>
+      
+      <guid>http://myself659.github.io/post/ai/how-to-setup-llama-on-windows/</guid>
+      <description>steps 1. download ollama Download from the Ollama official website
+2. install 3. set the environment variable OLLAMA_MODELS Ollama default stores downloaded models in C:\Users%username%.ollama\models
+4. pull model 1  ollama pull llama3.1   1 2 3  PS C:\Windows\System32&amp;gt; ollama list NAME ID SIZE MODIFIED llama3.1:latest a340353013fd 4.7 GB 30 seconds ago   5. run model 1  ollama run llama3.1   6. show llama work 1  ollama ps   reference  Introducing Llama 3.</description>
+    </item>
+    
+  </channel>
+</rss>

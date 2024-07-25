@@ -2,8 +2,50 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://myself659.github.io/categories/ai/</loc>
+    <lastmod>2024-07-24T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>http://myself659.github.io/categories/</loc>
-    <lastmod>2024-04-06T11:58:06+02:00</lastmod>
+    <lastmod>2024-07-24T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://myself659.github.io/post/ai/how-to-setup-llama-on-windows/</loc>
+    <lastmod>2024-07-24T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://myself659.github.io/tags/llama/</loc>
+    <lastmod>2024-07-24T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://myself659.github.io/post/</loc>
+    <lastmod>2024-07-24T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://myself659.github.io/tags/</loc>
+    <lastmod>2024-07-24T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://myself659.github.io/</loc>
+    <lastmod>2024-07-24T11:58:06+02:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -23,28 +65,7 @@
   </url>
   
   <url>
-    <loc>http://myself659.github.io/post/</loc>
-    <lastmod>2024-04-06T11:58:06+02:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://myself659.github.io/tags/</loc>
-    <lastmod>2024-04-06T11:58:06+02:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>http://myself659.github.io/post/learn/why-never-improve/</loc>
-    <lastmod>2024-04-06T11:58:06+02:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://myself659.github.io/</loc>
     <lastmod>2024-04-06T11:58:06+02:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -276,13 +297,6 @@
   
   <url>
     <loc>http://myself659.github.io/tags/ai/</loc>
-    <lastmod>2023-10-25T11:58:06+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://myself659.github.io/categories/ai/</loc>
     <lastmod>2023-10-25T11:58:06+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -1355,6 +1369,13 @@
   <url>
     <loc>http://myself659.github.io/categories/secure/</loc>
     <lastmod>2019-11-08T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://myself659.github.io/post/learn/to-be-polymath-t%E5%9E%8B%E9%80%9A%E6%89%8D/</loc>
+    <lastmod>2019-10-15T11:58:06+02:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
