@@ -51,6 +51,27 @@
   </url>
   
   <url>
+    <loc>http://myself659.github.io/tags/devops/</loc>
+    <lastmod>2024-04-07T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://myself659.github.io/categories/devops/</loc>
+    <lastmod>2024-04-07T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://myself659.github.io/post/devops/python-uv-setup/</loc>
+    <lastmod>2024-04-07T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>http://myself659.github.io/tags/learn/</loc>
     <lastmod>2024-04-06T11:58:06+02:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -67,20 +88,6 @@
   <url>
     <loc>http://myself659.github.io/post/learn/why-never-improve/</loc>
     <lastmod>2024-04-06T11:58:06+02:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://myself659.github.io/tags/devops/</loc>
-    <lastmod>2024-04-05T11:58:06+02:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://myself659.github.io/categories/devops/</loc>
-    <lastmod>2024-04-05T11:58:06+02:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -669,6 +676,13 @@
   <url>
     <loc>http://myself659.github.io/post/rust/tips-learn-rust/</loc>
     <lastmod>2021-09-08T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://myself659.github.io/post/rust/rust-tree-demo/</loc>
+    <lastmod>2021-09-07T11:58:06+02:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -2747,6 +2761,12 @@
   
   <url>
     <loc>http://myself659.github.io/post/2017-05-09-web-server-perf-and-design/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://myself659.github.io/post/ai/sd3-webui/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>

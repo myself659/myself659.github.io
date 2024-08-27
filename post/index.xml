@@ -20,6 +20,16 @@
     </item>
     
     <item>
+      <title>setup uv for python development</title>
+      <link>http://myself659.github.io/post/devops/python-uv-setup/</link>
+      <pubDate>Sun, 07 Apr 2024 11:58:06 +0200</pubDate>
+      
+      <guid>http://myself659.github.io/post/devops/python-uv-setup/</guid>
+      <description>install 1 2 3 4 5 6 7 8 9  # On macOS and Linux curl -LsSf https://astral.sh/uv/install.sh | sh # On Windows powershell -c &amp;#34;irm https://astral.sh/uv/install.ps1 | iex&amp;#34; scoop install uv # With pip (if you must, not the preferred way though) pip install uv   setup a new project init 1 2  uv init uv_template cd uv_template   the folder structure:
+1 2 3 4 5 6 7  ❯ dust 0B ┌── README.</description>
+    </item>
+    
+    <item>
       <title>why someone will never improve</title>
       <link>http://myself659.github.io/post/learn/why-never-improve/</link>
       <pubDate>Sat, 06 Apr 2024 11:58:06 +0200</pubDate>
@@ -36,7 +46,8 @@ they lost in the unknown-unknown they do not take really effective feedback they
       <pubDate>Fri, 05 Apr 2024 11:58:06 +0200</pubDate>
       
       <guid>http://myself659.github.io/post/devops/windows-python-setup/</guid>
-      <description>install scoop 1 2  Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser Invoke-RestMethod -Uri https://get.scoop.sh | Invoke-Expression   update scoop 1  scoop update   install pyenv 1  scoop install pyenv   setup python install python with pyenv 1 2 3  pyenv install 3.10.0 pyenv local 3.10.0   install poetry 1  pip install poetry   install jupyter 1  pip install jupyterlab   install ipython 1  pip install ipykernel   </description>
+      <description>install scoop 1 2  Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser Invoke-RestMethod -Uri https://get.scoop.sh | Invoke-Expression   update scoop 1  scoop update   install pyenv 1  scoop install pyenv   setup python install python with pyenv 1 2 3  pyenv install 3.10.0 pyenv local 3.10.0   install poetry 1  pip install poetry   configure poetry in: %APPDATA%\pypoetry
+1 2 3 4  [virtualenvs] in-project = true virtualenvs.</description>
     </item>
     
     <item>
@@ -552,6 +563,15 @@ update PowerShell Get PowerShell Version:
       
       <guid>http://myself659.github.io/post/rust/tips-learn-rust/</guid>
       <description>资料 The Rust Programming Language Rust Language Cheat Sheet Zero to Production in Rust This Week in Rust awesome-rust awesome-cli-rust tools and libaries cargo-asm A cargo subcommand that displays the generated assembly of Rust source code. cargo-fuzz A cargo subcommand for fuzzing with libFuzzer hyperfine A command-line benchmarking tool flamegraph sqlx yarte opentelemetry thiserror rust-clippy Serde Tokio Rocketi Rocket Diesel Rayon Actix Hyper Anyhow Thiserror PyO3 Rkyv 心法</description>
+    </item>
+    
+    <item>
+      <title>writing a tree in rust</title>
+      <link>http://myself659.github.io/post/rust/rust-tree-demo/</link>
+      <pubDate>Tue, 07 Sep 2021 11:58:06 +0200</pubDate>
+      
+      <guid>http://myself659.github.io/post/rust/rust-tree-demo/</guid>
+      <description>define the tree structure 1 2 3 4 5 6 7  #[derive(PartialEq)] struct TreeNode&amp;lt;T&amp;gt; { pub value: Option&amp;lt;T&amp;gt;, pub children: Vec&amp;lt;Rc&amp;lt;RefCell&amp;lt;TreeNode&amp;lt;T&amp;gt;&amp;gt;&amp;gt;&amp;gt;, pub parent: Option&amp;lt;Rc&amp;lt;RefCell&amp;lt;TreeNode&amp;lt;T&amp;gt;&amp;gt;&amp;gt;&amp;gt;, }   new tree 1 2 3 4 5 6 7  pub fn new() -&amp;gt; TreeNode&amp;lt;T&amp;gt; { TreeNode { value: None, children: vec![], parent: None, } }   add_child 1 2 3  pub fn add_child(&amp;amp;mut self, new_node: Rc&amp;lt;RefCell&amp;lt;TreeNode&amp;lt;T&amp;gt;&amp;gt;&amp;gt;) { self.children.push(new_node); }   del_child 1 2 3 4  pub fn del_child(&amp;amp;mut self, node_to_remove: Rc&amp;lt;RefCell&amp;lt;TreeNode&amp;lt;T&amp;gt;&amp;gt;&amp;gt;) { self.</description>
     </item>
     
     <item>
@@ -2472,6 +2492,15 @@ Let us start the excited journey to the new Wild West.</description>
       
       <guid>http://myself659.github.io/post/2017-05-09-web-server-perf-and-design/</guid>
       <description>+++ banner = &amp;quot;&amp;quot; categories = [&amp;ldquo;Arch&amp;rdquo;] date = &amp;ldquo;2017-05-09T11:58:06+02:00&amp;rdquo; description = &amp;quot;&amp;quot; images = [] menu = &amp;quot;&amp;quot; tags = [&amp;ldquo;Arch&amp;rdquo;] title = &amp;ldquo;高性能服务器设计与优化&amp;rdquo; draft = false +++ 为了构建自己的知识体系，对高性能服</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://myself659.github.io/post/ai/sd3-webui/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://myself659.github.io/post/ai/sd3-webui/</guid>
+      <description>1 2 3 4 5 6 7 8 9 ❯ powershell .\webui.bat . : 无法加载文件 C:\Users\mysel\Documents\WindowsPowerShell\Microso</description>
     </item>
     
     <item>
