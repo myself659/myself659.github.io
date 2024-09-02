@@ -14,8 +14,8 @@
       <pubDate>Sun, 07 Apr 2024 11:58:06 +0200</pubDate>
       
       <guid>http://myself659.github.io/post/devops/python-uv-setup/</guid>
-      <description>install 1 2 3 4 5 6 7 8 9  # On macOS and Linux curl -LsSf https://astral.sh/uv/install.sh | sh # On Windows powershell -c &amp;#34;irm https://astral.sh/uv/install.ps1 | iex&amp;#34; scoop install uv # With pip (if you must, not the preferred way though) pip install uv   setup a new project init 1 2  uv init uv_template cd uv_template   the folder structure:
-1 2 3 4 5 6 7  ❯ dust 0B ┌── README.</description>
+      <description>install 1 2 3 4 5 6 7 8 9  # On macOS and Linux curl -LsSf https://astral.sh/uv/install.sh | sh # On Windows powershell -c &amp;#34;irm https://astral.sh/uv/install.ps1 | iex&amp;#34; scoop install uv # With pip (if you must, not the preferred way though) pip install uv   set UV_CACHE_DIR By default, the cache is stored in $XDG_CACHE_HOME/uv or $HOME/.cache/uv on Unix and %LOCALAPPDATA%\uv\cache on Windows.
+setup a new project init 1 2  uv init uv_template cd uv_template   the folder structure:</description>
     </item>
     
     <item>
