@@ -51,6 +51,27 @@
   </url>
   
   <url>
+    <loc>http://myself659.github.io/tags/life/</loc>
+    <lastmod>2024-04-08T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://myself659.github.io/categories/life/</loc>
+    <lastmod>2024-04-08T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://myself659.github.io/post/life/you-became/</loc>
+    <lastmod>2024-04-08T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>http://myself659.github.io/tags/devops/</loc>
     <lastmod>2024-04-07T11:58:06+02:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -228,20 +249,6 @@
   <url>
     <loc>http://myself659.github.io/post/economy/%E4%B8%AD%E5%9B%BD%E9%9D%A2%E4%B8%B4%E7%9A%84%E6%99%AE%E9%81%8D%E6%80%A7%E4%B8%8D%E4%B8%80%E8%87%B4%E6%80%A7/</loc>
     <lastmod>2023-12-18T11:58:06+02:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://myself659.github.io/tags/life/</loc>
-    <lastmod>2023-12-10T11:58:06+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://myself659.github.io/categories/life/</loc>
-    <lastmod>2023-12-10T11:58:06+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
