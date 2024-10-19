@@ -7,7 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>沉风网事</copyright>
-    <lastBuildDate>Sun, 07 Apr 2024 11:58:06 +0200</lastBuildDate><atom:link href="http://myself659.github.io/tags/devops/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 30 Aug 2024 11:58:06 +0200</lastBuildDate><atom:link href="http://myself659.github.io/tags/devops/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>setup CUDA development environment on windows11</title>
+      <link>http://myself659.github.io/post/devops/win11-cuda/</link>
+      <pubDate>Fri, 30 Aug 2024 11:58:06 +0200</pubDate>
+      
+      <guid>http://myself659.github.io/post/devops/win11-cuda/</guid>
+      <description>install CUDA Toolkit first, from CUDA Toolkit Archive to choose CUDA Toolkit to download.
+we choose the version: CUDA Toolkit 12.4.1.
+1 2 3 4 5 6  ❯ nvcc --version nvcc: NVIDIA (R) Cuda compiler driver Copyright (c) 2005-2024 NVIDIA Corporation Built on Thu_Mar_28_02:30:10_Pacific_Daylight_Time_2024 Cuda compilation tools, release 12.4, V12.4.131 Build cuda_12.4.r12.4/compiler.34097967_0   install cuDNN from cuDNN Archive to choose cuDNN to download.
+we choose the version: cuDNN 9.</description>
+    </item>
+    
     <item>
       <title>setup uv for python development</title>
       <link>http://myself659.github.io/post/devops/python-uv-setup/</link>

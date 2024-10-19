@@ -2,14 +2,56 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://myself659.github.io/categories/ai/</loc>
-    <lastmod>2024-07-24T11:58:06+02:00</lastmod>
+    <loc>http://myself659.github.io/categories/</loc>
+    <lastmod>2024-08-30T11:58:06+02:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://myself659.github.io/categories/</loc>
+    <loc>http://myself659.github.io/tags/devops/</loc>
+    <lastmod>2024-08-30T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://myself659.github.io/categories/devops/</loc>
+    <lastmod>2024-08-30T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://myself659.github.io/post/</loc>
+    <lastmod>2024-08-30T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://myself659.github.io/post/devops/win11-cuda/</loc>
+    <lastmod>2024-08-30T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://myself659.github.io/tags/</loc>
+    <lastmod>2024-08-30T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://myself659.github.io/</loc>
+    <lastmod>2024-08-30T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://myself659.github.io/categories/ai/</loc>
     <lastmod>2024-07-24T11:58:06+02:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -24,27 +66,6 @@
   
   <url>
     <loc>http://myself659.github.io/tags/llama/</loc>
-    <lastmod>2024-07-24T11:58:06+02:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://myself659.github.io/post/</loc>
-    <lastmod>2024-07-24T11:58:06+02:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://myself659.github.io/tags/</loc>
-    <lastmod>2024-07-24T11:58:06+02:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://myself659.github.io/</loc>
     <lastmod>2024-07-24T11:58:06+02:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -72,20 +93,6 @@
   </url>
   
   <url>
-    <loc>http://myself659.github.io/tags/devops/</loc>
-    <lastmod>2024-04-07T11:58:06+02:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://myself659.github.io/categories/devops/</loc>
-    <lastmod>2024-04-07T11:58:06+02:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>http://myself659.github.io/post/devops/python-uv-setup/</loc>
     <lastmod>2024-04-07T11:58:06+02:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -107,7 +114,7 @@
   </url>
   
   <url>
-    <loc>http://myself659.github.io/post/learn/why-never-improve/</loc>
+    <loc>http://myself659.github.io/post/learn/why-never-improve-levelup/</loc>
     <lastmod>2024-04-06T11:58:06+02:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
