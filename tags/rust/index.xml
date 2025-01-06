@@ -18,6 +18,15 @@
     </item>
     
     <item>
+      <title>rust type cheat sheet </title>
+      <link>http://myself659.github.io/post/rust/rust-type-cheat-sheet/</link>
+      <pubDate>Wed, 08 Dec 2021 11:58:06 +0800</pubDate>
+      
+      <guid>http://myself659.github.io/post/rust/rust-type-cheat-sheet/</guid>
+      <description>Option 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 // To inner type unwrap () -&amp;gt; T unwrap_or (T) -&amp;gt; T unwrap_or_else (() -&amp;gt; T) -&amp;gt; T unwrap_or_default () -&amp;gt; T where T: Default expect (&amp;amp;str) -&amp;gt; T //Converting to another type map ((T) -&amp;gt; U) -&amp;gt; Option&amp;lt;U&amp;gt; map_or (U, (T) -&amp;gt; U) -&amp;gt; U</description>
+    </item>
+    
+    <item>
       <title>typeof for Rust </title>
       <link>http://myself659.github.io/post/rust/rust-type-of/</link>
       <pubDate>Wed, 08 Dec 2021 11:58:06 +0800</pubDate>

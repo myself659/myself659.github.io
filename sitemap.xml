@@ -156,6 +156,13 @@
   </url>
   
   <url>
+    <loc>http://myself659.github.io/post/devops/wsl-ubuntu-setup-solana/</loc>
+    <lastmod>2024-04-02T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>http://myself659.github.io/post/devops/wsl-ubuntu-upgrade/</loc>
     <lastmod>2024-04-02T11:58:06+02:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -655,6 +662,13 @@
   <url>
     <loc>http://myself659.github.io/post/rt/chances-from-what-problem/</loc>
     <lastmod>2022-02-11T11:58:06+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://myself659.github.io/post/rust/rust-type-cheat-sheet/</loc>
+    <lastmod>2021-12-08T11:58:06+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>

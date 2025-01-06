@@ -26,8 +26,7 @@ we choose the version: cuDNN 9.</description>
       <pubDate>Sun, 07 Apr 2024 11:58:06 +0200</pubDate>
       
       <guid>http://myself659.github.io/post/devops/python-uv-setup/</guid>
-      <description>install 1 2 3 4 5 6 7 8 9  # On macOS and Linux curl -LsSf https://astral.sh/uv/install.sh | sh # On Windows powershell -c &amp;#34;irm https://astral.sh/uv/install.ps1 | iex&amp;#34; scoop install uv # With pip (if you must, not the preferred way though) pip install uv   set UV_CACHE_DIR By default, the cache is stored in $XDG_CACHE_HOME/uv or $HOME/.cache/uv on Unix and %LOCALAPPDATA%\uv\cache on Windows.
-setup a new project init 1 2  uv init uv_template cd uv_template   the folder structure:</description>
+      <description>install 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16  # On macOS and Linux curl -LsSf https://astral.sh/uv/install.sh | sh # On Windows powershell -c &amp;#34;irm https://astral.sh/uv/install.ps1 | iex&amp;#34; powershell -ExecutionPolicy ByPass -c &amp;#34;irm https://astral.sh/uv/install.ps1 | iex&amp;#34; scoop install uv # With pip (if you must, not the preferred way though) pip install uv # on macOS brew install uv eval &amp;#34;$(uv generate-shell-completion zsh)&amp;#34;   set UV_CACHE_DIR By default, the cache is stored in $XDG_CACHE_HOME/uv or $HOME/.</description>
     </item>
     
     <item>
@@ -38,6 +37,15 @@ setup a new project init 1 2  uv init uv_template cd uv_template   the folder st
       <guid>http://myself659.github.io/post/devops/windows-python-setup/</guid>
       <description>install scoop 1 2  Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser Invoke-RestMethod -Uri https://get.scoop.sh | Invoke-Expression   update scoop 1  scoop update   install pyenv 1  scoop install pyenv   setup python install python with pyenv 1 2 3  pyenv install 3.10.0 pyenv local 3.10.0   install poetry 1  pip install poetry   configure poetry in: %APPDATA%\pypoetry
 1 2 3 4  [virtualenvs] in-project = true virtualenvs.</description>
+    </item>
+    
+    <item>
+      <title>A Step-by-Step Guide to Setting Up Solana on Ubuntu</title>
+      <link>http://myself659.github.io/post/devops/wsl-ubuntu-setup-solana/</link>
+      <pubDate>Tue, 02 Apr 2024 11:58:06 +0200</pubDate>
+      
+      <guid>http://myself659.github.io/post/devops/wsl-ubuntu-setup-solana/</guid>
+      <description>Install Rust 1  curl --proto &amp;#39;=https&amp;#39; --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y   install solana CLI 1 2  sh -c &amp;#34;$(curl -sSfL https://release.anza.xyz/stable/install)&amp;#34;   1  solana --version   Install Anchor CLI 1 2 3 4  sudo apt install build-essential cargo install --git https://github.com/coral-xyz/anchor avm --force   1 2 3 4 5 6 7 8  avm install latest avm use latest anchor --version   install nvm and node 1  curl -o- https://raw.</description>
     </item>
     
     <item>
