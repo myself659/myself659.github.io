@@ -36,6 +36,15 @@
     </item>
     
     <item>
+      <title>高性能服务器设计与优化</title>
+      <link>http://myself659.github.io/post/2017-05-09-web-server-perf-and-design/</link>
+      <pubDate>Tue, 09 May 2017 11:58:06 +0200</pubDate>
+      
+      <guid>http://myself659.github.io/post/2017-05-09-web-server-perf-and-design/</guid>
+      <description>为了构建自己的知识体系，对高性能服务器设计与优化一点想法，其中不足与错误，欢迎指正。 高性能服务器设计与优化</description>
+    </item>
+    
+    <item>
       <title>对于系统设计的一些想法</title>
       <link>http://myself659.github.io/post/2017-04-29-about-system-design/</link>
       <pubDate>Sat, 08 Apr 2017 11:58:06 +0200</pubDate>

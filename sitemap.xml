@@ -2473,6 +2473,13 @@
   </url>
   
   <url>
+    <loc>http://myself659.github.io/post/2017-05-09-web-server-perf-and-design/</loc>
+    <lastmod>2017-05-09T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>http://myself659.github.io/post/life/what-is-matter-%E9%87%8D%E8%A6%81/</loc>
     <lastmod>2017-05-07T11:58:06+02:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -2545,6 +2552,13 @@
   <url>
     <loc>http://myself659.github.io/post/2017-02-16-tcp-slow-down/</loc>
     <lastmod>2017-02-16T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://myself659.github.io/post/internet/2017-02-04-country-internet-music/</loc>
+    <lastmod>2017-02-04T11:58:06+02:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -2788,43 +2802,7 @@
   </url>
   
   <url>
-    <loc>http://myself659.github.io/post/2017-05-09-web-server-perf-and-design/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://myself659.github.io/post/ai/sd3-webui/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://myself659.github.io/post/internet/2017-02-04-country-internet-music/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://myself659.github.io/post/invest/invest-l0/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://myself659.github.io/post/k8s-githubaction/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://myself659.github.io/post/substrate-runtime/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://myself659.github.io/post/ai/prompt-advanced-lists/</loc>
+    <loc>http://myself659.github.io/post/ai/prompt-advanced-list/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -2836,7 +2814,7 @@
   </url>
   
   <url>
-    <loc>http://myself659.github.io/post/rt/stupid-foolish-is-enemy/</loc>
+    <loc>http://myself659.github.io/post/rt/stupid-foolish-is-dangerous-enemy/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
