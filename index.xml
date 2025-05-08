@@ -37,7 +37,7 @@ we choose the version: cuDNN 9.</description>
       <pubDate>Mon, 08 Apr 2024 11:58:06 +0200</pubDate>
       
       <guid>http://myself659.github.io/post/life/you-became/</guid>
-      <description>You become what you eat you become what you believe you become what you think you become what you measure you become what you do you become what you repeat you become what you focus on </description>
+      <description>you become what you surround yourself with You become what you eat you become what you believe you become what you think you become what you measure you become what you focus on you become what you do you become what you repeat </description>
     </item>
     
     <item>
@@ -2128,6 +2128,15 @@ Let us start the excited journey to the new Wild West.</description>
     </item>
     
     <item>
+      <title>git FAQ</title>
+      <link>http://myself659.github.io/post/devops/git-issue/</link>
+      <pubDate>Thu, 11 May 2017 11:58:06 +0200</pubDate>
+      
+      <guid>http://myself659.github.io/post/devops/git-issue/</guid>
+      <description>从Git历史中彻底删除大文件 描述 1 2 3 4 5 remote: Resolving deltas: 100% (23/23), completed with 17 local objects. remote: error: Trace: 4836afb0ea0a96bb85e61a8ae818673e2f110a05c0da9e6813f8fa0c34ba2816 remote: error: See https://gh.io/lfs for more information. remote: error: File pdsv3.json is 184.08 MB; this exceeds GitHub&amp;#39;s file size limit of 100.00 MB remote: error: GH001: Large files detected. You may want to try Git</description>
+    </item>
+    
+    <item>
       <title>Linux进程诊断小结</title>
       <link>http://myself659.github.io/post/2017-05-10-linux-process-diagnose/</link>
       <pubDate>Wed, 10 May 2017 11:58:06 +0200</pubDate>
@@ -2214,7 +2223,7 @@ Let us start the excited journey to the new Wild West.</description>
       <pubDate>Fri, 17 Mar 2017 11:58:06 +0800</pubDate>
       
       <guid>http://myself659.github.io/post/done/%E6%88%91%E7%9A%84%E4%B8%89%E6%80%9D%E8%80%8C%E5%90%8E%E8%A1%8C/</guid>
-      <description>背景 人们常说三思而后行。三思指什么？ 我的三思 首先思考有没有必要这样做？（why） 这样做会带来什么（思危，思变，思退）（what）？ 怎么做？还</description>
+      <description>背景 人们常说三思而后行。三思指什么？ 我的三思 首先思考有没有必要这样做？（why） 这样做会带来什么（思危，思退，思变）（what）？ 怎么做？还</description>
     </item>
     
     <item>
@@ -2390,10 +2399,10 @@ Let us start the excited journey to the new Wild West.</description>
     
     <item>
       <title>git常用命令总结</title>
-      <link>http://myself659.github.io/post/2016-05-21-git-cmd/</link>
+      <link>http://myself659.github.io/post/devops/2016-05-21-git-cmd/</link>
       <pubDate>Sat, 21 May 2016 11:58:06 +0200</pubDate>
       
-      <guid>http://myself659.github.io/post/2016-05-21-git-cmd/</guid>
+      <guid>http://myself659.github.io/post/devops/2016-05-21-git-cmd/</guid>
       <description>配置 config user 1 2 git config --global user.email &amp;#34;you@example.com&amp;#34; git config --global user.name &amp;#34;Your Name&amp;#34; Ignore Git permission changes 1 git config core.fileMode false Fix .gitignore 1 git rm -r --cached . git仓库 初始化一个版本仓库 1 git init clone远程版本库 1 git clone git@github.com:myself659/FFmpeg.git 添加远程版</description>
     </item>
     
