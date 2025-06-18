@@ -27,6 +27,33 @@
     </item>
     
     <item>
+      <title>Hinted Handoff 101</title>
+      <link>http://myself659.github.io/post/arch/hinted-handoff-101/</link>
+      <pubDate>Fri, 18 Jan 2019 11:58:06 +0200</pubDate>
+      
+      <guid>http://myself659.github.io/post/arch/hinted-handoff-101/</guid>
+      <description>前言 在分布式系统中，节点故障是常态而不是例外。为了保障高可用性与最终一致性，很多系统引入了一种重要机制：Hinted Handoff（提示式转</description>
+    </item>
+    
+    <item>
+      <title>Quorum 101</title>
+      <link>http://myself659.github.io/post/arch/quorum-101/</link>
+      <pubDate>Fri, 18 Jan 2019 11:58:06 +0200</pubDate>
+      
+      <guid>http://myself659.github.io/post/arch/quorum-101/</guid>
+      <description>前言 在分布式系统中，多副本机制确保了数据的高可用性与容错能力，但同时也带来了副本间一致性的问题。为了在性能、可用性与一致性之间取得平衡，Qu</description>
+    </item>
+    
+    <item>
+      <title>Read Repair 101</title>
+      <link>http://myself659.github.io/post/arch/read-repair-101/</link>
+      <pubDate>Fri, 18 Jan 2019 11:58:06 +0200</pubDate>
+      
+      <guid>http://myself659.github.io/post/arch/read-repair-101/</guid>
+      <description>前言 在分布式系统中，数据被多副本存储是常见做法，用于提升容错与可用性。然而，多副本之间的数据一致性维护是一个复杂的问题。**Read Repa</description>
+    </item>
+    
+    <item>
       <title>Segmented Log 101</title>
       <link>http://myself659.github.io/post/arch/segmented-log-101/</link>
       <pubDate>Thu, 17 Jan 2019 11:58:06 +0200</pubDate>

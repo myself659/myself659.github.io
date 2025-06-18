@@ -1802,6 +1802,36 @@ window.store = {
     
     
     
+    "http:\/\/myself659.github.io\/post\/arch\/hinted-handoff-101\/": {
+        
+        "title": "Hinted Handoff 101",
+        "tags": ["arch",],
+        "content": " 前言 在分布式系统中，节点故障是常态而不是例外。为了保障高可用性与最终一致性，很多系统引入了一种重要机制：Hinted Handoff（提示式转交）。它被广泛应用于如 Amazon Dynamo、Apache Cassandra 等分布式数据库系统中，是容错设计的关键一环。\n定义 Wiki 定义如下：\n Hinted handoff is a technique used in distributed computing to ensure eventual consistency when a node in the system is temporarily unavailable.\n 简单来说：当某个目标节点不可用时，数据会“暂存”在其他节点，一旦目标节点恢复，再将数据“提示式”转交回去。\n工作原理 一句话：临时将写入操作保存于非目标节点中，等目标节点恢复后再“转交”给它。\n详细流程：\n 客户端发起写请求； 某些副本节点宕机，无法接收写入； 其他可用节点代为接收，并标记这些数据的“Hint”； 后台线程定期扫描 Hint 并检查目标节点是否恢复； 一旦节点恢复，Hint 数据会被转交回去，完成数据同步； Hint 数据被清除。  属性与指标 关注的 Hinted Handoff 属性与指标包括：\n  Hint 保留时间（Hint TTL） Hint 会在本地缓存中保留一定时间，超过后会丢弃。\n  Hint 存储容量 太多 Hint 占用资源，需防止磁盘/内存爆炸。\n  交付频率 多久检查目标节点是否恢复，以及多久交付一次 Hint。\n  一致性延迟 提高可用性但可能影响短期内一致性。\n  写可用性增强度 在 N 个副本中，即使某些节点挂掉，写操作仍可成功。\n  Hint 重放失败率 如果 Hint 未能正确重交，会导致永久不一致。\n  写入放大（Write Amplification） 存储了额外的 Hint 数据，增加 IO 负担。\n  类型 按节点行为划分   正常写入路径 所有副本节点在线，Hint 不会触发。\n  降级写入（Degraded Write） 某些副本不可用，Hinted Handoff 被触发。\n  Hint 清理路径 节点恢复后自动同步 Hint 数据并删除 Hint。\n  按实现方式划分   本地存储型 Hint Hint 存储在写入节点本地磁盘中（如 Cassandra 中每个节点的 Hint 文件）。\n  内存式 Hint Hint 数据短暂驻留在内存中，适用于轻量级系统。\n  批量合并回传 Hint 数据以批量方式合并后再回传，提高效率。\n  存储位置 Hint 数据通常存储在如下几类介质中：\n 磁盘日志文件（hint log） 内存缓存（如 memtable） 专用列族或 keyspace（如 Cassandra 的 system.hints） 队列系统中（如 Kafka 中的延迟处理机制）  Hinted Handoff 与程序关系 根据 Hint 与程序执行关系，可以区分为：\n  自动后台机制 多数系统在后台透明执行，无需用户干预。\n  用户感知型 Hint（如 Metrics、监控告警） 开发者可通过指标监控 Hint 的堆积与处理情况。\n  配置式控制 用户可调节 Hint TTL、写入限制、并发交付数等参数。\n  常见支持 Hinted Handoff 的产品 以下系统广泛支持 Hinted Handoff 或类似机制：\n  Apache Cassandra 实现细致且高度可配置的 Hint 管理机制。\n  Amazon Dynamo / DynamoDB 最早提出该机制的系统之一。\n  Riak 支持 Hinted Handoff 作为故障恢复策略的一部分。\n  ScyllaDB 对 Cassandra 的高性能替代实现，同样支持 Hint。\n  CockroachDB（通过 Raft 变种实现类似效果） 严格一致性，但也包含延迟同步特性。\n   ", 
+        "url": "http:\/\/myself659.github.io\/post\/arch\/hinted-handoff-101\/"
+    },
+    
+    
+    
+    "http:\/\/myself659.github.io\/post\/arch\/quorum-101\/": {
+        
+        "title": "Quorum 101",
+        "tags": ["arch",],
+        "content": " 前言 在分布式系统中，多副本机制确保了数据的高可用性与容错能力，但同时也带来了副本间一致性的问题。为了在性能、可用性与一致性之间取得平衡，Quorum（一致性法定人数）机制应运而生，广泛应用于分布式数据库与存储系统，如 Cassandra、Dynamo、etcd、ZooKeeper 等。\n定义 Wiki 定义如下：\n In distributed computing, a quorum is the minimum number of members of a group that must be present to make the results of any vote valid. In distributed databases, it refers to the minimum number of nodes required to acknowledge a read or write operation to consider it successful.\n 简而言之： Quorum 是指执行读或写操作时必须成功访问的最小副本数，以保障一致性。\n工作原理 一句话：通过确保读写操作都覆盖到一定数量的副本，使得“读”总能读到最新的“写”。\n经典公式为：\n1  W + R \u0026gt; N   其中：\n N：副本总数 W：写操作成功所需副本数 R：读操作成功所需副本数  只要 W + R \u0026gt; N，就保证了至少有一个副本同时被读写覆盖，从而实现强一致性。\n例如：\n 若 N = 3，W = 2，R = 2，则满足 W + R = 4 \u0026gt; 3，因此可以读到最新写入的数据。  属性与指标 Quorum 涉及以下核心属性与指标：\n  副本数 N 系统中每条数据的存储副本总数，通常为 3、5、7。\n  写法定人数 W 每次写入必须成功的副本数量，影响写可用性与一致性。\n  读法定人数 R 每次读取必须访问的副本数量，影响读延迟与一致性。\n  Consistency Level 一般系统支持不同级别：ONE、QUORUM、ALL、LOCAL_QUORUM 等。\n  Latency vs Consistency 增加 R/W 会提高一致性，但也可能提高延迟。\n  Fault Tolerance 系统最多能容忍 (N - W) 个副本写失败，或 (N - R) 个副本读失败。\n  类型 按读写权重划分   强写弱读（W高，R低）\n 保证写入强一致，读取副本少，读延迟低。 适合写频繁、读延迟敏感场景。    强读弱写（W低，R高）\n 写入快，读取需访问更多副本，保证读到最新值。 适合读密集、要求读一致性的业务。    对称 Quorum（W = R = ⌈N/2⌉）\n 比较常见的设置，读写一致性较强，适用广泛。    按地理范围划分   Local Quorum\n 限定在单个数据中心中满足 W 或 R，适合多机房部署。    Global Quorum\n 所有数据中心参与法定人数计算，适合强一致性跨机房场景。    存储系统中的应用 Quorum 机制在许多系统中扮演关键角色：\n   系统 是否使用 Quorum 说明     Cassandra ✅ R/W 可配置，支持 Local/Global   DynamoDB ✅ 源自 Dynamo 论文   ZooKeeper ✅ 多数派投票机制   etcd / Consul ✅ 使用 Raft 算法，依赖多数节点确认   MongoDB ✅（部分场景） WriteConcern 和 ReadPreference 提供类似机制    与程序的关系 对于开发者而言：\n  读写一致性调优 通过选择合适的 R/W 组合，控制系统的最终一致性行为。\n  CAP 权衡的体现 Quorum 是 CAP 中 C（Consistency）与 A（Availability）的权衡点。\n  错误处理设计 需处理部分副本失败、超时、数据不一致等场景。\n  可观测性 系统应暴露法定人数满足情况、失败率、响应时间等指标。\n   常见支持 Quorum 的系统  Apache Cassandra Amazon DynamoDB Apache HBase Riak etcd / Consul ZooKeeper FoundationDB CockroachDB   ", 
+        "url": "http:\/\/myself659.github.io\/post\/arch\/quorum-101\/"
+    },
+    
+    
+    
+    "http:\/\/myself659.github.io\/post\/arch\/read-repair-101\/": {
+        
+        "title": "Read Repair 101",
+        "tags": ["arch",],
+        "content": " 前言 在分布式系统中，数据被多副本存储是常见做法，用于提升容错与可用性。然而，多副本之间的数据一致性维护是一个复杂的问题。**Read Repair（读修复）机制，正是实现最终一致性（eventual consistency）**的重要手段之一。\n定义 Wiki 定义如下：\n Read repair is a technique used in eventually consistent distributed data stores to ensure consistency by comparing and fixing data during read operations.\n 简而言之：当读取多个副本时，发现副本间数据不一致，则顺便修复它们。\n工作原理 一句话：通过读取多个副本，发现不一致后，在后台悄悄修复陈旧副本。\n工作流程如下：\n 客户端发起读请求； 系统读取多个副本（通常大于等于读的 quorum）； 比较副本数据的时间戳或版本号； 若发现某些副本数据落后，则主动将最新的数据写回这些副本； 对客户端返回最新数据，同时完成副本修复。  属性与指标 关注的 Read Repair 属性与指标包括：\n  触发频率 是否每次读都修复？（见“类型”）\n  修复延迟 修复操作在后台完成，可能存在一定延迟。\n  一致性提升能力 Read Repair 能大幅提升系统的最终一致性。\n  额外开销 每次读取副本数增加，可能导致网络或 CPU 开销上升。\n  数据冲突处理策略 使用时间戳、版本号、或向量时钟决定哪个副本更“新”。\n  Repair 成功率 是否成功更新所有落后副本，是否有修复失败统计。\n  类型 按触发方式划分   同步读修复（Synchronous Read Repair） 读取时立即修复，客户端等待修复完成后返回结果。 ✅一致性高，但延迟也高。\n  异步读修复（Asynchronous Read Repair） 读取数据后后台修复副本，客户端无需等待。 ✅性能好，但修复可能延迟。\n  概率性读修复（Speculative Read Repair） 仅对一部分读请求触发修复（如 Cassandra 默认每 10% 请求执行）。 ✅权衡一致性与性能。\n  按执行策略划分   Majority Compare 读取多数副本进行比较，以多数为准。\n  Full Compare 所有副本全部参与，精度更高但代价更大。\n  存储位置与操作方式 Read Repair 不涉及额外持久化位置，但它操作如下：\n 从多个副本读取数据； 比较元数据（如时间戳）； 发起额外写请求以修复落后副本； 可配置 repair 并发度与速率。  Read Repair 与程序关系 从系统设计角度，Read Repair 与程序关系如下：\n  开发者透明 系统自动触发，开发者通常无需介入。\n  监控指标可见 可通过监控系统看到 repair 请求频率、冲突修复率等。\n  调优项丰富 Cassandra 提供如下调优参数：\n read_repair_chance dc_local_read_repair_chance repair_thread_count hinted_handoff_enabled    常用支持 Read Repair 的系统 以下分布式系统广泛支持 Read Repair：\n  Apache Cassandra 最经典实现之一，支持同步/异步/概率性修复。\n  Amazon Dynamo Read Repair 是其“eventual consistency”核心机制之一。\n  ScyllaDB 基于 Cassandra 架构，进一步优化了修复性能。\n  Riak 使用 vector clock 进行副本修复判断。\n  Couchbase / MongoDB（部分场景） 支持弱一致性读取和副本检查修复。\n   ", 
+        "url": "http:\/\/myself659.github.io\/post\/arch\/read-repair-101\/"
+    },
+    
+    
+    
     "http:\/\/myself659.github.io\/post\/arch\/segmented-log-101\/": {
         
         "title": "Segmented Log 101",
@@ -4779,6 +4809,36 @@ window.store = {
         "tags": ["学习","成长",],
         "content": "学习原则  坚持终身学习 学习有法、学无定法、贵在得法 向高手学习，站在巨人的肩膀上学习 不断学习元学习，学会如何学习并不断提高学习能力 坚持高标准学习，要做到学到位 主动学习与享受学习 理论与实践结合，做到致知于行，追求知行合一 学习一定要有明确的目标与路径 学习一定要有输出 学习一定要有检测与反馈 打造有利于学习的环境与系统    ", 
         "url": "http:\/\/myself659.github.io\/post\/learn\/learn-principles\/"
+    },
+    
+    
+    
+    "http:\/\/myself659.github.io\/post\/arch\/hinted-handoff-101\/": {
+        
+        "title": "Hinted Handoff 101",
+        "tags": ["arch",],
+        "content": " 前言 在分布式系统中，节点故障是常态而不是例外。为了保障高可用性与最终一致性，很多系统引入了一种重要机制：Hinted Handoff（提示式转交）。它被广泛应用于如 Amazon Dynamo、Apache Cassandra 等分布式数据库系统中，是容错设计的关键一环。\n定义 Wiki 定义如下：\n Hinted handoff is a technique used in distributed computing to ensure eventual consistency when a node in the system is temporarily unavailable.\n 简单来说：当某个目标节点不可用时，数据会“暂存”在其他节点，一旦目标节点恢复，再将数据“提示式”转交回去。\n工作原理 一句话：临时将写入操作保存于非目标节点中，等目标节点恢复后再“转交”给它。\n详细流程：\n 客户端发起写请求； 某些副本节点宕机，无法接收写入； 其他可用节点代为接收，并标记这些数据的“Hint”； 后台线程定期扫描 Hint 并检查目标节点是否恢复； 一旦节点恢复，Hint 数据会被转交回去，完成数据同步； Hint 数据被清除。  属性与指标 关注的 Hinted Handoff 属性与指标包括：\n  Hint 保留时间（Hint TTL） Hint 会在本地缓存中保留一定时间，超过后会丢弃。\n  Hint 存储容量 太多 Hint 占用资源，需防止磁盘/内存爆炸。\n  交付频率 多久检查目标节点是否恢复，以及多久交付一次 Hint。\n  一致性延迟 提高可用性但可能影响短期内一致性。\n  写可用性增强度 在 N 个副本中，即使某些节点挂掉，写操作仍可成功。\n  Hint 重放失败率 如果 Hint 未能正确重交，会导致永久不一致。\n  写入放大（Write Amplification） 存储了额外的 Hint 数据，增加 IO 负担。\n  类型 按节点行为划分   正常写入路径 所有副本节点在线，Hint 不会触发。\n  降级写入（Degraded Write） 某些副本不可用，Hinted Handoff 被触发。\n  Hint 清理路径 节点恢复后自动同步 Hint 数据并删除 Hint。\n  按实现方式划分   本地存储型 Hint Hint 存储在写入节点本地磁盘中（如 Cassandra 中每个节点的 Hint 文件）。\n  内存式 Hint Hint 数据短暂驻留在内存中，适用于轻量级系统。\n  批量合并回传 Hint 数据以批量方式合并后再回传，提高效率。\n  存储位置 Hint 数据通常存储在如下几类介质中：\n 磁盘日志文件（hint log） 内存缓存（如 memtable） 专用列族或 keyspace（如 Cassandra 的 system.hints） 队列系统中（如 Kafka 中的延迟处理机制）  Hinted Handoff 与程序关系 根据 Hint 与程序执行关系，可以区分为：\n  自动后台机制 多数系统在后台透明执行，无需用户干预。\n  用户感知型 Hint（如 Metrics、监控告警） 开发者可通过指标监控 Hint 的堆积与处理情况。\n  配置式控制 用户可调节 Hint TTL、写入限制、并发交付数等参数。\n  常见支持 Hinted Handoff 的产品 以下系统广泛支持 Hinted Handoff 或类似机制：\n  Apache Cassandra 实现细致且高度可配置的 Hint 管理机制。\n  Amazon Dynamo / DynamoDB 最早提出该机制的系统之一。\n  Riak 支持 Hinted Handoff 作为故障恢复策略的一部分。\n  ScyllaDB 对 Cassandra 的高性能替代实现，同样支持 Hint。\n  CockroachDB（通过 Raft 变种实现类似效果） 严格一致性，但也包含延迟同步特性。\n   ", 
+        "url": "http:\/\/myself659.github.io\/post\/arch\/hinted-handoff-101\/"
+    },
+    
+    
+    
+    "http:\/\/myself659.github.io\/post\/arch\/quorum-101\/": {
+        
+        "title": "Quorum 101",
+        "tags": ["arch",],
+        "content": " 前言 在分布式系统中，多副本机制确保了数据的高可用性与容错能力，但同时也带来了副本间一致性的问题。为了在性能、可用性与一致性之间取得平衡，Quorum（一致性法定人数）机制应运而生，广泛应用于分布式数据库与存储系统，如 Cassandra、Dynamo、etcd、ZooKeeper 等。\n定义 Wiki 定义如下：\n In distributed computing, a quorum is the minimum number of members of a group that must be present to make the results of any vote valid. In distributed databases, it refers to the minimum number of nodes required to acknowledge a read or write operation to consider it successful.\n 简而言之： Quorum 是指执行读或写操作时必须成功访问的最小副本数，以保障一致性。\n工作原理 一句话：通过确保读写操作都覆盖到一定数量的副本，使得“读”总能读到最新的“写”。\n经典公式为：\n1  W + R \u0026gt; N   其中：\n N：副本总数 W：写操作成功所需副本数 R：读操作成功所需副本数  只要 W + R \u0026gt; N，就保证了至少有一个副本同时被读写覆盖，从而实现强一致性。\n例如：\n 若 N = 3，W = 2，R = 2，则满足 W + R = 4 \u0026gt; 3，因此可以读到最新写入的数据。  属性与指标 Quorum 涉及以下核心属性与指标：\n  副本数 N 系统中每条数据的存储副本总数，通常为 3、5、7。\n  写法定人数 W 每次写入必须成功的副本数量，影响写可用性与一致性。\n  读法定人数 R 每次读取必须访问的副本数量，影响读延迟与一致性。\n  Consistency Level 一般系统支持不同级别：ONE、QUORUM、ALL、LOCAL_QUORUM 等。\n  Latency vs Consistency 增加 R/W 会提高一致性，但也可能提高延迟。\n  Fault Tolerance 系统最多能容忍 (N - W) 个副本写失败，或 (N - R) 个副本读失败。\n  类型 按读写权重划分   强写弱读（W高，R低）\n 保证写入强一致，读取副本少，读延迟低。 适合写频繁、读延迟敏感场景。    强读弱写（W低，R高）\n 写入快，读取需访问更多副本，保证读到最新值。 适合读密集、要求读一致性的业务。    对称 Quorum（W = R = ⌈N/2⌉）\n 比较常见的设置，读写一致性较强，适用广泛。    按地理范围划分   Local Quorum\n 限定在单个数据中心中满足 W 或 R，适合多机房部署。    Global Quorum\n 所有数据中心参与法定人数计算，适合强一致性跨机房场景。    存储系统中的应用 Quorum 机制在许多系统中扮演关键角色：\n   系统 是否使用 Quorum 说明     Cassandra ✅ R/W 可配置，支持 Local/Global   DynamoDB ✅ 源自 Dynamo 论文   ZooKeeper ✅ 多数派投票机制   etcd / Consul ✅ 使用 Raft 算法，依赖多数节点确认   MongoDB ✅（部分场景） WriteConcern 和 ReadPreference 提供类似机制    与程序的关系 对于开发者而言：\n  读写一致性调优 通过选择合适的 R/W 组合，控制系统的最终一致性行为。\n  CAP 权衡的体现 Quorum 是 CAP 中 C（Consistency）与 A（Availability）的权衡点。\n  错误处理设计 需处理部分副本失败、超时、数据不一致等场景。\n  可观测性 系统应暴露法定人数满足情况、失败率、响应时间等指标。\n   常见支持 Quorum 的系统  Apache Cassandra Amazon DynamoDB Apache HBase Riak etcd / Consul ZooKeeper FoundationDB CockroachDB   ", 
+        "url": "http:\/\/myself659.github.io\/post\/arch\/quorum-101\/"
+    },
+    
+    
+    
+    "http:\/\/myself659.github.io\/post\/arch\/read-repair-101\/": {
+        
+        "title": "Read Repair 101",
+        "tags": ["arch",],
+        "content": " 前言 在分布式系统中，数据被多副本存储是常见做法，用于提升容错与可用性。然而，多副本之间的数据一致性维护是一个复杂的问题。**Read Repair（读修复）机制，正是实现最终一致性（eventual consistency）**的重要手段之一。\n定义 Wiki 定义如下：\n Read repair is a technique used in eventually consistent distributed data stores to ensure consistency by comparing and fixing data during read operations.\n 简而言之：当读取多个副本时，发现副本间数据不一致，则顺便修复它们。\n工作原理 一句话：通过读取多个副本，发现不一致后，在后台悄悄修复陈旧副本。\n工作流程如下：\n 客户端发起读请求； 系统读取多个副本（通常大于等于读的 quorum）； 比较副本数据的时间戳或版本号； 若发现某些副本数据落后，则主动将最新的数据写回这些副本； 对客户端返回最新数据，同时完成副本修复。  属性与指标 关注的 Read Repair 属性与指标包括：\n  触发频率 是否每次读都修复？（见“类型”）\n  修复延迟 修复操作在后台完成，可能存在一定延迟。\n  一致性提升能力 Read Repair 能大幅提升系统的最终一致性。\n  额外开销 每次读取副本数增加，可能导致网络或 CPU 开销上升。\n  数据冲突处理策略 使用时间戳、版本号、或向量时钟决定哪个副本更“新”。\n  Repair 成功率 是否成功更新所有落后副本，是否有修复失败统计。\n  类型 按触发方式划分   同步读修复（Synchronous Read Repair） 读取时立即修复，客户端等待修复完成后返回结果。 ✅一致性高，但延迟也高。\n  异步读修复（Asynchronous Read Repair） 读取数据后后台修复副本，客户端无需等待。 ✅性能好，但修复可能延迟。\n  概率性读修复（Speculative Read Repair） 仅对一部分读请求触发修复（如 Cassandra 默认每 10% 请求执行）。 ✅权衡一致性与性能。\n  按执行策略划分   Majority Compare 读取多数副本进行比较，以多数为准。\n  Full Compare 所有副本全部参与，精度更高但代价更大。\n  存储位置与操作方式 Read Repair 不涉及额外持久化位置，但它操作如下：\n 从多个副本读取数据； 比较元数据（如时间戳）； 发起额外写请求以修复落后副本； 可配置 repair 并发度与速率。  Read Repair 与程序关系 从系统设计角度，Read Repair 与程序关系如下：\n  开发者透明 系统自动触发，开发者通常无需介入。\n  监控指标可见 可通过监控系统看到 repair 请求频率、冲突修复率等。\n  调优项丰富 Cassandra 提供如下调优参数：\n read_repair_chance dc_local_read_repair_chance repair_thread_count hinted_handoff_enabled    常用支持 Read Repair 的系统 以下分布式系统广泛支持 Read Repair：\n  Apache Cassandra 最经典实现之一，支持同步/异步/概率性修复。\n  Amazon Dynamo Read Repair 是其“eventual consistency”核心机制之一。\n  ScyllaDB 基于 Cassandra 架构，进一步优化了修复性能。\n  Riak 使用 vector clock 进行副本修复判断。\n  Couchbase / MongoDB（部分场景） 支持弱一致性读取和副本检查修复。\n   ", 
+        "url": "http:\/\/myself659.github.io\/post\/arch\/read-repair-101\/"
     },
     
     
