@@ -1819,12 +1819,62 @@ window.store = {
     
     
     
+    "http:\/\/myself659.github.io\/post\/arch\/segmented-log-101\/": {
+        
+        "title": "Segmented Log 101",
+        "tags": ["arch",],
+        "content": " 前言 在现代分布式系统、日志系统、消息队列和数据库中，高效、可靠的写入与持久化机制是系统核心能力之一。传统的线性日志虽然简单，但在长时间运行、大规模数据场景下存在扩展性瓶颈。**Segmented Log（分段日志）**正是一种应对这些问题的设计，通过将日志拆分为多个可管理的段，提升写入性能、便于清理与恢复。\n定义 Wiki 中关于分段日志的定义不直接存在，结合主流系统的实践，可以给出如下定义：\n A segmented log is a log structure divided into multiple smaller log files or segments, each acting as a manageable unit for write, read, and cleanup, improving performance, reliability, and scalability in persistent logging systems.\n 简而言之：Segmented Log 是将日志划分为多个段，每个段独立读写、存储、回放，支持高效管理。\n工作原理 一句话：通过分段管理日志文件，实现高效写入、快速回放与灵活清理。\n基本流程：\n 日志系统按顺序写入当前活跃段（active segment）； 当前段写满后，生成新段继续写； 老段（cold segment）只读或归档，不再写入； 根据系统策略（如消费进度、checkpoint）清理过期段； 在恢复时，从最近 checkpoint 向后按段顺序回放日志。  属性与指标 Segmented Log 关注的关键属性如下：\n 写入吞吐（Write Throughput）：顺序写活跃段，具备高性能； 读取性能（Read Efficiency）：段内顺序读 + 内存索引提升查询速度； 持久性与可靠性：每个段持久化，崩溃恢复更稳定； 回放效率：分段加速日志重放过程； 日志清理策略：基于 TTL 或 offset/LSN 的段回收； 空间管理：支持异地备份、归档冷段，降低主存储压力； 可扩展性：多个段可并行压缩、复制、分发； 容错能力：段损坏时影响范围有限，易于修复。  类型 按段角色分类：   Active Segment 当前活跃写入段，顺序追加写入。\n  Inactive Segment 历史段，仅供读取或回放，不再写入。\n  Archived Segment 已清理或转移的段，通常压缩后存储于冷数据层。\n  按段策略分类：   定长段（Fixed-size Segment） 每个段固定大小（如 128MB），便于管理与优化。\n  滚动段（Rolling Segment） 时间或事件驱动切段，如每小时/每天生成新段。\n  可变段（Dynamic Segment） 根据写入速率或负载动态调整段大小。\n  应用场景 Segmented Log 广泛应用于以下系统：\n 消息队列系统：如 Apache Kafka、Redpanda、Pulsar 等基于分段日志构建； 数据库引擎：如 RocksDB、ClickHouse、TimescaleDB 使用分段 WAL； 分布式存储系统：如 HDFS、SeaweedFS，写入日志采用分段优化； 共识算法：如 Raft 协议的 log entries 分段处理； 文件同步系统：如 Dropbox Delta Sync，按段比对变化； 区块链系统：如 Tendermint、Ethereum 2.0 使用分段存储区块； 日志分析平台：如 Loki、Fluentd 中日志写入和压缩采用分段策略。  常见产品与实现 典型采用 segmented log 的系统包括：\n Apache Kafka：核心以分段日志文件为设计基础； RocksDB：LSM-Tree 中 WAL 采用分段管理； ClickHouse：MergeTree 引擎数据文件按段写入； etcd / TiKV：底层 raft 日志为分段式； Apache Pulsar：Segmented WAL 架构便于 broker 崩溃恢复； Apache BookKeeper：分布式 ledger 按 entry segment 管理； Redpanda：零拷贝、高效分段日志结构； InfluxDB：时间序列数据写入采用按时间分段的 WAL。   ", 
+        "url": "http:\/\/myself659.github.io\/post\/arch\/segmented-log-101\/"
+    },
+    
+    
+    
     "http:\/\/myself659.github.io\/post\/life\/%E8%AF%B7%E4%B8%BB%E5%8A%A8%E7%A7%AF%E6%9E%81%E4%BA%9B\/": {
         
         "title": "请主动积极些",
         "tags": ["life",],
         "content": "被动的麻烦 被动代表什么?被动常常代表麻烦,具体如下:\n  落后\n  等待与浪费\n  缺少控制\n  机会减少\n  缺少准备\n  什么是积极主动 积极主动怎么定义呢? 还是看实例和对比.\n一个被动消极的人会是怎么样呢?通常他们有以下言行:\n 这不属于我们的职责范围 我不知道 我也没有办法 我没有选择 我不知道怎么做 他们不会这样的 通常什么也不做就是等  一个积极主动的人会是怎么样呢?通常他们有以下言行:\n 我有哪些选择? 我可以尝试不同的方法 我有一个计划 问题是这样的 我会考虑更好方法 我会选择另一种方案 我会做这件事 遇到问题会自己找方案 经常思考变化 经常自省与反思  积极主动的意义 积极主动可以带来以下好处:\n  更好控制自己能控制的,改变自己能改变的\n  走上行动并进步的道路\n  更多准备\n  更多机会\n  更好地适应\n  更多地自我实现\n  更好地专注与投入以及更高效的产出\n  更早开始与先发优势\n  参考  你矜持，你活该  ", 
         "url": "http:\/\/myself659.github.io\/post\/life\/%E8%AF%B7%E4%B8%BB%E5%8A%A8%E7%A7%AF%E6%9E%81%E4%BA%9B\/"
+    },
+    
+    
+    
+    "http:\/\/myself659.github.io\/post\/arch\/write-ahead-log-101\/": {
+        
+        "title": "Write-Ahead Log 101",
+        "tags": ["arch",],
+        "content": " 前言 在现代互联网系统中，数据的可靠性与一致性至关重要。尤其在数据库、分布式系统和文件系统中，为了防止系统崩溃后数据丢失，Write-Ahead Logging（预写日志）机制成为确保持久化与崩溃恢复的重要手段。\n定义 Wiki 定义如下：\n In computer science, a write-ahead log (WAL) is a technique for providing atomicity and durability (two of the ACID properties) in database systems.\n 简而言之：Write-Ahead Log 是一种在修改实际数据前，先将操作记录写入日志的机制，用以实现崩溃恢复和持久化保障。\n工作原理 一句话：先写日志，再执行数据写入，确保崩溃后可通过日志回放恢复数据。\n基本流程如下：\n 应用对数据进行写操作； 系统先将操作记录写入 WAL； WAL 持久化后，才进行实际数据页更新； 系统崩溃时，根据 WAL 重放操作，恢复一致状态； 操作完成后，可异步清理 WAL。  属性与指标 关注 WAL 的核心属性如下：\n Durability（持久性）：操作写入日志后即被认为已“成功”； Atomicity（原子性）：通过 WAL 确保事务要么全部执行、要么不执行； 写放大：写操作需要额外的日志 IO； 吞吐量（write throughput）：受磁盘写入影响； 恢复时间（recovery latency）：依赖于日志回放效率； 日志压缩与归档：长时间运行需周期性 checkpoint； 顺序写性能：相比随机写，顺序写日志更高效。  类型 按使用粒度分类：   Page-Level WAL 针对数据页（如数据库页）级别的变更记录。\n  Logical-Level WAL 记录操作语义（如“插入一行”），便于重放与复制。\n  Hybrid WAL 同时记录逻辑与物理变更，兼顾恢复速度与灵活性。\n  按组织结构分类：   单文件线性日志 顺序写入，周期性 truncate。\n  段式日志（Segmented WAL） 划分为多个段，便于归档与清理，常用于大规模系统。\n  多通道并发日志 支持并发事务提交，提高吞吐量，常见于现代分布式数据库。\n  应用场景 WAL 广泛应用于以下系统中：\n 关系型数据库：如 PostgreSQL、MySQL（InnoDB）、SQL Server； NoSQL 数据库：如 RocksDB、LevelDB、Cassandra、HBase； 分布式系统：如 Raft 共识协议中的日志记录； 文件系统：如 ext4、XFS 的 journaling； 消息队列：如 Kafka 使用 WAL 实现高可靠队列； 缓存系统：如 Redis AOF 模式本质即 WAL； 区块链系统：用于交易数据写入前备份与验证。  常见实现与产品 以下是使用或实现 WAL 的典型系统和工具：\n PostgreSQL：基于 WAL 的强一致性事务管理； RocksDB：Log-Structured Merge Tree（LSM）架构中的 WAL； Kafka：高吞吐分布式日志系统，核心即 WAL； MySQL (InnoDB)：采用 redo log 和 undo log 实现 WAL 机制； HBase：基于 HLog 提供持久化保障； etcd：Raft 协议 WAL 日志驱动状态复制； Redis：AOF 模式作为 Write-Ahead Logging 的一种形式； Apache Pulsar：消息日志亦为 WAL 驱动；   ", 
+        "url": "http:\/\/myself659.github.io\/post\/arch\/write-ahead-log-101\/"
+    },
+    
+    
+    
+    "http:\/\/myself659.github.io\/post\/arch\/b-tree-101\/": {
+        
+        "title": "B-tree 101",
+        "tags": ["arch",],
+        "content": " 前言 在现代互联网系统与数据库技术中，数据的高效查询与有序存储一直是核心目标。尤其在关系型数据库和文件系统中，B-Tree 是广泛使用的数据结构，它以平衡、有序、高效的方式组织大量数据，支撑着几乎所有数据库的索引系统。\n定义 Wiki 定义如下：\n A B-tree is a self-balancing tree data structure that maintains sorted data and allows searches, sequential access, insertions, and deletions in logarithmic time.\n 简单来说：B-Tree 是一种平衡的多路搜索树，适用于大规模数据的插入、查找和删除。\n工作原理 一句话：通过多叉树的分支结构，使数据在磁盘中以较少的 IO 次数被访问到，保证高效的读写性能。\n工作方式如下：\n 所有数据都按有序排列； 每个节点包含多个键值对，且具有多个子节点； 数据插入时，节点可分裂，确保树高平衡； 数据查找从根节点开始，依序在内部节点查找范围，直到叶节点； 删除操作同样保持树结构平衡。  属性与指标 关注的 B-Tree 属性与指标如下：\n  节点阶（Order） 决定每个节点最大/最小子节点数量。\n  树的高度（Tree Height） 越低越好，意味着更少的磁盘 IO。\n  键分布与排序 所有键全局有序，便于范围查询与二分查找。\n  磁盘友好性（Disk Optimization） 每个节点通常与磁盘块对应，减少磁盘访问次数。\n  插入删除复杂度 插入和删除操作时间复杂度为 O(log n)。\n  平衡性 所有叶节点在同一层，确保读写性能稳定。\n  类型 B-Tree 变种   B+ Tree 所有数据存储于叶子节点，内部节点仅作索引；广泛用于数据库与文件系统。\n  B Tree* B+ Tree 的优化版，提升空间利用率。\n  B^ε Tree 针对写优化的 B-Tree 变体，适用于写入频繁的系统。\n  Fractal Tree 进一步提升写性能，应用于写入密集型场景（如 TokuDB）。\n  存储类型 根据应用场景，B-Tree 常用于以下结构：\n 数据库索引（主键索引/二级索引） 文件系统元数据存储 排序数组或块索引 持久化 KV 存储引擎  B-Tree 与程序关系 B-Tree 既可以嵌入在数据库内部（内嵌引擎），也可以作为外部系统（如文件系统）的核心数据结构。\n In-Memory B-Tree：如 Java 的 TreeMap、C++ STL 的 map。 Persistent B-Tree：如 MySQL InnoDB 索引、PostgreSQL 的 BTREE 索引。 Hybrid 模型：如内存中部分节点缓存，磁盘上持久化其余结构。  常用产品实现 以下是常用采用 B-Tree 或其变种的系统：\n MySQL InnoDB – 使用 B+ Tree 作为主索引结构； PostgreSQL – 默认索引类型为 B-Tree； LevelDB / RocksDB – 内部跳表，但部分系统接入了 B-Tree for metadata； Lucene / Elasticsearch – 虽以倒排索引为主，但对段元数据管理常用 B-Tree； HFS+ / NTFS 文件系统 – 使用 B-Tree 存储目录项和元数据； Oracle Database – B-Tree 与 B-Tree Clustered Index 构成索引核心。   ", 
+        "url": "http:\/\/myself659.github.io\/post\/arch\/b-tree-101\/"
+    },
+    
+    
+    
+    "http:\/\/myself659.github.io\/post\/arch\/lsm-tree-101\/": {
+        
+        "title": "LSM tree 101",
+        "tags": ["arch",],
+        "content": " LSM Tree 101 前言 在现代互联网系统中，海量数据的高效写入和查询是数据库系统设计的核心目标之一。特别是写多读少或写入密集型的场景中，传统B-Tree类结构难以胜任。**LSM Tree（Log-Structured Merge Tree）**作为一种写入友好型数据结构，已经广泛应用于数据库、键值存储和时间序列系统中。\n定义 Wiki 定义如下：\n A Log-Structured Merge-tree (LSM tree) is a data structure that is designed to provide high performance for write-intensive applications by converting random writes into sequential ones using a multi-tiered structure of components.\n 简单来说：LSM Tree 是一种将写操作转化为顺序写入的树形数据结构，通过分层合并提升写入性能。\n工作原理 一句话：将写入数据先缓存在内存中，定期顺序写入磁盘并分层合并，提升写入效率。\n基本流程如下：\n 写入首先进入内存表（如 MemTable）； 内存表写满后持久化为磁盘 SSTable（Sorted String Table）； 多个 SSTable 定期进行合并（Compaction）； 查询操作先查内存表，再查 Bloom Filter、SSTable； 删除操作使用“标记删除”，在合并过程中真正清除。  属性与指标 LSM Tree 的核心关注指标：\n  写放大（Write Amplification） 多层合并操作可能导致同一条数据写多次。\n  读放大（Read Amplification） 查询需要遍历多层SSTable，依赖 Bloom Filter 缓解。\n  空间放大（Space Amplification） 多版本数据和未清除的删除标记带来额外存储开销。\n  压缩策略（Compaction Policy） 包括 Size-Tiered、Levelled、Hybrid 多种策略。\n  延迟稳定性（Write/Read Latency） 压缩过程可能阻塞写入或造成读延迟抖动。\n  吞吐性能（Throughput） 顺序写和批量合并大幅提升系统吞吐。\n  适应性 可根据应用调整层级、压缩频率、内存比例等参数。\n  类型 压缩策略（Compaction Strategies）   Size-Tiered Compaction（STCS） 多个同层段文件积累到阈值后批量合并。写效率高，但读放大严重。\n  Levelled Compaction（LCS） 每层容量递增，每次只合并相邻层，读性能更优但写放大较高。\n  Hybrid Compaction 结合 STCS 和 LCS，适用于特殊负载特征。\n  存储组件   MemTable（内存表） 接受所有写入请求，通常是跳表、红黑树等结构。\n  Immutable MemTable MemTable 写满后冻结，等待 flush 到磁盘。\n  SSTable（Sorted String Table） 持久化的只读文件，按键排序，包含数据块与索引块。\n  WAL（Write-Ahead Log） 所有写入先记录日志，崩溃后恢复使用。\n  Bloom Filter 每个 SSTable 携带，快速判断 key 是否可能存在，避免不必要读取。\n  Compaction 后台进程合并、排序和清理过期数据。\n  应用场景 LSM Tree 在以下场景中表现优异：\n  写密集型数据库 如 OLTP 系统、高并发写入日志系统。\n  键值存储引擎 RocksDB、LevelDB、WiredTiger 等。\n  时序数据库 如 InfluxDB、TimescaleDB、VictoriaMetrics 等。\n  分布式数据库与大数据平台 如 Apache HBase、Apache Cassandra、TiKV 等。\n  搜索引擎与消息系统 如 Elasticsearch（Lucene）、Apache Pulsar（BookKeeper WAL）。\n  常用产品实现 采用 LSM Tree 结构的代表产品：\n  RocksDB Facebook 推出的高性能嵌入式数据库，支持多种压缩策略。\n  LevelDB Google 开源，RocksDB 前身，轻量、嵌入式存储。\n  Apache Cassandra 分布式 NoSQL，底层存储采用 LSM Tree。\n  Apache HBase Hadoop 生态的列式存储系统，基于 HFile（SSTable）+ MemStore。\n  WiredTiger MongoDB 默认存储引擎，自 MongoDB 3.2 起采用 LSM。\n  TiKV 分布式事务型 KV 数据库，采用 RocksDB 作为底层引擎。\n  InfluxDB 时序数据库，采用自定义的 TSM（Time-Structured Merge Tree）。\n   ", 
+        "url": "http:\/\/myself659.github.io\/post\/arch\/lsm-tree-101\/"
+    },
+    
+    
+    
+    "http:\/\/myself659.github.io\/post\/arch\/merkeltree-101\/": {
+        
+        "title": "merkel tree 101",
+        "tags": ["arch",],
+        "content": " 前言 在现代互联网系统，特别是区块链、分布式存储、数据同步等领域，数据完整性校验至关重要。Merkle Tree（默克尔树）作为一种高效的结构化哈希机制，正是为此而生的，它在保障数据一致性和快速验证方面发挥着关键作用。\n定义 Wiki 定义如下：\n A Merkle tree is a tree in which every leaf node is labeled with the cryptographic hash of a data block, and every non-leaf node is labeled with the cryptographic hash of the labels of its child nodes.\n 简而言之：Merkle Tree 是一种二叉树结构，其中每个叶子节点是数据块的哈希值，非叶节点是其子节点哈希拼接后的再次哈希值。\n工作原理 一句话：通过将所有数据块的哈希层层组合成一棵树，最终得到一个唯一的根哈希值（Merkle Root）用于验证整组数据的完整性。\n基本流程：\n 将所有数据块取哈希，生成叶子节点； 相邻两个叶子节点的哈希值组合后再次哈希，生成父节点； 重复此过程，直至最终生成一个根节点； 要验证某一数据块，只需其路径上的哈希链即可（不需全量数据）。  属性与指标 Merkle Tree 关注的核心属性如下：\n 数据完整性验证：通过根哈希确认整个数据结构未被篡改； 局部验证性（Partial Proof）：只需少量哈希即可验证某一数据是否存在； 安全性：依赖加密哈希函数（如 SHA-256），具备抗篡改性； 效率：相比全量数据传输，仅需对数级别（log n）哈希即可验证； 可扩展性：新增数据只需局部重哈希； 对抗冲突：适用于分布式节点之间高效比对数据差异； 哈希算法选择：影响安全性与计算性能。  类型 完整二叉 Merkle Tree 最经典的结构，节点必须成对组合，不足则复制最后一个节点凑对（padding）。\n非完全二叉树（General Merkle Tree） 用于支持任意数量子节点或非对称结构的应用场景，例如 Trie + Merkle。\nSparse Merkle Tree 稀疏结构，节点数量为 2^n，用于支持大规模 Key 空间，常用于区块链状态存储。\nDynamic Merkle Tree 支持数据动态插入/删除，用于实时更新场景，如分布式日志系统。\n常见应用场景 Merkle Tree 的应用非常广泛，主要包括：\n 区块链系统：如比特币、以太坊，用于交易哈希聚合与验证； P2P 分布式系统：如 BitTorrent，用于数据完整性校验； 文件同步系统：如 Dropbox、Google Drive，用于检测文件差异； 版本控制系统：如 Git 的 commit 哈希历史树； 数据库系统：如 DynamoDB、Cassandra，用于节点间差异检测； 零知识证明系统：结合 ZKP 用于验证隐私数据一致性； 可信计算环境：校验外部数据是否篡改。  常用实现与库 以下是常见的 Merkle Tree 实现：\n Go-Ethereum (Geth)：实现了 Patricia Merkle Trie，用于状态存储； Bitcoin Core：基于标准 Merkle Tree 聚合交易数据； Merkle Tree (Python)：如 pymerkletools，用于构建与验证； Merkle-light (Rust)：轻量级、无依赖 Merkle Tree 实现； IPFS / libp2p：采用 Merkle DAG 支撑内容寻址； Hypercore / Dat：使用 Merkle Tree 做可验证日志链； Git Internals：每一次提交构成 Merkle DAG，实现历史追踪与回滚。  ", 
+        "url": "http:\/\/myself659.github.io\/post\/arch\/merkeltree-101\/"
     },
     
     
@@ -1843,7 +1893,7 @@ window.store = {
         
         "title": "BloomFilter 101",
         "tags": ["arch",],
-        "content": "前言 在现代互联网系统中，性能与资源的平衡尤为重要。**Bloom Filter（布隆过滤器）**作为一种极致空间效率的数据结构，常用于“快速判断某元素是否存在于一个集合中”，广泛应用于缓存、搜索引擎、防止重复提交等场景。\n定义 Wiki 定义如下：\n A Bloom filter is a space-efficient probabilistic data structure, conceived by Burton Howard Bloom in 1970, that is used to test whether an element is a member of a set.\n 简而言之：布隆过滤器是一种基于位数组和哈希函数的概率性数据结构，用于集合“可能包含”与“一定不包含”元素的快速判断。\n工作原理 一句话：通过将元素用多个哈希函数映射到位数组上的若干位置，实现高效存在性判断。\n简要步骤如下：\n 初始化一个长度为 m 的位数组，初始全为 0； 插入元素时，计算 k 个哈希函数，置对应位为 1； 查询时，检查这 k 位是否都为 1，若存在一位为 0，则该元素一定不存在；若全为 1，则“可能存在”。  属性与指标 布隆过滤器关注的关键属性如下：\n False Positive Rate（误判率）：布隆过滤器会有“可能存在”的误判，但不会漏判（即不会错判存在为不存在）。 Bit Array Size（位数组大小）：越大越准确，但也占内存。 Hash Functions 数量（k）：哈希函数越多，误判率越低，但插入/查询成本更高。 Insert and Query Complexity：通常为 O(k)，常为常数时间。 不可删除性（标准布隆过滤器）：无法从集合中删除元素。 压缩性与可扩展性：基本布隆过滤器固定大小，不能动态扩容。 空间效率：极高，远优于传统 Set/List。  类型 标准 Bloom Filter 最基础的实现，适合静态集合，不支持删除操作，空间效率高。\n可扩展 Bloom Filter（Scalable Bloom Filter） 通过创建多个布隆过滤器级联，支持集合动态增长，同时控制误判率。\n计数型 Bloom Filter（Counting Bloom Filter） 将位数组替换为计数数组，支持元素删除；常用于缓存淘汰场景。\n压缩 Bloom Filter（Compressed Bloom Filter） 为传输优化，将 Bloom Filter 压缩后发送至其他节点，牺牲部分误判率换取网络传输效率。\n分布式 Bloom Filter 适用于分布式系统，将哈希映射值均匀分配到多台机器中。\n常见应用场景  缓存系统中的预过滤器：减少缓存穿透（如 Redis + Bloom Filter）。 黑名单过滤：快速判断请求是否来自非法用户。 搜索引擎爬虫去重：判断 URL 是否已访问。 邮箱/垃圾邮件检测：判定是否为黑名单发件人。 防止重复提交/注册：判断用户名、请求是否已存在。 数据库索引加速：提前判断 key 是否存在，减少 I/O。  常用实现与库 常见布隆过滤器实现如下：\n Guava BloomFilter（Java）：Google 出品，配置灵活，性能优异。 Redis Module: RedisBloom：支持布隆过滤器、计数型布隆等高级功能。 Apache HBase：使用 Bloom Filter 加速存储访问。 Apache Kafka Streams：用于流处理中的去重判断。 bloom-filter-cpp / bloomd：高性能 C/C++ 实现，适合系统底层集成。 Python: pybloom, bloom-filter3：简洁易用，适合脚本和实验场景。   ", 
+        "content": " 前言 在现代互联网系统中，性能与资源的平衡尤为重要。**Bloom Filter（布隆过滤器）**作为一种极致空间效率的数据结构，常用于“快速判断某元素是否存在于一个集合中”，广泛应用于缓存、搜索引擎、防止重复提交等场景。\n定义 Wiki 定义如下：\n A Bloom filter is a space-efficient probabilistic data structure, conceived by Burton Howard Bloom in 1970, that is used to test whether an element is a member of a set.\n 简而言之：布隆过滤器是一种基于位数组和哈希函数的概率性数据结构，用于集合“可能包含”与“一定不包含”元素的快速判断。\n工作原理 一句话：通过将元素用多个哈希函数映射到位数组上的若干位置，实现高效存在性判断。\n简要步骤如下：\n 初始化一个长度为 m 的位数组，初始全为 0； 插入元素时，计算 k 个哈希函数，置对应位为 1； 查询时，检查这 k 位是否都为 1，若存在一位为 0，则该元素一定不存在；若全为 1，则“可能存在”。  属性与指标 布隆过滤器关注的关键属性如下：\n False Positive Rate（误判率）：布隆过滤器会有“可能存在”的误判，但不会漏判（即不会错判存在为不存在）。 Bit Array Size（位数组大小）：越大越准确，但也占内存。 Hash Functions 数量（k）：哈希函数越多，误判率越低，但插入/查询成本更高。 Insert and Query Complexity：通常为 O(k)，常为常数时间。 不可删除性（标准布隆过滤器）：无法从集合中删除元素。 压缩性与可扩展性：基本布隆过滤器固定大小，不能动态扩容。 空间效率：极高，远优于传统 Set/List。  类型 标准 Bloom Filter 最基础的实现，适合静态集合，不支持删除操作，空间效率高。\n可扩展 Bloom Filter（Scalable Bloom Filter） 通过创建多个布隆过滤器级联，支持集合动态增长，同时控制误判率。\n计数型 Bloom Filter（Counting Bloom Filter） 将位数组替换为计数数组，支持元素删除；常用于缓存淘汰场景。\n压缩 Bloom Filter（Compressed Bloom Filter） 为传输优化，将 Bloom Filter 压缩后发送至其他节点，牺牲部分误判率换取网络传输效率。\n分布式 Bloom Filter 适用于分布式系统，将哈希映射值均匀分配到多台机器中。\n常见应用场景  缓存系统中的预过滤器：减少缓存穿透（如 Redis + Bloom Filter）。 黑名单过滤：快速判断请求是否来自非法用户。 搜索引擎爬虫去重：判断 URL 是否已访问。 邮箱/垃圾邮件检测：判定是否为黑名单发件人。 防止重复提交/注册：判断用户名、请求是否已存在。 数据库索引加速：提前判断 key 是否存在，减少 I/O。  常用实现与库 常见布隆过滤器实现如下：\n Guava BloomFilter（Java）：Google 出品，配置灵活，性能优异。 Redis Module: RedisBloom：支持布隆过滤器、计数型布隆等高级功能。 Apache HBase：使用 Bloom Filter 加速存储访问。 Apache Kafka Streams：用于流处理中的去重判断。 bloom-filter-cpp / bloomd：高性能 C/C++ 实现，适合系统底层集成。 Python: pybloom, bloom-filter3：简洁易用，适合脚本和实验场景。   ", 
         "url": "http:\/\/myself659.github.io\/post\/arch\/bloomfilter-101\/"
     },
     
@@ -1893,7 +1943,7 @@ window.store = {
         
         "title": "Cache 101",
         "tags": ["arch",],
-        "content": "前言 在现在互联网系统中cache无处不在，无时不用。\n定义 wiki定义如下：\n a cache is a hardware or software component that stores data so that future requests for that data can be served faster;\n 工作原理 一句话：通过将源数据缓存Cache，实现直接通过Cache访问数据。\n属性与指标 关注的cache属性与指标：\n TTL(Time to live) Cache capacity Eviction Policy，具体如LRU (Least Recently Used), LFU (Least Frequently Used), MRU (Most Recently Used) cache conflict cache hit ratio cache coherence cache scalablity  类型 cache更新策略 根据cache更新策略分为以下几类：\n Write Through Cache Write Back Cache Write Around Cache （write aside cache）  存储类型 根据应用场景，常见类型如下：\n L1 cache L2 cache L3 cache Memory cache SSD cache disk cache network cache （CDN）  cache与程序关系 根据cache与程序关系分为：\n Local cache External caches  常用cache产品 常用cache产品如下：\n redis Memcached VoltDB Aerospike DB  ", 
+        "content": " 前言 在现在互联网系统中cache无处不在，无时不用。\n定义 wiki定义如下：\n a cache is a hardware or software component that stores data so that future requests for that data can be served faster;\n 工作原理 一句话：通过将源数据缓存Cache，实现直接通过Cache访问数据。\n属性与指标 关注的cache属性与指标：\n TTL(Time to live) Cache capacity Eviction Policy，具体如LRU (Least Recently Used), LFU (Least Frequently Used), MRU (Most Recently Used) cache conflict cache hit ratio cache coherence cache scalablity  类型 cache更新策略 根据cache更新策略分为以下几类：\n Write Through Cache Write Back Cache Write Around Cache （write aside cache）  存储类型 根据应用场景，常见类型如下：\n L1 cache L2 cache L3 cache Memory cache SSD cache disk cache network cache （CDN）  cache与程序关系 根据cache与程序关系分为：\n Local cache External caches  常用cache产品 常用cache产品如下：\n redis Memcached VoltDB Aerospike DB   ", 
         "url": "http:\/\/myself659.github.io\/post\/arch\/cache-101\/"
     },
     
@@ -4750,12 +4800,62 @@ window.store = {
     
     
     
+    "http:\/\/myself659.github.io\/post\/arch\/segmented-log-101\/": {
+        
+        "title": "Segmented Log 101",
+        "tags": ["arch",],
+        "content": " 前言 在现代分布式系统、日志系统、消息队列和数据库中，高效、可靠的写入与持久化机制是系统核心能力之一。传统的线性日志虽然简单，但在长时间运行、大规模数据场景下存在扩展性瓶颈。**Segmented Log（分段日志）**正是一种应对这些问题的设计，通过将日志拆分为多个可管理的段，提升写入性能、便于清理与恢复。\n定义 Wiki 中关于分段日志的定义不直接存在，结合主流系统的实践，可以给出如下定义：\n A segmented log is a log structure divided into multiple smaller log files or segments, each acting as a manageable unit for write, read, and cleanup, improving performance, reliability, and scalability in persistent logging systems.\n 简而言之：Segmented Log 是将日志划分为多个段，每个段独立读写、存储、回放，支持高效管理。\n工作原理 一句话：通过分段管理日志文件，实现高效写入、快速回放与灵活清理。\n基本流程：\n 日志系统按顺序写入当前活跃段（active segment）； 当前段写满后，生成新段继续写； 老段（cold segment）只读或归档，不再写入； 根据系统策略（如消费进度、checkpoint）清理过期段； 在恢复时，从最近 checkpoint 向后按段顺序回放日志。  属性与指标 Segmented Log 关注的关键属性如下：\n 写入吞吐（Write Throughput）：顺序写活跃段，具备高性能； 读取性能（Read Efficiency）：段内顺序读 + 内存索引提升查询速度； 持久性与可靠性：每个段持久化，崩溃恢复更稳定； 回放效率：分段加速日志重放过程； 日志清理策略：基于 TTL 或 offset/LSN 的段回收； 空间管理：支持异地备份、归档冷段，降低主存储压力； 可扩展性：多个段可并行压缩、复制、分发； 容错能力：段损坏时影响范围有限，易于修复。  类型 按段角色分类：   Active Segment 当前活跃写入段，顺序追加写入。\n  Inactive Segment 历史段，仅供读取或回放，不再写入。\n  Archived Segment 已清理或转移的段，通常压缩后存储于冷数据层。\n  按段策略分类：   定长段（Fixed-size Segment） 每个段固定大小（如 128MB），便于管理与优化。\n  滚动段（Rolling Segment） 时间或事件驱动切段，如每小时/每天生成新段。\n  可变段（Dynamic Segment） 根据写入速率或负载动态调整段大小。\n  应用场景 Segmented Log 广泛应用于以下系统：\n 消息队列系统：如 Apache Kafka、Redpanda、Pulsar 等基于分段日志构建； 数据库引擎：如 RocksDB、ClickHouse、TimescaleDB 使用分段 WAL； 分布式存储系统：如 HDFS、SeaweedFS，写入日志采用分段优化； 共识算法：如 Raft 协议的 log entries 分段处理； 文件同步系统：如 Dropbox Delta Sync，按段比对变化； 区块链系统：如 Tendermint、Ethereum 2.0 使用分段存储区块； 日志分析平台：如 Loki、Fluentd 中日志写入和压缩采用分段策略。  常见产品与实现 典型采用 segmented log 的系统包括：\n Apache Kafka：核心以分段日志文件为设计基础； RocksDB：LSM-Tree 中 WAL 采用分段管理； ClickHouse：MergeTree 引擎数据文件按段写入； etcd / TiKV：底层 raft 日志为分段式； Apache Pulsar：Segmented WAL 架构便于 broker 崩溃恢复； Apache BookKeeper：分布式 ledger 按 entry segment 管理； Redpanda：零拷贝、高效分段日志结构； InfluxDB：时间序列数据写入采用按时间分段的 WAL。   ", 
+        "url": "http:\/\/myself659.github.io\/post\/arch\/segmented-log-101\/"
+    },
+    
+    
+    
     "http:\/\/myself659.github.io\/post\/life\/%E8%AF%B7%E4%B8%BB%E5%8A%A8%E7%A7%AF%E6%9E%81%E4%BA%9B\/": {
         
         "title": "请主动积极些",
         "tags": ["life",],
         "content": "被动的麻烦 被动代表什么?被动常常代表麻烦,具体如下:\n  落后\n  等待与浪费\n  缺少控制\n  机会减少\n  缺少准备\n  什么是积极主动 积极主动怎么定义呢? 还是看实例和对比.\n一个被动消极的人会是怎么样呢?通常他们有以下言行:\n 这不属于我们的职责范围 我不知道 我也没有办法 我没有选择 我不知道怎么做 他们不会这样的 通常什么也不做就是等  一个积极主动的人会是怎么样呢?通常他们有以下言行:\n 我有哪些选择? 我可以尝试不同的方法 我有一个计划 问题是这样的 我会考虑更好方法 我会选择另一种方案 我会做这件事 遇到问题会自己找方案 经常思考变化 经常自省与反思  积极主动的意义 积极主动可以带来以下好处:\n  更好控制自己能控制的,改变自己能改变的\n  走上行动并进步的道路\n  更多准备\n  更多机会\n  更好地适应\n  更多地自我实现\n  更好地专注与投入以及更高效的产出\n  更早开始与先发优势\n  参考  你矜持，你活该  ", 
         "url": "http:\/\/myself659.github.io\/post\/life\/%E8%AF%B7%E4%B8%BB%E5%8A%A8%E7%A7%AF%E6%9E%81%E4%BA%9B\/"
+    },
+    
+    
+    
+    "http:\/\/myself659.github.io\/post\/arch\/write-ahead-log-101\/": {
+        
+        "title": "Write-Ahead Log 101",
+        "tags": ["arch",],
+        "content": " 前言 在现代互联网系统中，数据的可靠性与一致性至关重要。尤其在数据库、分布式系统和文件系统中，为了防止系统崩溃后数据丢失，Write-Ahead Logging（预写日志）机制成为确保持久化与崩溃恢复的重要手段。\n定义 Wiki 定义如下：\n In computer science, a write-ahead log (WAL) is a technique for providing atomicity and durability (two of the ACID properties) in database systems.\n 简而言之：Write-Ahead Log 是一种在修改实际数据前，先将操作记录写入日志的机制，用以实现崩溃恢复和持久化保障。\n工作原理 一句话：先写日志，再执行数据写入，确保崩溃后可通过日志回放恢复数据。\n基本流程如下：\n 应用对数据进行写操作； 系统先将操作记录写入 WAL； WAL 持久化后，才进行实际数据页更新； 系统崩溃时，根据 WAL 重放操作，恢复一致状态； 操作完成后，可异步清理 WAL。  属性与指标 关注 WAL 的核心属性如下：\n Durability（持久性）：操作写入日志后即被认为已“成功”； Atomicity（原子性）：通过 WAL 确保事务要么全部执行、要么不执行； 写放大：写操作需要额外的日志 IO； 吞吐量（write throughput）：受磁盘写入影响； 恢复时间（recovery latency）：依赖于日志回放效率； 日志压缩与归档：长时间运行需周期性 checkpoint； 顺序写性能：相比随机写，顺序写日志更高效。  类型 按使用粒度分类：   Page-Level WAL 针对数据页（如数据库页）级别的变更记录。\n  Logical-Level WAL 记录操作语义（如“插入一行”），便于重放与复制。\n  Hybrid WAL 同时记录逻辑与物理变更，兼顾恢复速度与灵活性。\n  按组织结构分类：   单文件线性日志 顺序写入，周期性 truncate。\n  段式日志（Segmented WAL） 划分为多个段，便于归档与清理，常用于大规模系统。\n  多通道并发日志 支持并发事务提交，提高吞吐量，常见于现代分布式数据库。\n  应用场景 WAL 广泛应用于以下系统中：\n 关系型数据库：如 PostgreSQL、MySQL（InnoDB）、SQL Server； NoSQL 数据库：如 RocksDB、LevelDB、Cassandra、HBase； 分布式系统：如 Raft 共识协议中的日志记录； 文件系统：如 ext4、XFS 的 journaling； 消息队列：如 Kafka 使用 WAL 实现高可靠队列； 缓存系统：如 Redis AOF 模式本质即 WAL； 区块链系统：用于交易数据写入前备份与验证。  常见实现与产品 以下是使用或实现 WAL 的典型系统和工具：\n PostgreSQL：基于 WAL 的强一致性事务管理； RocksDB：Log-Structured Merge Tree（LSM）架构中的 WAL； Kafka：高吞吐分布式日志系统，核心即 WAL； MySQL (InnoDB)：采用 redo log 和 undo log 实现 WAL 机制； HBase：基于 HLog 提供持久化保障； etcd：Raft 协议 WAL 日志驱动状态复制； Redis：AOF 模式作为 Write-Ahead Logging 的一种形式； Apache Pulsar：消息日志亦为 WAL 驱动；   ", 
+        "url": "http:\/\/myself659.github.io\/post\/arch\/write-ahead-log-101\/"
+    },
+    
+    
+    
+    "http:\/\/myself659.github.io\/post\/arch\/b-tree-101\/": {
+        
+        "title": "B-tree 101",
+        "tags": ["arch",],
+        "content": " 前言 在现代互联网系统与数据库技术中，数据的高效查询与有序存储一直是核心目标。尤其在关系型数据库和文件系统中，B-Tree 是广泛使用的数据结构，它以平衡、有序、高效的方式组织大量数据，支撑着几乎所有数据库的索引系统。\n定义 Wiki 定义如下：\n A B-tree is a self-balancing tree data structure that maintains sorted data and allows searches, sequential access, insertions, and deletions in logarithmic time.\n 简单来说：B-Tree 是一种平衡的多路搜索树，适用于大规模数据的插入、查找和删除。\n工作原理 一句话：通过多叉树的分支结构，使数据在磁盘中以较少的 IO 次数被访问到，保证高效的读写性能。\n工作方式如下：\n 所有数据都按有序排列； 每个节点包含多个键值对，且具有多个子节点； 数据插入时，节点可分裂，确保树高平衡； 数据查找从根节点开始，依序在内部节点查找范围，直到叶节点； 删除操作同样保持树结构平衡。  属性与指标 关注的 B-Tree 属性与指标如下：\n  节点阶（Order） 决定每个节点最大/最小子节点数量。\n  树的高度（Tree Height） 越低越好，意味着更少的磁盘 IO。\n  键分布与排序 所有键全局有序，便于范围查询与二分查找。\n  磁盘友好性（Disk Optimization） 每个节点通常与磁盘块对应，减少磁盘访问次数。\n  插入删除复杂度 插入和删除操作时间复杂度为 O(log n)。\n  平衡性 所有叶节点在同一层，确保读写性能稳定。\n  类型 B-Tree 变种   B+ Tree 所有数据存储于叶子节点，内部节点仅作索引；广泛用于数据库与文件系统。\n  B Tree* B+ Tree 的优化版，提升空间利用率。\n  B^ε Tree 针对写优化的 B-Tree 变体，适用于写入频繁的系统。\n  Fractal Tree 进一步提升写性能，应用于写入密集型场景（如 TokuDB）。\n  存储类型 根据应用场景，B-Tree 常用于以下结构：\n 数据库索引（主键索引/二级索引） 文件系统元数据存储 排序数组或块索引 持久化 KV 存储引擎  B-Tree 与程序关系 B-Tree 既可以嵌入在数据库内部（内嵌引擎），也可以作为外部系统（如文件系统）的核心数据结构。\n In-Memory B-Tree：如 Java 的 TreeMap、C++ STL 的 map。 Persistent B-Tree：如 MySQL InnoDB 索引、PostgreSQL 的 BTREE 索引。 Hybrid 模型：如内存中部分节点缓存，磁盘上持久化其余结构。  常用产品实现 以下是常用采用 B-Tree 或其变种的系统：\n MySQL InnoDB – 使用 B+ Tree 作为主索引结构； PostgreSQL – 默认索引类型为 B-Tree； LevelDB / RocksDB – 内部跳表，但部分系统接入了 B-Tree for metadata； Lucene / Elasticsearch – 虽以倒排索引为主，但对段元数据管理常用 B-Tree； HFS+ / NTFS 文件系统 – 使用 B-Tree 存储目录项和元数据； Oracle Database – B-Tree 与 B-Tree Clustered Index 构成索引核心。   ", 
+        "url": "http:\/\/myself659.github.io\/post\/arch\/b-tree-101\/"
+    },
+    
+    
+    
+    "http:\/\/myself659.github.io\/post\/arch\/lsm-tree-101\/": {
+        
+        "title": "LSM tree 101",
+        "tags": ["arch",],
+        "content": " LSM Tree 101 前言 在现代互联网系统中，海量数据的高效写入和查询是数据库系统设计的核心目标之一。特别是写多读少或写入密集型的场景中，传统B-Tree类结构难以胜任。**LSM Tree（Log-Structured Merge Tree）**作为一种写入友好型数据结构，已经广泛应用于数据库、键值存储和时间序列系统中。\n定义 Wiki 定义如下：\n A Log-Structured Merge-tree (LSM tree) is a data structure that is designed to provide high performance for write-intensive applications by converting random writes into sequential ones using a multi-tiered structure of components.\n 简单来说：LSM Tree 是一种将写操作转化为顺序写入的树形数据结构，通过分层合并提升写入性能。\n工作原理 一句话：将写入数据先缓存在内存中，定期顺序写入磁盘并分层合并，提升写入效率。\n基本流程如下：\n 写入首先进入内存表（如 MemTable）； 内存表写满后持久化为磁盘 SSTable（Sorted String Table）； 多个 SSTable 定期进行合并（Compaction）； 查询操作先查内存表，再查 Bloom Filter、SSTable； 删除操作使用“标记删除”，在合并过程中真正清除。  属性与指标 LSM Tree 的核心关注指标：\n  写放大（Write Amplification） 多层合并操作可能导致同一条数据写多次。\n  读放大（Read Amplification） 查询需要遍历多层SSTable，依赖 Bloom Filter 缓解。\n  空间放大（Space Amplification） 多版本数据和未清除的删除标记带来额外存储开销。\n  压缩策略（Compaction Policy） 包括 Size-Tiered、Levelled、Hybrid 多种策略。\n  延迟稳定性（Write/Read Latency） 压缩过程可能阻塞写入或造成读延迟抖动。\n  吞吐性能（Throughput） 顺序写和批量合并大幅提升系统吞吐。\n  适应性 可根据应用调整层级、压缩频率、内存比例等参数。\n  类型 压缩策略（Compaction Strategies）   Size-Tiered Compaction（STCS） 多个同层段文件积累到阈值后批量合并。写效率高，但读放大严重。\n  Levelled Compaction（LCS） 每层容量递增，每次只合并相邻层，读性能更优但写放大较高。\n  Hybrid Compaction 结合 STCS 和 LCS，适用于特殊负载特征。\n  存储组件   MemTable（内存表） 接受所有写入请求，通常是跳表、红黑树等结构。\n  Immutable MemTable MemTable 写满后冻结，等待 flush 到磁盘。\n  SSTable（Sorted String Table） 持久化的只读文件，按键排序，包含数据块与索引块。\n  WAL（Write-Ahead Log） 所有写入先记录日志，崩溃后恢复使用。\n  Bloom Filter 每个 SSTable 携带，快速判断 key 是否可能存在，避免不必要读取。\n  Compaction 后台进程合并、排序和清理过期数据。\n  应用场景 LSM Tree 在以下场景中表现优异：\n  写密集型数据库 如 OLTP 系统、高并发写入日志系统。\n  键值存储引擎 RocksDB、LevelDB、WiredTiger 等。\n  时序数据库 如 InfluxDB、TimescaleDB、VictoriaMetrics 等。\n  分布式数据库与大数据平台 如 Apache HBase、Apache Cassandra、TiKV 等。\n  搜索引擎与消息系统 如 Elasticsearch（Lucene）、Apache Pulsar（BookKeeper WAL）。\n  常用产品实现 采用 LSM Tree 结构的代表产品：\n  RocksDB Facebook 推出的高性能嵌入式数据库，支持多种压缩策略。\n  LevelDB Google 开源，RocksDB 前身，轻量、嵌入式存储。\n  Apache Cassandra 分布式 NoSQL，底层存储采用 LSM Tree。\n  Apache HBase Hadoop 生态的列式存储系统，基于 HFile（SSTable）+ MemStore。\n  WiredTiger MongoDB 默认存储引擎，自 MongoDB 3.2 起采用 LSM。\n  TiKV 分布式事务型 KV 数据库，采用 RocksDB 作为底层引擎。\n  InfluxDB 时序数据库，采用自定义的 TSM（Time-Structured Merge Tree）。\n   ", 
+        "url": "http:\/\/myself659.github.io\/post\/arch\/lsm-tree-101\/"
+    },
+    
+    
+    
+    "http:\/\/myself659.github.io\/post\/arch\/merkeltree-101\/": {
+        
+        "title": "merkel tree 101",
+        "tags": ["arch",],
+        "content": " 前言 在现代互联网系统，特别是区块链、分布式存储、数据同步等领域，数据完整性校验至关重要。Merkle Tree（默克尔树）作为一种高效的结构化哈希机制，正是为此而生的，它在保障数据一致性和快速验证方面发挥着关键作用。\n定义 Wiki 定义如下：\n A Merkle tree is a tree in which every leaf node is labeled with the cryptographic hash of a data block, and every non-leaf node is labeled with the cryptographic hash of the labels of its child nodes.\n 简而言之：Merkle Tree 是一种二叉树结构，其中每个叶子节点是数据块的哈希值，非叶节点是其子节点哈希拼接后的再次哈希值。\n工作原理 一句话：通过将所有数据块的哈希层层组合成一棵树，最终得到一个唯一的根哈希值（Merkle Root）用于验证整组数据的完整性。\n基本流程：\n 将所有数据块取哈希，生成叶子节点； 相邻两个叶子节点的哈希值组合后再次哈希，生成父节点； 重复此过程，直至最终生成一个根节点； 要验证某一数据块，只需其路径上的哈希链即可（不需全量数据）。  属性与指标 Merkle Tree 关注的核心属性如下：\n 数据完整性验证：通过根哈希确认整个数据结构未被篡改； 局部验证性（Partial Proof）：只需少量哈希即可验证某一数据是否存在； 安全性：依赖加密哈希函数（如 SHA-256），具备抗篡改性； 效率：相比全量数据传输，仅需对数级别（log n）哈希即可验证； 可扩展性：新增数据只需局部重哈希； 对抗冲突：适用于分布式节点之间高效比对数据差异； 哈希算法选择：影响安全性与计算性能。  类型 完整二叉 Merkle Tree 最经典的结构，节点必须成对组合，不足则复制最后一个节点凑对（padding）。\n非完全二叉树（General Merkle Tree） 用于支持任意数量子节点或非对称结构的应用场景，例如 Trie + Merkle。\nSparse Merkle Tree 稀疏结构，节点数量为 2^n，用于支持大规模 Key 空间，常用于区块链状态存储。\nDynamic Merkle Tree 支持数据动态插入/删除，用于实时更新场景，如分布式日志系统。\n常见应用场景 Merkle Tree 的应用非常广泛，主要包括：\n 区块链系统：如比特币、以太坊，用于交易哈希聚合与验证； P2P 分布式系统：如 BitTorrent，用于数据完整性校验； 文件同步系统：如 Dropbox、Google Drive，用于检测文件差异； 版本控制系统：如 Git 的 commit 哈希历史树； 数据库系统：如 DynamoDB、Cassandra，用于节点间差异检测； 零知识证明系统：结合 ZKP 用于验证隐私数据一致性； 可信计算环境：校验外部数据是否篡改。  常用实现与库 以下是常见的 Merkle Tree 实现：\n Go-Ethereum (Geth)：实现了 Patricia Merkle Trie，用于状态存储； Bitcoin Core：基于标准 Merkle Tree 聚合交易数据； Merkle Tree (Python)：如 pymerkletools，用于构建与验证； Merkle-light (Rust)：轻量级、无依赖 Merkle Tree 实现； IPFS / libp2p：采用 Merkle DAG 支撑内容寻址； Hypercore / Dat：使用 Merkle Tree 做可验证日志链； Git Internals：每一次提交构成 Merkle DAG，实现历史追踪与回滚。  ", 
+        "url": "http:\/\/myself659.github.io\/post\/arch\/merkeltree-101\/"
     },
     
     
@@ -4774,7 +4874,7 @@ window.store = {
         
         "title": "BloomFilter 101",
         "tags": ["arch",],
-        "content": "前言 在现代互联网系统中，性能与资源的平衡尤为重要。**Bloom Filter（布隆过滤器）**作为一种极致空间效率的数据结构，常用于“快速判断某元素是否存在于一个集合中”，广泛应用于缓存、搜索引擎、防止重复提交等场景。\n定义 Wiki 定义如下：\n A Bloom filter is a space-efficient probabilistic data structure, conceived by Burton Howard Bloom in 1970, that is used to test whether an element is a member of a set.\n 简而言之：布隆过滤器是一种基于位数组和哈希函数的概率性数据结构，用于集合“可能包含”与“一定不包含”元素的快速判断。\n工作原理 一句话：通过将元素用多个哈希函数映射到位数组上的若干位置，实现高效存在性判断。\n简要步骤如下：\n 初始化一个长度为 m 的位数组，初始全为 0； 插入元素时，计算 k 个哈希函数，置对应位为 1； 查询时，检查这 k 位是否都为 1，若存在一位为 0，则该元素一定不存在；若全为 1，则“可能存在”。  属性与指标 布隆过滤器关注的关键属性如下：\n False Positive Rate（误判率）：布隆过滤器会有“可能存在”的误判，但不会漏判（即不会错判存在为不存在）。 Bit Array Size（位数组大小）：越大越准确，但也占内存。 Hash Functions 数量（k）：哈希函数越多，误判率越低，但插入/查询成本更高。 Insert and Query Complexity：通常为 O(k)，常为常数时间。 不可删除性（标准布隆过滤器）：无法从集合中删除元素。 压缩性与可扩展性：基本布隆过滤器固定大小，不能动态扩容。 空间效率：极高，远优于传统 Set/List。  类型 标准 Bloom Filter 最基础的实现，适合静态集合，不支持删除操作，空间效率高。\n可扩展 Bloom Filter（Scalable Bloom Filter） 通过创建多个布隆过滤器级联，支持集合动态增长，同时控制误判率。\n计数型 Bloom Filter（Counting Bloom Filter） 将位数组替换为计数数组，支持元素删除；常用于缓存淘汰场景。\n压缩 Bloom Filter（Compressed Bloom Filter） 为传输优化，将 Bloom Filter 压缩后发送至其他节点，牺牲部分误判率换取网络传输效率。\n分布式 Bloom Filter 适用于分布式系统，将哈希映射值均匀分配到多台机器中。\n常见应用场景  缓存系统中的预过滤器：减少缓存穿透（如 Redis + Bloom Filter）。 黑名单过滤：快速判断请求是否来自非法用户。 搜索引擎爬虫去重：判断 URL 是否已访问。 邮箱/垃圾邮件检测：判定是否为黑名单发件人。 防止重复提交/注册：判断用户名、请求是否已存在。 数据库索引加速：提前判断 key 是否存在，减少 I/O。  常用实现与库 常见布隆过滤器实现如下：\n Guava BloomFilter（Java）：Google 出品，配置灵活，性能优异。 Redis Module: RedisBloom：支持布隆过滤器、计数型布隆等高级功能。 Apache HBase：使用 Bloom Filter 加速存储访问。 Apache Kafka Streams：用于流处理中的去重判断。 bloom-filter-cpp / bloomd：高性能 C/C++ 实现，适合系统底层集成。 Python: pybloom, bloom-filter3：简洁易用，适合脚本和实验场景。   ", 
+        "content": " 前言 在现代互联网系统中，性能与资源的平衡尤为重要。**Bloom Filter（布隆过滤器）**作为一种极致空间效率的数据结构，常用于“快速判断某元素是否存在于一个集合中”，广泛应用于缓存、搜索引擎、防止重复提交等场景。\n定义 Wiki 定义如下：\n A Bloom filter is a space-efficient probabilistic data structure, conceived by Burton Howard Bloom in 1970, that is used to test whether an element is a member of a set.\n 简而言之：布隆过滤器是一种基于位数组和哈希函数的概率性数据结构，用于集合“可能包含”与“一定不包含”元素的快速判断。\n工作原理 一句话：通过将元素用多个哈希函数映射到位数组上的若干位置，实现高效存在性判断。\n简要步骤如下：\n 初始化一个长度为 m 的位数组，初始全为 0； 插入元素时，计算 k 个哈希函数，置对应位为 1； 查询时，检查这 k 位是否都为 1，若存在一位为 0，则该元素一定不存在；若全为 1，则“可能存在”。  属性与指标 布隆过滤器关注的关键属性如下：\n False Positive Rate（误判率）：布隆过滤器会有“可能存在”的误判，但不会漏判（即不会错判存在为不存在）。 Bit Array Size（位数组大小）：越大越准确，但也占内存。 Hash Functions 数量（k）：哈希函数越多，误判率越低，但插入/查询成本更高。 Insert and Query Complexity：通常为 O(k)，常为常数时间。 不可删除性（标准布隆过滤器）：无法从集合中删除元素。 压缩性与可扩展性：基本布隆过滤器固定大小，不能动态扩容。 空间效率：极高，远优于传统 Set/List。  类型 标准 Bloom Filter 最基础的实现，适合静态集合，不支持删除操作，空间效率高。\n可扩展 Bloom Filter（Scalable Bloom Filter） 通过创建多个布隆过滤器级联，支持集合动态增长，同时控制误判率。\n计数型 Bloom Filter（Counting Bloom Filter） 将位数组替换为计数数组，支持元素删除；常用于缓存淘汰场景。\n压缩 Bloom Filter（Compressed Bloom Filter） 为传输优化，将 Bloom Filter 压缩后发送至其他节点，牺牲部分误判率换取网络传输效率。\n分布式 Bloom Filter 适用于分布式系统，将哈希映射值均匀分配到多台机器中。\n常见应用场景  缓存系统中的预过滤器：减少缓存穿透（如 Redis + Bloom Filter）。 黑名单过滤：快速判断请求是否来自非法用户。 搜索引擎爬虫去重：判断 URL 是否已访问。 邮箱/垃圾邮件检测：判定是否为黑名单发件人。 防止重复提交/注册：判断用户名、请求是否已存在。 数据库索引加速：提前判断 key 是否存在，减少 I/O。  常用实现与库 常见布隆过滤器实现如下：\n Guava BloomFilter（Java）：Google 出品，配置灵活，性能优异。 Redis Module: RedisBloom：支持布隆过滤器、计数型布隆等高级功能。 Apache HBase：使用 Bloom Filter 加速存储访问。 Apache Kafka Streams：用于流处理中的去重判断。 bloom-filter-cpp / bloomd：高性能 C/C++ 实现，适合系统底层集成。 Python: pybloom, bloom-filter3：简洁易用，适合脚本和实验场景。   ", 
         "url": "http:\/\/myself659.github.io\/post\/arch\/bloomfilter-101\/"
     },
     
@@ -4824,7 +4924,7 @@ window.store = {
         
         "title": "Cache 101",
         "tags": ["arch",],
-        "content": "前言 在现在互联网系统中cache无处不在，无时不用。\n定义 wiki定义如下：\n a cache is a hardware or software component that stores data so that future requests for that data can be served faster;\n 工作原理 一句话：通过将源数据缓存Cache，实现直接通过Cache访问数据。\n属性与指标 关注的cache属性与指标：\n TTL(Time to live) Cache capacity Eviction Policy，具体如LRU (Least Recently Used), LFU (Least Frequently Used), MRU (Most Recently Used) cache conflict cache hit ratio cache coherence cache scalablity  类型 cache更新策略 根据cache更新策略分为以下几类：\n Write Through Cache Write Back Cache Write Around Cache （write aside cache）  存储类型 根据应用场景，常见类型如下：\n L1 cache L2 cache L3 cache Memory cache SSD cache disk cache network cache （CDN）  cache与程序关系 根据cache与程序关系分为：\n Local cache External caches  常用cache产品 常用cache产品如下：\n redis Memcached VoltDB Aerospike DB  ", 
+        "content": " 前言 在现在互联网系统中cache无处不在，无时不用。\n定义 wiki定义如下：\n a cache is a hardware or software component that stores data so that future requests for that data can be served faster;\n 工作原理 一句话：通过将源数据缓存Cache，实现直接通过Cache访问数据。\n属性与指标 关注的cache属性与指标：\n TTL(Time to live) Cache capacity Eviction Policy，具体如LRU (Least Recently Used), LFU (Least Frequently Used), MRU (Most Recently Used) cache conflict cache hit ratio cache coherence cache scalablity  类型 cache更新策略 根据cache更新策略分为以下几类：\n Write Through Cache Write Back Cache Write Around Cache （write aside cache）  存储类型 根据应用场景，常见类型如下：\n L1 cache L2 cache L3 cache Memory cache SSD cache disk cache network cache （CDN）  cache与程序关系 根据cache与程序关系分为：\n Local cache External caches  常用cache产品 常用cache产品如下：\n redis Memcached VoltDB Aerospike DB   ", 
         "url": "http:\/\/myself659.github.io\/post\/arch\/cache-101\/"
     },
     

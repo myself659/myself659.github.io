@@ -27,6 +27,51 @@
     </item>
     
     <item>
+      <title>Segmented Log 101</title>
+      <link>http://myself659.github.io/post/arch/segmented-log-101/</link>
+      <pubDate>Thu, 17 Jan 2019 11:58:06 +0200</pubDate>
+      
+      <guid>http://myself659.github.io/post/arch/segmented-log-101/</guid>
+      <description>前言 在现代分布式系统、日志系统、消息队列和数据库中，高效、可靠的写入与持久化机制是系统核心能力之一。传统的线性日志虽然简单，但在长时间运行、</description>
+    </item>
+    
+    <item>
+      <title>Write-Ahead Log 101</title>
+      <link>http://myself659.github.io/post/arch/write-ahead-log-101/</link>
+      <pubDate>Wed, 16 Jan 2019 11:58:06 +0200</pubDate>
+      
+      <guid>http://myself659.github.io/post/arch/write-ahead-log-101/</guid>
+      <description>前言 在现代互联网系统中，数据的可靠性与一致性至关重要。尤其在数据库、分布式系统和文件系统中，为了防止系统崩溃后数据丢失，Write-Ahea</description>
+    </item>
+    
+    <item>
+      <title>B-tree 101</title>
+      <link>http://myself659.github.io/post/arch/b-tree-101/</link>
+      <pubDate>Mon, 14 Jan 2019 11:58:06 +0200</pubDate>
+      
+      <guid>http://myself659.github.io/post/arch/b-tree-101/</guid>
+      <description>前言 在现代互联网系统与数据库技术中，数据的高效查询与有序存储一直是核心目标。尤其在关系型数据库和文件系统中，B-Tree 是广泛使用的数据结构</description>
+    </item>
+    
+    <item>
+      <title>LSM tree 101</title>
+      <link>http://myself659.github.io/post/arch/lsm-tree-101/</link>
+      <pubDate>Mon, 14 Jan 2019 11:58:06 +0200</pubDate>
+      
+      <guid>http://myself659.github.io/post/arch/lsm-tree-101/</guid>
+      <description>LSM Tree 101 前言 在现代互联网系统中，海量数据的高效写入和查询是数据库系统设计的核心目标之一。特别是写多读少或写入密集型的场景中，传统B-Tree类</description>
+    </item>
+    
+    <item>
+      <title>merkel tree 101</title>
+      <link>http://myself659.github.io/post/arch/merkeltree-101/</link>
+      <pubDate>Mon, 14 Jan 2019 11:58:06 +0200</pubDate>
+      
+      <guid>http://myself659.github.io/post/arch/merkeltree-101/</guid>
+      <description>前言 在现代互联网系统，特别是区块链、分布式存储、数据同步等领域，数据完整性校验至关重要。Merkle Tree（默克尔树）作为一种高效的结构化</description>
+    </item>
+    
+    <item>
       <title>CuckooFilter 101</title>
       <link>http://myself659.github.io/post/arch/cuckoo-filter-101/</link>
       <pubDate>Sun, 13 Jan 2019 11:58:06 +0200</pubDate>
