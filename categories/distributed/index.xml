@@ -10,19 +10,109 @@
     <lastBuildDate>Tue, 11 Dec 2018 11:58:06 +0200</lastBuildDate><atom:link href="http://myself659.github.io/categories/distributed/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>谈谈对分布式系统的一些思考</title>
-      <link>http://myself659.github.io/post/distributed-theory/</link>
+      <link>http://myself659.github.io/post/distributed/distributed-theory/</link>
       <pubDate>Tue, 11 Dec 2018 11:58:06 +0200</pubDate>
       
-      <guid>http://myself659.github.io/post/distributed-theory/</guid>
+      <guid>http://myself659.github.io/post/distributed/distributed-theory/</guid>
       <description>说明 本文限定在分布式系统不考虑拜占庭问题。即所有节点都是可信的。 定义 分布式系统是多个节点协作完全一个共同的业务。 重要性 分布式理论的重要性毋庸</description>
     </item>
     
     <item>
+      <title>Failback 101</title>
+      <link>http://myself659.github.io/post/distributed/failback-101/</link>
+      <pubDate>Thu, 25 Oct 2018 11:58:06 +0200</pubDate>
+      
+      <guid>http://myself659.github.io/post/distributed/failback-101/</guid>
+      <description>前言 在分布式系统中，当主节点因故障被替换（Failover）后，如果原主节点恢复正常，系统是否、何时、以及如何让它重新承担主角色？这便是 Fa</description>
+    </item>
+    
+    <item>
+      <title>Failover 101</title>
+      <link>http://myself659.github.io/post/distributed/failover-101/</link>
+      <pubDate>Thu, 25 Oct 2018 11:58:06 +0200</pubDate>
+      
+      <guid>http://myself659.github.io/post/distributed/failover-101/</guid>
+      <description>前言 在现代分布式系统中，高可用（High Availability） 是基本要求。而高可用的核心能力之一就是：当系统组件出现故障时，是否能自动切</description>
+    </item>
+    
+    <item>
+      <title>Fencing 101</title>
+      <link>http://myself659.github.io/post/distributed/fencing-101/</link>
+      <pubDate>Thu, 25 Oct 2018 11:58:06 +0200</pubDate>
+      
+      <guid>http://myself659.github.io/post/distributed/fencing-101/</guid>
+      <description>前言 在分布式系统中，我们常用 Lease（租约） 控制某个节点对资源的独占访问。然而，当网络分区或节点故障后，“过期”节点仍可能持有旧的访问权限</description>
+    </item>
+    
+    <item>
+      <title>Gossip 101</title>
+      <link>http://myself659.github.io/post/distributed/gossip-101/</link>
+      <pubDate>Thu, 25 Oct 2018 11:58:06 +0200</pubDate>
+      
+      <guid>http://myself659.github.io/post/distributed/gossip-101/</guid>
+      <description>当然可以，以下是文章《Phi Accrual Failure Detector Algorithm 101》，结构与内容参考你的统一格式： Phi Accrual Failure Detector Algorithm 101 前言 在现代分布式系统中，节点失效检测是系统容错能力的基</description>
+    </item>
+    
+    <item>
+      <title>Heartbeat 101</title>
+      <link>http://myself659.github.io/post/distributed/heartbeat-101/</link>
+      <pubDate>Thu, 25 Oct 2018 11:58:06 +0200</pubDate>
+      
+      <guid>http://myself659.github.io/post/distributed/heartbeat-101/</guid>
+      <description>前言 在现代分布式系统中，故障检测 是系统高可用的基础能力。系统需要实时感知某个节点是否还“存活”，以便及时做出容错或主备切换。这一机制中，He</description>
+    </item>
+    
+    <item>
+      <title>Lease 101</title>
+      <link>http://myself659.github.io/post/distributed/lease-101/</link>
+      <pubDate>Thu, 25 Oct 2018 11:58:06 +0200</pubDate>
+      
+      <guid>http://myself659.github.io/post/distributed/lease-101/</guid>
+      <description>前言 在分布式系统中，多个节点同时访问或修改同一资源时，如何保证一致性和避免冲突是一个核心问题。传统的锁机制在高延迟和故障环境下难以保证可靠性</description>
+    </item>
+    
+    <item>
+      <title>Phi Accrual Failure Detector algorithm 101</title>
+      <link>http://myself659.github.io/post/distributed/phi-accrual-failure-detector-algorithm-101/</link>
+      <pubDate>Thu, 25 Oct 2018 11:58:06 +0200</pubDate>
+      
+      <guid>http://myself659.github.io/post/distributed/phi-accrual-failure-detector-algorithm-101/</guid>
+      <description>前言 在现代分布式系统中，节点失效检测是系统容错能力的基石。简单的“超时判断”往往无法应对真实网络环境中的延迟波动、抖动等问题，于是更加智能化</description>
+    </item>
+    
+    <item>
+      <title>Split Brain 101</title>
+      <link>http://myself659.github.io/post/distributed/split-brain-101/</link>
+      <pubDate>Thu, 25 Oct 2018 11:58:06 +0200</pubDate>
+      
+      <guid>http://myself659.github.io/post/distributed/split-brain-101/</guid>
+      <description>前言 在现代互联网系统中，分布式系统 被广泛应用来提高可用性、扩展性与容错性。但网络的不稳定、节点的故障或管理上的分歧，常常会引发一个危险的问题</description>
+    </item>
+    
+    <item>
+      <title>Raft 101</title>
+      <link>http://myself659.github.io/post/distributed/raft-101/</link>
+      <pubDate>Wed, 24 Oct 2018 11:58:06 +0200</pubDate>
+      
+      <guid>http://myself659.github.io/post/distributed/raft-101/</guid>
+      <description>前言 在分布式系统中，一致性共识协议是保证多个节点达成同一状态的核心技术。虽然 Paxos 提供了理论基础，但它实现复杂、理解困难。为此，Raft 协议应运</description>
+    </item>
+    
+    <item>
+      <title>Paxos 101</title>
+      <link>http://myself659.github.io/post/distributed/paxos-101/</link>
+      <pubDate>Tue, 23 Oct 2018 11:58:06 +0200</pubDate>
+      
+      <guid>http://myself659.github.io/post/distributed/paxos-101/</guid>
+      <description>前言 在现代分布式系统中，多个节点如何就某个“真相”达成一致，是构建可靠系统的核心问题之一。无论是分布式数据库、共识引擎，还是一致性协调服务，</description>
+    </item>
+    
+    <item>
       <title>为什么BFT要求诚实节点数量大于总节点的三分之二</title>
-      <link>http://myself659.github.io/post/distributed-bft/</link>
+      <link>http://myself659.github.io/post/distributed/distributed-bft/</link>
       <pubDate>Fri, 23 Mar 2018 11:58:06 +0200</pubDate>
       
-      <guid>http://myself659.github.io/post/distributed-bft/</guid>
+      <guid>http://myself659.github.io/post/distributed/distributed-bft/</guid>
       <description>相信很多人都知道，BFT(Byzantine fault tolerance)要求诚实节点数量大于总节点的三分之二。 为什么会有这个要求？ 多数派原则 多数派</description>
     </item>
     

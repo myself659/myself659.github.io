@@ -1752,6 +1752,13 @@
   </url>
   
   <url>
+    <loc>http://myself659.github.io/post/arch/consistency-level-101/</loc>
+    <lastmod>2019-01-19T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>http://myself659.github.io/post/arch/hinted-handoff-101/</loc>
     <lastmod>2019-01-18T11:58:06+02:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -1899,7 +1906,7 @@
   </url>
   
   <url>
-    <loc>http://myself659.github.io/post/distributed-theory/</loc>
+    <loc>http://myself659.github.io/post/distributed/distributed-theory/</loc>
     <lastmod>2018-12-11T11:58:06+02:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -1929,6 +1936,83 @@
   <url>
     <loc>http://myself659.github.io/post/arch/%E6%8A%80%E6%9C%AF%E4%BA%BA%E5%91%98%E5%BA%94%E8%AF%A5%E5%A6%82%E4%BD%95%E6%80%9D%E8%80%83%E4%B8%9A%E5%8A%A1/</loc>
     <lastmod>2018-11-02T11:58:06+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://myself659.github.io/post/distributed/failback-101/</loc>
+    <lastmod>2018-10-25T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://myself659.github.io/post/distributed/failover-101/</loc>
+    <lastmod>2018-10-25T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://myself659.github.io/post/distributed/fencing-101/</loc>
+    <lastmod>2018-10-25T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://myself659.github.io/post/distributed/gossip-101/</loc>
+    <lastmod>2018-10-25T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://myself659.github.io/post/distributed/heartbeat-101/</loc>
+    <lastmod>2018-10-25T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://myself659.github.io/post/distributed/lease-101/</loc>
+    <lastmod>2018-10-25T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://myself659.github.io/post/distributed/phi-accrual-failure-detector-algorithm-101/</loc>
+    <lastmod>2018-10-25T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://myself659.github.io/post/distributed/split-brain-101/</loc>
+    <lastmod>2018-10-25T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://myself659.github.io/tags/raft/</loc>
+    <lastmod>2018-10-24T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://myself659.github.io/post/distributed/raft-101/</loc>
+    <lastmod>2018-10-24T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://myself659.github.io/post/distributed/paxos-101/</loc>
+    <lastmod>2018-10-23T11:58:06+02:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -2193,7 +2277,7 @@
   </url>
   
   <url>
-    <loc>http://myself659.github.io/post/distributed-bft/</loc>
+    <loc>http://myself659.github.io/post/distributed/distributed-bft/</loc>
     <lastmod>2018-03-23T11:58:06+02:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -2641,7 +2725,7 @@
   </url>
   
   <url>
-    <loc>http://myself659.github.io/post/2017-02-20-go-case-1-my-shadeofgo/</loc>
+    <loc>http://myself659.github.io/post/arch/2017-02-20-go-case-1-my-shadeofgo/</loc>
     <lastmod>2017-02-20T11:58:06+02:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -2697,35 +2781,35 @@
   </url>
   
   <url>
-    <loc>http://myself659.github.io/post/2016-09-10-from-cepoll-to-go-net/</loc>
+    <loc>http://myself659.github.io/post/arch/2016-09-10-from-cepoll-to-go-net/</loc>
     <lastmod>2016-09-10T11:58:06+02:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://myself659.github.io/post/2016-08-20-go-channel-program-demo/</loc>
+    <loc>http://myself659.github.io/post/arch/2016-08-20-go-channel-program-demo/</loc>
     <lastmod>2016-08-20T11:58:06+02:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://myself659.github.io/post/2016-08-05-im-user-state/</loc>
+    <loc>http://myself659.github.io/post/arch/2016-08-05-im-user-state/</loc>
     <lastmod>2016-08-05T11:58:06+02:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://myself659.github.io/post/2016-07-29-im-message/</loc>
+    <loc>http://myself659.github.io/post/arch/2016-07-29-im-message/</loc>
     <lastmod>2016-07-29T11:58:06+02:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://myself659.github.io/post/2016-07-26-go-channel-feature/</loc>
+    <loc>http://myself659.github.io/post/arch/2016-07-26-go-channel-feature/</loc>
     <lastmod>2016-07-26T11:58:06+02:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>

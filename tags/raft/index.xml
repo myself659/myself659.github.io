@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>raft on 沉风网事</title>
+    <link>http://myself659.github.io/tags/raft/</link>
+    <description>Recent content in raft on 沉风网事</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <copyright>沉风网事</copyright>
+    <lastBuildDate>Wed, 24 Oct 2018 11:58:06 +0200</lastBuildDate><atom:link href="http://myself659.github.io/tags/raft/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Raft 101</title>
+      <link>http://myself659.github.io/post/distributed/raft-101/</link>
+      <pubDate>Wed, 24 Oct 2018 11:58:06 +0200</pubDate>
+      
+      <guid>http://myself659.github.io/post/distributed/raft-101/</guid>
+      <description>前言 在分布式系统中，一致性共识协议是保证多个节点达成同一状态的核心技术。虽然 Paxos 提供了理论基础，但它实现复杂、理解困难。为此，Raft 协议应运</description>
+    </item>
+    
+  </channel>
+</rss>

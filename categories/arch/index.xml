@@ -27,6 +27,15 @@
     </item>
     
     <item>
+      <title>Consistency Level 101</title>
+      <link>http://myself659.github.io/post/arch/consistency-level-101/</link>
+      <pubDate>Sat, 19 Jan 2019 11:58:06 +0200</pubDate>
+      
+      <guid>http://myself659.github.io/post/arch/consistency-level-101/</guid>
+      <description>前言 在分布式系统中，**一致性（Consistency）**始终是核心挑战之一。随着副本数量增多、跨机房部署的普及，我们必须权衡一致性、可用</description>
+    </item>
+    
+    <item>
       <title>Hinted Handoff 101</title>
       <link>http://myself659.github.io/post/arch/hinted-handoff-101/</link>
       <pubDate>Fri, 18 Jan 2019 11:58:06 +0200</pubDate>
@@ -181,19 +190,19 @@
     
     <item>
       <title>IM后端系统设计总结(2)</title>
-      <link>http://myself659.github.io/post/2016-08-05-im-user-state/</link>
+      <link>http://myself659.github.io/post/arch/2016-08-05-im-user-state/</link>
       <pubDate>Fri, 05 Aug 2016 11:58:06 +0200</pubDate>
       
-      <guid>http://myself659.github.io/post/2016-08-05-im-user-state/</guid>
+      <guid>http://myself659.github.io/post/arch/2016-08-05-im-user-state/</guid>
       <description>这篇具体写一下用户在线状态系统的具体设计。 后端架构 这个后端系统设计如下图： 很大众，国内基本都这么干，不多说 用户状态系统设计 初期设计 单IDC部</description>
     </item>
     
     <item>
       <title>IM后端系统设计总结(1)</title>
-      <link>http://myself659.github.io/post/2016-07-29-im-message/</link>
+      <link>http://myself659.github.io/post/arch/2016-07-29-im-message/</link>
       <pubDate>Fri, 29 Jul 2016 11:58:06 +0200</pubDate>
       
-      <guid>http://myself659.github.io/post/2016-07-29-im-message/</guid>
+      <guid>http://myself659.github.io/post/arch/2016-07-29-im-message/</guid>
       <description>定义IM 为用户提供即时消息服务，这里面有三个关键词：用户，消息，服务；下面根据三个关键词来展开总结，先从消息开始。 消息 消息分类 对消息分类，很</description>
     </item>
     
