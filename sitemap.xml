@@ -1689,7 +1689,7 @@
   </url>
   
   <url>
-    <loc>http://myself659.github.io/post/k8s-kubeagle/</loc>
+    <loc>http://myself659.github.io/post/k8s/k8s-kubeagle/</loc>
     <lastmod>2019-03-09T11:58:06+02:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -1759,6 +1759,20 @@
   </url>
   
   <url>
+    <loc>http://myself659.github.io/post/arch/cuckoo-filter-101/</loc>
+    <lastmod>2019-01-13T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://myself659.github.io/post/arch/bloomfilter-101/</loc>
+    <lastmod>2019-01-12T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>http://myself659.github.io/post/pow-is-out/</loc>
     <lastmod>2019-01-12T11:58:06+02:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -1766,7 +1780,28 @@
   </url>
   
   <url>
-    <loc>http://myself659.github.io/post/cache-101/</loc>
+    <loc>http://myself659.github.io/post/arch/queue-101/</loc>
+    <lastmod>2019-01-10T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://myself659.github.io/post/arch/consistent-hash-101/</loc>
+    <lastmod>2019-01-09T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://myself659.github.io/post/arch/loadbalance-101/</loc>
+    <lastmod>2019-01-09T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://myself659.github.io/post/arch/cache-101/</loc>
     <lastmod>2019-01-08T11:58:06+02:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -1878,14 +1913,14 @@
   </url>
   
   <url>
-    <loc>http://myself659.github.io/post/k8s-monitor/</loc>
+    <loc>http://myself659.github.io/post/k8s/k8s-monitor/</loc>
     <lastmod>2018-10-17T11:58:06+02:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://myself659.github.io/post/k8s-cicd/</loc>
+    <loc>http://myself659.github.io/post/k8s/k8s-cicd/</loc>
     <lastmod>2018-10-16T11:58:06+02:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>

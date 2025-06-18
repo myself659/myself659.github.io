@@ -10,28 +10,28 @@
     <lastBuildDate>Sat, 09 Mar 2019 11:58:06 +0200</lastBuildDate><atom:link href="http://myself659.github.io/categories/kubernetes/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>利用Kube Eagle监控Kubernetes集群资源</title>
-      <link>http://myself659.github.io/post/k8s-kubeagle/</link>
+      <link>http://myself659.github.io/post/k8s/k8s-kubeagle/</link>
       <pubDate>Sat, 09 Mar 2019 11:58:06 +0200</pubDate>
       
-      <guid>http://myself659.github.io/post/k8s-kubeagle/</guid>
+      <guid>http://myself659.github.io/post/k8s/k8s-kubeagle/</guid>
       <description>安装helm helm是Kubernetes集群的npm。 下载脚本add_helm.sh 脚本内容如下： 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20</description>
     </item>
     
     <item>
       <title>安装与应用Prometheus监控Kubernetes集群</title>
-      <link>http://myself659.github.io/post/k8s-monitor/</link>
+      <link>http://myself659.github.io/post/k8s/k8s-monitor/</link>
       <pubDate>Wed, 17 Oct 2018 11:58:06 +0200</pubDate>
       
-      <guid>http://myself659.github.io/post/k8s-monitor/</guid>
+      <guid>http://myself659.github.io/post/k8s/k8s-monitor/</guid>
       <description>安装Prometheus RBAC设置,获取创建集群角色权限 1 2 3 4 ACCOUNT=$(gcloud info --format=&amp;#39;value(config.account)&amp;#39;) kubectl create clusterrolebinding owner-cluster-admin-binding \ --clusterrole cluster-admin \ --user $ACCOUNT 注意：如果集群部署在google cloud上需要</description>
     </item>
     
     <item>
       <title>基于Gitlab&#43;Kubernetes实现CI/CD</title>
-      <link>http://myself659.github.io/post/k8s-cicd/</link>
+      <link>http://myself659.github.io/post/k8s/k8s-cicd/</link>
       <pubDate>Tue, 16 Oct 2018 11:58:06 +0200</pubDate>
       
-      <guid>http://myself659.github.io/post/k8s-cicd/</guid>
+      <guid>http://myself659.github.io/post/k8s/k8s-cicd/</guid>
       <description>要求 基本技术栈要求如下： Golang Docker GitLab Kubernetes 具体原因参考关于技术选型的思考 步骤 创建Kubernetes集群 自己搭建集群也可以，但是投入生产不建议使用。这</description>
     </item>
     
