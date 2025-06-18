@@ -18,6 +18,51 @@
     </item>
     
     <item>
+      <title>vector clock 101</title>
+      <link>http://myself659.github.io/post/distributed/vector-clocks-101/</link>
+      <pubDate>Tue, 30 Oct 2018 11:58:06 +0200</pubDate>
+      
+      <guid>http://myself659.github.io/post/distributed/vector-clocks-101/</guid>
+      <description>前言 在现代分布式系统中，多个节点并发处理数据的场景非常常见。如何判断两个事件的先后关系？如何检测冲突？这时我们需要一种比时间戳更精确的工具 —</description>
+    </item>
+    
+    <item>
+      <title>CAP Theorem 101</title>
+      <link>http://myself659.github.io/post/distributed/cap-theorem-101/</link>
+      <pubDate>Mon, 29 Oct 2018 11:58:06 +0200</pubDate>
+      
+      <guid>http://myself659.github.io/post/distributed/cap-theorem-101/</guid>
+      <description>前言 在现代分布式系统中，系统经常部署在多个地理位置、跨多个节点，网络延迟、故障和节点不一致成为常态。如何在这种复杂环境下权衡一致性与可用性？</description>
+    </item>
+    
+    <item>
+      <title>Checksum  101</title>
+      <link>http://myself659.github.io/post/distributed/checksum-101/</link>
+      <pubDate>Mon, 29 Oct 2018 11:58:06 +0200</pubDate>
+      
+      <guid>http://myself659.github.io/post/distributed/checksum-101/</guid>
+      <description>前言 在分布式系统、文件传输、数据存储等场景中，数据在传输和存储过程中可能出现错误或损坏。为了确保数据的完整性和正确性，Checksum（校验</description>
+    </item>
+    
+    <item>
+      <title>High-Water Mark 101</title>
+      <link>http://myself659.github.io/post/distributed/high-water-mark-101/</link>
+      <pubDate>Mon, 29 Oct 2018 11:58:06 +0200</pubDate>
+      
+      <guid>http://myself659.github.io/post/distributed/high-water-mark-101/</guid>
+      <description>前言 在现代分布式系统、流处理引擎和日志系统中，数据的顺序性与进度控制至关重要。如何知道一个节点、消费者、或者整个系统**“处理到哪了”**？</description>
+    </item>
+    
+    <item>
+      <title>PACELC Theorem 101</title>
+      <link>http://myself659.github.io/post/distributed/pacelc-theorem-101/</link>
+      <pubDate>Mon, 29 Oct 2018 11:58:06 +0200</pubDate>
+      
+      <guid>http://myself659.github.io/post/distributed/pacelc-theorem-101/</guid>
+      <description>前言 CAP 定理揭示了分布式系统在「一致性（Consistency）」「可用性（Availability）」与「分区容忍性（Partition To</description>
+    </item>
+    
+    <item>
       <title>Failback 101</title>
       <link>http://myself659.github.io/post/distributed/failback-101/</link>
       <pubDate>Thu, 25 Oct 2018 11:58:06 +0200</pubDate>
@@ -50,7 +95,7 @@
       <pubDate>Thu, 25 Oct 2018 11:58:06 +0200</pubDate>
       
       <guid>http://myself659.github.io/post/distributed/gossip-101/</guid>
-      <description>当然可以，以下是文章《Phi Accrual Failure Detector Algorithm 101》，结构与内容参考你的统一格式： Phi Accrual Failure Detector Algorithm 101 前言 在现代分布式系统中，节点失效检测是系统容错能力的基</description>
+      <description>前言 在大规模分布式系统中，节点之间需要高效、可靠地传播状态信息，如节点上线、宕机、负载等。而中心化广播机制很难应对规模扩展、容错要求等问题。</description>
     </item>
     
     <item>

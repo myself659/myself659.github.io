@@ -1941,6 +1941,41 @@
   </url>
   
   <url>
+    <loc>http://myself659.github.io/post/distributed/vector-clocks-101/</loc>
+    <lastmod>2018-10-30T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://myself659.github.io/post/distributed/cap-theorem-101/</loc>
+    <lastmod>2018-10-29T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://myself659.github.io/post/distributed/checksum-101/</loc>
+    <lastmod>2018-10-29T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://myself659.github.io/post/distributed/high-water-mark-101/</loc>
+    <lastmod>2018-10-29T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://myself659.github.io/post/distributed/pacelc-theorem-101/</loc>
+    <lastmod>2018-10-29T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>http://myself659.github.io/post/distributed/failback-101/</loc>
     <lastmod>2018-10-25T11:58:06+02:00</lastmod>
     <changefreq>weekly</changefreq>
