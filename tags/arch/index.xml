@@ -27,12 +27,30 @@
     </item>
     
     <item>
+      <title>Application Gateway 101</title>
+      <link>http://myself659.github.io/post/arch/application-gateway-101/</link>
+      <pubDate>Fri, 18 Jan 2019 11:58:06 +0200</pubDate>
+      
+      <guid>http://myself659.github.io/post/arch/application-gateway-101/</guid>
+      <description>前言 在现代互联网架构中，随着服务化、微服务和云原生架构的广泛应用，系统前端需要具备更强大的流量控制能力，不仅要转发请求，还要处理认证、安全、</description>
+    </item>
+    
+    <item>
       <title>Hinted Handoff 101</title>
       <link>http://myself659.github.io/post/arch/hinted-handoff-101/</link>
       <pubDate>Fri, 18 Jan 2019 11:58:06 +0200</pubDate>
       
       <guid>http://myself659.github.io/post/arch/hinted-handoff-101/</guid>
       <description>前言 在分布式系统中，节点故障是常态而不是例外。为了保障高可用性与最终一致性，很多系统引入了一种重要机制：Hinted Handoff（提示式转</description>
+    </item>
+    
+    <item>
+      <title>Proxy 101</title>
+      <link>http://myself659.github.io/post/arch/proxy-101/</link>
+      <pubDate>Fri, 18 Jan 2019 11:58:06 +0200</pubDate>
+      
+      <guid>http://myself659.github.io/post/arch/proxy-101/</guid>
+      <description>前言 在当今互联网系统中，Proxy（代理） 是一种极为常见且强大的中间组件，广泛应用于访问控制、负载均衡、安全隔离、缓存加速等场景。无论是客户</description>
     </item>
     
     <item>
@@ -45,12 +63,30 @@
     </item>
     
     <item>
+      <title>Rate Limiter 101</title>
+      <link>http://myself659.github.io/post/arch/rate-limiter-101/</link>
+      <pubDate>Fri, 18 Jan 2019 11:58:06 +0200</pubDate>
+      
+      <guid>http://myself659.github.io/post/arch/rate-limiter-101/</guid>
+      <description>前言 在现代互联网系统中，用户访问量巨大且不可预期，恶意刷接口、突发流量暴涨等问题屡见不鲜。为了保护系统稳定性、保障资源公平使用，Rate Li</description>
+    </item>
+    
+    <item>
       <title>Read Repair 101</title>
       <link>http://myself659.github.io/post/arch/read-repair-101/</link>
       <pubDate>Fri, 18 Jan 2019 11:58:06 +0200</pubDate>
       
       <guid>http://myself659.github.io/post/arch/read-repair-101/</guid>
       <description>前言 在分布式系统中，数据被多副本存储是常见做法，用于提升容错与可用性。然而，多副本之间的数据一致性维护是一个复杂的问题。**Read Repa</description>
+    </item>
+    
+    <item>
+      <title>RESTAPI 101</title>
+      <link>http://myself659.github.io/post/arch/restapi-101/</link>
+      <pubDate>Fri, 18 Jan 2019 11:58:06 +0200</pubDate>
+      
+      <guid>http://myself659.github.io/post/arch/restapi-101/</guid>
+      <description>前言 在现代互联网系统中，REST API（Representational State Transfer Application Programming Interface）无处不在，是系统组件之间进行通信和数据交</description>
     </item>
     
     <item>
@@ -150,6 +186,15 @@
       
       <guid>http://myself659.github.io/post/arch/cache-101/</guid>
       <description>前言 在现在互联网系统中cache无处不在，无时不用。 定义 wiki定义如下： a cache is a hardware or software component that stores data so that future requests for that data can be served faster; 工作原理 一句话：通过将</description>
+    </item>
+    
+    <item>
+      <title>软件工程的法则与名言</title>
+      <link>http://myself659.github.io/post/arch/software-arch-cheet/</link>
+      <pubDate>Sat, 12 May 2018 11:58:06 +0200</pubDate>
+      
+      <guid>http://myself659.github.io/post/arch/software-arch-cheet/</guid>
+      <description></description>
     </item>
     
     <item>

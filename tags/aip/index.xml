@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>AIP on 沉风网事</title>
+    <link>http://myself659.github.io/tags/aip/</link>
+    <description>Recent content in AIP on 沉风网事</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <copyright>沉风网事</copyright>
+    <lastBuildDate>Mon, 23 Jun 2025 11:58:06 +0200</lastBuildDate><atom:link href="http://myself659.github.io/tags/aip/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>software 1.0 vs software 2.0 vs software 3.0</title>
+      <link>http://myself659.github.io/post/aip/software-1vs2vs3/</link>
+      <pubDate>Mon, 23 Jun 2025 11:58:06 +0200</pubDate>
+      
+      <guid>http://myself659.github.io/post/aip/software-1vs2vs3/</guid>
+      <description>背景 最近花时间学习了Andrej Karpathy最新的分享：Software Is Changing (Again)。 这里面的知识点很多，干货十足。 这里先从sof</description>
+    </item>
+    
+  </channel>
+</rss>

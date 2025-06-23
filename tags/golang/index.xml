@@ -73,37 +73,37 @@
     
     <item>
       <title>Go的50度灰补充--http response只能读一次</title>
-      <link>http://myself659.github.io/post/arch/2017-02-20-go-case-1-my-shadeofgo/</link>
+      <link>http://myself659.github.io/post/golang/2017-02-20-go-case-1-my-shadeofgo/</link>
       <pubDate>Mon, 20 Feb 2017 11:58:06 +0200</pubDate>
       
-      <guid>http://myself659.github.io/post/arch/2017-02-20-go-case-1-my-shadeofgo/</guid>
+      <guid>http://myself659.github.io/post/golang/2017-02-20-go-case-1-my-shadeofgo/</guid>
       <description>问题 还是从代码开始吧 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 func fetch(url string) { tlsConfig := &amp;amp;tls.Config{ InsecureSkipVerify: true, }</description>
     </item>
     
     <item>
       <title>从C语言epoll编程到go net实现分析</title>
-      <link>http://myself659.github.io/post/arch/2016-09-10-from-cepoll-to-go-net/</link>
+      <link>http://myself659.github.io/post/golang/2016-09-10-from-cepoll-to-go-net/</link>
       <pubDate>Sat, 10 Sep 2016 11:58:06 +0200</pubDate>
       
-      <guid>http://myself659.github.io/post/arch/2016-09-10-from-cepoll-to-go-net/</guid>
+      <guid>http://myself659.github.io/post/golang/2016-09-10-from-cepoll-to-go-net/</guid>
       <description>说明 go源码版本：1.7 go源码运行环境：Linux epoll在c语言编程示例 先看一下大家比较熟悉的epoll在c语言中应用，代码取自rtm</description>
     </item>
     
     <item>
       <title>Go channel 编程篇</title>
-      <link>http://myself659.github.io/post/arch/2016-08-20-go-channel-program-demo/</link>
+      <link>http://myself659.github.io/post/golang/2016-08-20-go-channel-program-demo/</link>
       <pubDate>Sat, 20 Aug 2016 11:58:06 +0200</pubDate>
       
-      <guid>http://myself659.github.io/post/arch/2016-08-20-go-channel-program-demo/</guid>
+      <guid>http://myself659.github.io/post/golang/2016-08-20-go-channel-program-demo/</guid>
       <description>本篇以ChanBroker版本迭代过程，总结常见Channel编程问题 简介 ChanBroker设计主要参考Kafka模型，主要提供进程内go</description>
     </item>
     
     <item>
       <title>Go channel 特点篇</title>
-      <link>http://myself659.github.io/post/arch/2016-07-26-go-channel-feature/</link>
+      <link>http://myself659.github.io/post/golang/2016-07-26-go-channel-feature/</link>
       <pubDate>Tue, 26 Jul 2016 11:58:06 +0200</pubDate>
       
-      <guid>http://myself659.github.io/post/arch/2016-07-26-go-channel-feature/</guid>
+      <guid>http://myself659.github.io/post/golang/2016-07-26-go-channel-feature/</guid>
       <description>channel模式 根据同步方式不同，channel有两种模式： 1、同步模式,形式如下： 1 ch := make(chan int) 2、队列模式，形式如下： 1 ch := make(chan int, 10) 根据数据</description>
     </item>
     

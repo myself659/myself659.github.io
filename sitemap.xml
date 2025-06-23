@@ -2,8 +2,50 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://myself659.github.io/tags/aip/</loc>
+    <lastmod>2025-06-23T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://myself659.github.io/categories/aip/</loc>
+    <lastmod>2025-06-23T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>http://myself659.github.io/categories/</loc>
-    <lastmod>2024-08-30T11:58:06+02:00</lastmod>
+    <lastmod>2025-06-23T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://myself659.github.io/post/</loc>
+    <lastmod>2025-06-23T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://myself659.github.io/post/aip/software-1vs2vs3/</loc>
+    <lastmod>2025-06-23T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://myself659.github.io/tags/</loc>
+    <lastmod>2025-06-23T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://myself659.github.io/</loc>
+    <lastmod>2025-06-23T11:58:06+02:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -23,28 +65,7 @@
   </url>
   
   <url>
-    <loc>http://myself659.github.io/post/</loc>
-    <lastmod>2024-08-30T11:58:06+02:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>http://myself659.github.io/post/devops/win11-cuda/</loc>
-    <lastmod>2024-08-30T11:58:06+02:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://myself659.github.io/tags/</loc>
-    <lastmod>2024-08-30T11:58:06+02:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://myself659.github.io/</loc>
     <lastmod>2024-08-30T11:58:06+02:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -1759,7 +1780,21 @@
   </url>
   
   <url>
+    <loc>http://myself659.github.io/post/arch/application-gateway-101/</loc>
+    <lastmod>2019-01-18T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>http://myself659.github.io/post/arch/hinted-handoff-101/</loc>
+    <lastmod>2019-01-18T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://myself659.github.io/post/arch/proxy-101/</loc>
     <lastmod>2019-01-18T11:58:06+02:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -1773,7 +1808,21 @@
   </url>
   
   <url>
+    <loc>http://myself659.github.io/post/arch/rate-limiter-101/</loc>
+    <lastmod>2019-01-18T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>http://myself659.github.io/post/arch/read-repair-101/</loc>
+    <lastmod>2019-01-18T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://myself659.github.io/post/arch/restapi-101/</loc>
     <lastmod>2019-01-18T11:58:06+02:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -2251,6 +2300,13 @@
   <url>
     <loc>http://myself659.github.io/post/blockchain/eth-txpool/</loc>
     <lastmod>2018-05-15T11:58:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://myself659.github.io/post/arch/software-arch-cheet/</loc>
+    <lastmod>2018-05-12T11:58:06+02:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -2760,7 +2816,7 @@
   </url>
   
   <url>
-    <loc>http://myself659.github.io/post/arch/2017-02-20-go-case-1-my-shadeofgo/</loc>
+    <loc>http://myself659.github.io/post/golang/2017-02-20-go-case-1-my-shadeofgo/</loc>
     <lastmod>2017-02-20T11:58:06+02:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -2816,14 +2872,14 @@
   </url>
   
   <url>
-    <loc>http://myself659.github.io/post/arch/2016-09-10-from-cepoll-to-go-net/</loc>
+    <loc>http://myself659.github.io/post/golang/2016-09-10-from-cepoll-to-go-net/</loc>
     <lastmod>2016-09-10T11:58:06+02:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://myself659.github.io/post/arch/2016-08-20-go-channel-program-demo/</loc>
+    <loc>http://myself659.github.io/post/golang/2016-08-20-go-channel-program-demo/</loc>
     <lastmod>2016-08-20T11:58:06+02:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -2844,7 +2900,7 @@
   </url>
   
   <url>
-    <loc>http://myself659.github.io/post/arch/2016-07-26-go-channel-feature/</loc>
+    <loc>http://myself659.github.io/post/golang/2016-07-26-go-channel-feature/</loc>
     <lastmod>2016-07-26T11:58:06+02:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
