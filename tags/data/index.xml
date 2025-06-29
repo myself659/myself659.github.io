@@ -7,7 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>沉风网事</copyright>
-    <lastBuildDate>Mon, 17 Feb 2020 11:58:06 +0200</lastBuildDate><atom:link href="http://myself659.github.io/tags/data/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 28 Jan 2022 11:58:06 +0800</lastBuildDate><atom:link href="http://myself659.github.io/tags/data/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>数据的操作</title>
+      <link>http://myself659.github.io/post/data/data-op/</link>
+      <pubDate>Fri, 28 Jan 2022 11:58:06 +0800</pubDate>
+      
+      <guid>http://myself659.github.io/post/data/data-op/</guid>
+      <description>背景 数据是资产。 数据是生产资料。 操作分类 可以从以下角度进行分类： 生命周期维度 Gathering Creating Dropping Resetting Recovering 处理维度 Manipulating Copying Replicating Mining Extracting Cleaning Semantic Category 管理维度 Logging Monitoring Testing Configuring Governance 应用 Deploying Rollbacking Sending Displaying</description>
+    </item>
+    
     <item>
       <title>通过数据分析预测股票价格变化靠谱吗？</title>
       <link>http://myself659.github.io/post/stock/stock-us-analysis/</link>

@@ -7,11 +7,20 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>沉风网事</copyright>
-    <lastBuildDate>Mon, 23 Jun 2025 11:58:06 +0200</lastBuildDate><atom:link href="http://myself659.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 28 Jun 2025 11:58:06 +0800</lastBuildDate><atom:link href="http://myself659.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Economy</title>
+      <link>http://myself659.github.io/tags/economy/</link>
+      <pubDate>Sat, 28 Jun 2025 11:58:06 +0800</pubDate>
+      
+      <guid>http://myself659.github.io/tags/economy/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>AIP</title>
       <link>http://myself659.github.io/tags/aip/</link>
-      <pubDate>Mon, 23 Jun 2025 11:58:06 +0200</pubDate>
+      <pubDate>Tue, 24 Jun 2025 11:58:06 +0800</pubDate>
       
       <guid>http://myself659.github.io/tags/aip/</guid>
       <description></description>
@@ -68,15 +77,6 @@
       <pubDate>Fri, 29 Mar 2024 11:58:06 +0200</pubDate>
       
       <guid>http://myself659.github.io/tags/done/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Economy</title>
-      <link>http://myself659.github.io/tags/economy/</link>
-      <pubDate>Mon, 18 Dec 2023 11:58:06 +0200</pubDate>
-      
-      <guid>http://myself659.github.io/tags/economy/</guid>
       <description></description>
     </item>
     
@@ -176,6 +176,15 @@
       <pubDate>Thu, 08 Dec 2022 11:58:06 +0200</pubDate>
       
       <guid>http://myself659.github.io/tags/rust/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>data</title>
+      <link>http://myself659.github.io/tags/data/</link>
+      <pubDate>Fri, 28 Jan 2022 11:58:06 +0800</pubDate>
+      
+      <guid>http://myself659.github.io/tags/data/</guid>
       <description></description>
     </item>
     
@@ -338,15 +347,6 @@
       <pubDate>Tue, 18 Feb 2020 11:58:06 +0200</pubDate>
       
       <guid>http://myself659.github.io/tags/golang/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>data</title>
-      <link>http://myself659.github.io/tags/data/</link>
-      <pubDate>Mon, 17 Feb 2020 11:58:06 +0200</pubDate>
-      
-      <guid>http://myself659.github.io/tags/data/</guid>
       <description></description>
     </item>
     
