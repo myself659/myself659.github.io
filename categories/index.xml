@@ -1,471 +1,370 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Categories on 沉风网事</title>
     <link>http://myself659.github.io/categories/</link>
     <description>Recent content in Categories on 沉风网事</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>zh-cn</language>
     <copyright>沉风网事</copyright>
-    <lastBuildDate>Sat, 28 Jun 2025 11:58:06 +0800</lastBuildDate><atom:link href="http://myself659.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 28 Jun 2025 11:58:06 +0800</lastBuildDate>
+    <atom:link href="http://myself659.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Economy</title>
       <link>http://myself659.github.io/categories/economy/</link>
       <pubDate>Sat, 28 Jun 2025 11:58:06 +0800</pubDate>
-      
       <guid>http://myself659.github.io/categories/economy/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>AI</title>
+      <title>Ai</title>
       <link>http://myself659.github.io/categories/ai/</link>
       <pubDate>Tue, 24 Jun 2025 11:58:06 +0800</pubDate>
-      
       <guid>http://myself659.github.io/categories/ai/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>AIP</title>
       <link>http://myself659.github.io/categories/aip/</link>
       <pubDate>Mon, 23 Jun 2025 11:58:06 +0800</pubDate>
-      
       <guid>http://myself659.github.io/categories/aip/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>devops</title>
+      <title>Devops</title>
       <link>http://myself659.github.io/categories/devops/</link>
       <pubDate>Fri, 30 Aug 2024 11:58:06 +0200</pubDate>
-      
       <guid>http://myself659.github.io/categories/devops/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Life</title>
       <link>http://myself659.github.io/categories/life/</link>
       <pubDate>Mon, 08 Apr 2024 11:58:06 +0200</pubDate>
-      
       <guid>http://myself659.github.io/categories/life/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Learn</title>
       <link>http://myself659.github.io/categories/learn/</link>
       <pubDate>Sat, 06 Apr 2024 11:58:06 +0200</pubDate>
-      
       <guid>http://myself659.github.io/categories/learn/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>work</title>
+      <title>Work</title>
       <link>http://myself659.github.io/categories/work/</link>
       <pubDate>Thu, 04 Apr 2024 11:58:06 +0200</pubDate>
-      
       <guid>http://myself659.github.io/categories/work/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>done</title>
+      <title>Done</title>
       <link>http://myself659.github.io/categories/done/</link>
       <pubDate>Fri, 29 Mar 2024 11:58:06 +0200</pubDate>
-      
       <guid>http://myself659.github.io/categories/done/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>thinking</title>
+      <title>Thinking</title>
       <link>http://myself659.github.io/categories/thinking/</link>
       <pubDate>Wed, 01 Nov 2023 11:58:06 +0800</pubDate>
-      
       <guid>http://myself659.github.io/categories/thinking/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>sport</title>
+      <title>Sport</title>
       <link>http://myself659.github.io/categories/sport/</link>
       <pubDate>Sun, 09 Jul 2023 11:58:06 +0800</pubDate>
-      
       <guid>http://myself659.github.io/categories/sport/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>math</title>
+      <title>Math</title>
       <link>http://myself659.github.io/categories/math/</link>
       <pubDate>Sun, 18 Jun 2023 11:58:06 +0200</pubDate>
-      
       <guid>http://myself659.github.io/categories/math/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Think</title>
       <link>http://myself659.github.io/categories/think/</link>
       <pubDate>Sun, 09 Apr 2023 11:58:06 +0200</pubDate>
-      
       <guid>http://myself659.github.io/categories/think/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>学习</title>
       <link>http://myself659.github.io/categories/%E5%AD%A6%E4%B9%A0/</link>
       <pubDate>Thu, 23 Feb 2023 11:58:06 +0200</pubDate>
-      
       <guid>http://myself659.github.io/categories/%E5%AD%A6%E4%B9%A0/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>human</title>
+      <title>Human</title>
       <link>http://myself659.github.io/categories/human/</link>
       <pubDate>Sun, 08 Jan 2023 11:58:06 +0800</pubDate>
-      
       <guid>http://myself659.github.io/categories/human/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Rust</title>
       <link>http://myself659.github.io/categories/rust/</link>
       <pubDate>Thu, 08 Dec 2022 11:58:06 +0200</pubDate>
-      
       <guid>http://myself659.github.io/categories/rust/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>data</title>
+      <title>Distributed</title>
+      <link>http://myself659.github.io/categories/distributed/</link>
+      <pubDate>Wed, 23 Mar 2022 11:58:06 +0200</pubDate>
+      <guid>http://myself659.github.io/categories/distributed/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Data</title>
       <link>http://myself659.github.io/categories/data/</link>
-      <pubDate>Fri, 28 Jan 2022 11:58:06 +0800</pubDate>
-      
+      <pubDate>Sat, 29 Jan 2022 11:58:06 +0800</pubDate>
       <guid>http://myself659.github.io/categories/data/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Linux</title>
       <link>http://myself659.github.io/categories/linux/</link>
       <pubDate>Sat, 25 Sep 2021 11:58:06 +0800</pubDate>
-      
       <guid>http://myself659.github.io/categories/linux/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>blockchain</title>
+      <title>Blockchain</title>
       <link>http://myself659.github.io/categories/blockchain/</link>
       <pubDate>Mon, 16 Aug 2021 11:58:06 +0200</pubDate>
-      
       <guid>http://myself659.github.io/categories/blockchain/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Defi</title>
       <link>http://myself659.github.io/categories/defi/</link>
       <pubDate>Thu, 08 Jul 2021 11:58:06 +0200</pubDate>
-      
       <guid>http://myself659.github.io/categories/defi/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>English</title>
       <link>http://myself659.github.io/categories/english/</link>
       <pubDate>Mon, 26 Apr 2021 11:58:06 +0200</pubDate>
-      
       <guid>http://myself659.github.io/categories/english/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>NFT</title>
       <link>http://myself659.github.io/categories/nft/</link>
       <pubDate>Mon, 05 Apr 2021 11:58:06 +0200</pubDate>
-      
       <guid>http://myself659.github.io/categories/nft/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Internet</title>
       <link>http://myself659.github.io/categories/internet/</link>
       <pubDate>Wed, 03 Feb 2021 11:58:06 +0200</pubDate>
-      
       <guid>http://myself659.github.io/categories/internet/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Invest</title>
       <link>http://myself659.github.io/categories/invest/</link>
       <pubDate>Fri, 15 Jan 2021 11:58:06 +0200</pubDate>
-      
       <guid>http://myself659.github.io/categories/invest/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>闲谈乱扯</title>
       <link>http://myself659.github.io/categories/%E9%97%B2%E8%B0%88%E4%B9%B1%E6%89%AF/</link>
       <pubDate>Sat, 09 Jan 2021 11:58:06 +0200</pubDate>
-      
       <guid>http://myself659.github.io/categories/%E9%97%B2%E8%B0%88%E4%B9%B1%E6%89%AF/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>cryptocurrency</title>
+      <title>Cryptocurrency</title>
       <link>http://myself659.github.io/categories/cryptocurrency/</link>
       <pubDate>Fri, 08 Jan 2021 11:58:06 +0200</pubDate>
-      
       <guid>http://myself659.github.io/categories/cryptocurrency/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>History</title>
       <link>http://myself659.github.io/categories/history/</link>
       <pubDate>Wed, 06 Jan 2021 11:58:06 +0200</pubDate>
-      
       <guid>http://myself659.github.io/categories/history/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Arch</title>
       <link>http://myself659.github.io/categories/arch/</link>
       <pubDate>Mon, 21 Dec 2020 11:58:06 +0200</pubDate>
-      
       <guid>http://myself659.github.io/categories/arch/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>algorithm</title>
+      <title>Algorithm</title>
       <link>http://myself659.github.io/categories/algorithm/</link>
       <pubDate>Sun, 23 Aug 2020 11:58:06 +0200</pubDate>
-      
       <guid>http://myself659.github.io/categories/algorithm/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>编程</title>
       <link>http://myself659.github.io/categories/%E7%BC%96%E7%A8%8B/</link>
       <pubDate>Sun, 09 Aug 2020 11:58:06 +0200</pubDate>
-      
       <guid>http://myself659.github.io/categories/%E7%BC%96%E7%A8%8B/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>成长</title>
       <link>http://myself659.github.io/categories/%E6%88%90%E9%95%BF/</link>
       <pubDate>Fri, 26 Jun 2020 11:58:06 +0200</pubDate>
-      
       <guid>http://myself659.github.io/categories/%E6%88%90%E9%95%BF/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Read</title>
       <link>http://myself659.github.io/categories/read/</link>
       <pubDate>Fri, 08 May 2020 11:58:06 +0200</pubDate>
-      
       <guid>http://myself659.github.io/categories/read/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>研发管理</title>
       <link>http://myself659.github.io/categories/%E7%A0%94%E5%8F%91%E7%AE%A1%E7%90%86/</link>
       <pubDate>Sun, 08 Mar 2020 11:58:06 +0200</pubDate>
-      
       <guid>http://myself659.github.io/categories/%E7%A0%94%E5%8F%91%E7%AE%A1%E7%90%86/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>golang</title>
+      <title>Golang</title>
       <link>http://myself659.github.io/categories/golang/</link>
       <pubDate>Tue, 18 Feb 2020 11:58:06 +0200</pubDate>
-      
       <guid>http://myself659.github.io/categories/golang/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>商业</title>
       <link>http://myself659.github.io/categories/%E5%95%86%E4%B8%9A/</link>
       <pubDate>Thu, 16 Jan 2020 11:58:06 +0200</pubDate>
-      
       <guid>http://myself659.github.io/categories/%E5%95%86%E4%B8%9A/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Secure</title>
       <link>http://myself659.github.io/categories/secure/</link>
       <pubDate>Fri, 08 Nov 2019 11:58:06 +0200</pubDate>
-      
       <guid>http://myself659.github.io/categories/secure/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Substrate</title>
       <link>http://myself659.github.io/categories/substrate/</link>
       <pubDate>Wed, 18 Sep 2019 11:58:06 +0200</pubDate>
-      
       <guid>http://myself659.github.io/categories/substrate/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>python</title>
+      <title>Python</title>
       <link>http://myself659.github.io/categories/python/</link>
       <pubDate>Thu, 08 Aug 2019 11:58:06 +0200</pubDate>
-      
       <guid>http://myself659.github.io/categories/python/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Javascript</title>
       <link>http://myself659.github.io/categories/javascript/</link>
       <pubDate>Mon, 08 Jul 2019 11:58:06 +0200</pubDate>
-      
       <guid>http://myself659.github.io/categories/javascript/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>startup</title>
+      <title>Startup</title>
       <link>http://myself659.github.io/categories/startup/</link>
       <pubDate>Mon, 24 Jun 2019 11:58:06 +0200</pubDate>
-      
       <guid>http://myself659.github.io/categories/startup/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Kubernetes</title>
       <link>http://myself659.github.io/categories/kubernetes/</link>
       <pubDate>Sat, 09 Mar 2019 11:58:06 +0200</pubDate>
-      
       <guid>http://myself659.github.io/categories/kubernetes/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Tool</title>
       <link>http://myself659.github.io/categories/tool/</link>
       <pubDate>Fri, 08 Feb 2019 11:58:06 +0200</pubDate>
-      
       <guid>http://myself659.github.io/categories/tool/</guid>
       <description></description>
     </item>
-    
-    <item>
-      <title>Distributed</title>
-      <link>http://myself659.github.io/categories/distributed/</link>
-      <pubDate>Tue, 11 Dec 2018 11:58:06 +0200</pubDate>
-      
-      <guid>http://myself659.github.io/categories/distributed/</guid>
-      <description></description>
-    </item>
-    
     <item>
       <title>Cryptography</title>
       <link>http://myself659.github.io/categories/cryptography/</link>
       <pubDate>Sun, 21 Oct 2018 11:58:06 +0200</pubDate>
-      
       <guid>http://myself659.github.io/categories/cryptography/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Information</title>
       <link>http://myself659.github.io/categories/information/</link>
       <pubDate>Wed, 29 Aug 2018 11:58:06 +0200</pubDate>
-      
       <guid>http://myself659.github.io/categories/information/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>ipfs</title>
+      <title>IPFS</title>
       <link>http://myself659.github.io/categories/ipfs/</link>
       <pubDate>Thu, 21 Jun 2018 11:58:06 +0200</pubDate>
-      
       <guid>http://myself659.github.io/categories/ipfs/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>ethereum</title>
+      <title>Ethereum</title>
       <link>http://myself659.github.io/categories/ethereum/</link>
       <pubDate>Tue, 15 May 2018 11:58:06 +0200</pubDate>
-      
       <guid>http://myself659.github.io/categories/ethereum/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Ethernum</title>
       <link>http://myself659.github.io/categories/ethernum/</link>
       <pubDate>Fri, 20 Apr 2018 11:58:06 +0200</pubDate>
-      
       <guid>http://myself659.github.io/categories/ethernum/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>DataStruct</title>
       <link>http://myself659.github.io/categories/datastruct/</link>
       <pubDate>Sun, 11 Mar 2018 11:58:06 +0800</pubDate>
-      
       <guid>http://myself659.github.io/categories/datastruct/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Network</title>
       <link>http://myself659.github.io/categories/network/</link>
       <pubDate>Sun, 05 Nov 2017 11:58:06 +0200</pubDate>
-      
       <guid>http://myself659.github.io/categories/network/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Web</title>
       <link>http://myself659.github.io/categories/web/</link>
       <pubDate>Fri, 27 Oct 2017 11:58:06 +0200</pubDate>
-      
       <guid>http://myself659.github.io/categories/web/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>nginx</title>
+      <title>Nginx</title>
       <link>http://myself659.github.io/categories/nginx/</link>
       <pubDate>Sat, 08 Aug 2015 11:58:06 +0200</pubDate>
-      
       <guid>http://myself659.github.io/categories/nginx/</guid>
       <description></description>
     </item>
-    
   </channel>
 </rss>

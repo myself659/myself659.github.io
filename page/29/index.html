@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="auto" data-theme="auto">
+
+<head>
+	<meta name="generator" content="Hugo 0.164.0"><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>沉风网事</title>
+<meta name="keywords" content="沉风网事, 沉风, 区块链, Glang, 算法, 数据结构">
+<meta name="description" content="沉风网事，以人为本，尊重事实与原理，立足现实，以科技与金融为驱动，中西结合，虚实相应，主要关注互联网，系统架构，区块链，安全，经济，数据等领域">
+<meta name="author" content="">
+<link rel="canonical" href="http://myself659.github.io/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.89ca4972ab5e6aaa05e9a0dae0c4bb64b26585bc79e36f5cf33614eea0283abe.css" integrity="sha256-icpJcqteaqoF6aDa4MS7ZLJlhbx5429c8zYU7qAoOr4=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://myself659.github.io/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://myself659.github.io/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://myself659.github.io/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://myself659.github.io/apple-touch-icon.png">
+<link rel="mask-icon" href="http://myself659.github.io/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" type="application/rss+xml" href="http://myself659.github.io/index.xml" title="rss">
+<link rel="alternate" hreflang="zh-cn" href="http://myself659.github.io/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+                color-scheme: dark;
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .toc {
+                background: var(--entry);
+            }
+        }
+
+    </style>
+</noscript>
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else if (localStorage.getItem("pref-theme") === "light") {
+       document.querySelector("html").dataset.theme = 'light';
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else {
+        document.querySelector("html").dataset.theme = 'light';
+    }
+
+</script><meta property="og:url" content="http://myself659.github.io/">
+  <meta property="og:site_name" content="沉风网事">
+  <meta property="og:title" content="沉风网事">
+  <meta property="og:description" content="沉风网事，以人为本，尊重事实与原理，立足现实，以科技与金融为驱动，中西结合，虚实相应，主要关注互联网，系统架构，区块链，安全，经济，数据等领域">
+  <meta property="og:locale" content="zh_cn">
+  <meta property="og:type" content="website">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="沉风网事">
+  <meta name="twitter:description" content="沉风网事，以人为本，尊重事实与原理，立足现实，以科技与金融为驱动，中西结合，虚实相应，主要关注互联网，系统架构，区块链，安全，经济，数据等领域">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "沉风网事",
+  "url": "http://myself659.github.io/",
+  "description": "沉风网事，以人为本，尊重事实与原理，立足现实，以科技与金融为驱动，中西结合，虚实相应，主要关注互联网，系统架构，区块链，安全，经济，数据等领域",
+  "logo": "http://myself659.github.io/favicon.ico",
+  "sameAs": [
+      
+  ]
+}
+</script>
+</head>
+<body class="list" id="top">
+    <header class="header">
+    <nav class="header-nav">
+        <div class="logo">
+            <a href="http://myself659.github.io/" accesskey="h" title="沉风网事 (Alt + H)">沉风网事</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" class="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg class="moon" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg class="sun" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu" class="menu">
+            <li>
+                <a href="http://myself659.github.io/" title="Home">
+                    <span class="active">Home</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://myself659.github.io/post/" title="Archives">
+                    <span>Archives</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://myself659.github.io/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://myself659.github.io/categories/" title="Categories">
+                    <span>Categories</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://myself659.github.io/search/" title="Search (Alt &#43; /)" accesskey=/>
+                    <span>Search</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://myself659.github.io/about/" title="About">
+                    <span>About</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://myself659.github.io/post/leetcode/" title="LeetCode">
+                    <span>LeetCode</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://myself659.github.io/post/read-post/" title="Reading">
+                    <span>Reading</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://myself659.github.io/post/share-post/" title="Share">
+                    <span>Share</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://myself659.github.io/post/slide-post/" title="Slide">
+                    <span>Slide</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main"> 
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">高性能服务器设计与优化
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>为了构建自己的知识体系，对高性能服务器设计与优化一点想法，其中不足与错误，欢迎指正。
+高性能服务器设计与优化
+</p>
+  </div>
+  <footer class="entry-footer">
+
+<span title='2017-05-09 11:58:06 +0200 +0200'>May 9, 2017</span></footer>
+  <a class="entry-link" aria-label="post link to 高性能服务器设计与优化" href="http://myself659.github.io/post/2017-05-09-web-server-perf-and-design/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">什么才是重要的
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>什么才是重要的 什么才是重要的？对于这个问题有很多答案，每个人都有自己的回答。
+这里说一下我对这个问题的思考，从哪些角度来判断与评价重要性？
+基础 稀缺 频率 紧急 第一性原理 与自己的相关性 </p>
+  </div>
+  <footer class="entry-footer">
+
+<span title='2017-05-07 11:58:06 +0200 +0200'>May 7, 2017</span></footer>
+  <a class="entry-link" aria-label="post link to 什么才是重要的" href="http://myself659.github.io/post/life/what-is-matter-%E9%87%8D%E8%A6%81/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">阿里云ECS基本安全检查小结
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>背景 查看阿里云ECS服务器日志发现如下：
+1 2 3 4 5 6 7 type=USER_AUTH msg=audit(1491669519.156:15631): pid=22938 uid=0 auid=4294967295 ses=4294967295 msg=&#39;op=PAM:authentication acct=&#34;deploy&#34; exe=&#34;/usr/sbin/sshd&#34; hostname=123.57.245.163 addr=123.57.245.163 terminal=ssh res=failed&#39; type=USER_LOGIN msg=audit(1491669519.156:15632): pid=22938 uid=0 auid=4294967295 ses=4294967295 msg=&#39;op=login acct=28696E76616C6964207573657229 exe=&#34;/usr/sbin/sshd&#34; hostname=? addr=123.57.245.163 terminal=sshd res=failed&#39; type=USER_LOGIN msg=audit(1491669587.368:15634): pid=22940 uid=0 auid=4294967295 ses=4294967295 msg=&#39;op=login acct=28756E6B6E6F776E207573657229 exe=&#34;/usr/sbin/sshd&#34; hostname=? addr=123.57.245.163 terminal=sshd res=failed&#39; type=USER_LOGIN msg=audit(1491669587.368:15635): pid=22940 uid=0 auid=4294967295 ses=4294967295 msg=&#39;op=login acct=28696E76616C6964207573657229 exe=&#34;/usr/sbin/sshd&#34; hostname=? addr=123.57.245.163 terminal=sshd res=failed&#39; type=USER_AUTH msg=audit(1491669589.420:15636): pid=22940 uid=0 auid=4294967295 ses=4294967295 msg=&#39;op=PAM:authentication acct=&#34;deploy&#34; exe=&#34;/usr/sbin/sshd&#34; hostname=123.57.245.163 addr=123.57.245.163 terminal=ssh res=failed&#39; type=USER_LOGIN msg=audit(1491669589.420:15637): pid=22940 uid=0 auid=4294967295 ses=4294967295 msg=&#39;op=login acct=28696E76616C6964207573657229 exe=&#34;/usr/sbin/sshd&#34; hostname=? addr=123.57.245.163 terminal=sshd res=failed&#39; type=USER_LOGIN msg=audit(1491669658.624:15639): pid=22948 uid=0 auid=4294967295 ses=4294967295 msg=&#39;op=login acct=28756E6B6E6F776E207573657229 exe=&#34;/usr/sbin/sshd&#34; hostname=? addr=123.57.245.163 terminal=sshd res=failed&#39; 百度一下这个ip地址，如下图所示： ![记下这个IP,留下证据](/images/attck ip.png)
+...</p>
+  </div>
+  <footer class="entry-footer">
+
+<span title='2017-04-08 11:58:06 +0200 +0200'>April 8, 2017</span></footer>
+  <a class="entry-link" aria-label="post link to 阿里云ECS基本安全检查小结" href="http://myself659.github.io/post/2017-04-08-ecs-basic-sec-check/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">对于系统设计的一些想法
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>前言 学习了google，facebook等国际一流大厂的开源方案，也研究了国内BAT的一些设计案例，在平时工作自然也少不了一些系统设计的工作，想写一些自己的想法，同时也帮助自己梳理一下思路，实现自己的系统设计的套路。
+...</p>
+  </div>
+  <footer class="entry-footer">
+
+<span title='2017-04-08 11:58:06 +0200 +0200'>April 8, 2017</span></footer>
+  <a class="entry-link" aria-label="post link to 对于系统设计的一些想法" href="http://myself659.github.io/post/2017-04-29-about-system-design/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">不要忘记那些正在追赶互联网潮流的用户
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>引子 在一家推拿店里，排队等叫号，遇到一个五十多数大叔，下面是我们之间的对话：
+大叔： 小伙子，帮我看一下怎么连接wifi？
+我： 好的。
+（他把手机给我，我弄好，把手机给他）
+...</p>
+  </div>
+  <footer class="entry-footer">
+
+<span title='2017-03-27 11:58:06 +0200 +0200'>March 27, 2017</span></footer>
+  <a class="entry-link" aria-label="post link to 不要忘记那些正在追赶互联网潮流的用户" href="http://myself659.github.io/post/2017-03-27-help-internet-available-more-people/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">说说注意力
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>定义 Attention or focus, is the concentration of awareness on some phenomenon to the exclusion of other stimuli.
+注意力是过滤器。你只会注意到你注意到的世界，你的注意力决定你所看到的世界。
+注意力是方向。注意力引导你的思考，思考影响你的感知，感知影响你的现实。
+...</p>
+  </div>
+  <footer class="entry-footer">
+
+<span title='2017-03-19 11:58:06 +0800 +08'>March 19, 2017</span></footer>
+  <a class="entry-link" aria-label="post link to 说说注意力" href="http://myself659.github.io/post/done/%E6%B3%A8%E6%84%8F%E5%8A%9B-attention/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">LeetCode
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>数据结构与算法实践
+</p>
+  </div>
+  <footer class="entry-footer">
+
+<span title='2017-03-18 21:49:20 +0200 +0200'>March 18, 2017</span></footer>
+  <a class="entry-link" aria-label="post link to LeetCode" href="http://myself659.github.io/post/leetcode/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">我的三思而后行
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>背景 人们常说三思而后行。三思指什么？
+我的三思 首先思考有没有必要这样做？（why） 这样做会带来什么（思危，思退，思变）（what）？ 怎么做？还有其他的方法来做吗（how）？ 为什么要三思 避免冲动 避免冲动带来不可逆的结果 三思拓展选项与空间 三思让人慢下来，停下来 三思从行动获得反馈 三思指导行动 </p>
+  </div>
+  <footer class="entry-footer">
+
+<span title='2017-03-17 11:58:06 +0800 +08'>March 17, 2017</span></footer>
+  <a class="entry-link" aria-label="post link to 我的三思而后行" href="http://myself659.github.io/post/done/%E6%88%91%E7%9A%84%E4%B8%89%E6%80%9D%E8%80%8C%E5%90%8E%E8%A1%8C/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">没有做的原因有哪些
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>原因 从主观上分析，主要是以下原因：
+不知道做 不想做 从客观上分析，主要是以下原因：
+不会做 不能做 </p>
+  </div>
+  <footer class="entry-footer">
+
+<span title='2017-03-16 11:58:06 +0800 +08'>March 16, 2017</span></footer>
+  <a class="entry-link" aria-label="post link to 没有做的原因有哪些" href="http://myself659.github.io/post/done/%E6%B2%A1%E6%9C%89%E5%81%9A%E7%9A%84%E5%8E%9F%E5%9B%A0/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">知行反思
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>认知 认知不到位或理解不到位的原因：
+缺少基础理论 信息不足与错误 方向错误，如追求理解本身不科学 视角不对 起点错误 行动 行动做不到原因：
+理论方面存在问题 信息不足与错误 错误的开始 过程有问题 总结 这些原因往往是自己不知道的或者没有发现的。
+</p>
+  </div>
+  <footer class="entry-footer">
+
+<span title='2017-03-16 11:58:06 +0800 +08'>March 16, 2017</span></footer>
+  <a class="entry-link" aria-label="post link to 知行反思" href="http://myself659.github.io/post/done/%E7%9F%A5%E8%A1%8C%E5%8F%8D%E6%80%9D/"></a>
+</article>
+<footer class="page-footer">
+  <nav class="pagination">
+    <a class="prev" href="http://myself659.github.io/page/28/">
+      «&nbsp;&nbsp;
+    </a>
+    <a class="next" href="http://myself659.github.io/page/30/">&nbsp;&nbsp;»
+    </a>
+  </nav>
+</footer>
+    </main>
+    
+<footer class="footer">
+        <span>沉风网事</span> · 
+
+    
+    
+    <span>
+        Powered by
+        <a href="https://gohugo.io/?utm_source=papermod" rel="noopener" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" id="top-link" class="top-link hidden" aria-label="go to top" title="Go to Top (Alt + G)" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevrons-up">
+        <polyline points="17 11 12 6 7 11"></polyline>
+        <polyline points="17 18 12 13 7 18"></polyline>
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu');
+    if (menu) {
+        
+        const scrollPosition = localStorage.getItem("menu-scroll-position");
+        if (scrollPosition) {
+            menu.scrollLeft = parseInt(scrollPosition, 10);
+        }
+        
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var toplink = document.getElementById("top-link");
+    window.onscroll = function () {
+        const scrollThreshold = window.innerHeight;
+        if (document.body.scrollTop > scrollThreshold || document.documentElement.scrollTop > scrollThreshold) {
+            toplink.classList.remove("hidden");
+        } else {
+            toplink.classList.add("hidden");
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        const html = document.querySelector("html");
+        if (html.dataset.theme === "dark") {
+            html.dataset.theme = 'light';
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            html.dataset.theme = 'dark';
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>

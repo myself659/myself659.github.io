@@ -1,111 +1,220 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Internet on 沉风网事</title>
     <link>http://myself659.github.io/tags/internet/</link>
     <description>Recent content in Internet on 沉风网事</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>zh-cn</language>
     <copyright>沉风网事</copyright>
-    <lastBuildDate>Wed, 03 Feb 2021 11:58:06 +0200</lastBuildDate><atom:link href="http://myself659.github.io/tags/internet/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 03 Feb 2021 11:58:06 +0200</lastBuildDate>
+    <atom:link href="http://myself659.github.io/tags/internet/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>谈谈clubhouse</title>
       <link>http://myself659.github.io/post/internet/about-clubhouse/</link>
       <pubDate>Wed, 03 Feb 2021 11:58:06 +0200</pubDate>
-      
       <guid>http://myself659.github.io/post/internet/about-clubhouse/</guid>
-      <description>背景 最近clubhouse的邀请一码难求，自己有幸被邀请。体验一下，说一下自己对clubhouse一些想法。（Ps：由于区块链与加密货币的火</description>
+      <description>&lt;h2 id=&#34;背景&#34;&gt;背景&lt;/h2&gt;
+&lt;p&gt;最近clubhouse的邀请一码难求，自己有幸被邀请。体验一下，说一下自己对clubhouse一些想法。（Ps：由于区块链与加密货币的火爆，只写一些要点，不展开说明）&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>提高个人隐私数据安全的几点建议</title>
       <link>http://myself659.github.io/post/data-avoid-leak/</link>
       <pubDate>Sun, 22 Mar 2020 11:58:06 +0200</pubDate>
-      
       <guid>http://myself659.github.io/post/data-avoid-leak/</guid>
-      <description>最近，爆出了新浪微博用户数据泄漏的事件。虽然微博的安全技术总监罗某某拒不承认存在安全问题，但是想想李文亮医生的经历，这个事情真不能忽略。 李彦</description>
+      <description>&lt;p&gt;最近，爆出了新浪微博用户数据泄漏的事件。虽然微博的安全技术总监罗某某拒不承认存在安全问题，但是想想李文亮医生的经历，这个事情真不能忽略。
+&lt;img loading=&#34;lazy&#34; src=&#34;http://myself659.github.io/images/network/%E5%BE%AE%E5%8D%9A5%E4%BA%BF%E6%95%B0%E6%8D%AE.jfif&#34;&gt;&lt;/p&gt;
+&lt;p&gt;李彦宏说过：“中国人更愿意用隐私换便利”。这也验证一句话：互联网上无隐私。
+&lt;img loading=&#34;lazy&#34; src=&#34;http://myself659.github.io/images/network/%E4%B8%AD%E5%9B%BD%E4%BA%BA%E6%9B%B4%E6%84%BF%E6%84%8F%E7%94%A8%E9%9A%90%E7%A7%81%E6%8D%A2%E4%BE%BF%E5%88%A9.jpeg&#34;&gt;&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>说说微信付费阅读</title>
       <link>http://myself659.github.io/post/wechat-payment-read/</link>
       <pubDate>Thu, 16 Jan 2020 11:58:06 +0200</pubDate>
-      
       <guid>http://myself659.github.io/post/wechat-payment-read/</guid>
-      <description>背景 2020年1月15号微信灰度发布公众帐号付费阅读功能。微信10亿用户的体量，最长的用户时长，所以一个付费阅读功能差不多引起全网的讨论。 时</description>
+      <description>&lt;h1 id=&#34;背景&#34;&gt;背景&lt;/h1&gt;
+&lt;p&gt;2020年1月15号微信灰度发布公众帐号付费阅读功能。微信10亿用户的体量，最长的用户时长，所以一个付费阅读功能差不多引起全网的讨论。&lt;/p&gt;
+&lt;h1 id=&#34;时机&#34;&gt;时机&lt;/h1&gt;
+&lt;p&gt;为什么微信会在这个时候推出公众帐号付费阅读功能？&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>苹果微软亚马逊谷歌Facebook五大科技巨头是如何赚钱的</title>
       <link>http://myself659.github.io/post/tech-giant-income/</link>
       <pubDate>Thu, 21 Nov 2019 11:58:06 +0200</pubDate>
-      
       <guid>http://myself659.github.io/post/tech-giant-income/</guid>
-      <description>苹果微软亚马逊谷歌Facebook这五大科技巨头在2018年的收入总和超过了8000亿美元。 如果这五大科技巨头保证30%的增长率，这五大科技</description>
+      <description>&lt;p&gt;苹果微软亚马逊谷歌Facebook这五大科技巨头在2018年的收入总和超过了8000亿美元。
+如果这五大科技巨头保证30%的增长率，这五大科技巨头在2019年的收入总和会超过10000亿美元。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>关于zoom的一些思考与看法</title>
       <link>http://myself659.github.io/post/business/about-zoom/</link>
       <pubDate>Sun, 28 Apr 2019 11:58:06 +0200</pubDate>
-      
       <guid>http://myself659.github.io/post/business/about-zoom/</guid>
-      <description>前言 最近zoom上市，作为一名华人创业公司自然大受关注。下面从以下几个方面谈谈自己的一些思考与看法： 技术 领导 产品 商业 技术 对于视频面试会议，技</description>
+      <description>&lt;h1 id=&#34;前言&#34;&gt;前言&lt;/h1&gt;
+&lt;p&gt;最近zoom上市，作为一名华人创业公司自然大受关注。下面从以下几个方面谈谈自己的一些思考与看法：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;技术&lt;/li&gt;
+&lt;li&gt;领导&lt;/li&gt;
+&lt;li&gt;产品&lt;/li&gt;
+&lt;li&gt;商业&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;技术&#34;&gt;技术&lt;/h2&gt;
+&lt;p&gt;对于视频面试会议，技术核心分为以下三大块：&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>分享一种分析信息技术发展的框架</title>
       <link>http://myself659.github.io/post/it-frame/</link>
       <pubDate>Sun, 10 Mar 2019 11:58:06 +0200</pubDate>
-      
       <guid>http://myself659.github.io/post/it-frame/</guid>
-      <description>信息技术发展史 为了与原文保持一致，将信息技术发展史分为以下6个阶段： 大型机时代 PC时代 互联网时代 社交网络时代 智能手机时代 区块链时代 框架介绍 将</description>
+      <description>&lt;h1 id=&#34;信息技术发展史&#34;&gt;信息技术发展史&lt;/h1&gt;
+&lt;p&gt;为了与原文保持一致，将信息技术发展史分为以下6个阶段：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;大型机时代&lt;/li&gt;
+&lt;li&gt;PC时代&lt;/li&gt;
+&lt;li&gt;互联网时代&lt;/li&gt;
+&lt;li&gt;社交网络时代&lt;/li&gt;
+&lt;li&gt;智能手机时代&lt;/li&gt;
+&lt;li&gt;区块链时代&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h1 id=&#34;框架介绍&#34;&gt;框架介绍&lt;/h1&gt;
+&lt;p&gt;将信息技术要素分为以下四种：&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>说说微信小程序</title>
       <link>http://myself659.github.io/post/business/about-weixin-miniprogram/</link>
       <pubDate>Sat, 01 Dec 2018 11:58:06 +0200</pubDate>
-      
       <guid>http://myself659.github.io/post/business/about-weixin-miniprogram/</guid>
-      <description>小程序在2018年确实火了，除了先行的微信小程序，后面紧接着跟着了蚂蚁金服的小程序，今日头条的小程序。这里先表明一下自己的立场，从微信小程序</description>
+      <description>&lt;p&gt;小程序在2018年确实火了，除了先行的微信小程序，后面紧接着跟着了蚂蚁金服的小程序，今日头条的小程序。这里先表明一下自己的立场，从微信小程序诞生开始我就看好微信小程序。这里肯定有人说我是事后诸葛亮，这里有图为证。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>关于拼多多几点看法</title>
       <link>http://myself659.github.io/post/pdd-thought/</link>
       <pubDate>Sun, 29 Jul 2018 11:58:06 +0200</pubDate>
-      
       <guid>http://myself659.github.io/post/pdd-thought/</guid>
-      <description>拼多多战略采用农村包围城市，市场上定位准确，填补了三四线农村及中国底层人民的需求。 微信平台是拼多多快速成长的关键，利用微信带来的流量，流量带</description>
+      <description>&lt;ol&gt;
+&lt;li&gt;拼多多战略采用农村包围城市，市场上定位准确，填补了三四线农村及中国底层人民的需求。&lt;/li&gt;
+&lt;li&gt;微信平台是拼多多快速成长的关键，利用微信带来的流量，流量带来用户，用户带来交易，交易带来商家，随着流量，用户，交易，商家越来越多，就成了生态。&lt;/li&gt;
+&lt;li&gt;宣传口号具有极强的传播效应：拼多多、拼得多、省得多。&lt;/li&gt;
+&lt;li&gt;产品上增加确定性，首先价格比淘宝还便宜（一般情况下）同时对用户预期进行管理，提高了体验的确定性。&lt;/li&gt;
+&lt;li&gt;麻烦就是与淘宝一样，会一直受假货的困扰，打假一直是电商平台的难题（因为打假是一个社会问题）。&lt;/li&gt;
+&lt;li&gt;拼多多胜在效率，对于用户来说是性价比，对于商家来说是批量处理商品，在交易流程上利用微信平台及其天然存在好友关系及其微信群，整个过程商家和用户的成本都下降，在性价比的高吸引下，用户拼单成本低（转发几个微信群或者朋友圈就可以了），商家的流量成本基本为0。&lt;/li&gt;
+&lt;li&gt;拼多多未来会怎么样？在整个中国大部分人消费降级情况下，拼多多应该还会进一步增长，上市当天上涨40%也是市场对其成长的期待。&lt;/li&gt;
+&lt;li&gt;拼多多和淘宝比较如何？借助微信拼多多下沉市场更大，借助微信拼多多是社交电商，更具有传播性。&lt;/li&gt;
+&lt;li&gt;拼多多为什么成长这么快？三年时间就上市，用户数量达到3.4亿。搭上微信这个10亿用户平台，符合大部分中国人还很穷的现状，解决他们的问题。&lt;/li&gt;
+&lt;li&gt;拼多多怎么赚钱？现在还没有营利，主要收入来源是商家的在线营销服务（广告），未来应该会营利，用户数量巨大，可以从天猫，京东导入更多的商家，扩大收入，相信国运，这些用户未来会真正的消费升级，这又是新的增长机会。&lt;/li&gt;
+&lt;li&gt;拼多多为用户提供一种低成本满足刚需的选择。&lt;/li&gt;
+&lt;li&gt;段永平对黄铮的评价：黄峥是特别难得一见的一直关注事物本质的人，有悟性，又聪明，未来有任何成就我都不意外。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h1 id=&#34;后续&#34;&gt;后续&lt;/h1&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&#34;https://mp.weixin.qq.com/s/C1E98xnhRpoqwKamkhjftA&#34;&gt;我为什么全仓拼多多？&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h1 id=&#34;参考&#34;&gt;参考&lt;/h1&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.chuangyejia.com/article/detail/5708260.html&#34;&gt;巨头夹缝中的千亿鲶鱼：社交重塑中国电商格局，拼多多成电商第三极&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://m.huxiu.com/article/250352.html&#34;&gt;拼多多急上市：拿下1400亿GMV，累积亏损13亿&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://mp.weixin.qq.com/s/bbWHjY02BWMLyl-eaHtQ_A&#34;&gt;巨头三国杀：中国电商盛世再临&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;欢迎关注&#34;&gt;欢迎关注&lt;/h2&gt;
+&lt;p&gt;欢迎关注微信公众帐号：沉风网事(savewind)&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>关于微软收购github几点看法</title>
       <link>http://myself659.github.io/post/ms-github/</link>
       <pubDate>Sun, 10 Jun 2018 11:58:06 +0200</pubDate>
-      
       <guid>http://myself659.github.io/post/ms-github/</guid>
-      <description>开源已经是一种潮流与趋势。从linux开始，开源软件支撑现在的互联网与云计算。有太多的项目如redis，docker，k8s，etcd等等；</description>
+      <description>&lt;ol&gt;
+&lt;li&gt;开源已经是一种潮流与趋势。从linux开始，开源软件支撑现在的互联网与云计算。有太多的项目如redis，docker，k8s，etcd等等；区块链领域更是如此。&lt;/li&gt;
+&lt;li&gt;得开发者得天下。github上有最多的开发者和开发项目。&lt;/li&gt;
+&lt;li&gt;代码管理平台的重要性凸显。&lt;/li&gt;
+&lt;li&gt;估计google会在未来收购gitlab。&lt;/li&gt;
+&lt;li&gt;github找到微软爸爸，服务体验会有改善（如国内下载代码慢）。&lt;/li&gt;
+&lt;li&gt;github大量的开源代码会成为AI编程的学习材料，未来CRUD可能由AI来完成了。&lt;/li&gt;
+&lt;li&gt;未来人人都是开发者。随着教育的发展，编程肯定是每个人的必修课。这样github会成为代码管理的操作系统。&lt;/li&gt;
+&lt;li&gt;github与vscode会有深度集成，提高开发效率与体验。&lt;/li&gt;
+&lt;li&gt;github与azure集成，提供一站式开发服务。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h1 id=&#34;参考&#34;&gt;参考&lt;/h1&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&#34;https://36kr.com/p/5137307.html&#34;&gt;收购 GitHub，微软的又一次大转变&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://medium.com/young-coder/how-microsoft-beat-the-innovators-dilemma-5b78e3692ed3&#34;&gt;How Microsoft Beat the Innovator’s Dilemma&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h1 id=&#34;欢迎关注&#34;&gt;欢迎关注&lt;/h1&gt;
+&lt;p&gt;欢迎关注微信公众帐号：沉风网事(savewind)&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>社交网络摆脱不了的周期</title>
       <link>http://myself659.github.io/post/socialnetowrk-cannot-cycle/</link>
       <pubDate>Sat, 05 May 2018 11:58:06 +0200</pubDate>
-      
       <guid>http://myself659.github.io/post/socialnetowrk-cannot-cycle/</guid>
-      <description>没有什么是不可改变的。 Facebook有22亿用户。 MySpace曾经是世界之王。现在人们都已经遗忘了。 QQ还是让位微信，活跃度下降，用户时</description>
+      <description>&lt;p&gt;没有什么是不可改变的。&lt;/p&gt;
+&lt;p&gt;Facebook有22亿用户。&lt;/p&gt;
+&lt;p&gt;MySpace曾经是世界之王。现在人们都已经遗忘了。&lt;/p&gt;
+&lt;p&gt;QQ还是让位微信，活跃度下降，用户时长下降。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>对中国互联网产品的一些建议</title>
       <link>http://myself659.github.io/post/suggests-for-chinese-internet-productions/</link>
       <pubDate>Mon, 05 Feb 2018 11:58:06 +0200</pubDate>
-      
       <guid>http://myself659.github.io/post/suggests-for-chinese-internet-productions/</guid>
-      <description>具体以公司及产品划分。 腾讯 打通帐号系统，如qq与微信在其他腾讯产品的功能不一致 微信 整理未读信息，而不是让用户去找哪条信息未读，特别是存在大量</description>
+      <description>&lt;p&gt;具体以公司及产品划分。&lt;/p&gt;
+&lt;h1 id=&#34;腾讯&#34;&gt;腾讯&lt;/h1&gt;
+&lt;ol&gt;
+&lt;li&gt;打通帐号系统，如qq与微信在其他腾讯产品的功能不一致&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;微信&#34;&gt;微信&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;整理未读信息，而不是让用户去找哪条信息未读，特别是存在大量的会话的情况&lt;/li&gt;
+&lt;li&gt;公众帐号平台写作支持从本地导入markdown功能&lt;/li&gt;
+&lt;li&gt;公众帐号与小程序帐号能否统一&lt;/li&gt;
+&lt;li&gt;微信电脑公众帐号阅读窗口应该作更多功能的，提高更好的用户体验，如支持搜索，字体放大，这个窗口应该按浏览器的标准来一步一步完善&lt;/li&gt;
+&lt;li&gt;微信视频号付费直播增加收费方式：1.按时长计费的方式，2.会员制度&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;微信读书&#34;&gt;微信读书&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;搞一个微信读书版的kiddle吧&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;腾讯云&#34;&gt;腾讯云&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;del&gt;优化一下linux包下载速度，直接走内部镜像&lt;/del&gt;&lt;/li&gt;
+&lt;li&gt;增加golang的api&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h1 id=&#34;微博&#34;&gt;微博&lt;/h1&gt;
+&lt;ol&gt;
+&lt;li&gt;支持像twitter那样截图直接上传功能&lt;/li&gt;
+&lt;li&gt;继续像twitter学习，让用户来决定关注什么 (Tips: 建议用户遇到这种情况，直接将被动主动帐号屏蔽)&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h1 id=&#34;百度&#34;&gt;百度&lt;/h1&gt;
+&lt;h2 id=&#34;hao123&#34;&gt;hao123&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;让hao123回到它最初的形式&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;搜索&#34;&gt;搜索&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;收录网站体验太差了，与google，bing比较这方面相差10倍以上&lt;/li&gt;
+&lt;li&gt;贴吧广告太多，自作死，支持内容电商也比插入广告要好&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h1 id=&#34;字节跳动&#34;&gt;字节跳动&lt;/h1&gt;
+&lt;h2 id=&#34;今日头条&#34;&gt;今日头条&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;希望推荐算法不止是迎合用户还有引导用户&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;飞聊&#34;&gt;飞聊&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;飞聊应该与今日头条打通，让头条号作者与读者之间更高层次的互动&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;lark&#34;&gt;lark&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;网络优化：打开在线文档的速度要优化&lt;/li&gt;
+&lt;li&gt;文档功能：向腾讯文档靠齐&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h1 id=&#34;网易&#34;&gt;网易&lt;/h1&gt;
+&lt;h2 id=&#34;网易云音乐&#34;&gt;网易云音乐&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;ios版本闪退问题需要加快解决，概率达到百分之一吧&lt;/li&gt;
+&lt;li&gt;支持opus格式&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;(未完，持续更新)&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

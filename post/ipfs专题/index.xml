@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>IPFS专题 on 沉风网事</title>
+    <link>http://myself659.github.io/post/ipfs%E4%B8%93%E9%A2%98/</link>
+    <description>Recent content in IPFS专题 on 沉风网事</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    <copyright>沉风网事</copyright>
+    <lastBuildDate></lastBuildDate>
+    <atom:link href="http://myself659.github.io/post/ipfs%E4%B8%93%E9%A2%98/index.xml" rel="self" type="application/rss+xml" />
+  </channel>
+</rss>

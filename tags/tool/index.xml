@@ -1,21 +1,46 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Tool on 沉风网事</title>
     <link>http://myself659.github.io/tags/tool/</link>
     <description>Recent content in Tool on 沉风网事</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>zh-cn</language>
     <copyright>沉风网事</copyright>
-    <lastBuildDate>Fri, 08 Feb 2019 11:58:06 +0200</lastBuildDate><atom:link href="http://myself659.github.io/tags/tool/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 08 Feb 2019 11:58:06 +0200</lastBuildDate>
+    <atom:link href="http://myself659.github.io/tags/tool/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>vscode tips</title>
       <link>http://myself659.github.io/post/vscode-tips/</link>
       <pubDate>Fri, 08 Feb 2019 11:58:06 +0200</pubDate>
-      
       <guid>http://myself659.github.io/post/vscode-tips/</guid>
-      <description>安装 1 brew install visual-studio-code 配置 进入配置 文件-&amp;gt; 首选项 -&amp;gt;配置 点击右上边的文件图标，进入打开设置（打开配置文件C:\Users\ \AppData</description>
+      <description>&lt;h2 id=&#34;安装&#34;&gt;安装&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;brew install visual-studio-code
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h2 id=&#34;配置&#34;&gt;配置&lt;/h2&gt;
+&lt;h3 id=&#34;进入配置&#34;&gt;进入配置&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;文件-&amp;gt; 首选项 -&amp;gt;配置&lt;/li&gt;
+&lt;li&gt;点击右上边的文件图标，进入打开设置（打开配置文件C:\Users\ &lt;!-- raw HTML omitted --&gt;\AppData\Roaming\Code\User\settings.json）&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;修改插件安装目录&#34;&gt;修改插件安装目录&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;mklink /D &amp;#34;C:\Users\&amp;lt;username&amp;gt;\.vscode\extensions&amp;#34; &amp;#34;&amp;lt;newpath&amp;gt;&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h2 id=&#34;shortkeys&#34;&gt;shortkeys&lt;/h2&gt;
+&lt;h3 id=&#34;说明&#34;&gt;说明&lt;/h3&gt;
+&lt;p&gt;本文以windows为例。&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="auto" data-theme="auto">
+
+<head>
+	<meta name="generator" content="Hugo 0.164.0"><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>沉风网事</title>
+<meta name="keywords" content="沉风网事, 沉风, 区块链, Glang, 算法, 数据结构">
+<meta name="description" content="沉风网事，以人为本，尊重事实与原理，立足现实，以科技与金融为驱动，中西结合，虚实相应，主要关注互联网，系统架构，区块链，安全，经济，数据等领域">
+<meta name="author" content="">
+<link rel="canonical" href="http://myself659.github.io/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.89ca4972ab5e6aaa05e9a0dae0c4bb64b26585bc79e36f5cf33614eea0283abe.css" integrity="sha256-icpJcqteaqoF6aDa4MS7ZLJlhbx5429c8zYU7qAoOr4=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://myself659.github.io/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://myself659.github.io/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://myself659.github.io/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://myself659.github.io/apple-touch-icon.png">
+<link rel="mask-icon" href="http://myself659.github.io/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" type="application/rss+xml" href="http://myself659.github.io/index.xml" title="rss">
+<link rel="alternate" hreflang="zh-cn" href="http://myself659.github.io/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+                color-scheme: dark;
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .toc {
+                background: var(--entry);
+            }
+        }
+
+    </style>
+</noscript>
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else if (localStorage.getItem("pref-theme") === "light") {
+       document.querySelector("html").dataset.theme = 'light';
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else {
+        document.querySelector("html").dataset.theme = 'light';
+    }
+
+</script><meta property="og:url" content="http://myself659.github.io/">
+  <meta property="og:site_name" content="沉风网事">
+  <meta property="og:title" content="沉风网事">
+  <meta property="og:description" content="沉风网事，以人为本，尊重事实与原理，立足现实，以科技与金融为驱动，中西结合，虚实相应，主要关注互联网，系统架构，区块链，安全，经济，数据等领域">
+  <meta property="og:locale" content="zh_cn">
+  <meta property="og:type" content="website">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="沉风网事">
+  <meta name="twitter:description" content="沉风网事，以人为本，尊重事实与原理，立足现实，以科技与金融为驱动，中西结合，虚实相应，主要关注互联网，系统架构，区块链，安全，经济，数据等领域">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "沉风网事",
+  "url": "http://myself659.github.io/",
+  "description": "沉风网事，以人为本，尊重事实与原理，立足现实，以科技与金融为驱动，中西结合，虚实相应，主要关注互联网，系统架构，区块链，安全，经济，数据等领域",
+  "logo": "http://myself659.github.io/favicon.ico",
+  "sameAs": [
+      
+  ]
+}
+</script>
+</head>
+<body class="list" id="top">
+    <header class="header">
+    <nav class="header-nav">
+        <div class="logo">
+            <a href="http://myself659.github.io/" accesskey="h" title="沉风网事 (Alt + H)">沉风网事</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" class="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg class="moon" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg class="sun" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu" class="menu">
+            <li>
+                <a href="http://myself659.github.io/" title="Home">
+                    <span class="active">Home</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://myself659.github.io/post/" title="Archives">
+                    <span>Archives</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://myself659.github.io/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://myself659.github.io/categories/" title="Categories">
+                    <span>Categories</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://myself659.github.io/search/" title="Search (Alt &#43; /)" accesskey=/>
+                    <span>Search</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://myself659.github.io/about/" title="About">
+                    <span>About</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://myself659.github.io/post/leetcode/" title="LeetCode">
+                    <span>LeetCode</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://myself659.github.io/post/read-post/" title="Reading">
+                    <span>Reading</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://myself659.github.io/post/share-post/" title="Share">
+                    <span>Share</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://myself659.github.io/post/slide-post/" title="Slide">
+                    <span>Slide</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main"> 
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">正交思维与软件工程
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>什么是Orthogonal？ orthogonal表面意思是正交的，直角的。
+平面几何的坐标系的x轴与y轴就是正交关系。
+在软件工程中Orthogonal常常表示两个组件相互独立，无耦合或低耦合。
+...</p>
+  </div>
+  <footer class="entry-footer">
+
+<span title='2019-07-21 11:58:06 +0200 +0200'>July 21, 2019</span></footer>
+  <a class="entry-link" aria-label="post link to 正交思维与软件工程" href="http://myself659.github.io/post/arch/orthogonal-thinking-in-software/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">加密货币市场常用跟踪指标
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>指标 Largest banks by market cap Largest banks by market cap
+总市值 加密货币总市值
+CRYPTOCURRENCY MARKET
+加密数字货币全球图表
+交易量Transaction Volume BTC’s Transaction Volume
+Ethereum’s Transaction Volume
+算力Hash Rate BTC’s Hash Rate
+Ethereum’s Hash Rate
+活跃地址Active Addresses BTC’s Active Addresses
+Ethereum’s Active Addresses
+交易数Transaction Count BTC’s Transaction Count
+Ethereum’s Transaction Count
+Average Transactions Per Second Transaction Rate Per Second
+Average Transaction Value BTC’s Average Transaction Value
+Ethereum’s Average Transaction Value
+Average Transaction Fee BTC’s Average Transaction Fee
+...</p>
+  </div>
+  <footer class="entry-footer">
+
+<span title='2019-07-08 11:58:06 +0200 +0200'>July 8, 2019</span></footer>
+  <a class="entry-link" aria-label="post link to 加密货币市场常用跟踪指标" href="http://myself659.github.io/post/blockchain/blockchain-index-predict/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">如何选择合适的node版本与npm package
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>前言 作为一个常年以c,c&#43;&#43;,golang为主的后端程序员，刚接触nodejs有一个困惑，就是node有哪么多版本到底该选择哪个版本呢？
+node版本 根据需求选择版本，那么node版本有哪些特点呢？
+...</p>
+  </div>
+  <footer class="entry-footer">
+
+<span title='2019-07-08 11:58:06 +0200 +0200'>July 8, 2019</span></footer>
+  <a class="entry-link" aria-label="post link to 如何选择合适的node版本与npm package" href="http://myself659.github.io/post/javascript/node-version/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Facebook libra是昙花一现还是星星之火
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>前言 最近随着Libra横空出世，整个互联网有关的Libra新闻，评论等层出不穷，众说纷云。这么热闹，我当然也要插一脚，讲讲自己的一些思考与看法。
+...</p>
+  </div>
+  <footer class="entry-footer">
+
+<span title='2019-06-26 11:58:06 +0200 +0200'>June 26, 2019</span></footer>
+  <a class="entry-link" aria-label="post link to Facebook libra是昙花一现还是星星之火" href="http://myself659.github.io/post/facebook-libra/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">创业的核心
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>创业的核心 创业的核心：
+把握机会 降低成本 控制风险 </p>
+  </div>
+  <footer class="entry-footer">
+
+<span title='2019-06-24 11:58:06 +0200 +0200'>June 24, 2019</span></footer>
+  <a class="entry-link" aria-label="post link to 创业的核心" href="http://myself659.github.io/post/startup/%E5%88%9B%E4%B8%9A%E7%9A%84%E6%A0%B8%E5%BF%83/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">深入分析Golang sync.pool
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>定义 sync.Pool是一个可以存或取的临时对象池。对外提供New、Get、Put等API，利用mutex支持多线程并发。
+目标 sync.Pool解决以下问题：
+...</p>
+  </div>
+  <footer class="entry-footer">
+
+<span title='2019-06-10 11:58:06 +0200 +0200'>June 10, 2019</span></footer>
+  <a class="entry-link" aria-label="post link to 深入分析Golang sync.pool" href="http://myself659.github.io/post/golang/golang-sync-pool-1/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">谈谈利益
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>来源 利益来自需求与欲望。
+存在 利益存在于现实与预期当中。
+分类 物质利益即可量化的资源、金钱、产品、时间如薪资、补贴、土地、食品 信息利益即获取或保有信息、知识、情报如垄断信息、提前消息、技术诀窍 关系利益即社会资本与网络优势如人脉、合作机会、背书 身份利益即来自身份认同与归属感如种族、宗教、职业、国家带来的合法性与支持 制度利益即被规则保护或优待的权利或特权如法律保障、政策补贴、行政便利 心理利益即内在满足、尊重感、自我实现如荣誉、掌控感、自豪感 特点 可定义 利益是可定义的。
+...</p>
+  </div>
+  <footer class="entry-footer">
+
+<span title='2019-06-07 11:58:06 +0200 +0200'>June 7, 2019</span></footer>
+  <a class="entry-link" aria-label="post link to 谈谈利益" href="http://myself659.github.io/post/human/%E5%88%A9%E7%9B%8A-benfit101/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">如何进入心流状态
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>心流状态 心流状态(Flow State)指的是一种不自觉的身心愉悦感,以及投入在一个活动中的极度专注的心理状态。当一个人全身心地投入一项工作或活动时,会体验到这种异常专注且乐在其中的感觉,这就是心流状态。
+...</p>
+  </div>
+  <footer class="entry-footer">
+
+<span title='2019-06-05 11:58:06 +0200 +0200'>June 5, 2019</span></footer>
+  <a class="entry-link" aria-label="post link to 如何进入心流状态" href="http://myself659.github.io/post/done/how-to-flow-%E5%BF%83%E6%B5%81/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">如何迭代
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>重复不如迭代 迭代相比较于重复有以下特点：
+改变 复用 反馈 结论： 1000次重复不如1000次迭代。
+迭代的原则 小改变，多对比，多迭代 度量迭代 迭代的粒度满足原子性 以bottom-up方式迭代 迭代的循环 迭代的循环由以下过程组成：
+...</p>
+  </div>
+  <footer class="entry-footer">
+
+<span title='2019-06-03 11:58:06 +0200 +0200'>June 3, 2019</span></footer>
+  <a class="entry-link" aria-label="post link to 如何迭代" href="http://myself659.github.io/post/done/how-to-iterate-%E8%BF%AD%E4%BB%A3/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">只做一件事，避免多任务并发
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>多任务并发的危害 人类大脑结构上并不适合多任务处理,强行进行多任务会降低效率与产出 多任务带来的切换成本开销大 多任务处理会降低工作质量，增大压力 多任务加大大脑的负担，容易出错 频繁进行任务切换会形成反馈循环,获得即时满足感但实际效果很少，如果长时间地进行这种循环，大脑很难建立延迟循环 多任务降低深度工作的可能性，导致工作做不到位 多任务影响智商，可能伤害大脑 只做一件事 应对多任务并发的最好的办法就是一个时间块只做一件事。这样做有如下好处：
+...</p>
+  </div>
+  <footer class="entry-footer">
+
+<span title='2019-06-03 11:58:06 +0200 +0200'>June 3, 2019</span></footer>
+  <a class="entry-link" aria-label="post link to 只做一件事，避免多任务并发" href="http://myself659.github.io/post/done/how-to-one-task%E5%8F%AA%E5%81%9A%E4%B8%80%E4%BB%B6%E4%BA%8B/"></a>
+</article>
+<footer class="page-footer">
+  <nav class="pagination">
+    <a class="prev" href="http://myself659.github.io/page/14/">
+      «&nbsp;&nbsp;
+    </a>
+    <a class="next" href="http://myself659.github.io/page/16/">&nbsp;&nbsp;»
+    </a>
+  </nav>
+</footer>
+    </main>
+    
+<footer class="footer">
+        <span>沉风网事</span> · 
+
+    
+    
+    <span>
+        Powered by
+        <a href="https://gohugo.io/?utm_source=papermod" rel="noopener" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" id="top-link" class="top-link hidden" aria-label="go to top" title="Go to Top (Alt + G)" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevrons-up">
+        <polyline points="17 11 12 6 7 11"></polyline>
+        <polyline points="17 18 12 13 7 18"></polyline>
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu');
+    if (menu) {
+        
+        const scrollPosition = localStorage.getItem("menu-scroll-position");
+        if (scrollPosition) {
+            menu.scrollLeft = parseInt(scrollPosition, 10);
+        }
+        
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var toplink = document.getElementById("top-link");
+    window.onscroll = function () {
+        const scrollThreshold = window.innerHeight;
+        if (document.body.scrollTop > scrollThreshold || document.documentElement.scrollTop > scrollThreshold) {
+            toplink.classList.remove("hidden");
+        } else {
+            toplink.classList.add("hidden");
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        const html = document.querySelector("html");
+        if (html.dataset.theme === "dark") {
+            html.dataset.theme = 'light';
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            html.dataset.theme = 'dark';
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>

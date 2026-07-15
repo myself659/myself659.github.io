@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="auto" data-theme="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Arch | 沉风网事</title>
+<meta name="keywords" content="">
+<meta name="description" content="沉风网事，以人为本，尊重事实与原理，立足现实，以科技与金融为驱动，中西结合，虚实相应，主要关注互联网，系统架构，区块链，安全，经济，数据等领域">
+<meta name="author" content="">
+<link rel="canonical" href="http://myself659.github.io/categories/arch/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.89ca4972ab5e6aaa05e9a0dae0c4bb64b26585bc79e36f5cf33614eea0283abe.css" integrity="sha256-icpJcqteaqoF6aDa4MS7ZLJlhbx5429c8zYU7qAoOr4=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://myself659.github.io/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://myself659.github.io/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://myself659.github.io/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://myself659.github.io/apple-touch-icon.png">
+<link rel="mask-icon" href="http://myself659.github.io/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" type="application/rss+xml" href="http://myself659.github.io/categories/arch/index.xml" title="rss">
+<link rel="alternate" hreflang="zh-cn" href="http://myself659.github.io/categories/arch/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+                color-scheme: dark;
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .toc {
+                background: var(--entry);
+            }
+        }
+
+    </style>
+</noscript>
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else if (localStorage.getItem("pref-theme") === "light") {
+       document.querySelector("html").dataset.theme = 'light';
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else {
+        document.querySelector("html").dataset.theme = 'light';
+    }
+
+</script><meta property="og:url" content="http://myself659.github.io/categories/arch/">
+  <meta property="og:site_name" content="沉风网事">
+  <meta property="og:title" content="Arch">
+  <meta property="og:description" content="沉风网事，以人为本，尊重事实与原理，立足现实，以科技与金融为驱动，中西结合，虚实相应，主要关注互联网，系统架构，区块链，安全，经济，数据等领域">
+  <meta property="og:locale" content="zh_cn">
+  <meta property="og:type" content="website">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Arch">
+  <meta name="twitter:description" content="沉风网事，以人为本，尊重事实与原理，立足现实，以科技与金融为驱动，中西结合，虚实相应，主要关注互联网，系统架构，区块链，安全，经济，数据等领域">
+
+</head>
+<body class="list" id="top">
+    <header class="header">
+    <nav class="header-nav">
+        <div class="logo">
+            <a href="http://myself659.github.io/" accesskey="h" title="沉风网事 (Alt + H)">沉风网事</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" class="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg class="moon" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg class="sun" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu" class="menu">
+            <li>
+                <a href="http://myself659.github.io/" title="Home">
+                    <span>Home</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://myself659.github.io/post/" title="Archives">
+                    <span>Archives</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://myself659.github.io/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://myself659.github.io/categories/" title="Categories">
+                    <span>Categories</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://myself659.github.io/search/" title="Search (Alt &#43; /)" accesskey=/>
+                    <span>Search</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://myself659.github.io/about/" title="About">
+                    <span>About</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://myself659.github.io/post/leetcode/" title="LeetCode">
+                    <span>LeetCode</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://myself659.github.io/post/read-post/" title="Reading">
+                    <span>Reading</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://myself659.github.io/post/share-post/" title="Share">
+                    <span>Share</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://myself659.github.io/post/slide-post/" title="Slide">
+                    <span>Slide</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main"> 
+<header class="page-header">
+  <h1>
+    Arch
+  </h1>
+</header>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">loadbalance 101
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p> 前言 在现代互联网架构中，负载均衡（Load Balancing）几乎是每一个高可用、高并发系统的基础组件之一。它在系统稳定性、扩展性与性能方面扮演着至关重要的角色。
+...</p>
+  </div>
+  <footer class="entry-footer">
+
+<span title='2019-01-09 11:58:06 +0200 +0200'>January 9, 2019</span></footer>
+  <a class="entry-link" aria-label="post link to loadbalance 101" href="http://myself659.github.io/post/arch/loadbalance-101/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Cache 101
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p> 前言 在现在互联网系统中cache无处不在，无时不用。
+定义 wiki定义如下：
+a cache is a hardware or software component that stores data so that future requests for that data can be served faster;
+工作原理 一句话：通过将源数据缓存Cache，实现直接通过Cache访问数据。
+...</p>
+  </div>
+  <footer class="entry-footer">
+
+<span title='2019-01-08 11:58:06 +0200 +0200'>January 8, 2019</span></footer>
+  <a class="entry-link" aria-label="post link to Cache 101" href="http://myself659.github.io/post/arch/cache-101/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">软件工程的法则与名言
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>Programming “All problems in computer science can be solved by another level of indirection.” — David Wheeler
+“But that usually will create another problem.” — David Wheeler
+“Simplicity is prerequisite for reliability.” — Edsger Dijkstra
+...</p>
+  </div>
+  <footer class="entry-footer">
+
+<span title='2018-05-11 11:58:06 +0200 +0200'>May 11, 2018</span></footer>
+  <a class="entry-link" aria-label="post link to 软件工程的法则与名言" href="http://myself659.github.io/post/arch/software-engineering-great-quotes/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">高性能服务器设计与优化
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>为了构建自己的知识体系，对高性能服务器设计与优化一点想法，其中不足与错误，欢迎指正。
+高性能服务器设计与优化
+</p>
+  </div>
+  <footer class="entry-footer">
+
+<span title='2017-05-09 11:58:06 +0200 +0200'>May 9, 2017</span></footer>
+  <a class="entry-link" aria-label="post link to 高性能服务器设计与优化" href="http://myself659.github.io/post/2017-05-09-web-server-perf-and-design/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">对于系统设计的一些想法
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>前言 学习了google，facebook等国际一流大厂的开源方案，也研究了国内BAT的一些设计案例，在平时工作自然也少不了一些系统设计的工作，想写一些自己的想法，同时也帮助自己梳理一下思路，实现自己的系统设计的套路。
+...</p>
+  </div>
+  <footer class="entry-footer">
+
+<span title='2017-04-08 11:58:06 +0200 +0200'>April 8, 2017</span></footer>
+  <a class="entry-link" aria-label="post link to 对于系统设计的一些想法" href="http://myself659.github.io/post/2017-04-29-about-system-design/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">IM后端系统设计总结(2)
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>这篇具体写一下用户在线状态系统的具体设计。
+后端架构 这个后端系统设计如下图：
+很大众，国内基本都这么干，不多说
+用户状态系统设计 初期设计 单IDC部署，设计如下:
+相关说明 AG：接入网关，负责用户的连接 ConnRouter：连接路由服务器，主要提供以下功能： 所有用户状态的维护 用户状态查询 用户状态推送 用户状态同步 异步消息路由与转发 状态通知流: 用户登录成功或者下线状态通知 状态同步流：ConnRouter服务器之间用户状态的同步，不需要推送给订阅者 用户消息流: 异步发送给用户的消息在服务器内部的传输 设计要点 参考Kafka的模型，将用户状态改变作为事件，将事件描述为消息，将消息队列化成消息队列 AG对应Kafka中的Producer角色，主要原因是用户状态是用户连接的影子，AG能真实快速感知用户状态 ConnRouter对应Kafka中的Broker UserStat（用户统计与分析）与StateNotify（用户状态通知）对应Kafka中的Consumer 减少耦合，以异步发送消息到用户为例，整个流程三步走： 第一步：生成发送消息，发送到ConnRouter 第二步：根据目的用户ID，查找到出口AG，将消息转发到出口AG 第三步：出口AG查找用户连接，通过连接发送到目的用户 ConnRouter设计 用户状态数据存储设计 用户状态数据存储设计，如下图所示：
+...</p>
+  </div>
+  <footer class="entry-footer">
+
+<span title='2016-08-05 11:58:06 +0200 +0200'>August 5, 2016</span></footer>
+  <a class="entry-link" aria-label="post link to IM后端系统设计总结(2)" href="http://myself659.github.io/post/arch/2016-08-05-im-user-state/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">IM后端系统设计总结(1)
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>定义IM 为用户提供即时消息服务，这里面有三个关键词：用户，消息，服务；下面根据三个关键词来展开总结，先从消息开始。
+消息 消息分类 对消息分类，很简单但是重要，方便后面业务的拆分。
+...</p>
+  </div>
+  <footer class="entry-footer">
+
+<span title='2016-07-29 11:58:06 +0200 +0200'>July 29, 2016</span></footer>
+  <a class="entry-link" aria-label="post link to IM后端系统设计总结(1)" href="http://myself659.github.io/post/arch/2016-07-29-im-message/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">10 Lessons from 10 Years of Amazon Web Services（译文）
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>前言 亚马逊在2006年3月14日发布AWS，到现在差不多10年了。回首过去的10年里，我们在构建 安全，高可用性，可扩展性，低成本的服务方面积累了几百条经验与教训。 由于AWS是建设并在全球运营这些服务的先驱，这些教训对我们的业务至关重要。正如我们以前多次说，“没有压缩经验的算法”，每月有超过百万的活跃客户，这些客户服务几个亿的用户，在这个过程我们不乏机会积累经验并持续优化从而为客户提供更好的服务。
+...</p>
+  </div>
+  <footer class="entry-footer">
+
+<span title='2016-06-02 11:58:06 +0200 +0200'>June 2, 2016</span></footer>
+  <a class="entry-link" aria-label="post link to 10 Lessons from 10 Years of Amazon Web Services（译文）" href="http://myself659.github.io/post/arch/2016-06-02-10-lessons-from-10-years-of-amazon-web-services/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Facebook live一些技术细节
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>协议选择 最初选择HLS,后面切换为RTMP，切换为RTMP主要为了降低延迟，提供更好直播用户体验。
+解决并发问题 分发架构
+采用Live stream server， origin server， edge server 三层架构；如下图如示： ![分发架构图](/images/facebook live arch.png) 一句话就是：通过遍布各地的CDN节点（edge server）实现海量用户的播放请求。
+...</p>
+  </div>
+  <footer class="entry-footer">
+
+<span title='2016-05-27 11:58:06 +0200 +0200'>May 27, 2016</span></footer>
+  <a class="entry-link" aria-label="post link to Facebook live一些技术细节" href="http://myself659.github.io/post/arch/2016-05-27-facebook-live-detail/"></a>
+</article>
+<footer class="page-footer">
+  <nav class="pagination">
+    <a class="prev" href="http://myself659.github.io/categories/arch/page/2/">
+      «&nbsp;&nbsp;
+    </a>
+  </nav>
+</footer>
+    </main>
+    
+<footer class="footer">
+        <span>沉风网事</span> · 
+
+    
+    
+    <span>
+        Powered by
+        <a href="https://gohugo.io/?utm_source=papermod" rel="noopener" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" id="top-link" class="top-link hidden" aria-label="go to top" title="Go to Top (Alt + G)" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevrons-up">
+        <polyline points="17 11 12 6 7 11"></polyline>
+        <polyline points="17 18 12 13 7 18"></polyline>
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu');
+    if (menu) {
+        
+        const scrollPosition = localStorage.getItem("menu-scroll-position");
+        if (scrollPosition) {
+            menu.scrollLeft = parseInt(scrollPosition, 10);
+        }
+        
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var toplink = document.getElementById("top-link");
+    window.onscroll = function () {
+        const scrollThreshold = window.innerHeight;
+        if (document.body.scrollTop > scrollThreshold || document.documentElement.scrollTop > scrollThreshold) {
+            toplink.classList.remove("hidden");
+        } else {
+            toplink.classList.add("hidden");
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        const html = document.querySelector("html");
+        if (html.dataset.theme === "dark") {
+            html.dataset.theme = 'light';
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            html.dataset.theme = 'dark';
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>

@@ -1,31 +1,50 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>done on 沉风网事</title>
+    <title>Done on 沉风网事</title>
     <link>http://myself659.github.io/categories/done/</link>
-    <description>Recent content in done on 沉风网事</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <description>Recent content in Done on 沉风网事</description>
+    <generator>Hugo</generator>
     <language>zh-cn</language>
     <copyright>沉风网事</copyright>
-    <lastBuildDate>Fri, 29 Mar 2024 11:58:06 +0200</lastBuildDate><atom:link href="http://myself659.github.io/categories/done/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 29 Mar 2024 11:58:06 +0200</lastBuildDate>
+    <atom:link href="http://myself659.github.io/categories/done/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>thoughts about do the thing</title>
       <link>http://myself659.github.io/post/done/do-the-thing-101/</link>
       <pubDate>Fri, 29 Mar 2024 11:58:06 +0200</pubDate>
-      
       <guid>http://myself659.github.io/post/done/do-the-thing-101/</guid>
-      <description>what to do ? do the right thing how to do? right do the thing what to done/got ? do the thing right priority do the right thing right do the thing do the thing right</description>
+      <description>&lt;h2 id=&#34;what-to-do-&#34;&gt;what to do ?&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;do the right thing&lt;/strong&gt;&lt;/p&gt;
+&lt;h2 id=&#34;how-to-do&#34;&gt;how to do?&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;right do the thing&lt;/strong&gt;&lt;/p&gt;
+&lt;h2 id=&#34;what-to-donegot-&#34;&gt;what to done/got ?&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;do the thing right&lt;/strong&gt;&lt;/p&gt;
+&lt;h2 id=&#34;priority&#34;&gt;priority&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;do the right thing&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;right do the thing&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;do the thing right&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;</description>
     </item>
-    
     <item>
       <title>The Essence of Transurfing</title>
       <link>http://myself659.github.io/post/done/essence-transurfing/</link>
       <pubDate>Thu, 28 Mar 2024 11:58:06 +0200</pubDate>
-      
       <guid>http://myself659.github.io/post/done/essence-transurfing/</guid>
-      <description>define Transurfing is a philosophy developed by Vadim Zeland that focuses on transforming one&amp;rsquo;s perception of reality and shaping life experience through the power of thought and intention1. It offers a set of twelve golden rules to guide practitioners in navigating life effortlessly
-Essence 1. Unification of Mind and Soul Inner Harmony: The unification and coordination of the mind and soul are at the core of Transurfing. The soul represents the deepest desires and truths, while the mind is responsible for logic and reason.</description>
+      <description>&lt;h2 id=&#34;define&#34;&gt;define&lt;/h2&gt;
+&lt;p&gt;Transurfing is a philosophy developed by Vadim Zeland that focuses on transforming one&amp;rsquo;s perception of reality and shaping life experience through the power of thought and intention1. It offers a set of twelve golden rules to guide practitioners in navigating life effortlessly&lt;/p&gt;
+&lt;h2 id=&#34;essence&#34;&gt;Essence&lt;/h2&gt;
+&lt;h3 id=&#34;1-unification-of-mind-and-soul&#34;&gt;1. Unification of Mind and Soul&lt;/h3&gt;
+&lt;p&gt;Inner Harmony: The unification and coordination of the mind and soul are at the core of Transurfing.
+The soul represents the deepest desires and truths, while the mind is responsible for logic and reason.
+Harmonizing the two leads to inner peace and alignment.&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="auto" data-theme="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>QoS 101 | 沉风网事</title>
+<meta name="keywords" content="arch">
+<meta name="description" content="
+前言
+在现代网络和互联网系统中，服务质量（Quality of Service，简称QoS）已成为确保用户体验和系统性能的关键因素之一。无论是语音通话、视频会议，还是实时数据流传输，QoS技术都在保障服务稳定性、低延迟和高可靠性方面扮演着至关重要的角色。QoS的目标是确保网络资源合理分配，从而优化各种应用的性能，特别是在高流量、复杂环境下。">
+<meta name="author" content="">
+<link rel="canonical" href="http://myself659.github.io/post/distributed/qos-101/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.89ca4972ab5e6aaa05e9a0dae0c4bb64b26585bc79e36f5cf33614eea0283abe.css" integrity="sha256-icpJcqteaqoF6aDa4MS7ZLJlhbx5429c8zYU7qAoOr4=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://myself659.github.io/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://myself659.github.io/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://myself659.github.io/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://myself659.github.io/apple-touch-icon.png">
+<link rel="mask-icon" href="http://myself659.github.io/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" type="application/rss+xml" href="http://myself659.github.io/post/distributed/qos-101/index.xml" title="rss">
+<link rel="alternate" hreflang="zh-cn" href="http://myself659.github.io/post/distributed/qos-101/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+                color-scheme: dark;
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .toc {
+                background: var(--entry);
+            }
+        }
+
+    </style>
+</noscript>
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else if (localStorage.getItem("pref-theme") === "light") {
+       document.querySelector("html").dataset.theme = 'light';
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else {
+        document.querySelector("html").dataset.theme = 'light';
+    }
+
+</script><meta property="og:url" content="http://myself659.github.io/post/distributed/qos-101/">
+  <meta property="og:site_name" content="沉风网事">
+  <meta property="og:title" content="QoS 101">
+  <meta property="og:description" content="前言 在现代网络和互联网系统中，服务质量（Quality of Service，简称QoS）已成为确保用户体验和系统性能的关键因素之一。无论是语音通话、视频会议，还是实时数据流传输，QoS技术都在保障服务稳定性、低延迟和高可靠性方面扮演着至关重要的角色。QoS的目标是确保网络资源合理分配，从而优化各种应用的性能，特别是在高流量、复杂环境下。">
+  <meta property="og:locale" content="zh_cn">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="post">
+    <meta property="article:published_time" content="2019-01-28T11:58:06+02:00">
+    <meta property="article:modified_time" content="2019-01-28T11:58:06+02:00">
+    <meta property="article:tag" content="Arch">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="QoS 101">
+  <meta name="twitter:description" content="前言 在现代网络和互联网系统中，服务质量（Quality of Service，简称QoS）已成为确保用户体验和系统性能的关键因素之一。无论是语音通话、视频会议，还是实时数据流传输，QoS技术都在保障服务稳定性、低延迟和高可靠性方面扮演着至关重要的角色。QoS的目标是确保网络资源合理分配，从而优化各种应用的性能，特别是在高流量、复杂环境下。">
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "http://myself659.github.io/post/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "QoS 101",
+      "item": "http://myself659.github.io/post/distributed/qos-101/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "QoS 101",
+  "name": "QoS 101",
+  "description": " 前言 在现代网络和互联网系统中，服务质量（Quality of Service，简称QoS）已成为确保用户体验和系统性能的关键因素之一。无论是语音通话、视频会议，还是实时数据流传输，QoS技术都在保障服务稳定性、低延迟和高可靠性方面扮演着至关重要的角色。QoS的目标是确保网络资源合理分配，从而优化各种应用的性能，特别是在高流量、复杂环境下。\n",
+  "keywords": [
+    "arch"
+  ],
+  "articleBody": " 前言 在现代网络和互联网系统中，服务质量（Quality of Service，简称QoS）已成为确保用户体验和系统性能的关键因素之一。无论是语音通话、视频会议，还是实时数据流传输，QoS技术都在保障服务稳定性、低延迟和高可靠性方面扮演着至关重要的角色。QoS的目标是确保网络资源合理分配，从而优化各种应用的性能，特别是在高流量、复杂环境下。\n定义 QoS是指在计算机网络中，通过对网络资源的管理和控制，确保特定应用、服务或用户的网络性能达到一定标准的技术手段。\nWiki定义：\nQoS (Quality of Service) refers to the overall performance of a network, particularly the guarantee of certain levels of bandwidth, latency, jitter, and packet loss.\n简单来说，QoS的核心目标是保证网络服务的可预测性和可靠性，尤其在多种服务共享同一网络时，确保每个服务能够得到合适的网络资源。\n工作原理 QoS的工作原理是通过网络设备（如路由器、交换机）根据服务类型、优先级、流量等参数，智能地管理和控制网络资源的分配。在网络中，流量被根据不同的需求进行标记和分类，然后根据这些标记来调配带宽、延迟和丢包等资源。\n一句话：通过流量管理、资源分配和优先级控制，确保关键应用和服务的性能需求得到保障。\n属性与指标 在QoS中，主要关注以下几个属性和性能指标：\n带宽（Bandwidth）：\n表示网络能传输的数据量。QoS技术通过带宽管理，确保高优先级应用能够获得足够的带宽。 延迟（Latency）：\n数据从源到目的地的传输时间。对于实时应用（如VoIP、视频流），延迟要求非常严格。 抖动（Jitter）：\n数据包到达时间的变化。高抖动会导致视频或语音质量的波动，因此需要控制。 丢包率（Packet Loss）：\n数据包在传输过程中丢失的比率。丢包会直接影响应用性能，特别是在视频、语音通话等实时应用中。 吞吐量（Throughput）：\n网络在单位时间内成功传输的数据量。QoS保证吞吐量满足不同服务的需求。 流量优先级（Traffic Prioritization）：\n根据流量的重要性设置优先级，高优先级流量会被给予更多资源，从而保证关键应用的性能。 服务等级协议（SLA）：\n服务提供商和客户之间的协议，定义了QoS的目标和保证。 类型 QoS方法 根据不同的实现方式和控制粒度，QoS可以分为以下几类：\n静态QoS：\n静态QoS通过手动配置网络设备来设置优先级和资源分配，适合流量模式变化不大的环境。 动态QoS：\n动态QoS根据实时网络状态自动调整资源分配。它根据流量变化、网络负载和应用需求，动态调整带宽、延迟等参数。 基于策略的QoS（Policy-Based QoS）：\n基于策略的QoS允许网络管理员定义具体的流量管理策略，如根据源/目的地IP、协议类型、端口等特征来决定流量优先级。 服务质量保障（Guaranteed QoS）：\n保证特定应用获得固定的网络资源，如带宽和延迟等，适用于重要应用的场景，如VoIP、视频会议等。 流量整形（Traffic Shaping）：\n控制流量的发送速率，避免突发流量对网络带宽的占用，从而影响其他流量。 流量控制（Traffic Policing）：\n对流量进行限制，超出限制的流量会被丢弃或延迟。 QoS机制 优先级排队（Priority Queuing）：\n基于流量的优先级设置，不同优先级的流量会被放入不同的队列，优先级高的流量优先传输。 加权公平排队（Weighted Fair Queuing，WFQ）：\n在公平排队的基础上，按照流量的优先级加权，保证每个流量有公平的带宽分配。 基于流的QoS（Flow-Based QoS）：\n根据不同流（如VoIP流、视频流、文件传输流等）进行区分和管理，为每个流分配合适的网络资源。 带宽保证与限制（Bandwidth Guarantee and Limiting）：\n设置应用或用户的带宽上限，并确保关键应用能够获得指定的带宽。 QoS与应用关系 根据应用场景，QoS的配置可以分为以下几类：\n实时应用（如语音、视频会议）：\n对于实时应用，QoS要求低延迟、低抖动和高优先级。语音和视频流常常采用专用的优先队列和带宽保证策略。 非实时应用（如文件传输、网页浏览）：\n非实时应用对延迟的要求较低，可以采用动态带宽分配和流量整形策略，确保网络资源不会过度占用。 混合流量应用（如VoIP + 数据传输）：\n对于混合流量，QoS需要根据不同流量类型设置合理的优先级，确保语音流量优先，数据流量按需分配带宽。 常用QoS产品 Cisco QoS：\nCisco设备提供强大的QoS功能，支持多种流量管理策略，包括优先级队列、带宽控制、流量整形等。 Juniper Networks QoS：\nJuniper的QoS解决方案用于提供带宽管理、延迟优化和流量监控，广泛用于数据中心和企业网络。 MikroTik QoS：\nMikroTik的QoS工具用于带宽管理和流量优先级设置，适用于中小型企业和个人用户。 Huawei QoS：\n华为的QoS解决方案可以在大型企业网络和运营商级网络中提供高效的流量管理，支持复杂的策略配置和流量调度。 pfSense QoS：\npfSense是一款开源防火墙解决方案，提供全面的QoS设置，帮助小型企业实现流量控制和带宽管理。 总结 QoS（服务质量）是现代网络中确保不同类型应用和服务按预期运行的重要机制。通过合理配置QoS，网络能够有效保障关键应用（如VoIP、视频会议等）的低延迟、高带宽需求，并优化其他非实时应用的网络体验。在日益复杂的网络环境下，QoS技术的有效部署能显著提升网络资源的利用率，改善用户体验并确保服务稳定性。\n",
+  "wordCount" : "2177",
+  "inLanguage": "zh-cn",
+  "datePublished": "2019-01-28T11:58:06+02:00",
+  "dateModified": "2019-01-28T11:58:06+02:00",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "http://myself659.github.io/post/distributed/qos-101/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "沉风网事",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "http://myself659.github.io/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+<body id="top">
+    <header class="header">
+    <nav class="header-nav">
+        <div class="logo">
+            <a href="http://myself659.github.io/" accesskey="h" title="沉风网事 (Alt + H)">沉风网事</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" class="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg class="moon" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg class="sun" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu" class="menu">
+            <li>
+                <a href="http://myself659.github.io/" title="Home">
+                    <span>Home</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://myself659.github.io/post/" title="Archives">
+                    <span>Archives</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://myself659.github.io/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://myself659.github.io/categories/" title="Categories">
+                    <span>Categories</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://myself659.github.io/search/" title="Search (Alt &#43; /)" accesskey=/>
+                    <span>Search</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://myself659.github.io/about/" title="About">
+                    <span>About</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://myself659.github.io/post/leetcode/" title="LeetCode">
+                    <span>LeetCode</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://myself659.github.io/post/read-post/" title="Reading">
+                    <span>Reading</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://myself659.github.io/post/share-post/" title="Share">
+                    <span>Share</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://myself659.github.io/post/slide-post/" title="Slide">
+                    <span>Slide</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title entry-hint-parent">
+      QoS 101
+    </h1>
+    <div class="post-meta">
+
+<span title='2019-01-28 11:58:06 +0200 +0200'>January 28, 2019</span>
+
+</div>
+  </header> 
+  <div class="post-content md-content"><hr>
+<h2 id="前言">前言<a hidden class="anchor" aria-hidden="true" href="#前言">#</a></h2>
+<p>在现代网络和互联网系统中，服务质量（Quality of Service，简称QoS）已成为确保用户体验和系统性能的关键因素之一。无论是语音通话、视频会议，还是实时数据流传输，QoS技术都在保障服务稳定性、低延迟和高可靠性方面扮演着至关重要的角色。QoS的目标是确保网络资源合理分配，从而优化各种应用的性能，特别是在高流量、复杂环境下。</p>
+<h2 id="定义">定义<a hidden class="anchor" aria-hidden="true" href="#定义">#</a></h2>
+<p><strong>QoS</strong>是指在计算机网络中，通过对网络资源的管理和控制，确保特定应用、服务或用户的网络性能达到一定标准的技术手段。</p>
+<p><strong>Wiki定义：</strong></p>
+<blockquote>
+<p>QoS (Quality of Service) refers to the overall performance of a network, particularly the guarantee of certain levels of bandwidth, latency, jitter, and packet loss.</p>
+</blockquote>
+<p>简单来说，QoS的核心目标是保证网络服务的可预测性和可靠性，尤其在多种服务共享同一网络时，确保每个服务能够得到合适的网络资源。</p>
+<h2 id="工作原理">工作原理<a hidden class="anchor" aria-hidden="true" href="#工作原理">#</a></h2>
+<p>QoS的工作原理是通过网络设备（如路由器、交换机）根据服务类型、优先级、流量等参数，智能地管理和控制网络资源的分配。在网络中，流量被根据不同的需求进行标记和分类，然后根据这些标记来调配带宽、延迟和丢包等资源。</p>
+<p>一句话：<strong>通过流量管理、资源分配和优先级控制，确保关键应用和服务的性能需求得到保障。</strong></p>
+<h2 id="属性与指标">属性与指标<a hidden class="anchor" aria-hidden="true" href="#属性与指标">#</a></h2>
+<p>在QoS中，主要关注以下几个属性和性能指标：</p>
+<ol>
+<li>
+<p><strong>带宽（Bandwidth）</strong>：</p>
+<ul>
+<li>表示网络能传输的数据量。QoS技术通过带宽管理，确保高优先级应用能够获得足够的带宽。</li>
+</ul>
+</li>
+<li>
+<p><strong>延迟（Latency）</strong>：</p>
+<ul>
+<li>数据从源到目的地的传输时间。对于实时应用（如VoIP、视频流），延迟要求非常严格。</li>
+</ul>
+</li>
+<li>
+<p><strong>抖动（Jitter）</strong>：</p>
+<ul>
+<li>数据包到达时间的变化。高抖动会导致视频或语音质量的波动，因此需要控制。</li>
+</ul>
+</li>
+<li>
+<p><strong>丢包率（Packet Loss）</strong>：</p>
+<ul>
+<li>数据包在传输过程中丢失的比率。丢包会直接影响应用性能，特别是在视频、语音通话等实时应用中。</li>
+</ul>
+</li>
+<li>
+<p><strong>吞吐量（Throughput）</strong>：</p>
+<ul>
+<li>网络在单位时间内成功传输的数据量。QoS保证吞吐量满足不同服务的需求。</li>
+</ul>
+</li>
+<li>
+<p><strong>流量优先级（Traffic Prioritization）</strong>：</p>
+<ul>
+<li>根据流量的重要性设置优先级，高优先级流量会被给予更多资源，从而保证关键应用的性能。</li>
+</ul>
+</li>
+<li>
+<p><strong>服务等级协议（SLA）</strong>：</p>
+<ul>
+<li>服务提供商和客户之间的协议，定义了QoS的目标和保证。</li>
+</ul>
+</li>
+</ol>
+<h2 id="类型">类型<a hidden class="anchor" aria-hidden="true" href="#类型">#</a></h2>
+<h3 id="qos方法">QoS方法<a hidden class="anchor" aria-hidden="true" href="#qos方法">#</a></h3>
+<p>根据不同的实现方式和控制粒度，QoS可以分为以下几类：</p>
+<ol>
+<li>
+<p><strong>静态QoS</strong>：</p>
+<ul>
+<li>静态QoS通过手动配置网络设备来设置优先级和资源分配，适合流量模式变化不大的环境。</li>
+</ul>
+</li>
+<li>
+<p><strong>动态QoS</strong>：</p>
+<ul>
+<li>动态QoS根据实时网络状态自动调整资源分配。它根据流量变化、网络负载和应用需求，动态调整带宽、延迟等参数。</li>
+</ul>
+</li>
+<li>
+<p><strong>基于策略的QoS（Policy-Based QoS）</strong>：</p>
+<ul>
+<li>基于策略的QoS允许网络管理员定义具体的流量管理策略，如根据源/目的地IP、协议类型、端口等特征来决定流量优先级。</li>
+</ul>
+</li>
+<li>
+<p><strong>服务质量保障（Guaranteed QoS）</strong>：</p>
+<ul>
+<li>保证特定应用获得固定的网络资源，如带宽和延迟等，适用于重要应用的场景，如VoIP、视频会议等。</li>
+</ul>
+</li>
+<li>
+<p><strong>流量整形（Traffic Shaping）</strong>：</p>
+<ul>
+<li>控制流量的发送速率，避免突发流量对网络带宽的占用，从而影响其他流量。</li>
+</ul>
+</li>
+<li>
+<p><strong>流量控制（Traffic Policing）</strong>：</p>
+<ul>
+<li>对流量进行限制，超出限制的流量会被丢弃或延迟。</li>
+</ul>
+</li>
+</ol>
+<h3 id="qos机制">QoS机制<a hidden class="anchor" aria-hidden="true" href="#qos机制">#</a></h3>
+<ol>
+<li>
+<p><strong>优先级排队（Priority Queuing）</strong>：</p>
+<ul>
+<li>基于流量的优先级设置，不同优先级的流量会被放入不同的队列，优先级高的流量优先传输。</li>
+</ul>
+</li>
+<li>
+<p><strong>加权公平排队（Weighted Fair Queuing，WFQ）</strong>：</p>
+<ul>
+<li>在公平排队的基础上，按照流量的优先级加权，保证每个流量有公平的带宽分配。</li>
+</ul>
+</li>
+<li>
+<p><strong>基于流的QoS（Flow-Based QoS）</strong>：</p>
+<ul>
+<li>根据不同流（如VoIP流、视频流、文件传输流等）进行区分和管理，为每个流分配合适的网络资源。</li>
+</ul>
+</li>
+<li>
+<p><strong>带宽保证与限制（Bandwidth Guarantee and Limiting）</strong>：</p>
+<ul>
+<li>设置应用或用户的带宽上限，并确保关键应用能够获得指定的带宽。</li>
+</ul>
+</li>
+</ol>
+<h3 id="qos与应用关系">QoS与应用关系<a hidden class="anchor" aria-hidden="true" href="#qos与应用关系">#</a></h3>
+<p>根据应用场景，QoS的配置可以分为以下几类：</p>
+<ol>
+<li>
+<p><strong>实时应用（如语音、视频会议）</strong>：</p>
+<ul>
+<li>对于实时应用，QoS要求低延迟、低抖动和高优先级。语音和视频流常常采用专用的优先队列和带宽保证策略。</li>
+</ul>
+</li>
+<li>
+<p><strong>非实时应用（如文件传输、网页浏览）</strong>：</p>
+<ul>
+<li>非实时应用对延迟的要求较低，可以采用动态带宽分配和流量整形策略，确保网络资源不会过度占用。</li>
+</ul>
+</li>
+<li>
+<p><strong>混合流量应用（如VoIP + 数据传输）</strong>：</p>
+<ul>
+<li>对于混合流量，QoS需要根据不同流量类型设置合理的优先级，确保语音流量优先，数据流量按需分配带宽。</li>
+</ul>
+</li>
+</ol>
+<h2 id="常用qos产品">常用QoS产品<a hidden class="anchor" aria-hidden="true" href="#常用qos产品">#</a></h2>
+<ol>
+<li>
+<p><strong>Cisco QoS</strong>：</p>
+<ul>
+<li>Cisco设备提供强大的QoS功能，支持多种流量管理策略，包括优先级队列、带宽控制、流量整形等。</li>
+</ul>
+</li>
+<li>
+<p><strong>Juniper Networks QoS</strong>：</p>
+<ul>
+<li>Juniper的QoS解决方案用于提供带宽管理、延迟优化和流量监控，广泛用于数据中心和企业网络。</li>
+</ul>
+</li>
+<li>
+<p><strong>MikroTik QoS</strong>：</p>
+<ul>
+<li>MikroTik的QoS工具用于带宽管理和流量优先级设置，适用于中小型企业和个人用户。</li>
+</ul>
+</li>
+<li>
+<p><strong>Huawei QoS</strong>：</p>
+<ul>
+<li>华为的QoS解决方案可以在大型企业网络和运营商级网络中提供高效的流量管理，支持复杂的策略配置和流量调度。</li>
+</ul>
+</li>
+<li>
+<p><strong>pfSense QoS</strong>：</p>
+<ul>
+<li>pfSense是一款开源防火墙解决方案，提供全面的QoS设置，帮助小型企业实现流量控制和带宽管理。</li>
+</ul>
+</li>
+</ol>
+<h2 id="总结">总结<a hidden class="anchor" aria-hidden="true" href="#总结">#</a></h2>
+<p>QoS（服务质量）是现代网络中确保不同类型应用和服务按预期运行的重要机制。通过合理配置QoS，网络能够有效保障关键应用（如VoIP、视频会议等）的低延迟、高带宽需求，并优化其他非实时应用的网络体验。在日益复杂的网络环境下，QoS技术的有效部署能显著提升网络资源的利用率，改善用户体验并确保服务稳定性。</p>
+<hr>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="http://myself659.github.io/tags/arch/">Arch</a></li>
+    </ul>
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>沉风网事</span> · 
+
+    
+    
+    <span>
+        Powered by
+        <a href="https://gohugo.io/?utm_source=papermod" rel="noopener" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" id="top-link" class="top-link hidden" aria-label="go to top" title="Go to Top (Alt + G)" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevrons-up">
+        <polyline points="17 11 12 6 7 11"></polyline>
+        <polyline points="17 18 12 13 7 18"></polyline>
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu');
+    if (menu) {
+        
+        const scrollPosition = localStorage.getItem("menu-scroll-position");
+        if (scrollPosition) {
+            menu.scrollLeft = parseInt(scrollPosition, 10);
+        }
+        
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var toplink = document.getElementById("top-link");
+    window.onscroll = function () {
+        const scrollThreshold = window.innerHeight;
+        if (document.body.scrollTop > scrollThreshold || document.documentElement.scrollTop > scrollThreshold) {
+            toplink.classList.remove("hidden");
+        } else {
+            toplink.classList.add("hidden");
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        const html = document.querySelector("html");
+        if (html.dataset.theme === "dark") {
+            html.dataset.theme = 'light';
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            html.dataset.theme = 'dark';
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>

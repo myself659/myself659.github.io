@@ -1,48 +1,133 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>English on 沉风网事</title>
     <link>http://myself659.github.io/categories/english/</link>
     <description>Recent content in English on 沉风网事</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>zh-cn</language>
     <copyright>沉风网事</copyright>
-    <lastBuildDate>Mon, 26 Apr 2021 11:58:06 +0200</lastBuildDate><atom:link href="http://myself659.github.io/categories/english/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 26 Apr 2021 11:58:06 +0200</lastBuildDate>
+    <atom:link href="http://myself659.github.io/categories/english/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>100 days, 100 english sentences</title>
       <link>http://myself659.github.io/post/english/100-english-sentence/</link>
       <pubDate>Mon, 26 Apr 2021 11:58:06 +0200</pubDate>
-      
       <guid>http://myself659.github.io/post/english/100-english-sentence/</guid>
-      <description>day1 2021年1月16日 星期六 1 There is considerable debate over how we should react if we detect a signal from an alien civilisation. 翻译： 如果我们探测到了来自外星文明的信号，我们应该如何回应是一个备受争议的</description>
+      <description>&lt;h2 id=&#34;day1-2021年1月16日-星期六&#34;&gt;day1 2021年1月16日 星期六&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-gdscript3&#34; data-lang=&#34;gdscript3&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;There&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;is&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;considerable&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;debate&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;over&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;how&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;we&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;should&lt;/span&gt;  &lt;span class=&#34;n&#34;&gt;react&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;we&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;detect&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;a&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;signal&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;from&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;an&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;alien&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;civilisation&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;翻译：
+如果我们探测到了来自外星文明的信号，我们应该如何回应是一个备受争议的问题。&lt;/p&gt;
+&lt;h2 id=&#34;day2-2021年1月17日-星期日&#34;&gt;day2 2021年1月17日 星期日&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;The two world wars, which interrupted the supply of raw material from Japan, also stifled the European silk industry.
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;翻译： 两次世界大战中断了来自日本的原材料供应，同时也抑制了欧洲的丝绸工业。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>45 English sentence pattern</title>
       <link>http://myself659.github.io/post/english/45-english-sentence-pattern/</link>
       <pubDate>Sat, 16 Jan 2021 11:58:06 +0200</pubDate>
-      
       <guid>http://myself659.github.io/post/english/45-english-sentence-pattern/</guid>
-      <description>询问 who can who can help me move this box? who is who is that girl in blue? when can we when can we go hiking? When did you when did you come back? where is where is the washroom? where can I where can i find some bottled water? why do/did why did you quit your job? how did you How did you get to know each other?</description>
+      <description>&lt;h2 id=&#34;询问&#34;&gt;询问&lt;/h2&gt;
+&lt;h3 id=&#34;who-can&#34;&gt;who can&lt;/h3&gt;
+&lt;p&gt;who can help me move this box?&lt;/p&gt;
+&lt;h3 id=&#34;who-is&#34;&gt;who is&lt;/h3&gt;
+&lt;p&gt;who is that girl in blue?&lt;/p&gt;
+&lt;h3 id=&#34;when-can-we&#34;&gt;when can we&lt;/h3&gt;
+&lt;p&gt;when can we go hiking?&lt;/p&gt;
+&lt;h3 id=&#34;when-did-you&#34;&gt;When did you&lt;/h3&gt;
+&lt;p&gt;when did you come back?&lt;/p&gt;
+&lt;h3 id=&#34;where-is&#34;&gt;where is&lt;/h3&gt;
+&lt;p&gt;where is the washroom?&lt;/p&gt;
+&lt;h3 id=&#34;where-can-i&#34;&gt;where can I&lt;/h3&gt;
+&lt;p&gt;where can  i find  some bottled  water?&lt;/p&gt;
+&lt;h3 id=&#34;why-dodid&#34;&gt;why do/did&lt;/h3&gt;
+&lt;p&gt;why did you quit your job?&lt;/p&gt;
+&lt;h3 id=&#34;how-did-you&#34;&gt;how did you&lt;/h3&gt;
+&lt;p&gt;How did you get to know each other?&lt;/p&gt;
+&lt;h3 id=&#34;how-about&#34;&gt;how about&lt;/h3&gt;
+&lt;p&gt;how about having a cup of coffee?&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Quotes From Albert Einstein</title>
       <link>http://myself659.github.io/post/english/quotes-from-albert-einstein/</link>
       <pubDate>Fri, 15 Jan 2021 11:58:06 +0200</pubDate>
-      
       <guid>http://myself659.github.io/post/english/quotes-from-albert-einstein/</guid>
-      <description>The difference between stupidity and genius is that genius has its limits. We all know that light travels faster than sound. That’s why certain people appear bright until you hear them speak. The only thing that interferes with my learning is my education. Education is what remains after one has forgotten everything he learned in school. The majority of the stupid is invincible and guaranteed for all time. The terror of their tyranny, however, is alleviated by their lack of consistency.</description>
+      <description>&lt;ol&gt;
+&lt;li&gt;The difference between stupidity and genius is that genius has its limits.&lt;/li&gt;
+&lt;li&gt;We all know that light travels faster than sound. That’s why certain people appear bright until you hear them speak.&lt;/li&gt;
+&lt;li&gt;The only thing that interferes with my learning is my education.&lt;/li&gt;
+&lt;li&gt;Education is what remains after one has forgotten everything he learned in school.&lt;/li&gt;
+&lt;li&gt;The majority of the stupid is invincible and guaranteed for all time. The terror of their tyranny, however, is alleviated by their lack of consistency.&lt;/li&gt;
+&lt;li&gt;Only two things are infinite, the universe and human stupidity, and I’m not sure about the former.&lt;/li&gt;
+&lt;li&gt;Common sense is the collection of prejudices acquired by age eighteen.&lt;/li&gt;
+&lt;li&gt;Men marry women with the hope they will never change. Women marry men with the hope they will change. Invariably, they are both disappointed.&lt;/li&gt;
+&lt;li&gt;Any man who can drive safely while kissing a pretty girl is simply not giving the kiss the attention it deserves.&lt;/li&gt;
+&lt;li&gt;If A is a success in life, then A equals x plus y plus z. Work is x; y is play; and z is keeping your mouth shut.&lt;/li&gt;
+&lt;li&gt;The equation for ego is: One over Knowledge.&lt;/li&gt;
+&lt;li&gt;With fame, I become more and more stupid, which of course is a very common phenomenon.&lt;/li&gt;
+&lt;li&gt;People are like bicycles. They can keep their balance only as long as they keep moving.（Life is like riding a bicycle. To keep your balance, you must keep moving）&lt;/li&gt;
+&lt;li&gt;Intellectuals solve problems, geniuses prevent them.&lt;/li&gt;
+&lt;li&gt;The hardest thing in the world to understand is the income tax.&lt;/li&gt;
+&lt;li&gt;Whoever undertakes to set himself up as a judge of Truth and Knowledge is shipwrecked by the laughter of the gods.&lt;/li&gt;
+&lt;li&gt;As a human being, one has been endowed with just enough intelligence to be able to see clearly how utterly inadequate that intelligence is when confronted with what exists.&lt;/li&gt;
+&lt;li&gt;When you are courting a nice girl an hour seems like a second. When you sit on a red-hot cinder a second seems like an hour. That’s relativity.&lt;/li&gt;
+&lt;li&gt;The only reason for time is so that everything doesn’t happen at once.&lt;/li&gt;
+&lt;li&gt;If you are out to describe the truth, leave elegance to the tailor.&lt;/li&gt;
+&lt;li&gt;You see, wire telegraph is a kind of a very, very long cat. You pull his tail in New York and his head is meowing in Los Angeles. Do you understand this? And radio operates exactly the same way: you send signals here, they receive them there. The only difference is that there is no cat.&lt;/li&gt;
+&lt;li&gt;If I had an hour to solve a problem, I’d spend 55 minutes thinking about the problem and 5 minutes thinking about solutions.&lt;/li&gt;
+&lt;li&gt;If you want to live a happy life, tie it to a goal. Not to people or things.&lt;/li&gt;
+&lt;li&gt;I must be willing to give up what I am in order to become what I will be.&lt;/li&gt;
+&lt;li&gt;Mathematics is, in its way, the poetry of logical ideas.&lt;/li&gt;
+&lt;li&gt;It is not that I’m so smart. But I stay with the questions much longer.&lt;/li&gt;
+&lt;li&gt;You Don’t Have to Know Everything. You Just Have to Know Where to Find It.&lt;/li&gt;
+&lt;li&gt;Imagination is more important than knowledge. Knowledge is limited. Imagination encircles the world.&lt;/li&gt;
+&lt;li&gt;A clever person solves a problem. A wise person avoids it.&lt;/li&gt;
+&lt;li&gt;A happy man is too satisfied with the present to dwell too much on the future.&lt;/li&gt;
+&lt;/ol&gt;</description>
     </item>
-    
     <item>
       <title>英文学习材料</title>
       <link>http://myself659.github.io/post/tech-english-collection/</link>
       <pubDate>Thu, 25 Jan 2018 11:58:06 +0200</pubDate>
-      
       <guid>http://myself659.github.io/post/tech-english-collection/</guid>
-      <description>Golang Let&amp;rsquo;s Talk Locks! Maintaining the Go Crypto Libraries Blockchain CoinTalk Arch Life of a Packet through Istio Algorithms behind Modern Storage Systems Aurora Serverless: The Good, the Bad and the Scalable rust How Rust Views Tradeoffs Rust&amp;rsquo;s Journey to Async/await More infoq Presentations</description>
+      <description>&lt;h2 id=&#34;golang&#34;&gt;Golang&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.infoq.com/presentations/go-locks/&#34;&gt;Let&amp;rsquo;s Talk Locks!&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.infoq.com/presentations/go-crypto-library/&#34;&gt;Maintaining the Go Crypto Libraries&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;blockchain&#34;&gt;Blockchain&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&#34;https://medium.com/@cointalk.show&#34;&gt;CoinTalk&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;arch&#34;&gt;Arch&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.infoq.com/presentations/life-packet-istio/&#34;&gt;Life of a Packet through Istio&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.infoq.com/presentations/storage-algorithms/&#34;&gt;Algorithms behind Modern Storage Systems&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.jeremydaly.com/aurora-serverless-the-good-the-bad-and-the-scalable/&#34;&gt;Aurora Serverless: The Good, the Bad and the Scalable&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;rust&#34;&gt;rust&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.infoq.com/presentations/rust-tradeoffs/&#34;&gt;How Rust Views Tradeoffs&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.infoq.com/presentations/rust-2019&#34;&gt;Rust&amp;rsquo;s Journey to Async/await&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;more&#34;&gt;More&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.infoq.com/transcripts/presentations/&#34;&gt;infoq Presentations&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;</description>
     </item>
-    
   </channel>
 </rss>

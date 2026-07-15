@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="auto" data-theme="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Distributed | 沉风网事</title>
+<meta name="keywords" content="">
+<meta name="description" content="沉风网事，以人为本，尊重事实与原理，立足现实，以科技与金融为驱动，中西结合，虚实相应，主要关注互联网，系统架构，区块链，安全，经济，数据等领域">
+<meta name="author" content="">
+<link rel="canonical" href="http://myself659.github.io/categories/distributed/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.89ca4972ab5e6aaa05e9a0dae0c4bb64b26585bc79e36f5cf33614eea0283abe.css" integrity="sha256-icpJcqteaqoF6aDa4MS7ZLJlhbx5429c8zYU7qAoOr4=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://myself659.github.io/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://myself659.github.io/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://myself659.github.io/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://myself659.github.io/apple-touch-icon.png">
+<link rel="mask-icon" href="http://myself659.github.io/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" type="application/rss+xml" href="http://myself659.github.io/categories/distributed/index.xml" title="rss">
+<link rel="alternate" hreflang="zh-cn" href="http://myself659.github.io/categories/distributed/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+                color-scheme: dark;
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .toc {
+                background: var(--entry);
+            }
+        }
+
+    </style>
+</noscript>
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else if (localStorage.getItem("pref-theme") === "light") {
+       document.querySelector("html").dataset.theme = 'light';
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else {
+        document.querySelector("html").dataset.theme = 'light';
+    }
+
+</script><meta property="og:url" content="http://myself659.github.io/categories/distributed/">
+  <meta property="og:site_name" content="沉风网事">
+  <meta property="og:title" content="Distributed">
+  <meta property="og:description" content="沉风网事，以人为本，尊重事实与原理，立足现实，以科技与金融为驱动，中西结合，虚实相应，主要关注互联网，系统架构，区块链，安全，经济，数据等领域">
+  <meta property="og:locale" content="zh_cn">
+  <meta property="og:type" content="website">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Distributed">
+  <meta name="twitter:description" content="沉风网事，以人为本，尊重事实与原理，立足现实，以科技与金融为驱动，中西结合，虚实相应，主要关注互联网，系统架构，区块链，安全，经济，数据等领域">
+
+</head>
+<body class="list" id="top">
+    <header class="header">
+    <nav class="header-nav">
+        <div class="logo">
+            <a href="http://myself659.github.io/" accesskey="h" title="沉风网事 (Alt + H)">沉风网事</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" class="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg class="moon" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg class="sun" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu" class="menu">
+            <li>
+                <a href="http://myself659.github.io/" title="Home">
+                    <span>Home</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://myself659.github.io/post/" title="Archives">
+                    <span>Archives</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://myself659.github.io/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://myself659.github.io/categories/" title="Categories">
+                    <span>Categories</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://myself659.github.io/search/" title="Search (Alt &#43; /)" accesskey=/>
+                    <span>Search</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://myself659.github.io/about/" title="About">
+                    <span>About</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://myself659.github.io/post/leetcode/" title="LeetCode">
+                    <span>LeetCode</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://myself659.github.io/post/read-post/" title="Reading">
+                    <span>Reading</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://myself659.github.io/post/share-post/" title="Share">
+                    <span>Share</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://myself659.github.io/post/slide-post/" title="Slide">
+                    <span>Slide</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main"> 
+<header class="page-header">
+  <h1>
+    Distributed
+  </h1>
+</header>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Fencing 101
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p> 前言 在分布式系统中，我们常用 Lease（租约） 控制某个节点对资源的独占访问。然而，当网络分区或节点故障后，“过期”节点仍可能持有旧的访问权限并发起非法写入，这就引入了一个严重问题：脑裂（Split Brain）写入。
+...</p>
+  </div>
+  <footer class="entry-footer">
+
+<span title='2018-10-25 11:58:06 +0200 +0200'>October 25, 2018</span></footer>
+  <a class="entry-link" aria-label="post link to Fencing 101" href="http://myself659.github.io/post/distributed/fencing-101/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Gossip 101
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p> 前言 在大规模分布式系统中，节点之间需要高效、可靠地传播状态信息，如节点上线、宕机、负载等。而中心化广播机制很难应对规模扩展、容错要求等问题。Gossip 协议（又称“八卦协议”）作为一种去中心化、鲁棒性强的通信机制，被广泛应用于分布式数据库、服务注册中心、容错系统等场景。
+...</p>
+  </div>
+  <footer class="entry-footer">
+
+<span title='2018-10-25 11:58:06 +0200 +0200'>October 25, 2018</span></footer>
+  <a class="entry-link" aria-label="post link to Gossip 101" href="http://myself659.github.io/post/distributed/gossip-101/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Heartbeat 101
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p> 前言 在现代分布式系统中，故障检测 是系统高可用的基础能力。系统需要实时感知某个节点是否还“存活”，以便及时做出容错或主备切换。这一机制中，Heartbeat（心跳） 是最核心的技术手段。
+...</p>
+  </div>
+  <footer class="entry-footer">
+
+<span title='2018-10-25 11:58:06 +0200 +0200'>October 25, 2018</span></footer>
+  <a class="entry-link" aria-label="post link to Heartbeat 101" href="http://myself659.github.io/post/distributed/heartbeat-101/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Lease 101
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p> 前言 在分布式系统中，多个节点同时访问或修改同一资源时，如何保证一致性和避免冲突是一个核心问题。传统的锁机制在高延迟和故障环境下难以保证可靠性，因此出现了一种更适合分布式环境的机制 —— Lease（租约）。
+...</p>
+  </div>
+  <footer class="entry-footer">
+
+<span title='2018-10-25 11:58:06 +0200 +0200'>October 25, 2018</span></footer>
+  <a class="entry-link" aria-label="post link to Lease 101" href="http://myself659.github.io/post/distributed/lease-101/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Phi Accrual Failure Detector algorithm 101
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p> 前言 在现代分布式系统中，节点失效检测是系统容错能力的基石。简单的“超时判断”往往无法应对真实网络环境中的延迟波动、抖动等问题，于是更加智能化的失效检测算法应运而生。其中，Phi Accrual Failure Detector（Φ 累积失败探测器） 是被广泛应用的一种算法，如 Cassandra、Akka、Etcd 等系统都基于它构建健康检查机制。
+...</p>
+  </div>
+  <footer class="entry-footer">
+
+<span title='2018-10-25 11:58:06 +0200 +0200'>October 25, 2018</span></footer>
+  <a class="entry-link" aria-label="post link to Phi Accrual Failure Detector algorithm 101" href="http://myself659.github.io/post/distributed/phi-accrual-failure-detector-algorithm-101/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Split Brain 101
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p> 前言 在现代互联网系统中，分布式系统 被广泛应用来提高可用性、扩展性与容错性。但网络的不稳定、节点的故障或管理上的分歧，常常会引发一个危险的问题：Split Brain（脑裂）。
+...</p>
+  </div>
+  <footer class="entry-footer">
+
+<span title='2018-10-25 11:58:06 +0200 +0200'>October 25, 2018</span></footer>
+  <a class="entry-link" aria-label="post link to Split Brain 101" href="http://myself659.github.io/post/distributed/split-brain-101/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Raft 101
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p> 前言 在分布式系统中，一致性共识协议是保证多个节点达成同一状态的核心技术。虽然 Paxos 提供了理论基础，但它实现复杂、理解困难。为此，Raft 协议应运而生，目标是更易理解、实现且具备等价安全性。
+...</p>
+  </div>
+  <footer class="entry-footer">
+
+<span title='2018-10-24 11:58:06 +0200 +0200'>October 24, 2018</span></footer>
+  <a class="entry-link" aria-label="post link to Raft 101" href="http://myself659.github.io/post/distributed/raft-101/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Paxos 101
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p> 前言 在现代分布式系统中，多个节点如何就某个“真相”达成一致，是构建可靠系统的核心问题之一。无论是分布式数据库、共识引擎，还是一致性协调服务，**一致性协议（Consensus Protocol）**都是底层基石。Paxos 正是其中最经典、最具理论价值的协议之一。
+...</p>
+  </div>
+  <footer class="entry-footer">
+
+<span title='2018-10-23 11:58:06 +0200 +0200'>October 23, 2018</span></footer>
+  <a class="entry-link" aria-label="post link to Paxos 101" href="http://myself659.github.io/post/distributed/paxos-101/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">为什么BFT要求诚实节点数量大于总节点的三分之二
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>相信很多人都知道，BFT(Byzantine fault tolerance)要求诚实节点数量大于总节点的三分之二。
+为什么会有这个要求？
+多数派原则 多数派原则在分布式系统很常见，即确保网络分化情况下的决议唯一。其原理是，假如节点总数是2f&#43;1，那么一项决议得到多于f个节点赞成则获得通过。leader选举中，网络分化下，只有具有多数派节点的部分才可能选出leader。多数派还可以用于副本管理，根据实际情况调整写副本数和读副本数，在可靠性和性能之间取得平衡。 在分布式系统，无论paxos，还是raft，以投票来达成共识，在整个达成共识的过程中都遵守多数派原则。
+...</p>
+  </div>
+  <footer class="entry-footer">
+
+<span title='2018-03-23 11:58:06 +0200 +0200'>March 23, 2018</span></footer>
+  <a class="entry-link" aria-label="post link to 为什么BFT要求诚实节点数量大于总节点的三分之二" href="http://myself659.github.io/post/distributed/distributed-bft/"></a>
+</article>
+<footer class="page-footer">
+  <nav class="pagination">
+    <a class="prev" href="http://myself659.github.io/categories/distributed/">
+      «&nbsp;&nbsp;
+    </a>
+  </nav>
+</footer>
+    </main>
+    
+<footer class="footer">
+        <span>沉风网事</span> · 
+
+    
+    
+    <span>
+        Powered by
+        <a href="https://gohugo.io/?utm_source=papermod" rel="noopener" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" id="top-link" class="top-link hidden" aria-label="go to top" title="Go to Top (Alt + G)" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevrons-up">
+        <polyline points="17 11 12 6 7 11"></polyline>
+        <polyline points="17 18 12 13 7 18"></polyline>
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu');
+    if (menu) {
+        
+        const scrollPosition = localStorage.getItem("menu-scroll-position");
+        if (scrollPosition) {
+            menu.scrollLeft = parseInt(scrollPosition, 10);
+        }
+        
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var toplink = document.getElementById("top-link");
+    window.onscroll = function () {
+        const scrollThreshold = window.innerHeight;
+        if (document.body.scrollTop > scrollThreshold || document.documentElement.scrollTop > scrollThreshold) {
+            toplink.classList.remove("hidden");
+        } else {
+            toplink.classList.add("hidden");
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        const html = document.querySelector("html");
+        if (html.dataset.theme === "dark") {
+            html.dataset.theme = 'light';
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            html.dataset.theme = 'dark';
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>

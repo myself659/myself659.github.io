@@ -1,30 +1,52 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>writing on 沉风网事</title>
+    <title>Writing on 沉风网事</title>
     <link>http://myself659.github.io/tags/writing/</link>
-    <description>Recent content in writing on 沉风网事</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <description>Recent content in Writing on 沉风网事</description>
+    <generator>Hugo</generator>
     <language>zh-cn</language>
     <copyright>沉风网事</copyright>
-    <lastBuildDate>Fri, 08 Sep 2023 11:58:06 +0800</lastBuildDate><atom:link href="http://myself659.github.io/tags/writing/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 08 Sep 2023 11:58:06 +0800</lastBuildDate>
+    <atom:link href="http://myself659.github.io/tags/writing/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>说说写作即学习</title>
       <link>http://myself659.github.io/post/rt/learn-though-writing/</link>
       <pubDate>Fri, 08 Sep 2023 11:58:06 +0800</pubDate>
-      
       <guid>http://myself659.github.io/post/rt/learn-though-writing/</guid>
-      <description>背景 写作即学习。 写作是学习体现以下几个方面： 写作完成学习内容的记录 写作发现有关学习内容的问题 写作加深学习内容的记忆与理解 写作是对学习内容的一</description>
+      <description>&lt;h2 id=&#34;背景&#34;&gt;背景&lt;/h2&gt;
+&lt;p&gt;写作即学习。&lt;/p&gt;
+&lt;p&gt;写作是学习体现以下几个方面：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;写作完成学习内容的记录&lt;/li&gt;
+&lt;li&gt;写作发现有关学习内容的问题&lt;/li&gt;
+&lt;li&gt;写作加深学习内容的记忆与理解&lt;/li&gt;
+&lt;li&gt;写作是对学习内容的一种测试方式&lt;/li&gt;
+&lt;li&gt;写作促进对学习内容的吸收与发散&lt;/li&gt;
+&lt;li&gt;写作引导结学习内容的深入理解与精准描述及表达&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;如何通过写作来学习&#34;&gt;如何通过写作来学习&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;完成要点与精华的记录&lt;/li&gt;
+&lt;li&gt;记录发现的问题&lt;/li&gt;
+&lt;li&gt;通过记录的问题驱动深入思考&lt;/li&gt;
+&lt;li&gt;通过写作发现差距并解决gap&lt;/li&gt;
+&lt;li&gt;通过写作交付高质量的内容来驱动练习&lt;/li&gt;
+&lt;li&gt;在写作的过程中践行费曼技巧，落实图文的方式的解释&lt;/li&gt;
+&lt;li&gt;把握写作的触发点：记录，总结，探索，反思，分享，测试对比&amp;hellip;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;如何保证写作的一致性&#34;&gt;如何保证写作的一致性&lt;/h2&gt;
+&lt;p&gt;这里一致性是指：&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>写作是什么</title>
       <link>http://myself659.github.io/post/rt/what-is-writing/</link>
       <pubDate>Thu, 08 Jun 2023 11:58:06 +0800</pubDate>
-      
       <guid>http://myself659.github.io/post/rt/what-is-writing/</guid>
-      <description>背景 写作这项技能被低估了。 写作被低估了，是因为我们没有好好定义什么是写作？或者说我们没有理解写作是什么？ 当我们不去作的事情，我们一定认为这件</description>
+      <description>&lt;h2 id=&#34;背景&#34;&gt;背景&lt;/h2&gt;
+&lt;p&gt;写作这项技能被低估了。&lt;/p&gt;
+&lt;p&gt;写作被低估了，是因为我们没有好好定义什么是写作？或者说我们没有理解写作是什么？&lt;/p&gt;
+&lt;p&gt;当我们不去作的事情，我们一定认为这件事是不重要的。当我们深入理解了写作的重要性，才能动力去写作，至少会开始记录（写作的最低水平）。&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

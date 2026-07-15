@@ -1,35 +1,68 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>work on 沉风网事</title>
+    <title>Work on 沉风网事</title>
     <link>http://myself659.github.io/tags/work/</link>
-    <description>Recent content in work on 沉风网事</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <description>Recent content in Work on 沉风网事</description>
+    <generator>Hugo</generator>
     <language>zh-cn</language>
     <copyright>沉风网事</copyright>
-    <lastBuildDate>Thu, 04 Apr 2024 11:58:06 +0200</lastBuildDate><atom:link href="http://myself659.github.io/tags/work/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 04 Apr 2024 11:58:06 +0200</lastBuildDate>
+    <atom:link href="http://myself659.github.io/tags/work/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>principles for deep work</title>
       <link>http://myself659.github.io/post/work/12steps-to-deep-focus/</link>
       <pubDate>Thu, 04 Apr 2024 11:58:06 +0200</pubDate>
-      
       <guid>http://myself659.github.io/post/work/12steps-to-deep-focus/</guid>
-      <description>Block out any distractions   turn off all phone notifications or leave it in another room
-  Distraction is the biggest enemy to deep focus
-  Go for a walk before starting   Go out in nature
-  Explore somewhere new
-  Plan it out the night before   Set your main 3 priorities
-  Write them down and forget until morning</description>
+      <description>&lt;h2 id=&#34;block-out-any-distractions&#34;&gt;Block out any distractions&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;turn off all  phone notifications or leave it  in another room&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Distraction is the biggest enemy to  deep focus&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;go-for-a-walk-before-starting&#34;&gt;Go for a walk before starting&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Go out in  nature&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Explore somewhere  new&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;plan-it--out--the-night-before&#34;&gt;Plan it  out  the night before&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Set your main 3 priorities&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Write them down and  forget  until morning&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;blout-out--time-around-your--schedule-eg-6-8-am&#34;&gt;Blout out  time around your  schedule (Eg: 6-8 am)&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;This will be protectedtime&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Stay consistant with that time&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>tips for time management</title>
       <link>http://myself659.github.io/post/work/time-tips/</link>
       <pubDate>Wed, 03 Apr 2024 11:58:06 +0200</pubDate>
-      
       <guid>http://myself659.github.io/post/work/time-tips/</guid>
-      <description>backgroud Time &amp;gt; Money. tips 1. The 2-Minute Rule If it takes less than 2 minutes, do it now, Yes, even if it&amp;rsquo;s getting up to stretch Procrastination is for stretching, not tasks! 2. The 5-Minute Rule try it more than 5 minutes even the task is hard. 3. Eat the Frog First Tackle the hardest task first thing in the morning, Frogs taste better when you&amp;rsquo;re notthinking about them</description>
+      <description>&lt;h2 id=&#34;backgroud&#34;&gt;backgroud&lt;/h2&gt;
+&lt;p&gt;Time &amp;gt; Money.&lt;/p&gt;
+&lt;h2 id=&#34;tips&#34;&gt;tips&lt;/h2&gt;
+&lt;h3 id=&#34;1-the-2-minute-rule&#34;&gt;1. The 2-Minute Rule&lt;/h3&gt;
+&lt;p&gt;If it takes less than 2 minutes, do it now, Yes, even if it&amp;rsquo;s getting up to stretch Procrastination is for stretching, not tasks!&lt;/p&gt;
+&lt;h3 id=&#34;2-the-5-minute-rule&#34;&gt;2. The 5-Minute Rule&lt;/h3&gt;
+&lt;p&gt;try it more than 5 minutes even the task is hard.&lt;/p&gt;
+&lt;h3 id=&#34;3-eat-the-frog-first&#34;&gt;3. Eat the Frog First&lt;/h3&gt;
+&lt;p&gt;Tackle the hardest task first thing in the morning, Frogs taste better when you&amp;rsquo;re notthinking about them all day.&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

@@ -1,210 +1,424 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>thinking on 沉风网事</title>
+    <title>Thinking on 沉风网事</title>
     <link>http://myself659.github.io/tags/thinking/</link>
-    <description>Recent content in thinking on 沉风网事</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <description>Recent content in Thinking on 沉风网事</description>
+    <generator>Hugo</generator>
     <language>zh-cn</language>
     <copyright>沉风网事</copyright>
-    <lastBuildDate>Wed, 01 Nov 2023 11:58:06 +0800</lastBuildDate><atom:link href="http://myself659.github.io/tags/thinking/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 01 Nov 2023 11:58:06 +0800</lastBuildDate>
+    <atom:link href="http://myself659.github.io/tags/thinking/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>效率是不够的</title>
       <link>http://myself659.github.io/post/rt/%E6%95%88%E7%8E%87%E6%98%AF%E4%B8%8D%E5%A4%9F%E7%9A%84/</link>
       <pubDate>Wed, 01 Nov 2023 11:58:06 +0800</pubDate>
-      
       <guid>http://myself659.github.io/post/rt/%E6%95%88%E7%8E%87%E6%98%AF%E4%B8%8D%E5%A4%9F%E7%9A%84/</guid>
-      <description>背景 人们常常强调到效率的重要性。 效率Efficiency Wiki定义如下： Efficiency is the often measurable ability to avoid wasting materials, energy, efforts, money, and time while performing a task. 效率是不够的 效率是片面的。效</description>
+      <description>&lt;h2 id=&#34;背景&#34;&gt;背景&lt;/h2&gt;
+&lt;p&gt;人们常常强调到效率的重要性。&lt;/p&gt;
+&lt;h2 id=&#34;效率efficiency&#34;&gt;效率Efficiency&lt;/h2&gt;
+&lt;p&gt;Wiki定义如下：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Efficiency is the often measurable ability to avoid wasting materials, energy, efforts, money, and time while performing a task.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;效率是不够的&#34;&gt;效率是不够的&lt;/h2&gt;
+&lt;p&gt;效率是片面的。效率是过程角度来评价。&lt;/p&gt;
+&lt;p&gt;更全面的评价可以根据IPO框架来展开：&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>谈谈反思</title>
       <link>http://myself659.github.io/post/rt/how-to-reflect-%E5%8F%8D%E6%80%9D/</link>
       <pubDate>Fri, 27 Oct 2023 11:58:06 +0200</pubDate>
-      
       <guid>http://myself659.github.io/post/rt/how-to-reflect-%E5%8F%8D%E6%80%9D/</guid>
-      <description>背景 瑞达利欧提出一个公式： 痛苦+反思=进步。 个人认为这个公式更好： 痛苦+反思+迭代 = 进步。 为什么要反思 在现在这个大环境，学习生活工作如逆水行</description>
+      <description>&lt;h2 id=&#34;背景&#34;&gt;背景&lt;/h2&gt;
+&lt;p&gt;瑞达利欧提出一个公式：&lt;/p&gt;
+&lt;p&gt;痛苦+反思=进步。&lt;/p&gt;
+&lt;p&gt;个人认为这个公式更好：&lt;/p&gt;
+&lt;p&gt;痛苦+反思+迭代 = 进步。&lt;/p&gt;
+&lt;h2 id=&#34;为什么要反思&#34;&gt;为什么要反思&lt;/h2&gt;
+&lt;p&gt;在现在这个大环境，学习生活工作如逆水行舟，不进则退。痛苦很容易感觉到，那么根据上面的公式，进步的关键在于反思。反思是进步的开始，是迭代的基础，反思是一种调整，反思是一种适应。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>什么才是好问题</title>
       <link>http://myself659.github.io/post/rt/what-is-good-questions/</link>
       <pubDate>Sat, 21 Oct 2023 11:58:06 +0800</pubDate>
-      
       <guid>http://myself659.github.io/post/rt/what-is-good-questions/</guid>
-      <description>背景 提问比回答更重要。那么什么才是一个好问题呢？ 特点 好问题具有以一下特点： 立足事实与科学。 清晰具体明确。 简洁直击关键。 开放性。 有新意。 有深度</description>
+      <description>&lt;h2 id=&#34;背景&#34;&gt;背景&lt;/h2&gt;
+&lt;p&gt;提问比回答更重要。那么什么才是一个好问题呢？&lt;/p&gt;
+&lt;h2 id=&#34;特点&#34;&gt;特点&lt;/h2&gt;
+&lt;p&gt;好问题具有以一下特点：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;立足事实与科学。&lt;/li&gt;
+&lt;li&gt;清晰具体明确。&lt;/li&gt;
+&lt;li&gt;简洁直击关键。&lt;/li&gt;
+&lt;li&gt;开放性。&lt;/li&gt;
+&lt;li&gt;有新意。&lt;/li&gt;
+&lt;li&gt;有深度。&lt;/li&gt;
+&lt;li&gt;启发性。&lt;/li&gt;
+&lt;li&gt;引导性。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;参考实例&#34;&gt;参考实例&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;同样是诛杀了权臣，为什么北魏孝庄帝元子攸与大清康熙帝的下场却截然不同（康熙帝成功地开启了康乾盛世，元子攸却没有成功清除权臣的残余势力以致身死）？&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>关于看见的思考</title>
       <link>http://myself659.github.io/post/rt/%E5%85%B3%E4%BA%8E%E7%9C%8B%E8%A7%81%E7%9A%84%E6%80%9D%E8%80%83/</link>
       <pubDate>Sat, 23 Sep 2023 11:58:06 +0800</pubDate>
-      
       <guid>http://myself659.github.io/post/rt/%E5%85%B3%E4%BA%8E%E7%9C%8B%E8%A7%81%E7%9A%84%E6%80%9D%E8%80%83/</guid>
-      <description>tips 你的视野决定你的看见的范围 你的位置与视角决定你看见什么 你的注意力决定你从看见中得到什么（注意力其实一个过滤器） 你的想法决定你从看见中看见了</description>
+      <description>&lt;h2 id=&#34;tips&#34;&gt;tips&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;你的视野决定你的看见的范围&lt;/li&gt;
+&lt;li&gt;你的位置与视角决定你看见什么&lt;/li&gt;
+&lt;li&gt;你的注意力决定你从看见中得到什么（注意力其实一个过滤器）&lt;/li&gt;
+&lt;li&gt;你的想法决定你从看见中看见了什么&lt;/li&gt;
+&lt;li&gt;不会主动转换位置与视角，那么系统会决定你会看见什么&lt;/li&gt;
+&lt;li&gt;你看见三种形式： 现象，事实，本质&lt;/li&gt;
+&lt;li&gt;你看见的都不是全局&lt;/li&gt;
+&lt;li&gt;你没有看见远远超过你所看见的&lt;/li&gt;
+&lt;li&gt;你看见往往是你自己在这个世界的投射&lt;/li&gt;
+&lt;li&gt;衡量看见的宏观度量角度： 视野大小，视力远近，视角多少，看见的精度，看见的深度，洞察的准度，跨越的维度&lt;/li&gt;
+&lt;/ol&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;</description>
     </item>
-    
     <item>
       <title>如何判断团队是否处于下行状态</title>
       <link>http://myself659.github.io/post/rt/%E5%9B%A2%E9%98%9F%E7%8A%B6%E6%80%81%E8%AF%8A%E6%96%AD/</link>
       <pubDate>Sun, 18 Dec 2022 11:58:06 +0200</pubDate>
-      
       <guid>http://myself659.github.io/post/rt/%E5%9B%A2%E9%98%9F%E7%8A%B6%E6%80%81%E8%AF%8A%E6%96%AD/</guid>
-      <description>团队如果有以下状态，团队可能处于下行状态： 团队成员流失严重，且处于加速状态 团队一部分成员内卷严重 团队一部分成员普遍躺平 团队会议没有人主动发声</description>
+      <description>&lt;p&gt;团队如果有以下状态，团队可能处于下行状态：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;团队成员流失严重，且处于加速状态&lt;/li&gt;
+&lt;li&gt;团队一部分成员内卷严重&lt;/li&gt;
+&lt;li&gt;团队一部分成员普遍躺平&lt;/li&gt;
+&lt;li&gt;团队会议没有人主动发声&lt;/li&gt;
+&lt;li&gt;团队成员总是同意领导的决定&lt;/li&gt;
+&lt;li&gt;团队成员害怕失败，怕承担责任&lt;/li&gt;
+&lt;li&gt;团队效率与产出下降&lt;/li&gt;
+&lt;li&gt;团队的决定需要逐级上报&lt;/li&gt;
+&lt;li&gt;团队内有大量的微管理&lt;/li&gt;
+&lt;li&gt;团队成员即使状态挣扎，也不主动求助&lt;/li&gt;
+&lt;li&gt;团队不能正视问题，拖延或甩锅&lt;/li&gt;
+&lt;li&gt;团队内团伙多，存在内讧，缺少凝聚力&lt;/li&gt;
+&lt;li&gt;团队目标与路径不统一&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;团队领导如何解决这些问题?说一句正确的废话：尊重事实，直面问题，对症下药，制定正确的策略，领导要以身作则，以实际行动来改变团队的现状，至少要让团队在变坏的路上先停下来。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>观音菩萨是如何实现权力变现的</title>
       <link>http://myself659.github.io/post/rt/%E8%A7%82%E9%9F%B3%E6%98%AF%E5%A6%82%E4%BD%95%E6%9D%83%E5%8A%9B%E5%8F%98%E7%8E%B0/</link>
       <pubDate>Wed, 11 May 2022 11:58:06 +0200</pubDate>
-      
       <guid>http://myself659.github.io/post/rt/%E8%A7%82%E9%9F%B3%E6%98%AF%E5%A6%82%E4%BD%95%E6%9D%83%E5%8A%9B%E5%8F%98%E7%8E%B0/</guid>
-      <description>背景 《西游记》小时候只知道看那只猴子，实际上无论是电视剧还是小说里面都隐含大量的知识点。 下面就以观音菩萨是如何实现权力变现的展开说明。 权力来</description>
+      <description>&lt;h2 id=&#34;背景&#34;&gt;背景&lt;/h2&gt;
+&lt;p&gt;《西游记》小时候只知道看那只猴子，实际上无论是电视剧还是小说里面都隐含大量的知识点。&lt;/p&gt;
+&lt;p&gt;下面就以观音菩萨是如何实现权力变现的展开说明。&lt;/p&gt;
+&lt;h2 id=&#34;权力来源与意图&#34;&gt;权力来源与意图&lt;/h2&gt;
+&lt;p&gt;西游记第八回：&lt;/p&gt;</description>
     </item>
-    
+    <item>
+      <title>愚蠢：危险的敌人</title>
+      <link>http://myself659.github.io/post/rt/stupid-foolish-is-dangerous-enemy/</link>
+      <pubDate>Fri, 01 Apr 2022 11:58:06 +0800</pubDate>
+      <guid>http://myself659.github.io/post/rt/stupid-foolish-is-dangerous-enemy/</guid>
+      <description>&lt;h2 id=&#34;背景&#34;&gt;背景&lt;/h2&gt;
+&lt;p&gt;今天是愚人节。愚人是今天大部分人的例行活动。这里不列举各种愚人的活动，只谈一下这些愚人活动的意义。
+在我看来，这些愚人活动有以下作用：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;大部分愚人活动提供了一些幽默&lt;/li&gt;
+&lt;li&gt;提供教育价值，让大部分了解一些骗人的方法与形式&lt;/li&gt;
+&lt;li&gt;测试一下哪些人容易被骗&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;愚蠢的人与社会&#34;&gt;愚蠢的人与社会&lt;/h2&gt;
+&lt;h3 id=&#34;愚蠢的人&#34;&gt;愚蠢的人&lt;/h3&gt;
+&lt;p&gt;对于愚蠢的人caoz总结下面的六大定律：&lt;/p&gt;</description>
+    </item>
     <item>
       <title>什么样的问题背后有大机会呢？</title>
       <link>http://myself659.github.io/post/rt/chances-from-what-problem/</link>
       <pubDate>Fri, 11 Feb 2022 11:58:06 +0800</pubDate>
-      
       <guid>http://myself659.github.io/post/rt/chances-from-what-problem/</guid>
-      <description>前言 人们常说： 问题的背后常常隐藏了机会。 那么什么样的问题背后有大机会呢？或者隐藏大机会的问题有哪些特征？ 下面个人谈一个自己对这个问题一些思考</description>
+      <description>&lt;h2 id=&#34;前言&#34;&gt;前言&lt;/h2&gt;
+&lt;p&gt;人们常说：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;问题的背后常常隐藏了机会。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;那么什么样的问题背后有大机会呢？或者隐藏大机会的问题有哪些特征？&lt;/p&gt;
+&lt;p&gt;下面个人谈一个自己对这个问题一些思考与看法。&lt;/p&gt;
+&lt;h2 id=&#34;问题特征&#34;&gt;问题特征&lt;/h2&gt;
+&lt;p&gt;隐藏大机会的问题个人认为往往有以下特征：&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>应对复杂性的原则</title>
       <link>http://myself659.github.io/post/rt/%E5%A4%8D%E6%9D%82%E6%80%A7%E5%8E%9F%E5%88%99-complexity/</link>
       <pubDate>Sat, 03 Jul 2021 11:58:06 +0800</pubDate>
-      
       <guid>http://myself659.github.io/post/rt/%E5%A4%8D%E6%9D%82%E6%80%A7%E5%8E%9F%E5%88%99-complexity/</guid>
-      <description>原则 不追求完美 解决核心问题 跳出框架，摆脱限制 从自身，事实，简单开始，多迭代</description>
+      <description>&lt;h2 id=&#34;原则&#34;&gt;原则&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;不追求完美&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;解决核心问题&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;跳出框架，摆脱限制&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;从自身，事实，简单开始，多迭代&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;</description>
     </item>
-    
     <item>
       <title>第一性原理思考101</title>
       <link>http://myself659.github.io/post/rt/first-principles-%E7%AC%AC%E4%B8%80%E6%80%A7%E5%8E%9F%E7%90%86/</link>
       <pubDate>Fri, 03 Jul 2020 11:58:06 +0800</pubDate>
-      
       <guid>http://myself659.github.io/post/rt/first-principles-%E7%AC%AC%E4%B8%80%E6%80%A7%E5%8E%9F%E7%90%86/</guid>
-      <description>定义 第一性原理(First Principles)是指从基本原理出发进行思考和解决问题的方法。其具体含义可以概括为: 不做任何假设,客观看待问题</description>
+      <description>&lt;h2 id=&#34;定义&#34;&gt;定义&lt;/h2&gt;
+&lt;p&gt;第一性原理(First Principles)是指从基本原理出发进行思考和解决问题的方法。其具体含义可以概括为:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;不做任何假设,客观看待问题,抛开已有的经验与习惯思维。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>说说系统思考</title>
       <link>http://myself659.github.io/post/rt/systems-thinking101/</link>
       <pubDate>Sun, 12 Apr 2020 11:58:06 +0200</pubDate>
-      
       <guid>http://myself659.github.io/post/rt/systems-thinking101/</guid>
-      <description>什么是系统 先看wiki的定义： A system is a group of interacting or interrelated elements that act according to a set of rules to form a unified whole. A system, surrounded and influenced by its environment, is described by its boundaries, structure and purpose and is expressed in its functioning. Systems are the subjects of study of systems theory and</description>
+      <description>&lt;h2 id=&#34;什么是系统&#34;&gt;什么是系统&lt;/h2&gt;
+&lt;p&gt;先看wiki的定义：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;A system is a group of interacting or interrelated elements that act according to a set of rules to form a unified whole. A system, surrounded and influenced by its environment, is described by its boundaries, structure and purpose and is expressed in its functioning. Systems are the subjects of study of systems theory and other systems sciences.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Systems have several common properties and characteristics, including structure, function(s), behavior and interconnectivity.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>如何清晰地思考</title>
       <link>http://myself659.github.io/post/rt/thinking-clear/</link>
       <pubDate>Sat, 11 Apr 2020 11:58:06 +0200</pubDate>
-      
       <guid>http://myself659.github.io/post/rt/thinking-clear/</guid>
-      <description>定义 思考是一个多方面的认知过程，包括多种心理活动，如推理、逻辑、直觉、本能、可视化、想象、感知、解决问题和决策。 那么什么是清晰地思考呢？ 在日</description>
+      <description>&lt;h2 id=&#34;定义&#34;&gt;定义&lt;/h2&gt;
+&lt;p&gt;思考是一个多方面的认知过程，包括多种心理活动，如推理、逻辑、直觉、本能、可视化、想象、感知、解决问题和决策。&lt;/p&gt;
+&lt;p&gt;那么什么是清晰地思考呢？&lt;/p&gt;
+&lt;p&gt;在日常生活清晰思考是指头脑清楚，思路清晰。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>情绪认知的误区</title>
       <link>http://myself659.github.io/post/rt/%E6%83%85%E7%BB%AA%E8%AE%A4%E7%9F%A5%E7%9A%84%E8%AF%AF%E5%8C%BA/</link>
       <pubDate>Sun, 10 Nov 2019 11:58:06 +0800</pubDate>
-      
       <guid>http://myself659.github.io/post/rt/%E6%83%85%E7%BB%AA%E8%AE%A4%E7%9F%A5%E7%9A%84%E8%AF%AF%E5%8C%BA/</guid>
-      <description>背景 发现自己对情绪没有自己的思考，这方面有很多不知道自己不知道的东西。 误区总结 没有明确：情绪是人生底层操作系统 低估了情绪价值 低估了被情绪主导</description>
+      <description>&lt;h2 id=&#34;背景&#34;&gt;背景&lt;/h2&gt;
+&lt;p&gt;发现自己对情绪没有自己的思考，这方面有很多不知道自己不知道的东西。&lt;/p&gt;
+&lt;h2 id=&#34;误区总结&#34;&gt;误区总结&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;没有明确：情绪是人生底层操作系统&lt;/li&gt;
+&lt;li&gt;低估了情绪价值&lt;/li&gt;
+&lt;li&gt;低估了被情绪主导的人数与比例&lt;/li&gt;
+&lt;li&gt;忽略了共情别人的情绪&lt;/li&gt;
+&lt;li&gt;试图控制自己的情绪，导致情绪的恶性循环&lt;/li&gt;
+&lt;li&gt;试图分清自己的情绪的好坏&lt;/li&gt;
+&lt;li&gt;试图逃离情绪&lt;/li&gt;
+&lt;li&gt;不知道自己处于情绪化主导中（不自觉追求情绪价值）&lt;/li&gt;
+&lt;li&gt;主动将情绪同各种事情耦合在一起&lt;/li&gt;
+&lt;li&gt;没有建立适应情绪的行为模式&lt;/li&gt;
+&lt;li&gt;认为情绪多变，不需要研究与学习&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;总结&#34;&gt;总结&lt;/h2&gt;
+&lt;p&gt;情绪是人生底层操作系统。情绪无时不在，无处不在，与情绪共处，应用情绪才是关键。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>世界的特征</title>
       <link>http://myself659.github.io/post/rt/%E4%B8%96%E7%95%8C%E7%9A%84%E7%89%B9%E5%BE%81/</link>
       <pubDate>Sat, 13 Apr 2019 11:58:06 +0200</pubDate>
-      
       <guid>http://myself659.github.io/post/rt/%E4%B8%96%E7%95%8C%E7%9A%84%E7%89%B9%E5%BE%81/</guid>
-      <description>通用特征 Volatile不稳定的 Uncertain不确定的 Complex复杂的 Ambiguous模糊的 Unfair不公平的 Asymmetri</description>
+      <description>&lt;h2 id=&#34;通用特征&#34;&gt;通用特征&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;Volatile不稳定的&lt;/li&gt;
+&lt;li&gt;Uncertain不确定的&lt;/li&gt;
+&lt;li&gt;Complex复杂的&lt;/li&gt;
+&lt;li&gt;Ambiguous模糊的&lt;/li&gt;
+&lt;li&gt;Unfair不公平的&lt;/li&gt;
+&lt;li&gt;Asymmetrical非对称性的&lt;/li&gt;
+&lt;li&gt;Entropic熵增的&lt;/li&gt;
+&lt;li&gt;Challenging挑战性的&lt;/li&gt;
+&lt;li&gt;Nonlinearity非线性的&lt;/li&gt;
+&lt;li&gt;Atomicity 原子性&lt;/li&gt;
+&lt;li&gt;Virtual 虚拟的&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;个体与世界&#34;&gt;个体与世界&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;个体是世界（环境）的产物&lt;/li&gt;
+&lt;li&gt;个体在世界是渺小&lt;/li&gt;
+&lt;li&gt;个体在世界最终还得依靠自己&lt;/li&gt;
+&lt;li&gt;个体之间存在巨大的差异&lt;/li&gt;
+&lt;/ol&gt;</description>
     </item>
-    
     <item>
       <title>理解社会的抽象</title>
       <link>http://myself659.github.io/post/rt/%E7%A4%BE%E4%BC%9A%E7%9A%84%E6%8A%BD%E8%B1%A1/</link>
       <pubDate>Fri, 12 Apr 2019 11:58:06 +0200</pubDate>
-      
       <guid>http://myself659.github.io/post/rt/%E7%A4%BE%E4%BC%9A%E7%9A%84%E6%8A%BD%E8%B1%A1/</guid>
-      <description>背景 认识自己与认识世界，是我们学习两个方面。 世界很大，有客观的物理世界，有由人组成的社会，有虚拟的世界等等，这里还是先以人为本，先看由人组成</description>
+      <description>&lt;h2 id=&#34;背景&#34;&gt;背景&lt;/h2&gt;
+&lt;p&gt;认识自己与认识世界，是我们学习两个方面。&lt;/p&gt;
+&lt;p&gt;世界很大，有客观的物理世界，有由人组成的社会，有虚拟的世界等等，这里还是先以人为本，先看由人组成的社会。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>关于团队建设与沟通一点思考</title>
       <link>http://myself659.github.io/post/rt/%E5%A6%82%E4%BD%95%E6%8F%90%E9%AB%98%E5%9B%A2%E9%98%9F%E6%80%9D%E8%80%83%E4%B8%8E%E4%BA%A4%E6%B5%81/</link>
       <pubDate>Mon, 11 Jun 2018 11:58:06 +0200</pubDate>
-      
       <guid>http://myself659.github.io/post/rt/%E5%A6%82%E4%BD%95%E6%8F%90%E9%AB%98%E5%9B%A2%E9%98%9F%E6%80%9D%E8%80%83%E4%B8%8E%E4%BA%A4%E6%B5%81/</guid>
-      <description>关于团队建设与交流一点看法。主要要点如下： 团队奉行人人平等的原则 团队成员每一个人都学会认真聆听 团队将追求轻松交谈作为目标 团队成员要学会发现别</description>
+      <description>&lt;p&gt;关于团队建设与交流一点看法。主要要点如下：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;团队奉行人人平等的原则&lt;/li&gt;
+&lt;li&gt;团队成员每一个人都学会认真聆听&lt;/li&gt;
+&lt;li&gt;团队将追求轻松交谈作为目标&lt;/li&gt;
+&lt;li&gt;团队成员要学会发现别人的闪光点，并提供真诚，具体，简洁的赞赏&lt;/li&gt;
+&lt;li&gt;团队要鼓励深入思考并敢于冒险&lt;/li&gt;
+&lt;li&gt;调节团队情绪，保持积极向上的团队风貌&lt;/li&gt;
+&lt;li&gt;扩大消息面与来源，避免偏见&lt;/li&gt;
+&lt;li&gt;鼓励面对现实与尖锐问题&lt;/li&gt;
+&lt;li&gt;求同存异，允许不同意见与看法的存在&lt;/li&gt;
+&lt;li&gt;打造良好的沟通场所与氛围&lt;/li&gt;
+&lt;/ol&gt;</description>
     </item>
-    
     <item>
       <title>什么是高质量的思考</title>
       <link>http://myself659.github.io/post/learn/%E9%AB%98%E8%B4%A8%E9%87%8F%E6%80%9D%E8%80%83-thinking/</link>
       <pubDate>Sat, 03 Jun 2017 11:58:06 +0200</pubDate>
-      
       <guid>http://myself659.github.io/post/learn/%E9%AB%98%E8%B4%A8%E9%87%8F%E6%80%9D%E8%80%83-thinking/</guid>
-      <description>思考的质量 人一思考,上帝就开始发笑。所以人要学会思考，提高思考的质量。 下面从四个角度来看看有哪些因素决定思考的质量？ 原则 怀疑一切，大胆假设，</description>
+      <description>&lt;h2 id=&#34;思考的质量&#34;&gt;思考的质量&lt;/h2&gt;
+&lt;p&gt;人一思考,上帝就开始发笑。所以人要学会思考，提高思考的质量。&lt;/p&gt;
+&lt;p&gt;下面从四个角度来看看有哪些因素决定思考的质量？&lt;/p&gt;
+&lt;h2 id=&#34;原则&#34;&gt;原则&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;怀疑一切，大胆假设，小心验证&lt;/li&gt;
+&lt;li&gt;实事求是&lt;/li&gt;
+&lt;li&gt;注重方法与策略&lt;/li&gt;
+&lt;li&gt;主动积极&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;input&#34;&gt;Input&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;好问题&lt;/li&gt;
+&lt;li&gt;问题描述&lt;/li&gt;
+&lt;li&gt;能量&lt;/li&gt;
+&lt;li&gt;专注&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;process&#34;&gt;Process&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;广度&lt;/li&gt;
+&lt;li&gt;深度&lt;/li&gt;
+&lt;li&gt;清晰&lt;/li&gt;
+&lt;li&gt;适度&lt;/li&gt;
+&lt;li&gt;创造&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;output&#34;&gt;Output&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;清晰&lt;/li&gt;
+&lt;li&gt;准确&lt;/li&gt;
+&lt;li&gt;全面&lt;/li&gt;
+&lt;li&gt;深度&lt;/li&gt;
+&lt;li&gt;逻辑&lt;/li&gt;
+&lt;li&gt;创造&lt;/li&gt;
+&lt;li&gt;可操作性&lt;/li&gt;
+&lt;li&gt;持续性&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;总结&#34;&gt;总结&lt;/h2&gt;
+&lt;p&gt;高质量思考= 高质量的原则+高质量的Input+高质量的Process+高质量的Output。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>多个角度多个自我与复杂的世界</title>
       <link>http://myself659.github.io/post/rt/%E5%A4%9A%E4%B8%AA%E8%A7%92%E5%BA%A6%E5%A4%9A%E4%B8%AA%E8%87%AA%E5%B7%B1%E5%A4%9A%E6%A0%B7%E4%B8%96%E7%95%8C/</link>
       <pubDate>Sun, 28 May 2017 11:58:06 +0200</pubDate>
-      
       <guid>http://myself659.github.io/post/rt/%E5%A4%9A%E4%B8%AA%E8%A7%92%E5%BA%A6%E5%A4%9A%E4%B8%AA%E8%87%AA%E5%B7%B1%E5%A4%9A%E6%A0%B7%E4%B8%96%E7%95%8C/</guid>
-      <description>引言 记得小学语文课本上有一篇文章：《画杨桃》。作者根据自己看到的，把杨桃画成像个五角星的样子。文章想表达两个意思： 实事求是 同一个事物，角度不</description>
+      <description>&lt;h2 id=&#34;引言&#34;&gt;引言&lt;/h2&gt;
+&lt;p&gt;记得小学语文课本上有一篇文章：《画杨桃》。作者根据自己看到的，把杨桃画成像个五角星的样子。文章想表达两个意思：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;实事求是&lt;/li&gt;
+&lt;li&gt;同一个事物，角度不同，看见不同&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;多个角度&#34;&gt;多个角度&lt;/h2&gt;
+&lt;p&gt;在现实生活中看事物的角度远比上面《画杨桃》复杂，因为事物可能不像杨桃那么具体，也不要杨桃静止在那里，更有可能还不知道从哪些角度看。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>说说注意力</title>
       <link>http://myself659.github.io/post/done/%E6%B3%A8%E6%84%8F%E5%8A%9B-attention/</link>
       <pubDate>Sun, 19 Mar 2017 11:58:06 +0800</pubDate>
-      
       <guid>http://myself659.github.io/post/done/%E6%B3%A8%E6%84%8F%E5%8A%9B-attention/</guid>
-      <description>定义 Attention or focus, is the concentration of awareness on some phenomenon to the exclusion of other stimuli. 注意力是过滤器。你只会注意到你注意到的世界，你的注意力决定你所看到的世界。 注意力是方向。注意力引导你的</description>
+      <description>&lt;h2 id=&#34;定义&#34;&gt;定义&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Attention or focus, is the concentration of awareness on some phenomenon to the exclusion of other stimuli.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;注意力是过滤器。你只会注意到你注意到的世界，你的注意力决定你所看到的世界。&lt;/p&gt;
+&lt;p&gt;注意力是方向。注意力引导你的思考，思考影响你的感知，感知影响你的现实。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>我的三思而后行</title>
       <link>http://myself659.github.io/post/done/%E6%88%91%E7%9A%84%E4%B8%89%E6%80%9D%E8%80%8C%E5%90%8E%E8%A1%8C/</link>
       <pubDate>Fri, 17 Mar 2017 11:58:06 +0800</pubDate>
-      
       <guid>http://myself659.github.io/post/done/%E6%88%91%E7%9A%84%E4%B8%89%E6%80%9D%E8%80%8C%E5%90%8E%E8%A1%8C/</guid>
-      <description>背景 人们常说三思而后行。三思指什么？ 我的三思 首先思考有没有必要这样做？（why） 这样做会带来什么（思危，思退，思变）（what）？ 怎么做？还</description>
+      <description>&lt;h2 id=&#34;背景&#34;&gt;背景&lt;/h2&gt;
+&lt;p&gt;人们常说三思而后行。三思指什么？&lt;/p&gt;
+&lt;h2 id=&#34;我的三思&#34;&gt;我的三思&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;首先思考有没有必要这样做？（why）&lt;/li&gt;
+&lt;li&gt;这样做会带来什么（思危，思退，思变）（what）？&lt;/li&gt;
+&lt;li&gt;怎么做？还有其他的方法来做吗（how）？&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;为什么要三思&#34;&gt;为什么要三思&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;避免冲动&lt;/li&gt;
+&lt;li&gt;避免冲动带来不可逆的结果&lt;/li&gt;
+&lt;li&gt;三思拓展选项与空间&lt;/li&gt;
+&lt;li&gt;三思让人慢下来，停下来&lt;/li&gt;
+&lt;li&gt;三思从行动获得反馈&lt;/li&gt;
+&lt;li&gt;三思指导行动&lt;/li&gt;
+&lt;/ol&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;</description>
     </item>
-    
     <item>
       <title>没有做的原因有哪些</title>
       <link>http://myself659.github.io/post/done/%E6%B2%A1%E6%9C%89%E5%81%9A%E7%9A%84%E5%8E%9F%E5%9B%A0/</link>
       <pubDate>Thu, 16 Mar 2017 11:58:06 +0800</pubDate>
-      
       <guid>http://myself659.github.io/post/done/%E6%B2%A1%E6%9C%89%E5%81%9A%E7%9A%84%E5%8E%9F%E5%9B%A0/</guid>
-      <description>原因 从主观上分析，主要是以下原因： 不知道做 不想做 从客观上分析，主要是以下原因： 不会做 不能做</description>
+      <description>&lt;h2 id=&#34;原因&#34;&gt;原因&lt;/h2&gt;
+&lt;p&gt;从主观上分析，主要是以下原因：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;不知道做&lt;/li&gt;
+&lt;li&gt;不想做&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;从客观上分析，主要是以下原因：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;不会做&lt;/li&gt;
+&lt;li&gt;不能做&lt;/li&gt;
+&lt;/ol&gt;</description>
     </item>
-    
     <item>
       <title>知行反思</title>
       <link>http://myself659.github.io/post/done/%E7%9F%A5%E8%A1%8C%E5%8F%8D%E6%80%9D/</link>
       <pubDate>Thu, 16 Mar 2017 11:58:06 +0800</pubDate>
-      
       <guid>http://myself659.github.io/post/done/%E7%9F%A5%E8%A1%8C%E5%8F%8D%E6%80%9D/</guid>
-      <description>认知 认知不到位或理解不到位的原因： 缺少基础理论 信息不足与错误 方向错误，如追求理解本身不科学 视角不对 起点错误 行动 行动做不到原因： 理论方面存在问</description>
+      <description>&lt;h2 id=&#34;认知&#34;&gt;认知&lt;/h2&gt;
+&lt;p&gt;认知不到位或理解不到位的原因：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;缺少基础理论&lt;/li&gt;
+&lt;li&gt;信息不足与错误&lt;/li&gt;
+&lt;li&gt;方向错误，如追求理解本身不科学&lt;/li&gt;
+&lt;li&gt;视角不对&lt;/li&gt;
+&lt;li&gt;起点错误&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;行动&#34;&gt;行动&lt;/h2&gt;
+&lt;p&gt;行动做不到原因：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;理论方面存在问题&lt;/li&gt;
+&lt;li&gt;信息不足与错误&lt;/li&gt;
+&lt;li&gt;错误的开始&lt;/li&gt;
+&lt;li&gt;过程有问题&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;总结&#34;&gt;总结&lt;/h2&gt;
+&lt;p&gt;这些原因往往是自己不知道的或者没有发现的。&lt;/p&gt;</description>
     </item>
-    
-    <item>
-      <title>愚蠢：危险的敌人</title>
-      <link>http://myself659.github.io/post/rt/stupid-foolish-is-dangerous-enemy/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://myself659.github.io/post/rt/stupid-foolish-is-dangerous-enemy/</guid>
-      <description>背景 今天是愚人节。愚人是今天大部分人的例行活动。这里不列举各种愚人的活动，只谈一下这些愚人活动的意义。 在我看来，这些愚人活动有以下作用： 大部</description>
-    </item>
-    
   </channel>
 </rss>

@@ -1,227 +1,408 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Life on 沉风网事</title>
     <link>http://myself659.github.io/categories/life/</link>
     <description>Recent content in Life on 沉风网事</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>zh-cn</language>
     <copyright>沉风网事</copyright>
-    <lastBuildDate>Mon, 08 Apr 2024 11:58:06 +0200</lastBuildDate><atom:link href="http://myself659.github.io/categories/life/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 08 Apr 2024 11:58:06 +0200</lastBuildDate>
+    <atom:link href="http://myself659.github.io/categories/life/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>you became</title>
       <link>http://myself659.github.io/post/life/you-became/</link>
       <pubDate>Mon, 08 Apr 2024 11:58:06 +0200</pubDate>
-      
       <guid>http://myself659.github.io/post/life/you-became/</guid>
-      <description>you become what you surround yourself with You become what you eat you become what you believe you become what you think you become what you measure you become what you focus on you become what you do you become what you repeat </description>
+      <description>&lt;h2 id=&#34;you-become-what-you-surround-yourself-with&#34;&gt;you become what you surround yourself with&lt;/h2&gt;
+&lt;h2 id=&#34;you-become-what-you-eat&#34;&gt;You become what you eat&lt;/h2&gt;
+&lt;h2 id=&#34;you-become-what-you-believe&#34;&gt;you become what you believe&lt;/h2&gt;
+&lt;h2 id=&#34;you-become-what-you-think&#34;&gt;you become what you think&lt;/h2&gt;
+&lt;h2 id=&#34;you-become-what-you-measure&#34;&gt;you become what you measure&lt;/h2&gt;
+&lt;h2 id=&#34;you-become-what-you-focus-on&#34;&gt;you become what you focus on&lt;/h2&gt;
+&lt;h2 id=&#34;you-become-what-you-do&#34;&gt;you become what you do&lt;/h2&gt;
+&lt;h2 id=&#34;you-become-what-you-repeat&#34;&gt;you become what you repeat&lt;/h2&gt;</description>
     </item>
-    
     <item>
       <title>不要执着于是非对错</title>
       <link>http://myself659.github.io/post/life/%E6%88%90%E8%B4%A5%E5%BE%97%E5%A4%B1%E5%A4%A7%E4%BA%8E%E6%98%AF%E9%9D%9E%E5%AF%B9%E9%94%99/</link>
       <pubDate>Sun, 10 Dec 2023 11:58:06 +0800</pubDate>
-      
       <guid>http://myself659.github.io/post/life/%E6%88%90%E8%B4%A5%E5%BE%97%E5%A4%B1%E5%A4%A7%E4%BA%8E%E6%98%AF%E9%9D%9E%E5%AF%B9%E9%94%99/</guid>
-      <description>背景 生活中杠精总是喜欢辩个输赢，浪费不少时间与精力，除了如果赢的话，有一点情绪价值，实际上也没有具体的收益，再说有赢有有输，输的话，估计会郁</description>
+      <description>&lt;h2 id=&#34;背景&#34;&gt;背景&lt;/h2&gt;
+&lt;p&gt;生活中杠精总是喜欢辩个输赢，浪费不少时间与精力，除了如果赢的话，有一点情绪价值，实际上也没有具体的收益，再说有赢有有输，输的话，估计会郁闷的更久，在情绪价值这一点都不定能跑正。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>说说延迟满足</title>
       <link>http://myself659.github.io/post/life/%E8%AF%B4%E8%AF%B4%E5%BB%B6%E8%BF%9F%E6%BB%A1%E8%B6%B3/</link>
       <pubDate>Sat, 14 Oct 2023 11:58:06 +0800</pubDate>
-      
       <guid>http://myself659.github.io/post/life/%E8%AF%B4%E8%AF%B4%E5%BB%B6%E8%BF%9F%E6%BB%A1%E8%B6%B3/</guid>
-      <description>背景 张一鸣：人生中一半的问题，都是没有延迟满足感造成的 重要性 心理学有非常著名的棉花糖实验(Stanford Marshmallow Experiment)。棉花糖实</description>
+      <description>&lt;h2 id=&#34;背景&#34;&gt;背景&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://36kr.com/p/2460132299904902&#34;&gt;张一鸣：人生中一半的问题，都是没有延迟满足感造成的&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;重要性&#34;&gt;重要性&lt;/h2&gt;
+&lt;p&gt;心理学有非常著名的棉花糖实验(Stanford Marshmallow Experiment)。棉花糖实验是心理学界著名的延迟满足研究。
+该实验最初于1960年代和1970年代由Walter Mischel教授在斯坦福大学进行。主要过程是:&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>说说一致性</title>
       <link>http://myself659.github.io/post/life/about-consistent%E4%B8%80%E8%87%B4%E6%80%A7/</link>
       <pubDate>Sat, 07 Oct 2023 11:58:06 +0800</pubDate>
-      
       <guid>http://myself659.github.io/post/life/about-consistent%E4%B8%80%E8%87%B4%E6%80%A7/</guid>
-      <description>背景 首先说明这里的一致性不是分布式场景下数据的一致性。这里一致性限定于个人的思想行为方面。如一个人每天早上6点起床，一个人无论在什么情况总是</description>
+      <description>&lt;h2 id=&#34;背景&#34;&gt;背景&lt;/h2&gt;
+&lt;p&gt;首先说明这里的一致性不是分布式场景下数据的一致性。这里一致性限定于个人的思想行为方面。如一个人每天早上6点起床，一个人无论在什么情况总是沉着冷静。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>how to inner-peace</title>
       <link>http://myself659.github.io/post/life/inner-peace-%E5%86%85%E5%BF%83%E5%B9%B3%E7%A8%B3/</link>
       <pubDate>Fri, 29 Sep 2023 11:58:06 +0200</pubDate>
-      
       <guid>http://myself659.github.io/post/life/inner-peace-%E5%86%85%E5%BF%83%E5%B9%B3%E7%A8%B3/</guid>
-      <description>定义 内心平静是指一个人的身体、思想、心灵和灵魂在当下的一种自然安静的状态。需要注意的是内心平静只能在当下感受到。 内心平静不仅可以是冥想中体验</description>
+      <description>&lt;h2 id=&#34;定义&#34;&gt;定义&lt;/h2&gt;
+&lt;p&gt;内心平静是指一个人的身体、思想、心灵和灵魂在当下的一种自然安静的状态。需要注意的是内心平静只能在当下感受到。
+内心平静不仅可以是冥想中体验到平静，也可以是采菊东篱下，悠然见南山的自然。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>个人冥想的原则</title>
       <link>http://myself659.github.io/post/life/meditation-principles/</link>
       <pubDate>Fri, 25 Aug 2023 11:58:06 +0800</pubDate>
-      
       <guid>http://myself659.github.io/post/life/meditation-principles/</guid>
-      <description>原则 每日冥想，养成冥想的习惯 以早起冥想开始一天 以睡前冥想开启入睡 确立冥想质量意识与因素 一天的冥想度量指标=冥想的次数+冥想总时长+冥想的质量</description>
+      <description>&lt;h2 id=&#34;原则&#34;&gt;原则&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;每日冥想，养成冥想的习惯&lt;/li&gt;
+&lt;li&gt;以早起冥想开始一天&lt;/li&gt;
+&lt;li&gt;以睡前冥想开启入睡&lt;/li&gt;
+&lt;li&gt;确立冥想质量意识与因素&lt;/li&gt;
+&lt;li&gt;一天的冥想度量指标=冥想的次数+冥想总时长+冥想的质量&lt;/li&gt;
+&lt;li&gt;先身体静下来如坐下来与闭上眼睛，再让心静下来，然后让身心专注&lt;/li&gt;
+&lt;li&gt;单次冥想最小时长为5分钟&lt;/li&gt;
+&lt;li&gt;冥想后应该开启心流状态，变现冥想的作用&lt;/li&gt;
+&lt;li&gt;冥想即休息&lt;/li&gt;
+&lt;li&gt;冥想即调节，如状态不好的时候，主动开始冥想&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;冥想质量因素&#34;&gt;冥想质量因素&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;注意力集中度&lt;/li&gt;
+&lt;li&gt;意识清晰度&lt;/li&gt;
+&lt;li&gt;身心松弛度&lt;/li&gt;
+&lt;li&gt;持续时间长度&lt;/li&gt;
+&lt;li&gt;冥想体验深度&lt;/li&gt;
+&lt;li&gt;冥想后的清晰明确度&lt;/li&gt;
+&lt;li&gt;内心平静程度&lt;/li&gt;
+&lt;li&gt;生活联结程度&lt;/li&gt;
+&lt;li&gt;成效持续时间&lt;/li&gt;
+&lt;/ol&gt;</description>
     </item>
-    
     <item>
       <title>如何防止视力下降</title>
       <link>http://myself659.github.io/post/life/%E9%98%B2%E6%AD%A2%E8%A7%86%E5%8A%9B%E4%B8%8B%E9%99%8D-decline-eyesight/</link>
       <pubDate>Sun, 09 Jul 2023 11:58:06 +0200</pubDate>
-      
       <guid>http://myself659.github.io/post/life/%E9%98%B2%E6%AD%A2%E8%A7%86%E5%8A%9B%E4%B8%8B%E9%99%8D-decline-eyesight/</guid>
-      <description>tips 正确的用眼习惯 控制与减少屏幕时间 增加户外活动 避免长时间用眼，多看窗外与远望 保持身体活跃：慢跑、游泳、快走。促进血液流向眼部神经，从而保持眼</description>
+      <description>&lt;h2 id=&#34;tips&#34;&gt;tips&lt;/h2&gt;
+&lt;ol start=&#34;0&#34;&gt;
+&lt;li&gt;
+&lt;p&gt;正确的用眼习惯&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;控制与减少屏幕时间&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;增加户外活动&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;避免长时间用眼，多看窗外与远望&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;保持身体活跃：慢跑、游泳、快走。促进血液流向眼部神经，从而保持眼部健康&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;多吃水果与蔬菜，补充维生素 A、E、C、B2、B3、B6、B9、B12、脂肪酸以及抗氧化剂叶黄素&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>冥想的认知</title>
       <link>http://myself659.github.io/post/life/meditation-mindset/</link>
       <pubDate>Sun, 25 Jun 2023 11:58:06 +0800</pubDate>
-      
       <guid>http://myself659.github.io/post/life/meditation-mindset/</guid>
-      <description>冥想是一种认知 冥想是一种需要深入理解和实践的过程，它涉及到的不仅仅是静坐和放空，更包含着极简主义、专注当下、相信过程、开放心态、佛系心态和耐</description>
+      <description>&lt;h2 id=&#34;冥想是一种认知&#34;&gt;冥想是一种认知&lt;/h2&gt;
+&lt;p&gt;冥想是一种需要深入理解和实践的过程，它涉及到的不仅仅是静坐和放空，更包含着极简主义、专注当下、相信过程、开放心态、佛系心态和耐心修行等多个层面。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>how to feel better</title>
       <link>http://myself659.github.io/post/life/how-to-feel-better/</link>
       <pubDate>Thu, 18 May 2023 11:58:06 +0200</pubDate>
-      
       <guid>http://myself659.github.io/post/life/how-to-feel-better/</guid>
-      <description>how to feel better   write when overthinking
-  meditate when anxious
-  Nap when Tired
-  Exercise when sad
-  go for a walk when stressed
-  Listen to music when angry
-  reduce screen time when lazy
-  switch or stop when burnt out
-  </description>
+      <description>&lt;h2 id=&#34;how-to-feel-better&#34;&gt;how to feel better&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;write when overthinking&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;meditate when anxious&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Nap when Tired&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Exercise when sad&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;go for a walk when stressed&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Listen to music  when angry&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;reduce screen time  when lazy&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;switch or stop when burnt out&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;</description>
     </item>
-    
     <item>
       <title>学会休息</title>
       <link>http://myself659.github.io/post/life/how-to-rest/</link>
       <pubDate>Thu, 18 May 2023 11:58:06 +0200</pubDate>
-      
       <guid>http://myself659.github.io/post/life/how-to-rest/</guid>
-      <description>休息是什么 休息是调节。 休息是放空。 休息是充电。 休息是节奏。 原则 身心一体 以个性化方式达到慢下来，安静，舒适，放松，享受的状态 以恢复与加强能量和</description>
+      <description>&lt;h2 id=&#34;休息是什么&#34;&gt;休息是什么&lt;/h2&gt;
+&lt;p&gt;休息是调节。&lt;/p&gt;
+&lt;p&gt;休息是放空。&lt;/p&gt;
+&lt;p&gt;休息是充电。&lt;/p&gt;
+&lt;p&gt;休息是节奏。&lt;/p&gt;
+&lt;h2 id=&#34;原则&#34;&gt;原则&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;身心一体&lt;/li&gt;
+&lt;li&gt;以个性化方式达到慢下来，安静，舒适，放松，享受的状态&lt;/li&gt;
+&lt;li&gt;以恢复与加强能量和活力为目标&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;要素与方式&#34;&gt;要素与方式&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;身体休息:这是大脑最基本也最容易理解的休息方式。睡眠可以让大脑和身体恢复活力,修复身体机能,清除毒素。缺乏睡眠会导致注意力减退、学习障碍、记忆力下降等问题。&lt;/li&gt;
+&lt;li&gt;情绪休息:这表示通过各种方式实现情绪的释放和调节,减轻压力与负面情绪。我们可以通过运动、音乐、冥想、社交等方式实现情绪休息。长期的压力与负面情绪可以对大脑造成伤害,影响认知功能。&lt;/li&gt;
+&lt;li&gt;认知休息:这表示停止过度刺激大脑,给大脑一个停顿来处理信息。我们可以通过在工作或学习之余进行娱乐活动、阅读小说、散步等方式实现认知休息。长时间过度使用大脑进行复杂认知活动,会导致大脑疲劳,降低工作效率与创造力。
+总而言之,身体休息、情绪休息和认知休息都是大脑健康运行所需要的。它们可以清除大脑毒素,减轻压力,提高大脑活力与认知功能。合理利用这三种休息方式,可以最大限度发挥我们的才智与创造力,活出健康快乐的人生。
+三种休息方式相辅相成,缺一不可。我们只有在身体、情绪和认知上都获得良好休息的情况下,大脑才能保持最佳状态。每个人都需要在生活中找到最适合自己的休息方式与时间,合理规划各种休息活动,让大脑始终处于恢复与活力状态。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;</description>
     </item>
-    
     <item>
       <title>假如社会抛弃你</title>
       <link>http://myself659.github.io/post/life/%E5%81%87%E5%A6%82%E7%A4%BE%E4%BC%9A%E6%8A%9B%E5%BC%83%E4%BA%86%E4%BD%A0/</link>
       <pubDate>Sun, 09 Apr 2023 11:58:06 +0800</pubDate>
-      
       <guid>http://myself659.github.io/post/life/%E5%81%87%E5%A6%82%E7%A4%BE%E4%BC%9A%E6%8A%9B%E5%BC%83%E4%BA%86%E4%BD%A0/</guid>
-      <description>背景 天门山跳崖：四个决绝赴死的农村青年 天门山跳崖：四个决绝赴死的农村青年 看到这个新闻，深受震撼，十分痛心与惋惜。 决绝赴死的原因极大可能是在长</description>
+      <description>&lt;h2 id=&#34;背景&#34;&gt;背景&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://weibo.com/1191965271/MB52rAqQS&#34;&gt;天门山跳崖：四个决绝赴死的农村青年&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://mp.weixin.qq.com/s/WseandpBBUathNTJDJz-Nw&#34;&gt;天门山跳崖：四个决绝赴死的农村青年&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;看到这个新闻，深受震撼，十分痛心与惋惜。&lt;/p&gt;
+&lt;p&gt;决绝赴死的原因极大可能是在长期苦难之下，看不到希望，感到绝望。&lt;/p&gt;
+&lt;h2 id=&#34;社会的声音&#34;&gt;社会的声音&lt;/h2&gt;
+&lt;p&gt;对于这个事件社会有很多声音：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;没有刀人，撞人和砸人……而是选择默默地离开，或许他们对这个世界曾经爱过吧…&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>成功的路径和概率</title>
       <link>http://myself659.github.io/post/life/%E6%88%90%E5%8A%9F%E7%9A%84%E8%B7%AF%E5%BE%84%E4%B8%8E%E6%A6%82%E7%8E%87/</link>
       <pubDate>Wed, 07 Sep 2022 11:58:06 +0200</pubDate>
-      
       <guid>http://myself659.github.io/post/life/%E6%88%90%E5%8A%9F%E7%9A%84%E8%B7%AF%E5%BE%84%E4%B8%8E%E6%A6%82%E7%8E%87/</guid>
-      <description>成功的路径 别人的成功你很难复制,所以要想成功你必须走自己的路。 自己动手实践的路径是唯一有可能属于自己走向成功的路径。 成功的概率 走自己的路必不</description>
+      <description>&lt;h2 id=&#34;成功的路径&#34;&gt;成功的路径&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://myself659.github.io/post/life/%E5%88%AB%E4%BA%BA%E7%9A%84%E6%88%90%E5%8A%9F%E4%BD%A0%E5%BE%88%E9%9A%BE%E5%A4%8D%E5%88%B6/&#34;&gt;别人的成功你很难复制&lt;/a&gt;,所以要想成功你必须走自己的路。&lt;/p&gt;
+&lt;p&gt;自己动手实践的路径是唯一有可能属于自己走向成功的路径。&lt;/p&gt;
+&lt;h2 id=&#34;成功的概率&#34;&gt;成功的概率&lt;/h2&gt;
+&lt;p&gt;走自己的路必不一定能成功。成功与失败是概率的游戏。那么如何提高自己成功的概率呢？&lt;/p&gt;
+&lt;p&gt;每个人情况不一样，毕竟每个人都要走自己的路，这里只是很宽泛讲一下：&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>分享：一图了解新型冠状病毒的症状有哪些</title>
       <link>http://myself659.github.io/post/covid-19-symptom/</link>
       <pubDate>Sun, 24 May 2020 11:58:06 +0200</pubDate>
-      
       <guid>http://myself659.github.io/post/covid-19-symptom/</guid>
-      <description>新型冠状病毒（Covid-19）在全球的传播与感染速度有一定的控制，但是并没有结束。全世界累计确诊已经超过了500万，累计死亡人数超过了30</description>
+      <description>&lt;p&gt;新型冠状病毒（Covid-19）在全球的传播与感染速度有一定的控制，但是并没有结束。全世界累计确诊已经超过了500万，累计死亡人数超过了30万。新型冠状病毒是数十年来最危险，最棘手的新型病毒性之一。它可以攻击体内几乎所有器官，并可能造成毁灭性的伤害。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>我是如何学会冥想的</title>
       <link>http://myself659.github.io/post/life/meditation-start/</link>
       <pubDate>Sat, 11 Apr 2020 11:58:06 +0200</pubDate>
-      
       <guid>http://myself659.github.io/post/life/meditation-start/</guid>
-      <description>初识冥想 虽然以前也知道冥想，但是却没有对冥想产生什么兴趣。直到2018年去台湾遇到一个很有经历的人，先后在google，百度，阿里等公司从事</description>
+      <description>&lt;h1 id=&#34;初识冥想&#34;&gt;初识冥想&lt;/h1&gt;
+&lt;p&gt;虽然以前也知道冥想，但是却没有对冥想产生什么兴趣。直到2018年去台湾遇到一个很有经历的人，先后在google，百度，阿里等公司从事互联网方面的工作，开过民航飞机，后面又回台湾在高校里读博士，同时英文也相当流利，与老外沟通毫无压力。除此之外，他还告诉我他的睡眠质量相当高，入睡超级快。而自己从小就入睡慢，虽然睡眠质量还算可以。于是我好奇地问他：你是怎么做到这么高的睡眠质量？&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>请主动积极些</title>
       <link>http://myself659.github.io/post/life/%E8%AF%B7%E4%B8%BB%E5%8A%A8%E7%A7%AF%E6%9E%81%E4%BA%9B/</link>
       <pubDate>Thu, 17 Jan 2019 11:58:06 +0800</pubDate>
-      
       <guid>http://myself659.github.io/post/life/%E8%AF%B7%E4%B8%BB%E5%8A%A8%E7%A7%AF%E6%9E%81%E4%BA%9B/</guid>
-      <description>被动的麻烦 被动代表什么?被动常常代表麻烦,具体如下: 落后 等待与浪费 缺少控制 机会减少 缺少准备 什么是积极主动 积极主动怎么定义呢? 还是看实例和对比</description>
+      <description>&lt;h2 id=&#34;被动的麻烦&#34;&gt;被动的麻烦&lt;/h2&gt;
+&lt;p&gt;被动代表什么?被动常常代表麻烦,具体如下:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;落后&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;等待与浪费&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;缺少控制&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;机会减少&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;缺少准备&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;什么是积极主动&#34;&gt;什么是积极主动&lt;/h2&gt;
+&lt;p&gt;积极主动怎么定义呢? 还是看实例和对比.&lt;/p&gt;
+&lt;p&gt;一个被动消极的人会是怎么样呢?通常他们有以下言行:&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>别人的成功你很难复制</title>
       <link>http://myself659.github.io/post/life/%E5%88%AB%E4%BA%BA%E7%9A%84%E6%88%90%E5%8A%9F%E4%BD%A0%E5%BE%88%E9%9A%BE%E5%A4%8D%E5%88%B6/</link>
       <pubDate>Thu, 27 Sep 2018 11:58:06 +0200</pubDate>
-      
       <guid>http://myself659.github.io/post/life/%E5%88%AB%E4%BA%BA%E7%9A%84%E6%88%90%E5%8A%9F%E4%BD%A0%E5%BE%88%E9%9A%BE%E5%A4%8D%E5%88%B6/</guid>
-      <description>人们向往成功 人人都渴望成功，追求事业上的成就和个人价值的实现。 大部分人愿意学习别人的成功经验，同时也乐于接受别人对自己成功的解释。然而，这些</description>
+      <description>&lt;h2 id=&#34;人们向往成功&#34;&gt;人们向往成功&lt;/h2&gt;
+&lt;p&gt;人人都渴望成功，追求事业上的成就和个人价值的实现。&lt;/p&gt;
+&lt;p&gt;大部分人愿意学习别人的成功经验，同时也乐于接受别人对自己成功的解释。然而，这些看似简单的成功原因对于成功者本人可能确实有用，但对于其他人来说，未必具备同样的实用性。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>人生减法清单</title>
       <link>http://myself659.github.io/post/life/%E4%BA%BA%E7%94%9F%E5%87%8F%E6%B3%95%E6%B8%85%E5%8D%95/</link>
       <pubDate>Sat, 17 Feb 2018 11:58:06 +0200</pubDate>
-      
       <guid>http://myself659.github.io/post/life/%E4%BA%BA%E7%94%9F%E5%87%8F%E6%B3%95%E6%B8%85%E5%8D%95/</guid>
-      <description>Less is more 少即是多。 人生需要做减法。 在开始减法之前，我们需要一个减法清单。 减法清单 不健康的生活方式与习惯 短视与短期心态 空想，幻想，妄想 借口与抱怨</description>
+      <description>&lt;h2 id=&#34;less-is-more&#34;&gt;Less is more&lt;/h2&gt;
+&lt;p&gt;少即是多。&lt;/p&gt;
+&lt;p&gt;人生需要做减法。&lt;/p&gt;
+&lt;p&gt;在开始减法之前，我们需要一个减法清单。&lt;/p&gt;
+&lt;h2 id=&#34;减法清单&#34;&gt;减法清单&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;不健康的生活方式与习惯&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;短视与短期心态&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;空想，幻想，妄想&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;借口与抱怨&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;封闭与拒绝改变的心态&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;侥幸心理&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>认识自己的问题清单</title>
       <link>http://myself659.github.io/post/life/%E8%AE%A4%E8%AF%86%E8%87%AA%E5%B7%B1%E7%9A%84%E9%97%AE%E9%A2%98%E6%B8%85%E5%8D%95/</link>
       <pubDate>Sun, 11 Feb 2018 11:58:06 +0200</pubDate>
-      
       <guid>http://myself659.github.io/post/life/%E8%AE%A4%E8%AF%86%E8%87%AA%E5%B7%B1%E7%9A%84%E9%97%AE%E9%A2%98%E6%B8%85%E5%8D%95/</guid>
-      <description>认识自己 老子在《道德经》里说：“知人者智，自知者明。” 孙子在《孙子兵法》里说：“知已知彼，百战不殆。” 认识自己，才能成为更好的自己。 问题清单</description>
+      <description>&lt;h2 id=&#34;认识自己&#34;&gt;认识自己&lt;/h2&gt;
+&lt;p&gt;老子在《道德经》里说：“知人者智，自知者明。”&lt;/p&gt;
+&lt;p&gt;孙子在《孙子兵法》里说：“知已知彼，百战不殆。”&lt;/p&gt;
+&lt;p&gt;认识自己，才能成为更好的自己。&lt;/p&gt;
+&lt;h2 id=&#34;问题清单&#34;&gt;问题清单&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;你真正想要的是什么？&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>设定目标的原则</title>
       <link>http://myself659.github.io/post/done/principle-to-set-goal-%E7%9B%AE%E6%A0%87/</link>
       <pubDate>Sat, 27 May 2017 11:58:06 +0200</pubDate>
-      
       <guid>http://myself659.github.io/post/done/principle-to-set-goal-%E7%9B%AE%E6%A0%87/</guid>
-      <description>目标的意义 目标是指导前进的方向 目标帮助思考：我们真正想要的是什么？ 目标是动力的来源之一 目标有利于抗干扰，提高专注力 SMART原则 谈及目标原则</description>
+      <description>&lt;h2 id=&#34;目标的意义&#34;&gt;目标的意义&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;目标是指导前进的方向&lt;/li&gt;
+&lt;li&gt;目标帮助思考：我们真正想要的是什么？&lt;/li&gt;
+&lt;li&gt;目标是动力的来源之一&lt;/li&gt;
+&lt;li&gt;目标有利于抗干扰，提高专注力&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;smart原则&#34;&gt;SMART原则&lt;/h2&gt;
+&lt;p&gt;谈及目标原则，必会谈到SMART原则。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>什么才是重要的</title>
       <link>http://myself659.github.io/post/life/what-is-matter-%E9%87%8D%E8%A6%81/</link>
       <pubDate>Sun, 07 May 2017 11:58:06 +0200</pubDate>
-      
       <guid>http://myself659.github.io/post/life/what-is-matter-%E9%87%8D%E8%A6%81/</guid>
-      <description>什么才是重要的 什么才是重要的？对于这个问题有很多答案，每个人都有自己的回答。 这里说一下我对这个问题的思考，从哪些角度来判断与评价重要性？ 基础</description>
+      <description>&lt;h2 id=&#34;什么才是重要的&#34;&gt;什么才是重要的&lt;/h2&gt;
+&lt;p&gt;什么才是重要的？对于这个问题有很多答案，每个人都有自己的回答。&lt;/p&gt;
+&lt;p&gt;这里说一下我对这个问题的思考，从哪些角度来判断与评价重要性？&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;基础&lt;/li&gt;
+&lt;li&gt;稀缺&lt;/li&gt;
+&lt;li&gt;频率&lt;/li&gt;
+&lt;li&gt;紧急&lt;/li&gt;
+&lt;li&gt;第一性原理&lt;/li&gt;
+&lt;li&gt;与自己的相关性&lt;/li&gt;
+&lt;/ol&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;</description>
     </item>
-    
     <item>
       <title>不追求完美，追求进步</title>
       <link>http://myself659.github.io/post/life/%E4%B8%8D%E8%BF%BD%E6%B1%82%E5%AE%8C%E7%BE%8E/</link>
       <pubDate>Tue, 17 Jan 2017 11:58:06 +0200</pubDate>
-      
       <guid>http://myself659.github.io/post/life/%E4%B8%8D%E8%BF%BD%E6%B1%82%E5%AE%8C%E7%BE%8E/</guid>
-      <description>完美 完美是一个理想的状态,但在现实生活中很难达成。不同的人对完美有不同的理解: 无错误。从客观角度,完美代表一种没有错误、瑕疵和Bug的状态。</description>
+      <description>&lt;h2 id=&#34;完美&#34;&gt;完美&lt;/h2&gt;
+&lt;p&gt;完美是一个理想的状态,但在现实生活中很难达成。不同的人对完美有不同的理解:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;无错误。从客观角度,完美代表一种没有错误、瑕疵和Bug的状态。所有要素都处于最佳状况,没有任何改进的空间。但在复杂系统中要达成这种完美几乎是不可能的。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>人生有哪些大坑</title>
       <link>http://myself659.github.io/post/life/%E4%BA%BA%E7%94%9F%E6%9C%89%E5%93%AA%E4%BA%9B%E5%A4%A7%E5%9D%91/</link>
       <pubDate>Tue, 17 Jan 2017 11:58:06 +0200</pubDate>
-      
       <guid>http://myself659.github.io/post/life/%E4%BA%BA%E7%94%9F%E6%9C%89%E5%93%AA%E4%BA%9B%E5%A4%A7%E5%9D%91/</guid>
-      <description>背景 人生不如意十有八九。生活处处有坑，避免不踩坑不可能，但是还是要努力防止踩大坑。 认知与心理 偏见、妄想等因素导致不能发现与尊重事实和规则 思维</description>
+      <description>&lt;h2 id=&#34;背景&#34;&gt;背景&lt;/h2&gt;
+&lt;p&gt;人生不如意十有八九。生活处处有坑，避免不踩坑不可能，但是还是要努力防止踩大坑。&lt;/p&gt;
+&lt;h2 id=&#34;认知与心理&#34;&gt;认知与心理&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;偏见、妄想等因素导致不能发现与尊重事实和规则&lt;/li&gt;
+&lt;li&gt;思维定势，错误地执念，拒绝改变，视野与格局打不开&lt;/li&gt;
+&lt;li&gt;想当然，盲目，盲从，懒惰，不能独立思考与验证&lt;/li&gt;
+&lt;li&gt;不知道什么是最重要的，没有明确的目标&lt;/li&gt;
+&lt;li&gt;不知道自己不知道，缺少敬畏&lt;/li&gt;
+&lt;li&gt;缺少长期心态与长远眼光，没有耐心，不能延迟满足&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;选择与环境&#34;&gt;选择与环境&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;选择牺牲身体来赚钱&lt;/li&gt;
+&lt;li&gt;选错专业与行业&lt;/li&gt;
+&lt;li&gt;关键事件方面选错人来合作如结婚，创业等等&lt;/li&gt;
+&lt;li&gt;处于烂人的环境当中（如爱抱怨的工作同事，暗规则横行的工作氛围）&lt;/li&gt;
+&lt;li&gt;缺少对危险因素的洞察与风险控制(君子不立危墙之下)&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;行为与习惯&#34;&gt;行为与习惯&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;不思考，不学习，无进步&lt;/li&gt;
+&lt;li&gt;恶性循环（如赌博，混自己不喜欢的工作）&lt;/li&gt;
+&lt;li&gt;不自律，放纵自己&lt;/li&gt;
+&lt;li&gt;爱与别人比较&lt;/li&gt;
+&lt;li&gt;跟风与凑热闹&lt;/li&gt;
+&lt;li&gt;嫉妒&lt;/li&gt;
+&lt;li&gt;拖延并缺少执行力&lt;/li&gt;
+&lt;li&gt;只想不做，浅尝辄止，做事不到位&lt;/li&gt;
+&lt;li&gt;情绪不稳定，波动大，情绪冲动&lt;/li&gt;
+&lt;li&gt;重复犯相同的错误&lt;/li&gt;
+&lt;li&gt;拖延症&lt;/li&gt;
+&lt;/ol&gt;</description>
     </item>
-    
     <item>
       <title>五个问题帮你找到你真正的想要的</title>
       <link>http://myself659.github.io/post/life/%E4%BA%94%E4%B8%AA%E9%97%AE%E9%A2%98%E6%89%BE%E5%88%B0%E7%9C%9F%E6%AD%A3%E8%A6%81%E6%83%B3%E7%9A%84/</link>
       <pubDate>Wed, 11 Jan 2017 11:58:06 +0200</pubDate>
-      
       <guid>http://myself659.github.io/post/life/%E4%BA%94%E4%B8%AA%E9%97%AE%E9%A2%98%E6%89%BE%E5%88%B0%E7%9C%9F%E6%AD%A3%E8%A6%81%E6%83%B3%E7%9A%84/</guid>
-      <description>问题 1. 你想要什么？ 未来自我定义：明确你的未来自我是谁，这对于激发动力和方向至关重要。 2. 你有多想要它？ 真正的渴望程度：探讨你对目标的渴望有多强</description>
+      <description>&lt;h2 id=&#34;问题&#34;&gt;问题&lt;/h2&gt;
+&lt;h3 id=&#34;1-你想要什么&#34;&gt;1. 你想要什么？&lt;/h3&gt;
+&lt;p&gt;未来自我定义：明确你的未来自我是谁，这对于激发动力和方向至关重要。&lt;/p&gt;
+&lt;h3 id=&#34;2-你有多想要它&#34;&gt;2. 你有多想要它？&lt;/h3&gt;
+&lt;p&gt;真正的渴望程度：探讨你对目标的渴望有多强烈，以及你是否愿意为之付出努力。&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

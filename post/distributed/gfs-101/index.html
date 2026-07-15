@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="auto" data-theme="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Google File System (GFS) 101 | 沉风网事</title>
+<meta name="keywords" content="Distributed">
+<meta name="description" content="前言
+在现代互联网系统中，数据存储、管理与分发一直是关键技术之一。Google File System（GFS）是谷歌为满足其海量数据存储需求而设计的分布式文件系统。它支撑着谷歌的许多大规模应用，如搜索引擎、YouTube等，尤其适用于高吞吐量、大文件存储和海量数据处理。">
+<meta name="author" content="">
+<link rel="canonical" href="http://myself659.github.io/post/distributed/gfs-101/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.89ca4972ab5e6aaa05e9a0dae0c4bb64b26585bc79e36f5cf33614eea0283abe.css" integrity="sha256-icpJcqteaqoF6aDa4MS7ZLJlhbx5429c8zYU7qAoOr4=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://myself659.github.io/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://myself659.github.io/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://myself659.github.io/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://myself659.github.io/apple-touch-icon.png">
+<link rel="mask-icon" href="http://myself659.github.io/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" type="application/rss+xml" href="http://myself659.github.io/post/distributed/gfs-101/index.xml" title="rss">
+<link rel="alternate" hreflang="zh-cn" href="http://myself659.github.io/post/distributed/gfs-101/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+                color-scheme: dark;
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .toc {
+                background: var(--entry);
+            }
+        }
+
+    </style>
+</noscript>
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else if (localStorage.getItem("pref-theme") === "light") {
+       document.querySelector("html").dataset.theme = 'light';
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else {
+        document.querySelector("html").dataset.theme = 'light';
+    }
+
+</script><meta property="og:url" content="http://myself659.github.io/post/distributed/gfs-101/">
+  <meta property="og:site_name" content="沉风网事">
+  <meta property="og:title" content="Google File System (GFS) 101">
+  <meta property="og:description" content="前言 在现代互联网系统中，数据存储、管理与分发一直是关键技术之一。Google File System（GFS）是谷歌为满足其海量数据存储需求而设计的分布式文件系统。它支撑着谷歌的许多大规模应用，如搜索引擎、YouTube等，尤其适用于高吞吐量、大文件存储和海量数据处理。">
+  <meta property="og:locale" content="zh_cn">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="post">
+    <meta property="article:published_time" content="2018-11-02T11:58:06+02:00">
+    <meta property="article:modified_time" content="2018-11-02T11:58:06+02:00">
+    <meta property="article:tag" content="Distributed">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Google File System (GFS) 101">
+  <meta name="twitter:description" content="前言 在现代互联网系统中，数据存储、管理与分发一直是关键技术之一。Google File System（GFS）是谷歌为满足其海量数据存储需求而设计的分布式文件系统。它支撑着谷歌的许多大规模应用，如搜索引擎、YouTube等，尤其适用于高吞吐量、大文件存储和海量数据处理。">
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "http://myself659.github.io/post/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Google File System (GFS) 101",
+      "item": "http://myself659.github.io/post/distributed/gfs-101/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Google File System (GFS) 101",
+  "name": "Google File System (GFS) 101",
+  "description": "前言 在现代互联网系统中，数据存储、管理与分发一直是关键技术之一。Google File System（GFS）是谷歌为满足其海量数据存储需求而设计的分布式文件系统。它支撑着谷歌的许多大规模应用，如搜索引擎、YouTube等，尤其适用于高吞吐量、大文件存储和海量数据处理。\n",
+  "keywords": [
+    "Distributed"
+  ],
+  "articleBody": "前言 在现代互联网系统中，数据存储、管理与分发一直是关键技术之一。Google File System（GFS）是谷歌为满足其海量数据存储需求而设计的分布式文件系统。它支撑着谷歌的许多大规模应用，如搜索引擎、YouTube等，尤其适用于高吞吐量、大文件存储和海量数据处理。\n定义 Google File System (GFS) 是一个高度可扩展的分布式文件系统，旨在运行在商用硬件上，支持数百到数千台机器，适用于处理海量的非结构化数据。\nWikipedia定义：\n“Google File System is a proprietary distributed file system developed by Google to meet the needs of Google’s data processing and storage requirements.”\n工作原理 GFS通过将文件拆分为多个块（块大小通常为64MB），并将其分布存储在集群中的多个节点上。每个文件的多个副本会存储在不同的机器上，保证数据的可靠性与容错性。GFS的工作原理基于如下几个核心设计：\n块存储：每个文件被拆分成多个固定大小的数据块，块在集群中以副本的形式存在。 主节点控制：集群中的所有元数据（如文件与块的映射）由一个或多个主节点（Master）控制。 副本与容错：每个数据块至少保留3个副本，在不同的机器上存储，防止单点故障。 大文件支持：每个文件可以是非常大的，单个文件的大小可以达到TB级别。 高吞吐量设计：GFS特别优化了数据访问的吞吐量，而非低延迟，因此非常适合批量处理和大数据分析。 属性与指标 关注的GFS属性与指标如下：\n块大小（Block Size）：\nGFS文件通常以64MB为一个块大小。相较于传统文件系统的小块存储（如4KB），大块能够减少元数据的管理负担，适合大规模数据访问。 副本数（Replication Factor）：\n每个文件的每个块至少有3个副本。副本数可以在配置时调整，以确保数据的高可靠性。 容错性（Fault Tolerance）：\n通过数据块的副本存储、心跳检测等机制，GFS能够容忍单个节点或硬件故障。 数据一致性（Consistency）：\nGFS在写操作中采用了简单的强一致性模型，保证所有客户端在文件的任何时候看到的是一致的数据视图。 扩展性（Scalability）：\nGFS能够随着节点的增加而扩展，支持数千台机器并提供线性扩展性。 吞吐量（Throughput）：\n适合海量数据的高吞吐量处理，而非低延迟随机访问。 单一主节点（Single Master Node）：\nGFS通过单个主节点控制元数据，这种设计简化了元数据管理，但也意味着主节点成为潜在的瓶颈。 类型 GFS架构 GFS由以下三个主要组件组成：\nMaster节点（Master）：\n负责存储集群的元数据，包括文件到块的映射、块的位置和文件的副本等。 管理块的分配、回收以及数据副本的调度。 为客户端提供文件和块的元数据信息。 ChunkServer节点（ChunkServer）：\n实际存储文件的数据块，并负责数据块的读写操作。 每个ChunkServer通常存储数十万个数据块，并与其他ChunkServer协作，确保文件的数据冗余。 客户端（Client）：\n向GFS请求文件操作，客户端直接与ChunkServer进行交互，而非通过Master节点读取或写入数据。 客户端通过Master节点获取文件的元数据，再访问实际存储数据的ChunkServer。 文件存储与管理 文件系统结构：\n文件通过名称与Master节点的元数据存储管理。每个文件被拆分成多个块，这些块通过块ID与物理存储设备中的数据块一一映射。 副本管理：\n每个数据块的副本会分布在多个ChunkServer上，默认副本数为3。Master节点负责监控副本的健康情况，并在需要时创建新的副本。 垃圾回收与回收机制：\n在文件删除或副本回收时，GFS通过垃圾回收机制确保不会泄漏存储资源。 高可用性与容错 GFS的高可用性依赖于以下设计原则：\n数据副本：\n每个块会被存储在多个ChunkServer上，确保即使某个服务器宕机，数据也不会丢失。 心跳与健康检查：\nMaster节点会定期与ChunkServer进行心跳通信，监控每个存储节点的健康状况。如果发现ChunkServer失败，Master节点会重新调度该节点上的数据块副本。 元数据复制与备份：\nGFS的元数据虽然由单个Master节点管理，但该节点会定期进行备份，确保在Master节点故障时可以快速恢复。 常用GFS的替代品 虽然Google File System是一个内部系统，但它的设计思想影响了许多其他开源系统。以下是几个常用的类似产品：\nHadoop Distributed File System (HDFS)：\nHDFS是Apache Hadoop项目的一部分，借鉴了GFS的设计理念。它是一个广泛使用的开源分布式文件系统，尤其适用于大数据处理。 Ceph：\nCeph是一个开源的分布式存储系统，提供高可用性、高可靠性的文件系统、块存储和对象存储服务。 GlusterFS：\nGlusterFS是一个开源的分布式文件系统，提供了横向扩展能力和高性能。它与GFS类似，适用于需要大规模存储的场景。 Amazon S3：\n虽然S3是对象存储，但其高度分布式的架构设计和可扩展性与GFS类似，常用于海量数据的存储和管理。 总结 Google File System（GFS）是为了解决大规模数据存储和处理而设计的分布式文件系统，它优化了存储结构、数据副本管理和容错能力，使得它在数据集群规模和高吞吐量要求下表现出色。GFS的设计思想为后来的HDFS等分布式文件系统提供了宝贵的参考。\n",
+  "wordCount" : "2138",
+  "inLanguage": "zh-cn",
+  "datePublished": "2018-11-02T11:58:06+02:00",
+  "dateModified": "2018-11-02T11:58:06+02:00",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "http://myself659.github.io/post/distributed/gfs-101/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "沉风网事",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "http://myself659.github.io/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+<body id="top">
+    <header class="header">
+    <nav class="header-nav">
+        <div class="logo">
+            <a href="http://myself659.github.io/" accesskey="h" title="沉风网事 (Alt + H)">沉风网事</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" class="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg class="moon" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg class="sun" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu" class="menu">
+            <li>
+                <a href="http://myself659.github.io/" title="Home">
+                    <span>Home</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://myself659.github.io/post/" title="Archives">
+                    <span>Archives</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://myself659.github.io/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://myself659.github.io/categories/" title="Categories">
+                    <span>Categories</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://myself659.github.io/search/" title="Search (Alt &#43; /)" accesskey=/>
+                    <span>Search</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://myself659.github.io/about/" title="About">
+                    <span>About</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://myself659.github.io/post/leetcode/" title="LeetCode">
+                    <span>LeetCode</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://myself659.github.io/post/read-post/" title="Reading">
+                    <span>Reading</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://myself659.github.io/post/share-post/" title="Share">
+                    <span>Share</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://myself659.github.io/post/slide-post/" title="Slide">
+                    <span>Slide</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title entry-hint-parent">
+      Google File System (GFS) 101
+    </h1>
+    <div class="post-meta">
+
+<span title='2018-11-02 11:58:06 +0200 +0200'>November 2, 2018</span>
+
+</div>
+  </header> 
+  <div class="post-content md-content"><h2 id="前言">前言<a hidden class="anchor" aria-hidden="true" href="#前言">#</a></h2>
+<p>在现代互联网系统中，数据存储、管理与分发一直是关键技术之一。Google File System（GFS）是谷歌为满足其海量数据存储需求而设计的分布式文件系统。它支撑着谷歌的许多大规模应用，如搜索引擎、YouTube等，尤其适用于高吞吐量、大文件存储和海量数据处理。</p>
+<h2 id="定义">定义<a hidden class="anchor" aria-hidden="true" href="#定义">#</a></h2>
+<p>Google File System (GFS) 是一个高度可扩展的分布式文件系统，旨在运行在商用硬件上，支持数百到数千台机器，适用于处理海量的非结构化数据。</p>
+<p><strong>Wikipedia定义</strong>：</p>
+<blockquote>
+<p>&ldquo;Google File System is a proprietary distributed file system developed by Google to meet the needs of Google&rsquo;s data processing and storage requirements.&rdquo;</p>
+</blockquote>
+<h2 id="工作原理">工作原理<a hidden class="anchor" aria-hidden="true" href="#工作原理">#</a></h2>
+<p>GFS通过将文件拆分为多个<strong>块</strong>（块大小通常为64MB），并将其分布存储在集群中的多个节点上。每个文件的多个副本会存储在不同的机器上，保证数据的可靠性与容错性。GFS的工作原理基于如下几个核心设计：</p>
+<ol>
+<li><strong>块存储</strong>：每个文件被拆分成多个固定大小的数据块，块在集群中以副本的形式存在。</li>
+<li><strong>主节点控制</strong>：集群中的所有元数据（如文件与块的映射）由一个或多个主节点（Master）控制。</li>
+<li><strong>副本与容错</strong>：每个数据块至少保留3个副本，在不同的机器上存储，防止单点故障。</li>
+<li><strong>大文件支持</strong>：每个文件可以是非常大的，单个文件的大小可以达到TB级别。</li>
+<li><strong>高吞吐量设计</strong>：GFS特别优化了数据访问的吞吐量，而非低延迟，因此非常适合批量处理和大数据分析。</li>
+</ol>
+<h2 id="属性与指标">属性与指标<a hidden class="anchor" aria-hidden="true" href="#属性与指标">#</a></h2>
+<p>关注的GFS属性与指标如下：</p>
+<ol>
+<li>
+<p><strong>块大小（Block Size）</strong>：</p>
+<ul>
+<li>GFS文件通常以64MB为一个块大小。相较于传统文件系统的小块存储（如4KB），大块能够减少元数据的管理负担，适合大规模数据访问。</li>
+</ul>
+</li>
+<li>
+<p><strong>副本数（Replication Factor）</strong>：</p>
+<ul>
+<li>每个文件的每个块至少有3个副本。副本数可以在配置时调整，以确保数据的高可靠性。</li>
+</ul>
+</li>
+<li>
+<p><strong>容错性（Fault Tolerance）</strong>：</p>
+<ul>
+<li>通过数据块的副本存储、心跳检测等机制，GFS能够容忍单个节点或硬件故障。</li>
+</ul>
+</li>
+<li>
+<p><strong>数据一致性（Consistency）</strong>：</p>
+<ul>
+<li>GFS在写操作中采用了简单的强一致性模型，保证所有客户端在文件的任何时候看到的是一致的数据视图。</li>
+</ul>
+</li>
+<li>
+<p><strong>扩展性（Scalability）</strong>：</p>
+<ul>
+<li>GFS能够随着节点的增加而扩展，支持数千台机器并提供线性扩展性。</li>
+</ul>
+</li>
+<li>
+<p><strong>吞吐量（Throughput）</strong>：</p>
+<ul>
+<li>适合海量数据的高吞吐量处理，而非低延迟随机访问。</li>
+</ul>
+</li>
+<li>
+<p><strong>单一主节点（Single Master Node）</strong>：</p>
+<ul>
+<li>GFS通过单个主节点控制元数据，这种设计简化了元数据管理，但也意味着主节点成为潜在的瓶颈。</li>
+</ul>
+</li>
+</ol>
+<h2 id="类型">类型<a hidden class="anchor" aria-hidden="true" href="#类型">#</a></h2>
+<h3 id="gfs架构">GFS架构<a hidden class="anchor" aria-hidden="true" href="#gfs架构">#</a></h3>
+<p>GFS由以下三个主要组件组成：</p>
+<ol>
+<li>
+<p><strong>Master节点（Master）</strong>：</p>
+<ul>
+<li>负责存储集群的元数据，包括文件到块的映射、块的位置和文件的副本等。</li>
+<li>管理块的分配、回收以及数据副本的调度。</li>
+<li>为客户端提供文件和块的元数据信息。</li>
+</ul>
+</li>
+<li>
+<p><strong>ChunkServer节点（ChunkServer）</strong>：</p>
+<ul>
+<li>实际存储文件的数据块，并负责数据块的读写操作。</li>
+<li>每个ChunkServer通常存储数十万个数据块，并与其他ChunkServer协作，确保文件的数据冗余。</li>
+</ul>
+</li>
+<li>
+<p><strong>客户端（Client）</strong>：</p>
+<ul>
+<li>向GFS请求文件操作，客户端直接与ChunkServer进行交互，而非通过Master节点读取或写入数据。</li>
+<li>客户端通过Master节点获取文件的元数据，再访问实际存储数据的ChunkServer。</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h3 id="文件存储与管理">文件存储与管理<a hidden class="anchor" aria-hidden="true" href="#文件存储与管理">#</a></h3>
+<ul>
+<li>
+<p><strong>文件系统结构</strong>：</p>
+<ul>
+<li>文件通过名称与Master节点的元数据存储管理。每个文件被拆分成多个块，这些块通过块ID与物理存储设备中的数据块一一映射。</li>
+</ul>
+</li>
+<li>
+<p><strong>副本管理</strong>：</p>
+<ul>
+<li>每个数据块的副本会分布在多个ChunkServer上，默认副本数为3。Master节点负责监控副本的健康情况，并在需要时创建新的副本。</li>
+</ul>
+</li>
+<li>
+<p><strong>垃圾回收与回收机制</strong>：</p>
+<ul>
+<li>在文件删除或副本回收时，GFS通过垃圾回收机制确保不会泄漏存储资源。</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="高可用性与容错">高可用性与容错<a hidden class="anchor" aria-hidden="true" href="#高可用性与容错">#</a></h3>
+<p>GFS的高可用性依赖于以下设计原则：</p>
+<ol>
+<li>
+<p><strong>数据副本</strong>：</p>
+<ul>
+<li>每个块会被存储在多个ChunkServer上，确保即使某个服务器宕机，数据也不会丢失。</li>
+</ul>
+</li>
+<li>
+<p><strong>心跳与健康检查</strong>：</p>
+<ul>
+<li>Master节点会定期与ChunkServer进行心跳通信，监控每个存储节点的健康状况。如果发现ChunkServer失败，Master节点会重新调度该节点上的数据块副本。</li>
+</ul>
+</li>
+<li>
+<p><strong>元数据复制与备份</strong>：</p>
+<ul>
+<li>GFS的元数据虽然由单个Master节点管理，但该节点会定期进行备份，确保在Master节点故障时可以快速恢复。</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h2 id="常用gfs的替代品">常用GFS的替代品<a hidden class="anchor" aria-hidden="true" href="#常用gfs的替代品">#</a></h2>
+<p>虽然Google File System是一个内部系统，但它的设计思想影响了许多其他开源系统。以下是几个常用的类似产品：</p>
+<ol>
+<li>
+<p><strong>Hadoop Distributed File System (HDFS)</strong>：</p>
+<ul>
+<li>HDFS是Apache Hadoop项目的一部分，借鉴了GFS的设计理念。它是一个广泛使用的开源分布式文件系统，尤其适用于大数据处理。</li>
+</ul>
+</li>
+<li>
+<p><strong>Ceph</strong>：</p>
+<ul>
+<li>Ceph是一个开源的分布式存储系统，提供高可用性、高可靠性的文件系统、块存储和对象存储服务。</li>
+</ul>
+</li>
+<li>
+<p><strong>GlusterFS</strong>：</p>
+<ul>
+<li>GlusterFS是一个开源的分布式文件系统，提供了横向扩展能力和高性能。它与GFS类似，适用于需要大规模存储的场景。</li>
+</ul>
+</li>
+<li>
+<p><strong>Amazon S3</strong>：</p>
+<ul>
+<li>虽然S3是对象存储，但其高度分布式的架构设计和可扩展性与GFS类似，常用于海量数据的存储和管理。</li>
+</ul>
+</li>
+</ol>
+<h2 id="总结">总结<a hidden class="anchor" aria-hidden="true" href="#总结">#</a></h2>
+<p>Google File System（GFS）是为了解决大规模数据存储和处理而设计的分布式文件系统，它优化了存储结构、数据副本管理和容错能力，使得它在数据集群规模和高吞吐量要求下表现出色。GFS的设计思想为后来的HDFS等分布式文件系统提供了宝贵的参考。</p>
+<hr>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="http://myself659.github.io/tags/distributed/">Distributed</a></li>
+    </ul>
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>沉风网事</span> · 
+
+    
+    
+    <span>
+        Powered by
+        <a href="https://gohugo.io/?utm_source=papermod" rel="noopener" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" id="top-link" class="top-link hidden" aria-label="go to top" title="Go to Top (Alt + G)" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevrons-up">
+        <polyline points="17 11 12 6 7 11"></polyline>
+        <polyline points="17 18 12 13 7 18"></polyline>
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu');
+    if (menu) {
+        
+        const scrollPosition = localStorage.getItem("menu-scroll-position");
+        if (scrollPosition) {
+            menu.scrollLeft = parseInt(scrollPosition, 10);
+        }
+        
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var toplink = document.getElementById("top-link");
+    window.onscroll = function () {
+        const scrollThreshold = window.innerHeight;
+        if (document.body.scrollTop > scrollThreshold || document.documentElement.scrollTop > scrollThreshold) {
+            toplink.classList.remove("hidden");
+        } else {
+            toplink.classList.add("hidden");
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        const html = document.querySelector("html");
+        if (html.dataset.theme === "dark") {
+            html.dataset.theme = 'light';
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            html.dataset.theme = 'dark';
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>

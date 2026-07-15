@@ -1,21 +1,34 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Defi on 沉风网事</title>
     <link>http://myself659.github.io/tags/defi/</link>
     <description>Recent content in Defi on 沉风网事</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>zh-cn</language>
     <copyright>沉风网事</copyright>
-    <lastBuildDate>Thu, 08 Jul 2021 11:58:06 +0200</lastBuildDate><atom:link href="http://myself659.github.io/tags/defi/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 08 Jul 2021 11:58:06 +0200</lastBuildDate>
+    <atom:link href="http://myself659.github.io/tags/defi/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>常用Defi工具与网站</title>
       <link>http://myself659.github.io/post/blockchain/defi-tools/</link>
       <pubDate>Thu, 08 Jul 2021 11:58:06 +0200</pubDate>
-      
       <guid>http://myself659.github.io/post/blockchain/defi-tools/</guid>
-      <description>DeBank DeBank 是一款DeFi资产跟踪和投资组合管理工具。 优点： 支持多链 不仅支持链上帐户资产也支持TVL资产 支持多种协议 支持帐号approve风险提示 缺</description>
+      <description>&lt;h2 id=&#34;debank&#34;&gt;DeBank&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://debank.com/&#34;&gt;DeBank&lt;/a&gt; 是一款DeFi资产跟踪和投资组合管理工具。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;优点&lt;/strong&gt;：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;支持多链&lt;/li&gt;
+&lt;li&gt;不仅支持链上帐户资产也支持TVL资产&lt;/li&gt;
+&lt;li&gt;支持多种协议&lt;/li&gt;
+&lt;li&gt;支持帐号approve风险提示&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;strong&gt;缺点&lt;/strong&gt;：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;新协议支持速度慢&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;vfat-tools&#34;&gt;vFat Tools&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://vfat.tools/&#34;&gt;vFat Tools&lt;/a&gt;为defi农民提供挖矿分析，收益计算，数据面板等服务。&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

@@ -1,84 +1,118 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>AI on 沉风网事</title>
     <link>http://myself659.github.io/tags/ai/</link>
     <description>Recent content in AI on 沉风网事</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>zh-cn</language>
     <copyright>沉风网事</copyright>
-    <lastBuildDate>Wed, 25 Oct 2023 11:58:06 +0800</lastBuildDate><atom:link href="http://myself659.github.io/tags/ai/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 25 Oct 2023 11:58:06 +0800</lastBuildDate>
+    <atom:link href="http://myself659.github.io/tags/ai/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>人工智能时代应该培养什么能力</title>
       <link>http://myself659.github.io/post/ai/agi-skills%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E6%97%B6%E4%BB%A3%E7%9A%84%E8%83%BD%E5%8A%9B%E9%9B%86/</link>
       <pubDate>Wed, 25 Oct 2023 11:58:06 +0800</pubDate>
-      
       <guid>http://myself659.github.io/post/ai/agi-skills%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E6%97%B6%E4%BB%A3%E7%9A%84%E8%83%BD%E5%8A%9B%E9%9B%86/</guid>
-      <description>背景 从去年末chatGPT的横空出世，到现在近一年的时间，AI领域成果与创新层出不穷。在这一系列的进步之下，让人们相信人类社会终将会进入人工</description>
+      <description>&lt;h2 id=&#34;背景&#34;&gt;背景&lt;/h2&gt;
+&lt;p&gt;从去年末chatGPT的横空出世，到现在近一年的时间，AI领域成果与创新层出不穷。在这一系列的进步之下，让人们相信人类社会终将会进入人工智能时代。&lt;/p&gt;</description>
     </item>
-    
+    <item>
+      <title>prompt进阶列表</title>
+      <link>http://myself659.github.io/post/ai/prompt-advanced-list/</link>
+      <pubDate>Fri, 15 Sep 2023 00:00:00 +0000</pubDate>
+      <guid>http://myself659.github.io/post/ai/prompt-advanced-list/</guid>
+      <description>&lt;h2 id=&#34;背景&#34;&gt;背景&lt;/h2&gt;
+&lt;p&gt;LLMs通过prompt实现问题解决,但基本的few-shot学习有局限性。要解决复杂问题,需要更精细化的prompt设计引导LLM进行多步推理。结合prompt设计技术可以解决更困难的任务,发挥LLM更大潜力。通过结合prompt设计技术可以解决更困难的任务,发挥LLM更大潜力。&lt;/p&gt;</description>
+    </item>
     <item>
       <title>说说模型</title>
       <link>http://myself659.github.io/post/ai/%E8%AF%B4%E8%AF%B4%E6%A8%A1%E5%9E%8Bmodel/</link>
       <pubDate>Mon, 15 May 2023 11:58:06 +0800</pubDate>
-      
       <guid>http://myself659.github.io/post/ai/%E8%AF%B4%E8%AF%B4%E6%A8%A1%E5%9E%8Bmodel/</guid>
-      <description>定义 先看wiki的定义： A model is an informative representation of an object, person or system. The term originally denoted the plans of a building in late 16th-century English, and derived via French and Italian ultimately from Latin modulus, a measure 模型是对世界的简化，抽象和概括。 一切知识都</description>
+      <description>&lt;h2 id=&#34;定义&#34;&gt;定义&lt;/h2&gt;
+&lt;p&gt;先看wiki的定义：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;A model is an informative representation of an object, person or system. The term originally denoted the plans of a building in late 16th-century English, and derived via French and Italian ultimately from Latin modulus, a measure&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;模型是对世界的简化，抽象和概括。&lt;/p&gt;
+&lt;p&gt;一切知识都是模型。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>说说autoGPT</title>
       <link>http://myself659.github.io/post/ai/autogpt-101/</link>
       <pubDate>Sat, 15 Apr 2023 11:58:06 +0800</pubDate>
-      
       <guid>http://myself659.github.io/post/ai/autogpt-101/</guid>
-      <description>背景 chatGPT开启的AIGC领域，最近几个月的发展可以说日新月异，众多LLM如雨后春笋，最近autoGPT的出现，更是吸引大家的关注。 autoGPT</description>
+      <description>&lt;h2 id=&#34;背景&#34;&gt;背景&lt;/h2&gt;
+&lt;p&gt;chatGPT开启的AIGC领域，最近几个月的发展可以说日新月异，众多LLM如雨后春笋，最近autoGPT的出现，更是吸引大家的关注。&lt;/p&gt;
+&lt;h2 id=&#34;autogpt&#34;&gt;autoGPT&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;autoGPT是什么？作者对其定义是：An experimental open-source attempt to make GPT-4 fully autonomous.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>如何利用GPT类AI提升自己</title>
       <link>http://myself659.github.io/post/ai/how-to-ai-help-growth/</link>
       <pubDate>Wed, 05 Apr 2023 11:58:06 +0800</pubDate>
-      
       <guid>http://myself659.github.io/post/ai/how-to-ai-help-growth/</guid>
-      <description>背景 chatGPT的横空出世，宣告真正的人工智能时代已经开启。 未来会是怎么样，没有人知道，我只知道这两点： 会用AI的人淘汰不会用AI 谁更会用</description>
+      <description>&lt;h2 id=&#34;背景&#34;&gt;背景&lt;/h2&gt;
+&lt;p&gt;chatGPT的横空出世，宣告真正的人工智能时代已经开启。&lt;/p&gt;
+&lt;p&gt;未来会是怎么样，没有人知道，我只知道这两点：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;会用AI的人淘汰不会用AI&lt;/li&gt;
+&lt;li&gt;谁更会用AI，谁更有竞争力&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;下面我们就看一下GPT们是怎么教我们用好他们的。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>从三道逻辑分析题看GPT4</title>
       <link>http://myself659.github.io/post/ai/logic-gpt4-chatgpt/</link>
       <pubDate>Fri, 17 Mar 2023 11:58:06 +0200</pubDate>
-      
       <guid>http://myself659.github.io/post/ai/logic-gpt4-chatgpt/</guid>
-      <description>背景 GPT-4最近已经推出，那么GPT-4表现如何？相对于chatGPT使用的gpt3.5模型有哪些提高与进步？ 下面就通过三道逻辑题展开测试</description>
+      <description>&lt;h2 id=&#34;背景&#34;&gt;背景&lt;/h2&gt;
+&lt;p&gt;GPT-4最近已经推出，那么GPT-4表现如何？相对于chatGPT使用的gpt3.5模型有哪些提高与进步？&lt;/p&gt;
+&lt;p&gt;下面就通过三道逻辑题展开测试与对比。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>AI编程时代程序员应该重点培养的技能</title>
       <link>http://myself659.github.io/post/ai/ai%E7%BC%96%E7%A8%8B%E6%97%B6%E4%BB%A3%E7%9A%84%E6%8A%80%E8%83%BD/</link>
       <pubDate>Wed, 15 Mar 2023 11:58:06 +0800</pubDate>
-      
       <guid>http://myself659.github.io/post/ai/ai%E7%BC%96%E7%A8%8B%E6%97%B6%E4%BB%A3%E7%9A%84%E6%8A%80%E8%83%BD/</guid>
-      <description>背景 AI编程已经不再是传说，而是事实。GitHub Copilot这样的工具会不断推动AI编程的普及。这会带来给程序员的工作带来新的变化。 这一</description>
+      <description>&lt;h2 id=&#34;背景&#34;&gt;背景&lt;/h2&gt;
+&lt;p&gt;AI编程已经不再是传说，而是事实。GitHub Copilot这样的工具会不断推动AI编程的普及。这会带来给程序员的工作带来新的变化。&lt;/p&gt;
+&lt;p&gt;这一变化有以下特点：&lt;/p&gt;</description>
     </item>
-    
+    <item>
+      <title>How to use ChatGPT to empower learning</title>
+      <link>http://myself659.github.io/post/ai/prompt-for-learn/</link>
+      <pubDate>Wed, 15 Mar 2023 00:00:00 +0000</pubDate>
+      <guid>http://myself659.github.io/post/ai/prompt-for-learn/</guid>
+      <description>&lt;p&gt;ChatGPT is the best free teacher.&lt;/p&gt;
+&lt;p&gt;How to use ChatGPT to empower learning.  The examples are as following:&lt;/p&gt;
+&lt;h2 id=&#34;1-understand-anything-easily&#34;&gt;1. Understand anything easily&lt;/h2&gt;
+&lt;p&gt;Prompt:&lt;/p&gt;
+&lt;p&gt;“Can you explain the concept of (topic) in simple terms? Summarize the main principles and illustrate with examples to facilitate understanding.”&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Can you explain the concept of (zero-knowledge proof) in simple terms? Summarize the main principles and illustrate with examples to facilitate understanding.
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h2 id=&#34;2-create-a-learning-plan&#34;&gt;2. Create a learning plan&lt;/h2&gt;
+&lt;p&gt;Prompt:&lt;/p&gt;</description>
+    </item>
     <item>
       <title>如何更好地向ChatGPT提问</title>
       <link>http://myself659.github.io/post/ai/how-to-ask-gpt/</link>
       <pubDate>Sat, 17 Dec 2022 11:58:06 +0200</pubDate>
-      
       <guid>http://myself659.github.io/post/ai/how-to-ask-gpt/</guid>
-      <description>说明 下面的所有的问题均由chatGPT回答。 如何描述问题才能让chatGPT更好的回答？ 以下是描述问题的一些技巧，可以帮助 ChatGPT 更好地理解和回答</description>
+      <description>&lt;h2 id=&#34;说明&#34;&gt;说明&lt;/h2&gt;
+&lt;p&gt;下面的所有的问题均由chatGPT回答。&lt;/p&gt;
+&lt;h2 id=&#34;如何描述问题才能让chatgpt更好的回答&#34;&gt;如何描述问题才能让chatGPT更好的回答？&lt;/h2&gt;
+&lt;p&gt;以下是描述问题的一些技巧，可以帮助 ChatGPT 更好地理解和回答你的问题：&lt;/p&gt;
+&lt;p&gt;简明扼要地描述你的问题：尽可能简单清晰地表达你的问题，避免使用复杂或模糊的术语或语言。&lt;/p&gt;</description>
     </item>
-    
-    <item>
-      <title>prompt进阶列表</title>
-      <link>http://myself659.github.io/post/ai/prompt-advanced-list/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://myself659.github.io/post/ai/prompt-advanced-list/</guid>
-      <description>背景 LLMs通过prompt实现问题解决,但基本的few-shot学习有局限性。要解决复杂问题,需要更精细化的prompt设计引导LLM进行</description>
-    </item>
-    
   </channel>
 </rss>

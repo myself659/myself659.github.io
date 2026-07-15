@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="auto" data-theme="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Blockchain | 沉风网事</title>
+<meta name="keywords" content="">
+<meta name="description" content="沉风网事，以人为本，尊重事实与原理，立足现实，以科技与金融为驱动，中西结合，虚实相应，主要关注互联网，系统架构，区块链，安全，经济，数据等领域">
+<meta name="author" content="">
+<link rel="canonical" href="http://myself659.github.io/tags/blockchain/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.89ca4972ab5e6aaa05e9a0dae0c4bb64b26585bc79e36f5cf33614eea0283abe.css" integrity="sha256-icpJcqteaqoF6aDa4MS7ZLJlhbx5429c8zYU7qAoOr4=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://myself659.github.io/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://myself659.github.io/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://myself659.github.io/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://myself659.github.io/apple-touch-icon.png">
+<link rel="mask-icon" href="http://myself659.github.io/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" type="application/rss+xml" href="http://myself659.github.io/tags/blockchain/index.xml" title="rss">
+<link rel="alternate" hreflang="zh-cn" href="http://myself659.github.io/tags/blockchain/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+                color-scheme: dark;
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .toc {
+                background: var(--entry);
+            }
+        }
+
+    </style>
+</noscript>
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else if (localStorage.getItem("pref-theme") === "light") {
+       document.querySelector("html").dataset.theme = 'light';
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else {
+        document.querySelector("html").dataset.theme = 'light';
+    }
+
+</script><meta property="og:url" content="http://myself659.github.io/tags/blockchain/">
+  <meta property="og:site_name" content="沉风网事">
+  <meta property="og:title" content="Blockchain">
+  <meta property="og:description" content="沉风网事，以人为本，尊重事实与原理，立足现实，以科技与金融为驱动，中西结合，虚实相应，主要关注互联网，系统架构，区块链，安全，经济，数据等领域">
+  <meta property="og:locale" content="zh_cn">
+  <meta property="og:type" content="website">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Blockchain">
+  <meta name="twitter:description" content="沉风网事，以人为本，尊重事实与原理，立足现实，以科技与金融为驱动，中西结合，虚实相应，主要关注互联网，系统架构，区块链，安全，经济，数据等领域">
+
+</head>
+<body class="list" id="top">
+    <header class="header">
+    <nav class="header-nav">
+        <div class="logo">
+            <a href="http://myself659.github.io/" accesskey="h" title="沉风网事 (Alt + H)">沉风网事</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" class="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg class="moon" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg class="sun" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu" class="menu">
+            <li>
+                <a href="http://myself659.github.io/" title="Home">
+                    <span>Home</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://myself659.github.io/post/" title="Archives">
+                    <span>Archives</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://myself659.github.io/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://myself659.github.io/categories/" title="Categories">
+                    <span>Categories</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://myself659.github.io/search/" title="Search (Alt &#43; /)" accesskey=/>
+                    <span>Search</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://myself659.github.io/about/" title="About">
+                    <span>About</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://myself659.github.io/post/leetcode/" title="LeetCode">
+                    <span>LeetCode</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://myself659.github.io/post/read-post/" title="Reading">
+                    <span>Reading</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://myself659.github.io/post/share-post/" title="Share">
+                    <span>Share</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://myself659.github.io/post/slide-post/" title="Slide">
+                    <span>Slide</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main"> 
+<header class="page-header">
+  <h1>
+    Blockchain
+  </h1>
+</header>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">数字货币交易所安全体系-资产篇
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>前面，简单介绍了数字货币交易所的安全体系，这一篇主要说说一下资产安全的一些要点。
+如果将一条公链比作一个银行的话，当然这个银行是去中心化银行，那个各个交易所的节点就相当于银行的网点。这个节点有以下功能：
+...</p>
+  </div>
+  <footer class="entry-footer">
+
+<span title='2018-10-19 11:58:06 +0200 +0200'>October 19, 2018</span></footer>
+  <a class="entry-link" aria-label="post link to 数字货币交易所安全体系-资产篇" href="http://myself659.github.io/post/exchage-safe-asset/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">数字货币钱包产品定位与战略
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>4月份写一份关于数字货币钱包的分析，欢迎交流与指正。
+数字货币钱包产品定位与战略
+欢迎关注 欢迎关注微信公众帐号：沉风网事(savewind)
+</p>
+  </div>
+  <footer class="entry-footer">
+
+<span title='2018-10-19 11:58:06 +0200 +0200'>October 19, 2018</span></footer>
+  <a class="entry-link" aria-label="post link to 数字货币钱包产品定位与战略" href="http://myself659.github.io/post/blockchain/blockchain-digitwallet-strategy/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">数字货币交易所安全防护体系介绍
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>说明 这里的交易所是指中心化交易所。下面按标题三个关键词展开说明。
+交易所 交易所作为数字资产交易的平台。一直不断地就有安全问题出现，最著名的是Mt. Gox事件，影响恶劣。后续事故也不少，不多说了。交易所安全事故这只黑天鹅未来一定会再出现。
+...</p>
+  </div>
+  <footer class="entry-footer">
+
+<span title='2018-10-15 11:58:06 +0200 +0200'>October 15, 2018</span></footer>
+  <a class="entry-link" aria-label="post link to 数字货币交易所安全防护体系介绍" href="http://myself659.github.io/post/exchage-safe-arch/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">区块链开启游戏的新时代
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>自2008年比特币诞生以来，其代表的区链技术的发展程度令人兴奋，区块链很快就成为日常生活中的流行语。特别是对于游戏行业，区块链能够带来新的游戏互动和体验方式，这种互动和体验方式有如下三个特点：
+...</p>
+  </div>
+  <footer class="entry-footer">
+
+<span title='2018-07-21 11:58:06 +0200 +0200'>July 21, 2018</span></footer>
+  <a class="entry-link" aria-label="post link to 区块链开启游戏的新时代" href="http://myself659.github.io/post/blockchain/blockchain-new-game-time/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">我为什么看好区块链
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>前言 关于区块链讨论很多，下面是我个人看好区块链技术的原因，具体如下：
+提高效率，降低成本 以比特币为例，大大缩短跨国转帐的成本和时间周期。这只是冰上一角，区块链技术在金融系统的还没有大面积的应用。
+...</p>
+  </div>
+  <footer class="entry-footer">
+
+<span title='2018-06-11 11:58:06 +0200 +0200'>June 11, 2018</span></footer>
+  <a class="entry-link" aria-label="post link to 我为什么看好区块链" href="http://myself659.github.io/post/%E6%88%91%E4%B8%BA%E4%BB%80%E4%B9%88%E7%9C%8B%E5%A5%BD%E5%8C%BA%E5%9D%97%E9%93%BE/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">以太坊交易池分析
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>简介 以太坊交易池有以下功能：
+缓存交易 清理交易 实现交易gasPrice竞价功能 配合出块，提供打包交易 交易查询 配置 配置描述 geth中用数据结构TxPoolConfig描述交易池配置，具体如下：
+...</p>
+  </div>
+  <footer class="entry-footer">
+
+<span title='2018-05-15 11:58:06 +0200 +0200'>May 15, 2018</span></footer>
+  <a class="entry-link" aria-label="post link to 以太坊交易池分析" href="http://myself659.github.io/post/blockchain/eth-txpool/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">以太坊提交交易流程分析
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>说明 代码基于go-ethereum，版本v1.8.10。
+RPC代码入口 SendTransaction
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 // SendTransaction will create a transaction from the given arguments and // tries to sign it with the key associated with args.To. If the given passwd isn&#39;t // able to decrypt the key it fails. func (s *PrivateAccountAPI) SendTransaction(ctx context.Context, args SendTxArgs, passwd string) (common.Hash, error) { if args.Nonce == nil { // Hold the addresse&#39;s mutex around signing to prevent concurrent assignment of // the same nonce to multiple accounts. s.nonceLock.LockAddr(args.From) defer s.nonceLock.UnlockAddr(args.From) } signed, err := s.signTransaction(ctx, args, passwd) if err != nil { return common.Hash{}, err } return submitTransaction(ctx, s.b, signed) } SendTxArgs的数据结构如下：
+...</p>
+  </div>
+  <footer class="entry-footer">
+
+<span title='2018-05-05 11:58:06 +0200 +0200'>May 5, 2018</span></footer>
+  <a class="entry-link" aria-label="post link to 以太坊提交交易流程分析" href="http://myself659.github.io/post/blockchain/eth-tx-submit/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">矿工五宗罪
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>比特币生态 比特币生态有以下几个角色：
+比特币核心开发者，他们开发与更新比特币技术, 负责开发与维护代码 矿工们，运行区块链技术与算力保证，负责执行代码 交易所，比特币网络的IO,为整个网络的运行提供外部价值的IO 其中矿工有以下五宗罪，具体如下：
+...</p>
+  </div>
+  <footer class="entry-footer">
+
+<span title='2018-03-08 11:58:06 +0200 +0200'>March 8, 2018</span></footer>
+  <a class="entry-link" aria-label="post link to 矿工五宗罪" href="http://myself659.github.io/post/blockchain/%E7%9F%BF%E5%B7%A5%E4%BA%94%E5%AE%97%E7%BD%AA/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">从痛点，爽点，痒点看区块链
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>说明 希望通过痛点，爽点，痒点的分析，看看区块链是不是刚需？区块链在哪些场景下有迫切的需求？
+首先，先看看下面三个定义：
+痛点就是恐惧 爽点是即时满足 痒点是满足虚拟自我 （PS:上述三个定义来自产品大神梁宁的《产品思维30讲》）
+...</p>
+  </div>
+  <footer class="entry-footer">
+
+<span title='2018-03-04 11:58:06 +0200 +0200'>March 4, 2018</span></footer>
+  <a class="entry-link" aria-label="post link to 从痛点，爽点，痒点看区块链" href="http://myself659.github.io/post/blockchain/blockchain-pain-happy-itchy/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">USDT FAQ
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>USDT可信吗？ 技术上可信，但是取决于背后公司的实力背书。更多可以参考reddit 讨论
+从现在的情况USDT并不可信，长期持有USDT有风险。
+USDT发行是可控吗？ USDT发行泰达公司掌握，缺少有效监管与审计。这样会导致USDT与美元的准备金并不是1：1，很有可能是1：0.1。
+...</p>
+  </div>
+  <footer class="entry-footer">
+
+<span title='2018-02-25 11:58:06 +0200 +0200'>February 25, 2018</span></footer>
+  <a class="entry-link" aria-label="post link to USDT FAQ" href="http://myself659.github.io/post/defi/usdt-faq/"></a>
+</article>
+<footer class="page-footer">
+  <nav class="pagination">
+    <a class="prev" href="http://myself659.github.io/tags/blockchain/page/2/">
+      «&nbsp;&nbsp;
+    </a>
+    <a class="next" href="http://myself659.github.io/tags/blockchain/page/4/">&nbsp;&nbsp;»
+    </a>
+  </nav>
+</footer>
+    </main>
+    
+<footer class="footer">
+        <span>沉风网事</span> · 
+
+    
+    
+    <span>
+        Powered by
+        <a href="https://gohugo.io/?utm_source=papermod" rel="noopener" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" id="top-link" class="top-link hidden" aria-label="go to top" title="Go to Top (Alt + G)" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevrons-up">
+        <polyline points="17 11 12 6 7 11"></polyline>
+        <polyline points="17 18 12 13 7 18"></polyline>
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu');
+    if (menu) {
+        
+        const scrollPosition = localStorage.getItem("menu-scroll-position");
+        if (scrollPosition) {
+            menu.scrollLeft = parseInt(scrollPosition, 10);
+        }
+        
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var toplink = document.getElementById("top-link");
+    window.onscroll = function () {
+        const scrollThreshold = window.innerHeight;
+        if (document.body.scrollTop > scrollThreshold || document.documentElement.scrollTop > scrollThreshold) {
+            toplink.classList.remove("hidden");
+        } else {
+            toplink.classList.add("hidden");
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        const html = document.querySelector("html");
+        if (html.dataset.theme === "dark") {
+            html.dataset.theme = 'light';
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            html.dataset.theme = 'dark';
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>

@@ -1,30 +1,70 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Secure on 沉风网事</title>
     <link>http://myself659.github.io/categories/secure/</link>
     <description>Recent content in Secure on 沉风网事</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>zh-cn</language>
     <copyright>沉风网事</copyright>
-    <lastBuildDate>Fri, 08 Nov 2019 11:58:06 +0200</lastBuildDate><atom:link href="http://myself659.github.io/categories/secure/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 08 Nov 2019 11:58:06 +0200</lastBuildDate>
+    <atom:link href="http://myself659.github.io/categories/secure/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>DoH FAQ</title>
       <link>http://myself659.github.io/post/network/about-doh/</link>
       <pubDate>Fri, 08 Nov 2019 11:58:06 +0200</pubDate>
-      
       <guid>http://myself659.github.io/post/network/about-doh/</guid>
-      <description>什么是DoH DoH是DNS over HTTPS。 传统DNS相当于DNS over UDP。 DoH带来哪些好处？ 采用DoH对用户来说有如下好处： DoH协议不允许</description>
+      <description>&lt;h1 id=&#34;什么是doh&#34;&gt;什么是DoH&lt;/h1&gt;
+&lt;p&gt;DoH是DNS over HTTPS。&lt;/p&gt;
+&lt;p&gt;传统DNS相当于DNS over UDP。&lt;/p&gt;
+&lt;h1 id=&#34;doh带来哪些好处&#34;&gt;DoH带来哪些好处？&lt;/h1&gt;
+&lt;p&gt;采用DoH对用户来说有如下好处：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;DoH协议不允许其他用户，服务提供商或第三方查看您访问的网站并收集数据，保护了用户的隐私&lt;/li&gt;
+&lt;li&gt;DoH协议有利于防止欺骗与钓鱼攻击，保护在线数据的安全和隐私&lt;/li&gt;
+&lt;li&gt;加速DNS解析，提高网页访问速度&lt;/li&gt;
+&lt;li&gt;对于天朝人民，还有另一个好处就是科学上网&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h1 id=&#34;doh现在可以使用吗&#34;&gt;DoH现在可以使用吗？&lt;/h1&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;We&amp;#39;ve enabled an experiment in Chrome 79 for a fraction of our users.
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;Chrome 79版本对部分用户开启。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>阿里云ECS基本安全检查小结</title>
       <link>http://myself659.github.io/post/2017-04-08-ecs-basic-sec-check/</link>
       <pubDate>Sat, 08 Apr 2017 11:58:06 +0200</pubDate>
-      
       <guid>http://myself659.github.io/post/2017-04-08-ecs-basic-sec-check/</guid>
-      <description>背景 查看阿里云ECS服务器日志发现如下： 1 2 3 4 5 6 7 type=USER_AUTH msg=audit(1491669519.156:15631): pid=22938 uid=0 auid=4294967295 ses=4294967295 msg=&amp;#39;op=PAM:authentication acct=&amp;#34;deploy&amp;#34; exe=&amp;#34;/usr/sbin/sshd&amp;#34; hostname=123.57.245.163 addr=123.57.245.163 terminal=ssh res=failed&amp;#39; type=USER_LOGIN msg=audit(1491669519.156:15632): pid=22938 uid=0 auid=4294967295 ses=4294967295 msg=&amp;#39;op=login acct=28696E76616C6964207573657229 exe=&amp;#34;/usr/sbin/sshd&amp;#34; hostname=? addr=123.57.245.163 terminal=sshd res=failed&amp;#39; type=USER_LOGIN msg=audit(1491669587.368:15634): pid=22940 uid=0 auid=4294967295 ses=4294967295 msg=&amp;#39;op=login acct=28756E6B6E6F776E207573657229 exe=&amp;#34;/usr/sbin/sshd&amp;#34; hostname=? addr=123.57.245.163 terminal=sshd res=failed&amp;#39; type=USER_LOGIN msg=audit(1491669587.368:15635): pid=22940 uid=0</description>
+      <description>&lt;h3 id=&#34;背景&#34;&gt;背景&lt;/h3&gt;
+&lt;p&gt;查看阿里云ECS服务器日志发现如下：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;7
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;type=USER_AUTH msg=audit(1491669519.156:15631): pid=22938 uid=0 auid=4294967295 ses=4294967295 msg=&amp;#39;op=PAM:authentication acct=&amp;#34;deploy&amp;#34; exe=&amp;#34;/usr/sbin/sshd&amp;#34; hostname=123.57.245.163 addr=123.57.245.163 terminal=ssh res=failed&amp;#39;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;type=USER_LOGIN msg=audit(1491669519.156:15632): pid=22938 uid=0 auid=4294967295 ses=4294967295 msg=&amp;#39;op=login acct=28696E76616C6964207573657229 exe=&amp;#34;/usr/sbin/sshd&amp;#34; hostname=? addr=123.57.245.163 terminal=sshd res=failed&amp;#39;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;type=USER_LOGIN msg=audit(1491669587.368:15634): pid=22940 uid=0 auid=4294967295 ses=4294967295 msg=&amp;#39;op=login acct=28756E6B6E6F776E207573657229 exe=&amp;#34;/usr/sbin/sshd&amp;#34; hostname=? addr=123.57.245.163 terminal=sshd res=failed&amp;#39;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;type=USER_LOGIN msg=audit(1491669587.368:15635): pid=22940 uid=0 auid=4294967295 ses=4294967295 msg=&amp;#39;op=login acct=28696E76616C6964207573657229 exe=&amp;#34;/usr/sbin/sshd&amp;#34; hostname=? addr=123.57.245.163 terminal=sshd res=failed&amp;#39;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;type=USER_AUTH msg=audit(1491669589.420:15636): pid=22940 uid=0 auid=4294967295 ses=4294967295 msg=&amp;#39;op=PAM:authentication acct=&amp;#34;deploy&amp;#34; exe=&amp;#34;/usr/sbin/sshd&amp;#34; hostname=123.57.245.163 addr=123.57.245.163 terminal=ssh res=failed&amp;#39;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;type=USER_LOGIN msg=audit(1491669589.420:15637): pid=22940 uid=0 auid=4294967295 ses=4294967295 msg=&amp;#39;op=login acct=28696E76616C6964207573657229 exe=&amp;#34;/usr/sbin/sshd&amp;#34; hostname=? addr=123.57.245.163 terminal=sshd res=failed&amp;#39;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;type=USER_LOGIN msg=audit(1491669658.624:15639): pid=22948 uid=0 auid=4294967295 ses=4294967295 msg=&amp;#39;op=login acct=28756E6B6E6F776E207573657229 exe=&amp;#34;/usr/sbin/sshd&amp;#34; hostname=? addr=123.57.245.163 terminal=sshd res=failed&amp;#39;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;百度一下这个ip地址，如下图所示：
+![记下这个IP,留下证据](/images/attck ip.png)&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

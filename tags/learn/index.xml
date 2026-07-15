@@ -1,122 +1,218 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Learn on 沉风网事</title>
     <link>http://myself659.github.io/tags/learn/</link>
     <description>Recent content in Learn on 沉风网事</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>zh-cn</language>
     <copyright>沉风网事</copyright>
-    <lastBuildDate>Sat, 06 Apr 2024 11:58:06 +0200</lastBuildDate><atom:link href="http://myself659.github.io/tags/learn/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 06 Apr 2024 11:58:06 +0200</lastBuildDate>
+    <atom:link href="http://myself659.github.io/tags/learn/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>why someone will never improve</title>
       <link>http://myself659.github.io/post/learn/why-never-improve-levelup/</link>
       <pubDate>Sat, 06 Apr 2024 11:58:06 +0200</pubDate>
-      
       <guid>http://myself659.github.io/post/learn/why-never-improve-levelup/</guid>
-      <description>context someone will stay in the level they have stayed. They can not levelup themself.
-The reasons could be as follows.
-they lost in the unknown-unknown they do not take really effective feedback they are not proactive but always waiting they fear of failure and avoid difficulty they do not take action and iterate they stay in their comfort zone they maybe just start, but they do not make it done   </description>
+      <description>&lt;h2 id=&#34;context&#34;&gt;context&lt;/h2&gt;
+&lt;p&gt;someone will stay in the level they have stayed. They can not levelup themself.&lt;/p&gt;
+&lt;p&gt;The reasons could be as follows.&lt;/p&gt;
+&lt;h2 id=&#34;they-lost-in-the-unknown-unknown&#34;&gt;they lost in the unknown-unknown&lt;/h2&gt;
+&lt;h2 id=&#34;they-do-not-take-really-effective-feedback&#34;&gt;they do not take really effective feedback&lt;/h2&gt;
+&lt;h2 id=&#34;they-are-not-proactive-but-always-waiting&#34;&gt;they are not proactive but always waiting&lt;/h2&gt;
+&lt;h2 id=&#34;they-fear-of-failure-and-avoid-difficulty&#34;&gt;they fear of failure and avoid difficulty&lt;/h2&gt;
+&lt;h2 id=&#34;they-do-not-take-action-and-iterate&#34;&gt;they do not take action and iterate&lt;/h2&gt;
+&lt;h2 id=&#34;they-stay-in-their-comfort-zone&#34;&gt;they stay in their comfort zone&lt;/h2&gt;
+&lt;h2 id=&#34;they-maybe-just-start-but-they-do-not-make-it-done&#34;&gt;they maybe just start, but they do not make it done&lt;/h2&gt;</description>
     </item>
-    
     <item>
       <title>说说过度准备</title>
       <link>http://myself659.github.io/post/learn/%E8%AF%B4%E8%AF%B4%E8%BF%87%E5%BA%A6%E5%87%86%E5%A4%87/</link>
       <pubDate>Sat, 18 Nov 2023 11:58:06 +0200</pubDate>
-      
       <guid>http://myself659.github.io/post/learn/%E8%AF%B4%E8%AF%B4%E8%BF%87%E5%BA%A6%E5%87%86%E5%A4%87/</guid>
-      <description>背景 日常生活与工作时常有一种自己没有准备好的感觉，导致缺少行动，从而没有把握机会。 没有准备好的背后往往是过度准备。 现象 过度准备的常有以下现象</description>
+      <description>&lt;h2 id=&#34;背景&#34;&gt;背景&lt;/h2&gt;
+&lt;p&gt;日常生活与工作时常有一种自己没有准备好的感觉，导致缺少行动，从而没有把握机会。&lt;/p&gt;
+&lt;p&gt;没有准备好的背后往往是过度准备。&lt;/p&gt;
+&lt;h2 id=&#34;现象&#34;&gt;现象&lt;/h2&gt;
+&lt;p&gt;过度准备的常有以下现象：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;大量收集信息与知识&lt;/li&gt;
+&lt;li&gt;一直在学习教程&lt;/li&gt;
+&lt;li&gt;一直在思考如何开始&lt;/li&gt;
+&lt;li&gt;一直在想我还需要准备什么&lt;/li&gt;
+&lt;li&gt;无限期地准备&lt;/li&gt;
+&lt;li&gt;无关准备&lt;/li&gt;
+&lt;li&gt;无效准备&lt;/li&gt;
+&lt;li&gt;无重点无差别的准备&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;原因&#34;&gt;原因&lt;/h2&gt;
+&lt;p&gt;过度准备的原因如下：&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>清空自己，超越自我</title>
       <link>http://myself659.github.io/post/learn/%E6%B8%85%E7%A9%BA%E8%87%AA%E5%B7%B1/</link>
       <pubDate>Tue, 07 Nov 2023 11:58:06 +0800</pubDate>
-      
       <guid>http://myself659.github.io/post/learn/%E6%B8%85%E7%A9%BA%E8%87%AA%E5%B7%B1/</guid>
-      <description>容器 如果把每个人的大脑都当作容器，那么学习的过程就往这个容器加东西。 这个容器内有哪些？简单罗列如下： 信息与知识 思想与信念 情感与想法 记忆与经历</description>
+      <description>&lt;h2 id=&#34;容器&#34;&gt;容器&lt;/h2&gt;
+&lt;p&gt;如果把每个人的大脑都当作容器，那么学习的过程就往这个容器加东西。 这个容器内有哪些？简单罗列如下：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;信息与知识&lt;/li&gt;
+&lt;li&gt;思想与信念&lt;/li&gt;
+&lt;li&gt;情感与想法&lt;/li&gt;
+&lt;li&gt;记忆与经历&lt;/li&gt;
+&lt;li&gt;意识与自我&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;但是这个容器的空间有限，如果加的太多，后面也就再也就加不了新东西，同时也看不清楚里面有什么东西，并且会受其所累。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>从最重要的事件开始一天的工作</title>
       <link>http://myself659.github.io/post/done/how-to-eat-thefrog/</link>
       <pubDate>Sun, 05 Nov 2023 11:58:06 +0200</pubDate>
-      
       <guid>http://myself659.github.io/post/done/how-to-eat-thefrog/</guid>
-      <description>背景 Eat the Frog字面意思是吃青蛙。其本质是一个提高个人生产力的方法。其核心原则是：确定当天最重要的一件事件并以此开始一天的工作。 什么是最重要</description>
+      <description>&lt;h2 id=&#34;背景&#34;&gt;背景&lt;/h2&gt;
+&lt;p&gt;Eat the Frog字面意思是吃青蛙。其本质是一个提高个人生产力的方法。其核心原则是：确定当天最重要的一件事件并以此开始一天的工作。&lt;/p&gt;
+&lt;h2 id=&#34;什么是最重要的事情&#34;&gt;什么是最重要的事情？&lt;/h2&gt;
+&lt;p&gt;如果完成一件事,会使其他事情变得简单或不再是问题,那么这件事就可以视为当天最重要的。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>说说学到位</title>
       <link>http://myself659.github.io/post/learn/%E5%AD%A6%E4%B9%A0%E5%88%B0%E4%BD%8D/</link>
       <pubDate>Sat, 18 Apr 2020 11:58:06 +0800</pubDate>
-      
       <guid>http://myself659.github.io/post/learn/%E5%AD%A6%E4%B9%A0%E5%88%B0%E4%BD%8D/</guid>
-      <description>什么是学到位 学到位可以分解为四个到位： 理解到位 体系到位 融合到位 应用到位 理解到位 怎么做到理解到位？ 不多说，推荐费曼学习法。 If you can&amp;rsquo;t explain it simply, you don&amp;rsquo;t understand it</description>
+      <description>&lt;h2 id=&#34;什么是学到位&#34;&gt;什么是学到位&lt;/h2&gt;
+&lt;p&gt;学到位可以分解为四个到位：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;理解到位&lt;/li&gt;
+&lt;li&gt;体系到位&lt;/li&gt;
+&lt;li&gt;融合到位&lt;/li&gt;
+&lt;li&gt;应用到位&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;理解到位&#34;&gt;理解到位&lt;/h2&gt;
+&lt;p&gt;怎么做到理解到位？&lt;/p&gt;
+&lt;p&gt;不多说，推荐费曼学习法。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;If you can&amp;rsquo;t explain it simply, you don&amp;rsquo;t understand it well enough.
+如果你不能简单明了地解释一件事情，那么说明你还没有很好地理解它。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>如何养成好习惯</title>
       <link>http://myself659.github.io/post/learn/how-to-develop-habit/</link>
       <pubDate>Fri, 06 Dec 2019 11:58:06 +0800</pubDate>
-      
       <guid>http://myself659.github.io/post/learn/how-to-develop-habit/</guid>
-      <description>背景 养成好习惯是一项复杂的任务，但通过科学的方法，我们可以使其变得更加简单和高效。 以下将从&amp;quot;原子习惯&amp;quot;、&amp;ldquo;微</description>
+      <description>&lt;h2 id=&#34;背景&#34;&gt;背景&lt;/h2&gt;
+&lt;p&gt;养成好习惯是一项复杂的任务，但通过科学的方法，我们可以使其变得更加简单和高效。&lt;/p&gt;
+&lt;p&gt;以下将从&amp;quot;原子习惯&amp;quot;、&amp;ldquo;微习惯&amp;quot;和&amp;quot;Hook模式&amp;quot;三个策略，以及实践原则，来探讨如何养成好习惯。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>为什么好习惯很重要</title>
       <link>http://myself659.github.io/post/learn/habit-is-important/</link>
       <pubDate>Thu, 05 Dec 2019 11:58:06 +0800</pubDate>
-      
       <guid>http://myself659.github.io/post/learn/habit-is-important/</guid>
-      <description>背景 大家都知道好习惯很重要。 大部分人也就停留在知道，但是仅仅是知道并不能对好习惯养成的帮助很有限。要形成养成好习惯的动力需要深入思考： 为什么</description>
+      <description>&lt;h2 id=&#34;背景&#34;&gt;背景&lt;/h2&gt;
+&lt;p&gt;大家都知道好习惯很重要。&lt;/p&gt;
+&lt;p&gt;大部分人也就停留在知道，但是仅仅是知道并不能对好习惯养成的帮助很有限。要形成养成好习惯的动力需要深入思考：&lt;/p&gt;
+&lt;p&gt;为什么好习惯很重要？&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>做一名通才吧</title>
       <link>http://myself659.github.io/post/learn/to-be-polymath-t%E5%9E%8B%E9%80%9A%E6%89%8D/</link>
       <pubDate>Tue, 15 Oct 2019 11:58:06 +0200</pubDate>
-      
       <guid>http://myself659.github.io/post/learn/to-be-polymath-t%E5%9E%8B%E9%80%9A%E6%89%8D/</guid>
-      <description>背景 这是一个信息爆炸，连接无限，复杂快变的时代。 通才 通才(Polymath),指的是那些具有广泛涉猎知识和兴趣,在不同领域都有深入理解与创造</description>
+      <description>&lt;h2 id=&#34;背景&#34;&gt;背景&lt;/h2&gt;
+&lt;p&gt;这是一个信息爆炸，连接无限，复杂快变的时代。&lt;/p&gt;
+&lt;h2 id=&#34;通才&#34;&gt;通才&lt;/h2&gt;
+&lt;p&gt;通才(Polymath),指的是那些具有广泛涉猎知识和兴趣,在不同领域都有深入理解与创造力的人。其主要特点如下：&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>如何进入心流状态</title>
       <link>http://myself659.github.io/post/done/how-to-flow-%E5%BF%83%E6%B5%81/</link>
       <pubDate>Wed, 05 Jun 2019 11:58:06 +0200</pubDate>
-      
       <guid>http://myself659.github.io/post/done/how-to-flow-%E5%BF%83%E6%B5%81/</guid>
-      <description>心流状态 心流状态(Flow State)指的是一种不自觉的身心愉悦感,以及投入在一个活动中的极度专注的心理状态。当一个人全身心地投入一项工作或</description>
+      <description>&lt;h2 id=&#34;心流状态&#34;&gt;心流状态&lt;/h2&gt;
+&lt;p&gt;心流状态(Flow State)指的是一种不自觉的身心愉悦感,以及投入在一个活动中的极度专注的心理状态。当一个人全身心地投入一项工作或活动时,会体验到这种异常专注且乐在其中的感觉,这就是心流状态。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>只做一件事，避免多任务并发</title>
       <link>http://myself659.github.io/post/done/how-to-one-task%E5%8F%AA%E5%81%9A%E4%B8%80%E4%BB%B6%E4%BA%8B/</link>
       <pubDate>Mon, 03 Jun 2019 11:58:06 +0200</pubDate>
-      
       <guid>http://myself659.github.io/post/done/how-to-one-task%E5%8F%AA%E5%81%9A%E4%B8%80%E4%BB%B6%E4%BA%8B/</guid>
-      <description>多任务并发的危害 人类大脑结构上并不适合多任务处理,强行进行多任务会降低效率与产出 多任务带来的切换成本开销大 多任务处理会降低工作质量，增大压力</description>
+      <description>&lt;h2 id=&#34;多任务并发的危害&#34;&gt;多任务并发的危害&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;人类大脑结构上并不适合多任务处理,强行进行多任务会降低效率与产出&lt;/li&gt;
+&lt;li&gt;多任务带来的切换成本开销大&lt;/li&gt;
+&lt;li&gt;多任务处理会降低工作质量，增大压力&lt;/li&gt;
+&lt;li&gt;多任务加大大脑的负担，容易出错&lt;/li&gt;
+&lt;li&gt;频繁进行任务切换会形成反馈循环,获得即时满足感但实际效果很少，如果长时间地进行这种循环，大脑很难建立延迟循环&lt;/li&gt;
+&lt;li&gt;多任务降低深度工作的可能性，导致工作做不到位&lt;/li&gt;
+&lt;li&gt;多任务影响智商，可能伤害大脑&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;只做一件事&#34;&gt;只做一件事&lt;/h2&gt;
+&lt;p&gt;应对多任务并发的最好的办法就是一个时间块只做一件事。这样做有如下好处：&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>如何走出困境避免进度卡壳</title>
       <link>http://myself659.github.io/post/done/how-to-unstuck-avoid-suck/</link>
       <pubDate>Fri, 01 Jun 2018 11:58:06 +0200</pubDate>
-      
       <guid>http://myself659.github.io/post/done/how-to-unstuck-avoid-suck/</guid>
-      <description>原因 陷入困境的原因从以下几个方面展开。 基础 不知道自己不知道unknown unknown 技能进入高原与瓶颈期，技能达不到解决问题的要求 缺少信息 陷入低水平的</description>
+      <description>&lt;h2 id=&#34;原因&#34;&gt;原因&lt;/h2&gt;
+&lt;p&gt;陷入困境的原因从以下几个方面展开。&lt;/p&gt;
+&lt;h3 id=&#34;基础&#34;&gt;基础&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;不知道自己不知道unknown unknown&lt;/li&gt;
+&lt;li&gt;技能进入高原与瓶颈期，技能达不到解决问题的要求&lt;/li&gt;
+&lt;li&gt;缺少信息&lt;/li&gt;
+&lt;li&gt;陷入低水平的重复&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;自我限制&#34;&gt;自我限制&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;陷入固定的框架之中&lt;/li&gt;
+&lt;li&gt;陷入固定的观念之中&lt;/li&gt;
+&lt;li&gt;不能主动寻求帮助&lt;/li&gt;
+&lt;li&gt;只是重复而不是迭代&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;目标&#34;&gt;目标&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;目标不具体明确&lt;/li&gt;
+&lt;li&gt;目标太大，没有通过分解降低难度&lt;/li&gt;
+&lt;li&gt;目标太难&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;路径与方法&#34;&gt;路径与方法&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;不知道如何开始与入手&lt;/li&gt;
+&lt;li&gt;缺少明确的路径&lt;/li&gt;
+&lt;li&gt;路径与方法错误如先后顺序出错&lt;/li&gt;
+&lt;li&gt;没有从最简单与最基础的开始&lt;/li&gt;
+&lt;li&gt;不要死磕，停下来，休息一下，改变一下&lt;/li&gt;
+&lt;li&gt;等待不存在的条件与环境如等完全只需要照抄的教程&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;能量&#34;&gt;能量&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;缺少动机&lt;/li&gt;
+&lt;li&gt;拖延症&lt;/li&gt;
+&lt;li&gt;心理负担重，不能轻装上阵&lt;/li&gt;
+&lt;li&gt;韧性不足，如前期失败几次后，直接放弃&lt;/li&gt;
+&lt;li&gt;专注不够，导致不能深度思考与工作&lt;/li&gt;
+&lt;li&gt;状态不好&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;示例&#34;&gt;示例&lt;/h2&gt;
+&lt;p&gt;假设遇到一个leetcode题目不会解，可以参考以下步骤来解决：&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>知识 = 概念 &#43; 连接</title>
       <link>http://myself659.github.io/post/learn/%E7%9F%A5%E8%AF%86&#43;%E6%A6%82%E5%BF%B5&#43;%E8%BF%9E%E6%8E%A5/</link>
       <pubDate>Tue, 28 Jun 2016 11:58:06 +0800</pubDate>
-      
       <guid>http://myself659.github.io/post/learn/%E7%9F%A5%E8%AF%86&#43;%E6%A6%82%E5%BF%B5&#43;%E8%BF%9E%E6%8E%A5/</guid>
-      <description>定义 在计算机编程领域有一个对代码的定义： 代码 = 数据结构 + 算法。 参考这个定义，对知识进行一个定义如下： 知识 = 概念 + 连接 概念 概念对就英文单词是c</description>
+      <description>&lt;h2 id=&#34;定义&#34;&gt;定义&lt;/h2&gt;
+&lt;p&gt;在计算机编程领域有一个对代码的定义：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;代码  = 数据结构 + 算法。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;参考这个定义，对知识进行一个定义如下：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;知识 = 概念 + 连接&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;概念&#34;&gt;概念&lt;/h2&gt;
+&lt;p&gt;概念对就英文单词是concept。在维基百科中,concept的定义是:&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

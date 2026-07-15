@@ -1,30 +1,60 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>math on 沉风网事</title>
+    <title>Math on 沉风网事</title>
     <link>http://myself659.github.io/tags/math/</link>
-    <description>Recent content in math on 沉风网事</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <description>Recent content in Math on 沉风网事</description>
+    <generator>Hugo</generator>
     <language>zh-cn</language>
     <copyright>沉风网事</copyright>
-    <lastBuildDate>Sun, 18 Jun 2023 11:58:06 +0200</lastBuildDate><atom:link href="http://myself659.github.io/tags/math/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 18 Jun 2023 11:58:06 +0200</lastBuildDate>
+    <atom:link href="http://myself659.github.io/tags/math/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>99¹⁰⁰与100⁹⁹谁大</title>
       <link>http://myself659.github.io/post/math/99pow100-vs-100pow99/</link>
       <pubDate>Sun, 18 Jun 2023 11:58:06 +0200</pubDate>
-      
       <guid>http://myself659.github.io/post/math/99pow100-vs-100pow99/</guid>
-      <description>题目 有两个数分别为： 99¹⁰⁰ 100⁹⁹ 哪个数更大？ 解答 字符长度比较 1 2 &amp;gt;&amp;gt;&amp;gt; len(str(99**100)) 200 1 2 &amp;gt;&amp;gt;&amp;gt; len(str(100**99)) 199 所以可以得出： 99¹⁰⁰ &amp;gt; 100⁹⁹ 二项式展开 为了比</description>
+      <description>&lt;h2 id=&#34;题目&#34;&gt;题目&lt;/h2&gt;
+&lt;p&gt;有两个数分别为：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;99¹⁰⁰&lt;/li&gt;
+&lt;li&gt;100⁹⁹&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;哪个数更大？&lt;/p&gt;
+&lt;h2 id=&#34;解答&#34;&gt;解答&lt;/h2&gt;
+&lt;h3 id=&#34;字符长度比较&#34;&gt;字符长度比较&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&amp;gt;&amp;gt;&amp;gt; len(str(99**100))
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;200
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&amp;gt;&amp;gt;&amp;gt; len(str(100**99))
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;199
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;所以可以得出： 99¹⁰⁰ &amp;gt; 100⁹⁹&lt;/p&gt;
+&lt;h3 id=&#34;二项式展开&#34;&gt;二项式展开&lt;/h3&gt;
+&lt;p&gt;为了比较 99¹⁰⁰ 和 100⁹⁹，我们可以通过观察这两个数的大小关系来确定它们之间的关系。我们可以先将 100⁹⁹ 转换为相对于 99 的形式，然后通过比较幂次来确定这两个数的大小。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>为什么0不能作为被除数？</title>
       <link>http://myself659.github.io/post/math/why-dividing-by-zero-is-undefined/</link>
       <pubDate>Sat, 08 Feb 2020 11:58:06 +0200</pubDate>
-      
       <guid>http://myself659.github.io/post/math/why-dividing-by-zero-is-undefined/</guid>
-      <description>前言 学过了除法都知道这么一个道理：0不是被除数。 到了后面编程，一直都会遵循一条原则： 0不能作为被除数，如果用0作为被除数，就会出错或者报异常</description>
+      <description>&lt;h2 id=&#34;前言&#34;&gt;前言&lt;/h2&gt;
+&lt;p&gt;学过了除法都知道这么一个道理：0不是被除数。&lt;/p&gt;
+&lt;p&gt;到了后面编程，一直都会遵循一条原则： 0不能作为被除数，如果用0作为被除数，就会出错或者报异常。下面就是一个常见的例子。&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

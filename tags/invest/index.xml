@@ -1,66 +1,196 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Invest on 沉风网事</title>
     <link>http://myself659.github.io/tags/invest/</link>
     <description>Recent content in Invest on 沉风网事</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>zh-cn</language>
     <copyright>沉风网事</copyright>
-    <lastBuildDate>Fri, 15 Jan 2021 11:58:06 +0200</lastBuildDate><atom:link href="http://myself659.github.io/tags/invest/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 15 Jan 2021 11:58:06 +0200</lastBuildDate>
+    <atom:link href="http://myself659.github.io/tags/invest/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>错过了2010年的比特币，不要错过这些新领域的机会</title>
       <link>http://myself659.github.io/post/invest/invest-balajis-directions/</link>
       <pubDate>Fri, 15 Jan 2021 11:58:06 +0200</pubDate>
-      
       <guid>http://myself659.github.io/post/invest/invest-balajis-directions/</guid>
-      <description>今天哪些新领域会像2010年比特币一样的成长 twitter一个用户提出一个问题：Is there a thing today like being into Bitcoin in 2010？ 下面是Balaji S. Srin</description>
+      <description>&lt;h2 id=&#34;今天哪些新领域会像2010年比特币一样的成长&#34;&gt;今天哪些新领域会像2010年比特币一样的成长&lt;/h2&gt;
+&lt;p&gt;twitter一个用户提出一个问题：Is there a thing today like being into Bitcoin in 2010？&lt;/p&gt;
+&lt;p&gt;下面是Balaji S. Srinivasan的回答&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Bitcoin itself (still early relative to 99%)比特币，且比特币仍然是早期&lt;/li&gt;
+&lt;li&gt;Ethereum, crypto in general 以太坊以及其他的加密货币&lt;/li&gt;
+&lt;li&gt;Startup cities 创业型城市如迈阿密，新加坡和迪拜&lt;/li&gt;
+&lt;li&gt;Reversing aging 抗衰老及长寿技术&lt;/li&gt;
+&lt;li&gt;Brain-machine-interface 脑机接口&lt;/li&gt;
+&lt;li&gt;Transhumanism 超人类主义（人类增强）&lt;/li&gt;
+&lt;li&gt;Robotics 机器人技术&lt;/li&gt;
+&lt;li&gt;Digital nomadism, in green zones at least 数字游牧&lt;/li&gt;
+&lt;li&gt;India, rest-of-world tech in general 印度&lt;/li&gt;
+&lt;li&gt;AI-assisted content creation  人工智能辅助内容创作&lt;/li&gt;
+&lt;li&gt;VR as office replacement VR替代办公室&lt;/li&gt;
+&lt;li&gt;AR for productivity (eg Google Glass Enterprise)AR提高生产力&lt;/li&gt;
+&lt;li&gt;Self-hosting makes a comeback (see &lt;a href=&#34;http://cloudron.io&#34;&gt;http://cloudron.io&lt;/a&gt;)自主托管&lt;/li&gt;
+&lt;li&gt;Telemedicine, personal genomics, health tracking v2  远程医疗，个人基因，健康跟踪&lt;/li&gt;
+&lt;li&gt;3D printing of metals 金属的3D打印&lt;/li&gt;
+&lt;li&gt;Pseudonymity, aided by crypto and AI voices &amp;amp; faces 仿真，借助加密和AI仿真声音和人脸&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;对于上面的回答的，个人补充一些：&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>加密货币新手应该注意哪些问题</title>
       <link>http://myself659.github.io/post/blockchain/tips-for-crypto-invest/</link>
       <pubDate>Tue, 08 Dec 2020 11:58:06 +0200</pubDate>
-      
       <guid>http://myself659.github.io/post/blockchain/tips-for-crypto-invest/</guid>
-      <description>背景 随着eth 2.0信标链启动以及defi的快速发展，加密货币会迎来一个新的牛市。在牛市开启之后，一定有很多新人进场。 作为一名老韭菜，简单说</description>
+      <description>&lt;h2 id=&#34;背景&#34;&gt;背景&lt;/h2&gt;
+&lt;p&gt;随着eth 2.0信标链启动以及defi的快速发展，加密货币会迎来一个新的牛市。在牛市开启之后，一定有很多新人进场。&lt;/p&gt;
+&lt;p&gt;作为一名老韭菜，简单说说自己一些想法（不会展开说明）。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>说说非对称性</title>
       <link>http://myself659.github.io/post/invest/invest-%E9%9D%9E%E5%AF%B9%E7%A7%B0%E6%80%A7/</link>
       <pubDate>Sat, 18 Jan 2020 11:58:06 +0200</pubDate>
-      
       <guid>http://myself659.github.io/post/invest/invest-%E9%9D%9E%E5%AF%B9%E7%A7%B0%E6%80%A7/</guid>
-      <description>背景 发现世界的规律，利用其中的非对称性，可以获利事半功倍的交易。 非对称性在哪里？ 非对称性在世界上普及存在。 下面举几个例子： 非对称加密算法 信息</description>
+      <description>&lt;h2 id=&#34;背景&#34;&gt;背景&lt;/h2&gt;
+&lt;p&gt;发现世界的规律，利用其中的非对称性，可以获利事半功倍的交易。&lt;/p&gt;
+&lt;h2 id=&#34;非对称性在哪里&#34;&gt;非对称性在哪里？&lt;/h2&gt;
+&lt;p&gt;非对称性在世界上普及存在。 下面举几个例子：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;非对称加密算法&lt;/li&gt;
+&lt;li&gt;信息不对称&lt;/li&gt;
+&lt;li&gt;能力不对称&lt;/li&gt;
+&lt;li&gt;时间不对称&lt;/li&gt;
+&lt;li&gt;速度不对称&lt;/li&gt;
+&lt;li&gt;认知不对称&lt;/li&gt;
+&lt;li&gt;理论与实践不对称&lt;/li&gt;
+&lt;li&gt;方向非对称性&lt;/li&gt;
+&lt;li&gt;风险不对称&lt;/li&gt;
+&lt;li&gt;责任不对称&lt;/li&gt;
+&lt;li&gt;机会不对称&lt;/li&gt;
+&lt;li&gt;概率不对称&lt;/li&gt;
+&lt;li&gt;主观与客观不对称&lt;/li&gt;
+&lt;li&gt;计划与执行不对称&lt;/li&gt;
+&lt;li&gt;言行不一致&lt;/li&gt;
+&lt;li&gt;构建与析构不对称&lt;/li&gt;
+&lt;li&gt;临界（点/区）不对称&lt;/li&gt;
+&lt;li&gt;表达与意图不一致&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;利用非对称性指导原则&#34;&gt;利用非对称性指导原则&lt;/h2&gt;
+&lt;p&gt;利用非对性性指导原则如下：&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>加密货币市场常用跟踪指标</title>
       <link>http://myself659.github.io/post/blockchain/blockchain-index-predict/</link>
       <pubDate>Mon, 08 Jul 2019 11:58:06 +0200</pubDate>
-      
       <guid>http://myself659.github.io/post/blockchain/blockchain-index-predict/</guid>
-      <description>指标 Largest banks by market cap Largest banks by market cap 总市值 加密货币总市值 CRYPTOCURRENCY MARKET 加密数字货币全球图表 交易量Transaction Volume BTC&amp;rsquo;s Transaction Volume Ethereum’s Transaction Volume 算力Hash</description>
+      <description>&lt;h2 id=&#34;指标&#34;&gt;指标&lt;/h2&gt;
+&lt;h3 id=&#34;largest-banks-by-market-cap&#34;&gt;Largest banks by market cap&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&#34;https://companiesmarketcap.com/banks/largest-banks-by-market-cap/&#34;&gt;Largest banks by market cap&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;总市值&#34;&gt;总市值&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&#34;https://coinmarketcap.com/charts/&#34;&gt;加密货币总市值&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.tradingview.com/markets/cryptocurrencies/global-charts/&#34;&gt;CRYPTOCURRENCY MARKET&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.coingecko.com/zh/global_charts&#34;&gt;加密数字货币全球图表&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;交易量transaction-volume&#34;&gt;交易量Transaction Volume&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&#34;https://coinmetrics.io/charts/#assets=btc&#34;&gt;BTC&amp;rsquo;s Transaction Volume&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://coinmetrics.io/charts/#assets=eth&#34;&gt;Ethereum’s Transaction Volume&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;算力hash-rate&#34;&gt;算力Hash Rate&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.blockchain.com/charts/hash-rate&#34;&gt;BTC&amp;rsquo;s Hash Rate&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://etherscan.io/chart/hashrate&#34;&gt;Ethereum’s Hash Rate&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;活跃地址active-addresses&#34;&gt;活跃地址Active Addresses&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&#34;https://coinmetrics.io/charts/#assets=btc_roll=7_right=AdrActCnt&#34;&gt;BTC&amp;rsquo;s Active Addresses&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://coinmetrics.io/charts/#assets=eth_roll=7_right=AdrActCnt&#34;&gt;Ethereum’s Active Addresses&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;交易数transaction-count&#34;&gt;交易数Transaction Count&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&#34;https://coinmetrics.io/charts/#assets=btc_roll=7_right=TxCnt&#34;&gt;BTC&amp;rsquo;s Transaction Count&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://coinmetrics.io/charts/#assets=eth_roll=7_right=TxCnt&#34;&gt;Ethereum’s Transaction Count&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;average-transactions-per-second&#34;&gt;Average Transactions Per Second&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.blockchain.com/en/charts/transactions-per-second&#34;&gt;Transaction Rate Per Second&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;average-transaction-value&#34;&gt;Average Transaction Value&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&#34;https://coinmetrics.io/charts/#assets=btc_roll=7_right=TxTfrValMeanUSD&#34;&gt;BTC&amp;rsquo;s Average Transaction Value&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://coinmetrics.io/charts/#assets=eth_roll=7_right=TxTfrValMeanUSD&#34;&gt;Ethereum’s Average Transaction Value&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;average-transaction-fee&#34;&gt;Average Transaction Fee&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&#34;https://coinmetrics.io/charts/#assets=btc_log=false_roll=7_left=FeeMeanUSD&#34;&gt;BTC&amp;rsquo;s Average Transaction Fee&lt;/a&gt;&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>赌博vs投资</title>
       <link>http://myself659.github.io/post/invest/invest-vs-gambling/</link>
       <pubDate>Mon, 28 Jan 2019 11:58:06 +0200</pubDate>
-      
       <guid>http://myself659.github.io/post/invest/invest-vs-gambling/</guid>
-      <description>共同点 都是一种交易 都想通过这种交易获利更大的回报 都会面临不确定性 最有可能会失败 都是一种概率的游戏 不同点 赌博缺少风控，投资注重风控 赌博不看风险</description>
+      <description>&lt;h2 id=&#34;共同点&#34;&gt;共同点&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;都是一种交易&lt;/li&gt;
+&lt;li&gt;都想通过这种交易获利更大的回报&lt;/li&gt;
+&lt;li&gt;都会面临不确定性&lt;/li&gt;
+&lt;li&gt;最有可能会失败&lt;/li&gt;
+&lt;li&gt;都是一种概率的游戏&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;不同点&#34;&gt;不同点&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;赌博缺少风控，投资注重风控&lt;/li&gt;
+&lt;li&gt;赌博不看风险与收益不对等，投资会考虑风险与收益是否对等&lt;/li&gt;
+&lt;li&gt;赌博是负期望，投资是正期望&lt;/li&gt;
+&lt;li&gt;赌博是固定期望，投资是可以提高期望&lt;/li&gt;
+&lt;li&gt;赌博往往不知道自己如何输赢的，投资需要做到深入研究如何输赢&lt;/li&gt;
+&lt;li&gt;赌博主要拼运气，投资拼实力（认知，技术，资源等等）&lt;/li&gt;
+&lt;li&gt;赌博是短期心态，投资是长期心态&lt;/li&gt;
+&lt;li&gt;赌博追求快速暴富，投资追求慢慢变富&lt;/li&gt;
+&lt;/ol&gt;</description>
     </item>
-    
     <item>
       <title>如何分析股票</title>
       <link>http://myself659.github.io/post/invest/invest-how-to-stock/</link>
       <pubDate>Tue, 08 Jan 2019 11:58:06 +0200</pubDate>
-      
       <guid>http://myself659.github.io/post/invest/invest-how-to-stock/</guid>
-      <description>如何分析股票 个人认为可以从以下几个方面展开。 商业模式 公司的商业模式是什么？ 商业模式是否可持续？ 商业模式是否有竞争优势？ 治理能力 公司的管理层与</description>
+      <description>&lt;h2 id=&#34;如何分析股票&#34;&gt;如何分析股票&lt;/h2&gt;
+&lt;p&gt;个人认为可以从以下几个方面展开。&lt;/p&gt;
+&lt;h3 id=&#34;商业模式&#34;&gt;商业模式&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;公司的商业模式是什么？&lt;/li&gt;
+&lt;li&gt;商业模式是否可持续？&lt;/li&gt;
+&lt;li&gt;商业模式是否有竞争优势？&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;治理能力&#34;&gt;治理能力&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;公司的管理层与决策层是谁？&lt;/li&gt;
+&lt;li&gt;公司的管理层与决策层是否有可靠的管理与决策证明？&lt;/li&gt;
+&lt;li&gt;公司的管理层与决策层是否能够创造价值？&lt;/li&gt;
+&lt;li&gt;公司的管理层与决策层是否能够把握趋势？&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;行业&#34;&gt;行业&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;公司属于什么行业？&lt;/li&gt;
+&lt;li&gt;行业是否有增长潜力？&lt;/li&gt;
+&lt;li&gt;行业是否有竞争优势？&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;资产负债表&#34;&gt;资产负债表&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;资产负债表是否健康？&lt;/li&gt;
+&lt;li&gt;公司是否有充足的流动性？&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;资本&#34;&gt;资本&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;融资能力如何？&lt;/li&gt;
+&lt;li&gt;资本利用率如何？&lt;/li&gt;
+&lt;li&gt;资本回报率如何？&lt;/li&gt;
+&lt;li&gt;资本配置如何？&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;盈利&#34;&gt;盈利&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;公司是否盈利？&lt;/li&gt;
+&lt;li&gt;盈利的来源？&lt;/li&gt;
+&lt;li&gt;盈利的增长性？&lt;/li&gt;
+&lt;li&gt;盈利对应分红如何？&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;增长&#34;&gt;增长&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;业务增长来源？&lt;/li&gt;
+&lt;li&gt;业务增长的指标有哪些？&lt;/li&gt;
+&lt;li&gt;公司是否有良好的历史增长记录？&lt;/li&gt;
+&lt;li&gt;公司是否有可持续的增长？&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;风险&#34;&gt;风险&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;公司面临风险有哪些？&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

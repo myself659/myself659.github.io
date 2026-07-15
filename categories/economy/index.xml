@@ -1,120 +1,328 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Economy on 沉风网事</title>
     <link>http://myself659.github.io/categories/economy/</link>
     <description>Recent content in Economy on 沉风网事</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>zh-cn</language>
     <copyright>沉风网事</copyright>
-    <lastBuildDate>Sat, 28 Jun 2025 11:58:06 +0800</lastBuildDate><atom:link href="http://myself659.github.io/categories/economy/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 28 Jun 2025 11:58:06 +0800</lastBuildDate>
+    <atom:link href="http://myself659.github.io/categories/economy/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>金刻羽说中国若无法转型为消费大国就永远难成富裕国</title>
       <link>http://myself659.github.io/post/economy/%E9%87%91%E5%88%BB%E7%BE%BD%E8%AF%B4%E4%B8%AD%E5%9B%BD%E8%8B%A5%E6%97%A0%E6%B3%95%E8%BD%AC%E5%9E%8B%E4%B8%BA%E6%B6%88%E8%B4%B9%E5%A4%A7%E5%9B%BD%E5%B0%B1%E6%B0%B8%E8%BF%9C%E9%9A%BE%E6%88%90%E5%AF%8C%E8%A3%95%E5%9B%BD/</link>
       <pubDate>Sat, 28 Jun 2025 11:58:06 +0800</pubDate>
-      
       <guid>http://myself659.github.io/post/economy/%E9%87%91%E5%88%BB%E7%BE%BD%E8%AF%B4%E4%B8%AD%E5%9B%BD%E8%8B%A5%E6%97%A0%E6%B3%95%E8%BD%AC%E5%9E%8B%E4%B8%BA%E6%B6%88%E8%B4%B9%E5%A4%A7%E5%9B%BD%E5%B0%B1%E6%B0%B8%E8%BF%9C%E9%9A%BE%E6%88%90%E5%AF%8C%E8%A3%95%E5%9B%BD/</guid>
-      <description>背景 金刻羽星期四（6月26日）在天津举行的世界经济论坛新领军者年会，发表看法： 中国若无法转型为消费大国就永远难成富裕国 评价 金刻羽这个看法我是</description>
+      <description>&lt;hr&gt;
+&lt;h2 id=&#34;背景&#34;&gt;背景&lt;/h2&gt;
+&lt;p&gt;金刻羽星期四（6月26日）在天津举行的世界经济论坛新领军者年会，发表看法： &lt;a href=&#34;https://www.zaobao.com/finance/china/story20250626-6978972&#34;&gt;中国若无法转型为消费大国就永远难成富裕国&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;评价&#34;&gt;评价&lt;/h2&gt;
+&lt;p&gt;金刻羽这个看法我是认同的，下面直接用AI评价。&lt;/p&gt;
+&lt;h3 id=&#34;gemini&#34;&gt;gemini&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;14
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;15
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;16
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;17
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;综上所述，金刻羽教授的观点“中国若无法转型为消费大国就永远难成富裕国”是具有深刻洞察力和重要现实意义的。它指出了中国经济发展中一个核心的结构性挑战和战略选择。
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;详细推理分析及其相关解释与说明：
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;经济增长模式的演变： 历史上，许多国家在工业化初期都依赖投资和出口实现高速增长。然而，当经济发展到一定阶段，劳动力成本上升、外部需求波动、环境承载压力增大等因素，使得这种模式的效率逐渐降低。此时，需要转向以内需，尤其是居民消费为主要驱动力的增长模式，以实现更可持续和高质量的发展。金刻羽教授强调的正是中国经济发展所处的这一关键转折点。
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;消费的本质： 消费不仅是经济活动的终点，更是生产和投资的最终目的。只有最终需求旺盛，才能有效带动产业发展、技术创新和就业增长。如果消费需求不足，即使生产能力再强，也容易导致产能过剩和经济内循环不畅。
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;内需拉动的韧性： 相较于依赖外部市场的出口，强大的国内消费市场能够为经济增长提供更为稳定的基础。在全球经济不确定性增加的背景下，内需的稳定增长能够有效缓冲外部冲击，提升经济的韧性和自主性。
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;与“富裕国”的关联： 一个“富裕国”的标志不仅是国民生产总值（GDP）的绝对量，更在于国民的普遍富裕程度、生活品质和消费能力。当一个国家大部分国民能够享受较高水平的消费，社会福利体系健全，这才是真正意义上的富裕。因此，转型为消费大国，是实现全体国民共同富裕的必由之路。
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;政策和结构性改革的支撑： 金刻羽教授提及将消费作为地方政绩考核标准，以及发展服务业、增加社会支出等，都指向了实现消费驱动型增长所需的深层次政策调整和结构性改革。这并非一蹴而就，需要政府在体制机制、收入分配、社会保障、市场开放等方面进行系统性改革。服务业特别是现代服务业的发展，不仅能创造大量就业机会，也能满足多元化的消费需求，是支撑消费经济的重要支柱。
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;国际关系考量： 长期依赖出口的模式可能导致贸易摩擦和国际关系紧张。通过提升国内消费来平衡内外需，有助于中国在国际贸易体系中扮演更负责任、更具建设性的角色，从而为自身发展创造更加有利的外部环境。
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;综上，金刻羽教授的观点不仅是对中国经济发展路径的理性分析，也为中国未来实现可持续繁荣和真正富裕指明了方向。其核心在于通过深化改革，构建一个以满足人民日益增长的美好生活需求为导向的、更健康、更具活力的经济体系。
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h3 id=&#34;chatgpt&#34;&gt;chatgpt&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;金刻羽的论断具有充分逻辑和现实基础：中国若不能转型为消费大国，难以摆脱对出口和投资的依赖，致使消费不足拖累经济质量提升和财富积累。观点在结构转型路径、就业与收入支撑、国际经验借鉴等方面都站得住脚。但其落实难度不容忽视，需配合宏观制度改革、平衡制造与服务、营造内外需求共同驱动的经济新格局。
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;总结：金刻羽的观点精准指出了中国经济发展的结构矛盾，是一条切实可行的富裕国家路径。然而其实现需要系统改革与长期努力，是战略方向上的“对”，但短期落实需兼顾多重约束因素。
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;9
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;金刻羽的核心论断在逻辑上严密，国际上有明确可比的经验路径，符合当前中国结构性调整的必要性：
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;✅ 合理性强：从“出口—投资”导向转向“消费—服务”导向，是经济高质量发展的必然趋势；
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;✅ 风险提醒准确：若不能建立强内需循环，则面临“中等收入陷阱”、“就业不足”与“结构性通缩”风险；
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;✅ 政策现实可行性有挑战：关键不在认知，而在财政、服务业开放、政绩制度改革等领域能否真正突破。
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;📌 结论：“不能成为消费大国就难成富裕国”并非一种警句式判断，而是一种结构性、政策性和发展逻辑上的必然趋势提醒。其提出对中国在全球经济分化与内部转型阶段具有高度指导价值，但成功路径依赖于结构改革的深度与执行力
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h3 id=&#34;腾讯元宝&#34;&gt;腾讯元宝&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;7
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;最终评价：
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;金刻羽的观点总体具有战略前瞻性，抓住了中国经济转型的核心矛盾，但其建议需结合以下补充：
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;多维改革：消费转型需与收入分配、社保、产业升级协同推进；
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;渐进式开放：服务业开放需平衡效率与公平，避免激进改革引发失业风险；
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;全球化新定位：中国可通过“内需+外需”双循环，而非单边收缩供应链。
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;结论：中国成为消费大国是迈向富裕国家的必要条件，但需配套系统性改革，且不能忽视生产端的科技创新与全球竞争力维护。
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;14
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;15
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;16
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;17
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;最终评价与政策建议:
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;1. 金刻羽观点的合理性
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;消费转型是突破“中等收入陷阱”的关键，符合经济规律与国际经验。
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;中国当前模式（依赖投资/出口）已现疲态，改革迫在眉睫。
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;2. 局限性
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;未深入讨论收入分配、房价、社保等核心障碍；
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;服务业开放需配套监管，避免市场失灵。
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;3. 补充建议
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;短期：发放消费券、减税降费提振信心；
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;中期：改革社保、房产税，降低预防性储蓄；
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;长期：推动科技升级，避免“消费驱动”沦为“低端服务化”。
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;总结：中国成为消费大国是迈向富裕国家的必由之路，但需多维度、渐进式改革，而非简单复制他国路径。
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h2 id=&#34;中国居民消费的数据&#34;&gt;中国居民消费的数据&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.gov.cn/zhengce/jiedu/tujie/202401/content_6926657.htmZ&#34;&gt;2023年中国GDP同比增长5.2%,国内生产总值 (GDP):1260582亿元&lt;/a&gt;&lt;/p&gt;</description>
     </item>
-    
-    <item>
-      <title>什么才是中国的问题</title>
-      <link>http://myself659.github.io/post/economy/%E4%BB%80%E4%B9%88%E6%89%8D%E6%98%AF%E4%B8%AD%E5%9B%BD%E7%9A%84%E9%97%AE%E9%A2%98/</link>
-      <pubDate>Mon, 18 Dec 2023 11:58:06 +0200</pubDate>
-      
-      <guid>http://myself659.github.io/post/economy/%E4%BB%80%E4%B9%88%E6%89%8D%E6%98%AF%E4%B8%AD%E5%9B%BD%E7%9A%84%E9%97%AE%E9%A2%98/</guid>
-      <description>背景 背景参考如下链接： 国家安全机关坚决筑牢经济安全屏障 中央经济工作会议在北京举行 习近平出席会议并发表重要讲话 中共中央政治局召开会议 习近平主持</description>
-    </item>
-    
     <item>
       <title>普遍性不一致性问题</title>
       <link>http://myself659.github.io/post/economy/%E4%B8%AD%E5%9B%BD%E9%9D%A2%E4%B8%B4%E7%9A%84%E6%99%AE%E9%81%8D%E6%80%A7%E4%B8%8D%E4%B8%80%E8%87%B4%E6%80%A7/</link>
       <pubDate>Mon, 18 Dec 2023 11:58:06 +0200</pubDate>
-      
       <guid>http://myself659.github.io/post/economy/%E4%B8%AD%E5%9B%BD%E9%9D%A2%E4%B8%B4%E7%9A%84%E6%99%AE%E9%81%8D%E6%80%A7%E4%B8%8D%E4%B8%80%E8%87%B4%E6%80%A7/</guid>
-      <description>普遍性不一致性问题 宏观经济数据与广大人民的体感不一致 国家前途与个人命运不一致 对内的宣传与国外的实际不一致 政府宣传与实际情况不一致 GDP增长与</description>
+      <description>&lt;h2 id=&#34;普遍性不一致性问题&#34;&gt;普遍性不一致性问题&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;宏观经济数据与广大人民的体感不一致&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;国家前途与个人命运不一致&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;对内的宣传与国外的实际不一致&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;政府宣传与实际情况不一致&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;GDP增长与财富增长不一致&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;企业家公开说与实际做不一致&lt;/p&gt;</description>
     </item>
-    
+    <item>
+      <title>什么才是中国的问题</title>
+      <link>http://myself659.github.io/post/economy/%E4%BB%80%E4%B9%88%E6%89%8D%E6%98%AF%E4%B8%AD%E5%9B%BD%E7%9A%84%E9%97%AE%E9%A2%98/</link>
+      <pubDate>Mon, 18 Dec 2023 11:58:06 +0200</pubDate>
+      <guid>http://myself659.github.io/post/economy/%E4%BB%80%E4%B9%88%E6%89%8D%E6%98%AF%E4%B8%AD%E5%9B%BD%E7%9A%84%E9%97%AE%E9%A2%98/</guid>
+      <description>&lt;h2 id=&#34;背景&#34;&gt;背景&lt;/h2&gt;
+&lt;p&gt;背景参考如下链接：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&#34;https://mp.weixin.qq.com/s/pOVcm_d82q_cNr6VXqIHsw&#34;&gt;国家安全机关坚决筑牢经济安全屏障&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://mp.weixin.qq.com/s/PoIbiBBgK7F7hdzDk0dJ5w&#34;&gt;中央经济工作会议在北京举行 习近平出席会议并发表重要讲话&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://mp.weixin.qq.com/s/MkBLv-OZPSExvYUnSVnb7w&#34;&gt;中共中央政治局召开会议 习近平主持会议&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.gov.cn/lianbo/bumen/202312/content_6919281.htm&#34;&gt;2023年11月份居民消费价格同比下降0.5% 环比下降0.5%&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.pbc.gov.cn/diaochatongjisi/116219/116225/5167464/index.html&#34;&gt;2023年11月社会融资规模存量统计数据报告&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://mp.weixin.qq.com/s/1dsI7sItrEju6-ZYr3LzgQ&#34;&gt;裁判文书对外公开是加入wto的承诺&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;什么才是中国的问题&#34;&gt;什么才是中国的问题&lt;/h2&gt;
+&lt;p&gt;能说不是问题，不能说才是问题，不让说才是问题。&lt;/p&gt;
+&lt;p&gt;知道能改不是问题，知道不改才是问题。&lt;/p&gt;</description>
+    </item>
     <item>
       <title>知识自由是创新的基础</title>
       <link>http://myself659.github.io/post/economy/%E7%9F%A5%E8%AF%86%E8%87%AA%E7%94%B1%E6%98%AF%E5%88%9B%E6%96%B0%E7%9A%84%E5%9F%BA%E7%A1%80/</link>
       <pubDate>Sat, 28 Jan 2023 11:58:06 +0200</pubDate>
-      
       <guid>http://myself659.github.io/post/economy/%E7%9F%A5%E8%AF%86%E8%87%AA%E7%94%B1%E6%98%AF%E5%88%9B%E6%96%B0%E7%9A%84%E5%9F%BA%E7%A1%80/</guid>
-      <description>背景 在这片神奇的土地上由于GFW的存在，导致： 不能正常访问全球最大的搜索引擎google 不能正常访问全球最大的视频网络youtube 不能正常</description>
+      <description>&lt;h2 id=&#34;背景&#34;&gt;背景&lt;/h2&gt;
+&lt;p&gt;在这片神奇的土地上由于GFW的存在，导致：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;不能正常访问全球最大的搜索引擎google&lt;/li&gt;
+&lt;li&gt;不能正常访问全球最大的视频网络youtube&lt;/li&gt;
+&lt;li&gt;不能正常访问全球最大的社交网络应用（facebook，whatapp，instagram）&lt;/li&gt;
+&lt;li&gt;不能正常应用最前沿的AI应用：chatGPT&lt;/li&gt;
+&lt;li&gt;不能正常访问全球最大的代码库：github&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&amp;hellip;&amp;hellip;&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>套利的本质</title>
       <link>http://myself659.github.io/post/economy/the-essence-of-arbitrage/</link>
       <pubDate>Fri, 12 Mar 2021 11:58:06 +0200</pubDate>
-      
       <guid>http://myself659.github.io/post/economy/the-essence-of-arbitrage/</guid>
-      <description>套利大行其道，那么套利是什么？ 下面这张图是一个活生生的套利案例。 套利的本质是什么？ 套利的本质是利用非对称获利 套利的竞争是发现非对称机会以及利</description>
+      <description>&lt;p&gt;套利大行其道，那么套利是什么？&lt;/p&gt;
+&lt;p&gt;下面这张图是一个活生生的套利案例。&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;http://myself659.github.io/images/business/arbitrage-jd.jpg&#34;&gt;&lt;/p&gt;
+&lt;p&gt;套利的本质是什么？&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;套利的本质是利用非对称获利&lt;/li&gt;
+&lt;li&gt;套利的竞争是发现非对称机会以及利用机会的速度竞争&lt;/li&gt;
+&lt;li&gt;任何套利模式都是公开即失效&lt;/li&gt;
+&lt;/ol&gt;</description>
     </item>
-    
     <item>
       <title>爆雷，接盘侠与社会信用</title>
       <link>http://myself659.github.io/post/economy/china-trust-crisis/</link>
       <pubDate>Mon, 25 Jan 2021 11:58:06 +0200</pubDate>
-      
       <guid>http://myself659.github.io/post/economy/china-trust-crisis/</guid>
-      <description>背景 首先，先看看这个新闻： 湖南益阳62岁老人投江后续：当地多家养老机构爆雷，有老人获悉后心梗去世。 由这个新闻想到中国从2018年开始了一系列</description>
+      <description>&lt;h2 id=&#34;背景&#34;&gt;背景&lt;/h2&gt;
+&lt;p&gt;首先，先看看这个新闻：
+&lt;a href=&#34;https://baijiahao.baidu.com/s?id=1689843324924226929&amp;amp;wfr=spider&amp;amp;for=pc&#34;&gt;湖南益阳62岁老人投江后续：当地多家养老机构爆雷，有老人获悉后心梗去世&lt;/a&gt;。&lt;/p&gt;
+&lt;p&gt;由这个新闻想到中国从2018年开始了一系列爆雷：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;P2P爆雷断断续续到现在还没有结束&lt;/li&gt;
+&lt;li&gt;民营企业债爆雷&lt;/li&gt;
+&lt;li&gt;国有企业债爆雷，如永煤，华晨，北大方正，清华紫光&lt;/li&gt;
+&lt;li&gt;房地产全线爆雷，如北京院子，北京山水等等，还有很多烂尾楼&lt;/li&gt;
+&lt;li&gt;养老机构爆雷，如益阳市纳诺老年公寓&lt;/li&gt;
+&lt;li&gt;教育机构爆雷，如学霸君&lt;/li&gt;
+&lt;li&gt;共享单车爆雷，如OFO&lt;/li&gt;
+&lt;li&gt;黄金爆雷，如武汉金黄&lt;/li&gt;
+&lt;li&gt;信托爆雷，如四川信托&lt;/li&gt;
+&lt;li&gt;股票爆雷，如獐子岛&lt;/li&gt;
+&lt;li&gt;银行爆雷，如包商银行&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;爆雷背后是什么&#34;&gt;爆雷背后是什么？&lt;/h2&gt;
+&lt;p&gt;爆雷其实是骗局的破灭。破灭是由于业务与模式的不可持续，不可持续由于缺少接盘侠。
+上面列举几种爆雷，其实都是缺少接盘侠（中国居民负债率在2019年就超过了50%）。典型的例子是泰和北京院子与恒大地产。
+恒大地产有了接盘侠，撑过来了，而泰和没有接盘侠，北京院子就烂尾了。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>说说地摊经济</title>
       <link>http://myself659.github.io/post/economy/about-squatter-economy/</link>
       <pubDate>Wed, 08 Jul 2020 11:58:06 +0200</pubDate>
-      
       <guid>http://myself659.github.io/post/economy/about-squatter-economy/</guid>
-      <description>最近地摊经济火了，火遍了朋友圈，激活了段子手。 原因 受到疫情影响，国内与国际经济都受到很大的冲击，国内企业倒闭，减薪，缩员等现象也是时有出现。</description>
+      <description>&lt;p&gt;最近地摊经济火了，火遍了朋友圈，激活了段子手。&lt;/p&gt;
+&lt;h1 id=&#34;原因&#34;&gt;原因&lt;/h1&gt;
+&lt;p&gt;受到疫情影响，国内与国际经济都受到很大的冲击，国内企业倒闭，减薪，缩员等现象也是时有出现。在这种情况下国内底层人们受到冲击最大。而这些人也主要分布在低端服务（没有找到合适的词汇来表示）、餐饮等行业。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>后疫情时代会有哪些变化</title>
       <link>http://myself659.github.io/post/coronavirus-change/</link>
       <pubDate>Sun, 19 Apr 2020 11:58:06 +0200</pubDate>
-      
       <guid>http://myself659.github.io/post/coronavirus-change/</guid>
-      <description>现状 疫情从武汉爆发开始，到现在全球蔓延，全球确诊超过了226万。国内广州与黑龙江有复发的态势。但是全国基本上已经控制住，防控成绩也算相当不错</description>
+      <description>&lt;h1 id=&#34;现状&#34;&gt;现状&lt;/h1&gt;
+&lt;p&gt;疫情从武汉爆发开始，到现在全球蔓延，全球确诊超过了226万。国内广州与黑龙江有复发的态势。但是全国基本上已经控制住，防控成绩也算相当不错（除武汉疫情初期）现在全国基本上暂时处于后疫情阶段。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>关于投资几点感悟</title>
       <link>http://myself659.github.io/post/invest/invest-ruixin-%E6%8A%95%E8%B5%84%E6%84%9F%E6%82%9F/</link>
       <pubDate>Fri, 03 Apr 2020 11:58:06 +0200</pubDate>
-      
       <guid>http://myself659.github.io/post/invest/invest-ruixin-%E6%8A%95%E8%B5%84%E6%84%9F%E6%82%9F/</guid>
-      <description>背景 首先，吃一下瑞幸的瓜，表示对作空机构的敬意： 调研机构为了证明瑞幸咖啡造假，派出92个全职和1418个兼职调查员，在全国900多家门店蹲点</description>
+      <description>&lt;h1 id=&#34;背景&#34;&gt;背景&lt;/h1&gt;
+&lt;p&gt;首先，吃一下瑞幸的瓜，表示对作空机构的敬意：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;调研机构为了证明瑞幸咖啡造假，派出92个全职和1418个兼职调查员，在全国900多家门店蹲点，收集25843张购物小票，大量内部微信聊天记录，关联人与企业的工商信息，并录制11260个小时的门店录像，得出了瑞幸造假的判断，就这么牛逼。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>一周经历两次熔断，美股会跌多少?</title>
       <link>http://myself659.github.io/post/howmuch-us-stock-willfall/</link>
       <pubDate>Sun, 15 Mar 2020 11:58:06 +0200</pubDate>
-      
       <guid>http://myself659.github.io/post/howmuch-us-stock-willfall/</guid>
-      <description>进入话题之前了解一下美股指数熔断机制。 美股指数熔断机制的基准指数为标普500，单项跌幅阈值为7%、13%、20%。当指数较前一天收盘点位下跌</description>
+      <description>&lt;p&gt;进入话题之前了解一下美股指数熔断机制。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;美股指数熔断机制的基准指数为标普500，单项跌幅阈值为7%、13%、20%。当指数较前一天收盘点位下跌7%、13%时，全美证券市场交易将暂停15分钟，当指数较前一天收盘点位下跌20%时，当天交易停止。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>瑞·达利欧：不投资中国才是巨大的风险</title>
       <link>http://myself659.github.io/post/risk-of-vesting-china/</link>
       <pubDate>Sun, 18 Aug 2019 11:58:06 +0200</pubDate>
-      
       <guid>http://myself659.github.io/post/risk-of-vesting-china/</guid>
-      <description>不投资中国才是巨大的风险 最近，桥水基金创始人及《原则》的作者瑞·达利欧公开表示：不投资中国才是巨大的风险。如下图所示： 作为一个世界富豪榜排名</description>
+      <description>&lt;h1 id=&#34;不投资中国才是巨大的风险&#34;&gt;不投资中国才是巨大的风险&lt;/h1&gt;
+&lt;p&gt;最近，桥水基金创始人及《原则》的作者瑞·达利欧公开表示：不投资中国才是巨大的风险。如下图所示：&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;不投资中国才是巨大的风险&#34; loading=&#34;lazy&#34; src=&#34;http://myself659.github.io/images/economy/not-invest-china-is-very-risky.jpg&#34;&gt;&lt;/p&gt;
+&lt;p&gt;作为一个世界富豪榜排名前100的大富豪，&lt;/p&gt;
+&lt;p&gt;作为一个掌握1500亿美元的对冲基金的掌门人，&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>《原则》作者瑞·达利欧烧脑大作(1): 经济机器是怎样运行的</title>
       <link>http://myself659.github.io/post/economy/ecomony-machine/</link>
       <pubDate>Thu, 05 Jul 2018 11:58:06 +0200</pubDate>
-      
       <guid>http://myself659.github.io/post/economy/ecomony-machine/</guid>
-      <description>说明 本文的语音与视频版本如下： 经济机器是怎样运行的(语音+文字版) 经济机器是怎样运行的 (时长30分钟) Ray Dalio 关于作者 原文作者瑞·达利欧，为著名</description>
+      <description>&lt;h1 id=&#34;说明&#34;&gt;说明&lt;/h1&gt;
+&lt;p&gt;本文的语音与视频版本如下：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&#34;https://mp.weixin.qq.com/s/n3mrAVkwvEHfVTDNfKzEXg&#34;&gt;经济机器是怎样运行的(语音+文字版)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.youtube.com/watch?v=rFV7wdEX-Mo&#34;&gt;经济机器是怎样运行的 (时长30分钟) Ray Dalio&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h1 id=&#34;关于作者&#34;&gt;关于作者&lt;/h1&gt;
+&lt;p&gt;原文作者瑞·达利欧，为著名畅销书《原则》作者。1975年，在自己的两居室内创办桥水，2015年，桥水管理资金超过1500亿美元，累计盈利450亿美元，远超史上所有对冲基金。&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

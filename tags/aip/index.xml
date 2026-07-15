@@ -1,30 +1,52 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>AIP on 沉风网事</title>
     <link>http://myself659.github.io/tags/aip/</link>
     <description>Recent content in AIP on 沉风网事</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>zh-cn</language>
     <copyright>沉风网事</copyright>
-    <lastBuildDate>Tue, 24 Jun 2025 11:58:06 +0800</lastBuildDate><atom:link href="http://myself659.github.io/tags/aip/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 24 Jun 2025 11:58:06 +0800</lastBuildDate>
+    <atom:link href="http://myself659.github.io/tags/aip/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>thoughts about: AI is the new electricity</title>
       <link>http://myself659.github.io/post/ai/ai-is-the-new-electricity/</link>
       <pubDate>Tue, 24 Jun 2025 11:58:06 +0800</pubDate>
-      
       <guid>http://myself659.github.io/post/ai/ai-is-the-new-electricity/</guid>
-      <description>背景 最近花时间学习了Andrej Karpathy最新的分享：Software Is Changing (Again)。 这里总结一下对“AI is the new electrici</description>
+      <description>&lt;hr&gt;
+&lt;h2 id=&#34;背景&#34;&gt;背景&lt;/h2&gt;
+&lt;p&gt;最近花时间学习了Andrej Karpathy最新的分享：&lt;a href=&#34;https://www.youtube.com/watch?v=LCEmiRjPEtQ&#34;&gt;Software Is Changing (Again)&lt;/a&gt;。&lt;/p&gt;
+&lt;p&gt;这里总结一下对“AI is the new electricity”的思考。&lt;/p&gt;
+&lt;h2 id=&#34;ai与electricity的相似之处&#34;&gt;AI与electricity的相似之处&lt;/h2&gt;
+&lt;p&gt;AI与electricity有很多相通之处：&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>software 1.0 vs software 2.0 vs software 3.0</title>
       <link>http://myself659.github.io/post/aip/software-1vs2vs3/</link>
       <pubDate>Mon, 23 Jun 2025 11:58:06 +0800</pubDate>
-      
       <guid>http://myself659.github.io/post/aip/software-1vs2vs3/</guid>
-      <description>背景 最近花时间学习了Andrej Karpathy最新的分享：Software Is Changing (Again)。 这里面的知识点很多，干货十足。 这里先从sof</description>
+      <description>&lt;hr&gt;
+&lt;h2 id=&#34;背景&#34;&gt;背景&lt;/h2&gt;
+&lt;p&gt;最近花时间学习了Andrej Karpathy最新的分享：&lt;a href=&#34;https://www.youtube.com/watch?v=LCEmiRjPEtQ&#34;&gt;Software Is Changing (Again)&lt;/a&gt;。&lt;/p&gt;
+&lt;p&gt;这里面的知识点很多，干货十足。&lt;/p&gt;
+&lt;p&gt;这里先从software 1.0 vs software 2.0 vs software 3.0开始。&lt;/p&gt;</description>
     </item>
-    
+    <item>
+      <title>21 rules from The Rules of Programming</title>
+      <link>http://myself659.github.io/post/aip/book-the-rules-of-programming/</link>
+      <pubDate>Sat, 24 Jun 2023 11:58:06 +0800</pubDate>
+      <guid>http://myself659.github.io/post/aip/book-the-rules-of-programming/</guid>
+      <description>&lt;h2 id=&#34;21-rules-from-the-rules-of-programming&#34;&gt;21 rules from 《The Rules of Programming》&lt;/h2&gt;
+&lt;p&gt;Rule 1: As Simple as Possible, but No Simpler&lt;/p&gt;
+&lt;p&gt;Rule 2: Bugs Are Contagious&lt;/p&gt;
+&lt;p&gt;Rule 3: A Good Name Is the Best Documentation&lt;/p&gt;
+&lt;p&gt;Rule 4: Generalization Takes Three Examples&lt;/p&gt;
+&lt;p&gt;Rule 5: The First Lesson of Optimization Is Don&amp;rsquo;t Optimize&lt;/p&gt;
+&lt;p&gt;Interlude: In Which the Previous Chapter Is Criticized&lt;/p&gt;
+&lt;p&gt;Rule 6: Code Reviews Are Good for Three Reasons&lt;/p&gt;
+&lt;p&gt;Rule 7: Eliminate Failure Cases&lt;/p&gt;
+&lt;p&gt;Rule 8: Code That Isn&amp;rsquo;t Running Doesn&amp;rsquo;t Work&lt;/p&gt;</description>
+    </item>
   </channel>
 </rss>

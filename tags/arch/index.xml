@@ -1,255 +1,322 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Arch on 沉风网事</title>
     <link>http://myself659.github.io/tags/arch/</link>
     <description>Recent content in Arch on 沉风网事</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>zh-cn</language>
     <copyright>沉风网事</copyright>
-    <lastBuildDate>Sun, 21 Jul 2019 11:58:06 +0200</lastBuildDate><atom:link href="http://myself659.github.io/tags/arch/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 21 Jul 2019 11:58:06 +0200</lastBuildDate>
+    <atom:link href="http://myself659.github.io/tags/arch/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>正交思维与软件工程</title>
       <link>http://myself659.github.io/post/arch/orthogonal-thinking-in-software/</link>
       <pubDate>Sun, 21 Jul 2019 11:58:06 +0200</pubDate>
-      
       <guid>http://myself659.github.io/post/arch/orthogonal-thinking-in-software/</guid>
-      <description>什么是Orthogonal？ orthogonal表面意思是正交的，直角的。 平面几何的坐标系的x轴与y轴就是正交关系。 在软件工程中Orthog</description>
+      <description>&lt;h2 id=&#34;什么是orthogonal&#34;&gt;什么是Orthogonal？&lt;/h2&gt;
+&lt;p&gt;orthogonal表面意思是正交的，直角的。&lt;/p&gt;
+&lt;p&gt;平面几何的坐标系的x轴与y轴就是正交关系。&lt;/p&gt;
+&lt;p&gt;在软件工程中Orthogonal常常表示两个组件相互独立，无耦合或低耦合。&lt;/p&gt;</description>
     </item>
-    
+    <item>
+      <title>QoS 101</title>
+      <link>http://myself659.github.io/post/distributed/qos-101/</link>
+      <pubDate>Mon, 28 Jan 2019 11:58:06 +0200</pubDate>
+      <guid>http://myself659.github.io/post/distributed/qos-101/</guid>
+      <description>&lt;hr&gt;
+&lt;h2 id=&#34;前言&#34;&gt;前言&lt;/h2&gt;
+&lt;p&gt;在现代网络和互联网系统中，服务质量（Quality of Service，简称QoS）已成为确保用户体验和系统性能的关键因素之一。无论是语音通话、视频会议，还是实时数据流传输，QoS技术都在保障服务稳定性、低延迟和高可靠性方面扮演着至关重要的角色。QoS的目标是确保网络资源合理分配，从而优化各种应用的性能，特别是在高流量、复杂环境下。&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Consistency Level 101</title>
       <link>http://myself659.github.io/post/arch/consistency-level-101/</link>
       <pubDate>Sat, 19 Jan 2019 11:58:06 +0200</pubDate>
-      
       <guid>http://myself659.github.io/post/arch/consistency-level-101/</guid>
-      <description>前言 在分布式系统中，**一致性（Consistency）**始终是核心挑战之一。随着副本数量增多、跨机房部署的普及，我们必须权衡一致性、可用</description>
+      <description>&lt;hr&gt;
+&lt;h2 id=&#34;前言&#34;&gt;前言&lt;/h2&gt;
+&lt;p&gt;在分布式系统中，**一致性（Consistency）**始终是核心挑战之一。随着副本数量增多、跨机房部署的普及，我们必须权衡一致性、可用性和性能。在这种背景下，**Consistency Level（一致性级别）**概念被提出，让系统在不同业务场景下按需调整一致性强度，兼顾响应延迟与系统稳定性。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Application Gateway 101</title>
       <link>http://myself659.github.io/post/arch/application-gateway-101/</link>
       <pubDate>Fri, 18 Jan 2019 11:58:06 +0200</pubDate>
-      
       <guid>http://myself659.github.io/post/arch/application-gateway-101/</guid>
-      <description>前言 在现代互联网架构中，随着服务化、微服务和云原生架构的广泛应用，系统前端需要具备更强大的流量控制能力，不仅要转发请求，还要处理认证、安全、</description>
+      <description>&lt;hr&gt;
+&lt;h2 id=&#34;前言&#34;&gt;前言&lt;/h2&gt;
+&lt;p&gt;在现代互联网架构中，随着服务化、微服务和云原生架构的广泛应用，系统前端需要具备更强大的流量控制能力，不仅要转发请求，还要处理认证、安全、路由、缓存等多种逻辑。这时，&lt;strong&gt;Application Gateway（应用网关）&lt;/strong&gt; 作为第七层（L7）流量控制核心组件，被广泛应用于实际系统中。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Hinted Handoff 101</title>
       <link>http://myself659.github.io/post/arch/hinted-handoff-101/</link>
       <pubDate>Fri, 18 Jan 2019 11:58:06 +0200</pubDate>
-      
       <guid>http://myself659.github.io/post/arch/hinted-handoff-101/</guid>
-      <description>前言 在分布式系统中，节点故障是常态而不是例外。为了保障高可用性与最终一致性，很多系统引入了一种重要机制：Hinted Handoff（提示式转</description>
+      <description>&lt;hr&gt;
+&lt;h2 id=&#34;前言&#34;&gt;前言&lt;/h2&gt;
+&lt;p&gt;在分布式系统中，节点故障是常态而不是例外。为了保障高可用性与最终一致性，很多系统引入了一种重要机制：&lt;strong&gt;Hinted Handoff（提示式转交）&lt;/strong&gt;。它被广泛应用于如 Amazon Dynamo、Apache Cassandra 等分布式数据库系统中，是容错设计的关键一环。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Proxy 101</title>
       <link>http://myself659.github.io/post/arch/proxy-101/</link>
       <pubDate>Fri, 18 Jan 2019 11:58:06 +0200</pubDate>
-      
       <guid>http://myself659.github.io/post/arch/proxy-101/</guid>
-      <description>前言 在当今互联网系统中，Proxy（代理） 是一种极为常见且强大的中间组件，广泛应用于访问控制、负载均衡、安全隔离、缓存加速等场景。无论是客户</description>
+      <description>&lt;hr&gt;
+&lt;h2 id=&#34;前言&#34;&gt;前言&lt;/h2&gt;
+&lt;p&gt;在当今互联网系统中，&lt;strong&gt;Proxy（代理）&lt;/strong&gt; 是一种极为常见且强大的中间组件，广泛应用于访问控制、负载均衡、安全隔离、缓存加速等场景。无论是客户端请求网站，还是服务之间互相通信，Proxy 都扮演着不可或缺的角色。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Quorum 101</title>
       <link>http://myself659.github.io/post/arch/quorum-101/</link>
       <pubDate>Fri, 18 Jan 2019 11:58:06 +0200</pubDate>
-      
       <guid>http://myself659.github.io/post/arch/quorum-101/</guid>
-      <description>前言 在分布式系统中，多副本机制确保了数据的高可用性与容错能力，但同时也带来了副本间一致性的问题。为了在性能、可用性与一致性之间取得平衡，Qu</description>
+      <description>&lt;hr&gt;
+&lt;h2 id=&#34;前言&#34;&gt;前言&lt;/h2&gt;
+&lt;p&gt;在分布式系统中，多副本机制确保了数据的高可用性与容错能力，但同时也带来了副本间一致性的问题。为了在性能、可用性与一致性之间取得平衡，&lt;strong&gt;Quorum（一致性法定人数）机制&lt;/strong&gt;应运而生，广泛应用于分布式数据库与存储系统，如 Cassandra、Dynamo、etcd、ZooKeeper 等。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Rate Limiter 101</title>
       <link>http://myself659.github.io/post/arch/rate-limiter-101/</link>
       <pubDate>Fri, 18 Jan 2019 11:58:06 +0200</pubDate>
-      
       <guid>http://myself659.github.io/post/arch/rate-limiter-101/</guid>
-      <description>前言 在现代互联网系统中，用户访问量巨大且不可预期，恶意刷接口、突发流量暴涨等问题屡见不鲜。为了保护系统稳定性、保障资源公平使用，Rate Li</description>
+      <description>&lt;hr&gt;
+&lt;h2 id=&#34;前言&#34;&gt;前言&lt;/h2&gt;
+&lt;p&gt;在现代互联网系统中，用户访问量巨大且不可预期，恶意刷接口、突发流量暴涨等问题屡见不鲜。为了保护系统稳定性、保障资源公平使用，&lt;strong&gt;Rate Limiter（限流器）&lt;/strong&gt; 成为服务治理和网关中必不可少的机制。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Read Repair 101</title>
       <link>http://myself659.github.io/post/arch/read-repair-101/</link>
       <pubDate>Fri, 18 Jan 2019 11:58:06 +0200</pubDate>
-      
       <guid>http://myself659.github.io/post/arch/read-repair-101/</guid>
-      <description>前言 在分布式系统中，数据被多副本存储是常见做法，用于提升容错与可用性。然而，多副本之间的数据一致性维护是一个复杂的问题。**Read Repa</description>
+      <description>&lt;hr&gt;
+&lt;h2 id=&#34;前言&#34;&gt;前言&lt;/h2&gt;
+&lt;p&gt;在分布式系统中，数据被多副本存储是常见做法，用于提升容错与可用性。然而，多副本之间的数据一致性维护是一个复杂的问题。**Read Repair（读修复）&lt;strong&gt;机制，正是实现&lt;/strong&gt;最终一致性（eventual consistency）**的重要手段之一。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>RESTAPI 101</title>
       <link>http://myself659.github.io/post/arch/restapi-101/</link>
       <pubDate>Fri, 18 Jan 2019 11:58:06 +0200</pubDate>
-      
       <guid>http://myself659.github.io/post/arch/restapi-101/</guid>
-      <description>前言 在现代互联网系统中，REST API（Representational State Transfer Application Programming Interface）无处不在，是系统组件之间进行通信和数据交</description>
+      <description>&lt;hr&gt;
+&lt;h2 id=&#34;前言&#34;&gt;前言&lt;/h2&gt;
+&lt;p&gt;在现代互联网系统中，REST API（Representational State Transfer Application Programming Interface）无处不在，是系统组件之间进行通信和数据交换的事实标准。无论是前后端、服务间、微服务还是移动端，REST API 都是最常见的通信接口形式。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Segmented Log 101</title>
       <link>http://myself659.github.io/post/arch/segmented-log-101/</link>
       <pubDate>Thu, 17 Jan 2019 11:58:06 +0200</pubDate>
-      
       <guid>http://myself659.github.io/post/arch/segmented-log-101/</guid>
-      <description>前言 在现代分布式系统、日志系统、消息队列和数据库中，高效、可靠的写入与持久化机制是系统核心能力之一。传统的线性日志虽然简单，但在长时间运行、</description>
+      <description>&lt;hr&gt;
+&lt;h2 id=&#34;前言&#34;&gt;前言&lt;/h2&gt;
+&lt;p&gt;在现代分布式系统、日志系统、消息队列和数据库中，&lt;strong&gt;高效、可靠的写入与持久化机制&lt;/strong&gt;是系统核心能力之一。传统的线性日志虽然简单，但在长时间运行、大规模数据场景下存在扩展性瓶颈。**Segmented Log（分段日志）**正是一种应对这些问题的设计，通过将日志拆分为多个可管理的段，提升写入性能、便于清理与恢复。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Write-Ahead Log 101</title>
       <link>http://myself659.github.io/post/arch/write-ahead-log-101/</link>
       <pubDate>Wed, 16 Jan 2019 11:58:06 +0200</pubDate>
-      
       <guid>http://myself659.github.io/post/arch/write-ahead-log-101/</guid>
-      <description>前言 在现代互联网系统中，数据的可靠性与一致性至关重要。尤其在数据库、分布式系统和文件系统中，为了防止系统崩溃后数据丢失，Write-Ahea</description>
+      <description>&lt;hr&gt;
+&lt;h2 id=&#34;前言&#34;&gt;前言&lt;/h2&gt;
+&lt;p&gt;在现代互联网系统中，&lt;strong&gt;数据的可靠性与一致性&lt;/strong&gt;至关重要。尤其在数据库、分布式系统和文件系统中，为了防止系统崩溃后数据丢失，&lt;strong&gt;Write-Ahead Logging（预写日志）机制&lt;/strong&gt;成为确保持久化与崩溃恢复的重要手段。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>B-tree 101</title>
       <link>http://myself659.github.io/post/arch/b-tree-101/</link>
       <pubDate>Mon, 14 Jan 2019 11:58:06 +0200</pubDate>
-      
       <guid>http://myself659.github.io/post/arch/b-tree-101/</guid>
-      <description>前言 在现代互联网系统与数据库技术中，数据的高效查询与有序存储一直是核心目标。尤其在关系型数据库和文件系统中，B-Tree 是广泛使用的数据结构</description>
+      <description>&lt;hr&gt;
+&lt;h2 id=&#34;前言&#34;&gt;前言&lt;/h2&gt;
+&lt;p&gt;在现代互联网系统与数据库技术中，数据的高效查询与有序存储一直是核心目标。尤其在关系型数据库和文件系统中，&lt;strong&gt;B-Tree&lt;/strong&gt; 是广泛使用的数据结构，它以平衡、有序、高效的方式组织大量数据，支撑着几乎所有数据库的索引系统。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>LSM tree 101</title>
       <link>http://myself659.github.io/post/arch/lsm-tree-101/</link>
       <pubDate>Mon, 14 Jan 2019 11:58:06 +0200</pubDate>
-      
       <guid>http://myself659.github.io/post/arch/lsm-tree-101/</guid>
-      <description>LSM Tree 101 前言 在现代互联网系统中，海量数据的高效写入和查询是数据库系统设计的核心目标之一。特别是写多读少或写入密集型的场景中，传统B-Tree类</description>
+      <description>&lt;hr&gt;
+&lt;h1 id=&#34;lsm-tree-101&#34;&gt;LSM Tree 101&lt;/h1&gt;
+&lt;h2 id=&#34;前言&#34;&gt;前言&lt;/h2&gt;
+&lt;p&gt;在现代互联网系统中，海量数据的高效写入和查询是数据库系统设计的核心目标之一。特别是写多读少或写入密集型的场景中，传统B-Tree类结构难以胜任。**LSM Tree（Log-Structured Merge Tree）**作为一种写入友好型数据结构，已经广泛应用于数据库、键值存储和时间序列系统中。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>merkel tree 101</title>
       <link>http://myself659.github.io/post/arch/merkeltree-101/</link>
       <pubDate>Mon, 14 Jan 2019 11:58:06 +0200</pubDate>
-      
       <guid>http://myself659.github.io/post/arch/merkeltree-101/</guid>
-      <description>前言 在现代互联网系统，特别是区块链、分布式存储、数据同步等领域，数据完整性校验至关重要。Merkle Tree（默克尔树）作为一种高效的结构化</description>
+      <description>&lt;hr&gt;
+&lt;h2 id=&#34;前言&#34;&gt;前言&lt;/h2&gt;
+&lt;p&gt;在现代互联网系统，特别是区块链、分布式存储、数据同步等领域，&lt;strong&gt;数据完整性校验&lt;/strong&gt;至关重要。Merkle Tree（默克尔树）作为一种高效的结构化哈希机制，正是为此而生的，它在保障数据一致性和快速验证方面发挥着关键作用。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>CuckooFilter 101</title>
       <link>http://myself659.github.io/post/arch/cuckoo-filter-101/</link>
       <pubDate>Sun, 13 Jan 2019 11:58:06 +0200</pubDate>
-      
       <guid>http://myself659.github.io/post/arch/cuckoo-filter-101/</guid>
-      <description>前言 在现代互联网系统中，过滤器作为高效的集合判断结构被广泛使用。尤其在**布隆过滤器（Bloom Filter）**存在删除困难和空间使用不佳</description>
+      <description>&lt;hr&gt;
+&lt;h2 id=&#34;前言&#34;&gt;前言&lt;/h2&gt;
+&lt;p&gt;在现代互联网系统中，过滤器作为高效的集合判断结构被广泛使用。尤其在**布隆过滤器（Bloom Filter）**存在删除困难和空间使用不佳的问题时，**Cuckoo Filter（布谷鸟过滤器）**应运而生，成为一个更灵活且支持删除操作的替代方案。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>BloomFilter 101</title>
       <link>http://myself659.github.io/post/arch/bloomfilter-101/</link>
       <pubDate>Sat, 12 Jan 2019 11:58:06 +0200</pubDate>
-      
       <guid>http://myself659.github.io/post/arch/bloomfilter-101/</guid>
-      <description>前言 在现代互联网系统中，性能与资源的平衡尤为重要。**Bloom Filter（布隆过滤器）**作为一种极致空间效率的数据结构，常用于“快速判</description>
+      <description>&lt;hr&gt;
+&lt;h2 id=&#34;前言&#34;&gt;前言&lt;/h2&gt;
+&lt;p&gt;在现代互联网系统中，性能与资源的平衡尤为重要。**Bloom Filter（布隆过滤器）**作为一种极致空间效率的数据结构，常用于“快速判断某元素是否存在于一个集合中”，广泛应用于缓存、搜索引擎、防止重复提交等场景。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Queue 101</title>
       <link>http://myself659.github.io/post/arch/queue-101/</link>
       <pubDate>Thu, 10 Jan 2019 11:58:06 +0200</pubDate>
-      
       <guid>http://myself659.github.io/post/arch/queue-101/</guid>
-      <description>前言 在现代互联网系统中，队列（Queue）作为系统“解耦、削峰、异步处理”的核心手段，几乎无处不在。从消息传递、任务调度到事件驱动架构，队列</description>
+      <description>&lt;hr&gt;
+&lt;h2 id=&#34;前言&#34;&gt;前言&lt;/h2&gt;
+&lt;p&gt;在现代互联网系统中，队列（Queue）作为系统“解耦、削峰、异步处理”的核心手段，几乎无处不在。从消息传递、任务调度到事件驱动架构，队列始终扮演着重要角色。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Consistent Hash 101</title>
       <link>http://myself659.github.io/post/arch/consistent-hash-101/</link>
       <pubDate>Wed, 09 Jan 2019 11:58:06 +0200</pubDate>
-      
       <guid>http://myself659.github.io/post/arch/consistent-hash-101/</guid>
-      <description>前言 在现代互联网系统中，分布式架构已成常态，如何高效、平滑地将数据或请求映射到多个节点，是系统设计中的关键问题。**一致性哈希（Consis</description>
+      <description>&lt;hr&gt;
+&lt;h2 id=&#34;前言&#34;&gt;前言&lt;/h2&gt;
+&lt;p&gt;在现代互联网系统中，分布式架构已成常态，如何高效、平滑地将数据或请求映射到多个节点，是系统设计中的关键问题。**一致性哈希（Consistent Hashing）**正是为了解决这一挑战而提出的算法。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>loadbalance 101</title>
       <link>http://myself659.github.io/post/arch/loadbalance-101/</link>
       <pubDate>Wed, 09 Jan 2019 11:58:06 +0200</pubDate>
-      
       <guid>http://myself659.github.io/post/arch/loadbalance-101/</guid>
-      <description>前言 在现代互联网架构中，负载均衡（Load Balancing）几乎是每一个高可用、高并发系统的基础组件之一。它在系统稳定性、扩展性与性能方面</description>
+      <description>&lt;hr&gt;
+&lt;h2 id=&#34;前言&#34;&gt;前言&lt;/h2&gt;
+&lt;p&gt;在现代互联网架构中，负载均衡（Load Balancing）几乎是每一个高可用、高并发系统的基础组件之一。它在系统稳定性、扩展性与性能方面扮演着至关重要的角色。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Cache 101</title>
       <link>http://myself659.github.io/post/arch/cache-101/</link>
       <pubDate>Tue, 08 Jan 2019 11:58:06 +0200</pubDate>
-      
       <guid>http://myself659.github.io/post/arch/cache-101/</guid>
-      <description>前言 在现在互联网系统中cache无处不在，无时不用。 定义 wiki定义如下： a cache is a hardware or software component that stores data so that future requests for that data can be served faster; 工作原理 一句话：通过将</description>
+      <description>&lt;hr&gt;
+&lt;h2 id=&#34;前言&#34;&gt;前言&lt;/h2&gt;
+&lt;p&gt;在现在互联网系统中cache无处不在，无时不用。&lt;/p&gt;
+&lt;h2 id=&#34;定义&#34;&gt;定义&lt;/h2&gt;
+&lt;p&gt;wiki定义如下：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;a cache is a hardware or software component that stores data so that future requests for that data can be served faster;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;工作原理&#34;&gt;工作原理&lt;/h2&gt;
+&lt;p&gt;一句话：通过将源数据缓存Cache，实现直接通过Cache访问数据。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>软件工程的法则与名言</title>
       <link>http://myself659.github.io/post/arch/software-engineering-great-quotes/</link>
       <pubDate>Fri, 11 May 2018 11:58:06 +0200</pubDate>
-      
       <guid>http://myself659.github.io/post/arch/software-engineering-great-quotes/</guid>
-      <description>Programming “All problems in computer science can be solved by another level of indirection.” — David Wheeler “But that usually will create another problem.” — David Wheeler “Simplicity is prerequisite for rel</description>
+      <description>&lt;h2 id=&#34;programming&#34;&gt;Programming&lt;/h2&gt;
+&lt;p&gt;“All problems in computer science can be solved by another level of indirection.” — David Wheeler&lt;/p&gt;
+&lt;p&gt;“But that usually will create another problem.” — David Wheeler&lt;/p&gt;
+&lt;p&gt;“Simplicity is prerequisite for reliability.” — Edsger Dijkstra&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>高性能服务器设计与优化</title>
       <link>http://myself659.github.io/post/2017-05-09-web-server-perf-and-design/</link>
       <pubDate>Tue, 09 May 2017 11:58:06 +0200</pubDate>
-      
       <guid>http://myself659.github.io/post/2017-05-09-web-server-perf-and-design/</guid>
-      <description>为了构建自己的知识体系，对高性能服务器设计与优化一点想法，其中不足与错误，欢迎指正。 高性能服务器设计与优化</description>
+      <description>&lt;p&gt;为了构建自己的知识体系，对高性能服务器设计与优化一点想法，其中不足与错误，欢迎指正。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;../slides/%E9%AB%98%E6%80%A7%E8%83%BD%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%AE%BE%E8%AE%A1%E4%B8%8E%E4%BC%98%E5%8C%96.pdf&#34;&gt;高性能服务器设计与优化&lt;/a&gt;&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>对于系统设计的一些想法</title>
       <link>http://myself659.github.io/post/2017-04-29-about-system-design/</link>
       <pubDate>Sat, 08 Apr 2017 11:58:06 +0200</pubDate>
-      
       <guid>http://myself659.github.io/post/2017-04-29-about-system-design/</guid>
-      <description>前言 学习了google，facebook等国际一流大厂的开源方案，也研究了国内BAT的一些设计案例，在平时工作自然也少不了一些系统设计的工作</description>
+      <description>&lt;h3 id=&#34;前言&#34;&gt;前言&lt;/h3&gt;
+&lt;p&gt;学习了google，facebook等国际一流大厂的开源方案，也研究了国内BAT的一些设计案例，在平时工作自然也少不了一些系统设计的工作，想写一些自己的想法，同时也帮助自己梳理一下思路，实现自己的系统设计的套路。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>IM后端系统设计总结(2)</title>
       <link>http://myself659.github.io/post/arch/2016-08-05-im-user-state/</link>
       <pubDate>Fri, 05 Aug 2016 11:58:06 +0200</pubDate>
-      
       <guid>http://myself659.github.io/post/arch/2016-08-05-im-user-state/</guid>
-      <description>这篇具体写一下用户在线状态系统的具体设计。 后端架构 这个后端系统设计如下图： 很大众，国内基本都这么干，不多说 用户状态系统设计 初期设计 单IDC部</description>
+      <description>&lt;p&gt;这篇具体写一下用户在线状态系统的具体设计。&lt;/p&gt;
+&lt;h2 id=&#34;后端架构&#34;&gt;后端架构&lt;/h2&gt;
+&lt;p&gt;这个后端系统设计如下图：&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;基础架构&#34; loading=&#34;lazy&#34; src=&#34;http://myself659.github.io/images/im-arch.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;很大众，国内基本都这么干，不多说&lt;/p&gt;
+&lt;h2 id=&#34;用户状态系统设计&#34;&gt;用户状态系统设计&lt;/h2&gt;
+&lt;h3 id=&#34;初期设计&#34;&gt;初期设计&lt;/h3&gt;
+&lt;p&gt;单IDC部署，设计如下:&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;用户状态系统设计-1&#34; loading=&#34;lazy&#34; src=&#34;http://myself659.github.io/images/user-state-flow-1.png&#34;&gt;&lt;/p&gt;
+&lt;h4 id=&#34;相关说明&#34;&gt;相关说明&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;AG：接入网关，负责用户的连接&lt;/li&gt;
+&lt;li&gt;ConnRouter：连接路由服务器，主要提供以下功能：&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;所有用户状态的维护&lt;/li&gt;
+&lt;li&gt;用户状态查询&lt;/li&gt;
+&lt;li&gt;用户状态推送&lt;/li&gt;
+&lt;li&gt;用户状态同步&lt;/li&gt;
+&lt;li&gt;异步消息路由与转发&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;状态通知流: 用户登录成功或者下线状态通知&lt;/li&gt;
+&lt;li&gt;状态同步流：ConnRouter服务器之间用户状态的同步，不需要推送给订阅者&lt;/li&gt;
+&lt;li&gt;用户消息流: 异步发送给用户的消息在服务器内部的传输&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id=&#34;设计要点&#34;&gt;设计要点&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;参考Kafka的模型，将用户状态改变作为事件，将事件描述为消息，将消息队列化成消息队列&lt;/li&gt;
+&lt;li&gt;AG对应Kafka中的Producer角色，主要原因是&lt;strong&gt;用户状态是用户连接的影子&lt;/strong&gt;，AG能真实快速感知用户状态&lt;/li&gt;
+&lt;li&gt;ConnRouter对应Kafka中的Broker&lt;/li&gt;
+&lt;li&gt;UserStat（用户统计与分析）与StateNotify（用户状态通知）对应Kafka中的Consumer&lt;/li&gt;
+&lt;li&gt;减少耦合，以异步发送消息到用户为例，整个流程三步走：&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;第一步：生成发送消息，发送到ConnRouter&lt;/li&gt;
+&lt;li&gt;第二步：根据目的用户ID，查找到出口AG，将消息转发到出口AG&lt;/li&gt;
+&lt;li&gt;第三步：出口AG查找用户连接，通过连接发送到目的用户&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;connrouter设计&#34;&gt;ConnRouter设计&lt;/h4&gt;
+&lt;h5 id=&#34;用户状态数据存储设计&#34;&gt;用户状态数据存储设计&lt;/h5&gt;
+&lt;p&gt;用户状态数据存储设计，如下图所示：&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>IM后端系统设计总结(1)</title>
       <link>http://myself659.github.io/post/arch/2016-07-29-im-message/</link>
       <pubDate>Fri, 29 Jul 2016 11:58:06 +0200</pubDate>
-      
       <guid>http://myself659.github.io/post/arch/2016-07-29-im-message/</guid>
-      <description>定义IM 为用户提供即时消息服务，这里面有三个关键词：用户，消息，服务；下面根据三个关键词来展开总结，先从消息开始。 消息 消息分类 对消息分类，很</description>
+      <description>&lt;h3 id=&#34;定义im&#34;&gt;定义IM&lt;/h3&gt;
+&lt;p&gt;为用户提供即时消息服务，这里面有三个关键词：用户，消息，服务；下面根据三个关键词来展开总结，先从消息开始。&lt;/p&gt;
+&lt;h3 id=&#34;消息&#34;&gt;消息&lt;/h3&gt;
+&lt;h4 id=&#34;消息分类&#34;&gt;消息分类&lt;/h4&gt;
+&lt;p&gt;对消息分类，很简单但是重要，方便后面业务的拆分。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>10 Lessons from 10 Years of Amazon Web Services（译文）</title>
       <link>http://myself659.github.io/post/arch/2016-06-02-10-lessons-from-10-years-of-amazon-web-services/</link>
       <pubDate>Thu, 02 Jun 2016 11:58:06 +0200</pubDate>
-      
       <guid>http://myself659.github.io/post/arch/2016-06-02-10-lessons-from-10-years-of-amazon-web-services/</guid>
-      <description>前言 亚马逊在2006年3月14日发布AWS，到现在差不多10年了。回首过去的10年里，我们在构建 安全，高可用性，可扩展性，低成本的服务方面积</description>
+      <description>&lt;h3 id=&#34;前言&#34;&gt;前言&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;亚马逊在2006年3月14日发布AWS，到现在差不多10年了。回首过去的10年里，我们在构建
+安全，高可用性，可扩展性，低成本的服务方面积累了几百条经验与教训。
+由于AWS是建设并在全球运营这些服务的先驱，这些教训对我们的业务至关重要。正如我们以前多次说，“没有压缩经验的算法”，每月有超过百万的活跃客户，这些客户服务几个亿的用户，在这个过程我们不乏机会积累经验并持续优化从而为客户提供更好的服务。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Facebook live一些技术细节</title>
       <link>http://myself659.github.io/post/arch/2016-05-27-facebook-live-detail/</link>
       <pubDate>Fri, 27 May 2016 11:58:06 +0200</pubDate>
-      
       <guid>http://myself659.github.io/post/arch/2016-05-27-facebook-live-detail/</guid>
-      <description>协议选择 最初选择HLS,后面切换为RTMP，切换为RTMP主要为了降低延迟，提供更好直播用户体验。 解决并发问题 分发架构 采用Live stream serv</description>
+      <description>&lt;h3 id=&#34;协议选择&#34;&gt;协议选择&lt;/h3&gt;
+&lt;p&gt;最初选择HLS,后面切换为RTMP，切换为RTMP主要为了降低延迟，提供更好直播用户体验。&lt;/p&gt;
+&lt;h3 id=&#34;解决并发问题&#34;&gt;解决并发问题&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;分发架构&lt;br&gt;
+采用Live stream server， origin server， edge server 三层架构；如下图如示：
+![分发架构图](/images/facebook live arch.png)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;一句话就是：通过遍布各地的CDN节点（edge server）实现海量用户的播放请求。&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

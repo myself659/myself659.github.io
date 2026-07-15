@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="auto" data-theme="auto">
+
+<head>
+	<meta name="generator" content="Hugo 0.164.0"><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>沉风网事</title>
+<meta name="keywords" content="沉风网事, 沉风, 区块链, Glang, 算法, 数据结构">
+<meta name="description" content="沉风网事，以人为本，尊重事实与原理，立足现实，以科技与金融为驱动，中西结合，虚实相应，主要关注互联网，系统架构，区块链，安全，经济，数据等领域">
+<meta name="author" content="">
+<link rel="canonical" href="http://myself659.github.io/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.89ca4972ab5e6aaa05e9a0dae0c4bb64b26585bc79e36f5cf33614eea0283abe.css" integrity="sha256-icpJcqteaqoF6aDa4MS7ZLJlhbx5429c8zYU7qAoOr4=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://myself659.github.io/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://myself659.github.io/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://myself659.github.io/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://myself659.github.io/apple-touch-icon.png">
+<link rel="mask-icon" href="http://myself659.github.io/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" type="application/rss+xml" href="http://myself659.github.io/index.xml" title="rss">
+<link rel="alternate" hreflang="zh-cn" href="http://myself659.github.io/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+                color-scheme: dark;
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .toc {
+                background: var(--entry);
+            }
+        }
+
+    </style>
+</noscript>
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else if (localStorage.getItem("pref-theme") === "light") {
+       document.querySelector("html").dataset.theme = 'light';
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else {
+        document.querySelector("html").dataset.theme = 'light';
+    }
+
+</script><meta property="og:url" content="http://myself659.github.io/">
+  <meta property="og:site_name" content="沉风网事">
+  <meta property="og:title" content="沉风网事">
+  <meta property="og:description" content="沉风网事，以人为本，尊重事实与原理，立足现实，以科技与金融为驱动，中西结合，虚实相应，主要关注互联网，系统架构，区块链，安全，经济，数据等领域">
+  <meta property="og:locale" content="zh_cn">
+  <meta property="og:type" content="website">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="沉风网事">
+  <meta name="twitter:description" content="沉风网事，以人为本，尊重事实与原理，立足现实，以科技与金融为驱动，中西结合，虚实相应，主要关注互联网，系统架构，区块链，安全，经济，数据等领域">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "沉风网事",
+  "url": "http://myself659.github.io/",
+  "description": "沉风网事，以人为本，尊重事实与原理，立足现实，以科技与金融为驱动，中西结合，虚实相应，主要关注互联网，系统架构，区块链，安全，经济，数据等领域",
+  "logo": "http://myself659.github.io/favicon.ico",
+  "sameAs": [
+      
+  ]
+}
+</script>
+</head>
+<body class="list" id="top">
+    <header class="header">
+    <nav class="header-nav">
+        <div class="logo">
+            <a href="http://myself659.github.io/" accesskey="h" title="沉风网事 (Alt + H)">沉风网事</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" class="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg class="moon" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg class="sun" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu" class="menu">
+            <li>
+                <a href="http://myself659.github.io/" title="Home">
+                    <span class="active">Home</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://myself659.github.io/post/" title="Archives">
+                    <span>Archives</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://myself659.github.io/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://myself659.github.io/categories/" title="Categories">
+                    <span>Categories</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://myself659.github.io/search/" title="Search (Alt &#43; /)" accesskey=/>
+                    <span>Search</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://myself659.github.io/about/" title="About">
+                    <span>About</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://myself659.github.io/post/leetcode/" title="LeetCode">
+                    <span>LeetCode</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://myself659.github.io/post/read-post/" title="Reading">
+                    <span>Reading</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://myself659.github.io/post/share-post/" title="Share">
+                    <span>Share</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://myself659.github.io/post/slide-post/" title="Slide">
+                    <span>Slide</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main"> 
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">如何清晰地思考
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>定义 思考是一个多方面的认知过程，包括多种心理活动，如推理、逻辑、直觉、本能、可视化、想象、感知、解决问题和决策。
+那么什么是清晰地思考呢？
+在日常生活清晰思考是指头脑清楚，思路清晰。
+...</p>
+  </div>
+  <footer class="entry-footer">
+
+<span title='2020-04-11 11:58:06 +0200 +0200'>April 11, 2020</span></footer>
+  <a class="entry-link" aria-label="post link to 如何清晰地思考" href="http://myself659.github.io/post/rt/thinking-clear/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">我是如何学会冥想的
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>初识冥想 虽然以前也知道冥想，但是却没有对冥想产生什么兴趣。直到2018年去台湾遇到一个很有经历的人，先后在google，百度，阿里等公司从事互联网方面的工作，开过民航飞机，后面又回台湾在高校里读博士，同时英文也相当流利，与老外沟通毫无压力。除此之外，他还告诉我他的睡眠质量相当高，入睡超级快。而自己从小就入睡慢，虽然睡眠质量还算可以。于是我好奇地问他：你是怎么做到这么高的睡眠质量？
+...</p>
+  </div>
+  <footer class="entry-footer">
+
+<span title='2020-04-11 11:58:06 +0200 +0200'>April 11, 2020</span></footer>
+  <a class="entry-link" aria-label="post link to 我是如何学会冥想的" href="http://myself659.github.io/post/life/meditation-start/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">关于投资几点感悟
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>背景 首先，吃一下瑞幸的瓜，表示对作空机构的敬意：
+调研机构为了证明瑞幸咖啡造假，派出92个全职和1418个兼职调查员，在全国900多家门店蹲点，收集25843张购物小票，大量内部微信聊天记录，关联人与企业的工商信息，并录制11260个小时的门店录像，得出了瑞幸造假的判断，就这么牛逼。
+...</p>
+  </div>
+  <footer class="entry-footer">
+
+<span title='2020-04-03 11:58:06 +0200 +0200'>April 3, 2020</span></footer>
+  <a class="entry-link" aria-label="post link to 关于投资几点感悟" href="http://myself659.github.io/post/invest/invest-ruixin-%E6%8A%95%E8%B5%84%E6%84%9F%E6%82%9F/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">github被攻击，程序员该怎么办
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>2020年3月27日，全世界最大的同性交友网站github被攻击了，连正常的首页都打不开。
+Https并不是100%安全 github被攻击说明Https并不是100%安全，Https也有自己的阿喀琉斯之踵-Https证书。Https不能解决以下五种情况的攻击：
+...</p>
+  </div>
+  <footer class="entry-footer">
+
+<span title='2020-03-29 11:58:06 +0200 +0200'>March 29, 2020</span></footer>
+  <a class="entry-link" aria-label="post link to github被攻击，程序员该怎么办" href="http://myself659.github.io/post/devops/github-hack/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">提高个人隐私数据安全的几点建议
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>最近，爆出了新浪微博用户数据泄漏的事件。虽然微博的安全技术总监罗某某拒不承认存在安全问题，但是想想李文亮医生的经历，这个事情真不能忽略。 李彦宏说过：“中国人更愿意用隐私换便利”。这也验证一句话：互联网上无隐私。 ...</p>
+  </div>
+  <footer class="entry-footer">
+
+<span title='2020-03-22 11:58:06 +0200 +0200'>March 22, 2020</span></footer>
+  <a class="entry-link" aria-label="post link to 提高个人隐私数据安全的几点建议" href="http://myself659.github.io/post/data-avoid-leak/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">一周经历两次熔断，美股会跌多少?
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>进入话题之前了解一下美股指数熔断机制。
+美股指数熔断机制的基准指数为标普500，单项跌幅阈值为7%、13%、20%。当指数较前一天收盘点位下跌7%、13%时，全美证券市场交易将暂停15分钟，当指数较前一天收盘点位下跌20%时，当天交易停止。
+...</p>
+  </div>
+  <footer class="entry-footer">
+
+<span title='2020-03-15 11:58:06 +0200 +0200'>March 15, 2020</span></footer>
+  <a class="entry-link" aria-label="post link to 一周经历两次熔断，美股会跌多少?" href="http://myself659.github.io/post/howmuch-us-stock-willfall/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">微盟删库事件复盘与思考
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>事故 先简单看一下整个事故的粗略时间线。
+2月23日，微盟服务出现故障。商家商城、小程序均无法登录。
+2月25日，微盟紧急恢复了核心业务的线上生产环境，新用户使用不受影响，并提供老用户临时过渡方案，确保商家在数据暂时没有恢复的情况下可以正常经营。
+...</p>
+  </div>
+  <footer class="entry-footer">
+
+<span title='2020-03-08 11:58:06 +0200 +0200'>March 8, 2020</span></footer>
+  <a class="entry-link" aria-label="post link to 微盟删库事件复盘与思考" href="http://myself659.github.io/post/arch/weimeng-del-data/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">在选择做什么之前，先问问自己这四个问题
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>在谈谈做事的原则提到做事的原则的基本原则。具体如下：
+不要给自己设限 站在巨人的肩膀上 正确的方向 敏捷的行动 本文重点讨论如何选择做什么这一问题。不要给自己设限，这个主要是解决了选择范围的问题，不给自己设限，可以打破很多限制，为自己提供更多的选项。
+...</p>
+  </div>
+  <footer class="entry-footer">
+
+<span title='2020-03-05 11:58:06 +0200 +0200'>March 5, 2020</span></footer>
+  <a class="entry-link" aria-label="post link to 在选择做什么之前，先问问自己这四个问题" href="http://myself659.github.io/post/done/find-what-todo-lkigai%E9%80%89%E6%8B%A9/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">别太在意编程语言
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>背景 经常有人这样说：
+PHP是最好的语言 现在golang越来越吃香，好找工作 python学习的人越来越多，太难了 对于这些，我想说：别太在意编程语言。
+...</p>
+  </div>
+  <footer class="entry-footer">
+
+<span title='2020-02-18 11:58:06 +0200 +0200'>February 18, 2020</span></footer>
+  <a class="entry-link" aria-label="post link to 别太在意编程语言" href="http://myself659.github.io/post/golang/donot-focus-programming-language/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">通过数据分析预测股票价格变化靠谱吗？
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>前言 在投资美股，先从数据分析开始这篇文章解决两个问题：
+从哪里找数据？ 如何得到这些数据？ 在此基础这篇主要解决一个问题：以特斯拉为例说明如何利用这些数据预测股票价格的变化。同时关注一个问题：投入成本进行预测股票价格是否靠谱与必要？
+...</p>
+  </div>
+  <footer class="entry-footer">
+
+<span title='2020-02-17 11:58:06 +0200 +0200'>February 17, 2020</span></footer>
+  <a class="entry-link" aria-label="post link to 通过数据分析预测股票价格变化靠谱吗？" href="http://myself659.github.io/post/stock/stock-us-analysis/"></a>
+</article>
+<footer class="page-footer">
+  <nav class="pagination">
+    <a class="prev" href="http://myself659.github.io/page/11/">
+      «&nbsp;&nbsp;
+    </a>
+    <a class="next" href="http://myself659.github.io/page/13/">&nbsp;&nbsp;»
+    </a>
+  </nav>
+</footer>
+    </main>
+    
+<footer class="footer">
+        <span>沉风网事</span> · 
+
+    
+    
+    <span>
+        Powered by
+        <a href="https://gohugo.io/?utm_source=papermod" rel="noopener" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" id="top-link" class="top-link hidden" aria-label="go to top" title="Go to Top (Alt + G)" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevrons-up">
+        <polyline points="17 11 12 6 7 11"></polyline>
+        <polyline points="17 18 12 13 7 18"></polyline>
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu');
+    if (menu) {
+        
+        const scrollPosition = localStorage.getItem("menu-scroll-position");
+        if (scrollPosition) {
+            menu.scrollLeft = parseInt(scrollPosition, 10);
+        }
+        
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var toplink = document.getElementById("top-link");
+    window.onscroll = function () {
+        const scrollThreshold = window.innerHeight;
+        if (document.body.scrollTop > scrollThreshold || document.documentElement.scrollTop > scrollThreshold) {
+            toplink.classList.remove("hidden");
+        } else {
+            toplink.classList.add("hidden");
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        const html = document.querySelector("html");
+        if (html.dataset.theme === "dark") {
+            html.dataset.theme = 'light';
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            html.dataset.theme = 'dark';
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>

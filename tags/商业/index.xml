@@ -1,57 +1,102 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>商业 on 沉风网事</title>
     <link>http://myself659.github.io/tags/%E5%95%86%E4%B8%9A/</link>
     <description>Recent content in 商业 on 沉风网事</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>zh-cn</language>
     <copyright>沉风网事</copyright>
-    <lastBuildDate>Thu, 16 Jan 2020 11:58:06 +0200</lastBuildDate><atom:link href="http://myself659.github.io/tags/%E5%95%86%E4%B8%9A/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 16 Jan 2020 11:58:06 +0200</lastBuildDate>
+    <atom:link href="http://myself659.github.io/tags/%E5%95%86%E4%B8%9A/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>说说微信付费阅读</title>
       <link>http://myself659.github.io/post/wechat-payment-read/</link>
       <pubDate>Thu, 16 Jan 2020 11:58:06 +0200</pubDate>
-      
       <guid>http://myself659.github.io/post/wechat-payment-read/</guid>
-      <description>背景 2020年1月15号微信灰度发布公众帐号付费阅读功能。微信10亿用户的体量，最长的用户时长，所以一个付费阅读功能差不多引起全网的讨论。 时</description>
+      <description>&lt;h1 id=&#34;背景&#34;&gt;背景&lt;/h1&gt;
+&lt;p&gt;2020年1月15号微信灰度发布公众帐号付费阅读功能。微信10亿用户的体量，最长的用户时长，所以一个付费阅读功能差不多引起全网的讨论。&lt;/p&gt;
+&lt;h1 id=&#34;时机&#34;&gt;时机&lt;/h1&gt;
+&lt;p&gt;为什么微信会在这个时候推出公众帐号付费阅读功能？&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>关于zoom的一些思考与看法</title>
       <link>http://myself659.github.io/post/business/about-zoom/</link>
       <pubDate>Sun, 28 Apr 2019 11:58:06 +0200</pubDate>
-      
       <guid>http://myself659.github.io/post/business/about-zoom/</guid>
-      <description>前言 最近zoom上市，作为一名华人创业公司自然大受关注。下面从以下几个方面谈谈自己的一些思考与看法： 技术 领导 产品 商业 技术 对于视频面试会议，技</description>
+      <description>&lt;h1 id=&#34;前言&#34;&gt;前言&lt;/h1&gt;
+&lt;p&gt;最近zoom上市，作为一名华人创业公司自然大受关注。下面从以下几个方面谈谈自己的一些思考与看法：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;技术&lt;/li&gt;
+&lt;li&gt;领导&lt;/li&gt;
+&lt;li&gt;产品&lt;/li&gt;
+&lt;li&gt;商业&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;技术&#34;&gt;技术&lt;/h2&gt;
+&lt;p&gt;对于视频面试会议，技术核心分为以下三大块：&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>说说微信小程序</title>
       <link>http://myself659.github.io/post/business/about-weixin-miniprogram/</link>
       <pubDate>Sat, 01 Dec 2018 11:58:06 +0200</pubDate>
-      
       <guid>http://myself659.github.io/post/business/about-weixin-miniprogram/</guid>
-      <description>小程序在2018年确实火了，除了先行的微信小程序，后面紧接着跟着了蚂蚁金服的小程序，今日头条的小程序。这里先表明一下自己的立场，从微信小程序</description>
+      <description>&lt;p&gt;小程序在2018年确实火了，除了先行的微信小程序，后面紧接着跟着了蚂蚁金服的小程序，今日头条的小程序。这里先表明一下自己的立场，从微信小程序诞生开始我就看好微信小程序。这里肯定有人说我是事后诸葛亮，这里有图为证。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>关于拼多多几点看法</title>
       <link>http://myself659.github.io/post/pdd-thought/</link>
       <pubDate>Sun, 29 Jul 2018 11:58:06 +0200</pubDate>
-      
       <guid>http://myself659.github.io/post/pdd-thought/</guid>
-      <description>拼多多战略采用农村包围城市，市场上定位准确，填补了三四线农村及中国底层人民的需求。 微信平台是拼多多快速成长的关键，利用微信带来的流量，流量带</description>
+      <description>&lt;ol&gt;
+&lt;li&gt;拼多多战略采用农村包围城市，市场上定位准确，填补了三四线农村及中国底层人民的需求。&lt;/li&gt;
+&lt;li&gt;微信平台是拼多多快速成长的关键，利用微信带来的流量，流量带来用户，用户带来交易，交易带来商家，随着流量，用户，交易，商家越来越多，就成了生态。&lt;/li&gt;
+&lt;li&gt;宣传口号具有极强的传播效应：拼多多、拼得多、省得多。&lt;/li&gt;
+&lt;li&gt;产品上增加确定性，首先价格比淘宝还便宜（一般情况下）同时对用户预期进行管理，提高了体验的确定性。&lt;/li&gt;
+&lt;li&gt;麻烦就是与淘宝一样，会一直受假货的困扰，打假一直是电商平台的难题（因为打假是一个社会问题）。&lt;/li&gt;
+&lt;li&gt;拼多多胜在效率，对于用户来说是性价比，对于商家来说是批量处理商品，在交易流程上利用微信平台及其天然存在好友关系及其微信群，整个过程商家和用户的成本都下降，在性价比的高吸引下，用户拼单成本低（转发几个微信群或者朋友圈就可以了），商家的流量成本基本为0。&lt;/li&gt;
+&lt;li&gt;拼多多未来会怎么样？在整个中国大部分人消费降级情况下，拼多多应该还会进一步增长，上市当天上涨40%也是市场对其成长的期待。&lt;/li&gt;
+&lt;li&gt;拼多多和淘宝比较如何？借助微信拼多多下沉市场更大，借助微信拼多多是社交电商，更具有传播性。&lt;/li&gt;
+&lt;li&gt;拼多多为什么成长这么快？三年时间就上市，用户数量达到3.4亿。搭上微信这个10亿用户平台，符合大部分中国人还很穷的现状，解决他们的问题。&lt;/li&gt;
+&lt;li&gt;拼多多怎么赚钱？现在还没有营利，主要收入来源是商家的在线营销服务（广告），未来应该会营利，用户数量巨大，可以从天猫，京东导入更多的商家，扩大收入，相信国运，这些用户未来会真正的消费升级，这又是新的增长机会。&lt;/li&gt;
+&lt;li&gt;拼多多为用户提供一种低成本满足刚需的选择。&lt;/li&gt;
+&lt;li&gt;段永平对黄铮的评价：黄峥是特别难得一见的一直关注事物本质的人，有悟性，又聪明，未来有任何成就我都不意外。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h1 id=&#34;后续&#34;&gt;后续&lt;/h1&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&#34;https://mp.weixin.qq.com/s/C1E98xnhRpoqwKamkhjftA&#34;&gt;我为什么全仓拼多多？&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h1 id=&#34;参考&#34;&gt;参考&lt;/h1&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.chuangyejia.com/article/detail/5708260.html&#34;&gt;巨头夹缝中的千亿鲶鱼：社交重塑中国电商格局，拼多多成电商第三极&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://m.huxiu.com/article/250352.html&#34;&gt;拼多多急上市：拿下1400亿GMV，累积亏损13亿&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://mp.weixin.qq.com/s/bbWHjY02BWMLyl-eaHtQ_A&#34;&gt;巨头三国杀：中国电商盛世再临&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;欢迎关注&#34;&gt;欢迎关注&lt;/h2&gt;
+&lt;p&gt;欢迎关注微信公众帐号：沉风网事(savewind)&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>关于微软收购github几点看法</title>
       <link>http://myself659.github.io/post/ms-github/</link>
       <pubDate>Sun, 10 Jun 2018 11:58:06 +0200</pubDate>
-      
       <guid>http://myself659.github.io/post/ms-github/</guid>
-      <description>开源已经是一种潮流与趋势。从linux开始，开源软件支撑现在的互联网与云计算。有太多的项目如redis，docker，k8s，etcd等等；</description>
+      <description>&lt;ol&gt;
+&lt;li&gt;开源已经是一种潮流与趋势。从linux开始，开源软件支撑现在的互联网与云计算。有太多的项目如redis，docker，k8s，etcd等等；区块链领域更是如此。&lt;/li&gt;
+&lt;li&gt;得开发者得天下。github上有最多的开发者和开发项目。&lt;/li&gt;
+&lt;li&gt;代码管理平台的重要性凸显。&lt;/li&gt;
+&lt;li&gt;估计google会在未来收购gitlab。&lt;/li&gt;
+&lt;li&gt;github找到微软爸爸，服务体验会有改善（如国内下载代码慢）。&lt;/li&gt;
+&lt;li&gt;github大量的开源代码会成为AI编程的学习材料，未来CRUD可能由AI来完成了。&lt;/li&gt;
+&lt;li&gt;未来人人都是开发者。随着教育的发展，编程肯定是每个人的必修课。这样github会成为代码管理的操作系统。&lt;/li&gt;
+&lt;li&gt;github与vscode会有深度集成，提高开发效率与体验。&lt;/li&gt;
+&lt;li&gt;github与azure集成，提供一站式开发服务。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h1 id=&#34;参考&#34;&gt;参考&lt;/h1&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&#34;https://36kr.com/p/5137307.html&#34;&gt;收购 GitHub，微软的又一次大转变&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://medium.com/young-coder/how-microsoft-beat-the-innovators-dilemma-5b78e3692ed3&#34;&gt;How Microsoft Beat the Innovator’s Dilemma&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h1 id=&#34;欢迎关注&#34;&gt;欢迎关注&lt;/h1&gt;
+&lt;p&gt;欢迎关注微信公众帐号：沉风网事(savewind)&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

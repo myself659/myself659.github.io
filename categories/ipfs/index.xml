@@ -1,39 +1,57 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>ipfs on 沉风网事</title>
+    <title>IPFS on 沉风网事</title>
     <link>http://myself659.github.io/categories/ipfs/</link>
-    <description>Recent content in ipfs on 沉风网事</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <description>Recent content in IPFS on 沉风网事</description>
+    <generator>Hugo</generator>
     <language>zh-cn</language>
     <copyright>沉风网事</copyright>
-    <lastBuildDate>Thu, 21 Jun 2018 11:58:06 +0200</lastBuildDate><atom:link href="http://myself659.github.io/categories/ipfs/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 21 Jun 2018 11:58:06 +0200</lastBuildDate>
+    <atom:link href="http://myself659.github.io/categories/ipfs/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>IPFS专题</title>
       <link>http://myself659.github.io/post/ipfs%E4%B8%93%E9%A2%98/</link>
       <pubDate>Thu, 21 Jun 2018 11:58:06 +0200</pubDate>
-      
       <guid>http://myself659.github.io/post/ipfs%E4%B8%93%E9%A2%98/</guid>
-      <description>前言 IPFS（包括filecoin）无论从技术视角还是商业视角都有很多有意思的内容（关键是自己很看好这个技术），所以要准备搞一个IPFS专题</description>
+      <description>&lt;h2 id=&#34;前言&#34;&gt;前言&lt;/h2&gt;
+&lt;p&gt;IPFS（包括filecoin）无论从技术视角还是商业视角都有很多有意思的内容（关键是自己很看好这个技术），所以要准备搞一个IPFS专题。&lt;/p&gt;
+&lt;h2 id=&#34;文章&#34;&gt;文章&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://myself659.github.io/2017/09/21/2017-09-21-ipfs-sec/&#34;&gt;IPFS与下一代网络安全&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://myself659.github.io/slides/%E4%B8%8B%E4%B8%80%E4%BB%A3%E4%BA%92%E8%81%94%E7%BD%91%E5%9F%BA%E7%A1%80%EF%BC%9AIPFS.pdf&#34;&gt;下一代互联网基础：IPFS.pdf&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;动态&#34;&gt;动态&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&#34;https://filecoin.io/blog/update-2017-q4/&#34;&gt;Filecoin 2017 Q4 Update&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://filecoin.io/blog/update-2018-q1-q2/&#34;&gt;Filecoin 2018 Q1 &amp;amp; Q2 Update&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://filecoin.io/blog/update-2019-q2-q3/&#34;&gt;Filecoin 2019 Q2 &amp;amp; Q3 Update&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://filecoin.io/blog/roadmap-update-2019-q4/&#34;&gt;Filecoin Roadmap Update Q4 2019&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://blog.ipfs.io/2020-04-28-go-ipfs-0-5-0/&#34;&gt;IPFS 0.5.0 is here! Our largest upgrade to IPFS yet&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://filecoin.io/blog/filecoin-guide-to-storage-mining/&#34;&gt;A Guide to Filecoin Storage Mining&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;ipfs和filecoin之间的关系&#34;&gt;IPFS和filecoin之间的关系&lt;/h2&gt;
+&lt;p&gt;IPFS是技术，filecoin是技术的商业化。
+IPFS+filecoin在一起完成技术商业化，从1到1000。。。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>IPFS与下一代网络安全</title>
       <link>http://myself659.github.io/post/network/2017-09-21-ipfs-sec/</link>
       <pubDate>Thu, 21 Sep 2017 11:58:06 +0200</pubDate>
-      
       <guid>http://myself659.github.io/post/network/2017-09-21-ipfs-sec/</guid>
-      <description>IPFS 先简单说一下IPFS。 IPFS是点对点协议InterPlanetary File System的简称，它是一个面向全球的、点对点的分布式版本文件系统</description>
+      <description>&lt;h3 id=&#34;ipfs&#34;&gt;IPFS&lt;/h3&gt;
+&lt;p&gt;先简单说一下IPFS。
+IPFS是点对点协议InterPlanetary File System的简称，它是一个面向全球的、点对点的分布式版本文件系统，试图将所有具有相同文件系统的计算设备连接在一起。它用基于内容的地址替代基于域名的地址，也就是用户寻找的不是某个地址而是储存在某个地方的内容，不需要验证发送者的身份，而只需要验证内容的哈希，通过这样可以让网页的速度更快、更安全、更健壮、更持久。IPFS目标是未来将替代HTTP。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>关于弹性安全网络一点思考</title>
       <link>http://myself659.github.io/post/2017-09-20-next-network/</link>
       <pubDate>Wed, 20 Sep 2017 11:58:06 +0200</pubDate>
-      
       <guid>http://myself659.github.io/post/2017-09-20-next-network/</guid>
-      <description>作为网络研发出身的我，从事网络研发时间也最长，一直也关注道哥的微信公众号。 下面就对道哥的提出弹性安全网络一些总结与思考。 弹性安全网络 具体从以</description>
+      <description>&lt;p&gt;作为网络研发出身的我，从事网络研发时间也最长，一直也关注道哥的微信公众号。&lt;/p&gt;
+&lt;p&gt;下面就对道哥的提出弹性安全网络一些总结与思考。&lt;/p&gt;
+&lt;h3 id=&#34;弹性安全网络&#34;&gt;弹性安全网络&lt;/h3&gt;
+&lt;p&gt;具体从以下几个方面解读弹性安全网络。&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

@@ -1,21 +1,31 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Substrate on 沉风网事</title>
     <link>http://myself659.github.io/tags/substrate/</link>
     <description>Recent content in Substrate on 沉风网事</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>zh-cn</language>
     <copyright>沉风网事</copyright>
-    <lastBuildDate>Wed, 18 Sep 2019 11:58:06 +0200</lastBuildDate><atom:link href="http://myself659.github.io/tags/substrate/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 18 Sep 2019 11:58:06 +0200</lastBuildDate>
+    <atom:link href="http://myself659.github.io/tags/substrate/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>搭建Substrate开发云节点</title>
       <link>http://myself659.github.io/post/substrate-cloud-node/</link>
       <pubDate>Wed, 18 Sep 2019 11:58:06 +0200</pubDate>
-      
       <guid>http://myself659.github.io/post/substrate-cloud-node/</guid>
-      <description>为什么要云节点 主要由以下几个原因： 国内GFW太狠，github都不能幸免，代码都不能下载，影响正常的开发 rust这个编译太占用cpu，内存，</description>
+      <description>&lt;h1 id=&#34;为什么要云节点&#34;&gt;为什么要云节点&lt;/h1&gt;
+&lt;p&gt;主要由以下几个原因：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;国内GFW太狠，github都不能幸免，代码都不能下载，影响正常的开发&lt;/li&gt;
+&lt;li&gt;rust这个编译太占用cpu，内存，硬盘&lt;/li&gt;
+&lt;li&gt;rust编译的时候cpu一直在叫，影响个人心情，进而影响开发效率&lt;/li&gt;
+&lt;li&gt;云节点方便共享&lt;/li&gt;
+&lt;li&gt;花小钱买时间是一件很划算的事情&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h1 id=&#34;搭建步骤&#34;&gt;搭建步骤&lt;/h1&gt;
+&lt;h2 id=&#34;准备节点&#34;&gt;准备节点&lt;/h2&gt;
+&lt;p&gt;具体参考这篇文章&lt;a href=&#34;https://substrate.dev/docs/en/getting-started/installing-substrate&#34;&gt;Installing Substrate&lt;/a&gt;，各种类型的操作系统都有说明。&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="auto" data-theme="auto">
+
+<head>
+	<meta name="generator" content="Hugo 0.164.0"><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>沉风网事</title>
+<meta name="keywords" content="沉风网事, 沉风, 区块链, Glang, 算法, 数据结构">
+<meta name="description" content="沉风网事，以人为本，尊重事实与原理，立足现实，以科技与金融为驱动，中西结合，虚实相应，主要关注互联网，系统架构，区块链，安全，经济，数据等领域">
+<meta name="author" content="">
+<link rel="canonical" href="http://myself659.github.io/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.89ca4972ab5e6aaa05e9a0dae0c4bb64b26585bc79e36f5cf33614eea0283abe.css" integrity="sha256-icpJcqteaqoF6aDa4MS7ZLJlhbx5429c8zYU7qAoOr4=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://myself659.github.io/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://myself659.github.io/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://myself659.github.io/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://myself659.github.io/apple-touch-icon.png">
+<link rel="mask-icon" href="http://myself659.github.io/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" type="application/rss+xml" href="http://myself659.github.io/index.xml" title="rss">
+<link rel="alternate" hreflang="zh-cn" href="http://myself659.github.io/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+                color-scheme: dark;
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .toc {
+                background: var(--entry);
+            }
+        }
+
+    </style>
+</noscript>
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else if (localStorage.getItem("pref-theme") === "light") {
+       document.querySelector("html").dataset.theme = 'light';
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else {
+        document.querySelector("html").dataset.theme = 'light';
+    }
+
+</script><meta property="og:url" content="http://myself659.github.io/">
+  <meta property="og:site_name" content="沉风网事">
+  <meta property="og:title" content="沉风网事">
+  <meta property="og:description" content="沉风网事，以人为本，尊重事实与原理，立足现实，以科技与金融为驱动，中西结合，虚实相应，主要关注互联网，系统架构，区块链，安全，经济，数据等领域">
+  <meta property="og:locale" content="zh_cn">
+  <meta property="og:type" content="website">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="沉风网事">
+  <meta name="twitter:description" content="沉风网事，以人为本，尊重事实与原理，立足现实，以科技与金融为驱动，中西结合，虚实相应，主要关注互联网，系统架构，区块链，安全，经济，数据等领域">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "沉风网事",
+  "url": "http://myself659.github.io/",
+  "description": "沉风网事，以人为本，尊重事实与原理，立足现实，以科技与金融为驱动，中西结合，虚实相应，主要关注互联网，系统架构，区块链，安全，经济，数据等领域",
+  "logo": "http://myself659.github.io/favicon.ico",
+  "sameAs": [
+      
+  ]
+}
+</script>
+</head>
+<body class="list" id="top">
+    <header class="header">
+    <nav class="header-nav">
+        <div class="logo">
+            <a href="http://myself659.github.io/" accesskey="h" title="沉风网事 (Alt + H)">沉风网事</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" class="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg class="moon" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg class="sun" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu" class="menu">
+            <li>
+                <a href="http://myself659.github.io/" title="Home">
+                    <span class="active">Home</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://myself659.github.io/post/" title="Archives">
+                    <span>Archives</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://myself659.github.io/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://myself659.github.io/categories/" title="Categories">
+                    <span>Categories</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://myself659.github.io/search/" title="Search (Alt &#43; /)" accesskey=/>
+                    <span>Search</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://myself659.github.io/about/" title="About">
+                    <span>About</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://myself659.github.io/post/leetcode/" title="LeetCode">
+                    <span>LeetCode</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://myself659.github.io/post/read-post/" title="Reading">
+                    <span>Reading</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://myself659.github.io/post/share-post/" title="Share">
+                    <span>Share</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://myself659.github.io/post/slide-post/" title="Slide">
+                    <span>Slide</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main"> 
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Proxy 101
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p> 前言 在当今互联网系统中，Proxy（代理） 是一种极为常见且强大的中间组件，广泛应用于访问控制、负载均衡、安全隔离、缓存加速等场景。无论是客户端请求网站，还是服务之间互相通信，Proxy 都扮演着不可或缺的角色。
+...</p>
+  </div>
+  <footer class="entry-footer">
+
+<span title='2019-01-18 11:58:06 +0200 +0200'>January 18, 2019</span></footer>
+  <a class="entry-link" aria-label="post link to Proxy 101" href="http://myself659.github.io/post/arch/proxy-101/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Quorum 101
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p> 前言 在分布式系统中，多副本机制确保了数据的高可用性与容错能力，但同时也带来了副本间一致性的问题。为了在性能、可用性与一致性之间取得平衡，Quorum（一致性法定人数）机制应运而生，广泛应用于分布式数据库与存储系统，如 Cassandra、Dynamo、etcd、ZooKeeper 等。
+...</p>
+  </div>
+  <footer class="entry-footer">
+
+<span title='2019-01-18 11:58:06 +0200 +0200'>January 18, 2019</span></footer>
+  <a class="entry-link" aria-label="post link to Quorum 101" href="http://myself659.github.io/post/arch/quorum-101/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Rate Limiter 101
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p> 前言 在现代互联网系统中，用户访问量巨大且不可预期，恶意刷接口、突发流量暴涨等问题屡见不鲜。为了保护系统稳定性、保障资源公平使用，Rate Limiter（限流器） 成为服务治理和网关中必不可少的机制。
+...</p>
+  </div>
+  <footer class="entry-footer">
+
+<span title='2019-01-18 11:58:06 +0200 +0200'>January 18, 2019</span></footer>
+  <a class="entry-link" aria-label="post link to Rate Limiter 101" href="http://myself659.github.io/post/arch/rate-limiter-101/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Read Repair 101
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p> 前言 在分布式系统中，数据被多副本存储是常见做法，用于提升容错与可用性。然而，多副本之间的数据一致性维护是一个复杂的问题。**Read Repair（读修复）机制，正是实现最终一致性（eventual consistency）**的重要手段之一。
+...</p>
+  </div>
+  <footer class="entry-footer">
+
+<span title='2019-01-18 11:58:06 +0200 +0200'>January 18, 2019</span></footer>
+  <a class="entry-link" aria-label="post link to Read Repair 101" href="http://myself659.github.io/post/arch/read-repair-101/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">RESTAPI 101
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p> 前言 在现代互联网系统中，REST API（Representational State Transfer Application Programming Interface）无处不在，是系统组件之间进行通信和数据交换的事实标准。无论是前后端、服务间、微服务还是移动端，REST API 都是最常见的通信接口形式。
+...</p>
+  </div>
+  <footer class="entry-footer">
+
+<span title='2019-01-18 11:58:06 +0200 +0200'>January 18, 2019</span></footer>
+  <a class="entry-link" aria-label="post link to RESTAPI 101" href="http://myself659.github.io/post/arch/restapi-101/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Segmented Log 101
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p> 前言 在现代分布式系统、日志系统、消息队列和数据库中，高效、可靠的写入与持久化机制是系统核心能力之一。传统的线性日志虽然简单，但在长时间运行、大规模数据场景下存在扩展性瓶颈。**Segmented Log（分段日志）**正是一种应对这些问题的设计，通过将日志拆分为多个可管理的段，提升写入性能、便于清理与恢复。
+...</p>
+  </div>
+  <footer class="entry-footer">
+
+<span title='2019-01-17 11:58:06 +0200 +0200'>January 17, 2019</span></footer>
+  <a class="entry-link" aria-label="post link to Segmented Log 101" href="http://myself659.github.io/post/arch/segmented-log-101/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">请主动积极些
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>被动的麻烦 被动代表什么?被动常常代表麻烦,具体如下:
+落后
+等待与浪费
+缺少控制
+机会减少
+缺少准备
+什么是积极主动 积极主动怎么定义呢? 还是看实例和对比.
+一个被动消极的人会是怎么样呢?通常他们有以下言行:
+...</p>
+  </div>
+  <footer class="entry-footer">
+
+<span title='2019-01-17 11:58:06 +0800 +08'>January 17, 2019</span></footer>
+  <a class="entry-link" aria-label="post link to 请主动积极些" href="http://myself659.github.io/post/life/%E8%AF%B7%E4%B8%BB%E5%8A%A8%E7%A7%AF%E6%9E%81%E4%BA%9B/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Write-Ahead Log 101
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p> 前言 在现代互联网系统中，数据的可靠性与一致性至关重要。尤其在数据库、分布式系统和文件系统中，为了防止系统崩溃后数据丢失，Write-Ahead Logging（预写日志）机制成为确保持久化与崩溃恢复的重要手段。
+...</p>
+  </div>
+  <footer class="entry-footer">
+
+<span title='2019-01-16 11:58:06 +0200 +0200'>January 16, 2019</span></footer>
+  <a class="entry-link" aria-label="post link to Write-Ahead Log 101" href="http://myself659.github.io/post/arch/write-ahead-log-101/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">B-tree 101
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p> 前言 在现代互联网系统与数据库技术中，数据的高效查询与有序存储一直是核心目标。尤其在关系型数据库和文件系统中，B-Tree 是广泛使用的数据结构，它以平衡、有序、高效的方式组织大量数据，支撑着几乎所有数据库的索引系统。
+...</p>
+  </div>
+  <footer class="entry-footer">
+
+<span title='2019-01-14 11:58:06 +0200 +0200'>January 14, 2019</span></footer>
+  <a class="entry-link" aria-label="post link to B-tree 101" href="http://myself659.github.io/post/arch/b-tree-101/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">LSM tree 101
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p> LSM Tree 101 前言 在现代互联网系统中，海量数据的高效写入和查询是数据库系统设计的核心目标之一。特别是写多读少或写入密集型的场景中，传统B-Tree类结构难以胜任。**LSM Tree（Log-Structured Merge Tree）**作为一种写入友好型数据结构，已经广泛应用于数据库、键值存储和时间序列系统中。
+...</p>
+  </div>
+  <footer class="entry-footer">
+
+<span title='2019-01-14 11:58:06 +0200 +0200'>January 14, 2019</span></footer>
+  <a class="entry-link" aria-label="post link to LSM tree 101" href="http://myself659.github.io/post/arch/lsm-tree-101/"></a>
+</article>
+<footer class="page-footer">
+  <nav class="pagination">
+    <a class="prev" href="http://myself659.github.io/page/17/">
+      «&nbsp;&nbsp;
+    </a>
+    <a class="next" href="http://myself659.github.io/page/19/">&nbsp;&nbsp;»
+    </a>
+  </nav>
+</footer>
+    </main>
+    
+<footer class="footer">
+        <span>沉风网事</span> · 
+
+    
+    
+    <span>
+        Powered by
+        <a href="https://gohugo.io/?utm_source=papermod" rel="noopener" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" id="top-link" class="top-link hidden" aria-label="go to top" title="Go to Top (Alt + G)" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevrons-up">
+        <polyline points="17 11 12 6 7 11"></polyline>
+        <polyline points="17 18 12 13 7 18"></polyline>
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu');
+    if (menu) {
+        
+        const scrollPosition = localStorage.getItem("menu-scroll-position");
+        if (scrollPosition) {
+            menu.scrollLeft = parseInt(scrollPosition, 10);
+        }
+        
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var toplink = document.getElementById("top-link");
+    window.onscroll = function () {
+        const scrollThreshold = window.innerHeight;
+        if (document.body.scrollTop > scrollThreshold || document.documentElement.scrollTop > scrollThreshold) {
+            toplink.classList.remove("hidden");
+        } else {
+            toplink.classList.add("hidden");
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        const html = document.querySelector("html");
+        if (html.dataset.theme === "dark") {
+            html.dataset.theme = 'light';
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            html.dataset.theme = 'dark';
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>

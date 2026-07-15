@@ -1,30 +1,45 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>研发管理 on 沉风网事</title>
     <link>http://myself659.github.io/categories/%E7%A0%94%E5%8F%91%E7%AE%A1%E7%90%86/</link>
     <description>Recent content in 研发管理 on 沉风网事</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>zh-cn</language>
     <copyright>沉风网事</copyright>
-    <lastBuildDate>Sun, 08 Mar 2020 11:58:06 +0200</lastBuildDate><atom:link href="http://myself659.github.io/categories/%E7%A0%94%E5%8F%91%E7%AE%A1%E7%90%86/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 08 Mar 2020 11:58:06 +0200</lastBuildDate>
+    <atom:link href="http://myself659.github.io/categories/%E7%A0%94%E5%8F%91%E7%AE%A1%E7%90%86/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>微盟删库事件复盘与思考</title>
       <link>http://myself659.github.io/post/arch/weimeng-del-data/</link>
       <pubDate>Sun, 08 Mar 2020 11:58:06 +0200</pubDate>
-      
       <guid>http://myself659.github.io/post/arch/weimeng-del-data/</guid>
-      <description>事故 先简单看一下整个事故的粗略时间线。 2月23日，微盟服务出现故障。商家商城、小程序均无法登录。 2月25日，微盟紧急恢复了核心业务的线上生产</description>
+      <description>&lt;h1 id=&#34;事故&#34;&gt;事故&lt;/h1&gt;
+&lt;p&gt;先简单看一下整个事故的粗略时间线。&lt;/p&gt;
+&lt;p&gt;2月23日，微盟服务出现故障。商家商城、小程序均无法登录。&lt;/p&gt;
+&lt;p&gt;2月25日，微盟紧急恢复了核心业务的线上生产环境，新用户使用不受影响，并提供老用户临时过渡方案，确保商家在数据暂时没有恢复的情况下可以正常经营。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>关于技术选型的思考</title>
       <link>http://myself659.github.io/post/tech-stack-explain/</link>
       <pubDate>Wed, 05 Sep 2018 11:58:06 +0200</pubDate>
-      
       <guid>http://myself659.github.io/post/tech-stack-explain/</guid>
-      <description>技术选型内容 技术选型从组成要素的角度分为两大类： 实现业务的代码 业务依赖的服务 本文围绕代码这一核心进行技术选型，对此分解以下五个问题： 怎么管理</description>
+      <description>&lt;h1 id=&#34;技术选型内容&#34;&gt;技术选型内容&lt;/h1&gt;
+&lt;p&gt;技术选型从组成要素的角度分为两大类：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;实现业务的代码&lt;/li&gt;
+&lt;li&gt;业务依赖的服务&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;本文围绕代码这一核心进行技术选型，对此分解以下五个问题：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;怎么管理代码？&lt;/li&gt;
+&lt;li&gt;用什么语言写代码？&lt;/li&gt;
+&lt;li&gt;怎么运行代码？&lt;/li&gt;
+&lt;li&gt;在哪里运行代码？&lt;/li&gt;
+&lt;li&gt;怎么大规模运维代码？&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h1 id=&#34;技术选型原则&#34;&gt;技术选型原则&lt;/h1&gt;
+&lt;p&gt;先看一下技术选型应该考虑些什么呢？&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

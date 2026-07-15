@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="auto" data-theme="auto">
+
+<head>
+	<meta name="generator" content="Hugo 0.164.0"><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>沉风网事</title>
+<meta name="keywords" content="沉风网事, 沉风, 区块链, Glang, 算法, 数据结构">
+<meta name="description" content="沉风网事，以人为本，尊重事实与原理，立足现实，以科技与金融为驱动，中西结合，虚实相应，主要关注互联网，系统架构，区块链，安全，经济，数据等领域">
+<meta name="author" content="">
+<link rel="canonical" href="http://myself659.github.io/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.89ca4972ab5e6aaa05e9a0dae0c4bb64b26585bc79e36f5cf33614eea0283abe.css" integrity="sha256-icpJcqteaqoF6aDa4MS7ZLJlhbx5429c8zYU7qAoOr4=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://myself659.github.io/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://myself659.github.io/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://myself659.github.io/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://myself659.github.io/apple-touch-icon.png">
+<link rel="mask-icon" href="http://myself659.github.io/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" type="application/rss+xml" href="http://myself659.github.io/index.xml" title="rss">
+<link rel="alternate" hreflang="zh-cn" href="http://myself659.github.io/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+                color-scheme: dark;
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .toc {
+                background: var(--entry);
+            }
+        }
+
+    </style>
+</noscript>
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else if (localStorage.getItem("pref-theme") === "light") {
+       document.querySelector("html").dataset.theme = 'light';
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else {
+        document.querySelector("html").dataset.theme = 'light';
+    }
+
+</script><meta property="og:url" content="http://myself659.github.io/">
+  <meta property="og:site_name" content="沉风网事">
+  <meta property="og:title" content="沉风网事">
+  <meta property="og:description" content="沉风网事，以人为本，尊重事实与原理，立足现实，以科技与金融为驱动，中西结合，虚实相应，主要关注互联网，系统架构，区块链，安全，经济，数据等领域">
+  <meta property="og:locale" content="zh_cn">
+  <meta property="og:type" content="website">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="沉风网事">
+  <meta name="twitter:description" content="沉风网事，以人为本，尊重事实与原理，立足现实，以科技与金融为驱动，中西结合，虚实相应，主要关注互联网，系统架构，区块链，安全，经济，数据等领域">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "沉风网事",
+  "url": "http://myself659.github.io/",
+  "description": "沉风网事，以人为本，尊重事实与原理，立足现实，以科技与金融为驱动，中西结合，虚实相应，主要关注互联网，系统架构，区块链，安全，经济，数据等领域",
+  "logo": "http://myself659.github.io/favicon.ico",
+  "sameAs": [
+      
+  ]
+}
+</script>
+</head>
+<body class="list" id="top">
+    <header class="header">
+    <nav class="header-nav">
+        <div class="logo">
+            <a href="http://myself659.github.io/" accesskey="h" title="沉风网事 (Alt + H)">沉风网事</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" class="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg class="moon" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg class="sun" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu" class="menu">
+            <li>
+                <a href="http://myself659.github.io/" title="Home">
+                    <span class="active">Home</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://myself659.github.io/post/" title="Archives">
+                    <span>Archives</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://myself659.github.io/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://myself659.github.io/categories/" title="Categories">
+                    <span>Categories</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://myself659.github.io/search/" title="Search (Alt &#43; /)" accesskey=/>
+                    <span>Search</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://myself659.github.io/about/" title="About">
+                    <span>About</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://myself659.github.io/post/leetcode/" title="LeetCode">
+                    <span>LeetCode</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://myself659.github.io/post/read-post/" title="Reading">
+                    <span>Reading</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://myself659.github.io/post/share-post/" title="Share">
+                    <span>Share</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://myself659.github.io/post/slide-post/" title="Slide">
+                    <span>Slide</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main"> 
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">关于区块链共识的一些思考
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>说明 前面写一篇关于分布式系统的文章，但是没有考虑拜占庭问题，所以聊聊区块链共识技术，在这个过程看看比特币是如何解决拜占庭问题和共识问题。
+定义 区块链是什么？这个问题有太多的回答。
+...</p>
+  </div>
+  <footer class="entry-footer">
+
+<span title='2018-12-24 11:58:06 +0200 +0200'>December 24, 2018</span></footer>
+  <a class="entry-link" aria-label="post link to 关于区块链共识的一些思考" href="http://myself659.github.io/post/blockchain/%E5%85%B3%E4%BA%8E%E5%8C%BA%E5%9D%97%E9%93%BE%E5%85%B1%E8%AF%86%E7%9A%84%E4%B8%80%E4%BA%9B%E6%80%9D%E8%80%83/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">谈谈对分布式系统的一些思考
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>说明 本文限定在分布式系统不考虑拜占庭问题。即所有节点都是可信的。
+定义 分布式系统是多个节点协作完全一个共同的业务。
+重要性 分布式理论的重要性毋庸置疑，一句话总结：没有分布式理论，就没有现在互联网与云计算。在分布式系统实践过程中离不开分布式系统理论指导，对其重要性打个比方：分布式系统理论是分布式系统实践过程中地图与导航。
+...</p>
+  </div>
+  <footer class="entry-footer">
+
+<span title='2018-12-11 11:58:06 +0200 +0200'>December 11, 2018</span></footer>
+  <a class="entry-link" aria-label="post link to 谈谈对分布式系统的一些思考" href="http://myself659.github.io/post/distributed/distributed-theory/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">大型系统软件Comware研发总结
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>前言 前几个月写一篇关于研发管理的文章。在那篇文章提出一个简单的思考框架，并没有实际案例的分享及深度分析。所以在这里以华三Comware研发为例，结合思考框架谈谈自己的一些理解与想法。
+...</p>
+  </div>
+  <footer class="entry-footer">
+
+<span title='2018-12-05 11:58:06 +0200 +0200'>December 5, 2018</span></footer>
+  <a class="entry-link" aria-label="post link to 大型系统软件Comware研发总结" href="http://myself659.github.io/post/comware-rd/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">说说在不同行业的编程体验
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>回想起来，本科毕业以来，在五家公司呆过，经历四个行业，在这引起行业编程体验各有不同，总结起来就下面四句话：
+嵌入式行业：面向DataSheet编程
+...</p>
+  </div>
+  <footer class="entry-footer">
+
+<span title='2018-12-02 11:58:06 +0200 +0200'>December 2, 2018</span></footer>
+  <a class="entry-link" aria-label="post link to 说说在不同行业的编程体验" href="http://myself659.github.io/post/arch/%E8%AF%B4%E8%AF%B4%E5%9C%A8%E4%B8%8D%E5%90%8C%E8%A1%8C%E4%B8%9A%E7%9A%84%E7%BC%96%E7%A8%8B%E4%BD%93%E9%AA%8C/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">说说微信小程序
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>小程序在2018年确实火了，除了先行的微信小程序，后面紧接着跟着了蚂蚁金服的小程序，今日头条的小程序。这里先表明一下自己的立场，从微信小程序诞生开始我就看好微信小程序。这里肯定有人说我是事后诸葛亮，这里有图为证。
+...</p>
+  </div>
+  <footer class="entry-footer">
+
+<span title='2018-12-01 11:58:06 +0200 +0200'>December 1, 2018</span></footer>
+  <a class="entry-link" aria-label="post link to 说说微信小程序" href="http://myself659.github.io/post/business/about-weixin-miniprogram/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Google File System (GFS) 101
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>前言 在现代互联网系统中，数据存储、管理与分发一直是关键技术之一。Google File System（GFS）是谷歌为满足其海量数据存储需求而设计的分布式文件系统。它支撑着谷歌的许多大规模应用，如搜索引擎、YouTube等，尤其适用于高吞吐量、大文件存储和海量数据处理。
+...</p>
+  </div>
+  <footer class="entry-footer">
+
+<span title='2018-11-02 11:58:06 +0200 +0200'>November 2, 2018</span></footer>
+  <a class="entry-link" aria-label="post link to Google File System (GFS) 101" href="http://myself659.github.io/post/distributed/gfs-101/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">技术人员应该如何思考业务与产品
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>tips 谁使用业务与产品？ 谁负责设计业务与产品？ 谁会购买产品或者为业务付费？ 谁负责交付并维护业务与产品？ 用户与客户是如何使用业务与产品？ 用户与客户的真正的需求是什么？ 业务与产品的商业模式是什么？ </p>
+  </div>
+  <footer class="entry-footer">
+
+<span title='2018-11-02 11:58:06 +0800 +08'>November 2, 2018</span></footer>
+  <a class="entry-link" aria-label="post link to 技术人员应该如何思考业务与产品" href="http://myself659.github.io/post/arch/%E6%8A%80%E6%9C%AF%E4%BA%BA%E5%91%98%E5%BA%94%E8%AF%A5%E5%A6%82%E4%BD%95%E6%80%9D%E8%80%83%E4%B8%9A%E5%8A%A1/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">vector clock 101
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p> 前言 在现代分布式系统中，多个节点并发处理数据的场景非常常见。如何判断两个事件的先后关系？如何检测冲突？这时我们需要一种比时间戳更精确的工具 —— Vector Clock（向量时钟）。
+...</p>
+  </div>
+  <footer class="entry-footer">
+
+<span title='2018-10-30 11:58:06 +0200 +0200'>October 30, 2018</span></footer>
+  <a class="entry-link" aria-label="post link to vector clock 101" href="http://myself659.github.io/post/distributed/vector-clocks-101/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">CAP Theorem 101
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p> 前言 在现代分布式系统中，系统经常部署在多个地理位置、跨多个节点，网络延迟、故障和节点不一致成为常态。如何在这种复杂环境下权衡一致性与可用性？CAP 定理给出了明确的理论指导。
+...</p>
+  </div>
+  <footer class="entry-footer">
+
+<span title='2018-10-29 11:58:06 +0200 +0200'>October 29, 2018</span></footer>
+  <a class="entry-link" aria-label="post link to CAP Theorem 101" href="http://myself659.github.io/post/distributed/cap-theorem-101/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Checksum  101
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p> 前言 在分布式系统、文件传输、数据存储等场景中，数据在传输和存储过程中可能出现错误或损坏。为了确保数据的完整性和正确性，Checksum（校验和） 是一种常用且高效的手段，扮演着“数据防护罩”的角色。
+...</p>
+  </div>
+  <footer class="entry-footer">
+
+<span title='2018-10-29 11:58:06 +0200 +0200'>October 29, 2018</span></footer>
+  <a class="entry-link" aria-label="post link to Checksum  101" href="http://myself659.github.io/post/distributed/checksum-101/"></a>
+</article>
+<footer class="page-footer">
+  <nav class="pagination">
+    <a class="prev" href="http://myself659.github.io/page/19/">
+      «&nbsp;&nbsp;
+    </a>
+    <a class="next" href="http://myself659.github.io/page/21/">&nbsp;&nbsp;»
+    </a>
+  </nav>
+</footer>
+    </main>
+    
+<footer class="footer">
+        <span>沉风网事</span> · 
+
+    
+    
+    <span>
+        Powered by
+        <a href="https://gohugo.io/?utm_source=papermod" rel="noopener" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" id="top-link" class="top-link hidden" aria-label="go to top" title="Go to Top (Alt + G)" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevrons-up">
+        <polyline points="17 11 12 6 7 11"></polyline>
+        <polyline points="17 18 12 13 7 18"></polyline>
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu');
+    if (menu) {
+        
+        const scrollPosition = localStorage.getItem("menu-scroll-position");
+        if (scrollPosition) {
+            menu.scrollLeft = parseInt(scrollPosition, 10);
+        }
+        
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var toplink = document.getElementById("top-link");
+    window.onscroll = function () {
+        const scrollThreshold = window.innerHeight;
+        if (document.body.scrollTop > scrollThreshold || document.documentElement.scrollTop > scrollThreshold) {
+            toplink.classList.remove("hidden");
+        } else {
+            toplink.classList.add("hidden");
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        const html = document.querySelector("html");
+        if (html.dataset.theme === "dark") {
+            html.dataset.theme = 'light';
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            html.dataset.theme = 'dark';
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>

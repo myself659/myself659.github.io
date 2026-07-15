@@ -1,30 +1,36 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>cryptocurrency on 沉风网事</title>
+    <title>Cryptocurrency on 沉风网事</title>
     <link>http://myself659.github.io/tags/cryptocurrency/</link>
-    <description>Recent content in cryptocurrency on 沉风网事</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <description>Recent content in Cryptocurrency on 沉风网事</description>
+    <generator>Hugo</generator>
     <language>zh-cn</language>
     <copyright>沉风网事</copyright>
-    <lastBuildDate>Sat, 01 May 2021 11:58:06 +0800</lastBuildDate><atom:link href="http://myself659.github.io/tags/cryptocurrency/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 01 May 2021 11:58:06 +0800</lastBuildDate>
+    <atom:link href="http://myself659.github.io/tags/cryptocurrency/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>PoS更有利于去中心化</title>
       <link>http://myself659.github.io/post/blockchain/pos-increase-decentralization/</link>
       <pubDate>Sat, 01 May 2021 11:58:06 +0800</pubDate>
-      
       <guid>http://myself659.github.io/post/blockchain/pos-increase-decentralization/</guid>
-      <description>背景 PoW和PoS作为现在最常用的两大共识算法，PoW与PoS之争已经有多年了。 下面从去中心化角度来对比两条公链： 采用PoW的以太坊 采用EP</description>
+      <description>&lt;h2 id=&#34;背景&#34;&gt;背景&lt;/h2&gt;
+&lt;p&gt;PoW和PoS作为现在最常用的两大共识算法，PoW与PoS之争已经有多年了。&lt;/p&gt;
+&lt;p&gt;下面从去中心化角度来对比两条公链：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;采用PoW的以太坊&lt;/li&gt;
+&lt;li&gt;采用EPoS的Harmony&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;以太坊&#34;&gt;以太坊&lt;/h2&gt;
+&lt;p&gt;随着以太坊矿池兴起加上PoW天生容易导致算力集中，以太坊独立挖矿的节点越来越少，出块节点也越来越少，越来越集中，下图就是一个很好的说明。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>展望2021年的Ethereum</title>
       <link>http://myself659.github.io/post/blockchain/eth-2021/</link>
       <pubDate>Fri, 08 Jan 2021 11:58:06 +0200</pubDate>
-      
       <guid>http://myself659.github.io/post/blockchain/eth-2021/</guid>
-      <description>前言 Ethereum作为第一个支持图灵完备的智能合约平台，同时也是最大的智能合约平台。从现在区块链应用角度来看是最重要的公链。个人认为公链的</description>
+      <description>&lt;h2 id=&#34;前言&#34;&gt;前言&lt;/h2&gt;
+&lt;p&gt;Ethereum作为第一个支持图灵完备的智能合约平台，同时也是最大的智能合约平台。从现在区块链应用角度来看是最重要的公链。个人认为公链的市场规模在万亿美元以上。&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>
