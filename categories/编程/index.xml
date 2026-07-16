@@ -2,37 +2,37 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>编程 on 沉风网事</title>
-    <link>http://myself659.github.io/categories/%E7%BC%96%E7%A8%8B/</link>
+    <link>https://myself659.github.io/categories/%E7%BC%96%E7%A8%8B/</link>
     <description>Recent content in 编程 on 沉风网事</description>
     <generator>Hugo</generator>
     <language>zh-cn</language>
     <copyright>沉风网事</copyright>
     <lastBuildDate>Sun, 09 Aug 2020 11:58:06 +0200</lastBuildDate>
-    <atom:link href="http://myself659.github.io/categories/%E7%BC%96%E7%A8%8B/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://myself659.github.io/categories/%E7%BC%96%E7%A8%8B/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>谈谈GPT3</title>
-      <link>http://myself659.github.io/post/gpt3-thought/</link>
+      <link>https://myself659.github.io/post/gpt3-thought/</link>
       <pubDate>Sun, 09 Aug 2020 11:58:06 +0200</pubDate>
-      <guid>http://myself659.github.io/post/gpt3-thought/</guid>
+      <guid>https://myself659.github.io/post/gpt3-thought/</guid>
       <description>&lt;h1 id=&#34;gpt-3&#34;&gt;GPT-3&lt;/h1&gt;
 &lt;p&gt;GPT-3全称是&amp;quot;General Pre-trained Transformer-3&amp;quot;，对应中文翻译为：第三代通用预训练转换器。&lt;/p&gt;
 &lt;p&gt;其wiki定义如下：&lt;/p&gt;</description>
     </item>
     <item>
       <title>github被攻击，程序员该怎么办</title>
-      <link>http://myself659.github.io/post/devops/github-hack/</link>
+      <link>https://myself659.github.io/post/devops/github-hack/</link>
       <pubDate>Sun, 29 Mar 2020 11:58:06 +0200</pubDate>
-      <guid>http://myself659.github.io/post/devops/github-hack/</guid>
+      <guid>https://myself659.github.io/post/devops/github-hack/</guid>
       <description>&lt;p&gt;2020年3月27日，全世界最大的同性交友网站github被攻击了，连正常的首页都打不开。&lt;/p&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;http://myself659.github.io/images/sec/github-attack-timeline.jpg&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://myself659.github.io/images/sec/github-attack-timeline.jpg&#34;&gt;&lt;/p&gt;
 &lt;h1 id=&#34;https并不是100安全&#34;&gt;Https并不是100%安全&lt;/h1&gt;
 &lt;p&gt;github被攻击说明Https并不是100%安全，Https也有自己的阿喀琉斯之踵-Https证书。Https不能解决以下五种情况的攻击：&lt;/p&gt;</description>
     </item>
     <item>
       <title>程序员进阶精读书籍清单</title>
-      <link>http://myself659.github.io/post/programer-book-list/</link>
+      <link>https://myself659.github.io/post/programer-book-list/</link>
       <pubDate>Thu, 02 Jan 2020 11:58:06 +0200</pubDate>
-      <guid>http://myself659.github.io/post/programer-book-list/</guid>
+      <guid>https://myself659.github.io/post/programer-book-list/</guid>
       <description>&lt;p&gt;2020年加大搬砖的力度，还是一名程序员，继续成长与进步。&lt;/p&gt;
 &lt;p&gt;优秀程序员应该具备以下三方面能力：&lt;/p&gt;
 &lt;ol&gt;
@@ -41,9 +41,9 @@
     </item>
     <item>
       <title>实现无符号整型数的分解</title>
-      <link>http://myself659.github.io/post/2015-06-14-number-divide/</link>
+      <link>https://myself659.github.io/post/2015-06-14-number-divide/</link>
       <pubDate>Sun, 14 Jun 2015 11:58:06 +0200</pubDate>
-      <guid>http://myself659.github.io/post/2015-06-14-number-divide/</guid>
+      <guid>https://myself659.github.io/post/2015-06-14-number-divide/</guid>
       <description>&lt;h3 id=&#34;题目&#34;&gt;题目&lt;/h3&gt;
 &lt;p&gt;将一个无符号数N拆分为不多于M个数，使拆分的数之和等于N,条件：&lt;/p&gt;
 &lt;ol&gt;
@@ -58,16 +58,16 @@
     </item>
     <item>
       <title>C语言代码 review的总结</title>
-      <link>http://myself659.github.io/post/c-codereivew/</link>
+      <link>https://myself659.github.io/post/c-codereivew/</link>
       <pubDate>Sun, 24 May 2015 11:58:06 +0200</pubDate>
-      <guid>http://myself659.github.io/post/c-codereivew/</guid>
+      <guid>https://myself659.github.io/post/c-codereivew/</guid>
       <description>&lt;p&gt;代码review是保证代码质量在项目开发及代码修改中一项重要的环节，下面就代码reiew的一些总结，总结一些代码的review的关注点，提高代码review的效率与效果，提前发现问题，降低后期的测试成本，以及避免软件上线或交付出问题导致的经济损失和恶劣影响（ps:对每一行代码保持敬畏之心）。&lt;/p&gt;</description>
     </item>
     <item>
       <title>一个linux网络丢包问题分析</title>
-      <link>http://myself659.github.io/post/linux/2015-05-24-linux-perf-droppacket/</link>
+      <link>https://myself659.github.io/post/linux/2015-05-24-linux-perf-droppacket/</link>
       <pubDate>Sun, 24 May 2015 11:58:06 +0200</pubDate>
-      <guid>http://myself659.github.io/post/linux/2015-05-24-linux-perf-droppacket/</guid>
+      <guid>https://myself659.github.io/post/linux/2015-05-24-linux-perf-droppacket/</guid>
       <description>&lt;p&gt;丢包问题是十分常见一类问题，下面总结的一个网络丢包问题的分析过程。&lt;/p&gt;
 &lt;h3 id=&#34;问题描述&#34;&gt;问题描述&lt;/h3&gt;
 &lt;p&gt;组网：&lt;/p&gt;

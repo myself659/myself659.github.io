@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Network on 沉风网事</title>
-    <link>http://myself659.github.io/tags/network/</link>
+    <link>https://myself659.github.io/tags/network/</link>
     <description>Recent content in Network on 沉风网事</description>
     <generator>Hugo</generator>
     <language>zh-cn</language>
     <copyright>沉风网事</copyright>
     <lastBuildDate>Sun, 05 Nov 2017 11:58:06 +0200</lastBuildDate>
-    <atom:link href="http://myself659.github.io/tags/network/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://myself659.github.io/tags/network/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Linux上设置终端代理</title>
-      <link>http://myself659.github.io/post/network/linux-wsl-proxy/</link>
+      <link>https://myself659.github.io/post/network/linux-wsl-proxy/</link>
       <pubDate>Sun, 05 Nov 2017 11:58:06 +0200</pubDate>
-      <guid>http://myself659.github.io/post/network/linux-wsl-proxy/</guid>
+      <guid>https://myself659.github.io/post/network/linux-wsl-proxy/</guid>
       <description>&lt;h2 id=&#34;说明&#34;&gt;说明&lt;/h2&gt;
 &lt;p&gt;前面介绍&lt;a href=&#34;https://blog.excellent123.com/post/2017-11-03-mac-tem-proxy/&#34;&gt;macos上如何设置代理&lt;/a&gt;，下面介绍如何在linux上配置代理。&lt;/p&gt;
 &lt;h2 id=&#34;安装polipo全局代理软件&#34;&gt;安装Polipo全局代理软件&lt;/h2&gt;
@@ -91,9 +91,9 @@
     </item>
     <item>
       <title>MacOS上设置终端代理</title>
-      <link>http://myself659.github.io/post/network/2017-11-03-mac-tem-proxy/</link>
+      <link>https://myself659.github.io/post/network/2017-11-03-mac-tem-proxy/</link>
       <pubDate>Fri, 03 Nov 2017 11:58:06 +0200</pubDate>
-      <guid>http://myself659.github.io/post/network/2017-11-03-mac-tem-proxy/</guid>
+      <guid>https://myself659.github.io/post/network/2017-11-03-mac-tem-proxy/</guid>
       <description>&lt;p&gt;由于20-1大的原因，各种梯子损失惨重。自己也只好自己动手搭建VPS。关于如何搭建梯子这里暂不描述。&lt;/p&gt;
 &lt;h1 id=&#34;说明&#34;&gt;说明&lt;/h1&gt;
 &lt;p&gt;下面的操作是建立在成功搭建VPS基础上&lt;/p&gt;
@@ -103,9 +103,9 @@
     </item>
     <item>
       <title>TCP连接下载文件失败，也许该看看这篇文章</title>
-      <link>http://myself659.github.io/post/2017-02-16-tcp-slow-down/</link>
+      <link>https://myself659.github.io/post/2017-02-16-tcp-slow-down/</link>
       <pubDate>Thu, 16 Feb 2017 11:58:06 +0200</pubDate>
-      <guid>http://myself659.github.io/post/2017-02-16-tcp-slow-down/</guid>
+      <guid>https://myself659.github.io/post/2017-02-16-tcp-slow-down/</guid>
       <description>&lt;p&gt;体验一下标题党，现在自媒体横行，容我也放肆一回（多了我也不行，替自己码字能力捉急）！&lt;/p&gt;
 &lt;p&gt;另起一行，到此为止，进入正题&lt;/p&gt;
 &lt;h3 id=&#34;缘起&#34;&gt;缘起&lt;/h3&gt;
@@ -113,9 +113,9 @@
     </item>
     <item>
       <title>ping不通常见原因总结</title>
-      <link>http://myself659.github.io/post/linux/2015-05-27-ping-error/</link>
+      <link>https://myself659.github.io/post/linux/2015-05-27-ping-error/</link>
       <pubDate>Wed, 27 May 2015 11:58:06 +0200</pubDate>
-      <guid>http://myself659.github.io/post/linux/2015-05-27-ping-error/</guid>
+      <guid>https://myself659.github.io/post/linux/2015-05-27-ping-error/</guid>
       <description>&lt;p&gt;ping不通从ping的流程分为两大类：&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;请求报文没有到达对端&lt;/li&gt;

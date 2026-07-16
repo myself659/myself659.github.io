@@ -2,12 +2,12 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>关于快速学习的思考 on 沉风网事</title>
-    <link>http://myself659.github.io/post/learn/how-to-learn-fast/</link>
+    <link>https://myself659.github.io/post/learn/how-to-learn-fast/</link>
     <description>Recent content in 关于快速学习的思考 on 沉风网事</description>
     <generator>Hugo</generator>
     <language>zh-cn</language>
     <copyright>沉风网事</copyright>
     <lastBuildDate></lastBuildDate>
-    <atom:link href="http://myself659.github.io/post/learn/how-to-learn-fast/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://myself659.github.io/post/learn/how-to-learn-fast/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

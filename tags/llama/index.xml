@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Llama on 沉风网事</title>
-    <link>http://myself659.github.io/tags/llama/</link>
+    <link>https://myself659.github.io/tags/llama/</link>
     <description>Recent content in Llama on 沉风网事</description>
     <generator>Hugo</generator>
     <language>zh-cn</language>
     <copyright>沉风网事</copyright>
     <lastBuildDate>Wed, 24 Jul 2024 11:58:06 +0200</lastBuildDate>
-    <atom:link href="http://myself659.github.io/tags/llama/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://myself659.github.io/tags/llama/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>how to setup llama with ollama on windows</title>
-      <link>http://myself659.github.io/post/ai/how-to-setup-llama-on-windows/</link>
+      <link>https://myself659.github.io/post/ai/how-to-setup-llama-on-windows/</link>
       <pubDate>Wed, 24 Jul 2024 11:58:06 +0200</pubDate>
-      <guid>http://myself659.github.io/post/ai/how-to-setup-llama-on-windows/</guid>
+      <guid>https://myself659.github.io/post/ai/how-to-setup-llama-on-windows/</guid>
       <description>&lt;h2 id=&#34;steps&#34;&gt;steps&lt;/h2&gt;
 &lt;h3 id=&#34;1-download-ollama&#34;&gt;1. download ollama&lt;/h3&gt;
 &lt;p&gt;&lt;a href=&#34;https://ollama.com/download&#34;&gt;Download from the Ollama official website&lt;/a&gt;&lt;/p&gt;

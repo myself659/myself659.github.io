@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Math on 沉风网事</title>
-    <link>http://myself659.github.io/categories/math/</link>
+    <link>https://myself659.github.io/categories/math/</link>
     <description>Recent content in Math on 沉风网事</description>
     <generator>Hugo</generator>
     <language>zh-cn</language>
     <copyright>沉风网事</copyright>
     <lastBuildDate>Sun, 18 Jun 2023 11:58:06 +0200</lastBuildDate>
-    <atom:link href="http://myself659.github.io/categories/math/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://myself659.github.io/categories/math/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>99¹⁰⁰与100⁹⁹谁大</title>
-      <link>http://myself659.github.io/post/math/99pow100-vs-100pow99/</link>
+      <link>https://myself659.github.io/post/math/99pow100-vs-100pow99/</link>
       <pubDate>Sun, 18 Jun 2023 11:58:06 +0200</pubDate>
-      <guid>http://myself659.github.io/post/math/99pow100-vs-100pow99/</guid>
+      <guid>https://myself659.github.io/post/math/99pow100-vs-100pow99/</guid>
       <description>&lt;h2 id=&#34;题目&#34;&gt;题目&lt;/h2&gt;
 &lt;p&gt;有两个数分别为：&lt;/p&gt;
 &lt;ol&gt;
@@ -49,9 +49,9 @@
     </item>
     <item>
       <title>为什么0不能作为被除数？</title>
-      <link>http://myself659.github.io/post/math/why-dividing-by-zero-is-undefined/</link>
+      <link>https://myself659.github.io/post/math/why-dividing-by-zero-is-undefined/</link>
       <pubDate>Sat, 08 Feb 2020 11:58:06 +0200</pubDate>
-      <guid>http://myself659.github.io/post/math/why-dividing-by-zero-is-undefined/</guid>
+      <guid>https://myself659.github.io/post/math/why-dividing-by-zero-is-undefined/</guid>
       <description>&lt;h2 id=&#34;前言&#34;&gt;前言&lt;/h2&gt;
 &lt;p&gt;学过了除法都知道这么一个道理：0不是被除数。&lt;/p&gt;
 &lt;p&gt;到了后面编程，一直都会遵循一条原则： 0不能作为被除数，如果用0作为被除数，就会出错或者报异常。下面就是一个常见的例子。&lt;/p&gt;</description>

@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Substrate on 沉风网事</title>
-    <link>http://myself659.github.io/categories/substrate/</link>
+    <link>https://myself659.github.io/categories/substrate/</link>
     <description>Recent content in Substrate on 沉风网事</description>
     <generator>Hugo</generator>
     <language>zh-cn</language>
     <copyright>沉风网事</copyright>
     <lastBuildDate>Wed, 18 Sep 2019 11:58:06 +0200</lastBuildDate>
-    <atom:link href="http://myself659.github.io/categories/substrate/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://myself659.github.io/categories/substrate/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>搭建Substrate开发云节点</title>
-      <link>http://myself659.github.io/post/substrate-cloud-node/</link>
+      <link>https://myself659.github.io/post/substrate-cloud-node/</link>
       <pubDate>Wed, 18 Sep 2019 11:58:06 +0200</pubDate>
-      <guid>http://myself659.github.io/post/substrate-cloud-node/</guid>
+      <guid>https://myself659.github.io/post/substrate-cloud-node/</guid>
       <description>&lt;h1 id=&#34;为什么要云节点&#34;&gt;为什么要云节点&lt;/h1&gt;
 &lt;p&gt;主要由以下几个原因：&lt;/p&gt;
 &lt;ol&gt;

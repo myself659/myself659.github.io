@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Python on 沉风网事</title>
-    <link>http://myself659.github.io/categories/python/</link>
+    <link>https://myself659.github.io/categories/python/</link>
     <description>Recent content in Python on 沉风网事</description>
     <generator>Hugo</generator>
     <language>zh-cn</language>
     <copyright>沉风网事</copyright>
     <lastBuildDate>Thu, 08 Aug 2019 11:58:06 +0200</lastBuildDate>
-    <atom:link href="http://myself659.github.io/categories/python/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://myself659.github.io/categories/python/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>安装与更新python</title>
-      <link>http://myself659.github.io/post/python/python37-install/</link>
+      <link>https://myself659.github.io/post/python/python37-install/</link>
       <pubDate>Thu, 08 Aug 2019 11:58:06 +0200</pubDate>
-      <guid>http://myself659.github.io/post/python/python37-install/</guid>
+      <guid>https://myself659.github.io/post/python/python37-install/</guid>
       <description>&lt;h1 id=&#34;说明&#34;&gt;说明&lt;/h1&gt;
 &lt;p&gt;完全是为了记录自己的操作记录，换一台新机器真是免不了要装python。记录下来，便于以后操作。&lt;/p&gt;
 &lt;h2 id=&#34;apt-get安装&#34;&gt;apt-get安装&lt;/h2&gt;
@@ -185,9 +185,9 @@ pip install -i 国内镜像地址 包名&lt;/p&gt;</description>
     </item>
     <item>
       <title>The popular python packages you should know</title>
-      <link>http://myself659.github.io/post/python/python-packages/</link>
+      <link>https://myself659.github.io/post/python/python-packages/</link>
       <pubDate>Sat, 09 Feb 2019 11:58:06 +0200</pubDate>
-      <guid>http://myself659.github.io/post/python/python-packages/</guid>
+      <guid>https://myself659.github.io/post/python/python-packages/</guid>
       <description>&lt;blockquote&gt;
 &lt;p&gt;Life is short, I use Python.&lt;/p&gt;
 &lt;/blockquote&gt;

@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>NFT on 沉风网事</title>
-    <link>http://myself659.github.io/categories/nft/</link>
+    <link>https://myself659.github.io/categories/nft/</link>
     <description>Recent content in NFT on 沉风网事</description>
     <generator>Hugo</generator>
     <language>zh-cn</language>
     <copyright>沉风网事</copyright>
     <lastBuildDate>Mon, 05 Apr 2021 11:58:06 +0200</lastBuildDate>
-    <atom:link href="http://myself659.github.io/categories/nft/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://myself659.github.io/categories/nft/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Demystifying NFTs by Naval </title>
-      <link>http://myself659.github.io/post/blockchain/nft-naval/</link>
+      <link>https://myself659.github.io/post/blockchain/nft-naval/</link>
       <pubDate>Mon, 05 Apr 2021 11:58:06 +0200</pubDate>
-      <guid>http://myself659.github.io/post/blockchain/nft-naval/</guid>
+      <guid>https://myself659.github.io/post/blockchain/nft-naval/</guid>
       <description>&lt;p&gt;NFT is blooming. Naval&amp;rsquo;s insightful viewpoints about NFTs as follow:&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;An NFT is a unique, on-chain token representing ownership of an off-chain asset. The token is backed by a social contract from its creator and a surrounding community.&lt;/li&gt;

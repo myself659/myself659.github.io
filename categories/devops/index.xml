@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Devops on 沉风网事</title>
-    <link>http://myself659.github.io/categories/devops/</link>
+    <link>https://myself659.github.io/categories/devops/</link>
     <description>Recent content in Devops on 沉风网事</description>
     <generator>Hugo</generator>
     <language>zh-cn</language>
     <copyright>沉风网事</copyright>
     <lastBuildDate>Fri, 30 Aug 2024 11:58:06 +0200</lastBuildDate>
-    <atom:link href="http://myself659.github.io/categories/devops/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://myself659.github.io/categories/devops/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>setup CUDA development environment on windows11</title>
-      <link>http://myself659.github.io/post/devops/win11-cuda/</link>
+      <link>https://myself659.github.io/post/devops/win11-cuda/</link>
       <pubDate>Fri, 30 Aug 2024 11:58:06 +0200</pubDate>
-      <guid>http://myself659.github.io/post/devops/win11-cuda/</guid>
+      <guid>https://myself659.github.io/post/devops/win11-cuda/</guid>
       <description>&lt;h2 id=&#34;install-cuda-toolkit&#34;&gt;install CUDA Toolkit&lt;/h2&gt;
 &lt;p&gt;first, from &lt;a href=&#34;https://developer.nvidia.com/cuda-toolkit-archive&#34;&gt;CUDA Toolkit Archive&lt;/a&gt; to choose CUDA Toolkit to download.&lt;/p&gt;
 &lt;p&gt;we choose the version: CUDA Toolkit 12.4.1.&lt;/p&gt;
@@ -68,9 +68,9 @@
     </item>
     <item>
       <title>setup uv for python development</title>
-      <link>http://myself659.github.io/post/devops/python-uv-setup/</link>
+      <link>https://myself659.github.io/post/devops/python-uv-setup/</link>
       <pubDate>Sun, 07 Apr 2024 11:58:06 +0200</pubDate>
-      <guid>http://myself659.github.io/post/devops/python-uv-setup/</guid>
+      <guid>https://myself659.github.io/post/devops/python-uv-setup/</guid>
       <description>&lt;h2 id=&#34;install&#34;&gt;install&lt;/h2&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
@@ -113,9 +113,9 @@
     </item>
     <item>
       <title>setup python development on windows11</title>
-      <link>http://myself659.github.io/post/devops/windows-python-setup/</link>
+      <link>https://myself659.github.io/post/devops/windows-python-setup/</link>
       <pubDate>Fri, 05 Apr 2024 11:58:06 +0200</pubDate>
-      <guid>http://myself659.github.io/post/devops/windows-python-setup/</guid>
+      <guid>https://myself659.github.io/post/devops/windows-python-setup/</guid>
       <description>&lt;h2 id=&#34;install-scoop&#34;&gt;install scoop&lt;/h2&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
@@ -205,9 +205,9 @@
     </item>
     <item>
       <title>A Step-by-Step Guide to Setting Up Solana on Ubuntu</title>
-      <link>http://myself659.github.io/post/devops/wsl-ubuntu-setup-solana/</link>
+      <link>https://myself659.github.io/post/devops/wsl-ubuntu-setup-solana/</link>
       <pubDate>Tue, 02 Apr 2024 11:58:06 +0200</pubDate>
-      <guid>http://myself659.github.io/post/devops/wsl-ubuntu-setup-solana/</guid>
+      <guid>https://myself659.github.io/post/devops/wsl-ubuntu-setup-solana/</guid>
       <description>&lt;h2 id=&#34;install-rust&#34;&gt;Install Rust&lt;/h2&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
@@ -300,9 +300,9 @@
     </item>
     <item>
       <title>upgrade ubuntu in WSL</title>
-      <link>http://myself659.github.io/post/devops/wsl-ubuntu-upgrade/</link>
+      <link>https://myself659.github.io/post/devops/wsl-ubuntu-upgrade/</link>
       <pubDate>Tue, 02 Apr 2024 11:58:06 +0200</pubDate>
-      <guid>http://myself659.github.io/post/devops/wsl-ubuntu-upgrade/</guid>
+      <guid>https://myself659.github.io/post/devops/wsl-ubuntu-upgrade/</guid>
       <description>&lt;h2 id=&#34;show-lsb-release-before--upgrade&#34;&gt;show lsb-release before  upgrade&lt;/h2&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
@@ -375,9 +375,9 @@
     </item>
     <item>
       <title>WSL command: export, import</title>
-      <link>http://myself659.github.io/post/devops/wsl-move/</link>
+      <link>https://myself659.github.io/post/devops/wsl-move/</link>
       <pubDate>Mon, 01 Apr 2024 11:58:06 +0200</pubDate>
-      <guid>http://myself659.github.io/post/devops/wsl-move/</guid>
+      <guid>https://myself659.github.io/post/devops/wsl-move/</guid>
       <description>&lt;h2 id=&#34;list-before-export&#34;&gt;list before export&lt;/h2&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
@@ -503,9 +503,9 @@
     </item>
     <item>
       <title>setup CUDA development environment in WSL2</title>
-      <link>http://myself659.github.io/post/devops/wsl-cuda/</link>
+      <link>https://myself659.github.io/post/devops/wsl-cuda/</link>
       <pubDate>Sat, 30 Mar 2024 11:58:06 +0200</pubDate>
-      <guid>http://myself659.github.io/post/devops/wsl-cuda/</guid>
+      <guid>https://myself659.github.io/post/devops/wsl-cuda/</guid>
       <description>&lt;h2 id=&#34;install-the-gcc-compiler&#34;&gt;Install the GCC compiler&lt;/h2&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
@@ -563,9 +563,9 @@
     </item>
     <item>
       <title>setup python development environment in WSL</title>
-      <link>http://myself659.github.io/post/devops/wsl-python/</link>
+      <link>https://myself659.github.io/post/devops/wsl-python/</link>
       <pubDate>Wed, 27 Mar 2024 11:58:06 +0200</pubDate>
-      <guid>http://myself659.github.io/post/devops/wsl-python/</guid>
+      <guid>https://myself659.github.io/post/devops/wsl-python/</guid>
       <description>&lt;h2 id=&#34;requirement&#34;&gt;requirement&lt;/h2&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
@@ -749,9 +749,9 @@
     </item>
     <item>
       <title>WSL-network</title>
-      <link>http://myself659.github.io/post/devops/wsl-1-network/</link>
+      <link>https://myself659.github.io/post/devops/wsl-1-network/</link>
       <pubDate>Tue, 26 Mar 2024 11:58:06 +0200</pubDate>
-      <guid>http://myself659.github.io/post/devops/wsl-1-network/</guid>
+      <guid>https://myself659.github.io/post/devops/wsl-1-network/</guid>
       <description>&lt;h2 id=&#34;static-ip-address&#34;&gt;static ip address&lt;/h2&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
@@ -783,9 +783,9 @@
     </item>
     <item>
       <title>windows terminal</title>
-      <link>http://myself659.github.io/post/devops/windows-terminal/</link>
+      <link>https://myself659.github.io/post/devops/windows-terminal/</link>
       <pubDate>Mon, 25 Mar 2024 11:58:06 +0200</pubDate>
-      <guid>http://myself659.github.io/post/devops/windows-terminal/</guid>
+      <guid>https://myself659.github.io/post/devops/windows-terminal/</guid>
       <description>&lt;h2 id=&#34;install&#34;&gt;install&lt;/h2&gt;
 &lt;p&gt;On windows11, windows terminal has installed as default. If not, Please install windows terminal from Microsoft Store.&lt;/p&gt;
 &lt;h2 id=&#34;update-powershell&#34;&gt;update PowerShell&lt;/h2&gt;
@@ -826,9 +826,9 @@
     </item>
     <item>
       <title>WSL-101</title>
-      <link>http://myself659.github.io/post/devops/wsl-0/</link>
+      <link>https://myself659.github.io/post/devops/wsl-0/</link>
       <pubDate>Sun, 24 Mar 2024 11:58:06 +0200</pubDate>
-      <guid>http://myself659.github.io/post/devops/wsl-0/</guid>
+      <guid>https://myself659.github.io/post/devops/wsl-0/</guid>
       <description>&lt;h2 id=&#34;setup&#34;&gt;setup&lt;/h2&gt;
 &lt;ol&gt;
 &lt;li&gt;&lt;a href=&#34;https://learn.microsoft.com/en-us/windows/wsl/install-manual#step-2---check-requirements-for-running-wsl-2&#34;&gt;Manual installation steps for older versions of WSL&lt;/a&gt;&lt;/li&gt;
@@ -863,9 +863,9 @@
     </item>
     <item>
       <title>gcloud auth login from mainland in china</title>
-      <link>http://myself659.github.io/post/k8s/gcloud-login-from-china/</link>
+      <link>https://myself659.github.io/post/k8s/gcloud-login-from-china/</link>
       <pubDate>Wed, 08 May 2019 11:58:06 +0200</pubDate>
-      <guid>http://myself659.github.io/post/k8s/gcloud-login-from-china/</guid>
+      <guid>https://myself659.github.io/post/k8s/gcloud-login-from-china/</guid>
       <description>&lt;h2 id=&#34;backgroud&#34;&gt;backgroud&lt;/h2&gt;
 &lt;p&gt;最近使用了google cloud，所以打算试一下通过gcloud auth login登陆远程主机。&lt;/p&gt;
 &lt;h2 id=&#34;prerequisites&#34;&gt;prerequisites&lt;/h2&gt;
@@ -878,9 +878,9 @@
     </item>
     <item>
       <title>pdf tips</title>
-      <link>http://myself659.github.io/post/devops/pdf-tips/</link>
+      <link>https://myself659.github.io/post/devops/pdf-tips/</link>
       <pubDate>Wed, 25 May 2016 11:58:06 +0200</pubDate>
-      <guid>http://myself659.github.io/post/devops/pdf-tips/</guid>
+      <guid>https://myself659.github.io/post/devops/pdf-tips/</guid>
       <description>&lt;h2 id=&#34;利用pdf的print来实现压缩pdf文件的大小&#34;&gt;利用pdf的print来实现压缩pdf文件的大小&lt;/h2&gt;
 &lt;p&gt;在个人的实践中可以做到将一个2.44M的pdf文件压缩到0.14M&lt;/p&gt;
 &lt;h2 id=&#34;adobe是最好用的pdf工具可以结合开源的pdf工具一起使用&#34;&gt;adobe是最好用的pdf工具，可以结合开源的pdf工具一起使用&lt;/h2&gt;</description>

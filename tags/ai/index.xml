@@ -2,34 +2,34 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>AI on 沉风网事</title>
-    <link>http://myself659.github.io/tags/ai/</link>
+    <link>https://myself659.github.io/tags/ai/</link>
     <description>Recent content in AI on 沉风网事</description>
     <generator>Hugo</generator>
     <language>zh-cn</language>
     <copyright>沉风网事</copyright>
     <lastBuildDate>Wed, 25 Oct 2023 11:58:06 +0800</lastBuildDate>
-    <atom:link href="http://myself659.github.io/tags/ai/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://myself659.github.io/tags/ai/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>人工智能时代应该培养什么能力</title>
-      <link>http://myself659.github.io/post/ai/agi-skills%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E6%97%B6%E4%BB%A3%E7%9A%84%E8%83%BD%E5%8A%9B%E9%9B%86/</link>
+      <link>https://myself659.github.io/post/ai/agi-skills%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E6%97%B6%E4%BB%A3%E7%9A%84%E8%83%BD%E5%8A%9B%E9%9B%86/</link>
       <pubDate>Wed, 25 Oct 2023 11:58:06 +0800</pubDate>
-      <guid>http://myself659.github.io/post/ai/agi-skills%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E6%97%B6%E4%BB%A3%E7%9A%84%E8%83%BD%E5%8A%9B%E9%9B%86/</guid>
+      <guid>https://myself659.github.io/post/ai/agi-skills%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E6%97%B6%E4%BB%A3%E7%9A%84%E8%83%BD%E5%8A%9B%E9%9B%86/</guid>
       <description>&lt;h2 id=&#34;背景&#34;&gt;背景&lt;/h2&gt;
 &lt;p&gt;从去年末chatGPT的横空出世，到现在近一年的时间，AI领域成果与创新层出不穷。在这一系列的进步之下，让人们相信人类社会终将会进入人工智能时代。&lt;/p&gt;</description>
     </item>
     <item>
       <title>prompt进阶列表</title>
-      <link>http://myself659.github.io/post/ai/prompt-advanced-list/</link>
+      <link>https://myself659.github.io/post/ai/prompt-advanced-list/</link>
       <pubDate>Fri, 15 Sep 2023 00:00:00 +0000</pubDate>
-      <guid>http://myself659.github.io/post/ai/prompt-advanced-list/</guid>
+      <guid>https://myself659.github.io/post/ai/prompt-advanced-list/</guid>
       <description>&lt;h2 id=&#34;背景&#34;&gt;背景&lt;/h2&gt;
 &lt;p&gt;LLMs通过prompt实现问题解决,但基本的few-shot学习有局限性。要解决复杂问题,需要更精细化的prompt设计引导LLM进行多步推理。结合prompt设计技术可以解决更困难的任务,发挥LLM更大潜力。通过结合prompt设计技术可以解决更困难的任务,发挥LLM更大潜力。&lt;/p&gt;</description>
     </item>
     <item>
       <title>说说模型</title>
-      <link>http://myself659.github.io/post/ai/%E8%AF%B4%E8%AF%B4%E6%A8%A1%E5%9E%8Bmodel/</link>
+      <link>https://myself659.github.io/post/ai/%E8%AF%B4%E8%AF%B4%E6%A8%A1%E5%9E%8Bmodel/</link>
       <pubDate>Mon, 15 May 2023 11:58:06 +0800</pubDate>
-      <guid>http://myself659.github.io/post/ai/%E8%AF%B4%E8%AF%B4%E6%A8%A1%E5%9E%8Bmodel/</guid>
+      <guid>https://myself659.github.io/post/ai/%E8%AF%B4%E8%AF%B4%E6%A8%A1%E5%9E%8Bmodel/</guid>
       <description>&lt;h2 id=&#34;定义&#34;&gt;定义&lt;/h2&gt;
 &lt;p&gt;先看wiki的定义：&lt;/p&gt;
 &lt;blockquote&gt;
@@ -40,9 +40,9 @@
     </item>
     <item>
       <title>说说autoGPT</title>
-      <link>http://myself659.github.io/post/ai/autogpt-101/</link>
+      <link>https://myself659.github.io/post/ai/autogpt-101/</link>
       <pubDate>Sat, 15 Apr 2023 11:58:06 +0800</pubDate>
-      <guid>http://myself659.github.io/post/ai/autogpt-101/</guid>
+      <guid>https://myself659.github.io/post/ai/autogpt-101/</guid>
       <description>&lt;h2 id=&#34;背景&#34;&gt;背景&lt;/h2&gt;
 &lt;p&gt;chatGPT开启的AIGC领域，最近几个月的发展可以说日新月异，众多LLM如雨后春笋，最近autoGPT的出现，更是吸引大家的关注。&lt;/p&gt;
 &lt;h2 id=&#34;autogpt&#34;&gt;autoGPT&lt;/h2&gt;
@@ -52,9 +52,9 @@
     </item>
     <item>
       <title>如何利用GPT类AI提升自己</title>
-      <link>http://myself659.github.io/post/ai/how-to-ai-help-growth/</link>
+      <link>https://myself659.github.io/post/ai/how-to-ai-help-growth/</link>
       <pubDate>Wed, 05 Apr 2023 11:58:06 +0800</pubDate>
-      <guid>http://myself659.github.io/post/ai/how-to-ai-help-growth/</guid>
+      <guid>https://myself659.github.io/post/ai/how-to-ai-help-growth/</guid>
       <description>&lt;h2 id=&#34;背景&#34;&gt;背景&lt;/h2&gt;
 &lt;p&gt;chatGPT的横空出世，宣告真正的人工智能时代已经开启。&lt;/p&gt;
 &lt;p&gt;未来会是怎么样，没有人知道，我只知道这两点：&lt;/p&gt;
@@ -66,27 +66,27 @@
     </item>
     <item>
       <title>从三道逻辑分析题看GPT4</title>
-      <link>http://myself659.github.io/post/ai/logic-gpt4-chatgpt/</link>
+      <link>https://myself659.github.io/post/ai/logic-gpt4-chatgpt/</link>
       <pubDate>Fri, 17 Mar 2023 11:58:06 +0200</pubDate>
-      <guid>http://myself659.github.io/post/ai/logic-gpt4-chatgpt/</guid>
+      <guid>https://myself659.github.io/post/ai/logic-gpt4-chatgpt/</guid>
       <description>&lt;h2 id=&#34;背景&#34;&gt;背景&lt;/h2&gt;
 &lt;p&gt;GPT-4最近已经推出，那么GPT-4表现如何？相对于chatGPT使用的gpt3.5模型有哪些提高与进步？&lt;/p&gt;
 &lt;p&gt;下面就通过三道逻辑题展开测试与对比。&lt;/p&gt;</description>
     </item>
     <item>
       <title>AI编程时代程序员应该重点培养的技能</title>
-      <link>http://myself659.github.io/post/ai/ai%E7%BC%96%E7%A8%8B%E6%97%B6%E4%BB%A3%E7%9A%84%E6%8A%80%E8%83%BD/</link>
+      <link>https://myself659.github.io/post/ai/ai%E7%BC%96%E7%A8%8B%E6%97%B6%E4%BB%A3%E7%9A%84%E6%8A%80%E8%83%BD/</link>
       <pubDate>Wed, 15 Mar 2023 11:58:06 +0800</pubDate>
-      <guid>http://myself659.github.io/post/ai/ai%E7%BC%96%E7%A8%8B%E6%97%B6%E4%BB%A3%E7%9A%84%E6%8A%80%E8%83%BD/</guid>
+      <guid>https://myself659.github.io/post/ai/ai%E7%BC%96%E7%A8%8B%E6%97%B6%E4%BB%A3%E7%9A%84%E6%8A%80%E8%83%BD/</guid>
       <description>&lt;h2 id=&#34;背景&#34;&gt;背景&lt;/h2&gt;
 &lt;p&gt;AI编程已经不再是传说，而是事实。GitHub Copilot这样的工具会不断推动AI编程的普及。这会带来给程序员的工作带来新的变化。&lt;/p&gt;
 &lt;p&gt;这一变化有以下特点：&lt;/p&gt;</description>
     </item>
     <item>
       <title>How to use ChatGPT to empower learning</title>
-      <link>http://myself659.github.io/post/ai/prompt-for-learn/</link>
+      <link>https://myself659.github.io/post/ai/prompt-for-learn/</link>
       <pubDate>Wed, 15 Mar 2023 00:00:00 +0000</pubDate>
-      <guid>http://myself659.github.io/post/ai/prompt-for-learn/</guid>
+      <guid>https://myself659.github.io/post/ai/prompt-for-learn/</guid>
       <description>&lt;p&gt;ChatGPT is the best free teacher.&lt;/p&gt;
 &lt;p&gt;How to use ChatGPT to empower learning.  The examples are as following:&lt;/p&gt;
 &lt;h2 id=&#34;1-understand-anything-easily&#34;&gt;1. Understand anything easily&lt;/h2&gt;
@@ -105,9 +105,9 @@
     </item>
     <item>
       <title>如何更好地向ChatGPT提问</title>
-      <link>http://myself659.github.io/post/ai/how-to-ask-gpt/</link>
+      <link>https://myself659.github.io/post/ai/how-to-ask-gpt/</link>
       <pubDate>Sat, 17 Dec 2022 11:58:06 +0200</pubDate>
-      <guid>http://myself659.github.io/post/ai/how-to-ask-gpt/</guid>
+      <guid>https://myself659.github.io/post/ai/how-to-ask-gpt/</guid>
       <description>&lt;h2 id=&#34;说明&#34;&gt;说明&lt;/h2&gt;
 &lt;p&gt;下面的所有的问题均由chatGPT回答。&lt;/p&gt;
 &lt;h2 id=&#34;如何描述问题才能让chatgpt更好的回答&#34;&gt;如何描述问题才能让chatGPT更好的回答？&lt;/h2&gt;

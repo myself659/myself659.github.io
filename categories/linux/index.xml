@@ -2,34 +2,34 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Linux on 沉风网事</title>
-    <link>http://myself659.github.io/categories/linux/</link>
+    <link>https://myself659.github.io/categories/linux/</link>
     <description>Recent content in Linux on 沉风网事</description>
     <generator>Hugo</generator>
     <language>zh-cn</language>
     <copyright>沉风网事</copyright>
     <lastBuildDate>Sat, 25 Sep 2021 11:58:06 +0800</lastBuildDate>
-    <atom:link href="http://myself659.github.io/categories/linux/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://myself659.github.io/categories/linux/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>linux btop 101</title>
-      <link>http://myself659.github.io/post/linux/linux-btop/</link>
+      <link>https://myself659.github.io/post/linux/linux-btop/</link>
       <pubDate>Sat, 25 Sep 2021 11:58:06 +0800</pubDate>
-      <guid>http://myself659.github.io/post/linux/linux-btop/</guid>
+      <guid>https://myself659.github.io/post/linux/linux-btop/</guid>
       <description>&lt;h2 id=&#34;背景&#34;&gt;背景&lt;/h2&gt;
 &lt;p&gt;最近发现一个很好用的系统监控命令：btop。 btop一站式实时显示cpu，memory，disk，network，processes的统计信息。&lt;/p&gt;</description>
     </item>
     <item>
       <title>利用WSL和wget从github下载文件</title>
-      <link>http://myself659.github.io/post/linux/linux-wget-retry/</link>
+      <link>https://myself659.github.io/post/linux/linux-wget-retry/</link>
       <pubDate>Fri, 31 Jul 2020 11:58:06 +0200</pubDate>
-      <guid>http://myself659.github.io/post/linux/linux-wget-retry/</guid>
+      <guid>https://myself659.github.io/post/linux/linux-wget-retry/</guid>
       <description>&lt;h2 id=&#34;背景&#34;&gt;背景&lt;/h2&gt;
 &lt;p&gt;由于GFW的干扰，即使科学上网方式从github下载文件，下载连接经常会被中断。由于chrome重新连接的次数有限，据说chrome重新建立连接重试次数最大为5次。所以遇到一个大的下载文件，通常是不会下载成功，费时费力费心。&lt;/p&gt;</description>
     </item>
     <item>
       <title>git FAQ</title>
-      <link>http://myself659.github.io/post/devops/git-issue/</link>
+      <link>https://myself659.github.io/post/devops/git-issue/</link>
       <pubDate>Thu, 11 May 2017 11:58:06 +0200</pubDate>
-      <guid>http://myself659.github.io/post/devops/git-issue/</guid>
+      <guid>https://myself659.github.io/post/devops/git-issue/</guid>
       <description>&lt;h2 id=&#34;从git历史中彻底删除大文件&#34;&gt;从Git历史中彻底删除大文件&lt;/h2&gt;
 &lt;h3 id=&#34;描述&#34;&gt;描述&lt;/h3&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
@@ -55,16 +55,16 @@
     </item>
     <item>
       <title>Linux进程诊断小结</title>
-      <link>http://myself659.github.io/post/2017-05-10-linux-process-diagnose/</link>
+      <link>https://myself659.github.io/post/2017-05-10-linux-process-diagnose/</link>
       <pubDate>Wed, 10 May 2017 11:58:06 +0200</pubDate>
-      <guid>http://myself659.github.io/post/2017-05-10-linux-process-diagnose/</guid>
+      <guid>https://myself659.github.io/post/2017-05-10-linux-process-diagnose/</guid>
       <description>&lt;p&gt;日常工作中最常见问题是如何诊断一个进程运行过程中出现的问题，下面的总结从进程诊断的角度来展示，而是不从工具与命令角度来展示，进程诊断是工作的主体，工具与命令只是工具。&lt;/p&gt;</description>
     </item>
     <item>
       <title>git常用命令总结</title>
-      <link>http://myself659.github.io/post/devops/2016-05-21-git-cmd/</link>
+      <link>https://myself659.github.io/post/devops/2016-05-21-git-cmd/</link>
       <pubDate>Sat, 21 May 2016 11:58:06 +0200</pubDate>
-      <guid>http://myself659.github.io/post/devops/2016-05-21-git-cmd/</guid>
+      <guid>https://myself659.github.io/post/devops/2016-05-21-git-cmd/</guid>
       <description>&lt;h3 id=&#34;配置&#34;&gt;配置&lt;/h3&gt;
 &lt;ol&gt;
 &lt;li&gt;config user&lt;/li&gt;
@@ -811,25 +811,25 @@
     </item>
     <item>
       <title>Linux内核常见crash原因</title>
-      <link>http://myself659.github.io/post/2016-04-17-linux-kernel-crashs/</link>
+      <link>https://myself659.github.io/post/2016-04-17-linux-kernel-crashs/</link>
       <pubDate>Sun, 17 Apr 2016 11:58:06 +0200</pubDate>
-      <guid>http://myself659.github.io/post/2016-04-17-linux-kernel-crashs/</guid>
+      <guid>https://myself659.github.io/post/2016-04-17-linux-kernel-crashs/</guid>
       <description>&lt;h3 id=&#34;前言&#34;&gt;前言&lt;/h3&gt;
 &lt;p&gt;与前同事交流，发现以前的技术经历与解决的问题，现在接触不多，但是想想还是很有意思，虽然很多细节现在已经不能表达出来或展示出来，但是还得写出来。下面写的得主要个人经历的linux内核crash原因。&lt;/p&gt;</description>
     </item>
     <item>
       <title>Linux x86-64 函数调用栈实例分析</title>
-      <link>http://myself659.github.io/post/2016-03-09-x86-64-call-stack/</link>
+      <link>https://myself659.github.io/post/2016-03-09-x86-64-call-stack/</link>
       <pubDate>Wed, 09 Mar 2016 11:58:06 +0200</pubDate>
-      <guid>http://myself659.github.io/post/2016-03-09-x86-64-call-stack/</guid>
+      <guid>https://myself659.github.io/post/2016-03-09-x86-64-call-stack/</guid>
       <description>&lt;h3 id=&#34;前言&#34;&gt;前言&lt;/h3&gt;
 &lt;p&gt;动手实践并写文章花5倍的时间一次性把事情做到90分，好过读别人文章只能做到60分，后面还需要花时间继续深入学习(做事情一定要做到有效的阈值)。本文目的希望通过分析一个简单的函数调用加深对x86-64寄存器及栈帧的结构的认识，以便在定位问题需要的时候能够熟练运用。&lt;/p&gt;</description>
     </item>
     <item>
       <title>docker image命令实践</title>
-      <link>http://myself659.github.io/post/k8s/2016-01-28-docker-cmd-pratice/</link>
+      <link>https://myself659.github.io/post/k8s/2016-01-28-docker-cmd-pratice/</link>
       <pubDate>Thu, 28 Jan 2016 11:58:06 +0200</pubDate>
-      <guid>http://myself659.github.io/post/k8s/2016-01-28-docker-cmd-pratice/</guid>
+      <guid>https://myself659.github.io/post/k8s/2016-01-28-docker-cmd-pratice/</guid>
       <description>&lt;p&gt;搭建了docker环境，就来体验一下Docker，常用docker image命令如下：&lt;/p&gt;
 &lt;h3 id=&#34;1-搜索docker-image&#34;&gt;1. 搜索docker image&lt;/h3&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
@@ -1059,16 +1059,16 @@
     </item>
     <item>
       <title>升级Linux内核，搭建docker环境</title>
-      <link>http://myself659.github.io/post/k8s/2015-12-13-docker-way-1-build-docker-env/</link>
+      <link>https://myself659.github.io/post/k8s/2015-12-13-docker-way-1-build-docker-env/</link>
       <pubDate>Sun, 13 Dec 2015 11:58:06 +0200</pubDate>
-      <guid>http://myself659.github.io/post/k8s/2015-12-13-docker-way-1-build-docker-env/</guid>
+      <guid>https://myself659.github.io/post/k8s/2015-12-13-docker-way-1-build-docker-env/</guid>
       <description>&lt;p&gt;docker可以说是去年最热的技术，也是业界大谈特谈的技术，到了今年有很多公司已经将docker应用于自己的生产环境。Docker已经从一个工具转化成平台，小生态圈。作为一名程序员应该与时俱进，学习新技术，不断地提高自己。&lt;/p&gt;</description>
     </item>
     <item>
       <title>gdb自定义断点操作</title>
-      <link>http://myself659.github.io/post/2015-08-28-gdb-command-example/</link>
+      <link>https://myself659.github.io/post/2015-08-28-gdb-command-example/</link>
       <pubDate>Fri, 28 Aug 2015 11:58:06 +0200</pubDate>
-      <guid>http://myself659.github.io/post/2015-08-28-gdb-command-example/</guid>
+      <guid>https://myself659.github.io/post/2015-08-28-gdb-command-example/</guid>
       <description>&lt;p&gt;gdb是c/c++上调试利器，有很多技巧能让调试程序与解决问题更加方便与高效，下面关于command 命令的使用一个实例，具体如下：&lt;/p&gt;
 &lt;h3 id=&#34;1-设置断点&#34;&gt;1. 设置断点&lt;/h3&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
@@ -1134,9 +1134,9 @@
     </item>
     <item>
       <title>Linux netstat 应用示例</title>
-      <link>http://myself659.github.io/post/2015-07-28-linux-netstat/</link>
+      <link>https://myself659.github.io/post/2015-07-28-linux-netstat/</link>
       <pubDate>Tue, 28 Jul 2015 11:58:06 +0200</pubDate>
-      <guid>http://myself659.github.io/post/2015-07-28-linux-netstat/</guid>
+      <guid>https://myself659.github.io/post/2015-07-28-linux-netstat/</guid>
       <description>&lt;h3 id=&#34;关于netstat&#34;&gt;关于netstat&lt;/h3&gt;
 &lt;p&gt;netstat 命令用于显示各种网络相关信息，如网络连接，路由表，接口状态 (Interface Statistics)，masquerade 连接，多播成员 (Multicast Memberships) 等等。&lt;/p&gt;
 &lt;h3 id=&#34;常用参数&#34;&gt;常用参数&lt;/h3&gt;
@@ -1144,9 +1144,9 @@
     </item>
     <item>
       <title>那些可进入睡眠状态的Linux内核函数</title>
-      <link>http://myself659.github.io/post/linux/2015-06-01-linux-may-sleep-function/</link>
+      <link>https://myself659.github.io/post/linux/2015-06-01-linux-may-sleep-function/</link>
       <pubDate>Wed, 27 May 2015 11:58:06 +0200</pubDate>
-      <guid>http://myself659.github.io/post/linux/2015-06-01-linux-may-sleep-function/</guid>
+      <guid>https://myself659.github.io/post/linux/2015-06-01-linux-may-sleep-function/</guid>
       <description>&lt;p&gt;在linux内核开发中断处理函数不能调用可能导致睡眠的函数，下面总结linux内核可能引起睡眠的函数如下：&lt;/p&gt;
 &lt;h3 id=&#34;schedule函数&#34;&gt;schedule函数&lt;/h3&gt;
 &lt;blockquote&gt;
@@ -1218,16 +1218,16 @@
     </item>
     <item>
       <title>Linux性能优化杂谈</title>
-      <link>http://myself659.github.io/post/linux/2015-05-24-linux-perf-thought/</link>
+      <link>https://myself659.github.io/post/linux/2015-05-24-linux-perf-thought/</link>
       <pubDate>Sun, 24 May 2015 11:58:06 +0200</pubDate>
-      <guid>http://myself659.github.io/post/linux/2015-05-24-linux-perf-thought/</guid>
+      <guid>https://myself659.github.io/post/linux/2015-05-24-linux-perf-thought/</guid>
       <description>&lt;p&gt;性能不仅仅是一串串数字，性能体现更大的吞吐量及更低的延迟；如果网络延迟增加0.1秒，google每秒损失100W,不是人民币是美元；网页响应慢0.1秒，运营成本每天增加100万美金。亚马逊的数据也显示，网页延迟1秒可能导致全年损失16亿美金；移动页面加载时间时长超过5秒，74%的用户会选择离开，高性能主要体现下面三个方面：&lt;/p&gt;</description>
     </item>
     <item>
       <title>在没有分支miss条件下，实现取最小值</title>
-      <link>http://myself659.github.io/post/linux/2015-05-24-linux-perf-tips-nobranchmiss/</link>
+      <link>https://myself659.github.io/post/linux/2015-05-24-linux-perf-tips-nobranchmiss/</link>
       <pubDate>Sun, 24 May 2015 11:58:06 +0200</pubDate>
-      <guid>http://myself659.github.io/post/linux/2015-05-24-linux-perf-tips-nobranchmiss/</guid>
+      <guid>https://myself659.github.io/post/linux/2015-05-24-linux-perf-tips-nobranchmiss/</guid>
       <description>&lt;p&gt;在实际性能优化过程，加了一个if判断整个系统转发性能就有大约5%的下降，下面简单分享一种在没有分支miss条件下，实现取最小值的方法。&lt;/p&gt;
 &lt;h3 id=&#34;一般实现&#34;&gt;一般实现&lt;/h3&gt;
 &lt;p&gt;取两个数最小值，一般代码常见两种写法如下：&lt;/p&gt;</description>

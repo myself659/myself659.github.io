@@ -119,17 +119,17 @@ pub fn print(&amp;self) -&gt; String
 code
 The code as follows:">
 <meta name="author" content="">
-<link rel="canonical" href="http://myself659.github.io/post/rust/rust-tree-demo/">
+<link rel="canonical" href="https://myself659.github.io/post/rust/rust-tree-demo/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.css" rel="preload stylesheet" as="style">
-<link rel="icon" href="http://myself659.github.io/favicon.ico">
-<link rel="icon" type="image/png" sizes="16x16" href="http://myself659.github.io/favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="http://myself659.github.io/favicon-32x32.png">
-<link rel="apple-touch-icon" href="http://myself659.github.io/apple-touch-icon.png">
-<link rel="mask-icon" href="http://myself659.github.io/safari-pinned-tab.svg">
+<link rel="icon" href="https://myself659.github.io/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://myself659.github.io/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://myself659.github.io/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://myself659.github.io/apple-touch-icon.png">
+<link rel="mask-icon" href="https://myself659.github.io/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" type="application/rss+xml" href="http://myself659.github.io/post/rust/rust-tree-demo/index.xml" title="rss">
-<link rel="alternate" hreflang="zh-cn" href="http://myself659.github.io/post/rust/rust-tree-demo/">
+<link rel="alternate" type="application/rss+xml" href="https://myself659.github.io/post/rust/rust-tree-demo/index.xml" title="rss">
+<link rel="alternate" hreflang="zh-cn" href="https://myself659.github.io/post/rust/rust-tree-demo/">
 <noscript>
     <style>
         #theme-toggle,
@@ -175,7 +175,7 @@ The code as follows:">
         document.querySelector("html").dataset.theme = 'light';
     }
 
-</script><meta property="og:url" content="http://myself659.github.io/post/rust/rust-tree-demo/">
+</script><meta property="og:url" content="https://myself659.github.io/post/rust/rust-tree-demo/">
   <meta property="og:site_name" content="沉风网事">
   <meta property="og:title" content="writing a tree in rust">
   <meta property="og:description" content="define the tree structure 1 2 3 4 5 6 #[derive(PartialEq)] struct TreeNode&lt;T&gt; { pub value: Option&lt;T&gt;, pub children: Vec&lt;Rc&lt;RefCell&lt;TreeNode&lt;T&gt;&gt;&gt;&gt;, pub parent: Option&lt;Rc&lt;RefCell&lt;TreeNode&lt;T&gt;&gt;&gt;&gt;, } new tree 1 2 3 4 5 6 7 pub fn new() -&gt; TreeNode&lt;T&gt; { TreeNode { value: None, children: vec![], parent: None, } } add_child 1 2 3 pub fn add_child(&amp;mut self, new_node: Rc&lt;RefCell&lt;TreeNode&lt;T&gt;&gt;&gt;) { self.children.push(new_node); } del_child 1 2 3 4 pub fn del_child(&amp;mut self, node_to_remove: Rc&lt;RefCell&lt;TreeNode&lt;T&gt;&gt;&gt;) { self.children .retain(|child| !Rc::ptr_eq(child, &amp;node_to_remove)); } print 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 pub fn print(&amp;self) -&gt; String where T: ToString, { if let Some(ref value) = self.value { value.to_string() } else { String::from(&#34;[&#34;) &#43; &amp;self .children .iter() .map(|tn| tn.borrow().print()) .collect::&lt;Vec&lt;String&gt;&gt;() .join(&#34;,&#34;) &#43; &#34;]&#34; } } code The code as follows:">
@@ -200,13 +200,13 @@ The code as follows:">
       "@type": "ListItem",
       "position":  1 ,
       "name": "Posts",
-      "item": "http://myself659.github.io/post/"
+      "item": "https://myself659.github.io/post/"
     }, 
     {
       "@type": "ListItem",
       "position":  2 ,
       "name": "writing a tree in rust",
-      "item": "http://myself659.github.io/post/rust/rust-tree-demo/"
+      "item": "https://myself659.github.io/post/rust/rust-tree-demo/"
     }
   ]
 }
@@ -228,14 +228,14 @@ The code as follows:">
   "dateModified": "2021-09-07T11:58:06+02:00",
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "http://myself659.github.io/post/rust/rust-tree-demo/"
+    "@id": "https://myself659.github.io/post/rust/rust-tree-demo/"
   },
   "publisher": {
     "@type": "Organization",
     "name": "沉风网事",
     "logo": {
       "@type": "ImageObject",
-      "url": "http://myself659.github.io/favicon.ico"
+      "url": "https://myself659.github.io/favicon.ico"
     }
   }
 }
@@ -245,7 +245,7 @@ The code as follows:">
     <header class="header">
     <nav class="header-nav">
         <div class="logo">
-            <a href="http://myself659.github.io/" accesskey="h" title="沉风网事 (Alt + H)">沉风网事</a>
+            <a href="https://myself659.github.io/" accesskey="h" title="沉风网事 (Alt + H)">沉风网事</a>
             <div class="logo-switches">
                 <button id="theme-toggle" class="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
                     <svg class="moon" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24"
@@ -271,52 +271,52 @@ The code as follows:">
         </div>
         <ul id="menu" class="menu">
             <li>
-                <a href="http://myself659.github.io/" title="Home">
+                <a href="https://myself659.github.io/" title="Home">
                     <span>Home</span>
                 </a>
             </li>
             <li>
-                <a href="http://myself659.github.io/post/" title="Archives">
+                <a href="https://myself659.github.io/post/" title="Archives">
                     <span>Archives</span>
                 </a>
             </li>
             <li>
-                <a href="http://myself659.github.io/tags/" title="Tags">
+                <a href="https://myself659.github.io/tags/" title="Tags">
                     <span>Tags</span>
                 </a>
             </li>
             <li>
-                <a href="http://myself659.github.io/categories/" title="Categories">
+                <a href="https://myself659.github.io/categories/" title="Categories">
                     <span>Categories</span>
                 </a>
             </li>
             <li>
-                <a href="http://myself659.github.io/search/" title="Search (Alt &#43; /)" accesskey=/>
+                <a href="https://myself659.github.io/search/" title="Search (Alt &#43; /)" accesskey=/>
                     <span>Search</span>
                 </a>
             </li>
             <li>
-                <a href="http://myself659.github.io/about/" title="About">
+                <a href="https://myself659.github.io/about/" title="About">
                     <span>About</span>
                 </a>
             </li>
             <li>
-                <a href="http://myself659.github.io/post/leetcode/" title="LeetCode">
+                <a href="https://myself659.github.io/post/leetcode/" title="LeetCode">
                     <span>LeetCode</span>
                 </a>
             </li>
             <li>
-                <a href="http://myself659.github.io/post/read-post/" title="Reading">
+                <a href="https://myself659.github.io/post/read-post/" title="Reading">
                     <span>Reading</span>
                 </a>
             </li>
             <li>
-                <a href="http://myself659.github.io/post/share-post/" title="Share">
+                <a href="https://myself659.github.io/post/share-post/" title="Share">
                     <span>Share</span>
                 </a>
             </li>
             <li>
-                <a href="http://myself659.github.io/post/slide-post/" title="Slide">
+                <a href="https://myself659.github.io/post/slide-post/" title="Slide">
                     <span>Slide</span>
                 </a>
             </li>
@@ -708,7 +708,7 @@ The code as follows:">
 
   <footer class="post-footer">
     <ul class="post-tags">
-      <li><a href="http://myself659.github.io/tags/rust/">Rust</a></li>
+      <li><a href="https://myself659.github.io/tags/rust/">Rust</a></li>
     </ul>
   </footer>
 </article>

@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Secure on 沉风网事</title>
-    <link>http://myself659.github.io/categories/secure/</link>
+    <link>https://myself659.github.io/categories/secure/</link>
     <description>Recent content in Secure on 沉风网事</description>
     <generator>Hugo</generator>
     <language>zh-cn</language>
     <copyright>沉风网事</copyright>
     <lastBuildDate>Fri, 08 Nov 2019 11:58:06 +0200</lastBuildDate>
-    <atom:link href="http://myself659.github.io/categories/secure/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://myself659.github.io/categories/secure/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>DoH FAQ</title>
-      <link>http://myself659.github.io/post/network/about-doh/</link>
+      <link>https://myself659.github.io/post/network/about-doh/</link>
       <pubDate>Fri, 08 Nov 2019 11:58:06 +0200</pubDate>
-      <guid>http://myself659.github.io/post/network/about-doh/</guid>
+      <guid>https://myself659.github.io/post/network/about-doh/</guid>
       <description>&lt;h1 id=&#34;什么是doh&#34;&gt;什么是DoH&lt;/h1&gt;
 &lt;p&gt;DoH是DNS over HTTPS。&lt;/p&gt;
 &lt;p&gt;传统DNS相当于DNS over UDP。&lt;/p&gt;
@@ -38,9 +38,9 @@
     </item>
     <item>
       <title>阿里云ECS基本安全检查小结</title>
-      <link>http://myself659.github.io/post/2017-04-08-ecs-basic-sec-check/</link>
+      <link>https://myself659.github.io/post/2017-04-08-ecs-basic-sec-check/</link>
       <pubDate>Sat, 08 Apr 2017 11:58:06 +0200</pubDate>
-      <guid>http://myself659.github.io/post/2017-04-08-ecs-basic-sec-check/</guid>
+      <guid>https://myself659.github.io/post/2017-04-08-ecs-basic-sec-check/</guid>
       <description>&lt;h3 id=&#34;背景&#34;&gt;背景&lt;/h3&gt;
 &lt;p&gt;查看阿里云ECS服务器日志发现如下：&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;

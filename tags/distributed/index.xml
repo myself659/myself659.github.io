@@ -2,27 +2,27 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Distributed on 沉风网事</title>
-    <link>http://myself659.github.io/tags/distributed/</link>
+    <link>https://myself659.github.io/tags/distributed/</link>
     <description>Recent content in Distributed on 沉风网事</description>
     <generator>Hugo</generator>
     <language>zh-cn</language>
     <copyright>沉风网事</copyright>
     <lastBuildDate>Wed, 23 Mar 2022 11:58:06 +0200</lastBuildDate>
-    <atom:link href="http://myself659.github.io/tags/distributed/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://myself659.github.io/tags/distributed/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>colossus 101</title>
-      <link>http://myself659.github.io/post/distributed/colossus-101/</link>
+      <link>https://myself659.github.io/post/distributed/colossus-101/</link>
       <pubDate>Wed, 23 Mar 2022 11:58:06 +0200</pubDate>
-      <guid>http://myself659.github.io/post/distributed/colossus-101/</guid>
+      <guid>https://myself659.github.io/post/distributed/colossus-101/</guid>
       <description>&lt;hr&gt;
 &lt;h2 id=&#34;前言&#34;&gt;前言&lt;/h2&gt;
 &lt;p&gt;随着数据量的激增，存储系统在现代互联网架构中变得越来越重要。谷歌的Colossus是Google File System（GFS）后继的下一代分布式存储系统，旨在处理更加庞大、复杂的数据存储需求。Colossus不仅为谷歌提供更强大的存储解决方案，还为现代大规模数据存储技术树立了标杆。它是谷歌构建云计算平台和大数据处理架构的核心支柱之一。&lt;/p&gt;</description>
     </item>
     <item>
       <title>关于区块链共识的一些思考</title>
-      <link>http://myself659.github.io/post/blockchain/%E5%85%B3%E4%BA%8E%E5%8C%BA%E5%9D%97%E9%93%BE%E5%85%B1%E8%AF%86%E7%9A%84%E4%B8%80%E4%BA%9B%E6%80%9D%E8%80%83/</link>
+      <link>https://myself659.github.io/post/blockchain/%E5%85%B3%E4%BA%8E%E5%8C%BA%E5%9D%97%E9%93%BE%E5%85%B1%E8%AF%86%E7%9A%84%E4%B8%80%E4%BA%9B%E6%80%9D%E8%80%83/</link>
       <pubDate>Mon, 24 Dec 2018 11:58:06 +0200</pubDate>
-      <guid>http://myself659.github.io/post/blockchain/%E5%85%B3%E4%BA%8E%E5%8C%BA%E5%9D%97%E9%93%BE%E5%85%B1%E8%AF%86%E7%9A%84%E4%B8%80%E4%BA%9B%E6%80%9D%E8%80%83/</guid>
+      <guid>https://myself659.github.io/post/blockchain/%E5%85%B3%E4%BA%8E%E5%8C%BA%E5%9D%97%E9%93%BE%E5%85%B1%E8%AF%86%E7%9A%84%E4%B8%80%E4%BA%9B%E6%80%9D%E8%80%83/</guid>
       <description>&lt;h1 id=&#34;说明&#34;&gt;说明&lt;/h1&gt;
 &lt;p&gt;前面写一篇关于分布式系统的文章，但是没有考虑拜占庭问题，所以聊聊区块链共识技术，在这个过程看看比特币是如何解决拜占庭问题和共识问题。&lt;/p&gt;
 &lt;h1 id=&#34;定义&#34;&gt;定义&lt;/h1&gt;
@@ -30,9 +30,9 @@
     </item>
     <item>
       <title>谈谈对分布式系统的一些思考</title>
-      <link>http://myself659.github.io/post/distributed/distributed-theory/</link>
+      <link>https://myself659.github.io/post/distributed/distributed-theory/</link>
       <pubDate>Tue, 11 Dec 2018 11:58:06 +0200</pubDate>
-      <guid>http://myself659.github.io/post/distributed/distributed-theory/</guid>
+      <guid>https://myself659.github.io/post/distributed/distributed-theory/</guid>
       <description>&lt;h1 id=&#34;说明&#34;&gt;说明&lt;/h1&gt;
 &lt;p&gt;本文限定在分布式系统不考虑拜占庭问题。即所有节点都是可信的。&lt;/p&gt;
 &lt;h1 id=&#34;定义&#34;&gt;定义&lt;/h1&gt;
@@ -42,152 +42,152 @@
     </item>
     <item>
       <title>Google File System (GFS) 101</title>
-      <link>http://myself659.github.io/post/distributed/gfs-101/</link>
+      <link>https://myself659.github.io/post/distributed/gfs-101/</link>
       <pubDate>Fri, 02 Nov 2018 11:58:06 +0200</pubDate>
-      <guid>http://myself659.github.io/post/distributed/gfs-101/</guid>
+      <guid>https://myself659.github.io/post/distributed/gfs-101/</guid>
       <description>&lt;h2 id=&#34;前言&#34;&gt;前言&lt;/h2&gt;
 &lt;p&gt;在现代互联网系统中，数据存储、管理与分发一直是关键技术之一。Google File System（GFS）是谷歌为满足其海量数据存储需求而设计的分布式文件系统。它支撑着谷歌的许多大规模应用，如搜索引擎、YouTube等，尤其适用于高吞吐量、大文件存储和海量数据处理。&lt;/p&gt;</description>
     </item>
     <item>
       <title>vector clock 101</title>
-      <link>http://myself659.github.io/post/distributed/vector-clocks-101/</link>
+      <link>https://myself659.github.io/post/distributed/vector-clocks-101/</link>
       <pubDate>Tue, 30 Oct 2018 11:58:06 +0200</pubDate>
-      <guid>http://myself659.github.io/post/distributed/vector-clocks-101/</guid>
+      <guid>https://myself659.github.io/post/distributed/vector-clocks-101/</guid>
       <description>&lt;hr&gt;
 &lt;h2 id=&#34;前言&#34;&gt;前言&lt;/h2&gt;
 &lt;p&gt;在现代分布式系统中，多个节点并发处理数据的场景非常常见。如何判断两个事件的先后关系？如何检测冲突？这时我们需要一种比时间戳更精确的工具 —— &lt;strong&gt;Vector Clock（向量时钟）&lt;/strong&gt;。&lt;/p&gt;</description>
     </item>
     <item>
       <title>CAP Theorem 101</title>
-      <link>http://myself659.github.io/post/distributed/cap-theorem-101/</link>
+      <link>https://myself659.github.io/post/distributed/cap-theorem-101/</link>
       <pubDate>Mon, 29 Oct 2018 11:58:06 +0200</pubDate>
-      <guid>http://myself659.github.io/post/distributed/cap-theorem-101/</guid>
+      <guid>https://myself659.github.io/post/distributed/cap-theorem-101/</guid>
       <description>&lt;hr&gt;
 &lt;h2 id=&#34;前言&#34;&gt;前言&lt;/h2&gt;
 &lt;p&gt;在现代分布式系统中，系统经常部署在多个地理位置、跨多个节点，网络延迟、故障和节点不一致成为常态。如何在这种复杂环境下权衡一致性与可用性？CAP 定理给出了明确的理论指导。&lt;/p&gt;</description>
     </item>
     <item>
       <title>Checksum  101</title>
-      <link>http://myself659.github.io/post/distributed/checksum-101/</link>
+      <link>https://myself659.github.io/post/distributed/checksum-101/</link>
       <pubDate>Mon, 29 Oct 2018 11:58:06 +0200</pubDate>
-      <guid>http://myself659.github.io/post/distributed/checksum-101/</guid>
+      <guid>https://myself659.github.io/post/distributed/checksum-101/</guid>
       <description>&lt;hr&gt;
 &lt;h2 id=&#34;前言&#34;&gt;前言&lt;/h2&gt;
 &lt;p&gt;在分布式系统、文件传输、数据存储等场景中，数据在传输和存储过程中可能出现错误或损坏。为了确保数据的完整性和正确性，&lt;strong&gt;Checksum（校验和）&lt;/strong&gt; 是一种常用且高效的手段，扮演着“数据防护罩”的角色。&lt;/p&gt;</description>
     </item>
     <item>
       <title>High-Water Mark 101</title>
-      <link>http://myself659.github.io/post/distributed/high-water-mark-101/</link>
+      <link>https://myself659.github.io/post/distributed/high-water-mark-101/</link>
       <pubDate>Mon, 29 Oct 2018 11:58:06 +0200</pubDate>
-      <guid>http://myself659.github.io/post/distributed/high-water-mark-101/</guid>
+      <guid>https://myself659.github.io/post/distributed/high-water-mark-101/</guid>
       <description>&lt;hr&gt;
 &lt;h2 id=&#34;前言&#34;&gt;前言&lt;/h2&gt;
 &lt;p&gt;在现代分布式系统、流处理引擎和日志系统中，数据的&lt;strong&gt;顺序性&lt;/strong&gt;与&lt;strong&gt;进度控制&lt;/strong&gt;至关重要。如何知道一个节点、消费者、或者整个系统**“处理到哪了”**？这就是 &lt;strong&gt;High-Water Mark（高水位线）&lt;/strong&gt; 的核心意义。&lt;/p&gt;</description>
     </item>
     <item>
       <title>PACELC Theorem 101</title>
-      <link>http://myself659.github.io/post/distributed/pacelc-theorem-101/</link>
+      <link>https://myself659.github.io/post/distributed/pacelc-theorem-101/</link>
       <pubDate>Mon, 29 Oct 2018 11:58:06 +0200</pubDate>
-      <guid>http://myself659.github.io/post/distributed/pacelc-theorem-101/</guid>
+      <guid>https://myself659.github.io/post/distributed/pacelc-theorem-101/</guid>
       <description>&lt;hr&gt;
 &lt;h2 id=&#34;前言&#34;&gt;前言&lt;/h2&gt;
 &lt;p&gt;CAP 定理揭示了分布式系统在「一致性（Consistency）」「可用性（Availability）」与「分区容忍性（Partition Tolerance）」之间的取舍。然而，现实系统中不仅要考虑网络分区，还要在正常情况下权衡延迟与一致性。为此，PACELC 定理应运而生，作为对 CAP 的自然扩展。&lt;/p&gt;</description>
     </item>
     <item>
       <title>Failback 101</title>
-      <link>http://myself659.github.io/post/distributed/failback-101/</link>
+      <link>https://myself659.github.io/post/distributed/failback-101/</link>
       <pubDate>Thu, 25 Oct 2018 11:58:06 +0200</pubDate>
-      <guid>http://myself659.github.io/post/distributed/failback-101/</guid>
+      <guid>https://myself659.github.io/post/distributed/failback-101/</guid>
       <description>&lt;hr&gt;
 &lt;h2 id=&#34;前言&#34;&gt;前言&lt;/h2&gt;
 &lt;p&gt;在分布式系统中，当主节点因故障被替换（Failover）后，如果原主节点恢复正常，系统是否、何时、以及如何让它重新承担主角色？这便是 &lt;strong&gt;Failback（故障恢复切回）&lt;/strong&gt; 的核心问题。&lt;/p&gt;</description>
     </item>
     <item>
       <title>Failover 101</title>
-      <link>http://myself659.github.io/post/distributed/failover-101/</link>
+      <link>https://myself659.github.io/post/distributed/failover-101/</link>
       <pubDate>Thu, 25 Oct 2018 11:58:06 +0200</pubDate>
-      <guid>http://myself659.github.io/post/distributed/failover-101/</guid>
+      <guid>https://myself659.github.io/post/distributed/failover-101/</guid>
       <description>&lt;hr&gt;
 &lt;h2 id=&#34;前言&#34;&gt;前言&lt;/h2&gt;
 &lt;p&gt;在现代分布式系统中，&lt;strong&gt;高可用（High Availability）&lt;/strong&gt; 是基本要求。而高可用的核心能力之一就是：&lt;strong&gt;当系统组件出现故障时，是否能自动切换到备份节点或副本继续提供服务&lt;/strong&gt;。这个自动切换过程，正是“Failover”。&lt;/p&gt;</description>
     </item>
     <item>
       <title>Fencing 101</title>
-      <link>http://myself659.github.io/post/distributed/fencing-101/</link>
+      <link>https://myself659.github.io/post/distributed/fencing-101/</link>
       <pubDate>Thu, 25 Oct 2018 11:58:06 +0200</pubDate>
-      <guid>http://myself659.github.io/post/distributed/fencing-101/</guid>
+      <guid>https://myself659.github.io/post/distributed/fencing-101/</guid>
       <description>&lt;hr&gt;
 &lt;h2 id=&#34;前言&#34;&gt;前言&lt;/h2&gt;
 &lt;p&gt;在分布式系统中，我们常用 &lt;strong&gt;Lease（租约）&lt;/strong&gt; 控制某个节点对资源的独占访问。然而，当网络分区或节点故障后，“过期”节点仍可能持有旧的访问权限并发起非法写入，这就引入了一个严重问题：&lt;strong&gt;脑裂（Split Brain）写入&lt;/strong&gt;。&lt;/p&gt;</description>
     </item>
     <item>
       <title>Gossip 101</title>
-      <link>http://myself659.github.io/post/distributed/gossip-101/</link>
+      <link>https://myself659.github.io/post/distributed/gossip-101/</link>
       <pubDate>Thu, 25 Oct 2018 11:58:06 +0200</pubDate>
-      <guid>http://myself659.github.io/post/distributed/gossip-101/</guid>
+      <guid>https://myself659.github.io/post/distributed/gossip-101/</guid>
       <description>&lt;hr&gt;
 &lt;h2 id=&#34;前言&#34;&gt;前言&lt;/h2&gt;
 &lt;p&gt;在大规模分布式系统中，节点之间需要高效、可靠地传播状态信息，如节点上线、宕机、负载等。而中心化广播机制很难应对规模扩展、容错要求等问题。&lt;strong&gt;Gossip 协议&lt;/strong&gt;（又称“八卦协议”）作为一种去中心化、鲁棒性强的通信机制，被广泛应用于分布式数据库、服务注册中心、容错系统等场景。&lt;/p&gt;</description>
     </item>
     <item>
       <title>Heartbeat 101</title>
-      <link>http://myself659.github.io/post/distributed/heartbeat-101/</link>
+      <link>https://myself659.github.io/post/distributed/heartbeat-101/</link>
       <pubDate>Thu, 25 Oct 2018 11:58:06 +0200</pubDate>
-      <guid>http://myself659.github.io/post/distributed/heartbeat-101/</guid>
+      <guid>https://myself659.github.io/post/distributed/heartbeat-101/</guid>
       <description>&lt;hr&gt;
 &lt;h2 id=&#34;前言&#34;&gt;前言&lt;/h2&gt;
 &lt;p&gt;在现代分布式系统中，&lt;strong&gt;故障检测&lt;/strong&gt; 是系统高可用的基础能力。系统需要实时感知某个节点是否还“存活”，以便及时做出容错或主备切换。这一机制中，&lt;strong&gt;Heartbeat（心跳）&lt;/strong&gt; 是最核心的技术手段。&lt;/p&gt;</description>
     </item>
     <item>
       <title>Lease 101</title>
-      <link>http://myself659.github.io/post/distributed/lease-101/</link>
+      <link>https://myself659.github.io/post/distributed/lease-101/</link>
       <pubDate>Thu, 25 Oct 2018 11:58:06 +0200</pubDate>
-      <guid>http://myself659.github.io/post/distributed/lease-101/</guid>
+      <guid>https://myself659.github.io/post/distributed/lease-101/</guid>
       <description>&lt;hr&gt;
 &lt;h2 id=&#34;前言&#34;&gt;前言&lt;/h2&gt;
 &lt;p&gt;在分布式系统中，多个节点同时访问或修改同一资源时，如何保证&lt;strong&gt;一致性&lt;/strong&gt;和&lt;strong&gt;避免冲突&lt;/strong&gt;是一个核心问题。传统的锁机制在高延迟和故障环境下难以保证可靠性，因此出现了一种更适合分布式环境的机制 —— &lt;strong&gt;Lease（租约）&lt;/strong&gt;。&lt;/p&gt;</description>
     </item>
     <item>
       <title>Phi Accrual Failure Detector algorithm 101</title>
-      <link>http://myself659.github.io/post/distributed/phi-accrual-failure-detector-algorithm-101/</link>
+      <link>https://myself659.github.io/post/distributed/phi-accrual-failure-detector-algorithm-101/</link>
       <pubDate>Thu, 25 Oct 2018 11:58:06 +0200</pubDate>
-      <guid>http://myself659.github.io/post/distributed/phi-accrual-failure-detector-algorithm-101/</guid>
+      <guid>https://myself659.github.io/post/distributed/phi-accrual-failure-detector-algorithm-101/</guid>
       <description>&lt;hr&gt;
 &lt;h2 id=&#34;前言&#34;&gt;前言&lt;/h2&gt;
 &lt;p&gt;在现代分布式系统中，节点失效检测是系统容错能力的基石。简单的“超时判断”往往无法应对真实网络环境中的延迟波动、抖动等问题，于是更加智能化的失效检测算法应运而生。其中，&lt;strong&gt;Phi Accrual Failure Detector（Φ 累积失败探测器）&lt;/strong&gt; 是被广泛应用的一种算法，如 Cassandra、Akka、Etcd 等系统都基于它构建健康检查机制。&lt;/p&gt;</description>
     </item>
     <item>
       <title>Split Brain 101</title>
-      <link>http://myself659.github.io/post/distributed/split-brain-101/</link>
+      <link>https://myself659.github.io/post/distributed/split-brain-101/</link>
       <pubDate>Thu, 25 Oct 2018 11:58:06 +0200</pubDate>
-      <guid>http://myself659.github.io/post/distributed/split-brain-101/</guid>
+      <guid>https://myself659.github.io/post/distributed/split-brain-101/</guid>
       <description>&lt;hr&gt;
 &lt;h2 id=&#34;前言&#34;&gt;前言&lt;/h2&gt;
 &lt;p&gt;在现代互联网系统中，&lt;strong&gt;分布式系统&lt;/strong&gt; 被广泛应用来提高可用性、扩展性与容错性。但网络的不稳定、节点的故障或管理上的分歧，常常会引发一个危险的问题：&lt;strong&gt;Split Brain（脑裂）&lt;/strong&gt;。&lt;/p&gt;</description>
     </item>
     <item>
       <title>Raft 101</title>
-      <link>http://myself659.github.io/post/distributed/raft-101/</link>
+      <link>https://myself659.github.io/post/distributed/raft-101/</link>
       <pubDate>Wed, 24 Oct 2018 11:58:06 +0200</pubDate>
-      <guid>http://myself659.github.io/post/distributed/raft-101/</guid>
+      <guid>https://myself659.github.io/post/distributed/raft-101/</guid>
       <description>&lt;hr&gt;
 &lt;h2 id=&#34;前言&#34;&gt;前言&lt;/h2&gt;
 &lt;p&gt;在分布式系统中，&lt;strong&gt;一致性共识协议&lt;/strong&gt;是保证多个节点达成同一状态的核心技术。虽然 Paxos 提供了理论基础，但它实现复杂、理解困难。为此，Raft 协议应运而生，目标是&lt;strong&gt;更易理解、实现且具备等价安全性&lt;/strong&gt;。&lt;/p&gt;</description>
     </item>
     <item>
       <title>Paxos 101</title>
-      <link>http://myself659.github.io/post/distributed/paxos-101/</link>
+      <link>https://myself659.github.io/post/distributed/paxos-101/</link>
       <pubDate>Tue, 23 Oct 2018 11:58:06 +0200</pubDate>
-      <guid>http://myself659.github.io/post/distributed/paxos-101/</guid>
+      <guid>https://myself659.github.io/post/distributed/paxos-101/</guid>
       <description>&lt;hr&gt;
 &lt;h2 id=&#34;前言&#34;&gt;前言&lt;/h2&gt;
 &lt;p&gt;在现代分布式系统中，多个节点如何就某个“真相”达成一致，是构建可靠系统的核心问题之一。无论是分布式数据库、共识引擎，还是一致性协调服务，**一致性协议（Consensus Protocol）**都是底层基石。&lt;strong&gt;Paxos&lt;/strong&gt; 正是其中最经典、最具理论价值的协议之一。&lt;/p&gt;</description>
     </item>
     <item>
       <title>为什么BFT要求诚实节点数量大于总节点的三分之二</title>
-      <link>http://myself659.github.io/post/distributed/distributed-bft/</link>
+      <link>https://myself659.github.io/post/distributed/distributed-bft/</link>
       <pubDate>Fri, 23 Mar 2018 11:58:06 +0200</pubDate>
-      <guid>http://myself659.github.io/post/distributed/distributed-bft/</guid>
+      <guid>https://myself659.github.io/post/distributed/distributed-bft/</guid>
       <description>&lt;p&gt;相信很多人都知道，BFT(Byzantine fault tolerance)要求诚实节点数量大于总节点的三分之二。&lt;/p&gt;
 &lt;p&gt;为什么会有这个要求？&lt;/p&gt;
 &lt;h1 id=&#34;多数派原则&#34;&gt;多数派原则&lt;/h1&gt;

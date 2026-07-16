@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Golang on 沉风网事</title>
-    <link>http://myself659.github.io/tags/golang/</link>
+    <link>https://myself659.github.io/tags/golang/</link>
     <description>Recent content in Golang on 沉风网事</description>
     <generator>Hugo</generator>
     <language>zh-cn</language>
     <copyright>沉风网事</copyright>
     <lastBuildDate>Tue, 18 Feb 2020 11:58:06 +0200</lastBuildDate>
-    <atom:link href="http://myself659.github.io/tags/golang/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://myself659.github.io/tags/golang/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>别太在意编程语言</title>
-      <link>http://myself659.github.io/post/golang/donot-focus-programming-language/</link>
+      <link>https://myself659.github.io/post/golang/donot-focus-programming-language/</link>
       <pubDate>Tue, 18 Feb 2020 11:58:06 +0200</pubDate>
-      <guid>http://myself659.github.io/post/golang/donot-focus-programming-language/</guid>
+      <guid>https://myself659.github.io/post/golang/donot-focus-programming-language/</guid>
       <description>&lt;h2 id=&#34;背景&#34;&gt;背景&lt;/h2&gt;
 &lt;p&gt;经常有人这样说：&lt;/p&gt;
 &lt;ol&gt;
@@ -25,9 +25,9 @@
     </item>
     <item>
       <title>深入分析Golang sync.pool优化</title>
-      <link>http://myself659.github.io/post/golang/golang-sync-pool-2/</link>
+      <link>https://myself659.github.io/post/golang/golang-sync-pool-2/</link>
       <pubDate>Fri, 06 Sep 2019 11:58:06 +0200</pubDate>
-      <guid>http://myself659.github.io/post/golang/golang-sync-pool-2/</guid>
+      <guid>https://myself659.github.io/post/golang/golang-sync-pool-2/</guid>
       <description>&lt;h1 id=&#34;前言&#34;&gt;前言&lt;/h1&gt;
 &lt;p&gt;最近golang的1.13版本发布了，有很多新特性与改进合入。这里主要分析sync.pool的优化。&lt;/p&gt;
 &lt;p&gt;本文主要解答以下几个问题：&lt;/p&gt;
@@ -41,9 +41,9 @@
     </item>
     <item>
       <title>深入分析Golang sync.pool</title>
-      <link>http://myself659.github.io/post/golang/golang-sync-pool-1/</link>
+      <link>https://myself659.github.io/post/golang/golang-sync-pool-1/</link>
       <pubDate>Mon, 10 Jun 2019 11:58:06 +0200</pubDate>
-      <guid>http://myself659.github.io/post/golang/golang-sync-pool-1/</guid>
+      <guid>https://myself659.github.io/post/golang/golang-sync-pool-1/</guid>
       <description>&lt;h1 id=&#34;定义&#34;&gt;定义&lt;/h1&gt;
 &lt;p&gt;sync.Pool是一个可以存或取的临时对象池。对外提供New、Get、Put等API，利用mutex支持多线程并发。&lt;/p&gt;
 &lt;h1 id=&#34;目标&#34;&gt;目标&lt;/h1&gt;
@@ -51,9 +51,9 @@
     </item>
     <item>
       <title>Golang最工程化的语言</title>
-      <link>http://myself659.github.io/post/golang/golang-eng/</link>
+      <link>https://myself659.github.io/post/golang/golang-eng/</link>
       <pubDate>Tue, 03 Jul 2018 11:58:06 +0200</pubDate>
-      <guid>http://myself659.github.io/post/golang/golang-eng/</guid>
+      <guid>https://myself659.github.io/post/golang/golang-eng/</guid>
       <description>&lt;h1 id=&#34;golang是什么语言&#34;&gt;Golang是什么语言&lt;/h1&gt;
 &lt;p&gt;PHP是最好的语言。&lt;/p&gt;
 &lt;p&gt;Haskell最难学的语言。&lt;/p&gt;
@@ -65,9 +65,9 @@
     </item>
     <item>
       <title>Gorm小技巧: 如何优雅地创建多个相同的表</title>
-      <link>http://myself659.github.io/post/golang/golang-gorm/</link>
+      <link>https://myself659.github.io/post/golang/golang-gorm/</link>
       <pubDate>Thu, 21 Dec 2017 11:58:06 +0200</pubDate>
-      <guid>http://myself659.github.io/post/golang/golang-gorm/</guid>
+      <guid>https://myself659.github.io/post/golang/golang-gorm/</guid>
       <description>&lt;h3 id=&#34;背景&#34;&gt;背景&lt;/h3&gt;
 &lt;p&gt;因为需要bitfinex抓取各种历史交易信息。为了实现可扩展与便于数据管理，在数据架构设计方面满足下面的需求：&lt;/p&gt;
 &lt;ol&gt;
@@ -79,9 +79,9 @@
     </item>
     <item>
       <title>slice复用的陷阱</title>
-      <link>http://myself659.github.io/post/2017-07-28-slice-trap/</link>
+      <link>https://myself659.github.io/post/2017-07-28-slice-trap/</link>
       <pubDate>Fri, 28 Jul 2017 11:58:06 +0200</pubDate>
-      <guid>http://myself659.github.io/post/2017-07-28-slice-trap/</guid>
+      <guid>https://myself659.github.io/post/2017-07-28-slice-trap/</guid>
       <description>&lt;h3 id=&#34;前言&#34;&gt;前言&lt;/h3&gt;
 &lt;p&gt;先下结论：slice复用得当心，引用不当深埋雷。如若复用请分叉，分叉之后再使用。&lt;/p&gt;
 &lt;h3 id=&#34;问题&#34;&gt;问题&lt;/h3&gt;
@@ -154,9 +154,9 @@
     </item>
     <item>
       <title>使用golang present工具制作presentation</title>
-      <link>http://myself659.github.io/post/2017-05-10-golang-present/</link>
+      <link>https://myself659.github.io/post/2017-05-10-golang-present/</link>
       <pubDate>Wed, 10 May 2017 11:58:06 +0200</pubDate>
-      <guid>http://myself659.github.io/post/2017-05-10-golang-present/</guid>
+      <guid>https://myself659.github.io/post/2017-05-10-golang-present/</guid>
       <description>&lt;h3 id=&#34;依赖&#34;&gt;依赖&lt;/h3&gt;
 &lt;ol&gt;
 &lt;li&gt;依赖golang的开发环境&lt;/li&gt;
@@ -166,9 +166,9 @@
     </item>
     <item>
       <title>Go的50度灰补充--http response只能读一次</title>
-      <link>http://myself659.github.io/post/golang/2017-02-20-go-case-1-my-shadeofgo/</link>
+      <link>https://myself659.github.io/post/golang/2017-02-20-go-case-1-my-shadeofgo/</link>
       <pubDate>Mon, 20 Feb 2017 11:58:06 +0200</pubDate>
-      <guid>http://myself659.github.io/post/golang/2017-02-20-go-case-1-my-shadeofgo/</guid>
+      <guid>https://myself659.github.io/post/golang/2017-02-20-go-case-1-my-shadeofgo/</guid>
       <description>&lt;h3 id=&#34;问题&#34;&gt;问题&lt;/h3&gt;
 &lt;p&gt;还是从代码开始吧&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
@@ -282,9 +282,9 @@
     </item>
     <item>
       <title>从C语言epoll编程到go net实现分析</title>
-      <link>http://myself659.github.io/post/golang/2016-09-10-from-cepoll-to-go-net/</link>
+      <link>https://myself659.github.io/post/golang/2016-09-10-from-cepoll-to-go-net/</link>
       <pubDate>Sat, 10 Sep 2016 11:58:06 +0200</pubDate>
-      <guid>http://myself659.github.io/post/golang/2016-09-10-from-cepoll-to-go-net/</guid>
+      <guid>https://myself659.github.io/post/golang/2016-09-10-from-cepoll-to-go-net/</guid>
       <description>&lt;h2 id=&#34;说明&#34;&gt;说明&lt;/h2&gt;
 &lt;ol&gt;
 &lt;li&gt;go源码版本：1.7&lt;/li&gt;
@@ -661,9 +661,9 @@
     </item>
     <item>
       <title>Go channel 编程篇</title>
-      <link>http://myself659.github.io/post/golang/2016-08-20-go-channel-program-demo/</link>
+      <link>https://myself659.github.io/post/golang/2016-08-20-go-channel-program-demo/</link>
       <pubDate>Sat, 20 Aug 2016 11:58:06 +0200</pubDate>
-      <guid>http://myself659.github.io/post/golang/2016-08-20-go-channel-program-demo/</guid>
+      <guid>https://myself659.github.io/post/golang/2016-08-20-go-channel-program-demo/</guid>
       <description>&lt;p&gt;本篇以&lt;a href=&#34;https://github.com/myself659/ChanBroker&#34;&gt;ChanBroker&lt;/a&gt;版本迭代过程，总结常见Channel编程问题&lt;/p&gt;
 &lt;h3 id=&#34;简介&#34;&gt;简介&lt;/h3&gt;
 &lt;p&gt;ChanBroker设计主要参考Kafka模型，主要提供进程内goroutine之间通信，实现以下功能：&lt;/p&gt;
@@ -678,9 +678,9 @@
     </item>
     <item>
       <title>Go channel 特点篇</title>
-      <link>http://myself659.github.io/post/golang/2016-07-26-go-channel-feature/</link>
+      <link>https://myself659.github.io/post/golang/2016-07-26-go-channel-feature/</link>
       <pubDate>Tue, 26 Jul 2016 11:58:06 +0200</pubDate>
-      <guid>http://myself659.github.io/post/golang/2016-07-26-go-channel-feature/</guid>
+      <guid>https://myself659.github.io/post/golang/2016-07-26-go-channel-feature/</guid>
       <description>&lt;h3 id=&#34;channel模式&#34;&gt;channel模式&lt;/h3&gt;
 &lt;p&gt;根据同步方式不同，channel有两种模式：&lt;/p&gt;
 &lt;p&gt;1、同步模式,形式如下：&lt;/p&gt;

@@ -751,17 +751,17 @@ git diff --stat
 
 How to Include Diff into Git Commit Message">
 <meta name="author" content="">
-<link rel="canonical" href="http://myself659.github.io/post/devops/2016-05-21-git-cmd/">
+<link rel="canonical" href="https://myself659.github.io/post/devops/2016-05-21-git-cmd/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.css" rel="preload stylesheet" as="style">
-<link rel="icon" href="http://myself659.github.io/favicon.ico">
-<link rel="icon" type="image/png" sizes="16x16" href="http://myself659.github.io/favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="http://myself659.github.io/favicon-32x32.png">
-<link rel="apple-touch-icon" href="http://myself659.github.io/apple-touch-icon.png">
-<link rel="mask-icon" href="http://myself659.github.io/safari-pinned-tab.svg">
+<link rel="icon" href="https://myself659.github.io/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://myself659.github.io/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://myself659.github.io/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://myself659.github.io/apple-touch-icon.png">
+<link rel="mask-icon" href="https://myself659.github.io/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" type="application/rss+xml" href="http://myself659.github.io/post/devops/2016-05-21-git-cmd/index.xml" title="rss">
-<link rel="alternate" hreflang="zh-cn" href="http://myself659.github.io/post/devops/2016-05-21-git-cmd/">
+<link rel="alternate" type="application/rss+xml" href="https://myself659.github.io/post/devops/2016-05-21-git-cmd/index.xml" title="rss">
+<link rel="alternate" hreflang="zh-cn" href="https://myself659.github.io/post/devops/2016-05-21-git-cmd/">
 <noscript>
     <style>
         #theme-toggle,
@@ -807,7 +807,7 @@ How to Include Diff into Git Commit Message">
         document.querySelector("html").dataset.theme = 'light';
     }
 
-</script><meta property="og:url" content="http://myself659.github.io/post/devops/2016-05-21-git-cmd/">
+</script><meta property="og:url" content="https://myself659.github.io/post/devops/2016-05-21-git-cmd/">
   <meta property="og:site_name" content="沉风网事">
   <meta property="og:title" content="git常用命令总结">
   <meta property="og:description" content="配置 config user 1 2 git config --global user.email &#34;you@example.com&#34; git config --global user.name &#34;Your Name&#34; Ignore Git permission changes 1 git config core.fileMode false Fix .gitignore 1 git rm -r --cached . git仓库 初始化一个版本仓库 1 git init clone远程版本库 1 git clone git@github.com:myself659/FFmpeg.git 添加远程版本库origin 1 git remote add origin git@github.com:myself659/rtmpserver_demo.git 查看远程仓库信息 1 git remote -v 删除远程仓库 1 git remote rm &lt;repository&gt; git修改 添加当前修改的文件到暂存区 1 git add . 提交修改到本地 1 git commit -m &#34;fix bug 0001&#34; 提交修改到远程 1 git push -u origin master 查看修改状态 1 git status 重命名文件 1 git mv README readme 从版本库中删除文件 1 git rm readme 取消对文件修改 1 git checkout -- readme 修改最新一次修改注释 1 git commit amend 显示所有提交 1 git show 1 git show &lt;commit&gt; --stat 1 git show &lt;commit&gt; -- &lt;filepath&gt; 恢复最后一次提交的状态 1 git revert HEAD 恢复某次提交的状态 1 git revert &lt;$id&gt; Remove untracked files &amp; directories 1 2 3 4 # To remove untracked files git clean -f # TO remove untracked directories git clean -fd Discard local changes 1 git reset --hard Delete untracked files 1 git clean -fd git commit Edit last commit in both local and remote repository 1 2 3 4 5 6 7 8 9 # Step 1: Check recent commit history git show HEAD # Step 2: Update commit locally git add &lt;file-path(s)&gt; git commit --amend -m &#34;&lt;New-commit-message&gt;&#34; # Step 3: Check recent commit history to verify the correct edit git show HEAD # Step 4: Push the edit upstream git push -f # Then, verify it in the web interface of the hosting service Delete last commit in both local and remote repository 1 2 3 4 5 6 7 # Step 1: Check recent commit history to check git log --oneline -5 # Step 2: Delete commit locally and push the change to remote git reset --soft HEAD~1 # Delete commit locally git push -f # Delete commit upstream # Step 3: Check recent commit history to check git log --oneline -5 git repository rename repository 1 2 3 4 5 6 7 8 9 10 # Step 1: Rename local repository cd .. # Go to the directory that holds the repository mv &lt;repo-old-name&gt; &lt;repo-new-name&gt; cd &lt;repo-new-name&gt; # Step 2: Check remote url git remote -v # Step 3: Update remote url git remote set-url origin &lt;new-url&gt; # Step 4: Check remote url for verification git remote -v git log 查看修改log 1 git log 查看指定文件每次提交记录 1 git log &lt;filename&gt; 查看最近两次详细修改内容的diff 1 git log -p -2 查看提交统计信息 1 git log --stat Move a commit from one branch to another 1 git cherry-pick COMMIT-HASH 查看项目各个成员提交代码统计 1 git log --format=&#39;%aN&#39; | sort -u | while read name; do echo -en &#34;$name\t&#34;; git log --author=&#34;$name&#34; --pretty=tformat: --numstat | awk &#39;{ add &#43;= $1; subs &#43;= $2; loc &#43;= $1 - $2 } END { printf &#34;added lines: %s, removed lines: %s, total lines: %s\n&#34;, add, subs, loc }&#39; -; done git log graph 1 git log --graph --format=format:&#39;%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%an%C(reset)%C(bold yellow)%d%C(reset) %C(dim white)- %s%C(reset)&#39; --all git分支 查看远程分支 1 git branch -r 创建新分支 1 git branch &lt;new_branch&gt; 1 git checkout -b NEW-BRANCH-NAME 查看各分支创建最后提交信息 1 git branch -v 删除指定分支 1 2 git branch -d &lt;branch_name&gt; git push origin -d &lt;branch-name&gt; 强制删除指定分支 1 git branch -D &lt;branch_name&gt; 查看已经被合并到当前分支的分支 1 git branch --merged 查看尚未被合并到当前分支的分支 1 git branch --no-merged 合并分支 1 git merge &lt;merge_branch&gt; 切换分支 1 git checkout &lt;branch_name&gt; -f 抓取远程仓库所有分支更新并合并到本地 1 git pull 抓取远程仓库所有分支更新并合并到本地，不要快进合并 1 git pull --no-ff 抓取远程仓库更新 1 git fetch origin push所有分支 1 git push 将本地主分支推到远程主分支 1 git push origin master 将本地主分支推到远程(如无远程主分支则创建，用于初始化远程仓库) 1 git push -u origin master 创建远程分支 1 git push origin &lt;local_branch&gt;:&lt;remote_branch&gt; 查看所有分支名称 1 git branch --all check branch status 1 git status rename local branch 1 git branch -m OLD-BRANCH-NAME NEW-BRANCH-NAME rename remote branch 1 git push origin :OLD-BRANCH-NAME NEW-BRANCH-NAME Delete a branch on a remote repository 1 git push REMOTE-NAME --delete BRANCH-NAME clean git branches exclude main and master 1 git branch | grep -v &#34;master&#34; | grep -v &#34;main&#34; | grep -v ^\* | xargs git branch -D; Create a local copy of the existing remote branch 1 2 git fetch origin git switch --track origin/&lt;branch-name&gt; git diff 比较当前文件和暂存区文件差异 1 git diff &lt;file&gt; 比较两次提交之间的差异 1 git diff &lt;$id1&gt; &lt;$id2&gt; 比较两个分支 1 git diff &lt;branch1&gt; &lt;branch2&gt; 比较统计信息 1 git diff --stat 提交git diff How to Include Diff into Git Commit Message">
@@ -832,13 +832,13 @@ How to Include Diff into Git Commit Message">
       "@type": "ListItem",
       "position":  1 ,
       "name": "Posts",
-      "item": "http://myself659.github.io/post/"
+      "item": "https://myself659.github.io/post/"
     }, 
     {
       "@type": "ListItem",
       "position":  2 ,
       "name": "git常用命令总结",
-      "item": "http://myself659.github.io/post/devops/2016-05-21-git-cmd/"
+      "item": "https://myself659.github.io/post/devops/2016-05-21-git-cmd/"
     }
   ]
 }
@@ -860,14 +860,14 @@ How to Include Diff into Git Commit Message">
   "dateModified": "2016-05-21T11:58:06+02:00",
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "http://myself659.github.io/post/devops/2016-05-21-git-cmd/"
+    "@id": "https://myself659.github.io/post/devops/2016-05-21-git-cmd/"
   },
   "publisher": {
     "@type": "Organization",
     "name": "沉风网事",
     "logo": {
       "@type": "ImageObject",
-      "url": "http://myself659.github.io/favicon.ico"
+      "url": "https://myself659.github.io/favicon.ico"
     }
   }
 }
@@ -877,7 +877,7 @@ How to Include Diff into Git Commit Message">
     <header class="header">
     <nav class="header-nav">
         <div class="logo">
-            <a href="http://myself659.github.io/" accesskey="h" title="沉风网事 (Alt + H)">沉风网事</a>
+            <a href="https://myself659.github.io/" accesskey="h" title="沉风网事 (Alt + H)">沉风网事</a>
             <div class="logo-switches">
                 <button id="theme-toggle" class="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
                     <svg class="moon" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24"
@@ -903,52 +903,52 @@ How to Include Diff into Git Commit Message">
         </div>
         <ul id="menu" class="menu">
             <li>
-                <a href="http://myself659.github.io/" title="Home">
+                <a href="https://myself659.github.io/" title="Home">
                     <span>Home</span>
                 </a>
             </li>
             <li>
-                <a href="http://myself659.github.io/post/" title="Archives">
+                <a href="https://myself659.github.io/post/" title="Archives">
                     <span>Archives</span>
                 </a>
             </li>
             <li>
-                <a href="http://myself659.github.io/tags/" title="Tags">
+                <a href="https://myself659.github.io/tags/" title="Tags">
                     <span>Tags</span>
                 </a>
             </li>
             <li>
-                <a href="http://myself659.github.io/categories/" title="Categories">
+                <a href="https://myself659.github.io/categories/" title="Categories">
                     <span>Categories</span>
                 </a>
             </li>
             <li>
-                <a href="http://myself659.github.io/search/" title="Search (Alt &#43; /)" accesskey=/>
+                <a href="https://myself659.github.io/search/" title="Search (Alt &#43; /)" accesskey=/>
                     <span>Search</span>
                 </a>
             </li>
             <li>
-                <a href="http://myself659.github.io/about/" title="About">
+                <a href="https://myself659.github.io/about/" title="About">
                     <span>About</span>
                 </a>
             </li>
             <li>
-                <a href="http://myself659.github.io/post/leetcode/" title="LeetCode">
+                <a href="https://myself659.github.io/post/leetcode/" title="LeetCode">
                     <span>LeetCode</span>
                 </a>
             </li>
             <li>
-                <a href="http://myself659.github.io/post/read-post/" title="Reading">
+                <a href="https://myself659.github.io/post/read-post/" title="Reading">
                     <span>Reading</span>
                 </a>
             </li>
             <li>
-                <a href="http://myself659.github.io/post/share-post/" title="Share">
+                <a href="https://myself659.github.io/post/share-post/" title="Share">
                     <span>Share</span>
                 </a>
             </li>
             <li>
-                <a href="http://myself659.github.io/post/slide-post/" title="Slide">
+                <a href="https://myself659.github.io/post/slide-post/" title="Slide">
                     <span>Slide</span>
                 </a>
             </li>
@@ -1961,7 +1961,7 @@ How to Include Diff into Git Commit Message">
 
   <footer class="post-footer">
     <ul class="post-tags">
-      <li><a href="http://myself659.github.io/tags/linux/">Linux</a></li>
+      <li><a href="https://myself659.github.io/tags/linux/">Linux</a></li>
     </ul>
   </footer>
 </article>

@@ -2,12 +2,12 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Gorm小技巧: 如何优雅地创建多个相同的表 on 沉风网事</title>
-    <link>http://myself659.github.io/post/golang/golang-gorm/</link>
+    <link>https://myself659.github.io/post/golang/golang-gorm/</link>
     <description>Recent content in Gorm小技巧: 如何优雅地创建多个相同的表 on 沉风网事</description>
     <generator>Hugo</generator>
     <language>zh-cn</language>
     <copyright>沉风网事</copyright>
     <lastBuildDate></lastBuildDate>
-    <atom:link href="http://myself659.github.io/post/golang/golang-gorm/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://myself659.github.io/post/golang/golang-gorm/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>
